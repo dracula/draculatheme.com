@@ -43,7 +43,9 @@ const buildCompleted = () => {
   }
 
   if (task === 'deploy') {
-    ghpages.publish(config.destination, (err) => {
+    ghpages.publish(config.destination, {
+      branch: 'master'
+    }, (err) => {
       if (err) throw err;
       else buildDuration();
     });
