@@ -51,4 +51,4 @@ We use [Metalsmith](http://www.metalsmith.io/), a static generator in NodeJS.
 
 ## License
 
-[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha
+[MIT License](./LICENSE) © Dracula Theme
