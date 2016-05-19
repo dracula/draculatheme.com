@@ -15,13 +15,13 @@ icon_height: 170
 	<h4>Install using Git</h4>
 	<p>If you <a href="http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/">use vim + pathogen</a>:</p>
 	<pre><code>cd ~/.vim
-git submodule add git@github.com:zenorocha/dracula-theme.git bundle/dracula-theme</code></pre>
+git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pre>
 
 	<p>If you <a href="https://github.com/gmarik/vundle">use vim + vundle</a>:</p>
-    <pre><code>Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+    <pre><code>Plugin 'dracula/vim'
 :PluginInstall</code></pre>
 
-	<p>If you aren't so clever just move the <code>vim/dracula.vim</code> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
+	<p>If you aren't so clever just move the <code>dracula.vim</code> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
 
 	<pre><code>syntax on
 color dracula</code></pre>
