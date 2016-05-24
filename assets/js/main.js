@@ -22,3 +22,4 @@ malarkey(document.querySelector('.rotating'), {
   .type('Visual Studio Code').pause().delete()
   .type('JetBrains').pause().delete()
   .type('Visual Studio').pause().delete()
+  .type('Mintty').pause().delete()
