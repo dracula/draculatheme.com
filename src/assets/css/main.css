@@ -234,11 +234,15 @@ a {
 }
 
 .green .title,
-.green .subtitle a {
+.green .subtitle a,
+.green .instructions a,
+.green .instructions h3,
+.green .instructions code {
 	color: rgb(80, 250, 123);
 }
 
-.green .subtitle a:hover {
+.green .subtitle a:hover,
+.green .instructions a:hover {
 	color: rgba(80, 250, 123, .7);
 }
 

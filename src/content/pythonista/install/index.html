@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="{{ site.author }}">
+	<meta name="description" content="{{#if title }}A dark theme for {{ title }} and more{{ else }}{{ site.description }}{{/if}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="{{ site.name }}{{#if title }} · {{ title }}{{/if}}">
+	<meta property="og:description" content="{{#if title }}A dark theme for {{ title }} and more{{ else }}{{ site.description }}{{/if}}">
+	<meta property="og:url" content="https://dracula.github.io/{{#if url }}{{ url }}{{/if}}">
+	<meta property="og:image" content="https://dracula.github.io/assets/img/facebook.png">
+
+	<meta http-equiv="refresh" content="0; URL='pythonista3://?action=add-theme&theme-data=eNqdVkuTojAQvvsrLPYqVYIOg3tTp7ztZf8AlYQWs4S0FULtuFPz3zckMBJfMww52d1fvx--TabTQHCqiDplmksdTH9Og11qXhzMWmYOe9IInWl4vWbqQ1NRSbjIKKoclBWInqIk2jqBotEaVEYJKwuFjcytRJzG60XiJB6wcqLKrIQTRaIsV6sGOtBDnXuUOqz5P2g50dy5SuglJFoaVzcDyJ5UXJws7xdIgeFvKBpBlBOp4UgU0agywSVcaZCkcsQXRZhBOWqf2wfe1gyPULfkN_OzjRtZrRWXxZlmqAwFugTvot063QaW8T5zGCZIXd-R_5EQulxRH2BiKD35tsBhDgxNjBylRRp3QdlofWOYg4c9RxcOzKbz9i3nwezsk5KgQkVy3lhvY0-vqfVfdKW-FfbuebVNfE-OCv8A0x7CVV-fhCsHRZH7oAMY-7IIo3Ewm2IzDnfce5rv1s8bH8I1EZw9MtNJeKg9qopofb8Busymcx_Xuhx-bnIodoX_XiYXIzN5AFZSfPXDGxDbQb-JCHOU8BD20Wu95JUuTYpPG1_iZc9Ls-ncgrtRkM3LarFbXVSxkazXd6ub3Rq98Kwub0R4rvvKfulgom453y6PErDRvvZOCtWIBu4LHI8rcB_7uGmhDRem67-RuArzRsAIAMOqAqnvIJL4OV4vz0n-wsyOX9hmh1KBrDSKidLjJr07yl8JeNKhbKdkNQiwyR0ce_sFH0dSc93F6XF68a5w3XGTkJ0HI1itzUv8yz_4XzA4lkYbqNqY4kS4QGMWJ3EaTN7_A56PKk4~'" />
+
+	<title>{{ site.name }} &mdash; {{#if title }}A dark theme for {{ title }} and more{{ else }}{{ site.description }}{{/if}}</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css">
+	<link rel="stylesheet" href="{{ baseurl }}/assets/css/main.css">
+	<link rel="icon" type="image/x-icon" href="{{ baseurl }}/assets/img/favicon.ico">
+
+	<script src="https://use.typekit.net/ybn2zyq.js"></script>
+	<script>
+		try {
+			Typekit.load({
+				async: true
+			});
+		} catch (e) {}
+	</script>
+</head>
+<body class="{{#if color }}{{ color }}{{ else }}green{{/if}}">
+	<div class="container-fluid">
+		<header class="header row center-xs">
+			<div class="col-xs-12">
+				<a href="{{ baseurl }}/">
+					<img src="{{ baseurl }}/assets/img/icons/{{#if icon }}{{ icon }}{{ else }}dracula{{/if}}.png" width="{{#if icon_width }}{{ icon_width }}{{ else }}168{{/if}}" height="{{#if icon_height }}{{ icon_height }}{{ else }}176{{/if}}" alt="{{#if title }}{{ title }}{{ else }}Dracula{{/if}}">
+					<h1 class="title">Dracula</h1>
+				</a>
+				<h2 class="subtitle">A dark theme for {{#if title }}{{ title }} <a href="{{ baseurl }}/">and more</a>{{ else }}<span class="rotating"></span>{{/if}}</h2>
+				<p class="gh-btns">
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
+				</p>
+			</div>
+		</header>
+
+		<div class="instructions">
+			<h3>Pythonista</h3>
+
+			<h4>Install manually</h4>
+			<p>This page should re-direct you to the theme's own URL. If it doesn't, tap on the following link to install it.</p>
+			<a href="pythonista3://?action=add-theme&theme-data=eNqdVkuTojAQvvsrLPYqVYIOg3tTp7ztZf8AlYQWs4S0FULtuFPz3zckMBJfMww52d1fvx--TabTQHCqiDplmksdTH9Og11qXhzMWmYOe9IInWl4vWbqQ1NRSbjIKKoclBWInqIk2jqBotEaVEYJKwuFjcytRJzG60XiJB6wcqLKrIQTRaIsV6sGOtBDnXuUOqz5P2g50dy5SuglJFoaVzcDyJ5UXJws7xdIgeFvKBpBlBOp4UgU0agywSVcaZCkcsQXRZhBOWqf2wfe1gyPULfkN_OzjRtZrRWXxZlmqAwFugTvot063QaW8T5zGCZIXd-R_5EQulxRH2BiKD35tsBhDgxNjBylRRp3QdlofWOYg4c9RxcOzKbz9i3nwezsk5KgQkVy3lhvY0-vqfVfdKW-FfbuebVNfE-OCv8A0x7CVV-fhCsHRZH7oAMY-7IIo3Ewm2IzDnfce5rv1s8bH8I1EZw9MtNJeKg9qopofb8Busymcx_Xuhx-bnIodoX_XiYXIzN5AFZSfPXDGxDbQb-JCHOU8BD20Wu95JUuTYpPG1_iZc9Ls-ncgrtRkM3LarFbXVSxkazXd6ub3Rq98Kwub0R4rvvKfulgom453y6PErDRvvZOCtWIBu4LHI8rcB_7uGmhDRem67-RuArzRsAIAMOqAqnvIJL4OV4vz0n-wsyOX9hmh1KBrDSKidLjJr07yl8JeNKhbKdkNQiwyR0ce_sFH0dSc93F6XF68a5w3XGTkJ0HI1itzUv8yz_4XzA4lkYbqNqY4kS4QGMWJ3EaTN7_A56PKk4~">Install</a>
+		</div>
+
+		<script>window.location = "pythonista3://?action=add-theme&theme-data=eNqdVkuTojAQvvsrLPYqVYIOg3tTp7ztZf8AlYQWs4S0FULtuFPz3zckMBJfMww52d1fvx--TabTQHCqiDplmksdTH9Og11qXhzMWmYOe9IInWl4vWbqQ1NRSbjIKKoclBWInqIk2jqBotEaVEYJKwuFjcytRJzG60XiJB6wcqLKrIQTRaIsV6sGOtBDnXuUOqz5P2g50dy5SuglJFoaVzcDyJ5UXJws7xdIgeFvKBpBlBOp4UgU0agywSVcaZCkcsQXRZhBOWqf2wfe1gyPULfkN_OzjRtZrRWXxZlmqAwFugTvot063QaW8T5zGCZIXd-R_5EQulxRH2BiKD35tsBhDgxNjBylRRp3QdlofWOYg4c9RxcOzKbz9i3nwezsk5KgQkVy3lhvY0-vqfVfdKW-FfbuebVNfE-OCv8A0x7CVV-fhCsHRZH7oAMY-7IIo3Ewm2IzDnfce5rv1s8bH8I1EZw9MtNJeKg9qopofb8Busymcx_Xuhx-bnIodoX_XiYXIzN5AFZSfPXDGxDbQb-JCHOU8BD20Wu95JUuTYpPG1_iZc9Ls-ncgrtRkM3LarFbXVSxkazXd6ub3Rq98Kwub0R4rvvKfulgom453y6PErDRvvZOCtWIBu4LHI8rcB_7uGmhDRem67-RuArzRsAIAMOqAqnvIJL4OV4vz0n-wsyOX9hmh1KBrDSKidLjJr07yl8JeNKhbKdkNQiwyR0ce_sFH0dSc93F6XF68a5w3XGTkJ0HI1itzUv8yz_4XzA4lkYbqNqY4kS4QGMWJ3EaTN7_A56PKk4~";</script>
+
+	</div>
+
+	<p class="credits">Made with <span class="love">♥</span> by <a class="green" href="https://zenorocha.com" target="blank">{{ site.author }}</a>
+		<br>and a <a class="cyan" href="https://github.com/dracula/dracula-theme/graphs/contributors" target="blank">bunch of awesome contributors</a> under <a class="orange" href="http://zenorocha.mit-license.org/" target="blank">MIT license</a></p>
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-4114546-40', 'zenorocha.github.io');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+</html>
