@@ -21,6 +21,10 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pr
     <pre><code>Plugin 'dracula/vim'
 :PluginInstall</code></pre>
 
+	<p>If you <a href="https://github.com/junegunn/vim-plug">use vim-plug</a> (`as` will install the plugin in a directory called 'dracula' instead of just 'vim'):</p>
+    <pre><code>Plug 'dracula/vim', { 'as': 'dracula' }
+:PlugInstall</code></pre>
+
 	<p>If you aren't so clever just move the <code>dracula.vim</code> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
 
 	<pre><code>syntax on
