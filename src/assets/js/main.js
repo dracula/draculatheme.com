@@ -24,3 +24,4 @@ malarkey(document.querySelector('.rotating'), {
   .type('Visual Studio').pause().delete()
   .type('Mintty').pause().delete()
   .type('Brackets').pause().delete()
+  .type('Wox').pause().delete()
