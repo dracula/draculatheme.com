@@ -23,3 +23,4 @@ malarkey(document.querySelector('.rotating'), {
   .type('JetBrains').pause().delete()
   .type('Visual Studio').pause().delete()
   .type('Mintty').pause().delete()
+  .type('Brackets').pause().delete()
