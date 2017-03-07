@@ -168,6 +168,10 @@ ol {
 	margin-left: 25px;
 }
 
+p {
+	margin: 0 0 .5em 0;
+}
+
 a {
 	-webkit-transition: all .3s linear;
 	transition: all .3s linear;
