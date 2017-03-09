@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Zeno Rocha">
+	<meta name="description" content="A dark theme for ConEmu and more">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="Dracula · ConEmu">
+	<meta property="og:description" content="A dark theme for ConEmu and more">
+	<meta property="og:url" content="https://dracula.github.io/">
+	<meta property="og:image" content="https://dracula.github.io/assets/img/facebook.png">
+
+	<title>Dracula &mdash; A dark theme for ConEmu and more</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" >
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+	<script src="https://use.typekit.net/ybn2zyq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body class="purple">
+	<div class="container-fluid">
+		<header class="header row center-xs">
+			<div class="col-xs-12">
+				<a href="../">
+					<img src="../assets/img/icons/hat-magic.png" width="237" height="196" alt="ConEmu">
+					<h1 class="title">Dracula</h1>
+				</a>
+				<h2 class="subtitle">A dark theme for ConEmu <a href="../">and more</a></h2>
+				<p class="gh-btns">
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
+				</p>
+			</div>
+		</header>
+
+	<main class="wrapper">
+		
+<img class="preview" src="../assets/img/screenshots/conemu.png" alt="Theme Preview" width="696" height="471">
+
+<div class="instructions">
+	<h3>ConEmu</h3>
+
+	<h4>Install using Git</h4>
+
+	<p>If you are a git user, you can install the theme and keep up to date by cloning the repo:</p>
+
+	<pre><code>$ git clone https://github.com/dracula/conemu.git</code></pre>
+
+	<h4>Install manually</h4>
+
+	<p>Download using the <a href="https://github.com/dracula/conemu/archive/master.zip">GitHub .zip download</a> option and unzip them.</p>
+
+	<h4>Activating theme</h4>
+
+	<p>You have to manually modify the ConEmu config file.</p>
+
+	<ol>
+		<li>Open <code>ConEmu.xml</code> file. It is in the installation directory of ConEmu or the user directory like <code>C:\Users\UserName</code>.</li>
+		<li>Find the palette definition. It is a xml tag starts with the following code:
+			<pre><code>&lt;key name="Palette1" modified="2016-02-21 19:15:02" build="160218"&gt;
+&lt;value name="Name" type="string" data="ThemeName"/&gt;
+&lt;value name="ExtendColors" type="hex" data="00"/&gt;
+...
+&lt;value name="ColorTable00" type="dword" data="00000000"/&gt;
+&lt;value name="ColorTable01" type="dword" data="00800000"/>
+...</code></pre></li>
+		<li>If you don't find the xml above, you may not have any custom color scheme.
+So open ConEmu <code>Settings</code> dialog (Win+Alt+P), and go to <code>Features -> Colors
+-> Schemes</code>, enter a name and click Save, then the palette definition will be
+generated. Close ConEmu.</li>
+		<li>Replace the color table in the palette tag with the dracula color table
+(see <code>conemu/dracula.xml</code>, there are 32 color values), save the <code>ConEmu.xml</code>.</li>
+		<li>Reopen ConEmu.</li>
+		<li>Notice that ConEmu's color scheme may not change in the later version, because
+the <code>&lt;Current color scheme&gt;</code> is used by ConEmu instead of the <code>dracula</code>, you need
+to go to <code>Features -> Colors -> Schemes</code> and switch to <code>dracula</code>.</li>
+	</ol>
+</div>
+
+
+	</main>
+
+	</div>
+
+	<p class="credits">Made with <span class="love">♥</span> by <a class="green" href="https://zenorocha.com" target="blank">Zeno Rocha</a><br>and a <a class="cyan" href="https://github.com/dracula/conemu/graphs/contributors" target="blank">bunch of awesome contributors</a> under <a class="orange" href="http://zenorocha.mit-license.org/" target="blank">MIT license</a></p>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-4114546-40', 'auto');
+	ga('send', 'pageview');
+	</script>
+
+</body>
+</html>
