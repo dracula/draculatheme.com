@@ -25,3 +25,4 @@ malarkey(document.querySelector('.rotating'), {
   .type('Mintty').pause().delete()
   .type('Brackets').pause().delete()
   .type('Wox').pause().delete()
+  .type('Hyper').pause().delete()
