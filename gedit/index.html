@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Zeno Rocha">
-	<meta name="description" content="A dark theme for Konsole and more">
+	<meta name="description" content="A dark theme for Gedit and more">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta property="og:title" content="Dracula · Konsole">
-	<meta property="og:description" content="A dark theme for Konsole and more">
+	<meta property="og:title" content="Dracula · Gedit">
+	<meta property="og:description" content="A dark theme for Gedit and more">
 	<meta property="og:url" content="https://dracula.github.io/">
 	<meta property="og:image" content="https://dracula.github.io/assets/img/facebook.png">
 
-	<title>Dracula &mdash; A dark theme for Konsole and more</title>
+	<title>Dracula &mdash; A dark theme for Gedit and more</title>
 
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" >
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -20,15 +20,15 @@
 	<script src="https://use.typekit.net/ybn2zyq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="orange">
+<body class="purple">
 	<div class="container-fluid">
 		<header class="header row center-xs">
 			<div class="col-xs-12">
 				<a href="../">
-					<img src="../assets/img/icons/candies.png" width="198" height="184" alt="Konsole">
+					<img src="../assets/img/icons/cauldron.png" width="198" height="184" alt="Gedit">
 					<h1 class="title">Dracula</h1>
 				</a>
-				<h2 class="subtitle">A dark theme for Konsole <a href="../">and more</a></h2>
+				<h2 class="subtitle">A dark theme for Gedit <a href="../">and more</a></h2>
 				<p class="gh-btns">
 					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
 					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
@@ -38,29 +38,28 @@
 
 	<main class="wrapper">
 		
-<img class="preview" src="../assets/img/screenshots/konsole.png" alt="Theme Preview" width="829" height="699">
+<img class="preview" src="../assets/img/screenshots/gedit.png" alt="Theme Preview" width="1063" height="671">
 
 <div class="instructions">
-	<h3>Konsole</h3>
+	<h3>Gedit</h3>
 
-	<h4>Install manually</h4>
+	<h4>Install</h4>
 
-	<p>Download using the <a href="https://github.com/dracula/konsole/archive/master.zip">GitHub .zip download</a> option and unzip them.</p>
+	<p>1. Download the raw file:</p>
 
-	<h4>Activating theme</h4>
+	<pre><code>$ wget https://raw.githubusercontent.com/dracula/gedit/master/gedit/dracula.xml</code></pre>
 
-	<ol>
-		<li>Copy <code>Dracula.colorscheme</code> to <code>~/.local/share/konsole</code></li>
-		<li>Go to <em>Konsole > Settings > Edit Current Profile&hellip; > Appearance</em> tab</li>
-		<li>Select the <em>Dracula</em> scheme from the <em>Color Schemes &amp; Background&hellip;</em> pane</li>
-	</ol>
+	<p>2. Move the file to gedit style's folder:</p>
+
+	<pre><code>$ mv dracula.xml $HOME/.local/share/gedit/styles/</code></pre>
+
+	<p>3. Activate in Gedit's preferences dialog</p>
 </div>
-
 	</main>
 
 	</div>
 
-	<p class="credits">Made with <span class="love">♥</span> by <a class="green" href="https://zenorocha.com" target="blank">Zeno Rocha</a><br>and a <a class="cyan" href="https://github.com/dracula/konsole/graphs/contributors" target="blank">bunch of awesome contributors</a> under <a class="orange" href="http://zenorocha.mit-license.org/" target="blank">MIT license</a></p>
+	<p class="credits">Made with <span class="love">♥</span> by <a class="green" href="https://zenorocha.com" target="blank">Zeno Rocha</a><br>and a <a class="cyan" href="https://github.com/dracula/coda/graphs/contributors" target="blank">bunch of awesome contributors</a> under <a class="orange" href="http://zenorocha.mit-license.org/" target="blank">MIT license</a></p>
 
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
