@@ -26,3 +26,4 @@ malarkey(document.querySelector('.rotating'), {
   .type('Brackets').pause().delete()
   .type('Wox').pause().delete()
   .type('Hyper').pause().delete()
+  .type('Konsole').pause().delete()
