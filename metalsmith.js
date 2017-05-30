@@ -20,6 +20,8 @@ metalsmith
   .use(plugins.metadata(config.metadata))
   .use(plugins.filemetadata(config.filemetadata))
   .use(plugins.assets(config.assets))
+  .use(plugins.metallic())
+  .use(plugins.markdown())
   .use(plugins.layouts(config.layouts))
   .use(plugins.inPlace(config.inPlace));
 
