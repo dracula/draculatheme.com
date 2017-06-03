@@ -23,3 +23,7 @@ malarkey(document.querySelector('.rotating'), {
   .type('JetBrains').pause().delete()
   .type('Visual Studio').pause().delete()
   .type('Mintty').pause().delete()
+  .type('Brackets').pause().delete()
+  .type('Wox').pause().delete()
+  .type('Hyper').pause().delete()
+  .type('Konsole').pause().delete()

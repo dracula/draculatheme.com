@@ -15,7 +15,7 @@ We use [Metalsmith](http://www.metalsmith.io/), a static generator in NodeJS.
 2. Now clone this repository:
 
     ```sh
-    $ git clone git://github.com/zenorocha/dracula-theme.git
+    $ git clone https://github.com/dracula/dracula-theme.git
     ```
 
 3. Then go to the project's folder:

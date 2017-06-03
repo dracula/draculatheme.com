@@ -40,6 +40,28 @@ body {
     margin: 45px 0 0 25px;
 }
 
+/* Categories
+   ========================================================================== */
+
+.category-title {
+	margin: 0 0 40px;
+	font-size: 48px;
+	text-align: center;
+	font-family: "abril-text";
+}
+
+.category-title.orange { color: #ffb86c; }
+.category-title.cyan { color: #8be9fd; }
+.category-title.purple { color: #bd93f9; }
+
+.category-title.tilt-right {
+	transform: rotate(10deg);
+}
+
+.category-title.tilt-left {
+	transform: rotate(-10deg);
+}
+
 /* App
    ========================================================================== */
 
@@ -165,7 +187,11 @@ pre {
 ol {
 	font-size: 1.1em;
 	font-weight: 300;
-	margin-left: 25px;
+	margin: 0 0 20px 30px;
+}
+
+p {
+	margin: 0 0 .5em 0;
 }
 
 a {
@@ -234,11 +260,15 @@ a {
 }
 
 .green .title,
-.green .subtitle a {
+.green .subtitle a,
+.green .instructions a,
+.green .instructions h3,
+.green .instructions code {
 	color: rgb(80, 250, 123);
 }
 
-.green .subtitle a:hover {
+.green .subtitle a:hover,
+.green .instructions a:hover {
 	color: rgba(80, 250, 123, .7);
 }
 

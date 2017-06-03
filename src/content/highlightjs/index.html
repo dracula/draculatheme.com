@@ -1,0 +1,42 @@
+---
+title: Highlight.js
+color: cyan
+layout: theme.html
+icon: skull
+icon_width: 198
+icon_height: 182
+repo: highlightjs
+---
+
+<img class="preview" src="{{ baseurl }}/assets/img/screenshots/highlightjs.png" alt="Theme Preview" width="1098" height="874">
+
+<div class="instructions">
+	<h3><a href="https://highlightjs.org/">Highlight.js</a></h3>
+
+	<h4>Install using Git</h4>
+	<p>If you are a git user, you can install the theme and keep up to date by cloning the repo:</p>
+
+	<pre><code>$ git clone https://github.com/dracula/highlightjs.git</code></pre>
+
+	<h4>Install manually</h4>
+
+	<p>Download using the <a href="https://github.com/dracula/highlightjs/archive/master.zip">GitHub .zip download</a> option and unzip them.</p>
+
+	<h4>Activating theme</h4>
+
+	<p>1. Copy <code>dracula.css</code> to your desired directory.</p>
+
+	<p>2. Include the theme in your html. <code>&lt;link rel="stylesheet" href="dracula.css"&gt;</code></p>
+
+	<p>In the end, your page should look something like this:</p>
+
+	<pre><code>&lt;link rel="stylesheet" href="dracula.css"&gt;
+&lt;script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+&lt;pre&gt;&lt;code class="javascript"&gt;
+// Scary function
+function scare(who) {
+  console.log(who, 'your blood is mine');
+}
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+</div>
