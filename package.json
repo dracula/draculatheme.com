@@ -21,6 +21,7 @@
     "metalsmith-metallic": "^1.0.0",
     "metalsmith-metaobject": "^0.1.0",
     "metalsmith-partial": "^0.1.0",
+    "metalsmith-request": "^2.0.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-watch": "^1.0.1",
     "pretty-hrtime": "^1.0.0"

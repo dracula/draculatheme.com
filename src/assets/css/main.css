@@ -292,3 +292,23 @@ a {
 	height: auto;
 	max-width: 100%;
 }
+
+.contributors {
+	margin: 1em 0 .3em;
+}
+
+.contributors li {
+	display: inline-block;
+	list-style: none;
+	margin: 0 1em 1em 0;
+}
+
+.contributors li a img {
+	background: white;
+	border: 3px solid #546179;
+	border-radius: 5px;
+}
+
+.contributors li a p {
+	text-align: center;
+}
