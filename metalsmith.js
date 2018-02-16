@@ -19,7 +19,10 @@ metalsmith
   .destination(config.destination)
   .use(plugins.metadata(config.metadata))
   .use(plugins.filemetadata(config.filemetadata))
+  .use(plugins.request(config.request, { json: true }))
   .use(plugins.assets(config.assets))
+  .use(plugins.metallic())
+  .use(plugins.markdown())
   .use(plugins.layouts(config.layouts))
   .use(plugins.inPlace(config.inPlace));
 

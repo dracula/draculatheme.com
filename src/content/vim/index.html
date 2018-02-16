@@ -5,12 +5,13 @@ layout: theme.html
 icon: eye
 icon_width: 168
 icon_height: 170
+repo: vim
 ---
 
 <img class="preview" src="{{ baseurl }}/assets/img/screenshots/vim.png" alt="Theme Preview" width="830" height="578">
 
 <div class="instructions">
-	<h3>Vim</h3>
+	<h3><a href="http://www.vim.org/">Vim</a></h3>
 
 	<h4>Install using Git</h4>
 	<p>If you <a href="http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/">use vim + pathogen</a>:</p>
@@ -22,11 +23,13 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pr
 :PluginInstall</code></pre>
 
 	<p>If you <a href="https://github.com/junegunn/vim-plug">use vim-plug</a> (`as` will install the plugin in a directory called 'dracula' instead of just 'vim'):</p>
-    <pre><code>Plug 'dracula/vim', { 'as': 'dracula' }
+  <pre><code>Plug 'dracula/vim', { 'as': 'dracula' }
 :PlugInstall</code></pre>
 
-	<p>If you aren't so clever just move the <code>dracula.vim</code> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
+	<p>If you aren't so clever just move the <a href="https://github.com/dracula/vim/blob/master/colors/dracula.vim">dracula.vim</a> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
 
 	<pre><code>syntax on
 color dracula</code></pre>
+
+	{{> contributors contributors=vim repo=repo }}
 </div>

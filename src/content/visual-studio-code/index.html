@@ -5,12 +5,13 @@ layout: theme.html
 icon: tombstone
 icon_width: 238
 icon_height: 190
+repo: visual-studio-code
 ---
 
 <img class="preview" src="{{ baseurl }}/assets/img/screenshots/vscode.png" alt="Theme Preview" width="832" height="700">
 
 <div class="instructions">
-    <h3>Visual Studio Code</h3>
+    <h3><a href="https://code.visualstudio.com/">Visual Studio Code</a></h3>
 
     <h4>Install using Command Palette</h4>
 
@@ -25,13 +26,14 @@ icon_height: 190
 
     <p>If you are a git user, you can install the theme and keep up to date by cloning the repo:</p>
 
-    <pre><code>$ git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula</code></pre>
-
-    <h4>Install manually</h4>
-
-    <p>Download using the <a href="https://github.com/dracula/visual-studio-code/archive/master.zip">GitHub .zip download</a> option and unzip them.</p>
+    <pre><code>$ git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula
+$ cd ~/.vscode/extensions/theme-dracula
+$ npm install
+$ npm run build</code></pre>
 
     <h4>Activating theme</h4>
 
     <p>Run Visual Studio Code. The Dracula Syntax Theme will be available from <code>File -> Preferences -> Color Theme</code> dropdown menu.</p>
+
+    {{> contributors contributors=visualstudiocode repo=repo }}
 </div>
