@@ -1,0 +1,43 @@
+---
+title: BBEdit
+color: purple
+layout: theme.html
+icon: broom
+icon_width: 186
+icon_height: 202
+repo: bbedit
+---
+
+<img class="preview" src="{{ baseurl }}/assets/img/screenshots/bbedit.png" alt="Theme Preview" width="752" height="597">
+
+<div class="instructions">
+	<h3><a href="http://www.barebones.com/products/bbedit/">BBEdit</a></h3>
+
+	<h4>Install using Git</h4>
+
+	<p>If you are a git user, you can install the theme and keep up to date by cloning the repo:</p>
+
+	<pre><code>$ git clone https://github.com/dracula/bbedit</code></pre>
+
+	<p>Then manually install the file from there.</p>
+
+	<h4>Install manually</h4>
+
+	<ol>
+		<li>Download using the <a href="https://github.com/dracula/bbedit/archive/master.zip">GitHub .zip download</a> option</li>
+		<li>Unzip the files</li>
+		<li>Find your <code>Application Support/BBEdit/Color Schemes/</code> directory.
+			<ul>
+				<li>It is usually at <code>~/Library/Application Support/BBEdit/Color Schemes/</code></li>
+				<li>If you explicitly set it up this way, it may be in your personal Dropbox or iCloud directory</li>
+			</ul>
+		</li>
+		<li>Copy the file <code>Dracula.bbColorScheme</code> into the <code>Color Schemes</code> directory</li>
+	</ol>
+
+	<h4>Activating theme</h4>
+
+	<p>Go to <code>Preferences</code> -> <code>Text Colors</code> and select <code>Dracula</code> from the <code>Color Scheme:</code> popup menu.</p>
+
+	{{> contributors contributors=bbedit repo=repo }}
+</div>
