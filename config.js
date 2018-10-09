@@ -26,6 +26,7 @@ module.exports = {
     coda: 'https://contributors-dracula.wedeploy.io/coda',
     conemu: 'https://contributors-dracula.wedeploy.io/conemu',
     emacs: 'https://contributors-dracula.wedeploy.io/emacs',
+    duckduckgo: 'https://contributors-dracula.wedeploy.io/duckduckgo',
     gedit: 'https://contributors-dracula.wedeploy.io/gedit',
     highlightjs: 'https://contributors-dracula.wedeploy.io/highlightjs',
     hyper: 'https://contributors-dracula.wedeploy.io/hyper',
