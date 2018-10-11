@@ -1,0 +1,76 @@
+---
+title: PowerShell
+color: pink
+layout: theme.html
+icon: frankenstein
+icon_width: 175
+icon_height: 150
+repo: powershell
+---
+
+<img class="preview" src="{{ baseurl }}/assets/img/screenshots/powershell.png" alt="PowerShell Theme Preview" width="860">
+
+<div class="instructions">
+    <h3><a href="https://github.com/PowerShell/PowerShell">PowerShell Console</a></h3>
+    <p>A dark theme for the Windows 10 Console, supports both PowerShell and cmd.exe.</p>
+
+    <h4>Theme Installation</h4>
+    <ol>
+        <li>
+            <a href="https://raw.githubusercontent.com/waf/dracula-cmd/master/dist/ColorTool.zip" rel="nofollow">Download and unzip</a> ColorTool.
+            The <a href="https://github.com/Microsoft/console/tree/master/tools/ColorTool">source code</a> is available from Microsoft.
+        </li>
+        <li>
+            Open PowerShell, navigate to unzipped <code>ColorTool</code> directory,
+            and run <code>ColorTool.exe -b Dracula.ini</code>.
+        </li>
+        <li>
+            Right-click on the window titlebar and choose <code>Properties</code>, then
+            on the <code>Font</code> tab choose Consolas. Click <code>OK</code> to save.
+            <ul>
+                <li>
+                    Note that this step is required, even if your font is already set to
+                    Consolas, due to the way that the windows console saves its settings.
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <p>For cmd.exe support, perform the same steps above but in a cmd.exe window.</p>
+
+    <h4>PowerShell prompt</h4>
+    <ol>
+        <li>
+            Install the 1.0 version of posh-git.
+            <ul>
+                <li>
+                    It's currently prerelease, so you'll need to install it with
+                    <code>Install-Module -Name posh-git -AllowPrerelease -Force</code>
+                </li>
+                <li>
+                    If you don't have an <code>-AllowPrerelease</code> flag, upgrade
+                    PowerShellGet with <code>Install-Module -Name PowerShellGet -Force</code>
+                    first.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Ensure the latest version of PSReadLine (2.0 or later) is installed.
+            It's installed by default in Windows 10, but you'll most likely
+            <a href="https://github.com/lzybkr/PSReadLine#user-content-upgrading">need to upgrade it</a>.
+        </li>
+        <li>
+            Include <a href="https://github.com/dracula/powershell/blob/master/theme/dracula-prompt-configuration.ps1">this powershell configuration</a>
+            in your PowerShell <code>$profile</code> file.
+        </li>
+    </ol>
+
+    <h4>cmd.exe prompt</h4>
+    <p>Set the environment variable <code>prompt</code> to
+    <code>$E[1;32;40m→ $E[1;36;40m$p$E[1;35;40m› $E[1;37;40m</code></p>
+
+    <h4>Questions?</h4>
+    See our <a href="https://github.com/dracula/powershell#frequently-asked-questions">FAQ section</a>
+    for answers, or <a href="https://github.com/dracula/powershell/issues">open an issue</a> for help.
+
+    {{> contributors contributors=powershell repo=repo }}
+</div>
