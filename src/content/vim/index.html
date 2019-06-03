@@ -31,5 +31,13 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula</code></pre>
 	<pre><code>syntax on
 colorscheme dracula</code></pre>
 
+        <p>Note that dracula must be in your <code>'runtimepath'</code> to load properly: Version 2.0 introduced autoload functionality for part of the plugin, which doesn't work without <code>'runtimepath'</code> properly set.</p>
+
+        <p>For users of Vim 8's <code>|packages|</code> feature, it suffices to put</p>
+
+        <pre><code>packadd! dracula</code></pre>
+
+        <p>in your vimrc, alongside <code>syntax on</code> and <code>colorscheme dracula</code>. For users of other plugin managers, consult your documentation to make sure you put dracula on the <code>'runtimepath'</code> before loading it.</p>
+
 	{{> contributors contributors=vim repo=repo }}
 </div>
