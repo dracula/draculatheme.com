@@ -16,10 +16,10 @@ repo: vim
 	<h4>Install using Git</h4>
 	<p>If you <a href="http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/">use vim + pathogen</a>:</p>
 	<pre><code>cd ~/.vim
-git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pre>
+git submodule add git@github.com:dracula/vim.git bundle/dracula</code></pre>
 
 	<p>If you <a href="https://github.com/gmarik/vundle">use vim + vundle</a>:</p>
-    <pre><code>Plugin 'dracula/vim'
+    <pre><code>Plugin 'dracula/vim', { 'name': 'dracula' }
 :PluginInstall</code></pre>
 
 	<p>If you <a href="https://github.com/junegunn/vim-plug">use vim-plug</a> (`as` will install the plugin in a directory called 'dracula' instead of just 'vim'):</p>
@@ -29,7 +29,15 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pr
 	<p>If you aren't so clever just move the <a href="https://github.com/dracula/vim/blob/master/colors/dracula.vim">dracula.vim</a> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
 
 	<pre><code>syntax on
-color dracula</code></pre>
+colorscheme dracula</code></pre>
+
+        <p>Note that dracula must be in your <code>'runtimepath'</code> to load properly: Version 2.0 introduced autoload functionality for part of the plugin, which doesn't work without <code>'runtimepath'</code> properly set.</p>
+
+        <p>For users of Vim 8's <code>|packages|</code> feature, it suffices to put</p>
+
+        <pre><code>packadd! dracula</code></pre>
+
+        <p>in your vimrc, alongside <code>syntax on</code> and <code>colorscheme dracula</code>. For users of other plugin managers, consult your documentation to make sure you put dracula on the <code>'runtimepath'</code> before loading it.</p>
 
 	{{> contributors contributors=vim repo=repo }}
 </div>
