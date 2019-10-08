@@ -47,10 +47,10 @@
 	<h4>Install using Git</h4>
 	<p>If you <a href="http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/">use vim + pathogen</a>:</p>
 	<pre><code>cd ~/.vim
-git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pre>
+git submodule add git@github.com:dracula/vim.git bundle/dracula</code></pre>
 
 	<p>If you <a href="https://github.com/gmarik/vundle">use vim + vundle</a>:</p>
-    <pre><code>Plugin 'dracula/vim'
+    <pre><code>Plugin 'dracula/vim', { 'name': 'dracula' }
 :PluginInstall</code></pre>
 
 	<p>If you <a href="https://github.com/junegunn/vim-plug">use vim-plug</a> (`as` will install the plugin in a directory called 'dracula' instead of just 'vim'):</p>
@@ -60,163 +60,21 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula-theme</code></pr
 	<p>If you aren't so clever just move the <a href="https://github.com/dracula/vim/blob/master/colors/dracula.vim">dracula.vim</a> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
 
 	<pre><code>syntax on
-color dracula</code></pre>
+colorscheme dracula</code></pre>
+
+        <p>Note that dracula must be in your <code>'runtimepath'</code> to load properly: Version 2.0 introduced autoload functionality for part of the plugin, which doesn't work without <code>'runtimepath'</code> properly set.</p>
+
+        <p>For users of Vim 8's <code>|packages|</code> feature, it suffices to put</p>
+
+        <pre><code>packadd! dracula</code></pre>
+
+        <p>in your vimrc, alongside <code>syntax on</code> and <code>colorscheme dracula</code>. For users of other plugin managers, consult your documentation to make sure you put dracula on the <code>'runtimepath'</code> before loading it.</p>
 
 	<h3>Contributors</h3>
 	
 	<p>This theme wouldn't exist without these people. Wanna help too? Check the <a class="cyan" href="https://github.com/dracula/vim" target="blank">repository on GitHub</a>.</p>
 	
 	<ul class="contributors">
-			<li>
-				<a href="https://github.com/dsifford" target="_blank">
-					<img src="https://avatars0.githubusercontent.com/u/5240018?v&#x3D;4&s=160" alt="dsifford" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/heinst" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/1607028?v&#x3D;4&s=160" alt="heinst" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/zenorocha" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/398893?v&#x3D;4&s=160" alt="zenorocha" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/benknoble" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/22802209?v&#x3D;4&s=160" alt="benknoble" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/nesl247" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/1037526?v&#x3D;4&s=160" alt="nesl247" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/BlakeWilliams" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/342554?v&#x3D;4&s=160" alt="BlakeWilliams" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/lucazz" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/6126301?v&#x3D;4&s=160" alt="lucazz" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/hzchirs" target="_blank">
-					<img src="https://avatars0.githubusercontent.com/u/4735528?v&#x3D;4&s=160" alt="hzchirs" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/niclas-ahden" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/702088?v&#x3D;4&s=160" alt="niclas-ahden" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/raulchen" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/2883335?v&#x3D;4&s=160" alt="raulchen" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/ashchan" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/1391?v&#x3D;4&s=160" alt="ashchan" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/siwatts" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/14802483?v&#x3D;4&s=160" alt="siwatts" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/cousine" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/75551?v&#x3D;4&s=160" alt="cousine" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/andrepolischuk" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/8956796?v&#x3D;4&s=160" alt="andrepolischuk" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/BrandonMathis" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/362269?v&#x3D;4&s=160" alt="BrandonMathis" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/blmayer" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/8171037?v&#x3D;4&s=160" alt="blmayer" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/fourwood" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/1944536?v&#x3D;4&s=160" alt="fourwood" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/dkarter" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/551858?v&#x3D;4&s=160" alt="dkarter" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/nuxlli" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/8738?v&#x3D;4&s=160" alt="nuxlli" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/film42" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/1043908?v&#x3D;4&s=160" alt="film42" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/solarmerry" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/3915630?v&#x3D;4&s=160" alt="solarmerry" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/5t111111" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/333180?v&#x3D;4&s=160" alt="5t111111" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/numbcoder" target="_blank">
-					<img src="https://avatars0.githubusercontent.com/u/281076?v&#x3D;4&s=160" alt="numbcoder" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/l-catallo" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/2939295?v&#x3D;4&s=160" alt="l-catallo" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/darookee" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/104579?v&#x3D;4&s=160" alt="darookee" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/orlandohohmeier" target="_blank">
-					<img src="https://avatars3.githubusercontent.com/u/647035?v&#x3D;4&s=160" alt="orlandohohmeier" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/rdavison" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/630055?v&#x3D;4&s=160" alt="rdavison" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/sdemura" target="_blank">
-					<img src="https://avatars1.githubusercontent.com/u/11758459?v&#x3D;4&s=160" alt="sdemura" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/topecongiro" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/21980157?v&#x3D;4&s=160" alt="topecongiro" width="80">
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/slofurno" target="_blank">
-					<img src="https://avatars2.githubusercontent.com/u/2799533?v&#x3D;4&s=160" alt="slofurno" width="80">
-				</a>
-			</li>
 	</ul></div>
 
 	</main>

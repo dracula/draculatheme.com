@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Zeno Rocha">
+	<meta name="description" content="A dark theme for PowerShell and 50+ apps">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="Dracula · PowerShell">
+	<meta property="og:description" content="A dark theme for PowerShell and 50+ apps">
+	<meta property="og:url" content="https://dracula.github.io/">
+	<meta property="og:image" content="https://dracula.github.io/assets/img/facebook.png">
+
+	<title>Dracula &mdash; A dark theme for PowerShell and 50+ apps</title>
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" >
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/highlight.css">
+	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+	<script src="https://use.typekit.net/ybn2zyq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body class="pink">
+	<div class="container-fluid">
+		<header class="header row center-xs">
+			<div class="col-xs-12">
+				<a href="../">
+					<img src="../assets/img/icons/frankenstein.png" width="175" height="150" alt="PowerShell">
+					<h1 class="title">Dracula</h1>
+				</a>
+				<h2 class="subtitle">A dark theme for PowerShell <a href="../">and 50+ apps</a></h2>
+				<p class="gh-btns">
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
+				</p>
+			</div>
+		</header>
+
+	<main class="wrapper">
+		
+<img class="preview" src="../assets/img/screenshots/powershell.png" alt="PowerShell Theme Preview" width="860">
+
+<div class="instructions">
+    <h3><a href="https://github.com/PowerShell/PowerShell">PowerShell Console</a></h3>
+    <p>A dark theme for the Windows 10 Console, supports both PowerShell and cmd.exe.</p>
+
+    <h4>Theme Installation</h4>
+    <ol>
+        <li>
+            <a href="https://raw.githubusercontent.com/dracula/powershell/master/dist/ColorTool.zip" rel="nofollow">Download and unzip</a> ColorTool.
+            The <a href="https://github.com/Microsoft/console/tree/master/tools/ColorTool">source code</a> is available from Microsoft.
+        </li>
+        <li>
+            Open PowerShell, navigate to unzipped <code>ColorTool</code> directory,
+            and run <code>ColorTool.exe -b Dracula.ini</code>.
+        </li>
+        <li>
+            Right-click on the window titlebar and choose <code>Properties</code>, then
+            on the <code>Font</code> tab choose Consolas. Click <code>OK</code> to save.
+            <ul>
+                <li>
+                    Note that this step is required, even if your font is already set to
+                    Consolas, due to the way that the windows console saves its settings.
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <p>For cmd.exe support, perform the same steps above but in a cmd.exe window.</p>
+
+    <h4>PowerShell prompt</h4>
+    <ol>
+        <li>
+            Install the 1.0 version of posh-git.
+            <ul>
+                <li>
+                    It's currently prerelease, so you'll need to install it with
+                    <code>Install-Module -Name posh-git -AllowPrerelease -Force</code>
+                </li>
+                <li>
+                    If you don't have an <code>-AllowPrerelease</code> flag, upgrade
+                    PowerShellGet with <code>Install-Module -Name PowerShellGet -Force</code>
+                    first.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Ensure the latest version of PSReadLine (2.0 or later) is installed.
+            It's installed by default in Windows 10, but you'll most likely
+            <a href="https://github.com/lzybkr/PSReadLine#user-content-upgrading">need to upgrade it</a>.
+        </li>
+        <li>
+            Include <a href="https://github.com/dracula/powershell/blob/master/theme/dracula-prompt-configuration.ps1">this powershell configuration</a>
+            in your PowerShell <code>$profile</code> file.
+        </li>
+    </ol>
+
+    <h4>cmd.exe prompt</h4>
+    <p>Set the environment variable <code>prompt</code> to
+    <code>$E[1;32;40m→ $E[1;36;40m$p$E[1;35;40m› $E[1;37;40m</code></p>
+
+    <h4>Questions?</h4>
+    See our <a href="https://github.com/dracula/powershell#frequently-asked-questions">FAQ section</a>
+    for answers, or <a href="https://github.com/dracula/powershell/issues">open an issue</a> for help.
+
+    <h3>Contributors</h3>
+    
+    <p>This theme wouldn't exist without these people. Wanna help too? Check the <a class="cyan" href="https://github.com/dracula/powershell" target="blank">repository on GitHub</a>.</p>
+    
+    <ul class="contributors">
+    </ul></div>
+
+<style>
+    li > ul {
+        margin-left: 20px;
+    }
+</style>
+
+	</main>
+
+	</div>
+
+	<p class="credits">Made with <span class="love">♥</span> by <a class="green" href="https://zenorocha.com" target="blank">Zeno Rocha</a><br>under <a class="orange" href="http://zenorocha.mit-license.org/" target="blank">MIT license</a></p>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-4114546-40', 'auto');
+	ga('send', 'pageview');
+	</script>
+
+</body>
+</html>
