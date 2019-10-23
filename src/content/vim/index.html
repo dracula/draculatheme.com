@@ -26,11 +26,6 @@ git submodule add git@github.com:dracula/vim.git bundle/dracula</code></pre>
   <pre><code>Plug 'dracula/vim', { 'as': 'dracula' }
 :PlugInstall</code></pre>
 
-	<p>If you aren't so clever just move the <a href="https://github.com/dracula/vim/blob/master/colors/dracula.vim">dracula.vim</a> file into <code>~/.vim/colors</code> and add the following lines into your vimrc file:</p>
-
-	<pre><code>syntax on
-colorscheme dracula</code></pre>
-
         <p>Note that dracula must be in your <code>'runtimepath'</code> to load properly: Version 2.0 introduced autoload functionality for part of the plugin, which doesn't work without <code>'runtimepath'</code> properly set.</p>
 
         <p>For users of Vim 8's <code>|packages|</code> feature, it suffices to put</p>
