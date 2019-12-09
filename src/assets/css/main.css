@@ -215,7 +215,8 @@ a {
 .orange .subtitle a,
 .orange .instructions a,
 .orange .instructions h3,
-.orange .instructions code {
+.orange .instructions code,
+.orange .form input[type=email] {
 	color: rgba(255, 184, 108, 1);
 }
 
@@ -223,11 +224,16 @@ a {
 	color: rgba(255, 184, 108, .7);
 }
 
+.orange .form input[type=submit] {
+	background: rgba(255, 184, 108, 1);
+}
+
 .pink .title,
 .pink .subtitle a,
 .pink .instructions a,
 .pink .instructions h3,
-.pink .instructions code {
+.pink .instructions code,
+.pink .form input[type=email] {
 	color: rgba(255, 121, 198, 1);
 }
 
@@ -235,11 +241,16 @@ a {
 	color: rgba(255, 121, 198, .7);
 }
 
+.pink .form input[type=submit] {
+	background: rgba(255, 121, 198, 1);
+}
+
 .cyan .title,
 .cyan .subtitle a,
 .cyan .instructions a,
 .cyan .instructions h3,
-.cyan .instructions code {
+.cyan .instructions code,
+.cyan .form input[type=email] {
 	color: rgba(139, 233, 253, 1);
 }
 
@@ -247,11 +258,16 @@ a {
 	color: rgba(139, 233, 253, .7);
 }
 
+.cyan .form input[type=submit] {
+	background: rgba(139, 233, 253, 1)
+}
+
 .purple .title,
 .purple .subtitle a,
 .purple .instructions a,
 .purple .instructions h3,
-.purple .instructions code {
+.purple .instructions code,
+.purple .form input[type=email] {
 	color: rgba(189, 147, 249, 1);
 }
 
@@ -259,17 +275,26 @@ a {
 	color: rgba(189, 147, 249, .7);
 }
 
+.purple .form input[type=submit] {
+	background: rgba(189, 147, 249, 1);
+}
+
 .green .title,
 .green .subtitle a,
 .green .instructions a,
 .green .instructions h3,
-.green .instructions code {
+.green .instructions code,
+.green .form input[type=email] {
 	color: rgb(80, 250, 123);
 }
 
 .green .subtitle a:hover,
 .green .instructions a:hover {
 	color: rgba(80, 250, 123, .7);
+}
+
+.green .form input[type=submit] {
+	background: rgb(80, 250, 123);
 }
 
 .wrapper {
@@ -311,4 +336,71 @@ a {
 
 .contributors li a p {
 	text-align: center;
+}
+
+/* Updates
+   ========================================================================== */
+
+.form {
+	max-width: 400px;
+	margin-bottom: .5em;
+}
+
+.form:before,
+.form:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+.form:after {
+	clear: both;
+}
+
+.form * {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box !important;
+	float: left !important;
+}
+
+.form input[type=email] {
+	border-radius: 4px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	font-family: "source-sans-pro";
+	font-size: 15px;
+	line-height: 20px;
+	background: #252525;
+	border-right: 0;
+	padding: 10px;
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+	background-position: top right;
+	background-repeat: no-repeat;
+	text-rendering: optimizeLegibility;
+	font-smoothing: antialiased;
+	-webkit-appearance: none;
+	-moz-appearance: caret;
+	width: 65% !important;
+	height: 40px !important;
+}
+
+.form input[type=submit] {
+	border-radius: 4px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+	-webkit-transition: all .05s ease-in-out;
+	transition: all .05s ease-in-out;
+	display: inline-block;
+	padding: 11px 15px 12px;
+	cursor: pointer;
+	color: #000;
+	font-size: 15px;
+	line-height: 100%;
+    font-family: "source-sans-pro";
+	height: 40px !important;
+	width: 35% !important;
 }

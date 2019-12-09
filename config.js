@@ -68,6 +68,7 @@ module.exports = {
     directory: 'src/layouts',
     partials: {
       contributors: '../partials/contributors',
+      updates: '../partials/updates',
       header: '../partials/header',
       footer: '../partials/footer'
     }
