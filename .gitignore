@@ -1,3 +1,4 @@
-dist
+.env
+.next
 node_modules
-npm-debug.log
+out

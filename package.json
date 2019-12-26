@@ -1,29 +1,22 @@
 {
-  "private": true,
+  "name": "dracula.github.io",
+  "version": "3.0.0",
+  "description": "A dark website for an amazing theme",
   "scripts": {
-    "start": "node metalsmith build",
-    "deploy": "node metalsmith deploy",
-    "watch": "node metalsmith watch"
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "next build && next export && gh-pages -d out -b master"
   },
+  "author": "Zeno Rocha",
+  "license": "MIT",
   "dependencies": {
-    "chalk": "^1.0.0",
-    "gh-pages": "^0.11.0",
-    "handlebars": "^4.0.14",
-    "load-metalsmith-plugins": "^0.1.1",
-    "metalsmith": "^2.1.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-filemetadata": "^1.0.0",
-    "metalsmith-in-place": "^1.4.4",
-    "metalsmith-layouts": "^1.6.5",
-    "metalsmith-less": "^2.0.0",
-    "metalsmith-markdown": "^0.2.2",
-    "metalsmith-metadata": "0.0.4",
-    "metalsmith-metallic": "^2.0.2",
-    "metalsmith-metaobject": "^0.1.0",
-    "metalsmith-partial": "^0.1.0",
-    "metalsmith-request": "^2.0.0",
-    "metalsmith-serve": "0.0.7",
-    "metalsmith-watch": "^1.0.1",
-    "pretty-hrtime": "^1.0.0"
+    "dotenv": "^8.2.0",
+    "gh-pages": "^2.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "marked": "^0.8.0",
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
