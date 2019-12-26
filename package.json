@@ -8,7 +8,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "gh-pages": "^0.11.0",
-    "handlebars": "^4.0.14",
+    "handlebars": "^4.3.0",
     "load-metalsmith-plugins": "^0.1.1",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
