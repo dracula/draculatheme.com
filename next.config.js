@@ -5,6 +5,7 @@ module.exports = {
   exportPathMap: async function() {
     const paths = {
       '/': { page: '/', query: { title: 'Dracula', color: 'green', icon: 'dracula.svg' } },
+      '/pro': { page: '/pro', query: {} },
       '/alfred': { page: '/[theme]', query: { title: 'Alfred', repo: 'alfred', color: 'purple', icon: 'hat-magic.png' } },
       '/atom': { page: '/[theme]', query: { title: 'Atom', repo: 'atom', color: 'orange', icon: 'glass.png' } },
       '/base16': { page: '/[theme]', query: { title: 'Base16', repo: 'base16-dracula-scheme', color: 'cyan', icon: 'skull.png' } },
@@ -59,7 +60,7 @@ module.exports = {
     };
 
     Object.keys(paths).map(path => {
-      paths[path].query.total = Object.keys(paths).length - 1;
+      paths[path].query.total = Object.keys(paths).length - 2;
     });
 
     if (!process.env.GITHUB_PERSONAL_ACCESS_TOKEN) {

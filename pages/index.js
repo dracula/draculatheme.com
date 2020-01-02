@@ -1,11 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import Theme from '../layouts/Theme';
+import ComingSoon from '../components/ComingSoon';
 
 class Index extends React.Component {
   static async getInitialProps() {
     const query = {
-      color: 'green',
+      color: 'purple',
       icon: 'dracula.svg'
     };
 
@@ -53,6 +54,10 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">Visual Studio Code</h3>
             </a>
+          </div>
+
+          <div style={{ backgroundColor: '#2a2c37', marginRight: '-2rem', marginLeft: '-2rem', marginBottom: '80px', padding: '30px 0 60px' }}>
+            <ComingSoon />
           </div>
 
           <div className="row around-xs">
