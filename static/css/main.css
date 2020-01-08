@@ -236,6 +236,11 @@ a {
 	background: rgba(255, 184, 108, 1);
 }
 
+.orange ::selection {
+  background: rgba(255, 184, 108, 1);
+  color: #000;
+}
+
 .pink .title,
 .pink .subtitle a,
 .pink .theme a,
@@ -251,6 +256,11 @@ a {
 
 .pink .form input[type=submit] {
 	background: rgba(255, 121, 198, 1);
+}
+
+.pink ::selection {
+  background: rgba(255, 121, 198, 1);
+  color: #000;
 }
 
 .cyan .title,
@@ -270,6 +280,11 @@ a {
 	background: rgba(139, 233, 253, 1)
 }
 
+.cyan ::selection {
+  background: rgba(139, 233, 253, 1);
+  color: #000;
+}
+
 .purple .title,
 .purple .subtitle a,
 .purple .theme a,
@@ -287,13 +302,18 @@ a {
 	background: rgba(189, 147, 249, 1);
 }
 
+.purple ::selection {
+  background: rgba(189, 147, 249, 1);
+  color: #000;
+}
+
 .green .title,
 .green .subtitle a,
 .green .theme a,
 .green .theme h3,
 .green .theme code,
 .green .form input[type=email] {
-	color: rgb(80, 250, 123);
+	color: rgba(80, 250, 123, 1);
 }
 
 .green .subtitle a:hover,
@@ -302,7 +322,12 @@ a {
 }
 
 .green .form input[type=submit] {
-	background: rgb(80, 250, 123);
+	background: rgba(80, 250, 123, 1);
+}
+
+.green ::selection {
+  background: rgba(80, 250, 123, 1);
+  color: #000;
 }
 
 .theme {

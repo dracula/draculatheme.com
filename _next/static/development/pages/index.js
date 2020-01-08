@@ -6020,26 +6020,26 @@ function (_React$Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 16
         },
         __self: this
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_7___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 17
         },
         __self: this
       }, __jsx("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 18
         },
         __self: this
       }), __jsx("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 19
         },
         __self: this
       }, title, " \u2014 ", description), __jsx("meta", {
@@ -6047,7 +6047,7 @@ function (_React$Component) {
         property: "og:title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 20
         },
         __self: this
       }), __jsx("meta", {
@@ -6055,7 +6055,7 @@ function (_React$Component) {
         name: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 21
         },
         __self: this
       }), __jsx("meta", {
@@ -6063,7 +6063,7 @@ function (_React$Component) {
         property: "og:description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 22
         },
         __self: this
       }), __jsx("meta", {
@@ -6071,7 +6071,7 @@ function (_React$Component) {
         name: "author",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 23
         },
         __self: this
       }), __jsx("meta", {
@@ -6079,7 +6079,7 @@ function (_React$Component) {
         property: "og:url",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 24
         },
         __self: this
       }), __jsx("meta", {
@@ -6087,34 +6087,34 @@ function (_React$Component) {
         property: "og:image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 25
         },
         __self: this
       })), __jsx("main", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 28
         },
         __self: this
       }, __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 29
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title cyan tilt-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 30
         },
         __self: this
       }, "Featured")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 33
         },
         __self: this
       }, __jsx("a", {
@@ -6122,14 +6122,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 34
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 35
         },
         __self: this
       }, __jsx("img", {
@@ -6139,14 +6139,14 @@ function (_React$Component) {
         alt: "Cauldron",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 36
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 38
         },
         __self: this
       }, "GMK")), __jsx("a", {
@@ -6154,14 +6154,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 40
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 41
         },
         __self: this
       }, __jsx("img", {
@@ -6171,14 +6171,14 @@ function (_React$Component) {
         alt: "Axe",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 42
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 44
         },
         __self: this
       }, "Slack")), __jsx("a", {
@@ -6186,14 +6186,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 46
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 47
         },
         __self: this
       }, __jsx("img", {
@@ -6203,14 +6203,14 @@ function (_React$Component) {
         alt: "Tombstone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 48
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 50
         },
         __self: this
       }, "Visual Studio Code"))), __jsx("div", {
@@ -6223,34 +6223,34 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 54
         },
         __self: this
       }, __jsx(_components_ComingSoon__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 55
         },
         __self: this
       })), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 58
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title orange tilt-left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 59
         },
         __self: this
       }, "Code Editors")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 62
         },
         __self: this
       }, __jsx("a", {
@@ -6258,14 +6258,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 63
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 64
         },
         __self: this
       }, __jsx("img", {
@@ -6275,14 +6275,14 @@ function (_React$Component) {
         alt: "Eye",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 65
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 67
         },
         __self: this
       }, "Vim")), __jsx("a", {
@@ -6290,14 +6290,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 69
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 70
         },
         __self: this
       }, __jsx("img", {
@@ -6307,14 +6307,14 @@ function (_React$Component) {
         alt: "Ghost",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 71
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 73
         },
         __self: this
       }, "Sublime")), __jsx("a", {
@@ -6322,14 +6322,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 75
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 76
         },
         __self: this
       }, __jsx("img", {
@@ -6339,21 +6339,21 @@ function (_React$Component) {
         alt: "Candies",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 77
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 79
         },
         __self: this
       }, "Xcode"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 83
         },
         __self: this
       }, __jsx("a", {
@@ -6361,14 +6361,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 84
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 85
         },
         __self: this
       }, __jsx("img", {
@@ -6378,14 +6378,14 @@ function (_React$Component) {
         alt: "Glass",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 86
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 88
         },
         __self: this
       }, "Atom")), __jsx("a", {
@@ -6393,14 +6393,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 90
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 91
         },
         __self: this
       }, __jsx("img", {
@@ -6410,14 +6410,14 @@ function (_React$Component) {
         alt: "Tombstone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 92
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 94
         },
         __self: this
       }, "Visual Studio Code")), __jsx("a", {
@@ -6425,14 +6425,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 96
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 97
         },
         __self: this
       }, __jsx("img", {
@@ -6442,21 +6442,21 @@ function (_React$Component) {
         alt: "Bat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 98
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 100
         },
         __self: this
       }, "Notepad++"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 104
         },
         __self: this
       }, __jsx("a", {
@@ -6464,14 +6464,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 105
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 106
         },
         __self: this
       }, __jsx("img", {
@@ -6481,14 +6481,14 @@ function (_React$Component) {
         alt: "Spider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 107
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 109
         },
         __self: this
       }, "Emacs")), __jsx("a", {
@@ -6496,14 +6496,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 111
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 112
         },
         __self: this
       }, __jsx("img", {
@@ -6513,14 +6513,14 @@ function (_React$Component) {
         alt: "Frankenstein",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 113
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title pink",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 115
         },
         __self: this
       }, "JetBrains")), __jsx("a", {
@@ -6528,14 +6528,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 117
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 118
         },
         __self: this
       }, __jsx("img", {
@@ -6545,21 +6545,21 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 119
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 121
         },
         __self: this
       }, "Visual Studio"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 125
         },
         __self: this
       }, __jsx("a", {
@@ -6567,14 +6567,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 126
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 127
         },
         __self: this
       }, __jsx("img", {
@@ -6584,14 +6584,14 @@ function (_React$Component) {
         alt: "Cauldron",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 128
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 130
         },
         __self: this
       }, "Coda")), __jsx("a", {
@@ -6599,14 +6599,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 132
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 133
         },
         __self: this
       }, __jsx("img", {
@@ -6616,14 +6616,14 @@ function (_React$Component) {
         alt: "Ghost",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 134
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 136
         },
         __self: this
       }, "Brackets")), __jsx("a", {
@@ -6631,14 +6631,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 138
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 139
         },
         __self: this
       }, __jsx("img", {
@@ -6648,21 +6648,21 @@ function (_React$Component) {
         alt: "Pumpkin",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 140
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 142
         },
         __self: this
       }, "Light Table"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 146
         },
         __self: this
       }, __jsx("a", {
@@ -6670,14 +6670,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 147
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 148
         },
         __self: this
       }, __jsx("img", {
@@ -6687,14 +6687,14 @@ function (_React$Component) {
         alt: "Skull",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154
+          lineNumber: 149
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 151
         },
         __self: this
       }, "TextMate")), __jsx("a", {
@@ -6702,14 +6702,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 153
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 154
         },
         __self: this
       }, __jsx("img", {
@@ -6719,14 +6719,14 @@ function (_React$Component) {
         alt: "Moon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 155
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 157
         },
         __self: this
       }, "Gedit")), __jsx("a", {
@@ -6734,14 +6734,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 159
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 160
         },
         __self: this
       }, __jsx("img", {
@@ -6751,21 +6751,21 @@ function (_React$Component) {
         alt: "Candle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166
+          lineNumber: 161
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 163
         },
         __self: this
       }, "Pythonista"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 167
         },
         __self: this
       }, __jsx("a", {
@@ -6773,14 +6773,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 168
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 169
         },
         __self: this
       }, __jsx("img", {
@@ -6790,14 +6790,14 @@ function (_React$Component) {
         alt: "Eye",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 170
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 172
         },
         __self: this
       }, "LightPaper")), __jsx("a", {
@@ -6805,14 +6805,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 174
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 175
         },
         __self: this
       }, __jsx("img", {
@@ -6822,14 +6822,14 @@ function (_React$Component) {
         alt: "Spider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 176
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 178
         },
         __self: this
       }, "MonoDevelop")), __jsx("a", {
@@ -6837,14 +6837,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 180
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 181
         },
         __self: this
       }, __jsx("img", {
@@ -6854,21 +6854,21 @@ function (_React$Component) {
         alt: "Candies",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 182
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 184
         },
         __self: this
       }, "Qt Creator"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 188
         },
         __self: this
       }, __jsx("a", {
@@ -6876,14 +6876,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 189
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 190
         },
         __self: this
       }, __jsx("img", {
@@ -6893,14 +6893,14 @@ function (_React$Component) {
         alt: "Glass",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 191
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 193
         },
         __self: this
       }, "Kate")), __jsx("a", {
@@ -6908,14 +6908,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 195
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 196
         },
         __self: this
       }, __jsx("img", {
@@ -6925,35 +6925,35 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 202
+          lineNumber: 197
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 199
         },
         __self: this
       }, "BBEdit"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208
+          lineNumber: 203
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title purple tilt-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 204
         },
         __self: this
       }, "Terminal")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 207
         },
         __self: this
       }, __jsx("a", {
@@ -6961,14 +6961,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 208
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 209
         },
         __self: this
       }, __jsx("img", {
@@ -6978,14 +6978,14 @@ function (_React$Component) {
         alt: "Pumpkin",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 215
+          lineNumber: 210
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 212
         },
         __self: this
       }, "iTerm")), __jsx("a", {
@@ -6993,14 +6993,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 214
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 220
+          lineNumber: 215
         },
         __self: this
       }, __jsx("img", {
@@ -7010,14 +7010,14 @@ function (_React$Component) {
         alt: "Cauldron",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 216
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 218
         },
         __self: this
       }, "Hyper")), __jsx("a", {
@@ -7025,14 +7025,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 220
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 226
+          lineNumber: 221
         },
         __self: this
       }, __jsx("img", {
@@ -7042,21 +7042,21 @@ function (_React$Component) {
         alt: "Bat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 222
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 224
         },
         __self: this
       }, "Zsh"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 228
         },
         __self: this
       }, __jsx("a", {
@@ -7064,14 +7064,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 229
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 230
         },
         __self: this
       }, __jsx("img", {
@@ -7081,14 +7081,14 @@ function (_React$Component) {
         alt: "Candle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 236
+          lineNumber: 231
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 233
         },
         __self: this
       }, "Terminal.app")), __jsx("a", {
@@ -7096,14 +7096,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 235
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241
+          lineNumber: 236
         },
         __self: this
       }, __jsx("img", {
@@ -7113,14 +7113,14 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 237
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244
+          lineNumber: 239
         },
         __self: this
       }, "Mintty")), __jsx("a", {
@@ -7128,14 +7128,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246
+          lineNumber: 241
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247
+          lineNumber: 242
         },
         __self: this
       }, __jsx("img", {
@@ -7145,21 +7145,21 @@ function (_React$Component) {
         alt: "Tombstone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 243
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 245
         },
         __self: this
       }, "Mutt"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 254
+          lineNumber: 249
         },
         __self: this
       }, __jsx("a", {
@@ -7167,14 +7167,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 250
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 251
         },
         __self: this
       }, __jsx("img", {
@@ -7184,14 +7184,14 @@ function (_React$Component) {
         alt: "Candies",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 252
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 254
         },
         __self: this
       }, "Konsole")), __jsx("a", {
@@ -7199,14 +7199,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 256
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 257
         },
         __self: this
       }, __jsx("img", {
@@ -7216,14 +7216,14 @@ function (_React$Component) {
         alt: "Magic Hat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263
+          lineNumber: 258
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265
+          lineNumber: 260
         },
         __self: this
       }, "ConEmu")), __jsx("a", {
@@ -7231,14 +7231,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267
+          lineNumber: 262
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 268
+          lineNumber: 263
         },
         __self: this
       }, __jsx("img", {
@@ -7248,21 +7248,21 @@ function (_React$Component) {
         alt: "Cone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 269
+          lineNumber: 264
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 266
         },
         __self: this
       }, "Xresources"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 270
         },
         __self: this
       }, __jsx("a", {
@@ -7270,14 +7270,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 276
+          lineNumber: 271
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277
+          lineNumber: 272
         },
         __self: this
       }, __jsx("img", {
@@ -7287,35 +7287,35 @@ function (_React$Component) {
         alt: "Frankenstein",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 278
+          lineNumber: 273
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title pink",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 280
+          lineNumber: 275
         },
         __self: this
       }, "PowerShell"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 279
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title cyan tilt-left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 280
         },
         __self: this
       }, "Syntax Highlight")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288
+          lineNumber: 283
         },
         __self: this
       }, __jsx("a", {
@@ -7324,14 +7324,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 284
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290
+          lineNumber: 285
         },
         __self: this
       }, __jsx("img", {
@@ -7341,14 +7341,14 @@ function (_React$Component) {
         alt: "Moon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 291
+          lineNumber: 286
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 293
+          lineNumber: 288
         },
         __self: this
       }, "CodeMirror")), __jsx("a", {
@@ -7356,14 +7356,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 295
+          lineNumber: 290
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 296
+          lineNumber: 291
         },
         __self: this
       }, __jsx("img", {
@@ -7373,14 +7373,14 @@ function (_React$Component) {
         alt: "Skull",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 297
+          lineNumber: 292
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 299
+          lineNumber: 294
         },
         __self: this
       }, "Highlight.js")), __jsx("a", {
@@ -7388,14 +7388,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301
+          lineNumber: 296
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 302
+          lineNumber: 297
         },
         __self: this
       }, __jsx("img", {
@@ -7405,35 +7405,35 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 303
+          lineNumber: 298
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305
+          lineNumber: 300
         },
         __self: this
       }, "Pygments"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 309
+          lineNumber: 304
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title purple tilt-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 310
+          lineNumber: 305
         },
         __self: this
       }, "Messaging")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 313
+          lineNumber: 308
         },
         __self: this
       }, __jsx("a", {
@@ -7441,14 +7441,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 314
+          lineNumber: 309
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 315
+          lineNumber: 310
         },
         __self: this
       }, __jsx("img", {
@@ -7458,14 +7458,14 @@ function (_React$Component) {
         alt: "Axe",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 316
+          lineNumber: 311
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 318
+          lineNumber: 313
         },
         __self: this
       }, "Slack")), __jsx("a", {
@@ -7473,14 +7473,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 320
+          lineNumber: 315
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 321
+          lineNumber: 316
         },
         __self: this
       }, __jsx("img", {
@@ -7490,14 +7490,14 @@ function (_React$Component) {
         alt: "Candle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 322
+          lineNumber: 317
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 324
+          lineNumber: 319
         },
         __self: this
       }, "Telegram")), __jsx("a", {
@@ -7505,14 +7505,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326
+          lineNumber: 321
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 327
+          lineNumber: 322
         },
         __self: this
       }, __jsx("img", {
@@ -7522,21 +7522,21 @@ function (_React$Component) {
         alt: "Glass",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328
+          lineNumber: 323
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 330
+          lineNumber: 325
         },
         __self: this
       }, "Textual"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 334
+          lineNumber: 329
         },
         __self: this
       }, __jsx("a", {
@@ -7544,14 +7544,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 335
+          lineNumber: 330
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 336
+          lineNumber: 331
         },
         __self: this
       }, __jsx("img", {
@@ -7561,14 +7561,14 @@ function (_React$Component) {
         alt: "Candies",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 337
+          lineNumber: 332
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 339
+          lineNumber: 334
         },
         __self: this
       }, "Quassel")), __jsx("a", {
@@ -7576,14 +7576,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 341
+          lineNumber: 336
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 342
+          lineNumber: 337
         },
         __self: this
       }, __jsx("img", {
@@ -7593,35 +7593,35 @@ function (_React$Component) {
         alt: "Bat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 343
+          lineNumber: 338
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 345
+          lineNumber: 340
         },
         __self: this
       }, "XChat"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 349
+          lineNumber: 344
         },
         __self: this
       }, __jsx("h2", {
         className: "category-title orange tilt-left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 350
+          lineNumber: 345
         },
         __self: this
       }, "Miscellaneous")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 353
+          lineNumber: 348
         },
         __self: this
       }, __jsx("a", {
@@ -7629,14 +7629,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 354
+          lineNumber: 349
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 355
+          lineNumber: 350
         },
         __self: this
       }, __jsx("img", {
@@ -7646,14 +7646,14 @@ function (_React$Component) {
         alt: "Magic Hat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 356
+          lineNumber: 351
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 358
+          lineNumber: 353
         },
         __self: this
       }, "Alfred")), __jsx("a", {
@@ -7661,14 +7661,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 360
+          lineNumber: 355
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 361
+          lineNumber: 356
         },
         __self: this
       }, __jsx("img", {
@@ -7678,14 +7678,14 @@ function (_React$Component) {
         alt: "Skull",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 362
+          lineNumber: 357
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 364
+          lineNumber: 359
         },
         __self: this
       }, "Base16")), __jsx("a", {
@@ -7693,14 +7693,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 366
+          lineNumber: 361
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 367
+          lineNumber: 362
         },
         __self: this
       }, __jsx("img", {
@@ -7710,21 +7710,21 @@ function (_React$Component) {
         alt: "Candies",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 368
+          lineNumber: 363
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 370
+          lineNumber: 365
         },
         __self: this
       }, "GitHub Pages"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 374
+          lineNumber: 369
         },
         __self: this
       }, __jsx("a", {
@@ -7732,14 +7732,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 375
+          lineNumber: 370
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 376
+          lineNumber: 371
         },
         __self: this
       }, __jsx("img", {
@@ -7749,14 +7749,14 @@ function (_React$Component) {
         alt: "Axe",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 377
+          lineNumber: 372
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 379
+          lineNumber: 374
         },
         __self: this
       }, "Gitk")), __jsx("a", {
@@ -7764,14 +7764,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 381
+          lineNumber: 376
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 382
+          lineNumber: 377
         },
         __self: this
       }, __jsx("img", {
@@ -7781,14 +7781,14 @@ function (_React$Component) {
         alt: "Cauldron",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 383
+          lineNumber: 378
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 385
+          lineNumber: 380
         },
         __self: this
       }, "GMK")), __jsx("a", {
@@ -7796,14 +7796,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 387
+          lineNumber: 382
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 388
+          lineNumber: 383
         },
         __self: this
       }, __jsx("img", {
@@ -7813,21 +7813,21 @@ function (_React$Component) {
         alt: "Cone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 389
+          lineNumber: 384
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 391
+          lineNumber: 386
         },
         __self: this
       }, "Sequel Pro"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 395
+          lineNumber: 390
         },
         __self: this
       }, __jsx("a", {
@@ -7835,14 +7835,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 396
+          lineNumber: 391
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 397
+          lineNumber: 392
         },
         __self: this
       }, __jsx("img", {
@@ -7852,14 +7852,14 @@ function (_React$Component) {
         alt: "Ghost",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 398
+          lineNumber: 393
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 400
+          lineNumber: 395
         },
         __self: this
       }, "React DevTools")), __jsx("a", {
@@ -7867,14 +7867,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 402
+          lineNumber: 397
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 403
+          lineNumber: 398
         },
         __self: this
       }, __jsx("img", {
@@ -7884,14 +7884,14 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 404
+          lineNumber: 399
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 406
+          lineNumber: 401
         },
         __self: this
       }, "MacDown")), __jsx("a", {
@@ -7899,14 +7899,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 408
+          lineNumber: 403
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 409
+          lineNumber: 404
         },
         __self: this
       }, __jsx("img", {
@@ -7916,21 +7916,21 @@ function (_React$Component) {
         alt: "Candle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 410
+          lineNumber: 405
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 412
+          lineNumber: 407
         },
         __self: this
       }, "Mindnode"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 416
+          lineNumber: 411
         },
         __self: this
       }, __jsx("a", {
@@ -7938,14 +7938,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 417
+          lineNumber: 412
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 418
+          lineNumber: 413
         },
         __self: this
       }, __jsx("img", {
@@ -7955,14 +7955,14 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 419
+          lineNumber: 414
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 421
+          lineNumber: 416
         },
         __self: this
       }, "Nylas N1")), __jsx("a", {
@@ -7970,14 +7970,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 423
+          lineNumber: 418
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 424
+          lineNumber: 419
         },
         __self: this
       }, __jsx("img", {
@@ -7987,14 +7987,14 @@ function (_React$Component) {
         alt: "Glass",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 425
+          lineNumber: 420
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 427
+          lineNumber: 422
         },
         __self: this
       }, "Ulysses")), __jsx("a", {
@@ -8002,14 +8002,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 429
+          lineNumber: 424
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 430
+          lineNumber: 425
         },
         __self: this
       }, __jsx("img", {
@@ -8019,21 +8019,21 @@ function (_React$Component) {
         alt: "Moon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 431
+          lineNumber: 426
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 433
+          lineNumber: 428
         },
         __self: this
       }, "Quiver"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 437
+          lineNumber: 432
         },
         __self: this
       }, __jsx("a", {
@@ -8041,14 +8041,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 438
+          lineNumber: 433
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 439
+          lineNumber: 434
         },
         __self: this
       }, __jsx("img", {
@@ -8058,14 +8058,14 @@ function (_React$Component) {
         alt: "Bat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 440
+          lineNumber: 435
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 442
+          lineNumber: 437
         },
         __self: this
       }, "Vivaldi")), __jsx("a", {
@@ -8073,14 +8073,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 444
+          lineNumber: 439
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 445
+          lineNumber: 440
         },
         __self: this
       }, __jsx("img", {
@@ -8090,44 +8090,41 @@ function (_React$Component) {
         alt: "Eye",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 446
+          lineNumber: 441
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 448
+          lineNumber: 443
         },
         __self: this
       }, "Wox")))), __jsx("script", {
         src: "https://wzrd.in/standalone/malarkey@1.3.3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 453
+          lineNumber: 448
         },
         __self: this
       }), __jsx("script", {
         src: "/static/js/main.js",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 454
+          lineNumber: 449
         },
         __self: this
       }));
     }
   }], [{
     key: "getInitialProps",
-    value: function getInitialProps() {
+    value: function getInitialProps(_ref) {
       var query;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getInitialProps$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              query = {
-                color: 'purple',
-                icon: 'dracula.svg'
-              };
+              query = _ref.query;
               return _context.abrupt("return", {
                 query: query
               });
@@ -8149,7 +8146,7 @@ Index.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__["default"];
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js ***!
   \********************************************************************************************************************************************/
@@ -8172,5 +8169,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
