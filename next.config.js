@@ -4,7 +4,7 @@ module.exports = {
   exportTrailingSlash: true,
   exportPathMap: async function() {
     const paths = {
-      '/': { page: '/', query: { title: 'Dracula', color: 'green', icon: 'dracula.svg' } },
+      '/': { page: '/', query: { title: 'Dracula', color: 'purple', icon: 'dracula.svg' } },
       '/pro': { page: '/pro', query: {} },
       '/alfred': { page: '/[theme]', query: { title: 'Alfred', repo: 'alfred', color: 'purple', icon: 'hat-magic.png' } },
       '/atom': { page: '/[theme]', query: { title: 'Atom', repo: 'atom', color: 'orange', icon: 'glass.png' } },

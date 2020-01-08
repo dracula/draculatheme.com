@@ -4,12 +4,7 @@ import Theme from '../layouts/Theme';
 import ComingSoon from '../components/ComingSoon';
 
 class Index extends React.Component {
-  static async getInitialProps() {
-    const query = {
-      color: 'purple',
-      icon: 'dracula.svg'
-    };
-
+  static async getInitialProps({ query }) {
     return { query };
   }
 
