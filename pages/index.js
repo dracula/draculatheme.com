@@ -226,6 +226,27 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/windows-terminal/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
+              </span>
+              <h3 className="app-title cyan">Windows Terminal</h3>
+            </a>
+            <a href="/tilix/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/moon.png" width="168" height="168" alt="Moon" />
+              </span>
+              <h3 className="app-title orange">Tilix</h3>
+            </a>
+            <a href="/termux/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
+              </span>
+              <h3 className="app-title purple">Termux</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/terminal/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/candle.png" width="198" height="184" alt="Candle" />
@@ -247,6 +268,27 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/kitty/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/skull.png" width="198" height="182" alt="Skull" />
+              </span>
+              <h3 className="app-title cyan">Kitty</h3>
+            </a>
+            <a href="/gnome-terminal/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+              </span>
+              <h3 className="app-title orange">Gnome Terminal</h3>
+            </a>
+            <a href="/mobaxterm/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/ghost.png" width="198" height="181" alt="Ghost" />
+              </span>
+              <h3 className="app-title cyan">MobaXterm</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/konsole/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
@@ -264,6 +306,27 @@ class Index extends React.Component {
                 <img src="/static/img/icons/cone.png" width="168" height="189" alt="Cone" />
               </span>
               <h3 className="app-title orange">Xresources</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/alacritty/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/axe.png" width="198" height="174" alt="Axe" />
+              </span>
+              <h3 className="app-title cyan">Alacritty</h3>
+            </a>
+            <a href="/cmder/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/glass.png" width="174" height="204" alt="Glass" />
+              </span>
+              <h3 className="app-title orange">Cmder</h3>
+            </a>
+            <a href="/fish/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cauldron.png" width="198" height="184" alt="Cauldron" />
+              </span>
+              <h3 className="app-title purple">Fish</h3>
             </a>
           </div>
 
