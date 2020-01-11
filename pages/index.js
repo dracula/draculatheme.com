@@ -549,6 +549,27 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/blender/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
+              </span>
+              <h3 className="app-title cyan">Blender</h3>
+            </a>
+            <a href="/couscous/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/frankenstein.png" width="175" height="150" alt="Frankenstein" />
+              </span>
+              <h3 className="app-title pink">Couscous</h3>
+            </a>
+            <a href="/duckduckgo/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+              </span>
+              <h3 className="app-title purple">DuckDuckGo</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/gitk/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/axe.png" width="198" height="174" alt="Axe" />
@@ -587,6 +608,48 @@ class Index extends React.Component {
                 <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
               </span>
               <h3 className="app-title cyan">Nylas N1</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/oracle-sql-developer/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cone.png" width="168" height="189" alt="Cone" />
+              </span>
+              <h3 className="app-title orange">Oracle SQL Developer</h3>
+            </a>
+            <a href="/jgrasp/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/hat-magic.png" width="237" height="196" alt="Magic Hat" />
+              </span>
+              <h3 className="app-title purple">jGrasp</h3>
+            </a>
+            <a href="/i3/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
+              </span>
+              <h3 className="app-title orange">i3</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/steam/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/tombstone.png" width="238" height="190" alt="Tombstone" />
+              </span>
+              <h3 className="app-title purple">Steam</h3>
+            </a>
+            <a href="/vimium/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/pumpkin.png" width="198" height="182" alt="Pumpkin" />
+              </span>
+              <h3 className="app-title orange">Vimium</h3>
+            </a>
+            <a href="/wordpress/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
+              </span>
+              <h3 className="app-title purple">Wordpress</h3>
             </a>
           </div>
         </main>
