@@ -499,7 +499,7 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
-            <h2 className="category-title cyan tilt-left">Miscellaneous</h2>
+            <h2 className="category-title cyan tilt-right">Launchers</h2>
           </div>
 
           <div className="row around-xs">
@@ -509,6 +509,25 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">Alfred</h3>
             </a>
+            <a href="/ulauncher/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
+              </span>
+              <h3 className="app-title orange">Ulauncher</h3>
+            </a>
+            <a href="/wox/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
+              </span>
+              <h3 className="app-title purple">Wox</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <h2 className="category-title purple tilt-left">Miscellaneous</h2>
+          </div>
+
+          <div className="row around-xs">
             <a href="/base16/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/skull.png" width="198" height="182" alt="Skull" />
@@ -520,6 +539,12 @@ class Index extends React.Component {
                 <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
               </span>
               <h3 className="app-title orange">GitHub Pages</h3>
+            </a>
+            <a href="/vivaldi/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
+              </span>
+              <h3 className="app-title cyan">Vivaldi</h3>
             </a>
           </div>
 
@@ -562,21 +587,6 @@ class Index extends React.Component {
                 <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
               </span>
               <h3 className="app-title cyan">Nylas N1</h3>
-            </a>
-          </div>
-
-          <div className="row around-xs">
-            <a href="/vivaldi/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
-              </span>
-              <h3 className="app-title cyan">Vivaldi</h3>
-            </a>
-            <a href="/wox/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
-              </span>
-              <h3 className="app-title purple">Wox</h3>
             </a>
           </div>
         </main>

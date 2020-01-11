@@ -64,6 +64,7 @@ module.exports = {
       '/textual': { page: '/[theme]', query: { title: 'Textual', repo: 'textual', color: 'orange', icon: 'glass.png' } },
       '/tilix': { page: '/[theme]', query: { title: 'Tilix', repo: 'tilix', color: 'orange', icon: 'moon.png' } },
       '/typora': { page: '/[theme]', query: { title: 'Typora', repo: 'typora', color: 'purple', icon: 'cauldron.png' } },
+      '/ulauncher': { page: '/[theme]', query: { title: 'Ulauncher', repo: 'ulauncher', color: 'orange', icon: 'candies.png' } },
       '/ulysses': { page: '/[theme]', query: { title: 'Ulysses', repo: 'ulysses', color: 'orange', icon: 'glass.png' } },
       '/vim': { page: '/[theme]', query: { title: 'Vim', repo: 'vim', color: 'purple', icon: 'eye.png' } },
       '/visual-studio': { page: '/[theme]', query: { title: 'Visual Studio', repo: 'visual-studio', color: 'purple', icon: 'broom.png' } },
