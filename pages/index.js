@@ -165,6 +165,27 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/arduino-ide/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/tombstone.png" width="238" height="190" alt="Tombstone" />
+              </span>
+              <h3 className="app-title purple">Arduino IDE</h3>
+            </a>
+            <a href="/coteditor/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/axe.png" width="198" height="174" alt="Axe" />
+              </span>
+              <h3 className="app-title cyan">CotEditor</h3>
+            </a>
+            <a href="/geany/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cone.png" width="168" height="189" alt="Cone" />
+              </span>
+              <h3 className="app-title orange">Geany</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/lightpaper/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
@@ -186,17 +207,23 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/bbedit/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+              </span>
+              <h3 className="app-title purple">BBEdit</h3>
+            </a>
             <a href="/kate/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/glass.png" width="174" height="204" alt="Glass" />
               </span>
               <h3 className="app-title orange">Kate</h3>
             </a>
-            <a href="/bbedit/" className="app col-xs-12 col-sm-2">
+            <a href="/wing/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+                <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
               </span>
-              <h3 className="app-title purple">BBEdit</h3>
+              <h3 className="app-title cyan">Wing</h3>
             </a>
           </div>
 
