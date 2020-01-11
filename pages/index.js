@@ -379,7 +379,28 @@ class Index extends React.Component {
               <span className="app-img">
                 <img src="/static/img/icons/candle.png" width="198" height="184" alt="Candle" />
               </span>
-              <h3 className="app-title purple">Telegram</h3>
+              <h3 className="app-title purple">Telegram Desktop</h3>
+            </a>
+            <a href="/telegram-android/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cone.png" width="168" height="189" alt="Cone" />
+              </span>
+              <h3 className="app-title orange">Telegram Android</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/facebook-messenger/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cauldron.png" width="198" height="184" alt="Cauldron" />
+              </span>
+              <h3 className="app-title purple">Facebook Messenger</h3>
+            </a>
+            <a href="/limechat/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/ghost.png" width="198" height="181" alt="Ghost" />
+              </span>
+              <h3 className="app-title cyan">LimeChat</h3>
             </a>
             <a href="/textual/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
@@ -390,6 +411,12 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <a href="/mattermost/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/pumpkin.png" width="198" height="182" alt="Pumpkin" />
+              </span>
+              <h3 className="app-title orange">Mattermost</h3>
+            </a>
             <a href="/quassel/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
