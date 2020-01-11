@@ -213,6 +213,21 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">BBEdit</h3>
             </a>
+            <a href="/editplus/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
+              </span>
+              <h3 className="app-title cyan">Editplus</h3>
+            </a>
+            <a href="/gamemaker-studio/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/frankenstein.png" width="175" height="150" alt="Frankenstein" />
+              </span>
+              <h3 className="app-title pink">GameMaker Studio</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/kate/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/glass.png" width="174" height="204" alt="Glass" />
