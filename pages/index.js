@@ -405,7 +405,47 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
-            <h2 className="category-title orange tilt-left">Miscellaneous</h2>
+            <h2 className="category-title orange tilt-left">Notes</h2>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/bear/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/ghost.png" width="198" height="181" alt="Ghost" />
+              </span>
+              <h3 className="app-title cyan">Bear</h3>
+            </a>
+            <a href="/ulysses/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/glass.png" width="174" height="204" alt="Glass" />
+              </span>
+              <h3 className="app-title orange">Ulysses</h3>
+            </a>
+            <a href="/macdown/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+              </span>
+              <h3 className="app-title purple">MacDown</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/typora/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cauldron.png" width="198" height="184" alt="Cauldron" />
+              </span>
+              <h3 className="app-title purple">Typora</h3>
+            </a>
+            <a href="/quiver/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/moon.png" width="168" height="168" alt="Moon" />
+              </span>
+              <h3 className="app-title orange">Quiver</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <h2 className="category-title cyan tilt-left">Miscellaneous</h2>
           </div>
 
           <div className="row around-xs">
@@ -457,38 +497,17 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title cyan">React DevTools</h3>
             </a>
-            <a href="/macdown/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
-              </span>
-              <h3 className="app-title purple">MacDown</h3>
-            </a>
             <a href="/mindnode/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/candle.png" width="198" height="184" alt="Candle" />
               </span>
               <h3 className="app-title purple">Mindnode</h3>
             </a>
-          </div>
-
-          <div className="row around-xs">
             <a href="/nylas-n1/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
               </span>
               <h3 className="app-title cyan">Nylas N1</h3>
-            </a>
-            <a href="/ulysses/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/glass.png" width="174" height="204" alt="Glass" />
-              </span>
-              <h3 className="app-title orange">Ulysses</h3>
-            </a>
-            <a href="/quiver/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/moon.png" width="168" height="168" alt="Moon" />
-              </span>
-              <h3 className="app-title orange">Quiver</h3>
             </a>
           </div>
 
