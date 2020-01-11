@@ -31,17 +31,17 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
-            <a href="/gmk/" className="app col-xs-12 col-sm-2">
+            <a href="/notepad-plus-plus/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/cauldron.png" width="198" height="184" alt="Cauldron" />
+                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
               </span>
-              <h3 className="app-title purple">GMK</h3>
+              <h3 className="app-title cyan">Notepad++</h3>
             </a>
-            <a href="/slack/" className="app col-xs-12 col-sm-2">
+            <a href="/iterm/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/axe.png" width="198" height="174" alt="Axe" />
+                <img src="/static/img/icons/pumpkin.png" width="198" height="182" alt="Pumpkin" />
               </span>
-              <h3 className="app-title cyan">Slack</h3>
+              <h3 className="app-title orange">iTerm</h3>
             </a>
             <a href="/visual-studio-code/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
@@ -93,20 +93,20 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">Visual Studio Code</h3>
             </a>
-            <a href="/notepad-plus-plus/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
-              </span>
-              <h3 className="app-title cyan">Notepad++</h3>
-            </a>
-          </div>
-
-          <div className="row around-xs">
             <a href="/emacs/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
               </span>
               <h3 className="app-title cyan">Emacs</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/notepad-plus-plus/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
+              </span>
+              <h3 className="app-title cyan">Notepad++</h3>
             </a>
             <a href="/jetbrains/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
