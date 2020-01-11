@@ -6118,7 +6118,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("a", {
-        href: "/gmk/",
+        href: "/notepad-plus-plus/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -6133,24 +6133,24 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/cauldron.png",
-        width: "198",
-        height: "184",
-        alt: "Cauldron",
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title purple",
+        className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
         },
         __self: this
-      }, "GMK")), __jsx("a", {
-        href: "/slack/",
+      }, "Notepad++")), __jsx("a", {
+        href: "/iterm/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -6165,23 +6165,23 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/axe.png",
+        src: "/static/img/icons/pumpkin.png",
         width: "198",
-        height: "174",
-        alt: "Axe",
+        height: "182",
+        alt: "Pumpkin",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title cyan",
+        className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
         },
         __self: this
-      }, "Slack")), __jsx("a", {
+      }, "iTerm")), __jsx("a", {
         href: "/visual-studio-code/",
         className: "app col-xs-12 col-sm-2",
         __source: {
@@ -6421,7 +6421,7 @@ function (_React$Component) {
         },
         __self: this
       }, "Visual Studio Code")), __jsx("a", {
-        href: "/notepad-plus-plus/",
+        href: "/emacs/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -6436,10 +6436,10 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/bat.png",
-        width: "222",
-        height: "158",
-        alt: "Bat",
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 98
@@ -6452,7 +6452,7 @@ function (_React$Component) {
           lineNumber: 100
         },
         __self: this
-      }, "Notepad++"))), __jsx("div", {
+      }, "Emacs"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
@@ -6460,7 +6460,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("a", {
-        href: "/emacs/",
+        href: "/notepad-plus-plus/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -6475,10 +6475,10 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/spider.png",
-        width: "181",
-        height: "175",
-        alt: "Spider",
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 107
@@ -6491,7 +6491,7 @@ function (_React$Component) {
           lineNumber: 109
         },
         __self: this
-      }, "Emacs")), __jsx("a", {
+      }, "Notepad++")), __jsx("a", {
         href: "/jetbrains/",
         className: "app col-xs-12 col-sm-2",
         __source: {
@@ -9236,7 +9236,7 @@ Index.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__["default"];
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js ***!
   \********************************************************************************************************************************************/
@@ -9259,5 +9259,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
