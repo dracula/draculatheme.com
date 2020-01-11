@@ -9581,7 +9581,7 @@ Theme.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_10__["default"];
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F%5Btheme%5D&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2F%5Btheme%5D.js ***!
   \*************************************************************************************************************************************************************/
@@ -9604,5 +9604,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[theme].js.map
