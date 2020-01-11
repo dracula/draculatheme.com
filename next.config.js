@@ -68,6 +68,7 @@ module.exports = {
       '/telegram': { page: '/[theme]', query: { title: 'Telegram', repo: 'telegram', color: 'purple', icon: 'candle.png' } },
       '/telegram-android': { page: '/[theme]', query: { title: 'Telegram Android', repo: 'telegram-android', color: 'orange', icon: 'cone.png' } },
       '/terminal': { page: '/[theme]', query: { title: 'Terminal.app', repo: 'terminal-app', color: 'purple', icon: 'candle.png' } },
+      '/termite': { page: '/[theme]', query: { title: 'Termite', repo: 'termite', color: 'cyan', icon: 'bat.png' } },
       '/termux': { page: '/[theme]', query: { title: 'Termux', repo: 'termux', color: 'purple', icon: 'eye.png' } },
       '/textmate': { page: '/[theme]', query: { title: 'Textmate', repo: 'textmate', color: 'cyan', icon: 'skull.png' } },
       '/textual': { page: '/[theme]', query: { title: 'Textual', repo: 'textual', color: 'orange', icon: 'glass.png' } },

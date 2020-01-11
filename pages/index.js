@@ -379,6 +379,12 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title pink">PowerShell</h3>
             </a>
+            <a href="/termite/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
+              </span>
+              <h3 className="app-title cyan">Termite</h3>
+            </a>
           </div>
 
           <div className="row around-xs">
