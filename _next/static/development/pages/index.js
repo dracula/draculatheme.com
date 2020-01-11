@@ -7926,7 +7926,7 @@ function (_React$Component) {
           lineNumber: 408
         },
         __self: this
-      }, "Miscellaneous")), __jsx("div", {
+      }, "Notes")), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
@@ -7934,7 +7934,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("a", {
-        href: "/alfred/",
+        href: "/bear/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -7949,24 +7949,24 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/hat-magic.png",
-        width: "237",
-        height: "196",
-        alt: "Magic Hat",
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 414
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title purple",
+        className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 416
         },
         __self: this
-      }, "Alfred")), __jsx("a", {
-        href: "/base16/",
+      }, "Bear")), __jsx("a", {
+        href: "/ulysses/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -7981,24 +7981,24 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/skull.png",
-        width: "198",
-        height: "182",
-        alt: "Skull",
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 420
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title cyan",
+        className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 422
         },
         __self: this
-      }, "Base16")), __jsx("a", {
-        href: "/gh-pages/",
+      }, "Ulysses")), __jsx("a", {
+        href: "/macdown/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -8013,23 +8013,23 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/candies.png",
-        width: "198",
-        height: "184",
-        alt: "Candies",
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 426
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title orange",
+        className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 428
         },
         __self: this
-      }, "GitHub Pages"))), __jsx("div", {
+      }, "MacDown"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
@@ -8037,7 +8037,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("a", {
-        href: "/gitk/",
+        href: "/typora/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -8052,24 +8052,24 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/axe.png",
+        src: "/static/img/icons/cauldron.png",
         width: "198",
-        height: "174",
-        alt: "Axe",
+        height: "184",
+        alt: "Cauldron",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 435
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title cyan",
+        className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 437
         },
         __self: this
-      }, "Gitk")), __jsx("a", {
-        href: "/gmk/",
+      }, "Typora")), __jsx("a", {
+        href: "/quiver/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
@@ -8084,20 +8084,208 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("img", {
-        src: "/static/img/icons/cauldron.png",
-        width: "198",
-        height: "184",
-        alt: "Cauldron",
+        src: "/static/img/icons/moon.png",
+        width: "168",
+        height: "168",
+        alt: "Moon",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 441
         },
         __self: this
       })), __jsx("h3", {
-        className: "app-title purple",
+        className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 443
+        },
+        __self: this
+      }, "Quiver"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 447
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title cyan tilt-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 448
+        },
+        __self: this
+      }, "Miscellaneous")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 451
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/alfred/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 452
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 453
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/hat-magic.png",
+        width: "237",
+        height: "196",
+        alt: "Magic Hat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 454
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 456
+        },
+        __self: this
+      }, "Alfred")), __jsx("a", {
+        href: "/base16/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 458
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 459
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/skull.png",
+        width: "198",
+        height: "182",
+        alt: "Skull",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 460
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 462
+        },
+        __self: this
+      }, "Base16")), __jsx("a", {
+        href: "/gh-pages/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 464
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 465
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 466
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 468
+        },
+        __self: this
+      }, "GitHub Pages"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 472
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/gitk/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 473
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 474
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/axe.png",
+        width: "198",
+        height: "174",
+        alt: "Axe",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 475
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 477
+        },
+        __self: this
+      }, "Gitk")), __jsx("a", {
+        href: "/gmk/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 479
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 480
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 481
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 483
         },
         __self: this
       }, "GMK")), __jsx("a", {
@@ -8105,14 +8293,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 445
+          lineNumber: 485
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 446
+          lineNumber: 486
         },
         __self: this
       }, __jsx("img", {
@@ -8122,21 +8310,21 @@ function (_React$Component) {
         alt: "Cone",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 447
+          lineNumber: 487
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 449
+          lineNumber: 489
         },
         __self: this
       }, "Sequel Pro"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 453
+          lineNumber: 493
         },
         __self: this
       }, __jsx("a", {
@@ -8144,14 +8332,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 454
+          lineNumber: 494
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 455
+          lineNumber: 495
         },
         __self: this
       }, __jsx("img", {
@@ -8161,61 +8349,29 @@ function (_React$Component) {
         alt: "Ghost",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 456
+          lineNumber: 496
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 458
+          lineNumber: 498
         },
         __self: this
       }, "React DevTools")), __jsx("a", {
-        href: "/macdown/",
-        className: "app col-xs-12 col-sm-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 460
-        },
-        __self: this
-      }, __jsx("span", {
-        className: "app-img",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 461
-        },
-        __self: this
-      }, __jsx("img", {
-        src: "/static/img/icons/broom.png",
-        width: "186",
-        height: "202",
-        alt: "Broom",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 462
-        },
-        __self: this
-      })), __jsx("h3", {
-        className: "app-title purple",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 464
-        },
-        __self: this
-      }, "MacDown")), __jsx("a", {
         href: "/mindnode/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 466
+          lineNumber: 500
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 467
+          lineNumber: 501
         },
         __self: this
       }, __jsx("img", {
@@ -8225,36 +8381,29 @@ function (_React$Component) {
         alt: "Candle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 468
+          lineNumber: 502
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 470
+          lineNumber: 504
         },
         __self: this
-      }, "Mindnode"))), __jsx("div", {
-        className: "row around-xs",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 474
-        },
-        __self: this
-      }, __jsx("a", {
+      }, "Mindnode")), __jsx("a", {
         href: "/nylas-n1/",
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 475
+          lineNumber: 506
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 476
+          lineNumber: 507
         },
         __self: this
       }, __jsx("img", {
@@ -8264,85 +8413,21 @@ function (_React$Component) {
         alt: "Broom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 477
+          lineNumber: 508
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 479
+          lineNumber: 510
         },
         __self: this
-      }, "Nylas N1")), __jsx("a", {
-        href: "/ulysses/",
-        className: "app col-xs-12 col-sm-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 481
-        },
-        __self: this
-      }, __jsx("span", {
-        className: "app-img",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 482
-        },
-        __self: this
-      }, __jsx("img", {
-        src: "/static/img/icons/glass.png",
-        width: "174",
-        height: "204",
-        alt: "Glass",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 483
-        },
-        __self: this
-      })), __jsx("h3", {
-        className: "app-title orange",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 485
-        },
-        __self: this
-      }, "Ulysses")), __jsx("a", {
-        href: "/quiver/",
-        className: "app col-xs-12 col-sm-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 487
-        },
-        __self: this
-      }, __jsx("span", {
-        className: "app-img",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 488
-        },
-        __self: this
-      }, __jsx("img", {
-        src: "/static/img/icons/moon.png",
-        width: "168",
-        height: "168",
-        alt: "Moon",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 489
-        },
-        __self: this
-      })), __jsx("h3", {
-        className: "app-title orange",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 491
-        },
-        __self: this
-      }, "Quiver"))), __jsx("div", {
+      }, "Nylas N1"))), __jsx("div", {
         className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 495
+          lineNumber: 514
         },
         __self: this
       }, __jsx("a", {
@@ -8350,14 +8435,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 496
+          lineNumber: 515
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 497
+          lineNumber: 516
         },
         __self: this
       }, __jsx("img", {
@@ -8367,14 +8452,14 @@ function (_React$Component) {
         alt: "Bat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 498
+          lineNumber: 517
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title cyan",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 500
+          lineNumber: 519
         },
         __self: this
       }, "Vivaldi")), __jsx("a", {
@@ -8382,14 +8467,14 @@ function (_React$Component) {
         className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 502
+          lineNumber: 521
         },
         __self: this
       }, __jsx("span", {
         className: "app-img",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 503
+          lineNumber: 522
         },
         __self: this
       }, __jsx("img", {
@@ -8399,28 +8484,28 @@ function (_React$Component) {
         alt: "Eye",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 504
+          lineNumber: 523
         },
         __self: this
       })), __jsx("h3", {
         className: "app-title purple",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 506
+          lineNumber: 525
         },
         __self: this
       }, "Wox")))), __jsx("script", {
         src: "https://wzrd.in/standalone/malarkey@1.3.3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 511
+          lineNumber: 530
         },
         __self: this
       }), __jsx("script", {
         src: "/static/js/main.js",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 512
+          lineNumber: 531
         },
         __self: this
       }));
@@ -8455,7 +8540,7 @@ Index.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__["default"];
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js ***!
   \********************************************************************************************************************************************/
@@ -8478,5 +8563,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
