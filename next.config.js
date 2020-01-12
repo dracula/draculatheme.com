@@ -25,6 +25,7 @@ module.exports = {
       '/emacs': { page: '/[theme]', query: { title: 'Emacs', repo: 'emacs', color: 'cyan', icon: 'spider.png' } },
       '/facebook-messenger': { page: '/[theme]', query: { title: 'Facebook Messenger', repo: 'fb-messenger', color: 'purple', icon: 'cauldron.png' } },
       '/fish': { page: '/[theme]', query: { title: 'Fish', repo: 'fish', color: 'purple', icon: 'cauldron.png' } },
+      '/fluent-terminal': { page: '/[theme]', query: { title: 'Fluent Terminal', repo: 'fluent-terminal', color: 'orange', icon: 'pumpkin.png' } },
       '/gamemaker-studio': { page: '/[theme]', query: { title: 'GameMaker Studio', repo: 'gamemaker-studio', color: 'pink', icon: 'frankenstein.png' } },
       '/geany': { page: '/[theme]', query: { title: 'Geany', repo: 'geany', color: 'orange', icon: 'cone.png' } },
       '/gedit': { page: '/[theme]', query: { title: 'Gedit', repo: 'gedit', color: 'orange', icon: 'moon.png' } },
