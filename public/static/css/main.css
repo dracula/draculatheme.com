@@ -184,6 +184,27 @@ pre {
 	overflow-wrap: break-word;
 }
 
+pre .prefixed {
+  white-space: normal;
+}
+
+pre .line {
+  list-style-type: none!important;
+}
+
+pre .line::before {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  content: attr(prefix);
+  text-align: right;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 ol {
 	font-size: 1.1em;
 	font-weight: 300;

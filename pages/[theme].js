@@ -14,10 +14,47 @@ class Theme extends React.Component {
       }
     };
 
+    const renderer = new marked.Renderer();
+    renderer.code = (code, infostring) => {
+      const lang = (infostring || '').match(/\S*/)[0];
+      const prefixed = code.includes('$ ');
+
+      let codeblock = '<pre>';
+      if (lang) {
+        codeblock += '<code class="'
+          + renderer.options.langPrefix
+          + escape(lang, true)
+          + '">';
+      } else {
+        codeblock += '<code>';
+      }
+
+      if (prefixed) {
+        codeblock += '<ul class="prefixed">';
+
+        const multiline = code.split('\n');
+        multiline.forEach(function(line) {
+          if (line.startsWith('$ ')) {
+          line = line.substr(2);
+          codeblock += '<li class="line" prefix="$">' + line + '</li>'
+          } else {
+            codeblock += '<li class="line">' + line + '</li>'
+          }
+        });
+
+        codeblock += '</ul></code>';
+      } else {
+        codeblock += code + '</code>';
+      }
+
+      codeblock +='</pre>';
+      return codeblock;
+    };
+
     const installReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`, header);
     const installRes = await installReq.json();
     const installBuffer = Buffer.from(installRes.content, 'base64');
-    query.install = marked(installBuffer.toString('ascii'));
+    query.install = marked(installBuffer.toString('ascii'), { renderer });
 
     const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
     const contributors = await contributorsReq.json();

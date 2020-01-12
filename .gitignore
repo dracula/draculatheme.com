@@ -2,3 +2,6 @@
 .next
 node_modules
 out
+
+#Jetbrains
+.idea
