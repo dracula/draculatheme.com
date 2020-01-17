@@ -234,6 +234,12 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title orange">Kate</h3>
             </a>
+            <a href="/jupyterlab/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/candle.png" width="198" height="184" alt="Candle" />
+              </span>
+              <h3 className="app-title purple">JupyterLab</h3>
+            </a>
             <a href="/wing/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
@@ -551,22 +557,52 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
-            <h2 className="category-title purple tilt-left">Miscellaneous</h2>
+            <h2 className="category-title purple tilt-left">Browsers & Extensions</h2>
           </div>
 
           <div className="row around-xs">
-            <a href="/base16/" className="app col-xs-12 col-sm-2">
+            <a href="/chrome/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/skull.png" width="198" height="182" alt="Skull" />
+                <img src="/static/img/icons/cone.png" width="168" height="189" alt="Cone" />
               </span>
-              <h3 className="app-title cyan">Base16</h3>
+              <h3 className="app-title orange">Chrome</h3>
             </a>
-            <a href="/gh-pages/" className="app col-xs-12 col-sm-2">
+            <a href="/firefox/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
+                <img src="/static/img/icons/coffin.png" width="200" height="197" alt="Broom" />
               </span>
-              <h3 className="app-title orange">GitHub Pages</h3>
+              <h3 className="app-title cyan">Firefox</h3>
             </a>
+            <a href="/duckduckgo/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
+              </span>
+              <h3 className="app-title purple">DuckDuckGo</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/react-devtools/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/ghost.png" width="198" height="181" alt="Ghost" />
+              </span>
+              <h3 className="app-title cyan">React DevTools</h3>
+            </a>
+            <a href="/qutebrowser/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/cauldron.png" width="198" height="184" alt="Cauldron" />
+              </span>
+              <h3 className="app-title purple">Qutebrowser</h3>
+            </a>
+            <a href="/vimium/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/pumpkin.png" width="198" height="182" alt="Pumpkin" />
+              </span>
+              <h3 className="app-title orange">Vimium</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/vivaldi/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/bat.png" width="222" height="158" alt="Bat" />
@@ -576,6 +612,16 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <h2 className="category-title orange tilt-right">Miscellaneous</h2>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/base16/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/skull.png" width="198" height="182" alt="Skull" />
+              </span>
+              <h3 className="app-title cyan">Base16</h3>
+            </a>
             <a href="/blender/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
@@ -587,12 +633,6 @@ class Index extends React.Component {
                 <img src="/static/img/icons/frankenstein.png" width="175" height="150" alt="Frankenstein" />
               </span>
               <h3 className="app-title pink">Couscous</h3>
-            </a>
-            <a href="/duckduckgo/" className="app col-xs-12 col-sm-2">
-              <span className="app-img">
-                <img src="/static/img/icons/broom.png" width="186" height="202" alt="Broom" />
-              </span>
-              <h3 className="app-title purple">DuckDuckGo</h3>
             </a>
           </div>
 
@@ -666,12 +706,21 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">Steam</h3>
             </a>
-            <a href="/vimium/" className="app col-xs-12 col-sm-2">
+            <a href="/gh-pages/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
-                <img src="/static/img/icons/pumpkin.png" width="198" height="182" alt="Pumpkin" />
+                <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
               </span>
-              <h3 className="app-title orange">Vimium</h3>
+              <h3 className="app-title orange">GitHub Pages</h3>
             </a>
+            <a href="/insomnia/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
+              </span>
+              <h3 className="app-title cyan">Insomnia</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <a href="/wordpress/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/eye.png" width="168" height="170" alt="Eye" />
