@@ -5,6 +5,7 @@ module.exports = {
   exportPathMap: async function() {
     const paths = {
       '/': { page: '/', query: { title: 'Dracula', color: 'purple', icon: 'dracula.svg' } },
+      '/about': { page: '/about', query: { title: 'About Dracula', color: 'cyan', icon: 'dracula.svg' } },
       '/pro': { page: '/pro', query: {} },
       '/alacritty': { page: '/[theme]', query: { title: 'Alacritty', repo: 'alacritty', color: 'cyan', icon: 'axe.png' } },
       '/alfred': { page: '/[theme]', query: { title: 'Alfred', repo: 'alfred', color: 'purple', icon: 'hat-magic.png' } },
