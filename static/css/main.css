@@ -40,6 +40,56 @@ body {
     margin: 45px 0 0 25px;
 }
 
+/* Navigation
+   ========================================================================== */
+
+nav {
+  display: flex;
+  padding-top: 2rem;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+}
+
+nav ul li {
+  float: right;
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 2px solid transparent;
+}
+
+.cyan nav ul li a:hover {
+  border-color: rgba(139, 233, 253, 1);
+  color: rgba(139, 233, 253, 1);
+}
+
+.green nav ul li a:hover {
+  border-color: rgba(80, 250, 123, 1);
+  color: rgba(80, 250, 123, 1);
+}
+
+.orange nav ul li a:hover {
+  border-color: rgba(255, 184, 108, 1);
+  color: rgba(255, 184, 108, 1);
+}
+
+.pink nav ul li a:hover {
+  border-color: rgba(255, 121, 198, 1);
+  color: rgba(255, 121, 198, 1);
+}
+
+.purple nav ul li a:hover {
+  border-color: rgba(189, 147, 249, 1);
+  color: rgba(189, 147, 249, 1);
+}
+
 /* Categories
    ========================================================================== */
 
@@ -438,4 +488,49 @@ a {
     font-family: "source-sans-pro";
 	height: 40px !important;
 	width: 35% !important;
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about .theme {
+  margin-bottom: 80px;
+}
+
+.about h3 {
+   margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.about a {
+  border-bottom: 2px solid #8be9fd;
+}
+
+.about figure {
+  margin-Bottom: 20px;
+}
+
+.about figure a {
+  border: 0;
+}
+
+.about figure img {
+  border-radius: 10px;
+  border: 5px solid #8be9fd;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.about figure figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+.about .highlight {
+  color: #8be9fd;
 }
