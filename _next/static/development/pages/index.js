@@ -1,4 +1,180 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/about.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+
+/***/ "./components/ComingSoon.js":
+/*!**********************************!*\
+  !*** ./components/ComingSoon.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+var _jsxFileName = "/Users/zeno/Projects/dracula/dracula.github.io/components/ComingSoon.js";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+
+var ComingSoon =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(ComingSoon, _Component);
+
+  function ComingSoon() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ComingSoon);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ComingSoon).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ComingSoon, [{
+    key: "render",
+    value: function render() {
+      return __jsx("div", {
+        className: "jsx-810049475" + " " + "green",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5
+        },
+        __self: this
+      }, __jsx("h1", {
+        style: {
+          marginBottom: 20
+        },
+        className: "jsx-810049475" + " " + "title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        },
+        __self: this
+      }, "Dracula Pro"), __jsx("div", {
+        style: {
+          backgroundColor: '#1d1e26',
+          borderRadius: '10px',
+          margin: '0 auto'
+        },
+        className: "jsx-810049475" + " " + "box",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        },
+        __self: this
+      }, __jsx("h2", {
+        style: {
+          textAlign: 'center',
+          color: '#fff'
+        },
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        },
+        __self: this
+      }, "a new theme is coming."), __jsx("p", {
+        style: {
+          textAlign: 'center',
+          color: 'rgba(255, 255, 255, .6)'
+        },
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        },
+        __self: this
+      }, "Enter your email and we'll put you on the invite list."), __jsx("form", {
+        action: "https://draculatheme.us4.list-manage.com/subscribe/post?u=91b5113403e18d357704e4b08&id=05d188e2db",
+        method: "post",
+        className: "jsx-810049475" + " " + "form",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }, __jsx("input", {
+        style: {
+          display: 'none'
+        },
+        type: "checkbox",
+        value: "1",
+        name: "group[66939][1]",
+        id: "mce-group[66939]-66939-0",
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }), __jsx("input", {
+        style: {
+          display: 'none'
+        },
+        type: "checkbox",
+        value: "2",
+        name: "group[66939][2]",
+        id: "mce-group[66939]-66939-1",
+        defaultChecked: true,
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }), __jsx("input", {
+        style: {
+          fontSize: '18px',
+          backgroundColor: '#333'
+        },
+        name: "EMAIL",
+        placeholder: "your@email.com",
+        id: "mce-EMAIL",
+        type: "email",
+        required: true,
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }), __jsx("input", {
+        style: {
+          fontSize: '18px'
+        },
+        type: "submit",
+        value: "Notify me",
+        name: "subscribe",
+        id: "mc-embedded-subscribe",
+        className: "jsx-810049475",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        id: "810049475",
+        __self: this
+      }, "h2.jsx-810049475{font-size:38px;}p.jsx-810049475{font-size:19px;}.box.jsx-810049475{padding:45px;max-width:400px;}@media (max-width:840px){h2.jsx-810049475{font-size:32px;}p.jsx-810049475{font-size:16px;}.box.jsx-810049475{padding:20px;max-width:375px;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy96ZW5vL1Byb2plY3RzL2RyYWN1bGEvZHJhY3VsYS5naXRodWIuaW8vY29tcG9uZW50cy9Db21pbmdTb29uLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWlCa0IsQUFHd0IsQUFJQSxBQUlGLEFBTUksQUFJQSxBQUlGLGFBYkMsQUFjRSxFQXRCcEIsQUFJQSxBQVVFLEFBSUEsY0FURixBQWNFIiwiZmlsZSI6Ii9Vc2Vycy96ZW5vL1Byb2plY3RzL2RyYWN1bGEvZHJhY3VsYS5naXRodWIuaW8vY29tcG9uZW50cy9Db21pbmdTb29uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnO1xuXG5jbGFzcyBDb21pbmdTb29uIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiA8ZGl2IGNsYXNzTmFtZT1cImdyZWVuXCI+XG4gICAgICA8aDEgc3R5bGU9e3sgIG1hcmdpbkJvdHRvbTogMjAgfX0gY2xhc3NOYW1lPVwidGl0bGVcIj5EcmFjdWxhIFBybzwvaDE+XG4gICAgICA8ZGl2IHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogJyMxZDFlMjYnLCBib3JkZXJSYWRpdXM6ICcxMHB4JywgbWFyZ2luOiAnMCBhdXRvJyB9fSBjbGFzc05hbWU9XCJib3hcIj5cbiAgICAgICAgPGgyIHN0eWxlPXt7IHRleHRBbGlnbjogJ2NlbnRlcicsIGNvbG9yOiAnI2ZmZicgfX0+YSBuZXcgdGhlbWUgaXMgY29taW5nLjwvaDI+XG4gICAgICAgIDxwIHN0eWxlPXt7IHRleHRBbGlnbjogJ2NlbnRlcicsIGNvbG9yOiAncmdiYSgyNTUsIDI1NSwgMjU1LCAuNiknIH19PkVudGVyIHlvdXIgZW1haWwgYW5kIHdlJ2xsIHB1dCB5b3Ugb24gdGhlIGludml0ZSBsaXN0LjwvcD5cbiAgICAgICAgPGZvcm0gYWN0aW9uPVwiaHR0cHM6Ly9kcmFjdWxhdGhlbWUudXM0Lmxpc3QtbWFuYWdlLmNvbS9zdWJzY3JpYmUvcG9zdD91PTkxYjUxMTM0MDNlMThkMzU3NzA0ZTRiMDgmYW1wO2lkPTA1ZDE4OGUyZGJcIiBtZXRob2Q9XCJwb3N0XCIgY2xhc3NOYW1lPVwiZm9ybVwiPlxuICAgICAgICAgIDxpbnB1dCBzdHlsZT17eyBkaXNwbGF5OiAnbm9uZScgfX0gdHlwZT1cImNoZWNrYm94XCIgdmFsdWU9XCIxXCIgbmFtZT1cImdyb3VwWzY2OTM5XVsxXVwiIGlkPVwibWNlLWdyb3VwWzY2OTM5XS02NjkzOS0wXCIgLz5cbiAgICAgICAgICA8aW5wdXQgc3R5bGU9e3sgZGlzcGxheTogJ25vbmUnIH19IHR5cGU9XCJjaGVja2JveFwiIHZhbHVlPVwiMlwiIG5hbWU9XCJncm91cFs2NjkzOV1bMl1cIiBpZD1cIm1jZS1ncm91cFs2NjkzOV0tNjY5MzktMVwiIGRlZmF1bHRDaGVja2VkIC8+XG4gICAgICAgICAgPGlucHV0IHN0eWxlPXt7IGZvbnRTaXplOiAnMThweCcsIGJhY2tncm91bmRDb2xvcjogJyMzMzMnIH19IG5hbWU9XCJFTUFJTFwiIHBsYWNlaG9sZGVyPVwieW91ckBlbWFpbC5jb21cIiBpZD1cIm1jZS1FTUFJTFwiIHR5cGU9XCJlbWFpbFwiIHJlcXVpcmVkIC8+XG4gICAgICAgICAgPGlucHV0IHN0eWxlPXt7IGZvbnRTaXplOiAnMThweCcgfX0gdHlwZT1cInN1Ym1pdFwiIHZhbHVlPVwiTm90aWZ5IG1lXCIgbmFtZT1cInN1YnNjcmliZVwiIGlkPVwibWMtZW1iZWRkZWQtc3Vic2NyaWJlXCIgLz5cbiAgICAgICAgPC9mb3JtPlxuICAgICAgPC9kaXY+XG5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIGgyIHtcbiAgICAgICAgZm9udC1zaXplOiAzOHB4O1xuICAgICAgfVxuXG4gICAgICBwIHtcbiAgICAgICAgZm9udC1zaXplOiAxOXB4O1xuICAgICAgfVxuXG4gICAgICAuYm94IHtcbiAgICAgICAgcGFkZGluZzogNDVweDtcbiAgICAgICAgbWF4LXdpZHRoOiA0MDBweDtcbiAgICAgIH1cblxuICAgICAgQG1lZGlhIChtYXgtd2lkdGg6IDg0MHB4KSB7XG4gICAgICAgIGgyIHtcbiAgICAgICAgICBmb250LXNpemU6IDMycHg7XG4gICAgICAgIH1cblxuICAgICAgICBwIHtcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIH1cblxuICAgICAgICAuYm94IHtcbiAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgIG1heC13aWR0aDogMzc1cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXY+XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgQ29taW5nU29vbjsiXX0= */\n/*@ sourceURL=/Users/zeno/Projects/dracula/dracula.github.io/components/ComingSoon.js */"));
+    }
+  }]);
+
+  return ComingSoon;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ComingSoon);
+
+/***/ }),
 
 /***/ "./components/Footer.js":
 /*!******************************!*\
@@ -3776,21 +3952,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Fabout.js!./":
-/*!*********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Fabout.js ***!
-  \*********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js!./":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/about", function() {
-      var mod = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
+      var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
       if(true) {
-        module.hot.accept(/*! ./pages/about.js */ "./pages/about.js", function() {
-          if(!next.router.components["/about"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
-          next.router.update("/about", updatedPage)
+        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
+          if(!next.router.components["/"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+          next.router.update("/", updatedPage)
         })
       }
       return mod
@@ -4200,6 +4376,201 @@ exports["default"] = function () {
     }(react_1.Component)
   );
 };
+
+/***/ }),
+
+/***/ "./node_modules/process/browser.js":
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
 
 /***/ }),
 
@@ -4951,9 +5322,702 @@ try {
 
 /***/ }),
 
-/***/ "./pages/about.js":
+/***/ "./node_modules/string-hash/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/string-hash/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function hash(str) {
+  var hash = 5381,
+      i    = str.length;
+
+  while(i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i);
+  }
+
+  /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+   * integers. Since we want the results to be always positive, convert the
+   * signed int to an unsigned by doing an unsigned bitshift. */
+  return hash >>> 0;
+}
+
+module.exports = hash;
+
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/lib/stylesheet.js":
+/*!********************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/lib/stylesheet.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+Based on Glamor's sheet
+https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/sheet.js
+*/
+var isProd = typeof process !== 'undefined' && process.env && "development" === 'production';
+
+var isString = function isString(o) {
+  return Object.prototype.toString.call(o) === '[object String]';
+};
+
+var StyleSheet =
+/*#__PURE__*/
+function () {
+  function StyleSheet(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$name = _ref.name,
+        name = _ref$name === void 0 ? 'stylesheet' : _ref$name,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? isProd : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    invariant(isString(name), '`name` must be a string');
+    this._name = name;
+    this._deletedRulePlaceholder = "#" + name + "-deleted-rule____{}";
+    invariant(typeof optimizeForSpeed === 'boolean', '`optimizeForSpeed` must be a boolean');
+    this._optimizeForSpeed = optimizeForSpeed;
+    this._isBrowser = isBrowser;
+    this._serverSheet = undefined;
+    this._tags = [];
+    this._injected = false;
+    this._rulesCount = 0;
+    var node = this._isBrowser && document.querySelector('meta[property="csp-nonce"]');
+    this._nonce = node ? node.getAttribute('content') : null;
+  }
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.setOptimizeForSpeed = function setOptimizeForSpeed(bool) {
+    invariant(typeof bool === 'boolean', '`setOptimizeForSpeed` accepts a boolean');
+    invariant(this._rulesCount === 0, 'optimizeForSpeed cannot be when rules have already been inserted');
+    this.flush();
+    this._optimizeForSpeed = bool;
+    this.inject();
+  };
+
+  _proto.isOptimizeForSpeed = function isOptimizeForSpeed() {
+    return this._optimizeForSpeed;
+  };
+
+  _proto.inject = function inject() {
+    var _this = this;
+
+    invariant(!this._injected, 'sheet already injected');
+    this._injected = true;
+
+    if (this._isBrowser && this._optimizeForSpeed) {
+      this._tags[0] = this.makeStyleTag(this._name);
+      this._optimizeForSpeed = 'insertRule' in this.getSheet();
+
+      if (!this._optimizeForSpeed) {
+        if (!isProd) {
+          console.warn('StyleSheet: optimizeForSpeed mode not supported falling back to standard mode.');
+        }
+
+        this.flush();
+        this._injected = true;
+      }
+
+      return;
+    }
+
+    this._serverSheet = {
+      cssRules: [],
+      insertRule: function insertRule(rule, index) {
+        if (typeof index === 'number') {
+          _this._serverSheet.cssRules[index] = {
+            cssText: rule
+          };
+        } else {
+          _this._serverSheet.cssRules.push({
+            cssText: rule
+          });
+        }
+
+        return index;
+      },
+      deleteRule: function deleteRule(index) {
+        _this._serverSheet.cssRules[index] = null;
+      }
+    };
+  };
+
+  _proto.getSheetForTag = function getSheetForTag(tag) {
+    if (tag.sheet) {
+      return tag.sheet;
+    } // this weirdness brought to you by firefox
+
+
+    for (var i = 0; i < document.styleSheets.length; i++) {
+      if (document.styleSheets[i].ownerNode === tag) {
+        return document.styleSheets[i];
+      }
+    }
+  };
+
+  _proto.getSheet = function getSheet() {
+    return this.getSheetForTag(this._tags[this._tags.length - 1]);
+  };
+
+  _proto.insertRule = function insertRule(rule, index) {
+    invariant(isString(rule), '`insertRule` accepts only strings');
+
+    if (!this._isBrowser) {
+      if (typeof index !== 'number') {
+        index = this._serverSheet.cssRules.length;
+      }
+
+      this._serverSheet.insertRule(rule, index);
+
+      return this._rulesCount++;
+    }
+
+    if (this._optimizeForSpeed) {
+      var sheet = this.getSheet();
+
+      if (typeof index !== 'number') {
+        index = sheet.cssRules.length;
+      } // this weirdness for perf, and chrome's weird bug
+      // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
+
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        }
+
+        return -1;
+      }
+    } else {
+      var insertionPoint = this._tags[index];
+
+      this._tags.push(this.makeStyleTag(this._name, rule, insertionPoint));
+    }
+
+    return this._rulesCount++;
+  };
+
+  _proto.replaceRule = function replaceRule(index, rule) {
+    if (this._optimizeForSpeed || !this._isBrowser) {
+      var sheet = this._isBrowser ? this.getSheet() : this._serverSheet;
+
+      if (!rule.trim()) {
+        rule = this._deletedRulePlaceholder;
+      }
+
+      if (!sheet.cssRules[index]) {
+        // @TBD Should we throw an error?
+        return index;
+      }
+
+      sheet.deleteRule(index);
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        } // In order to preserve the indices we insert a deleteRulePlaceholder
+
+
+        sheet.insertRule(this._deletedRulePlaceholder, index);
+      }
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "old rule at index `" + index + "` not found");
+      tag.textContent = rule;
+    }
+
+    return index;
+  };
+
+  _proto.deleteRule = function deleteRule(index) {
+    if (!this._isBrowser) {
+      this._serverSheet.deleteRule(index);
+
+      return;
+    }
+
+    if (this._optimizeForSpeed) {
+      this.replaceRule(index, '');
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "rule at index `" + index + "` not found");
+      tag.parentNode.removeChild(tag);
+      this._tags[index] = null;
+    }
+  };
+
+  _proto.flush = function flush() {
+    this._injected = false;
+    this._rulesCount = 0;
+
+    if (this._isBrowser) {
+      this._tags.forEach(function (tag) {
+        return tag && tag.parentNode.removeChild(tag);
+      });
+
+      this._tags = [];
+    } else {
+      // simpler on server
+      this._serverSheet.cssRules = [];
+    }
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this2 = this;
+
+    if (!this._isBrowser) {
+      return this._serverSheet.cssRules;
+    }
+
+    return this._tags.reduce(function (rules, tag) {
+      if (tag) {
+        rules = rules.concat(Array.prototype.map.call(_this2.getSheetForTag(tag).cssRules, function (rule) {
+          return rule.cssText === _this2._deletedRulePlaceholder ? null : rule;
+        }));
+      } else {
+        rules.push(null);
+      }
+
+      return rules;
+    }, []);
+  };
+
+  _proto.makeStyleTag = function makeStyleTag(name, cssString, relativeToTag) {
+    if (cssString) {
+      invariant(isString(cssString), 'makeStyleTag acceps only strings as second parameter');
+    }
+
+    var tag = document.createElement('style');
+    if (this._nonce) tag.setAttribute('nonce', this._nonce);
+    tag.type = 'text/css';
+    tag.setAttribute("data-" + name, '');
+
+    if (cssString) {
+      tag.appendChild(document.createTextNode(cssString));
+    }
+
+    var head = document.head || document.getElementsByTagName('head')[0];
+
+    if (relativeToTag) {
+      head.insertBefore(tag, relativeToTag);
+    } else {
+      head.appendChild(tag);
+    }
+
+    return tag;
+  };
+
+  _createClass(StyleSheet, [{
+    key: "length",
+    get: function get() {
+      return this._rulesCount;
+    }
+  }]);
+
+  return StyleSheet;
+}();
+
+exports["default"] = StyleSheet;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheet: " + message + ".");
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/style.js":
+/*!***********************************************!*\
+  !*** ./node_modules/styled-jsx/dist/style.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.flush = flush;
+exports["default"] = void 0;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _stylesheetRegistry = _interopRequireDefault(__webpack_require__(/*! ./stylesheet-registry */ "./node_modules/styled-jsx/dist/stylesheet-registry.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+var styleSheetRegistry = new _stylesheetRegistry["default"]();
+
+var JSXStyle =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(JSXStyle, _Component);
+
+  function JSXStyle(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.prevProps = {};
+    return _this;
+  }
+
+  JSXStyle.dynamic = function dynamic(info) {
+    return info.map(function (tagInfo) {
+      var baseId = tagInfo[0];
+      var props = tagInfo[1];
+      return styleSheetRegistry.computeId(baseId, props);
+    }).join(' ');
+  } // probably faster than PureComponent (shallowEqual)
+  ;
+
+  var _proto = JSXStyle.prototype;
+
+  _proto.shouldComponentUpdate = function shouldComponentUpdate(otherProps) {
+    return this.props.id !== otherProps.id || // We do this check because `dynamic` is an array of strings or undefined.
+    // These are the computed values for dynamic styles.
+    String(this.props.dynamic) !== String(otherProps.dynamic);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    styleSheetRegistry.remove(this.props);
+  };
+
+  _proto.render = function render() {
+    // This is a workaround to make the side effect async safe in the "render" phase.
+    // See https://github.com/zeit/styled-jsx/pull/484
+    if (this.shouldComponentUpdate(this.prevProps)) {
+      // Updates
+      if (this.prevProps.id) {
+        styleSheetRegistry.remove(this.prevProps);
+      }
+
+      styleSheetRegistry.add(this.props);
+      this.prevProps = this.props;
+    }
+
+    return null;
+  };
+
+  return JSXStyle;
+}(_react.Component);
+
+exports["default"] = JSXStyle;
+
+function flush() {
+  var cssRules = styleSheetRegistry.cssRules();
+  styleSheetRegistry.flush();
+  return cssRules;
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/stylesheet-registry.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/stylesheet-registry.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _stringHash = _interopRequireDefault(__webpack_require__(/*! string-hash */ "./node_modules/string-hash/index.js"));
+
+var _stylesheet = _interopRequireDefault(__webpack_require__(/*! ./lib/stylesheet */ "./node_modules/styled-jsx/dist/lib/stylesheet.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var sanitize = function sanitize(rule) {
+  return rule.replace(/\/style/gi, '\\/style');
+};
+
+var StyleSheetRegistry =
+/*#__PURE__*/
+function () {
+  function StyleSheetRegistry(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$styleSheet = _ref.styleSheet,
+        styleSheet = _ref$styleSheet === void 0 ? null : _ref$styleSheet,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? false : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    this._sheet = styleSheet || new _stylesheet["default"]({
+      name: 'styled-jsx',
+      optimizeForSpeed: optimizeForSpeed
+    });
+
+    this._sheet.inject();
+
+    if (styleSheet && typeof optimizeForSpeed === 'boolean') {
+      this._sheet.setOptimizeForSpeed(optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    this._isBrowser = isBrowser;
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  }
+
+  var _proto = StyleSheetRegistry.prototype;
+
+  _proto.add = function add(props) {
+    var _this = this;
+
+    if (undefined === this._optimizeForSpeed) {
+      this._optimizeForSpeed = Array.isArray(props.children);
+
+      this._sheet.setOptimizeForSpeed(this._optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    if (this._isBrowser && !this._fromServer) {
+      this._fromServer = this.selectFromServer();
+      this._instancesCounts = Object.keys(this._fromServer).reduce(function (acc, tagName) {
+        acc[tagName] = 0;
+        return acc;
+      }, {});
+    }
+
+    var _this$getIdAndRules = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules.styleId,
+        rules = _this$getIdAndRules.rules; // Deduping: just increase the instances count.
+
+
+    if (styleId in this._instancesCounts) {
+      this._instancesCounts[styleId] += 1;
+      return;
+    }
+
+    var indices = rules.map(function (rule) {
+      return _this._sheet.insertRule(rule);
+    }) // Filter out invalid rules
+    .filter(function (index) {
+      return index !== -1;
+    });
+    this._indices[styleId] = indices;
+    this._instancesCounts[styleId] = 1;
+  };
+
+  _proto.remove = function remove(props) {
+    var _this2 = this;
+
+    var _this$getIdAndRules2 = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules2.styleId;
+
+    invariant(styleId in this._instancesCounts, "styleId: `" + styleId + "` not found");
+    this._instancesCounts[styleId] -= 1;
+
+    if (this._instancesCounts[styleId] < 1) {
+      var tagFromServer = this._fromServer && this._fromServer[styleId];
+
+      if (tagFromServer) {
+        tagFromServer.parentNode.removeChild(tagFromServer);
+        delete this._fromServer[styleId];
+      } else {
+        this._indices[styleId].forEach(function (index) {
+          return _this2._sheet.deleteRule(index);
+        });
+
+        delete this._indices[styleId];
+      }
+
+      delete this._instancesCounts[styleId];
+    }
+  };
+
+  _proto.update = function update(props, nextProps) {
+    this.add(nextProps);
+    this.remove(props);
+  };
+
+  _proto.flush = function flush() {
+    this._sheet.flush();
+
+    this._sheet.inject();
+
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this3 = this;
+
+    var fromServer = this._fromServer ? Object.keys(this._fromServer).map(function (styleId) {
+      return [styleId, _this3._fromServer[styleId]];
+    }) : [];
+
+    var cssRules = this._sheet.cssRules();
+
+    return fromServer.concat(Object.keys(this._indices).map(function (styleId) {
+      return [styleId, _this3._indices[styleId].map(function (index) {
+        return cssRules[index].cssText;
+      }).join(_this3._optimizeForSpeed ? '' : '\n')];
+    }) // filter out empty rules
+    .filter(function (rule) {
+      return Boolean(rule[1]);
+    }));
+  }
+  /**
+   * createComputeId
+   *
+   * Creates a function to compute and memoize a jsx id from a basedId and optionally props.
+   */
+  ;
+
+  _proto.createComputeId = function createComputeId() {
+    var cache = {};
+    return function (baseId, props) {
+      if (!props) {
+        return "jsx-" + baseId;
+      }
+
+      var propsToString = String(props);
+      var key = baseId + propsToString; // return `jsx-${hashString(`${baseId}-${propsToString}`)}`
+
+      if (!cache[key]) {
+        cache[key] = "jsx-" + (0, _stringHash["default"])(baseId + "-" + propsToString);
+      }
+
+      return cache[key];
+    };
+  }
+  /**
+   * createComputeSelector
+   *
+   * Creates a function to compute and memoize dynamic selectors.
+   */
+  ;
+
+  _proto.createComputeSelector = function createComputeSelector(selectoPlaceholderRegexp) {
+    if (selectoPlaceholderRegexp === void 0) {
+      selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g;
+    }
+
+    var cache = {};
+    return function (id, css) {
+      // Sanitize SSR-ed CSS.
+      // Client side code doesn't need to be sanitized since we use
+      // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+      if (!this._isBrowser) {
+        css = sanitize(css);
+      }
+
+      var idcss = id + css;
+
+      if (!cache[idcss]) {
+        cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+      }
+
+      return cache[idcss];
+    };
+  };
+
+  _proto.getIdAndRules = function getIdAndRules(props) {
+    var _this4 = this;
+
+    var css = props.children,
+        dynamic = props.dynamic,
+        id = props.id;
+
+    if (dynamic) {
+      var styleId = this.computeId(id, dynamic);
+      return {
+        styleId: styleId,
+        rules: Array.isArray(css) ? css.map(function (rule) {
+          return _this4.computeSelector(styleId, rule);
+        }) : [this.computeSelector(styleId, css)]
+      };
+    }
+
+    return {
+      styleId: this.computeId(id),
+      rules: Array.isArray(css) ? css : [css]
+    };
+  }
+  /**
+   * selectFromServer
+   *
+   * Collects style tags from the document with id __jsx-XXX
+   */
+  ;
+
+  _proto.selectFromServer = function selectFromServer() {
+    var elements = Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]'));
+    return elements.reduce(function (acc, element) {
+      var id = element.id.slice(2);
+      acc[id] = element;
+      return acc;
+    }, {});
+  };
+
+  return StyleSheetRegistry;
+}();
+
+exports["default"] = StyleSheetRegistry;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheetRegistry: " + message + ".");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/style.js":
+/*!******************************************!*\
+  !*** ./node_modules/styled-jsx/style.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/style */ "./node_modules/styled-jsx/dist/style.js")
+
+
+/***/ }),
+
+/***/ "./pages/index.js":
 /*!************************!*\
-  !*** ./pages/about.js ***!
+  !*** ./pages/index.js ***!
   \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -4972,37 +6036,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../layouts/Theme */ "./layouts/Theme.js");
+/* harmony import */ var _components_ComingSoon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/ComingSoon */ "./components/ComingSoon.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/zeno/Projects/dracula/dracula.github.io/pages/about.js";
+var _jsxFileName = "/Users/zeno/Projects/dracula/dracula.github.io/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
 
-var About =
+
+var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(About, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Index, _React$Component);
 
-  function About() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, About);
+  function Index() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Index);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(About).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Index).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(About, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Index, [{
     key: "render",
     value: function render() {
-      var title = 'About Dracula';
-      var description = 'The origin story of the Dracula theme.';
-      var image = '/static/img/about.jpeg';
+      var title = 'Dracula';
+      var description = 'A dark theme for Atom, Alfred, Brackets, Emacs, iTerm, Mintty, Notepad++, Slack, Sequel Pro, Sublime Text, Telegram, Textmate, Terminal.app, Ulysses, Vim, Visual Studio Code, Wox, Xcode, and Zsh';
       return __jsx("div", {
-        className: "about",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
@@ -5060,7 +6124,7 @@ function (_React$Component) {
         },
         __self: this
       }), __jsx("meta", {
-        content: "https://draculatheme.com/about",
+        content: "https://draculatheme.com",
         property: "og:url",
         __source: {
           fileName: _jsxFileName,
@@ -5068,7 +6132,7 @@ function (_React$Component) {
         },
         __self: this
       }), __jsx("meta", {
-        content: "https://draculatheme.com".concat(image),
+        content: "https://draculatheme.com/static/img/facebook.png",
         property: "og:image",
         __source: {
           fileName: _jsxFileName,
@@ -5076,200 +6140,3411 @@ function (_React$Component) {
         },
         __self: this
       })), __jsx("main", {
-        className: "theme",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
         },
         __self: this
-      }, __jsx("h3", {
+      }, __jsx("div", {
+        className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, "Origin Story"), __jsx("p", {
+      }, __jsx("h2", {
+        className: "category-title cyan tilt-right",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30
         },
         __self: this
-      }, __jsx("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, "October 12th, 2013"), " - It was a cold Saturday morning. I was at a conference in Germany and started to feel very sick. I could barely move, but I had to take a plane to speak at another conference in Spain. In the middle of the flight, I called the flight attendant and said I needed help. ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, "The airplane landed, and I left there in an ambulance"), "."), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, "I went to the hospital, took some blood tests, and started to feel better again. I thought it was just a food poisoning, and I was ready to leave that place. They got the results and ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, "took me straight to the emergency room."), " I was having an episode of Pancreatitis."), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "Two days later, I was still at the hospital. My blood results were pretty bad, they didn't allow me to leave, so I asked a co-worker to bring my laptop. At least with the internet, I could ", __jsx("a", {
-        href: "https://twitter.com/zenorocha/status/390120821257039872",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "have a distraction"), "."), __jsx("p", {
+      }, "Featured")), __jsx("div", {
+        className: "row around-xs",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
         },
         __self: this
-      }, "One day I left my room to get some water. ", __jsx("span", {
-        className: "highlight",
+      }, __jsx("a", {
+        href: "/notepad-plus-plus/",
+        className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: this
-      }, "When I got back, my computer was stolen"), "."), __jsx("figure", {
+      }, __jsx("span", {
+        className: "app-img",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 35
         },
         __self: this
-      }, __jsx("a", {
-        href: "https://twitter.com/ipeychev/status/390138184329199617",
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, "Notepad++")), __jsx("a", {
+        href: "/iterm/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
       }, __jsx("img", {
-        src: image,
-        alt: "Me and my friend Iliyan Peychev",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      })), __jsx("figcaption", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }, "Me and my friend Iliyan Peychev")), __jsx("p", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
-      }, "I was completely devastated. That computer was the only way I could communicate with my family in Brazil. How could someone steal a person in a hospital bed? I couldn't believe that whole situation."), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }, "The next day, my co-workers tried to cheer me up and ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }, "brought a new laptop for me"), ". I had no backup to restore from, so I started to install everything back again. For every code editor, for every terminal app, I had to choose a different theme."), __jsx("p", {
+      })), __jsx("h3", {
+        className: "app-title orange",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
         },
         __self: this
-      }, "I always believed in the cost of context switching. I know how it feels when you're ", __jsx("em", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, "\"in the zone\""), ", then suddenly, you get distracted and lose focus. It shouldn't be that way, so ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, "I decided to create my own color scheme"), ", and my mission was to make it ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, "available everywhere"), "."), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, __jsx("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "October 27th, 2013"), " - ", __jsx("a", {
-        href: "https://github.com/dracula/dracula-theme/commit/7e4d17ade6a54b7b7d8037a0d2160a293f17ef5c",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "My first commit"), " was the ZSH theme. Then I moved to iTerm, Terminal.app, Sublime Text, and Textmate. At the end of the first day, I already had 5 themes. I ", __jsx("a", {
-        href: "https://twitter.com/zenorocha/status/395216794249486336",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "tweeted about it"), " and the community started to contribute."), __jsx("p", {
+      }, "iTerm")), __jsx("a", {
+        href: "/visual-studio-code/",
+        className: "app col-xs-12 col-sm-2",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 46
         },
         __self: this
-      }, "Today Dracula is available everywhere and it's one of the ", __jsx("span", {
-        className: "highlight",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "most popular themes ever created.")), __jsx("p", {
+      }, __jsx("span", {
+        className: "app-img",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 47
         },
         __self: this
-      }, "I stayed in that hospital bed for 3 weeks. I can't even describe the feeling of being sick in a foreign country, alone and away from your family."), __jsx("p", {
+      }, __jsx("img", {
+        src: "/static/img/icons/tombstone.png",
+        width: "238",
+        height: "190",
+        alt: "Tombstone",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
         },
         __self: this
-      }, "Thanks Dracula, for distracting me when I needed the most.")));
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, "Visual Studio Code"))), __jsx("div", {
+        style: {
+          backgroundColor: '#2a2c37',
+          marginRight: '-2rem',
+          marginLeft: '-2rem',
+          marginBottom: '80px',
+          padding: '30px 0 60px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, __jsx(_components_ComingSoon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title orange tilt-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, "Code Editors")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/vim/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/eye.png",
+        width: "168",
+        height: "170",
+        alt: "Eye",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, "Vim")), __jsx("a", {
+        href: "/sublime/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "Sublime")), __jsx("a", {
+        href: "/xcode/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        },
+        __self: this
+      }, "Xcode"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/atom/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, "Atom")), __jsx("a", {
+        href: "/visual-studio-code/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/tombstone.png",
+        width: "238",
+        height: "190",
+        alt: "Tombstone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, "Visual Studio Code")), __jsx("a", {
+        href: "/emacs/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, "Emacs"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/notepad-plus-plus/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, "Notepad++")), __jsx("a", {
+        href: "/jetbrains/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/frankenstein.png",
+        width: "175",
+        height: "150",
+        alt: "Frankenstein",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title pink",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }, "JetBrains")), __jsx("a", {
+        href: "/visual-studio/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }, "Visual Studio"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/coda/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      }, "Coda")), __jsx("a", {
+        href: "/brackets/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 133
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 134
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136
+        },
+        __self: this
+      }, "Brackets")), __jsx("a", {
+        href: "/light-table/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        },
+        __self: this
+      }, "Light Table"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/textmate/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 147
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/skull.png",
+        width: "198",
+        height: "182",
+        alt: "Skull",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 151
+        },
+        __self: this
+      }, "TextMate")), __jsx("a", {
+        href: "/gedit/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/moon.png",
+        width: "168",
+        height: "168",
+        alt: "Moon",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 155
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157
+        },
+        __self: this
+      }, "Gedit")), __jsx("a", {
+        href: "/pythonista/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 160
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candle.png",
+        width: "198",
+        height: "184",
+        alt: "Candle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }, "Pythonista"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 167
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/arduino-ide/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 168
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 169
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/tombstone.png",
+        width: "238",
+        height: "190",
+        alt: "Tombstone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 170
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }, "Arduino IDE")), __jsx("a", {
+        href: "/coteditor/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/axe.png",
+        width: "198",
+        height: "174",
+        alt: "Axe",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        },
+        __self: this
+      }, "CotEditor")), __jsx("a", {
+        href: "/geany/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        },
+        __self: this
+      }, "Geany"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/lightpaper/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/eye.png",
+        width: "168",
+        height: "170",
+        alt: "Eye",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 191
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193
+        },
+        __self: this
+      }, "LightPaper")), __jsx("a", {
+        href: "/monodevelop/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 195
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, "MonoDevelop")), __jsx("a", {
+        href: "/qtcreator/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 202
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 203
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
+      }, "Qt Creator"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 209
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/bbedit/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 210
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 211
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 212
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
+      }, "BBEdit")), __jsx("a", {
+        href: "/editplus/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 216
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 217
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 218
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 220
+        },
+        __self: this
+      }, "Editplus")), __jsx("a", {
+        href: "/gamemaker-studio/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 222
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 223
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/frankenstein.png",
+        width: "175",
+        height: "150",
+        alt: "Frankenstein",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 224
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title pink",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 226
+        },
+        __self: this
+      }, "GameMaker Studio"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 230
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/kate/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 231
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 232
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 233
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 235
+        },
+        __self: this
+      }, "Kate")), __jsx("a", {
+        href: "/jupyterlab/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 237
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 238
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candle.png",
+        width: "198",
+        height: "184",
+        alt: "Candle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 239
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 241
+        },
+        __self: this
+      }, "JupyterLab")), __jsx("a", {
+        href: "/wing/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 243
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 244
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/coffin.png",
+        width: "200",
+        height: "197",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 245
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 247
+        },
+        __self: this
+      }, "Wing"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 251
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title purple tilt-right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 252
+        },
+        __self: this
+      }, "Terminal")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 255
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/iterm/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 256
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 257
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 258
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 260
+        },
+        __self: this
+      }, "iTerm")), __jsx("a", {
+        href: "/hyper/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 262
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 263
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 264
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 266
+        },
+        __self: this
+      }, "Hyper")), __jsx("a", {
+        href: "/zsh/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 268
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 269
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 270
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 272
+        },
+        __self: this
+      }, "Zsh"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 276
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/windows-terminal/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 277
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 278
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 279
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 281
+        },
+        __self: this
+      }, "Windows Terminal")), __jsx("a", {
+        href: "/tilix/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 283
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 284
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/moon.png",
+        width: "168",
+        height: "168",
+        alt: "Moon",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 285
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 287
+        },
+        __self: this
+      }, "Tilix")), __jsx("a", {
+        href: "/termux/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 289
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 290
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/eye.png",
+        width: "168",
+        height: "170",
+        alt: "Eye",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 291
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 293
+        },
+        __self: this
+      }, "Termux"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 297
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/terminal/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 298
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 299
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candle.png",
+        width: "198",
+        height: "184",
+        alt: "Candle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 300
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 302
+        },
+        __self: this
+      }, "Terminal.app")), __jsx("a", {
+        href: "/mintty/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 304
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 305
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/coffin.png",
+        width: "200",
+        height: "197",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 306
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 308
+        },
+        __self: this
+      }, "Mintty")), __jsx("a", {
+        href: "/mutt/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 310
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 311
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/tombstone.png",
+        width: "238",
+        height: "190",
+        alt: "Tombstone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 312
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 314
+        },
+        __self: this
+      }, "Mutt"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 318
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/kitty/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 319
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 320
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/skull.png",
+        width: "198",
+        height: "182",
+        alt: "Skull",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 321
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 323
+        },
+        __self: this
+      }, "Kitty")), __jsx("a", {
+        href: "/gnome-terminal/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 325
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 326
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 327
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 329
+        },
+        __self: this
+      }, "Gnome Terminal")), __jsx("a", {
+        href: "/mobaxterm/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 331
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 332
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 333
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 335
+        },
+        __self: this
+      }, "MobaXterm"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 339
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/konsole/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 340
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 341
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 342
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 344
+        },
+        __self: this
+      }, "Konsole")), __jsx("a", {
+        href: "/conemu/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 346
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 347
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/hat-magic.png",
+        width: "237",
+        height: "196",
+        alt: "Magic Hat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 348
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 350
+        },
+        __self: this
+      }, "ConEmu")), __jsx("a", {
+        href: "/xresources/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 352
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 353
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 354
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 356
+        },
+        __self: this
+      }, "Xresources"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 360
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/alacritty/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 361
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 362
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/axe.png",
+        width: "198",
+        height: "174",
+        alt: "Axe",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 363
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 365
+        },
+        __self: this
+      }, "Alacritty")), __jsx("a", {
+        href: "/cmder/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 367
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 368
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 369
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 371
+        },
+        __self: this
+      }, "Cmder")), __jsx("a", {
+        href: "/fish/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 373
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 374
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 375
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 377
+        },
+        __self: this
+      }, "Fish"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 381
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/powershell/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 382
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 383
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/frankenstein.png",
+        width: "175",
+        height: "150",
+        alt: "Frankenstein",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 384
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title pink",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 386
+        },
+        __self: this
+      }, "PowerShell")), __jsx("a", {
+        href: "/fluent-terminal/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 388
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 389
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 390
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 392
+        },
+        __self: this
+      }, "Fluent Terminal")), __jsx("a", {
+        href: "/termite/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 394
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 395
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 396
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 398
+        },
+        __self: this
+      }, "Termite"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 402
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title cyan tilt-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 403
+        },
+        __self: this
+      }, "Syntax Highlight")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 406
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "https://github.com/codemirror/CodeMirror/blob/master/theme/dracula.css",
+        target: "_blank",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 407
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 408
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/moon.png",
+        width: "168",
+        height: "168",
+        alt: "Moon",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 409
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 411
+        },
+        __self: this
+      }, "CodeMirror")), __jsx("a", {
+        href: "/highlightjs/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 413
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 414
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/skull.png",
+        width: "198",
+        height: "182",
+        alt: "Skull",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 415
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 417
+        },
+        __self: this
+      }, "Highlight.js")), __jsx("a", {
+        href: "/pygments/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 419
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 420
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 421
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 423
+        },
+        __self: this
+      }, "Pygments"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 427
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title purple tilt-right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 428
+        },
+        __self: this
+      }, "Messaging")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 431
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/slack/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 432
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 433
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/axe.png",
+        width: "198",
+        height: "174",
+        alt: "Axe",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 434
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 436
+        },
+        __self: this
+      }, "Slack")), __jsx("a", {
+        href: "/telegram/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 438
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 439
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candle.png",
+        width: "198",
+        height: "184",
+        alt: "Candle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 440
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 442
+        },
+        __self: this
+      }, "Telegram Desktop")), __jsx("a", {
+        href: "/telegram-android/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 444
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 445
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 446
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 448
+        },
+        __self: this
+      }, "Telegram Android"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 452
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/facebook-messenger/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 453
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 454
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 455
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 457
+        },
+        __self: this
+      }, "Facebook Messenger")), __jsx("a", {
+        href: "/limechat/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 459
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 460
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 461
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 463
+        },
+        __self: this
+      }, "LimeChat")), __jsx("a", {
+        href: "/textual/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 465
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 466
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 467
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 469
+        },
+        __self: this
+      }, "Textual"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 473
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/mattermost/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 474
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 475
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 476
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 478
+        },
+        __self: this
+      }, "Mattermost")), __jsx("a", {
+        href: "/quassel/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 480
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 481
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 482
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 484
+        },
+        __self: this
+      }, "Quassel")), __jsx("a", {
+        href: "/xchat/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 486
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 487
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 488
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 490
+        },
+        __self: this
+      }, "XChat"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 494
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title orange tilt-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 495
+        },
+        __self: this
+      }, "Notes")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 498
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/bear/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 499
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 500
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 501
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 503
+        },
+        __self: this
+      }, "Bear")), __jsx("a", {
+        href: "/ulysses/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 505
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 506
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/glass.png",
+        width: "174",
+        height: "204",
+        alt: "Glass",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 507
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 509
+        },
+        __self: this
+      }, "Ulysses")), __jsx("a", {
+        href: "/macdown/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 511
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 512
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 513
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 515
+        },
+        __self: this
+      }, "MacDown"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 519
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/typora/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 520
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 521
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 522
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 524
+        },
+        __self: this
+      }, "Typora")), __jsx("a", {
+        href: "/quiver/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 526
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 527
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/moon.png",
+        width: "168",
+        height: "168",
+        alt: "Moon",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 528
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 530
+        },
+        __self: this
+      }, "Quiver"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 534
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title cyan tilt-right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 535
+        },
+        __self: this
+      }, "Launchers")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 538
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/alfred/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 539
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 540
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/hat-magic.png",
+        width: "237",
+        height: "196",
+        alt: "Magic Hat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 541
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 543
+        },
+        __self: this
+      }, "Alfred")), __jsx("a", {
+        href: "/ulauncher/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 545
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 546
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 547
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 549
+        },
+        __self: this
+      }, "Ulauncher")), __jsx("a", {
+        href: "/wox/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 551
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 552
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/eye.png",
+        width: "168",
+        height: "170",
+        alt: "Eye",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 553
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 555
+        },
+        __self: this
+      }, "Wox"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 559
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title purple tilt-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 560
+        },
+        __self: this
+      }, "Browsers & Extensions")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 563
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/chrome/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 564
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 565
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 566
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 568
+        },
+        __self: this
+      }, "Chrome")), __jsx("a", {
+        href: "/firefox/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 570
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 571
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/coffin.png",
+        width: "200",
+        height: "197",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 572
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 574
+        },
+        __self: this
+      }, "Firefox")), __jsx("a", {
+        href: "/duckduckgo/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 576
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 577
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/broom.png",
+        width: "186",
+        height: "202",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 578
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 580
+        },
+        __self: this
+      }, "DuckDuckGo"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 584
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/react-devtools/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 585
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 586
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 587
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 589
+        },
+        __self: this
+      }, "React DevTools")), __jsx("a", {
+        href: "/qutebrowser/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 591
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 592
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 593
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 595
+        },
+        __self: this
+      }, "Qutebrowser")), __jsx("a", {
+        href: "/vimium/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 597
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 598
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/pumpkin.png",
+        width: "198",
+        height: "182",
+        alt: "Pumpkin",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 599
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 601
+        },
+        __self: this
+      }, "Vimium"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 605
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/vivaldi/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 606
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 607
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/bat.png",
+        width: "222",
+        height: "158",
+        alt: "Bat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 608
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 610
+        },
+        __self: this
+      }, "Vivaldi"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 614
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "category-title orange tilt-right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 615
+        },
+        __self: this
+      }, "Miscellaneous")), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 618
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/base16/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 619
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 620
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/skull.png",
+        width: "198",
+        height: "182",
+        alt: "Skull",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 621
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 623
+        },
+        __self: this
+      }, "Base16")), __jsx("a", {
+        href: "/blender/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 625
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 626
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 627
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 629
+        },
+        __self: this
+      }, "Blender")), __jsx("a", {
+        href: "/couscous/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 631
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 632
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/frankenstein.png",
+        width: "175",
+        height: "150",
+        alt: "Frankenstein",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 633
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title pink",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 635
+        },
+        __self: this
+      }, "Couscous"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 639
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/gitk/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 640
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 641
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/axe.png",
+        width: "198",
+        height: "174",
+        alt: "Axe",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 642
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 644
+        },
+        __self: this
+      }, "Gitk")), __jsx("a", {
+        href: "/gmk/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 646
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 647
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cauldron.png",
+        width: "198",
+        height: "184",
+        alt: "Cauldron",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 648
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 650
+        },
+        __self: this
+      }, "GMK")), __jsx("a", {
+        href: "/sequel-pro/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 652
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 653
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 654
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 656
+        },
+        __self: this
+      }, "Sequel Pro"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 660
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/react-devtools/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 661
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 662
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/ghost.png",
+        width: "198",
+        height: "181",
+        alt: "Ghost",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 663
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 665
+        },
+        __self: this
+      }, "React DevTools")), __jsx("a", {
+        href: "/mindnode/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 667
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 668
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candle.png",
+        width: "198",
+        height: "184",
+        alt: "Candle",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 669
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 671
+        },
+        __self: this
+      }, "Mindnode")), __jsx("a", {
+        href: "/nylas-n1/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 673
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 674
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/coffin.png",
+        width: "200",
+        height: "197",
+        alt: "Broom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 675
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 677
+        },
+        __self: this
+      }, "Nylas N1"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 681
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/oracle-sql-developer/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 682
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 683
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/cone.png",
+        width: "168",
+        height: "189",
+        alt: "Cone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 684
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 686
+        },
+        __self: this
+      }, "Oracle SQL Developer")), __jsx("a", {
+        href: "/jgrasp/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 688
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 689
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/hat-magic.png",
+        width: "237",
+        height: "196",
+        alt: "Magic Hat",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 690
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 692
+        },
+        __self: this
+      }, "jGrasp")), __jsx("a", {
+        href: "/i3/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 694
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 695
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 696
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 698
+        },
+        __self: this
+      }, "i3"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 702
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/steam/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 703
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 704
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/tombstone.png",
+        width: "238",
+        height: "190",
+        alt: "Tombstone",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 705
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 707
+        },
+        __self: this
+      }, "Steam")), __jsx("a", {
+        href: "/gh-pages/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 709
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 710
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/candies.png",
+        width: "198",
+        height: "184",
+        alt: "Candies",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 711
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title orange",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 713
+        },
+        __self: this
+      }, "GitHub Pages")), __jsx("a", {
+        href: "/insomnia/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 715
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 716
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/spider.png",
+        width: "181",
+        height: "175",
+        alt: "Spider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 717
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title cyan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 719
+        },
+        __self: this
+      }, "Insomnia"))), __jsx("div", {
+        className: "row around-xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 723
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/wordpress/",
+        className: "app col-xs-12 col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 724
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "app-img",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 725
+        },
+        __self: this
+      }, __jsx("img", {
+        src: "/static/img/icons/eye.png",
+        width: "168",
+        height: "170",
+        alt: "Eye",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 726
+        },
+        __self: this
+      })), __jsx("h3", {
+        className: "app-title purple",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 728
+        },
+        __self: this
+      }, "Wordpress")))), __jsx("script", {
+        src: "https://wzrd.in/standalone/malarkey@1.3.3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 733
+        },
+        __self: this
+      }), __jsx("script", {
+        src: "/static/js/main.js",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 734
+        },
+        __self: this
+      }));
     }
   }], [{
     key: "getInitialProps",
@@ -5293,22 +9568,22 @@ function (_React$Component) {
     }
   }]);
 
-  return About;
+  return Index;
 }(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
-About.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__["default"];
-/* harmony default export */ __webpack_exports__["default"] = (About);
+Index.Layout = _layouts_Theme__WEBPACK_IMPORTED_MODULE_8__["default"];
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Fabout.js ***!
-  \*************************************************************************************************************************************************/
+/***/ 0:
+/*!********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js ***!
+  \********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Fabout.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Fabout.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fzeno%2FProjects%2Fdracula%2Fdracula.github.io%2Fpages%2Findex.js!./");
 
 
 /***/ }),
@@ -5324,5 +9599,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=about.js.map
+},[[0,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=index.js.map
