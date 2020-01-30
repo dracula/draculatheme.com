@@ -10,6 +10,7 @@ class About extends React.Component {
   render() {
     const title = 'About Dracula';
     const description = 'The origin story of the Dracula theme.';
+    const image = '/static/img/about.jpeg';
 
     return (
       <div className="about">
@@ -20,8 +21,8 @@ class About extends React.Component {
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />
           <meta content="Zeno Rocha" name="author" />
-          <meta content="https://draculatheme.com/pro" property="og:url" />
-          <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
+          <meta content="https://draculatheme.com/about" property="og:url" />
+          <meta content={`https://draculatheme.com${image}`} property="og:image" />
         </Head>
 
         <main className="theme">
@@ -33,7 +34,7 @@ class About extends React.Component {
 
           <figure>
             <a href="https://twitter.com/ipeychev/status/390138184329199617">
-              <img src="/static/img/about.jpeg" alt="Me and my friend Iliyan Peychev" />
+              <img src={image} alt="Me and my friend Iliyan Peychev" />
             </a>
             <figcaption>Me and my friend Iliyan Peychev</figcaption>
           </figure>
@@ -43,7 +44,8 @@ class About extends React.Component {
           <p>I always believed in the cost of context switching. I know how it feels when you're <em>"in the zone"</em>, then suddenly, you get distracted and lose focus. It shouldn't be that way, so <span className="highlight">I decided to create my own color scheme</span>, and my mission was to make it <span className="highlight">available everywhere</span>.</p>
           <p><strong>October 27th, 2013</strong> - <a href="https://github.com/dracula/dracula-theme/commit/7e4d17ade6a54b7b7d8037a0d2160a293f17ef5c">My first commit</a> was the ZSH theme. Then I moved to iTerm, Terminal.app, Sublime Text, and Textmate. At the end of the first day, I already had 5 themes. I <a href="https://twitter.com/zenorocha/status/395216794249486336">tweeted about it</a> and the community started to contribute.</p>
           <p>Today Dracula is available everywhere and it's one of the <span className="highlight">most popular themes ever created.</span></p>
-          <p>I stayed in that hospital bed for 3 weeks. I can't even describe the feeling of being sick in a foreign country, alone and away from your family. Thanks Dracula, for distracting me when I needed the most.</p>
+          <p>I stayed in that hospital bed for 3 weeks. I can't even describe the feeling of being sick in a foreign country, alone and away from your family.</p>
+          <p>Thanks Dracula, for distracting me when I needed the most.</p>
         </main>
       </div>
     )
