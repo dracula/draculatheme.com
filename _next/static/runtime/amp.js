@@ -55,55 +55,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "./node_m
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _Promise = __webpack_require__(/*! ../core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-
-  if (info.done) {
-    resolve(value);
-  } else {
-    _Promise.resolve(value).then(_next, _throw);
-  }
-}
-
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-        args = arguments;
-    return new _Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-
-      _next(undefined);
-    });
-  };
-}
-
-module.exports = _asyncToGenerator;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js ***!
@@ -2359,11 +2310,9 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 var _regeneratorRuntime = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 
+var _Object$keys = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
-
-var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
 var _unfetch = _interopRequireDefault(__webpack_require__(/*! unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js"));
 
@@ -2372,6 +2321,8 @@ var _eventSourcePolyfill = _interopRequireDefault(__webpack_require__(/*! ./even
 var _eventsource = __webpack_require__(/*! ./error-overlay/eventsource */ "./node_modules/next/dist/client/dev/error-overlay/eventsource.js");
 
 var _onDemandEntriesUtils = __webpack_require__(/*! ./on-demand-entries-utils */ "./node_modules/next/dist/client/dev/on-demand-entries-utils.js");
+
+var _fouc = __webpack_require__(/*! ./fouc */ "./node_modules/next/dist/client/dev/fouc.js");
 /* globals __webpack_hash__ */
 
 
@@ -2405,66 +2356,57 @@ function canApplyUpdates() {
 
 
 function tryApplyUpdates() {
-  return _tryApplyUpdates.apply(this, arguments);
-}
+  var res, _data, curPage, pageUpdated;
 
-function _tryApplyUpdates() {
-  _tryApplyUpdates = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee() {
-    var res, _data, curPage, pageUpdated;
-
-    return _regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            if (!(!isUpdateAvailable() || !canApplyUpdates())) {
-              _context.next = 2;
-              break;
-            }
-
-            return _context.abrupt("return");
-
-          case 2:
-            _context.prev = 2;
-            _context.next = 5;
-            return (0, _unfetch["default"])("" + hotUpdatePath + curHash + ".hot-update.json");
-
-          case 5:
-            res = _context.sent;
-            _context.next = 8;
-            return res.json();
-
-          case 8:
-            _data = _context.sent;
-            curPage = page === '/' ? 'index' : page;
-            pageUpdated = (0, _keys["default"])(_data.c).some(function (mod) {
-              return mod.indexOf("pages" + (curPage.substr(0, 1) === '/' ? curPage : "/" + curPage)) !== -1 || mod.indexOf(("pages" + (curPage.substr(0, 1) === '/' ? curPage : "/" + curPage)).replace(/\//g, '\\')) !== -1;
-            });
-
-            if (pageUpdated) {
-              document.location.reload(true);
-            } else {
-              curHash = mostRecentHash;
-            }
-
-            _context.next = 18;
+  return _regeneratorRuntime.async(function tryApplyUpdates$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (!(!isUpdateAvailable() || !canApplyUpdates())) {
+            _context.next = 2;
             break;
+          }
 
-          case 14:
-            _context.prev = 14;
-            _context.t0 = _context["catch"](2);
-            console.error('Error occurred checking for update', _context.t0);
+          return _context.abrupt("return");
+
+        case 2:
+          _context.prev = 2;
+          _context.next = 5;
+          return _regeneratorRuntime.awrap((0, _unfetch["default"])("" + hotUpdatePath + curHash + ".hot-update.json"));
+
+        case 5:
+          res = _context.sent;
+          _context.next = 8;
+          return _regeneratorRuntime.awrap(res.json());
+
+        case 8:
+          _data = _context.sent;
+          curPage = page === '/' ? 'index' : page;
+          pageUpdated = _Object$keys(_data.c).some(function (mod) {
+            return mod.indexOf("pages" + (curPage.substr(0, 1) === '/' ? curPage : "/" + curPage)) !== -1 || mod.indexOf(("pages" + (curPage.substr(0, 1) === '/' ? curPage : "/" + curPage)).replace(/\//g, '\\')) !== -1;
+          });
+
+          if (pageUpdated) {
             document.location.reload(true);
+          } else {
+            curHash = mostRecentHash;
+          }
 
-          case 18:
-          case "end":
-            return _context.stop();
-        }
+          _context.next = 18;
+          break;
+
+        case 14:
+          _context.prev = 14;
+          _context.t0 = _context["catch"](2);
+          console.error('Error occurred checking for update', _context.t0);
+          document.location.reload(true);
+
+        case 18:
+        case "end":
+          return _context.stop();
       }
-    }, _callee, null, [[2, 14]]);
-  }));
-  return _tryApplyUpdates.apply(this, arguments);
+    }
+  }, null, null, [[2, 14]]);
 }
 
 (0, _eventsource.getEventSourceWrapper)({
@@ -2494,6 +2436,7 @@ function _tryApplyUpdates() {
 (0, _onDemandEntriesUtils.setupPing)(assetPrefix, function () {
   return page;
 });
+(0, _fouc.displayContent)();
 
 /***/ }),
 
@@ -2594,18 +2537,18 @@ function getEventSourceWrapper(options) {
 "use strict";
 
 
+var _JSON$stringify = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+
+var _parseInt = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+
+var _Promise = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+
+var _Object$create = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js");
+
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
 exports["default"] = void 0;
-
-var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"));
-
-var _parseInt2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js"));
-
-var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
-
-var _create = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js"));
 
 var _unfetch = _interopRequireDefault(__webpack_require__(/*! unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js"));
 /* eslint-disable */
@@ -2986,7 +2929,8 @@ function toLowerCase(name) {
 
 function HeadersPolyfill(all) {
   // Get headers: implemented according to mozilla's example code: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/getAllResponseHeaders#Example
-  var map = (0, _create["default"])(null);
+  var map = _Object$create(null);
+
   var array = all.split('\r\n');
 
   for (var i = 0; i < array.length; i += 1) {
@@ -3069,7 +3013,7 @@ FetchTransport.prototype.open = function (xhr, onStartCallback, onProgressCallba
       controller.abort();
       reader.cancel();
     });
-    return new _promise["default"](function (resolve, reject) {
+    return new _Promise(function (resolve, reject) {
       var readNextChunk = function readNextChunk() {
         reader.read().then(function (result) {
           if (result.done) {
@@ -3094,12 +3038,12 @@ FetchTransport.prototype.open = function (xhr, onStartCallback, onProgressCallba
     return result;
   }, function (error) {
     onFinishCallback();
-    return _promise["default"].reject(error);
+    return _Promise.reject(error);
   });
 };
 
 function EventTarget() {
-  this._listeners = (0, _create["default"])(null);
+  this._listeners = _Object$create(null);
 }
 
 function throwError(e) {
@@ -3187,7 +3131,7 @@ function MessageEvent(type, options) {
   this.lastEventId = options.lastEventId;
 }
 
-MessageEvent.prototype = (0, _create["default"])(Event.prototype);
+MessageEvent.prototype = _Object$create(Event.prototype);
 
 function ConnectionEvent(type, options) {
   Event.call(this, type);
@@ -3196,7 +3140,7 @@ function ConnectionEvent(type, options) {
   this.headers = options.headers;
 }
 
-ConnectionEvent.prototype = (0, _create["default"])(Event.prototype);
+ConnectionEvent.prototype = _Object$create(Event.prototype);
 var WAITING = -1;
 var CONNECTING = 0;
 var OPEN = 1;
@@ -3211,7 +3155,7 @@ var MINIMUM_DURATION = 1000;
 var MAXIMUM_DURATION = 18000000;
 
 var parseDuration = function parseDuration(value, def) {
-  var n = (0, _parseInt2["default"])(value, 10);
+  var n = _parseInt(value, 10);
 
   if (n !== n) {
     n = def;
@@ -3256,7 +3200,7 @@ function start(es, url, options) {
   var lastEventId = '';
   var retry = initialRetry;
   var wasActivity = false;
-  var headers = options != undefined && options.headers != undefined ? JSON.parse((0, _stringify["default"])(options.headers)) : undefined;
+  var headers = options != undefined && options.headers != undefined ? JSON.parse(_JSON$stringify(options.headers)) : undefined;
   var CurrentTransport = options != undefined && options.Transport != undefined ? options.Transport : XMLHttpRequest;
   var xhr = isFetchSupported && !(options != undefined && options.Transport != undefined) ? undefined : new XHRWrapper(new CurrentTransport());
   var transport = xhr == undefined ? new FetchTransport() : new XHRTransport();
@@ -3523,7 +3467,7 @@ function start(es, url, options) {
   onTimeout();
 }
 
-EventSourcePolyfill.prototype = (0, _create["default"])(EventTarget.prototype);
+EventSourcePolyfill.prototype = _Object$create(EventTarget.prototype);
 EventSourcePolyfill.prototype.CONNECTING = CONNECTING;
 EventSourcePolyfill.prototype.OPEN = OPEN;
 EventSourcePolyfill.prototype.CLOSED = CLOSED;
@@ -3538,6 +3482,37 @@ EventSourcePolyfill.CLOSED = CLOSED;
 EventSourcePolyfill.prototype.withCredentials = undefined;
 var _default = EventSourcePolyfill;
 exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/client/dev/fouc.js":
+/*!***************************************************!*\
+  !*** ./node_modules/next/dist/client/dev/fouc.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.displayContent = displayContent;
+
+function displayContent(callback) {
+  // This is the fallback helper that removes Next.js' no-FOUC styles when
+  // CSS mode is enabled. This only really activates if you haven't created
+  // _any_ styles in your application yet.
+  ;
+  (window.requestAnimationFrame || setTimeout)(function () {
+    for (var x = document.querySelectorAll('[data-next-hide-fouc]'), i = x.length; i--;) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+
+    if (callback) {
+      callback();
+    }
+  });
+}
 
 /***/ }),
 
