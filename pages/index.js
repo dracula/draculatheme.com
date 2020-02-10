@@ -23,6 +23,8 @@ class Index extends React.Component {
           <meta content="Zeno Rocha" name="author" />
           <meta content="https://draculatheme.com" property="og:url" />
           <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
+
+          <link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" />
         </Head>
 
         <main>

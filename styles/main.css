@@ -44,17 +44,18 @@ body {
    ========================================================================== */
 
 nav {
-  display: flex;
   padding-top: 2rem;
 }
 
 nav ul {
   width: 100%;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 nav ul li {
-  float: right;
   display: inline-block;
 }
 
@@ -375,6 +376,7 @@ a {
 	background: rgba(80, 250, 123, 1);
 }
 
+.pro ::selection,
 .green ::selection {
   background: rgba(80, 250, 123, 1);
   color: #000;

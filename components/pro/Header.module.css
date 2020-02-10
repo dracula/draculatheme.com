@@ -1,0 +1,49 @@
+.header {
+  padding: 200px 15px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #50fa7b;
+  margin: 0;
+	font-size: 72px;
+	text-align: center;
+	font-family: 'abril-text';
+}
+
+.slogan {
+  color: #f2f2f2;
+  text-align: center;
+  font-size: 41px;
+  font-weight: 500;
+}
+
+.cta {
+  transition: all .3s ease-in-out;
+  margin: 40px 0 0;
+  display: inline-block;
+  background: #50fa7b;
+  text-align: center;
+  color: #2a2c37;
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+.cta:hover,
+.cta:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #50fa7b;
+  transform: translateY(-0.25em);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 56px;
+  }
+
+  .slogan {
+    font-size: 31px;
+  }
+}

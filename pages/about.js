@@ -23,6 +23,8 @@ class About extends React.Component {
           <meta content="Zeno Rocha" name="author" />
           <meta content="https://draculatheme.com/about" property="og:url" />
           <meta content={`https://draculatheme.com${image}`} property="og:image" />
+
+          <link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" />
         </Head>
 
         <main className="theme">

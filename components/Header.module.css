@@ -1,0 +1,20 @@
+.cta {
+  transition: all .3s ease-in-out;
+  margin-left: 20px;
+  display: inline-block;
+  background: rgba(80, 250, 123, 1);
+  border-radius: 4px;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  padding: 10px 18px;
+  font-size: 18px;
+  border: 0;
+}
+
+.cta:hover,
+.cta:focus {
+  border: 0;
+  color: #000 !important;
+  background: rgba(80, 250, 123, .8);
+}

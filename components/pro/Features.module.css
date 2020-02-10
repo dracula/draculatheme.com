@@ -1,0 +1,57 @@
+.features {
+  background-color: #2C2122;
+}
+
+.features ::selection {
+  background: #FF9580;
+  color: #000;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  max-width: 72em;
+  margin: 0 auto;
+  padding: 60px 15px;
+}
+
+.item {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.title {
+  color: #FF9580;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.body {
+  font-size: 18px;
+  color: #f2f2f2;
+}
+
+.highlight {
+  color: #FF9580;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .item {
+    margin: 0 0 60px;
+  }
+}

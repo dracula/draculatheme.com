@@ -1,5 +1,7 @@
 import { Component } from 'react';
+import Link from 'next/link';
 import icons from '../lib/icons';
+import styles from './Header.module.css';
 
 class Header extends Component {
   renderDescription() {
@@ -28,6 +30,7 @@ class Header extends Component {
       <nav>
         <ul>
           <li><a href="/about">About</a></li>
+          <li><Link href="/pro"><a className={styles.cta}>Dracula PRO</a></Link></li>
         </ul>
       </nav>
       <header className="header row center-xs">

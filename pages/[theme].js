@@ -36,6 +36,8 @@ class Theme extends React.Component {
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
         <meta content={`https://draculatheme.com/static/img/${this.props.query.icon}`} property="og:image" />
+
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css" />
       </Head>
 
       <main className="theme">

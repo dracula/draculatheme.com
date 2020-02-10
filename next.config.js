@@ -99,7 +99,7 @@ module.exports = {
     };
 
     Object.keys(paths).map(path => {
-      paths[path].query.total = Object.keys(paths).length - 2;
+      paths[path].query.total = Object.keys(paths).length - 3;
     });
 
     if (!process.env.GITHUB_PERSONAL_ACCESS_TOKEN) {
