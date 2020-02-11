@@ -62,6 +62,12 @@
   list-style: none;
 }
 
+.icon {
+  margin-right: 10px;
+  position: relative;
+  top: 7px;
+}
+
 .buy {
   display: flex;
   justify-content: center;
