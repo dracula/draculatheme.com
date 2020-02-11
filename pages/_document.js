@@ -17,9 +17,6 @@ export default class extends Document {
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
 
-          <script src="https://use.typekit.net/ybn2zyq.js"></script>
-          <script dangerouslySetInnerHTML={{ __html: `try{Typekit.load({ async: true });}catch(e){}` }}></script>
-
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script dangerouslySetInnerHTML={{ __html: `
             window.dataLayer = window.dataLayer || [];

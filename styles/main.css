@@ -6,7 +6,7 @@
 body {
 	background-color: #3C4556;
 	color: #f2f2f2;
-	font-family: "source-sans-pro";
+	font-family: "Source Sans Pro";
 	font-weight: 300;
 }
 
@@ -23,7 +23,7 @@ body {
 	margin: 0;
 	font-size: 72px;
 	text-align: center;
-	font-family: "abril-text";
+	font-family: "Abril Text Bold";
 }
 
 .subtitle {
@@ -98,7 +98,7 @@ nav ul li a {
 	margin: 0 0 40px;
 	font-size: 48px;
 	text-align: center;
-	font-family: "abril-text";
+	font-family: "Abril Text Bold";
 }
 
 .category-title.orange { color: #ffb86c; }
@@ -126,7 +126,7 @@ nav ul li a {
 	font-size: 36px;
 	color: #BCC2CD;
 	text-align: center;
-	font-family: "abril-text";
+	font-family: "Abril Text Bold";
 	-webkit-transition: color .3s linear;
 	transition: color .3s linear;
 }
@@ -209,7 +209,7 @@ nav ul li a {
    ========================================================================== */
 
 h3 {
-	font-family: "abril-text";
+	font-family: "Abril Text Bold";
 	text-align: left;
 	font-size: 3em;
 }
@@ -221,8 +221,7 @@ h4 {
 }
 
 code {
-	font-weight: 300;
-	font-family: "source-sans-pro";
+	font-family: "Source Sans Pro";
 }
 
 pre {
@@ -457,7 +456,7 @@ a {
 	border-radius: 4px;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	font-family: "source-sans-pro";
+	font-family: "Source Sans Pro";
 	font-size: 15px;
 	line-height: 20px;
 	background: #252525;
@@ -487,7 +486,7 @@ a {
 	color: #000;
 	font-size: 15px;
 	line-height: 100%;
-    font-family: "source-sans-pro";
+  font-family: "Source Sans Pro";
 	height: 40px !important;
 	width: 35% !important;
 }
@@ -535,4 +534,36 @@ a {
 
 .about .highlight {
   color: #8be9fd;
+}
+
+@font-face {
+  font-family: 'Abril Text Bold';
+  src: url('/static/fonts/abriltext-bold.woff2') format('woff2'),
+       url('/static/fonts/abriltext-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/static/fonts/sourcesanspro-light-webfont.woff2') format('woff2'),
+       url('/static/fonts/sourcesanspro-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/static/fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+       url('/static/fonts/sourcesanspro-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/static/fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
+       url('/static/fonts/sourcesanspro-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
