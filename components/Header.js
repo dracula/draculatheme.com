@@ -27,6 +27,9 @@ class Header extends Component {
 
   render() {
     return <div>
+      <a className="banner" href="https://www.producthunt.com/posts/dracula-pro">
+        <span>🎉 We are live on <span style={{ borderBottom: '2px solid #000' }}>Product Hunt</span> right now 🎉</span>
+      </a>
       <nav>
         <ul>
           <li><a href="/about">About</a></li>
