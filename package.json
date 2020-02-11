@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "deploy": "next build && next export && gh-pages -d out -b master"
+    "deploy": "next build && next export && now out --prod"
   },
   "author": "Zeno Rocha",
   "license": "MIT",
