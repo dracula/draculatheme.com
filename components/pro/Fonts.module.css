@@ -51,7 +51,7 @@
 
 .cta {
   transition: all .3s ease-in-out;
-  margin-right: 20px;
+  margin: 0 20px 20px 0;
   display: inline-block;
   background: #9580FF;
   text-align: center;
