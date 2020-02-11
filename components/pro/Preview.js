@@ -18,8 +18,9 @@ class Preview extends Component {
             <option value="1">Pro</option>
             <option value="2">Blade</option>
             <option value="3">Buffy</option>
-            <option value="4">Morbius</option>
-            <option value="5">Van Helsing</option>
+            <option value="4">Lincoln</option>
+            <option value="5">Morbius</option>
+            <option value="6">Van Helsing</option>
           </select>
         </div>
         <img className={this.props.app === 'alfred' ? styles.imageAlfred : styles.image} src={`/static/img/pro/${this.props.app}/${this.props.variant}.png`} alt="Theme Preview" />
