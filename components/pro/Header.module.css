@@ -11,13 +11,14 @@
   margin: 0;
 	font-size: 72px;
 	text-align: center;
-	font-family: 'Abril Text Bold';
+	font-family: 'Abril Text';
+  font-weight: 700;
 }
 
 .slogan {
   color: #f2f2f2;
   text-align: center;
-  font-size: 41px;
+  font-size: 39px;
   font-weight: 500;
 }
 

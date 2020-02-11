@@ -49,7 +49,6 @@ class Pro extends React.Component {
           <meta name="theme-color" content="#50fa7b" />
 
           <link rel="icon" type="image/x-icon" href="/static/img/pro/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,500,700&display=swap" rel="stylesheet" />
           <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
           <script noModule src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
           <script src="https://gumroad.com/js/gumroad.js"></script>

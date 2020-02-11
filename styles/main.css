@@ -23,7 +23,8 @@ body {
 	margin: 0;
 	font-size: 72px;
 	text-align: center;
-	font-family: "Abril Text Bold";
+	font-family: "Abril Text";
+  font-weight: 700;
 }
 
 .subtitle {
@@ -98,7 +99,8 @@ nav ul li a {
 	margin: 0 0 40px;
 	font-size: 48px;
 	text-align: center;
-	font-family: "Abril Text Bold";
+	font-family: "Abril Text";
+  font-weight: 700;
 }
 
 .category-title.orange { color: #ffb86c; }
@@ -126,8 +128,8 @@ nav ul li a {
 	font-size: 36px;
 	color: #BCC2CD;
 	text-align: center;
-	font-family: "Abril Text Bold";
-	-webkit-transition: color .3s linear;
+	font-family: "Abril Text";
+  font-weight: 700;
 	transition: color .3s linear;
 }
 
@@ -209,7 +211,8 @@ nav ul li a {
    ========================================================================== */
 
 h3 {
-	font-family: "Abril Text Bold";
+	font-family: "Abril Text";
+  font-weight: 700;
 	text-align: left;
 	font-size: 3em;
 }
@@ -537,33 +540,57 @@ a {
 }
 
 @font-face {
-  font-family: 'Abril Text Bold';
-  src: url('/static/fonts/abriltext-bold.woff2') format('woff2'),
-       url('/static/fonts/abriltext-bold.woff') format('woff');
-  font-weight: normal;
+  font-family: 'Abril Text';
+  src: url('/static/fonts/AbrilText-Bold.woff2') format('woff2'),
+       url('/static/fonts/AbrilText-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('/static/fonts/sourcesanspro-light-webfont.woff2') format('woff2'),
-       url('/static/fonts/sourcesanspro-light-webfont.woff') format('woff');
+  src: url('/static/fonts/SourceSansPro-Light.woff2') format('woff2'),
+       url('/static/fonts/SourceSansPro-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('/static/fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
-       url('/static/fonts/sourcesanspro-regular-webfont.woff') format('woff');
+  src: url('/static/fonts/SourceSansPro-Regular.woff2') format('woff2'),
+       url('/static/fonts/SourceSansPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('/static/fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-       url('/static/fonts/sourcesanspro-bold-webfont.woff') format('woff');
+  src: url('/static/fonts/SourceSansPro-Bold.woff2') format('woff2'),
+       url('/static/fonts/SourceSansPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/static/fonts/FiraCode-Regular.woff2') format('woff2'),
+       url('/static/fonts/FiraCode-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/static/fonts/FiraCode-Medium.woff2') format('woff2'),
+       url('/static/fonts/FiraCode-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/static/fonts/FiraCode-Bold.woff2') format('woff2'),
+       url('/static/fonts/FiraCode-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
