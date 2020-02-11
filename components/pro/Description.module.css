@@ -5,7 +5,7 @@
 .container {
   max-width: 940px;
   margin: 0 auto;
-  padding: 60px 15px;
+  padding: 60px 15px 90px;
 }
 
 .container::before {
@@ -26,6 +26,42 @@
 .highlight {
   color: #50fa7b;
 }
+
+.used {
+  color: #8d8f92;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+.companies {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  list-style: none;
+  text-align: center;
+}
+
+.company {
+  display: inline-block;
+  margin-right: 40px;
+  vertical-align: top;
+  margin-bottom: 30px;
+}
+
+.company:last-child {
+  margin: 0;
+}
+
+.company svg {
+  fill: #8d8f92;
+  transition: fill .3s ease-in-out;
+}
+
+.company svg:hover {
+  fill: #50fa7b;
+}
+
 
 @media (max-width: 1040px) {
   .container::before {
