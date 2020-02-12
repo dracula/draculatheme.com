@@ -45,7 +45,7 @@ body {
    ========================================================================== */
 
 nav {
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 nav ul {
@@ -537,34 +537,6 @@ a {
 
 .about .highlight {
   color: #8be9fd;
-}
-
-/* ==========================================================================
-   About
-   ========================================================================== */
-
-.banner {
-  transition: background .3s ease-in-out;
-  position: fixed;
-  width: 100%;
-  background: hsl(265, 89%, 78%);
-  color: #000;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 -2rem 40px;
-  z-index: 1;
-}
-
-.banner:hover,
-.banner:focus {
-  background: hsl(265, 100%, 75%);
-}
-
-.banner span {
-  color: #000;
-  font-weight: 500
 }
 
 @font-face {
