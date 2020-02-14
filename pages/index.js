@@ -708,7 +708,7 @@ class Index extends React.Component {
               </span>
               <h3 className="app-title purple">Steam</h3>
             </a>
-            <a href="/gh-pages/" className="app col-xs-12 col-sm-2">
+            <a href="/github-pages/" className="app col-xs-12 col-sm-2">
               <span className="app-img">
                 <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
               </span>
