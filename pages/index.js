@@ -427,6 +427,31 @@ class Index extends React.Component {
           </div>
 
           <div className="row around-xs">
+            <h2 className="category-title orange tilt-left">Design</h2>
+          </div>
+
+          <div className="row around-xs">
+            <a href="/adobe/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/hat-magic.png" width="237" height="196" alt="Magic Hat" />
+              </span>
+              <h3 className="app-title purple">Adobe</h3>
+            </a>
+            <a href="/figma/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/spider.png" width="181" height="175" alt="Spider" />
+              </span>
+              <h3 className="app-title cyan">Figma</h3>
+            </a>
+            <a href="/sketch/" className="app col-xs-12 col-sm-2">
+              <span className="app-img">
+                <img src="/static/img/icons/candies.png" width="198" height="184" alt="Candies" />
+              </span>
+              <h3 className="app-title orange">Sketch</h3>
+            </a>
+          </div>
+
+          <div className="row around-xs">
             <h2 className="category-title purple tilt-right">Messaging</h2>
           </div>
 
