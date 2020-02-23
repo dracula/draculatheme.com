@@ -10,6 +10,7 @@ import Palette from '../components/pro/Palette';
 import Features from '../components/pro/Features';
 import Fonts from '../components/pro/Fonts';
 import Ebook from '../components/pro/Ebook';
+import Testimonial from '../components/pro/Testimonial';
 import Pricing from '../components/pro/Pricing';
 import Footer from '../components/pro/Footer';
 
@@ -61,6 +62,7 @@ class Pro extends React.Component {
         <Features />
         <Fonts />
         <Ebook />
+        <Testimonial />
         <Pricing app={this.state.app} changeApp={this.changeApp.bind(this)} />
         <Footer />
       </div>
