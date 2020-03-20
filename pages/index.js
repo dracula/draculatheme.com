@@ -44,7 +44,7 @@ class Index extends React.Component {
     const { paths } = this.state;
 
     return Object.keys(paths).map(path => {
-      return <a key={path} href={path} data-title={paths[path].query.title} data-groups={JSON.stringify(paths[path].query.platform)} className="app" style={{ display: 'block', width: 360, height: 325 }}>
+      return <a key={path} href={path} data-title={paths[path].query.title} data-groups={JSON.stringify(paths[path].query.platform)} data-synonyms={paths[path].query.synonyms ? JSON.stringify(paths[path].query.synonyms) : ''} className="app" style={{ display: 'block', width: 360, height: 325 }}>
         <span className="app-img">
           <img src={`/static/icons/${paths[path].query.icon}`} width={200} alt={this.props.query.title} />
         </span>
@@ -90,9 +90,24 @@ class Index extends React.Component {
     let total = 0;
 
     this.shuffle.filter(element => {
-      const titleText = element.dataset.title.toLowerCase();
+      let dictionary = [];
 
-      if (titleText.indexOf(searchText) !== -1) {
+      dictionary.push(element.dataset.title.toLowerCase());
+
+      if (element.dataset.synonyms) {
+        const synonyms = JSON.parse(element.dataset.synonyms);
+        dictionary = dictionary.concat(synonyms);
+      }
+
+      let hasFound = false;
+
+      dictionary.forEach(item => {
+        if (item.indexOf(searchText) !== -1) {
+          hasFound = true;
+        }
+      });
+
+      if (hasFound) {
         total = total + 1;
         return element;
       }
