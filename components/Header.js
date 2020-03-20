@@ -1,9 +1,50 @@
 import { Component } from 'react';
 import Link from 'next/link';
+import malarkey from 'malarkey';
 import icons from '../lib/icons';
 import styles from './Header.module.css';
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.malarkey = React.createRef();
+  }
+
+  componentDidMount() {
+    if (!this.malarkey.current) return;
+
+    malarkey(this.malarkey.current, {
+      typeSpeed: 50,
+      deleteSpeed: 50,
+      pauseDelay: 2000,
+      loop: true,
+      postfix: ''
+    })
+    .type('Sublime').pause().delete()
+    .type('Atom').pause().delete()
+    .type('Vim').pause().delete()
+    .type('iTerm').pause().delete()
+    .type('Terminal.app').pause().delete()
+    .type('Zsh').pause().delete()
+    .type('Alfred').pause().delete()
+    .type('Slack').pause().delete()
+    .type('CodeMirror').pause().delete()
+    .type('Xcode').pause().delete()
+    .type('Coda').pause().delete()
+    .type('TextMate').pause().delete()
+    .type('Emacs').pause().delete()
+    .type('Sequel Pro').pause().delete()
+    .type('Visual Studio Code').pause().delete()
+    .type('JetBrains').pause().delete()
+    .type('Visual Studio').pause().delete()
+    .type('Mintty').pause().delete()
+    .type('Brackets').pause().delete()
+    .type('Wox').pause().delete()
+    .type('Hyper').pause().delete()
+    .type('Konsole').pause().delete()
+  }
+
   renderDescription() {
     if (this.props.query.repo) {
       return <h2 className="subtitle">A dark theme for {this.props.query.title} <a href="/">and {this.props.query.total}+ apps</a></h2>

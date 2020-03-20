@@ -757,8 +757,6 @@ class Index extends React.Component {
           </div>
         </main>
 
-        <script src="https://wzrd.in/standalone/malarkey@1.3.3"></script>
-        <script src="/static/js/main.js"></script>
       </div>
     )
   }
