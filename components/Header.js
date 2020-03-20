@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import Link from 'next/link';
 import malarkey from 'malarkey';
-import icons from '../lib/icons';
 import styles from './Header.module.css';
 
 class Header extends Component {
