@@ -3,10 +3,8 @@ import Footer from '../components/Footer';
 
 export default ({ children }) => {
   return <div className={children.props.query.color}>
-    <div className="container-fluid">
-      <Header query={children.props.query} />
-      <div>{children}</div>
-      <Footer />
-    </div>
+    <Header query={children.props.query} />
+    <div>{children}</div>
+    <Footer />
   </div>
 }
