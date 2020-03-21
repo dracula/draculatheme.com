@@ -137,7 +137,8 @@ class Index extends React.Component {
             </div>
 
             <div className={styles.group}>
-              <input className={styles.search} value={this.state.search} placeholder={`Search...`} onChange={this.onSearch.bind(this)} type="search" />
+              <label htmlFor="search" className={styles.searchLabel}>Search</label>
+              <input id="search" className={styles.search} value={this.state.search} placeholder={`Search...`} onChange={this.onSearch.bind(this)} type="search" />
             </div>
 
             <div className={styles.group}>

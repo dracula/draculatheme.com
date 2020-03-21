@@ -567,6 +567,7 @@ a {
        url('/static/fonts/AbrilText-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -575,6 +576,7 @@ a {
        url('/static/fonts/SourceSansPro-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -583,6 +585,7 @@ a {
        url('/static/fonts/SourceSansPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -591,6 +594,7 @@ a {
        url('/static/fonts/SourceSansPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -599,6 +603,7 @@ a {
        url('/static/fonts/FiraCode-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -607,6 +612,7 @@ a {
        url('/static/fonts/FiraCode-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -615,4 +621,5 @@ a {
        url('/static/fonts/FiraCode-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }

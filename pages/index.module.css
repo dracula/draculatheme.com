@@ -64,6 +64,10 @@
   color: #000;
 }
 
+.searchLabel {
+  display: none;
+}
+
 .search {
   padding: 5px 20px;
   height: 37px;
