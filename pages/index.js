@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Shuffle from 'shufflejs';
 import Theme from '../layouts/Theme';
-import ComingSoon from '../components/ComingSoon';
+import ProCta from '../components/ProCta';
 import paths from '../lib/paths';
 import styles from './index.module.css';
 
@@ -156,7 +156,7 @@ class Index extends React.Component {
         </div>
 
         <div style={{ padding: '30px 0 60px' }}>
-          <ComingSoon />
+          <ProCta />
         </div>
       </div>
     )

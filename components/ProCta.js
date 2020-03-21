@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import Link from 'next/link';
 
-import styles from './ComingSoon.module.css';
+import styles from './ProCta.module.css';
 
-class ComingSoon extends Component {
+class ProCta extends Component {
   render() {
     return <div className="green">
       <h1 style={{  marginBottom: 20 }} className="title">Dracula PRO</h1>
@@ -50,4 +50,4 @@ class ComingSoon extends Component {
   }
 }
 
-export default ComingSoon;
+export default ProCta;
