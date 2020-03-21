@@ -133,7 +133,7 @@ class Index extends React.Component {
           <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
         </Head>
 
-        <main className={styles.main}>
+        <div className={styles.main}>
           <div className={styles.toolbar}>
             <div className={styles.group}>
               <span className={styles.label}>Showing {this.state.total} app(s)</span>
@@ -156,7 +156,7 @@ class Index extends React.Component {
           <div ref={this.element} className={styles.results}>
             {this.renderItems()}
           </div>
-        </main>
+        </div>
 
         <div style={{ padding: '30px 0 60px' }}>
           <ComingSoon />

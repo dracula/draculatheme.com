@@ -25,7 +25,7 @@ class About extends React.Component {
           <meta content={`https://draculatheme.com${image}`} property="og:image" />
         </Head>
 
-        <main className="theme">
+        <div className="theme">
           <h3>Origin Story</h3>
           <p><strong>October 12th, 2013</strong> - It was a cold Saturday morning. I was at a conference in Germany and started to feel very sick. I could barely move, but I had to take a plane to speak at another conference in Spain. In the middle of the flight, I called the flight attendant and said I needed help. <span className="highlight">The airplane landed, and I left there in an ambulance</span>.</p>
           <p>I went to the hospital, took some blood tests, and started to feel better again. I thought it was just a food poisoning, and I was ready to leave that place. They got the results and <span className="highlight">took me straight to the emergency room.</span> I was having an episode of Pancreatitis.</p>
@@ -46,7 +46,7 @@ class About extends React.Component {
           <p>Today Dracula is available everywhere and it's one of the <span className="highlight">most popular themes ever created.</span></p>
           <p>I stayed in that hospital bed for 3 weeks. I can't even describe the feeling of being sick in a foreign country, alone and away from your family.</p>
           <p>Thanks Dracula, for distracting me when I needed the most.</p>
-        </main>
+        </div>
       </div>
     )
   }

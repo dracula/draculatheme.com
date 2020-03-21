@@ -38,12 +38,12 @@ class Theme extends React.Component {
         <meta content={`https://draculatheme.com/static/img/${this.props.query.icon}`} property="og:image" />
       </Head>
 
-      <main className="theme">
+      <div className="theme">
         <img className="preview" src={`https://raw.githubusercontent.com/dracula/${this.props.query.repo}/master/screenshot.png`} alt="Theme Preview" />
         <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
         <Updates />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />
-      </main>
+      </div>
     </div>
   }
 }
