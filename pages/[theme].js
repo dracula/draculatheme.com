@@ -2,30 +2,39 @@ import React from 'react';
 import Head from 'next/head';
 import marked from 'marked';
 import fetch from 'isomorphic-unfetch';
+import paths from '../lib/paths';
 import ThemeLayout from '../layouts/Theme';
 import Contributors from '../components/Contributors';
 import Updates from '../components/Updates';
 
+export async function getStaticPaths() {
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const header = {
+    headers: {
+      'Authorization': `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`
+    }
+  };
+
+  const query = paths.find(path => path.params.theme === params.theme).params;
+
+  const installReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`, header);
+  const installRes = await installReq.json();
+  const installBuffer = Buffer.from(installRes.content, 'base64');
+  query.install = marked(installBuffer.toString('ascii'));
+
+  const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
+  const contributors = await contributorsReq.json();
+  query.contributors = contributors;
+
+  query.total = paths.length;
+
+  return { props: { query } };
+}
+
 class Theme extends React.Component {
-  static async getInitialProps({ query }) {
-    const header = {
-      headers: {
-        'Authorization': `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`
-      }
-    };
-
-    const installReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`, header);
-    const installRes = await installReq.json();
-    const installBuffer = Buffer.from(installRes.content, 'base64');
-    query.install = marked(installBuffer.toString('ascii'));
-
-    const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
-    const contributors = await contributorsReq.json();
-    query.contributors = contributors;
-
-    return { query };
-  }
-
   render() {
     const description = `A dark theme for ${this.props.query.title} and ${this.props.query.total}+ apps`;
 

@@ -5,10 +5,20 @@ import styles from './Topbar.module.css';
 class Topbar extends Component {
   render() {
     return <nav className={styles.topbar}>
-      <a className="topbar-title" href="/">Dracula</a>
+      <Link href="/">
+        <a className="topbar-title">Dracula</a>
+      </Link>
       <ul>
-        <li><a href="/about">About</a></li>
-        <li><Link href="/pro"><a className={styles.cta}>Dracula PRO</a></Link></li>
+        <li>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/pro">
+            <a className={styles.cta}>Dracula PRO</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   }

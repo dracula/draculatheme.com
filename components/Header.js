@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import malarkey from 'malarkey';
 import Topbar from './Topbar';
+import paths from '../lib/paths';
 import styles from './Header.module.css';
 
 class Header extends Component {
@@ -11,6 +12,14 @@ class Header extends Component {
   }
 
   componentDidMount() {
+    this.startTypewriter();
+  }
+
+  componentDidUpdate() {
+    this.startTypewriter();
+  }
+
+  startTypewriter() {
     if (!this.malarkey.current) return;
 
     malarkey(this.malarkey.current, {
@@ -41,11 +50,11 @@ class Header extends Component {
 
   renderDescription() {
     if (this.props.query.repo) {
-      return <h2 className="subtitle">A dark theme for {this.props.query.title} <a href="/">and {this.props.query.total}+ apps</a></h2>
+      return <h2 className="subtitle">A dark theme for {this.props.query.title} <a href="/">and {paths.length}+ apps</a></h2>
     }
 
     if (this.props.query.title === 'About Dracula') {
-      return <h2 className="subtitle">A dark theme for {this.props.query.total}+ apps</h2>
+      return <h2 className="subtitle">A dark theme for {paths.length}+ apps</h2>
     }
 
     return <h2 className="subtitle">A dark theme for <span ref={this.malarkey} className="rotating"></span></h2>

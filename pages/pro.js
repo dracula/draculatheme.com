@@ -15,10 +15,6 @@ import Pricing from '../components/pro/Pricing';
 import Footer from '../components/pro/Footer';
 
 class Pro extends React.Component {
-  static async getInitialProps({ query }) {
-    return { query };
-  }
-
   state = {
     app: 'vscode',
     variant: '1'

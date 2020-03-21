@@ -2,11 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 import Theme from '../layouts/Theme';
 
-class About extends React.Component {
-  static async getInitialProps({ query }) {
-    return { query };
-  }
+export async function getStaticProps() {
+  const query = { title: 'About Dracula', color: 'cyan', icon: 'pack-1/045-dracula.svg' };
+  return { props: { query } };
+}
 
+class About extends React.Component {
   render() {
     const title = 'About Dracula';
     const description = 'The origin story of the Dracula theme.';

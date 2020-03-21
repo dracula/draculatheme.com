@@ -1,29 +1,26 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Shuffle from 'shufflejs';
 import Theme from '../layouts/Theme';
 import ComingSoon from '../components/ComingSoon';
+import paths from '../lib/paths';
 import styles from './index.module.css';
 
-class Index extends React.Component {
-  static async getInitialProps({ query }) {
-    return { query };
-  }
+export async function getStaticProps() {
+  const query = { title: 'Dracula', color: 'purple', icon: 'pack-1/045-dracula.svg' }
+  return { props: { query } };
+}
 
+class Index extends React.Component {
   constructor(props) {
     super(props);
-
-    const paths = JSON.parse(props.query.paths);
-
-    delete paths['/'];
-    delete paths['/about'];
-    delete paths['/pro'];
 
     this.state = {
       search: '',
       filter: 'all',
       paths: paths,
-      total: Object.keys(paths).length
+      total: paths.length
     };
 
     this.element = React.createRef();
@@ -31,7 +28,8 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.shuffle = new Shuffle(this.element.current, {
-      itemSelector: '.app'
+      itemSelector: '.app',
+      sizer: 360
     });
   }
 
@@ -39,17 +37,16 @@ class Index extends React.Component {
     this.shuffle.destroy();
   }
 
-
   renderItems() {
-    const { paths } = this.state;
-
-    return Object.keys(paths).map(path => {
-      return <a key={path} href={path} data-title={paths[path].query.title} data-groups={JSON.stringify(paths[path].query.platform)} data-synonyms={paths[path].query.synonyms ? JSON.stringify(paths[path].query.synonyms) : ''} className="app" style={{ display: 'block', width: 360, height: 325 }}>
-        <span className="app-img">
-          <img src={`/static/icons/${paths[path].query.icon}`} width={200} alt={this.props.query.title} />
-        </span>
-        <h3 className={`app-title ${paths[path].query.color}`}>{paths[path].query.title}</h3>
-      </a>
+    return paths.map(path => {
+      return <Link key={path.params.theme} href={'/[theme]'} as={`/${path.params.theme}`}>
+        <a data-title={path.params.title} data-groups={JSON.stringify(path.params.platform)} data-synonyms={path.params.synonyms ? JSON.stringify(path.params.synonyms) : ''} className="app" style={{ display: 'block', width: 360, height: 325 }}>
+          <span className="app-img">
+            <img src={`/static/icons/${path.params.icon}`} width={200} alt={this.props.query.title} />
+          </span>
+          <h3 className={`app-title ${path.params.color}`}>{path.params.title}</h3>
+        </a>
+      </Link>
     });
   }
 
@@ -142,7 +139,6 @@ class Index extends React.Component {
             <div className={styles.group}>
               <input className={styles.search} value={this.state.search} placeholder={`Search...`} onChange={this.onSearch.bind(this)} type="search" />
             </div>
-
 
             <div className={styles.group}>
               <div className={styles.buttonGroup}>
