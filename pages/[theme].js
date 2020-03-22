@@ -29,19 +29,17 @@ export async function getStaticProps({ params }) {
   const contributors = await contributorsReq.json();
   query.contributors = contributors;
 
-  query.total = paths.length;
-
   return { props: { query } };
 }
 
 class Theme extends React.Component {
   render() {
-    const description = `A dark theme for ${this.props.query.title} and ${this.props.query.total}+ apps`;
+    const description = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps`;
 
     return <div>
       <Head>
-        <title>Dracula &mdash; {description}</title>
-        <meta content="Dracula" property="og:title" />
+        <title>{description} &mdash; Dracula</title>
+        <meta content={`Dracula - ${this.props.query.title}`} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
         <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />

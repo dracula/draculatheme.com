@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Link from 'next/link';
 import malarkey from 'malarkey';
 import Topbar from './Topbar';
 import paths from '../lib/paths';
@@ -30,34 +31,30 @@ class Header extends Component {
       postfix: ''
     })
     .type('Vim').pause().delete()
-    .type('Atom').pause().delete()
-    .type('Sublime').pause().delete()
-    .type('Visual Studio Code').pause().delete()
-    .type('JetBrains').pause().delete()
+    .type('Notepad++').pause().delete()
     .type('iTerm').pause().delete()
+    .type('Visual Studio Code').pause().delete()
     .type('Terminal.app').pause().delete()
+    .type('JetBrains').pause().delete()
     .type('Zsh').pause().delete()
-    .type('Alfred').pause().delete()
-    .type('Slack').pause().delete()
-    .type('CodeMirror').pause().delete()
+    .type('Sublime').pause().delete()
     .type('Xcode').pause().delete()
-    .type('Coda').pause().delete()
-    .type('Visual Studio').pause().delete()
-    .type('TextMate').pause().delete()
+    .type('Slack').pause().delete()
+    .type('Telegram').pause().delete()
     .type('Emacs').pause().delete()
-    .type('Sequel Pro').pause().delete()
+    .type('Windows Terminal').pause().delete()
   }
 
   renderDescription() {
     if (this.props.query.repo) {
-      return <h2 className="subtitle">A dark theme for {this.props.query.title} <a href="/">and {paths.length}+ apps</a></h2>
+      return <h2 className="subtitle">Dark theme for {this.props.query.title} <Link href="/"><a>and {paths.length}+ apps</a></Link></h2>
     }
 
     if (this.props.query.title === 'About Dracula') {
-      return <h2 className="subtitle">A dark theme for {paths.length}+ apps</h2>
+      return <h2 className="subtitle">Dark theme for {paths.length}+ apps</h2>
     }
 
-    return <h2 className="subtitle">A dark theme for <span ref={this.malarkey} className="rotating"></span></h2>
+    return <h2 className="subtitle">Dark theme for <span ref={this.malarkey} className="rotating"></span></h2>
   }
 
   renderGithubButtons() {

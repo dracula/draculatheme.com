@@ -115,7 +115,7 @@ class Index extends React.Component {
 
   render() {
     const title = 'Dracula';
-    const description = 'A dark theme for Atom, Alfred, Brackets, Emacs, iTerm, Mintty, Notepad++, Slack, Sequel Pro, Sublime Text, Telegram, Textmate, Terminal.app, Ulysses, Vim, Visual Studio Code, Wox, Xcode, and Zsh';
+    const description = 'Dark theme for Vim, Notepad++, iTerm, Visual Studio Code, Terminal.app, JetBrains, ZSH, and much more';
 
     return (
       <div>
