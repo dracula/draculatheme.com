@@ -18,6 +18,10 @@
   font-size: 18px;
 }
 
+.titlePro {
+  color: rgba(80, 250, 123, 1);
+}
+
 .cta {
   transition: all .3s ease-in-out;
   margin-right: 20px;

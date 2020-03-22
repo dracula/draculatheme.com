@@ -33,7 +33,7 @@ class Pro extends React.Component {
     const description = 'Be more productive';
 
     return (
-      <div className="pro" style={{ backgroundColor: '#2a2c37', fontFamily: 'Fira Code, monospace' }}>
+      <div className="green" style={{ backgroundColor: '#2a2c37', fontFamily: 'Fira Code, monospace' }}>
         <Head>
           <meta charSet="utf-8" />
           <title>{title} &mdash; {description}</title>

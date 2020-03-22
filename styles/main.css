@@ -402,7 +402,6 @@ a {
 	background: rgba(80, 250, 123, 1);
 }
 
-.pro ::selection,
 .green ::selection {
   background: rgba(80, 250, 123, 1);
   color: #000;
