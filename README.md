@@ -1,6 +1,6 @@
 # draculatheme.com
 
-> This branch contains the source code for [draculatheme.com](https://draculatheme.com).
+> This repo contains the source code for [draculatheme.com](https://draculatheme.com).
 
 ![Screenshot](./screenshot.png)
 
