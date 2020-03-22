@@ -9,9 +9,14 @@ class Topbar extends Component {
         <a className="topbar-title">Dracula</a>
       </Link>
       <ul>
-        <li>
+        <li className={styles.about}>
           <Link href="/about">
             <a>About</a>
+          </Link>
+        </li>
+        <li className={styles.contribute}>
+          <Link href="/contribute">
+            <a>Contribute</a>
           </Link>
         </li>
         <li>

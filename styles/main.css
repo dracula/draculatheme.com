@@ -12,6 +12,7 @@ body {
 
 .theme {
 	width: 840px;
+  padding: 0 2rem;
 	margin: 0 auto;
 }
 
@@ -85,6 +86,7 @@ nav ul li a {
   font-size: 20px;
   font-weight: 400;
   border-bottom: 2px solid transparent;
+  margin-left: 20px;
 }
 
 .cyan nav ul li a:hover {
@@ -514,49 +516,62 @@ a {
 }
 
 /* ==========================================================================
-   About
+   Single
    ========================================================================== */
 
-.about .theme {
-  margin-bottom: 80px;
+.single .wrap {
+  background: #282a36;
+  padding: 80px 0;
 }
 
-.about h3 {
-   margin-bottom: 10px;
+.single .theme {
+  margin-bottom: 0;
 }
 
-.about p {
+.single h3 {
+  margin-bottom: 10px;
+}
+
+.single p {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.about a {
+.cyan .single a {
   border-bottom: 2px solid #8be9fd;
 }
 
-.about figure {
+.pink .single a {
+  border-bottom: 2px solid #ff79c6;
+}
+
+.single figure {
   margin-Bottom: 20px;
 }
 
-.about figure a {
+.single figure a {
   border: 0;
 }
 
-.about figure img {
+.single figure img {
   border-radius: 10px;
   border: 5px solid #8be9fd;
   margin-top: 10px;
   max-width: 100%;
 }
 
-.about figure figcaption {
+.single figure figcaption {
   font-style: italic;
   text-align: center;
 }
 
-.about .highlight {
+.single .highlight {
   color: #8be9fd;
 }
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
 
 @font-face {
   font-family: 'Abril Text';

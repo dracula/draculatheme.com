@@ -32,3 +32,10 @@
   color: #000 !important;
   background: rgba(80, 250, 123, .8);
 }
+
+@media (max-width: 480px) {
+  .about,
+  .contribute {
+    display: none;
+  }
+}

@@ -50,7 +50,7 @@ class Header extends Component {
       return <h2 className="subtitle">Dark theme for {this.props.query.title} <Link href="/"><a>and {paths.length}+ apps</a></Link></h2>
     }
 
-    if (this.props.query.title === 'About Dracula') {
+    if (this.props.query.title === 'About' || this.props.query.title === 'Contribute') {
       return <h2 className="subtitle">Dark theme for {paths.length}+ apps</h2>
     }
 
