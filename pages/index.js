@@ -155,9 +155,7 @@ class Index extends React.Component {
           </div>
         </div>
 
-        <div style={{ padding: '30px 0 60px' }}>
-          <ProCta />
-        </div>
+        <ProCta />
       </div>
     )
   }

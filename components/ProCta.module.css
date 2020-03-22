@@ -15,7 +15,7 @@
   font-weight: 400;
   padding: 10px 18px;
   font-size: 18px;
-  border: 0;
+  border: 0 !important;
 }
 
 .cta:hover,

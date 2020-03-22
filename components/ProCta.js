@@ -5,7 +5,7 @@ import styles from './ProCta.module.css';
 
 class ProCta extends Component {
   render() {
-    return <div className="green">
+    return <div className="green" style={{ padding: '50px 0 80px' }}>
       <h1 style={{  marginBottom: 20 }} className="title">Dracula PRO</h1>
       <div style={{ backgroundColor: '#282a36', borderRadius: '10px', margin: '0 auto' }} className="box">
         <h2 style={{ textAlign: 'center', color: '#fff' }}>the new theme is here!</h2>
