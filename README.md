@@ -15,13 +15,13 @@ We use [Next.js](https://nextjs.org/), a React framework that does static export
 2. Now clone this repository:
 
     ```sh
-    $ git clone https://github.com/dracula/dracula.github.io.git
+    $ git clone https://github.com/dracula/draculatheme.com.git
     ```
 
 3. Then go to the project's folder:
 
     ```sh
-    $ cd dracula.github.io
+    $ cd draculatheme.com
     ```
 
 4. Install all dependencies:
