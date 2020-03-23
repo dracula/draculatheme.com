@@ -121,7 +121,7 @@ class Contribute extends React.Component {
           </tr>
         </tbody>
       </table>
-      <p>For more details about how to apply these different colors to represent different code symbols, please see the <a href="https://dsifford.github.io/dracula-spec/">Dracula Specification</a>.</p>
+      <p>For more details about how to apply these different colors to represent different code symbols, please see the <a href="https://spec.draculatheme.com">Dracula Specification</a>.</p>
     </div>
   }
 
