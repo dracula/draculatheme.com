@@ -1,21 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './_error.module.css';
-
-export async function getServerSideProps({ res, err }) {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { props: { statusCode } };
-}
+import styles from './404.module.css';
 
 class CustomError extends React.Component {
   render() {
-    const title = `Error ${this.props.statusCode}`;
-    const description = 'Something went wrong';
-    const image = '/static/img/about.jpeg';
+    const title = `Error 404`;
+    const description = 'Page Not Found';
 
     return (
-      <div className={styles.body}>
+      <div style={{ background: '#282a36', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Head>
           <meta charSet="utf-8" />
           <title>{title}</title>
@@ -27,8 +21,8 @@ class CustomError extends React.Component {
         </Head>
 
         <div>
-          <h1 className={styles.title}>{this.props.statusCode}</h1>
-          <Link href="/"><a className={styles.link}>Back to Home</a></Link>
+          <h1 style={{ fontFamily: 'Abril Text', fontSize: 135, fontWeight: '700', marginBottom: 10, marginTop: -70, textAlign: 'center' }}>404</h1>
+          <Link href="/"><a style={{ color: 'rgba(189, 147, 249, 1)', borderBottom: '2px solid rgba(189, 147, 249, 1)', fontSize: 42 }}>Back to Home</a></Link>
         </div>
       </div>
     )
