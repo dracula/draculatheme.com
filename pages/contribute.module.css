@@ -25,6 +25,10 @@
   padding: 10px;
 }
 
-.table tr:nth-child(even) {
+.table td:hover {
   background: #323543;
+}
+
+.copy {
+  cursor: pointer;
 }
