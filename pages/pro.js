@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import queryString from 'query-string';
 
 import Topbar from '../components/pro/Topbar';
 import Header from '../components/pro/Header';
@@ -17,8 +18,14 @@ import Footer from '../components/pro/Footer';
 class Pro extends React.Component {
   state = {
     app: 'vscode',
-    variant: '1'
+    variant: '1',
+    queryParams: {}
   };
+
+  componentDidMount() {
+    const queryParams = queryString.parse(location.search);
+    this.setState({ queryParams });
+  }
 
   changeApp(e) {
     this.setState({ app: e.target.value });
@@ -59,7 +66,7 @@ class Pro extends React.Component {
         <Fonts />
         <Ebook />
         <Testimonial />
-        <Pricing app={this.state.app} changeApp={this.changeApp.bind(this)} />
+        <Pricing queryParams={this.state.queryParams} />
         <Footer />
       </div>
     )
