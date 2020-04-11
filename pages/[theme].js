@@ -43,6 +43,7 @@ class Theme extends React.Component {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
+        <meta content={`https://draculatheme.com/${this.props.query.theme}`} property="og:url" />
         <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
       </Head>
 
