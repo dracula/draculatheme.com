@@ -11,6 +11,7 @@ export default class extends Document {
           <meta charSet="utf-8" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta property="og:type" content="website" />
+          <meta content="summary" name="twitter:card" />
           <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
