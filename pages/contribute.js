@@ -145,14 +145,14 @@ class Contribute extends React.Component {
   }
 
   render() {
-    const title = 'Contribute';
-    const description = 'Most common asked questions and color palette of the Dracula theme';
+    const title = 'Contribute — The color palette of the Dracula theme';
+    const description = 'Check this guide to understand how to contribute to Dracula, including the most commonly asked questions and the color palette.';
 
     return (
       <div className="single">
         <Head>
           <meta charSet="utf-8" />
-          <title>{title} &mdash; {description}</title>
+          <title>{title}</title>
           <meta content={title} property="og:title" />
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />

@@ -36,14 +36,14 @@ class Pro extends React.Component {
   }
 
   render() {
-    const title = 'Dracula PRO';
-    const description = 'Be more productive';
+    const title = 'Dracula PRO — Be more productive';
+    const description = 'Dracula PRO is a color scheme and UI theme tailored for programming. Made for terminal emulators, code editors, and syntax highlighters. Designed to be aesthetically pleasing while keeping you focused.';
 
     return (
       <div className="green" style={{ backgroundColor: '#2a2c37', fontFamily: 'Fira Code, monospace' }}>
         <Head>
           <meta charSet="utf-8" />
-          <title>{title} &mdash; {description}</title>
+          <title>{title}</title>
           <meta content={title} property="og:title" />
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />

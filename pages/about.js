@@ -10,15 +10,15 @@ export async function getStaticProps() {
 
 class About extends React.Component {
   render() {
-    const title = 'About';
-    const description = 'The origin story of the Dracula project';
+    const title = 'About — The origin story of the Dracula project';
+    const description = 'October 12th, 2013 - It was a cold Saturday morning. I was at a conference in Germany and started to feel very sick. I could barely move, but I had to take a plane to speak at another conference in Spain. In the middle of the flight, I called the flight attendant and said I needed help.';
     const image = '/static/img/about.jpeg';
 
     return (
       <div className="single">
         <Head>
           <meta charSet="utf-8" />
-          <title>{title} &mdash; {description}</title>
+          <title>{title}</title>
           <meta content={title} property="og:title" />
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />

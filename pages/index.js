@@ -114,14 +114,14 @@ class Index extends React.Component {
   }
 
   render() {
-    const title = 'Dracula';
-    const description = 'Dark theme for Vim, Notepad++, iTerm, Visual Studio Code, Terminal.app, JetBrains, ZSH, and much more';
+    const title = `Dracula — Dark theme for ${this.state.total}+ apps`;
+    const description = 'Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.';
 
     return (
       <div>
         <Head>
           <meta charSet="utf-8" />
-          <title>{title} &mdash; {description}</title>
+          <title>{title}</title>
           <meta content={title} property="og:title" />
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />

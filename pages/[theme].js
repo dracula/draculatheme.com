@@ -34,12 +34,13 @@ export async function getStaticProps({ params }) {
 
 class Theme extends React.Component {
   render() {
-    const description = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps`;
+    const title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`;
+    const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
 
     return <div>
       <Head>
-        <title>{description} &mdash; Dracula</title>
-        <meta content={`Dracula - ${this.props.query.title}`} property="og:title" />
+        <title>{title}</title>
+        <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
         <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
