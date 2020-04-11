@@ -10,6 +10,7 @@ export default class extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <meta property="og:type" content="website" />
           <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
