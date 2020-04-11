@@ -47,7 +47,7 @@ class Theme extends React.Component {
       </Head>
 
       <div className="theme">
-        <img className="preview" src={`https://raw.githubusercontent.com/dracula/${this.props.query.repo}/master/screenshot.png`} alt="Theme Preview" />
+        <img className="preview" src={`https://raw.githubusercontent.com/dracula/${this.props.query.repo}/master/screenshot.png`} alt={`${this.props.query.title} Theme Preview`} />
         <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
         <Updates />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />
