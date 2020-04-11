@@ -6,9 +6,9 @@ import styles from './ProCta.module.css';
 class ProCta extends Component {
   render() {
     return <div className="green" style={{ padding: '50px 0 80px' }}>
-      <h1 style={{  marginBottom: 20 }} className="title">Dracula PRO</h1>
+      <h4 style={{  marginBottom: 20 }} className="title">Dracula PRO</h4>
       <div style={{ backgroundColor: '#282a36', borderRadius: '10px', margin: '0 auto' }} className="box">
-        <h2 style={{ textAlign: 'center', color: '#fff' }}>the new theme is here!</h2>
+        <h5 style={{ textAlign: 'center', color: '#fff' }}>the new theme is here!</h5>
         <p style={{ textAlign: 'center', fontSize: 20, color: 'rgba(255, 255, 255, .6)' }}>Meet the premium version with tons of goodies.</p>
         <div className={styles.ctaContainer}>
           <Link href="/pro">
@@ -18,7 +18,7 @@ class ProCta extends Component {
       </div>
 
       <style jsx>{`
-      h2 {
+      h5 {
         font-size: 38px;
       }
 
@@ -32,7 +32,7 @@ class ProCta extends Component {
       }
 
       @media (max-width: 840px) {
-        h2 {
+        h5 {
           font-size: 32px;
         }
 
