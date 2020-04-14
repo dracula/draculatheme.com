@@ -18,7 +18,7 @@ import Footer from '../components/pro/Footer';
 class Pro extends React.Component {
   state = {
     app: 'vscode',
-    variant: '1',
+    variant: 1,
     queryParams: {}
   };
 
@@ -28,11 +28,11 @@ class Pro extends React.Component {
   }
 
   changeApp(e) {
-    this.setState({ app: e.target.value });
+    this.setState({ app: e.value });
   }
 
-  changeVariant(e) {
-    this.setState({ variant: e.target.value });
+  changeVariant(val) {
+    this.setState({ variant: val });
   }
 
   render() {

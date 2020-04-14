@@ -18,28 +18,12 @@
   color: #f2f2f2;
   font-size: 18px;
   text-align: center;
-  margin: 20px 0 30px;
-}
-
-.controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  margin: 20px 0 0;
 }
 
 .select {
-  width: 230px;
-  padding: 5px;
-  color: #50fa7b;
-  background: none;
-  border-color: #50fa7b;
-  font-size: 18px;
-  font-family: 'Fira Code', monospace;
-}
-
-.select:first-child {
-  margin-right: 20px;
+  max-width: 340px;
+  margin: 30px auto;
 }
 
 .image {
@@ -52,20 +36,103 @@
   display: block;
 }
 
+.colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorsList {
+  list-style: none;
+}
+
+.colorsList li {
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center;
+  width: 110px;
+  cursor: pointer;
+}
+
+.colorName {
+  margin-bottom: 10px;
+}
+
+.colorPreview {
+  height: 40px;
+  width: 40px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  position: relative;
+}
+
+.colorPreview:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 0.15em solid;
+  border-radius: 50%;
+  transition: padding 250ms;
+}
+
+.active .colorPreview:after {
+  padding: 1.5em;
+}
+
+.colorsList li:nth-child(1) .colorPreview {
+  background-color: #9580FF;
+}
+
+.colorsList li:nth-child(1) .colorPreview:after {
+  border-color: #9580FF;
+}
+
+.colorsList li:nth-child(2) .colorPreview {
+  background-color: #8AFF80;
+}
+
+.colorsList li:nth-child(2) .colorPreview:after {
+  border-color: #8AFF80;
+}
+
+.colorsList li:nth-child(3) .colorPreview {
+  background-color: #FF80BF;
+}
+
+.colorsList li:nth-child(3) .colorPreview:after {
+  border-color: #FF80BF;
+}
+
+.colorsList li:nth-child(4) .colorPreview {
+  background-color: #FFFF80;
+}
+
+.colorsList li:nth-child(4) .colorPreview:after {
+  border-color: #FFFF80;
+}
+
+.colorsList li:nth-child(5) .colorPreview {
+  background-color: #FF9580;
+}
+
+.colorsList li:nth-child(5) .colorPreview:after {
+  border-color: #FF9580;
+}
+
+.colorsList li:nth-child(6) .colorPreview {
+  background-color: #80FFEA;
+}
+
+.colorsList li:nth-child(6) .colorPreview:after {
+  border-color: #80FFEA;
+}
+
 @media (max-width: 768px) {
-  .controls {
-    flex-direction: column;
-  }
-
-  .select:first-child {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .select:last-child {
-    margin-bottom: 20px;
-  }
-
   .imageAlfred {
     max-width: 100%;
   }
