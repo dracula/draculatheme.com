@@ -7,7 +7,7 @@ class Contributors extends Component {
       return this.props.data.map((contributor, index) => {
         return <li key={index} aria-label={contributor.login} data-microtip-position="bottom" role="tooltip">
           <a href={contributor.html_url} target="_blank">
-            <img loading="lazy" src={`${contributor.avatar_url}&s=160`} alt={contributor.login} width="80" />
+            <img loading="lazy" src={`${contributor.avatar_url}&s=160`} alt={contributor.login} width="80" height="80" />
           </a>
         </li>
       });

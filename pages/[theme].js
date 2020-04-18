@@ -6,6 +6,8 @@ import paths from '../lib/paths';
 import ThemeLayout from '../layouts/Theme';
 import Contributors from '../components/Contributors';
 import Updates from '../components/Updates';
+import download from 'download';
+import probe from 'probe-image-size';
 
 export async function getStaticPaths() {
   return { paths, fallback: false };
@@ -29,6 +31,13 @@ export async function getStaticProps({ params }) {
   const contributors = await contributorsReq.json();
   query.contributors = contributors;
 
+  const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`;
+  await download(image, 'public/static/img/screenshots', { filename: `${query.theme}.png` });
+
+  const metadata = await probe(image);
+  query.imageWidth = metadata.width;
+  query.imageHeight = metadata.height;
+
   return { props: { query } };
 }
 
@@ -48,7 +57,7 @@ class Theme extends React.Component {
       </Head>
 
       <div className="theme">
-        <img className="preview" src={`https://raw.githubusercontent.com/dracula/${this.props.query.repo}/master/screenshot.png`} alt={`${this.props.query.title} Theme Preview`} />
+        <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight}/>
         <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
         <Updates />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />
