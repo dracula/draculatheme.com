@@ -3,6 +3,7 @@ import Router from 'next/router';
 
 import '../styles/main.css';
 import * as gtag from '../lib/gtag';
+import easterEgg from '../lib/easter-egg';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
@@ -12,6 +13,10 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     const Layout = Component.Layout || Noop
+
+    if (process.env.NODE_ENV === 'production') {
+      console.log(easterEgg, "font-family:monospace");
+    }
 
     return (
       <Layout>
