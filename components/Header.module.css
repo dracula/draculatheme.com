@@ -17,9 +17,9 @@
 }
 
 .ghButtons {
-  margin: 35px 0 0 25px;
+  margin-top: 25px;
 }
 
-.ghButton {
+.ghButtons span {
   margin: 0 5px;
 }

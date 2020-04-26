@@ -4,6 +4,7 @@ import malarkey from 'malarkey';
 import Topbar from './Topbar';
 import paths from '../lib/paths';
 import styles from './Header.module.css';
+import GitHubButton from 'react-github-btn';
 
 class Header extends Component {
   constructor(props) {
@@ -60,9 +61,10 @@ class Header extends Component {
   renderGithubButtons() {
     if (this.props.query.title !== 'About Dracula') {
       return <p className={styles.ghButtons}>
-        <iframe className={styles.ghButton} src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=watch&amp;count=true&amp;size=large" title="GitHub Stars" allowtransparency="true" frameBorder="0" scrolling="0" width="152" height="30"></iframe>
-        <iframe className={styles.ghButton} src="https://ghbtns.com/github-btn.html?user=dracula&amp;repo=dracula-theme&amp;type=fork&amp;count=true&amp;size=large" title="GitHub Forks" allowtransparency="true" frameBorder="0" scrolling="0" width="156" height="30"></iframe>
+        <GitHubButton href="https://github.com/dracula/dracula-theme" data-size="large" data-show-count="true" aria-label="Star dracula/dracula-theme on GitHub">Star</GitHubButton>
+        <GitHubButton href="https://github.com/dracula/dracula-theme/fork" data-size="large" data-show-count="true" aria-label="Fork dracula/dracula-theme on GitHub">Fork</GitHubButton>
       </p>
+
     }
   }
 
