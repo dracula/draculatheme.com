@@ -7,7 +7,7 @@ class Pricing extends Component {
     let gumroadURL = 'https://gum.co/dracula-pro?wanted=true';
 
     if (this.props.queryParams.a) {
-      gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}`;
+      gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}?wanted=true`;
     }
 
     return <div id="get" className={styles.pricing}>
