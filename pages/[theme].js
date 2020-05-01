@@ -42,6 +42,30 @@ export async function getStaticProps({ params }) {
 }
 
 class Theme extends React.Component {
+  state = {
+    views: ''
+  };
+
+  componentDidMount() {
+    this.getViews();
+  }
+
+  async getViews() {
+    const viewsReq = await fetch(`/api/views/${this.props.query.theme}`);
+    const viewsRes = await viewsReq.json();
+    const views = new Intl.NumberFormat().format(viewsRes.views);
+
+    this.setState({ views });
+  }
+
+  renderViews() {
+    if (this.state.views) {
+      return <p className="views">{this.state.views} views</p>
+    }
+
+    return <p className="views loading" />
+  }
+
   render() {
     const title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`;
     const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
@@ -58,6 +82,7 @@ class Theme extends React.Component {
 
       <div className="theme">
         <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight}/>
+        {this.renderViews()}
         <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
         <Updates />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />

@@ -282,6 +282,17 @@ a {
 	margin: 0 auto 80px;
 }
 
+.views {
+  float: right;
+  margin-top: 30px;
+  opacity: 1;
+  transition: .3s ease-in opacity;
+}
+
+.views.loading {
+  opacity: 0;
+}
+
 .instructions {
 	margin-bottom: 2em;
 }
@@ -417,12 +428,17 @@ a {
 	.theme {
 		width: auto;
 	}
+
+  .views {
+    float: none;
+    margin: 20px 0;
+  }
 }
 
 .preview {
   border-radius: 10px;
 	display: block;
-	margin: -30px auto 0;
+	margin: -30px auto 20px;
 	height: auto;
 	max-width: 100%;
 }
