@@ -1,7 +1,8 @@
 const { google } = require('googleapis');
 
 const scopes = 'https://www.googleapis.com/auth/analytics.readonly';
-const jwt = new google.auth.JWT(process.env.GCP_CLIENT_EMAIL, null, process.env.GCP_PRIVATE_KEY, scopes);
+const auth = require('../../../auth.json');
+const jwt = new google.auth.JWT(auth.client_email, null, auth.private_key, scopes);
 const view_id = '78543755';
 
 async function getData(id) {
