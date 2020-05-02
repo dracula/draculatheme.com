@@ -31,4 +31,10 @@
 
 .copy {
   cursor: pointer;
+  width: 180px;
+}
+
+.select {
+  max-width: 295px;
+  margin: 20px 0;
 }

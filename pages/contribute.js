@@ -1,8 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import convert from 'color-convert';
 import Theme from '../layouts/Theme';
 import ProCta from '../components/ProCta';
 import styles from './contribute.module.css';
+
+const SelectInput = dynamic(() => import('react-select'), { ssr: false });
 
 export async function getStaticProps() {
   const query = { title: 'Contribute', color: 'pink', icon: 'pack-1/045-dracula.svg' };
@@ -11,7 +15,21 @@ export async function getStaticProps() {
 
 class Contribute extends React.Component {
   state = {
-    tooltip: 'Copy'
+    tooltip: 'Copy',
+    colorType: { value: 'hex', label: 'HEX' },
+    colors: [
+      { value: '#282a36', label: 'Background'},
+      { value: '#44475a', label: 'Current Line'},
+      { value: '#f8f8f2', label: 'Foreground'},
+      { value: '#6272a4', label: 'Comment'},
+      { value: '#8be9fd', label: 'Cyan'},
+      { value: '#50fa7b', label: 'Green'},
+      { value: '#ffb86c', label: 'Orange'},
+      { value: '#ff79c6', label: 'Pink'},
+      { value: '#bd93f9', label: 'Purple'},
+      { value: '#ff5555', label: 'Red'},
+      { value: '#f1fa8c', label: 'Yellow'},
+    ]
   };
 
   renderFaq() {
@@ -32,97 +50,101 @@ class Contribute extends React.Component {
     </div>
   }
 
+  changeColorType(e) {
+    const { colors } = this.state;
+
+    if (e.value === 'hex') {
+      colors.map(color => {
+        color.convertedValue = color.value;
+        return color;
+      });
+    }
+    else if (e.value === 'rgb') {
+      colors.map(color => {
+        color.convertedValue = `rgb(${convert.hex.rgb(color.value).join(', ')})`;
+        return color;
+      });
+    }
+    else if (e.value === 'hsl') {
+      colors.map(color => {
+        color.convertedValue = `hsl(${convert.hex.hsl(color.value).join(', ')})`;
+        return color;
+      });
+    }
+    else if (e.value === 'ansi16' || e.value === 'ansi256') {
+      colors.map(color => {
+        color.convertedValue = convert.hex[e.value](color.value);
+        return color;
+      });
+    }
+
+    this.setState({ colorType: e });
+  }
+
+  renderSelect() {
+    const colorTypes = [
+      { value: 'hex', label: 'HEX' },
+      { value: 'rgb', label: 'RGB' },
+      { value: 'hsl', label: 'HSL' },
+      { value: 'ansi16', label: 'ANSI 16' },
+      { value: 'ansi256', label: 'ANSI 256' },
+    ];
+
+    return <div className={styles.select}>
+      <SelectInput id="theme" defaultValue={colorTypes[0]} options={colorTypes} onChange={this.changeColorType.bind(this)} isSearchable={true}
+        styles={{
+          option: (styles, state) => ({
+            ...styles,
+            cursor: 'pointer',
+          }),
+          control: (styles) => ({
+            ...styles,
+            cursor: 'pointer',
+          })
+        }}
+        theme={theme => ({
+          ...theme,
+          borderRadius: 0,
+          cursor: 'pointer',
+          colors: {
+            ...theme.colors,
+            primary:   '#ff79c6', // Opened - Border
+            primary25: '#2a2c37', // Opened - Active
+            primary50: '#2a2c37', // Opened - Focus
+            neutral0:  '#1d1e26', // Closed - Background
+            neutral10: '#ff79c6', // Closed - Arrow
+            neutral20: '#ff79c6', // Closed - Border
+            neutral30: '#ff79c6', // Closed - Border Hover
+            neutral40: '#ff79c6', // Closed - Arrow Hover
+            neutral60: '#ff79c6', // Opened - Arrow
+            neutral80: '#ff79c6', // Closed - Text
+          },
+        })} />
+    </div>
+  }
+
   renderColorPalette() {
+    const { colors } = this.state;
+
     return <div>
       <h3 id="color-palette">Color Palette</h3>
+      {this.renderSelect()}
       <table className={styles.table}>
         <thead>
           <tr>
             <th>Palette</th>
-            <th>Hex</th>
-            <th>RGB</th>
-            <th>HSL</th>
+            <th>{this.state.colorType.label}</th>
             <th>Color Picker</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Background</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#282a36</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>40 42 54</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>231° 15% 18%</td>
-            <td><input type="color" defaultValue="#282a36" /></td>
-          </tr>
-          <tr>
-            <td>Current Line</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#44475a</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>68 71 90</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>232° 14% 31%</td>
-            <td><input type="color" defaultValue="#44475a" /></td>
-          </tr>
-          <tr>
-            <td>Foreground</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#f8f8f2</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>248 248 242</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>60° 30% 96%</td>
-            <td><input type="color" defaultValue="#f8f8f2" /></td>
-          </tr>
-          <tr>
-            <td>Comment</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#6272a4</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>98 114 164</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>225° 27% 51%</td>
-            <td><input type="color" defaultValue="#6272a4" /></td>
-          </tr>
-          <tr>
-            <td>Cyan</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#8be9fd</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>139 233 253</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>191° 97% 77%</td>
-            <td><input type="color" defaultValue="#8be9fd" /></td>
-          </tr>
-          <tr>
-            <td>Green</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#50fa7b</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>80 250 123</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>135° 94% 65%</td>
-            <td><input type="color" defaultValue="#50fa7b" /></td>
-          </tr>
-          <tr>
-            <td>Orange</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#ffb86c</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>255 184 108</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>31° 100% 71%</td>
-            <td><input type="color" defaultValue="#ffb86c" /></td>
-          </tr>
-          <tr>
-            <td>Pink</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#ff79c6</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>255 121 198</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>326° 100% 74%</td>
-            <td><input type="color" defaultValue="#ff79c6" /></td>
-          </tr>
-          <tr>
-            <td>Purple</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#bd93f9</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>189 147 249</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>265° 89% 78%</td>
-            <td><input type="color" defaultValue="#bd93f9" /></td>
-          </tr>
-          <tr>
-            <td>Red</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#ff5555</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>255 85 85</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>0° 100% 67%</td>
-            <td><input type="color" defaultValue="#ff5555" /></td>
-          </tr>
-          <tr>
-            <td>Yellow</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>#f1fa8c</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>241 250 140</td>
-            <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>65° 92% 76%</td>
-            <td><input type="color" defaultValue="#f1fa8c" /></td>
-          </tr>
+          {colors.map(color => {
+            return <tr key={color.label}>
+              <td>{color.label}</td>
+              <td className={styles.copy} aria-label={this.state.tooltip} data-microtip-position="bottom" role="tooltip" onClick={this.copy.bind(this)} onMouseLeave={this.resetTooltip.bind(this)}>{color.convertedValue || color.value}</td>
+              <td><input type="color" defaultValue={color.value} /></td>
+            </tr>
+          })}
         </tbody>
       </table>
       <p>For more details about how to apply these different colors to represent different code symbols, please see the <a href="https://spec.draculatheme.com">Dracula Specification</a>.</p>

@@ -12,6 +12,7 @@
   "author": "Zeno Rocha",
   "license": "MIT",
   "dependencies": {
+    "color-convert": "^2.0.1",
     "dotenv": "^8.2.0",
     "download": "^8.0.0",
     "gh-pages": "^2.1.1",
