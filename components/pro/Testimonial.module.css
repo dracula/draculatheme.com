@@ -25,10 +25,6 @@
   margin: 0;
 }
 
-.highlight {
-  color: #50fa7b;
-}
-
 .author {
   display: flex;
   flex-direction: row;
