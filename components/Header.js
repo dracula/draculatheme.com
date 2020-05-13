@@ -3,7 +3,6 @@ import Link from 'next/link';
 import malarkey from 'malarkey';
 import Topbar from './Topbar';
 import paths from '../lib/paths';
-import styles from './Header.module.css';
 import GitHubButton from 'react-github-btn';
 
 class Header extends Component {
@@ -60,11 +59,10 @@ class Header extends Component {
 
   renderGithubButtons() {
     if (this.props.query.title !== 'About Dracula') {
-      return <p className={styles.ghButtons}>
+      return <p className="gh-buttons">
         <GitHubButton href="https://github.com/dracula/dracula-theme" data-size="large" data-show-count="true" aria-label="Star dracula/dracula-theme on GitHub">Star</GitHubButton>
         <GitHubButton href="https://github.com/dracula/dracula-theme/fork" data-size="large" data-show-count="true" aria-label="Fork dracula/dracula-theme on GitHub">Fork</GitHubButton>
       </p>
-
     }
   }
 

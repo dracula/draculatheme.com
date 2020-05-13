@@ -42,7 +42,7 @@ class Index extends React.Component {
       return <Link key={path.params.theme} href={'/[theme]'} as={`/${path.params.theme}`}>
         <a data-title={path.params.title} data-groups={JSON.stringify(path.params.platform)} data-synonyms={path.params.synonyms ? JSON.stringify(path.params.synonyms) : ''} className="app" style={{ display: 'block', width: 360, height: 325 }}>
           <span className="app-img">
-            <img src={`/static/icons/${path.params.icon}`} width={200} alt={this.props.query.title} />
+            <img src={`/static/icons/${path.params.icon}`} width={200} height={200} alt={path.params.title} />
           </span>
           <h3 className={`app-title ${path.params.color}`}>{path.params.title}</h3>
         </a>

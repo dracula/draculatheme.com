@@ -9,10 +9,11 @@
 .title {
   color: #50fa7b;
   margin: 0;
-	font-size: 72px;
-	text-align: center;
-	font-family: 'Abril Text';
+  font-size: 72px;
+  text-align: center;
+  font-family: 'Abril Text';
   font-weight: 700;
+  height: 100px;
 }
 
 .slogan {
@@ -20,6 +21,7 @@
   text-align: center;
   font-size: 39px;
   font-weight: 500;
+  height: 48px;
 }
 
 .cta {
@@ -31,6 +33,7 @@
   color: #2a2c37;
   padding: 12px 24px;
   font-size: 18px;
+  height: 24px;
 }
 
 .cta:hover,
@@ -42,9 +45,11 @@
 @media (max-width: 768px) {
   .title {
     font-size: 56px;
+    height: 78px;
   }
 
   .slogan {
     font-size: 31px;
+    height: 39px;
   }
 }
