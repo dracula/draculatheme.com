@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import marked from 'marked';
-import fetch from 'isomorphic-unfetch';
 import paths from '../lib/paths';
 import ThemeLayout from '../layouts/Theme';
 import Contributors from '../components/Contributors';
