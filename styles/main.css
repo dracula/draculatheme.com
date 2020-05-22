@@ -179,7 +179,11 @@ nav ul li a {
 .app-img img {
   display: flex;
   align-self: flex-end;
+}
 
+.app-views {
+  color: #f2f2f2;
+  text-align: center;
 }
 
 /* Credits

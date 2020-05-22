@@ -9,7 +9,23 @@ import styles from './index.module.css';
 
 export async function getStaticProps() {
   const query = { title: 'Dracula', color: 'purple', icon: 'pack-1/045-dracula.svg' }
-  return { props: { query } };
+  const isProd = process.env.NODE_ENV === 'production';
+  const base = isProd ? 'https://draculatheme.com' : 'http://localhost:3000';
+
+  if (isProd) {
+    for (const path of paths) {
+      const viewsReq = await fetch(`${base}/api/views/${path.params.theme}`);
+      const viewsRes = await viewsReq.json();
+
+      path.params.views = parseInt(viewsRes.views);
+    }
+
+    paths.sort(function(a, b) {
+      return b.params.views - a.params.views;
+    });
+  }
+
+  return { props: { paths, query } };
 }
 
 class Index extends React.Component {
@@ -19,8 +35,8 @@ class Index extends React.Component {
     this.state = {
       search: '',
       filter: 'all',
-      paths: paths,
-      total: paths.length
+      paths: props.paths,
+      total: props.paths.length
     };
 
     this.element = React.createRef();
@@ -38,13 +54,15 @@ class Index extends React.Component {
   }
 
   renderItems() {
-    return paths.map(path => {
+    return this.props.paths.map(path => {
+      const views = new Intl.NumberFormat().format(path.params.views || 0);
       return <Link key={path.params.theme} href={'/[theme]'} as={`/${path.params.theme}`}>
         <a data-title={path.params.title} data-groups={JSON.stringify(path.params.platform)} data-synonyms={path.params.synonyms ? JSON.stringify(path.params.synonyms) : ''} className="app" style={{ display: 'block', width: 360, height: 325 }}>
           <span className="app-img">
             <img src={`/static/icons/${path.params.icon}`} width={200} height={200} alt={path.params.title} />
           </span>
           <h3 className={`app-title ${path.params.color}`}>{path.params.title}</h3>
+          <p className="app-views">{views} views</p>
         </a>
       </Link>
     });
