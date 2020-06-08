@@ -20,7 +20,7 @@ export async function getStaticProps() {
       path.params.views = parseInt(viewsRes.views);
     }
 
-    paths.sort(function(a, b) {
+    paths.sort(function (a, b) {
       return b.params.views - a.params.views;
     });
   }
@@ -47,6 +47,11 @@ class Index extends React.Component {
       itemSelector: '.app',
       sizer: 360
     });
+    const loadFilter = localStorage.getItem('filter');
+    if (loadFilter) {
+      this.setState({ filter: loadFilter });
+      this.onFilter(loadFilter);
+    }
   }
 
   componentWillUnmount() {
@@ -73,6 +78,8 @@ class Index extends React.Component {
       search: '',
       filter: platform,
     });
+
+    localStorage.setItem('filter', platform);
 
     if (platform === 'all') {
       platform = ['all', 'linux', 'mac', 'windows'];
