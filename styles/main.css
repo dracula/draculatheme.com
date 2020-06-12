@@ -33,7 +33,7 @@ body {
   margin: 0 0 10px;
   font-size: 28px;
   font-weight: 400;
-  height: 36px;
+  min-height: 36px;
 }
 
 .header {
