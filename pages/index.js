@@ -48,9 +48,14 @@ class Index extends React.Component {
       sizer: 360
     });
     const loadFilter = localStorage.getItem('filter');
+    const loadSearch = localStorage.getItem('search');
     if (loadFilter) {
       this.setState({ filter: loadFilter });
       this.onFilter(loadFilter);
+    }
+    if (loadSearch) {
+      this.setState({ search: loadSearch })
+      this.onSearch(undefined, loadSearch)
     }
   }
 
@@ -79,6 +84,7 @@ class Index extends React.Component {
       filter: platform,
     });
 
+    localStorage.removeItem('search');
     localStorage.setItem('filter', platform);
 
     if (platform === 'all') {
@@ -101,13 +107,25 @@ class Index extends React.Component {
     this.setState({ total });
   }
 
-  onSearch(e) {
-    this.setState({
-      search: e.target.value,
-      filter: 'all',
-    });
+  onSearch(e, loadSearch) {
+    let search;
+    
+    if (loadSearch) {
+      this.setState({
+        search: loadSearch,
+        filter: 'all',
+      })
+      search = loadSearch;
+    } else {
+      this.setState({
+        search: e.target.value,
+        filter: 'all',
+      });
+      search = e.target.value;
+      localStorage.setItem('search', e.target.value);
+    }
 
-    const searchText = e.target.value.toLowerCase();
+    const searchText = search.toLowerCase();
 
     let total = 0;
 
