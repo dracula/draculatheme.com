@@ -1,9 +1,9 @@
 .ebook {
-  background: #2A212C;
+  background: #2a2c37;
 }
 
 .ebook ::selection {
-  background: #FF80BF;
+  background: #92ffff;
   color: #000;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .title {
-  color: #FF80BF;
+  color: #92ffff;
   font-size: 48px;
   font-weight: 700;
   margin: 10px 0 30px;
@@ -40,7 +40,7 @@
 }
 
 .highlight {
-  color: #FF80BF;
+  color: #92ffff;
 }
 
 .image {
@@ -48,6 +48,23 @@
   margin: 0 auto;
   width: 400px;
   max-width: 100%;
+}
+
+.cta {
+  transition: all .3s ease-in-out;
+  margin-right: 20px;
+  display: inline-block;
+  background: #92ffff;
+  text-align: center;
+  color: #2a2c37;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.cta:hover,
+.cta:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #92ffff;
+  transform: translateY(-0.25em);
 }
 
 @media (max-width: 768px) {
