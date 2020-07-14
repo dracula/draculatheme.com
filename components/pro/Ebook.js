@@ -14,7 +14,6 @@ class Ebook extends Component {
           <p className={styles.body}>You can have the best theme, font, and tooling in the world, but if you cultivate bad habits, it will be hard for you to <span className={styles.highlight}>become a top developer</span>.</p>
           <p className={styles.body}>Because of that, I decided to reach out to the best developers I know and ask them tips on <span className={styles.highlight}>how to be more productive</span>.</p>
           <p className={styles.body}>This e-book will be a collection of valuable learnings from senior professionals.</p>
-          <p className={styles.body}><span className={styles.highlight}>/* Available in July 14, 2020 */</span></p>
           <a href="https://14habits.com" target="_blank" className={styles.cta}>Learn more</a>
         </div>
       </div>
