@@ -52,7 +52,7 @@ class Theme extends React.Component {
   async getViews() {
     const viewsReq = await fetch(`/api/views/${this.props.query.theme}`);
     const viewsRes = await viewsReq.json();
-    const views = new Intl.NumberFormat().format(viewsRes.views);
+    const views = new Intl.NumberFormat().format(viewsRes.views || 0);
 
     this.setState({ views });
   }
