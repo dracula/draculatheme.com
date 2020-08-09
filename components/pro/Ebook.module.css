@@ -43,13 +43,6 @@
   color: #92ffff;
 }
 
-.image {
-  display: block;
-  margin: 0 auto;
-  width: 400px;
-  max-width: 100%;
-}
-
 .cta {
   transition: all .3s ease-in-out;
   margin-right: 20px;
