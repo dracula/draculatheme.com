@@ -66,7 +66,12 @@ class Theme extends React.Component {
   }
 
   render() {
-    const title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`;
+    let title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`;
+
+    if (this.props.query.title === 'Wallpaper') {
+      title = `Dark wallpaper collection — Dracula`;
+    }
+
     const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
 
     return <div>

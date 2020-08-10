@@ -46,6 +46,10 @@ class Header extends Component {
   }
 
   renderDescription() {
+    if (this.props.query.title === 'Wallpaper') {
+      return <h2 className="subtitle">Dark wallpaper collection</h2>
+    }
+
     if (this.props.query.repo) {
       return <h2 className="subtitle">Dark theme for {this.props.query.title} <Link href="/"><a>and {paths.length}+ apps</a></Link></h2>
     }
