@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "sitemap": "node sitemap.js",
-    "deploy": "npm run sitemap && now --prod"
+    "deploy": "npm run sitemap && vercel --prod"
   },
   "author": "Zeno Rocha",
   "license": "MIT",
