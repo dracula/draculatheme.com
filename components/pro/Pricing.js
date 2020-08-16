@@ -12,8 +12,8 @@ class Pricing extends Component {
 
     return <div id="get" className={styles.pricing}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Get it now</h2>
-        <p className={styles.body}>Join other developers using Dracula PRO every day to build elite apps.</p>
+        <h2 className={styles.title}>Become a Vampire</h2>
+        <p className={styles.body}>Join <span className={styles.highlight}>1,197+ developers</span> using Dracula PRO every day.</p>
         <div className={styles.tables}>
           <div className={styles.table}>
             <p className={styles.option}>Launch Promo</p>
