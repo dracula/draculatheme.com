@@ -17,7 +17,7 @@ class Pricing extends Component {
         <div className={styles.tables}>
           <div className={styles.table}>
             <p className={styles.option}>Launch Promo</p>
-            <p className={styles.price}><span className={styles.previousPrice}>$79</span>$49</p>
+            <p className={styles.price}><span className={styles.previousPrice}>$99</span>$79</p>
             <p className={styles.term}>one-time payment</p>
             <ul className={styles.features}>
               <li>
