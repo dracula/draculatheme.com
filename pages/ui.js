@@ -26,7 +26,7 @@ class UI extends React.Component {
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />
           <meta content="https://draculatheme.com/ui" property="og:url" />
-          <meta content="https://draculatheme.com/static/img/facebook.png" property="og:image" />
+          <meta content="https://draculatheme.com/static/img/og-ui.jpg" property="og:image" />
         </Head>
 
         <div className={styles.header}>
