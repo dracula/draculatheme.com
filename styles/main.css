@@ -316,6 +316,11 @@ a {
   max-width: 100%;
 }
 
+.instructions ol li ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
 .orange .title,
 .orange .subtitle a,
 .orange .theme a,
