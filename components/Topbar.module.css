@@ -4,28 +4,6 @@
   z-index: 1;
 }
 
-.banner {
-  background: hsl(250, 100%, 75%);
-  height: 40px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Fira Code', monospace;
-}
-
-.banner:hover {
-  background: hsl(250, 100%, 80%);
-  transition: .3s ease-in-out background;
-}
-
-.bannerContent {
-  color: #000;
-  text-align: center;
-  width: 100%;
-  margin: 0 0 0 50px;
-}
-
 .topbar {
   width: 100%;
   background: #282a36;
@@ -61,9 +39,8 @@
   background: rgba(80, 250, 123, .8);
 }
 
-@media (max-width: 480px) {
-  .about,
-  .contribute {
+@media (max-width: 600px) {
+  .items {
     display: none;
   }
 }

@@ -3,28 +3,26 @@ import Link from 'next/link';
 import styles from './Topbar.module.css';
 
 class Topbar extends Component {
-  renderBanner() {
-    return <a className={styles.banner} href="/ui" target="_blank">
-      <p className={styles.bannerContent}>Coming Soon // Dracula UI // Join the Waitlist</p>
-    </a>
-  }
-
   render() {
     return <div className={styles.fixed}>
-      {this.renderBanner()}
       <nav className={styles.topbar}>
         <Link href="/">
           <a className="topbar-title">Dracula</a>
         </Link>
         <ul>
-          <li className={styles.about}>
+          <li className={styles.items}>
             <Link href="/about">
               <a>About</a>
             </Link>
           </li>
-          <li className={styles.contribute}>
+          <li className={styles.items}>
             <Link href="/contribute">
               <a>Contribute</a>
+            </Link>
+          </li>
+          <li className={styles.items}>
+            <Link href="/ui">
+              <a>Dracula UI</a>
             </Link>
           </li>
           <li>
