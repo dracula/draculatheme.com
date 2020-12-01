@@ -4,7 +4,7 @@ import apps from '../../lib/pro';
 
 class Pricing extends Component {
   render() {
-    let gumroadURL = 'https://gum.co/dracula-pro/BLACKFRIDAY?wanted=true';
+    let gumroadURL = 'https://gum.co/dracula-pro?wanted=true';
 
     if (this.props.queryParams.a) {
       gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}?wanted=true`;
@@ -17,7 +17,7 @@ class Pricing extends Component {
         <div className={styles.tables}>
           <div className={styles.table}>
             <p className={styles.option}>Launch Promo</p>
-            <p className={styles.price}><span className={styles.previousPrice}>$79</span>$39</p>
+            <p className={styles.price}><span className={styles.previousPrice}>$99</span>$79</p>
             <p className={styles.term}>one-time payment</p>
             <ul className={styles.features}>
               <li>
