@@ -16,37 +16,24 @@ import Testimonial from '../components/pro/Testimonial';
 import Pricing from '../components/pro/Pricing';
 import Footer from '../components/pro/Footer';
 
-export async function getServerSideProps() {
-  try {
-    const pppReq = await fetch('https://ppp.dracula.workers.dev');
-    const ppp = await pppReq.json();
-
-    return {
-      props: { ppp }
-    }
-  }
-  catch(e) {
-    return {
-      props: {
-        ppp: {
-          code: '500',
-          message: 'Some internal error happened while processing the worker'
-        }
-      }
-    }
-  }
-}
-
 class Pro extends React.Component {
   state = {
     app: 'vscode',
     variant: 1,
+    ppp: {},
     queryParams: {}
   };
 
   componentDidMount() {
     const queryParams = queryString.parse(location.search);
     this.setState({ queryParams });
+    this.fetchPPP();
+  }
+
+  async fetchPPP() {
+    const pppReq = await fetch('/api/ppp');
+    const ppp = await pppReq.json();
+    this.setState({ ppp });
   }
 
   changeApp(e) {
@@ -79,7 +66,7 @@ class Pro extends React.Component {
         </Head>
 
         <Topbar />
-        <Discount ppp={this.props.ppp} />
+        <Discount ppp={this.state.ppp} />
         <Header title={title} description={description} />
         <Description />
         <Preview app={this.state.app} variant={this.state.variant} changeApp={this.changeApp.bind(this)} changeVariant={this.changeVariant.bind(this)} />
