@@ -3,6 +3,7 @@ import Head from 'next/head';
 import queryString from 'query-string';
 
 import Topbar from '../components/pro/Topbar';
+import Discount from '../components/pro/Discount';
 import Header from '../components/pro/Header';
 import Description from '../components/pro/Description';
 import Preview from '../components/pro/Preview';
@@ -14,6 +15,27 @@ import Ebook from '../components/pro/Ebook';
 import Testimonial from '../components/pro/Testimonial';
 import Pricing from '../components/pro/Pricing';
 import Footer from '../components/pro/Footer';
+
+export async function getServerSideProps() {
+  try {
+    const pppReq = await fetch('https://ppp.dracula.workers.dev');
+    const ppp = await pppReq.json();
+
+    return {
+      props: { ppp }
+    }
+  }
+  catch(e) {
+    return {
+      props: {
+        ppp: {
+          code: '500',
+          message: 'Some internal error happened while processing the worker'
+        }
+      }
+    }
+  }
+}
 
 class Pro extends React.Component {
   state = {
@@ -57,6 +79,7 @@ class Pro extends React.Component {
         </Head>
 
         <Topbar />
+        <Discount ppp={this.props.ppp} />
         <Header title={title} description={description} />
         <Description />
         <Preview app={this.state.app} variant={this.state.variant} changeApp={this.changeApp.bind(this)} changeVariant={this.changeVariant.bind(this)} />

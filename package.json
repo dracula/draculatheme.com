@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "color-convert": "^2.0.1",
+    "countries-list": "^2.6.0",
     "download": "^8.0.0",
     "gh-pages": "^2.1.1",
     "googleapis": "^49.0.0",

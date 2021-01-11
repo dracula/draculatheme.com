@@ -1,0 +1,38 @@
+.ppp {
+  background: #1d1e26;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 940px;
+  padding: 80px 15px 20px;
+}
+
+.bodyLeft {
+  margin-right: 30px;
+}
+
+.bodyRight {
+  font-size: 15px;
+  margin-top: .5em;
+}
+
+.flag {
+  max-width: 100px;
+  border-radius: 10px;
+}
+
+.flagContainer {
+  align-items: center;
+  background: #2a2c37;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+}
+
+.highlight {
+  color: #50fa7b;
+}
