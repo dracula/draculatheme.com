@@ -31,7 +31,7 @@ class Pro extends React.Component {
   }
 
   async fetchPPP() {
-    const pppReq = await fetch('/api/ppp');
+    const pppReq = await fetch('https://ppp.dracula.workers.dev');
     const ppp = await pppReq.json();
     this.setState({ ppp });
   }
