@@ -8,7 +8,7 @@ class Discount extends Component {
       return <p>I'm brazilian too, so I know how hard it is to buy things online.</p>
     }
 
-    return <p>I believe in <span className={styles.highlight}>Parity Purchasing Power</span>, and I want to make this affordable.</p>
+    return <p>I believe in <span className={styles.highlight}>Purchasing Parity Power</span>, and I want to make this affordable.</p>
   }
 
   render() {
