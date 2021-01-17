@@ -12,7 +12,11 @@ class Discount extends Component {
   }
 
   render() {
-    if (this.props.ppp && this.props.ppp.country && this.props.ppp.discount) {
+    if (this.props.queryParams.a) {
+      return <div />
+    }
+
+    if (this.props.ppp.country && this.props.ppp.discount) {
       return <div className={styles.ppp}>
         <div className={styles.container}>
           <div className={styles.bodyLeft}>

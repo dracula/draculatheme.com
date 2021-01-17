@@ -1,23 +1,34 @@
 import { Component } from 'react';
+import { countries } from 'countries-list';
 import styles from './Pricing.module.css';
 import apps from '../../lib/pro';
 
 class Pricing extends Component {
   render() {
+    let promoName = `${new Date().toLocaleString('default', { month: 'long' })} Promo`;
+    let beforePrice = 99;
+    let afterPrice = 79;
     let gumroadURL = 'https://gum.co/dracula-pro?wanted=true';
 
     if (this.props.queryParams.a) {
       gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}?wanted=true`;
     }
 
+    if (!this.props.queryParams.a && this.props.ppp.country && this.props.ppp.discount) {
+      promoName = `${countries[this.props.ppp.country].name} Promo`;
+      beforePrice = 79;
+      afterPrice = (beforePrice * (1 - this.props.ppp.discount / 100)).toFixed(0);
+      gumroadURL = `https://gumroad.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`;
+    }
+
     return <div id="get" className={styles.pricing}>
       <div className={styles.container}>
         <h2 className={styles.title}>Become a Vampire</h2>
-        <p className={styles.body}>Join <span className={styles.highlight}>1,588+ developers</span> using Dracula PRO every day.</p>
+        <p className={styles.body}>Join <span className={styles.highlight}>1,713+ developers</span> using Dracula PRO every day.</p>
         <div className={styles.tables}>
           <div className={styles.table}>
-            <p className={styles.option}>Launch Promo</p>
-            <p className={styles.price}><span className={styles.previousPrice}>$99</span>$79</p>
+            <p className={styles.option}>{promoName}</p>
+            <p className={styles.price}><span className={styles.previousPrice}>${beforePrice}</span>${afterPrice}</p>
             <p className={styles.term}>one-time payment</p>
             <ul className={styles.features}>
               <li>
