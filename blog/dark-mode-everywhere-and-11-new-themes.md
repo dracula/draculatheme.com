@@ -1,7 +1,8 @@
 ---
 title: "Dark Mode Everywhere And 11 New Themes"
 excerpt: "I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is Night Eye."
-date: "2020-09-29"
+createdAt: "2020-09-29"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

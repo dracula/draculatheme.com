@@ -1,7 +1,8 @@
 ---
 title: "New Dracula Site And Logo"
 excerpt: "The Dracula site and logo were the same since 2013. I've always wanted to give it a refresh, but I was never able to prioritize it."
-date: "2020-03-24"
+createdAt: "2020-03-24"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

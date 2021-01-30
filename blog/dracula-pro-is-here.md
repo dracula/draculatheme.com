@@ -1,7 +1,8 @@
 ---
 title: "Dracula PRO Is Here!"
 excerpt: "The wait is over... Dracula PRO is live! This is a very special moment for me. It's been almost 7 years since I launched Dracula, and I'm super excited about this next step."
-date: "2020-02-11"
+createdAt: "2020-02-11"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

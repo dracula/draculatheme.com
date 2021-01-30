@@ -1,10 +1,11 @@
+import Head from 'next/head';
+import ErrorPage from 'next/error';
 import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
+import { BlogJsonLd } from 'next-seo';
 import Blogpost from '../../layouts/Blogpost';
 import BlogDate from '../../components/BlogDate';
 import Updates from '../../components/Updates';
-import { getPostBySlug, getAllPosts, convertMarkdownToHtml } from '../../lib/blog'
-import Head from 'next/head'
+import { getPostBySlug, getAllPosts, convertMarkdownToHtml } from '../../lib/blog';
 
 function Post({ post }) {
   const router = useRouter()
@@ -12,19 +13,19 @@ function Post({ post }) {
     return <ErrorPage statusCode={404} />
   }
 
-  const description = post.excerpt;
-  const image = post.ogImage || '/static/img/facebook.png';
+  const url = `https://draculatheme.com/blog/${post.slug}`;
+  const image = post.ogImage ? `https://draculatheme.com${post.ogImage}` : 'https://draculatheme.com/static/img/facebook.png';
 
   return <div className="single">
     <Head>
       <meta charSet="utf-8" />
       <title>{post.title}</title>
       <meta content={post.title} property="og:title" />
-      <meta content={description} name="description" />
-      <meta content={description} property="og:description" />
-      <meta content="Zeno Rocha" name="author" />
-      <meta content={`https://draculatheme.com/blog/${post.slug}`} property="og:url" />
-      <meta content={`https://draculatheme.com${image}`} property="og:image" />
+      <meta content={post.excerpt} name="description" />
+      <meta content={post.excerpt} property="og:description" />
+      <meta content={post.author} name="author" />
+      <meta content={url} property="og:url" />
+      <meta content={image} property="og:image" />
     </Head>
 
     <div className="wrap">
@@ -34,7 +35,7 @@ function Post({ post }) {
           <img className="blog-author-avatar" src={post.author.avatar} alt={post.author.name} />
           <span className="blog-author-name">{post.author.name}</span>
           <span className="blog-author-separator">/</span>
-          <BlogDate dateString={post.date} />
+          <BlogDate dateString={post.createdAt} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
@@ -43,13 +44,24 @@ function Post({ post }) {
     <div className="blog-updates">
       <Updates type="blog" />
     </div>
+
+    <BlogJsonLd
+      url={url}
+      images={[image]}
+      title={post.title}
+      datePublished={post.createdAt}
+      dateModified={post.updatedAt}
+      authorName={post.author.name}
+      description={post.excerpt}
+    />
   </div>
 }
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     'title',
-    'date',
+    'createdAt',
+    'updatedAt',
     'slug',
     'author',
     'excerpt',

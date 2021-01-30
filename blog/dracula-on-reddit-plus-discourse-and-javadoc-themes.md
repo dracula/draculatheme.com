@@ -1,7 +1,8 @@
 ---
 title: "Dracula On Reddit + Discourse And Javadoc Themes"
 excerpt: "It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral."
-date: "2020-04-07"
+createdAt: "2020-04-07"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

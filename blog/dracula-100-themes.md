@@ -1,7 +1,8 @@
 ---
 title: "Dracula 100 Themes"
 excerpt: "Today is a special day. We have hit 100 themes on Dracula! When I started this little project, I never imagined the community would embrace it the way it did. Thank you so much for everyone involved in this."
-date: "2020-05-04"
+createdAt: "2020-05-04"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

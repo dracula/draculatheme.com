@@ -1,7 +1,8 @@
 ---
 title: "3 New Themes And Better Code Screenshots"
 excerpt: "Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception."
-date: "2020-08-05"
+createdAt: "2020-08-05"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

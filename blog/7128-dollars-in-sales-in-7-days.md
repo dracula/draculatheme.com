@@ -1,7 +1,8 @@
 ---
 title: "$7,128.57 In Sales In 7 Days"
 excerpt: "If you have been following me on Twitter, I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been insane!"
-date: "2020-02-19"
+createdAt: "2020-02-19"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

@@ -1,7 +1,8 @@
 ---
 title: "Podcast About Dracula And Better Windows Support"
 excerpt: "It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on."
-date: "2020-03-19"
+createdAt: "2020-03-19"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

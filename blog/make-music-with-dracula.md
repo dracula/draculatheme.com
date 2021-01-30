@@ -1,7 +1,8 @@
 ---
 title: "Make Music With Dracula"
 excerpt: "I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you."
-date: "2020-05-21"
+createdAt: "2020-05-21"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

@@ -1,7 +1,8 @@
 ---
 title: "Dracula UI - Week 3"
 excerpt: "It's been almost two weeks since we last shared an update with you. We have missed you and your feedback."
-date: "2020-09-24"
+createdAt: "2020-09-24"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

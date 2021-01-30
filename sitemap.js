@@ -5,14 +5,14 @@ import { getAllPosts } from './lib/blog.js';
 
 function getBlog() {
   const allPosts = getAllPosts([
-    'date',
+    'updatedAt',
     'slug',
   ]);
 
   return allPosts.map(post => {
     return `<url>
       <loc>https://draculatheme.com/blog/${post.slug}</loc>
-      <lastmod>${post.date}</lastmod>
+      <lastmod>${post.updatedAt}</lastmod>
     </url>`;
   }).join(' ');
 }

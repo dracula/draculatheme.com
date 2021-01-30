@@ -1,7 +1,8 @@
 ---
 title: "Dracula UI - Web Or React Native?"
 excerpt: "Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - it should be a top priority. That's why I decided to invest time in this."
-date: "2020-09-03"
+createdAt: "2020-09-03"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

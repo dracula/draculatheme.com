@@ -1,7 +1,8 @@
 ---
 title: "2020 Halloween Costume Contest"
 excerpt: "Halloween is almost here and this year I want to do something different... Introducing the 2020 Halloween Costume Contest!"
-date: "2020-10-28"
+createdAt: "2020-10-28"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

@@ -1,7 +1,8 @@
 ---
 title: "Dracula UI - Week 1"
 excerpt: "Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns."
-date: "2020-09-10"
+createdAt: "2020-09-10"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

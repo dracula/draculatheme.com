@@ -32,7 +32,7 @@ function Blog({ allPosts }) {
                   <div className="blog-item-header">
                     <h2 className="blog-item-title">{post.title}</h2>
                     <span className="blog-item-date">
-                      <BlogDate dateString={post.date} />
+                      <BlogDate dateString={post.createdAt} />
                     </span>
                   </div>
                   <div className="blog-item-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
@@ -53,7 +53,7 @@ function Blog({ allPosts }) {
 export async function getStaticProps() {
   const allPosts = getAllPosts([
     'title',
-    'date',
+    'createdAt',
     'slug',
     'author',
     'excerpt',

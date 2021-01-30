@@ -1,7 +1,8 @@
 ---
 title: "Purchasing Parity Power + 4 New Themes"
 excerpt: "I'm super happy to announce Purchasing Parity Power on Dracula PRO! Why? Because not everyone earns in dollars."
-date: "2021-01-14"
+createdAt: "2021-01-14"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
