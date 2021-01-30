@@ -16,6 +16,11 @@ class Topbar extends Component {
             </Link>
           </li>
           <li className={styles.items}>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+          <li className={styles.items}>
             <Link href="/contribute">
               <a>Contribute</a>
             </Link>

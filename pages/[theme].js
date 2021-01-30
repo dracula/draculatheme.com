@@ -85,10 +85,10 @@ class Theme extends React.Component {
       </Head>
 
       <div className="theme">
-        <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight}/>
+        <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight} />
         {this.renderViews()}
         <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
-        <Updates />
+        <Updates type="theme" />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />
       </div>
     </div>
