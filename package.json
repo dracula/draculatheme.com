@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "sitemap": "node sitemap.js",
+    "sitemap": "babel-node sitemap.js",
     "deploy": "npm run sitemap && vercel --prod"
   },
   "author": "Zeno Rocha",
@@ -33,5 +33,9 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "shufflejs": "^5.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10"
   }
 }
