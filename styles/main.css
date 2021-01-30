@@ -862,7 +862,7 @@ a {
   font-family: "Abril Text";
   font-weight: 700;
   margin-bottom: 10px;
-
+  line-height: 1.2em;
 }
 
 .blog-item-date {

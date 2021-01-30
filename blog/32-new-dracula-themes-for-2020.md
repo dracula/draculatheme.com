@@ -1,6 +1,6 @@
 ---
 title: "32 New Dracula Themes For 2020"
-excerpt: "Before I start working like crazy on Dracula Pro, I decided to spend my entire weekend doing some housekeeping on the original Dracula project."
+excerpt: "Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project."
 date: "2020-01-14"
 author:
   name: Zeno Rocha
@@ -8,7 +8,7 @@ author:
 color: "cyan"
 ---
 
-Before I start working like crazy on Dracula Pro, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.
+Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.
 
 The result? Last week there were 53 themes on the site, now there are 85 themes!
 To make your life easier, here's a compilation of them.
@@ -53,7 +53,7 @@ To make your life easier, here's a compilation of them.
 9. [Vimium](/vimium)
 10. [Wordpress](/wordpress)
 
-Now that the Dracula project is in order, I'll put my heads down to work on Dracula Pro.
+Now that the Dracula project is in order, I'll put my heads down to work on Dracula PRO.
 It's not going to be easy and I'll definitely need your help, so let's stay in touch ;)
 
 Talk to you soon!

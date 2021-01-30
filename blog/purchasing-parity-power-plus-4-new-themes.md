@@ -1,6 +1,6 @@
 ---
 title: "Purchasing Parity Power + 4 New Themes"
-excerpt: "2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020."
+excerpt: "I'm super happy to announce Purchasing Parity Power on Dracula PRO! Why? Because not everyone earns in dollars."
 date: "2021-01-14"
 author:
   name: Zeno Rocha

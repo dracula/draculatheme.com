@@ -12,7 +12,7 @@ For the past few weeks, I've been working non-stop to make sure that Dracula, th
 
 I realized that people are only interested in themes because they want to be more productive. For a long time, I avoided talking about productivity tips here since that's not Dracula's primary focus. But I decided to create something new...
 
-Now I'm going to shift my attention to Dracula Pro, but before I start making all these assumptions about what people need, I want to ask - **what's important to you?**
+Now I'm going to shift my attention to Dracula PRO, but before I start making all these assumptions about what people need, I want to ask - **what's important to you?**
 
 [Help me build this new thing](https://draculatheme.typeform.com/to/VjaC6t) by answering some questions about your dev setup.
 

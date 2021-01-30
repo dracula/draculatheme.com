@@ -1,6 +1,6 @@
 ---
 title: "A Quick Spoiler..."
-excerpt: "I have some exciting news to share!Dracula PRO will be launched in 3 days on February 11th."
+excerpt: "I have some exciting news to share! Dracula PRO will be launched in 3 days on February 11th. It's been quite a ride to get here. I've been studying colors like never before."
 date: "2020-02-08"
 author:
   name: Zeno Rocha
