@@ -22,7 +22,7 @@ Here it is... The moment we've all been waiting for - GitHub finally has a Dark 
 
 This week 5 new themes have joined the Dracula clan!
 
-* [Arduino Pro](/arduino-pro): New **IDE** for more advanced developers
+* [Arduino Pro](/arduino-pro-ide): New **IDE** for more advanced developers
 * [Albert](/albert): A desktop agnostic **launcher** written in C++
 * [KiCad](/kicad): Cross-platform **electronics** design automation suite
 * [Linear](/linear): The **issue tracking** tool you'll enjoy using

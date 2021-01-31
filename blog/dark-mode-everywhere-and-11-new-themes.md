@@ -34,7 +34,7 @@ This week 11 new themes have joined the Dracula clan!
 * [Plank](/plank): Simplest dock on the planet
 * [Pywal](/pywal): Generates a color palette from colors in an image
 * [Roam Research](/roam-research): Note taking tool for networked thought
-* [The Lounge](/the-lounge): Self-hosted web IRC client
+* [The Lounge](/thelounge): Self-hosted web IRC client
 * [TiddlyWiki](/tiddlywiki): Non-linear personal web notebook
 * [Zathura](/zathura): Customizable and functional document viewer
 
