@@ -13,6 +13,10 @@ class Updates extends Component {
         <input name="EMAIL" placeholder="Your email address" id="mce-EMAIL" type="email" required />
         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" />
       </form>
+
+      {this.props.type === 'blog' &&
+        <p className="rss">Or subscribe to the <a href="/rss.xml">RSS feed</a>.</p>
+      }
     </div>
   }
 }

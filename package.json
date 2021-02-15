@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "sitemap": "babel-node sitemap.js",
+    "xml": "babel-node xml.js",
     "deploy": "npm run sitemap && vercel --prod"
   },
   "author": "Zeno Rocha",
