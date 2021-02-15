@@ -1,9 +1,9 @@
 .palette {
-  background: #2C2A21;
+  background: #2a2c37;
 }
 
 .palette ::selection {
-  background: #FFFF80;
+  background: #92ffff;
   color: #000;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .title {
-  color: #FFFF80;
+  color: #92ffff;
   font-size: 48px;
   font-weight: 700;
   margin: 10px 0 30px;
@@ -39,7 +39,7 @@
 }
 
 .highlight {
-  color: #FFFF80;
+  color: #92ffff;
 }
 
 .paletteName {
@@ -59,7 +59,7 @@
   transition: all .3s ease-in-out;
   margin-right: 20px;
   display: inline-block;
-  background: #FFFF80;
+  background: #92ffff;
   text-align: center;
   color: #2a2c37;
   padding: 8px 16px;
@@ -68,7 +68,7 @@
 
 .cta:hover,
 .cta:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #FFFF80;
+  box-shadow: 0 0.5em 0.5em -0.4em #92ffff;
   transform: translateY(-0.25em);
 }
 
