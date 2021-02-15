@@ -12,6 +12,7 @@
   "author": "Zeno Rocha",
   "license": "MIT",
   "dependencies": {
+    "airtable": "^0.10.1",
     "color-convert": "^2.0.1",
     "countries-list": "^2.6.0",
     "date-fns": "^2.16.1",

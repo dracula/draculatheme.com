@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import queryString from 'query-string';
+import Airtable from 'airtable';
 
 import Topbar from '../components/pro/Topbar';
 import Discount from '../components/pro/Discount';
@@ -14,7 +15,38 @@ import Fonts from '../components/pro/Fonts';
 import Ebook from '../components/pro/Ebook';
 import Testimonial from '../components/pro/Testimonial';
 import Pricing from '../components/pro/Pricing';
+import Reviews from '../components/pro/Reviews';
 import Footer from '../components/pro/Footer';
+
+export async function getStaticProps() {
+  try {
+    const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY });
+
+    const records = await airtable
+      .base('appE8qDD7fxpKyDpf')('Table 1')
+      .select({
+        fields: ['ID', 'Name', 'Country', 'GitHub', 'Body', 'Date'],
+        view: 'Approved'
+      })
+      .all();
+
+    const reviews = records.map((review) => {
+      return {
+        id: review.get('ID'),
+        name: review.get('Name') || '',
+        country: review.get('Country') || '',
+        github: review.get('GitHub') || '',
+        body: review.get('Body') || '',
+        date: review.get('Date') || '',
+      };
+    });
+
+    return { props: { reviews } };
+  }
+  catch (e) {
+    console.error(e);
+  }
+}
 
 class Pro extends React.Component {
   state = {
@@ -77,6 +109,7 @@ class Pro extends React.Component {
         <Ebook />
         <Testimonial />
         <Pricing ppp={this.state.ppp} queryParams={this.state.queryParams} />
+        <Reviews reviews={this.props.reviews} />
         <Footer />
       </div>
     )

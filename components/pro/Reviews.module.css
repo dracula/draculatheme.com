@@ -1,0 +1,140 @@
+.reviews {
+  background: #1d1e26;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 60px 15px;
+}
+
+/* Summary */
+
+.summary {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avgRating {
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: -10px;
+  margin: 0 0 0 -10px;
+}
+
+.avgRatingStar {
+  width: 32px;
+}
+
+.progressBars {
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progressBarContainer {
+  width: 230px;
+  background: #2a2c37;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.progressBarContent {
+  width: 0%;
+  background: #50fa7b;
+  height: 25px;
+}
+
+.percentRating {
+  display: flex;
+}
+
+.percent {
+  font-size: 24px;
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .summary {
+    flex-direction: column;
+  }
+
+  .progressBars,
+  .percentageRatings {
+    display: none;
+  }
+}
+
+/* Review */
+
+.review {
+  margin-bottom: 60px;
+  display: flex;
+}
+
+.avatar {
+  border-radius: 100%;
+  margin-right: 30px;
+  height: 70px;
+  width: 70px;
+}
+
+.country {
+  max-width: 25px;
+  border-radius: 5px;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.date {
+  color: rgba(255, 255, 255, .5);
+  margin: 5px 0 10px;
+}
+
+.body {
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Cta */
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  transition: all .3s ease-in-out;
+  margin-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+  background: #FFCA80;
+  text-align: center;
+  color: #2a2c37;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.cta:hover,
+.cta:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #FFCA80;
+  transform: translateY(-0.25em);
+}
