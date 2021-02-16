@@ -22,77 +22,80 @@ class Reviews extends Component {
   }
 
   renderSummary() {
-    return <div className={styles.summary}>
-      <div className={styles.data}>
-        <p className={styles.avgRating}>4.9</p>
-        <div>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+    return <div className={styles.summaryContainer}>
+      <div className={styles.summary}>
+        <div className={styles.data}>
+          <p className={styles.avgRating}>4.9</p>
+          <div>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+          </div>
+          <p>225 ratings</p>
         </div>
-        <p>225 ratings</p>
+        <div className={styles.progressBars}>
+          <div className={styles.progressBarContainer}>
+            <div style={{ width: '95%' }} className={styles.progressBarContent}></div>
+          </div>
+          <div className={styles.progressBarContainer}>
+            <div style={{ width: '5%' }} className={styles.progressBarContent}></div>
+          </div>
+          <div className={styles.progressBarContainer}>
+            <div style={{ width: 0 }} className={styles.progressBarContent}></div>
+          </div>
+          <div className={styles.progressBarContainer}>
+            <div style={{ width: 0 }} className={styles.progressBarContent}></div>
+          </div>
+          <div className={styles.progressBarContainer}>
+            <div style={{ width: 0 }} className={styles.progressBarContent}></div>
+          </div>
+        </div>
+        <div className={styles.percentageRatings}>
+          <div className={styles.percentRating}>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <span className={styles.percent}>95%</span>
+          </div>
+          <div className={styles.percentRating}>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <span className={styles.percent}>5%</span>
+          </div>
+          <div className={styles.percentRating}>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <span className={styles.percent}>0%</span>
+          </div>
+          <div className={styles.percentRating}>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <span className={styles.percent}>0%</span>
+          </div>
+          <div className={styles.percentRating}>
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
+            <span className={styles.percent}>0%</span>
+          </div>
+        </div>
       </div>
-      <div className={styles.progressBars}>
-        <div className={styles.progressBarContainer}>
-          <div style={{ width: '95%' }} className={styles.progressBarContent}></div>
-        </div>
-        <div className={styles.progressBarContainer}>
-          <div style={{ width: '5%' }} className={styles.progressBarContent}></div>
-        </div>
-        <div className={styles.progressBarContainer}>
-          <div style={{ width: 0 }} className={styles.progressBarContent}></div>
-        </div>
-        <div className={styles.progressBarContainer}>
-          <div style={{ width: 0 }} className={styles.progressBarContent}></div>
-        </div>
-        <div className={styles.progressBarContainer}>
-          <div style={{ width: 0 }} className={styles.progressBarContent}></div>
-        </div>
-      </div>
-      <div className={styles.percentageRatings}>
-        <div className={styles.percentRating}>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <span className={styles.percent}>95%</span>
-        </div>
-        <div className={styles.percentRating}>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <span className={styles.percent}>5%</span>
-        </div>
-        <div className={styles.percentRating}>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <span className={styles.percent}>0%</span>
-        </div>
-        <div className={styles.percentRating}>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <span className={styles.percent}>0%</span>
-        </div>
-        <div className={styles.percentRating}>
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <img className={styles.avgRatingStar} src="/static/img/pro/star-empty.svg" alt="Star" />
-          <span className={styles.percent}>0%</span>
-        </div>
-      </div>
+      <a className={styles.leaveReview} href="https://form.typeform.com/to/WWQLq9" target="_blank">Write a review</a>
     </div>
   }
 
@@ -118,7 +121,7 @@ class Reviews extends Component {
   }
 
   render() {
-    return <div className={styles.reviews}>
+    return <div id="reviews" className={styles.reviews}>
       <div className={styles.container}>
         {this.renderSummary()}
         {this.renderReviews()}
