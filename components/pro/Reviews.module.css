@@ -11,8 +11,7 @@
 /* Summary */
 
 .summaryContainer {
-  margin-top: 40px;
-  margin-bottom: 100px;
+  margin: 40px 0;
   text-align: center;
 }
 
@@ -97,8 +96,30 @@
 /* Review */
 
 .review {
-  margin-bottom: 60px;
   display: flex;
+  padding-top: 60px;
+}
+
+.review:hover .anchor {
+  visibility: visible;
+}
+
+.avatarContainer {
+  display: flex;
+}
+
+.anchor {
+  color: #f2f2f2;
+  font-family: "Abril Text";
+  font-size: 36px;
+  line-height: 36px;
+  margin-right: 10px;
+  visibility: hidden;
+}
+
+.anchorIcon {
+  fill: #f2f2f2;
+  margin-top: 24px;
 }
 
 .avatar {
