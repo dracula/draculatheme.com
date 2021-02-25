@@ -1,0 +1,42 @@
+.about {
+  background: #1d1e26;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 15px 90px;
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 100%;
+  margin-bottom: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.title {
+  color: #f2f2f2;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.subtitle {
+  color: #f2f2f2;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.link {
+  transition: all .3s linear;
+  color: rgba(146, 255, 255, 1);
+  border-bottom: 2px solid rgba(146, 255, 255, 1);
+}
+
+.link:hover,
+.link:focus {
+  color: rgba(146, 255, 255, .7);
+  border-bottom: 2px solid rgba(146, 255, 255, .7);
+}

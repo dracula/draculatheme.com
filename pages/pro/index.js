@@ -3,20 +3,20 @@ import Head from 'next/head';
 import queryString from 'query-string';
 import Airtable from 'airtable';
 
-import Topbar from '../components/pro/Topbar';
-import Discount from '../components/pro/Discount';
-import Header from '../components/pro/Header';
-import Description from '../components/pro/Description';
-import Preview from '../components/pro/Preview';
-import Why from '../components/pro/Why';
-import Palette from '../components/pro/Palette';
-import Features from '../components/pro/Features';
-import Fonts from '../components/pro/Fonts';
-import Ebook from '../components/pro/Ebook';
-import Testimonial from '../components/pro/Testimonial';
-import Pricing from '../components/pro/Pricing';
-import Reviews from '../components/pro/Reviews';
-import Footer from '../components/pro/Footer';
+import Topbar from '../../components/pro/Topbar';
+import Discount from '../../components/pro/Discount';
+import Header from '../../components/pro/Header';
+import Description from '../../components/pro/Description';
+import Preview from '../../components/pro/Preview';
+import Why from '../../components/pro/Why';
+import Palette from '../../components/pro/Palette';
+import Features from '../../components/pro/Features';
+import Fonts from '../../components/pro/Fonts';
+import Ebook from '../../components/pro/Ebook';
+import Testimonial from '../../components/pro/Testimonial';
+import Pricing from '../../components/pro/Pricing';
+import Reviews from '../../components/pro/Reviews';
+import Footer from '../../components/pro/Footer';
 
 export async function getStaticProps() {
   try {
@@ -86,6 +86,7 @@ class Pro extends React.Component {
           <meta charSet="utf-8" />
           <title>{title}</title>
           <meta content={title} property="og:title" />
+          <meta content={title} property="twitter:title" />
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />
           <meta content="Zeno Rocha" name="author" />

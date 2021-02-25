@@ -734,6 +734,50 @@ a {
 }
 
 /* ==========================================================================
+   Journey
+   ========================================================================== */
+
+
+.journey-updates-container {
+  background: #1d1e26;
+  padding: 60px 15px 90px;
+}
+
+.journey-updates {
+  max-width: 750px;
+  padding: 0 2rem;
+  margin: 60px auto;
+}
+
+.journey-updates h3 {
+  font-family: "Fira Code", monospace;
+}
+
+.journey-updates p {
+  font-size: 20px;
+  margin: 20px 0 30px;
+}
+
+.journey-updates .form {
+  max-width: 525px;
+}
+
+.journey-updates .form input[type=email] {
+  font-size: 18px;
+  background: #2a2c37;
+  padding: 10px;
+  font-family: "Fira Code", monospace;
+  height: 50px !important;
+}
+
+.journey-updates .form input[type=submit] {
+  color: #000;
+  font-size: 18px;
+  font-family: "Fira Code", monospace;
+  height: 50px !important;
+}
+
+/* ==========================================================================
    Blog
    ========================================================================== */
 
@@ -823,11 +867,14 @@ a {
   margin: 60px auto;
 }
 
+.journey-updates h3,
+.journey-updates p,
 .blog-updates h3,
 .blog-updates p {
   text-align: center;
 }
 
+.journey-updates form,
 .blog-updates form {
   margin-left: auto;
   margin-right: auto;

@@ -1,0 +1,74 @@
+.takeawayOdd,
+.takeawayEven {
+  padding: 0 15px;
+}
+
+.takeawayOdd strong,
+.takeawayEven strong {
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  background: #1d1e26;
+  border-radius: 8px;
+}
+
+.emojiContainer {
+  border-radius: 20px;
+  display: inline-block;
+  padding: 15px;
+}
+
+.takeawayEven .emojiContainer {
+  background: #2a2c37;
+  margin: 0 0 0 30px;
+}
+
+.takeawayOdd .emojiContainer {
+  background: #2a2c37;
+  margin: 0 30px 0 0;
+}
+
+.takeawayEven .emojiContainer:first-child,
+.takeawayOdd .emojiContainer:last-child {
+  display: none;
+}
+
+.emoji {
+  width: 64px;
+  height: 64px;
+}
+
+.text {
+  font-size: 21px;
+  line-height: 32px;
+  margin: 0;
+}
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .takeawayEven .emojiContainer {
+    margin: 30px 0 0 0;
+  }
+  
+  .takeawayOdd .emojiContainer {
+    margin: 0 0 30px 0;
+  }
+
+  .takeawayEven .emojiContainer:first-child {
+    display: block;
+    margin: 0 0 30px 0;
+  }
+  
+  .takeawayEven .emojiContainer:last-child {
+    display: none;
+  }
+}
