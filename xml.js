@@ -69,7 +69,7 @@ async function buildRss() {
           <link>https://draculatheme.com/blog</link>
           <description>The journey of building the most universal dark theme ever made.</description>
           <language>en</language>
-          <atom:link href="https://draculatheme.com/public/rss.xml" rel="self" type="application/rss+xml" />
+          <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml" />
           <lastBuildDate>${new Date(posts[0].createdAt).toUTCString()}</lastBuildDate>
     ${posts.map(post => {
       return `<item>
