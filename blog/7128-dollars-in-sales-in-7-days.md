@@ -21,7 +21,7 @@ In the [first 24 hours](https://twitter.com/zenorocha/status/1227622330731335686
 
 I want to take this opportunity to say **THANK YOU**. Thank you for using Dracula all these years. Thank you for supporting this new initiative. And thank you for trusting me.
 
-These past few days have been really intense. I'm trying to absorb all the feedback and making changes as fast as I can. The themes for JetBrains IDEs and XCode, for example, already receive major updates, and they look so much better.
+These past few days have been really intense. I'm trying to absorb all the feedback and making changes as fast as I can. The themes for JetBrains IDEs and Xcode, for example, already receive major updates, and they look so much better.
 
 I'm also collecting some testimonials to include in the site. This is one of my favorites:
 

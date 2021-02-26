@@ -30,19 +30,19 @@ class Header extends Component {
       loop: true,
       postfix: ''
     })
-    .type('Vim').pause().delete()
-    .type('Notepad++').pause().delete()
-    .type('iTerm').pause().delete()
-    .type('Visual Studio Code').pause().delete()
-    .type('Terminal.app').pause().delete()
-    .type('JetBrains').pause().delete()
-    .type('Zsh').pause().delete()
-    .type('Sublime').pause().delete()
-    .type('Xcode').pause().delete()
-    .type('Slack').pause().delete()
-    .type('Telegram').pause().delete()
-    .type('Emacs').pause().delete()
-    .type('Windows Terminal').pause().delete()
+      .type('Vim').pause().delete()
+      .type('Notepad++').pause().delete()
+      .type('iTerm').pause().delete()
+      .type('Visual Studio Code').pause().delete()
+      .type('Terminal.app').pause().delete()
+      .type('JetBrains').pause().delete()
+      .type('Zsh').pause().delete()
+      .type('Sublime').pause().delete()
+      .type('Xcode').pause().delete()
+      .type('Slack').pause().delete()
+      .type('Telegram').pause().delete()
+      .type('Emacs').pause().delete()
+      .type('Windows Terminal').pause().delete()
   }
 
   renderDescription() {

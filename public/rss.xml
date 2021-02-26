@@ -5,7 +5,7 @@
           <link>https://draculatheme.com/blog</link>
           <description>The journey of building the most universal dark theme ever made.</description>
           <language>en</language>
-          <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml" />
+          <atom:link href="https://draculatheme.com/public/rss.xml" rel="self" type="application/rss+xml" />
           <lastBuildDate>Wed, 10 Feb 2021 00:00:00 GMT</lastBuildDate>
     <item>
         <title><![CDATA[14 Best Free Fonts for Programming]]></title>
@@ -936,7 +936,7 @@ Netto &#x26; Zeno</p>
   <figcaption>Gumroad Sales Dashboard</figcaption>
 </figure>
 <p>I want to take this opportunity to say <strong>THANK YOU</strong>. Thank you for using Dracula all these years. Thank you for supporting this new initiative. And thank you for trusting me.</p>
-<p>These past few days have been really intense. I'm trying to absorb all the feedback and making changes as fast as I can. The themes for JetBrains IDEs and XCode, for example, already receive major updates, and they look so much better.</p>
+<p>These past few days have been really intense. I'm trying to absorb all the feedback and making changes as fast as I can. The themes for JetBrains IDEs and Xcode, for example, already receive major updates, and they look so much better.</p>
 <p>I'm also collecting some testimonials to include in the site. This is one of my favorites:</p>
 <blockquote>
 <p>"If I’m going to be staring at a screen for 8-10 hours a day, I want it to be as painless as possible. Dracula’s theme allows me to be more productive by having a consistent interface with all of my applications open. Also, the theme just looks badass."  - Hannah Burzynski, Data Scientist</p>
@@ -962,7 +962,7 @@ Netto &#x26; Zeno</p>
   <img src="https://draculatheme.com/static/img/blog/dracula-pro-is-here-a.jpg" alt="Color Palette Comparison" />
   <figcaption>Color Palette Comparison</figcaption>
 </figure>
-<p>Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, XCode, and ZSH.</p>
+<p>Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, Xcode, and ZSH.</p>
 <p>Plus, 4 hand-picked fonts with ligatures and a screencast with my personal productivity tips.</p>
 <figure>
   <img src="https://draculatheme.com/static/img/blog/dracula-pro-is-here-b.jpg" alt="Bonus Screencast" />

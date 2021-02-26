@@ -21,7 +21,7 @@ The original colors created in 2013 were based on personal taste. This new PRO v
   <figcaption>Color Palette Comparison</figcaption>
 </figure>
 
-Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, XCode, and ZSH.
+Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, Xcode, and ZSH.
 
 Plus, 4 hand-picked fonts with ligatures and a screencast with my personal productivity tips.
 
