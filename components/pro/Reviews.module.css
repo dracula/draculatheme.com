@@ -153,6 +153,11 @@
   margin: 0;
 }
 
+.body em {
+  color: rgba(255, 202, 128, 1);
+  font-style: normal;
+}
+
 /* Cta */
 
 .ctaContainer {

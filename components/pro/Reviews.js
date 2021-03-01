@@ -122,7 +122,7 @@ class Reviews extends Component {
               <img className={styles.country} src={`/static/img/flags/${review.country}.svg`} alt={review.country} width="100" />
             </div>
             <div className={styles.date}>{moment(review.date).fromNow()}</div>
-            <div className={styles.body}>{review.body}</div>
+            <div className={styles.body} dangerouslySetInnerHTML={{ __html: review.body }} />
           </div>
         </div >
       })}
