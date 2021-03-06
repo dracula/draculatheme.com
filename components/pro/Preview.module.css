@@ -57,6 +57,7 @@
 
 .colorName {
   margin-bottom: 10px;
+  transition: .3s ease-in-out color;
 }
 
 .colorPreview {
@@ -92,12 +93,22 @@
   border-color: #9580FF;
 }
 
+.colorsList li:nth-child(1).active .colorName,
+.colorsList li:nth-child(1):hover .colorName {
+  color: #9580FF;
+}
+
 .colorsList li:nth-child(2) .colorPreview {
   background-color: #8AFF80;
 }
 
 .colorsList li:nth-child(2) .colorPreview:after {
   border-color: #8AFF80;
+}
+
+.colorsList li:nth-child(2).active .colorName,
+.colorsList li:nth-child(2):hover .colorName {
+  color: #8AFF80;
 }
 
 .colorsList li:nth-child(3) .colorPreview {
@@ -108,12 +119,22 @@
   border-color: #FF80BF;
 }
 
+.colorsList li:nth-child(3).active .colorName,
+.colorsList li:nth-child(3):hover .colorName {
+  color: #FF80BF;
+}
+
 .colorsList li:nth-child(4) .colorPreview {
   background-color: #FFFF80;
 }
 
 .colorsList li:nth-child(4) .colorPreview:after {
   border-color: #FFFF80;
+}
+
+.colorsList li:nth-child(4).active .colorName,
+.colorsList li:nth-child(4):hover .colorName {
+  color: #FFFF80;
 }
 
 .colorsList li:nth-child(5) .colorPreview {
@@ -124,12 +145,22 @@
   border-color: #FF9580;
 }
 
+.colorsList li:nth-child(5).active .colorName,
+.colorsList li:nth-child(5):hover .colorName {
+  color: #FF9580;
+}
+
 .colorsList li:nth-child(6) .colorPreview {
   background-color: #80FFEA;
 }
 
 .colorsList li:nth-child(6) .colorPreview:after {
   border-color: #80FFEA;
+}
+
+.colorsList li:nth-child(6).active .colorName,
+.colorsList li:nth-child(6):hover .colorName {
+  color: #80FFEA;
 }
 
 @media (max-width: 768px) {
