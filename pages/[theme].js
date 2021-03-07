@@ -24,7 +24,7 @@ export async function getStaticProps({ params }) {
   const installReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`, header);
   const installRes = await installReq.json();
   const installBuffer = Buffer.from(installRes.content, 'base64');
-  query.install = marked(installBuffer.toString('ascii'));
+  query.install = marked(installBuffer.toString('utf8'));
 
   const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
   const contributors = await contributorsReq.json();
