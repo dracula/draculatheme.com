@@ -167,6 +167,7 @@
 
 .cta {
   transition: all .3s ease-in-out;
+  margin-top: 60px;
   margin-right: 20px;
   display: inline-block;
   cursor: pointer;
