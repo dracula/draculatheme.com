@@ -37,6 +37,30 @@
   max-width: 390px;
 }
 
+.buy {
+  display: flex;
+  justify-content: center;
+  flex-direction: center;
+  margin: 40px 0 0;
+}
+
+.cta {
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  background: #9580FF;
+  text-align: center;
+  color: #2a2c37;
+  padding: 12px 24px;
+  font-size: 18px;
+  width: 180px;
+}
+
+.cta:hover,
+.cta:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #9580FF;
+  transform: translateY(-0.25em);
+}
+
 .body {
   background: #2A2C37;
   color: #F8F8F2;

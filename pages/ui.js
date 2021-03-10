@@ -16,6 +16,7 @@ class UI extends React.Component {
   render() {
     const title = 'Dracula UI';
     const description = 'A dark-first collection of UI patterns and components';
+    const gumroadURL = 'https://gum.co/dracula-ui?wanted=true';
 
     return (
       <div className={styles.wrapper}>
@@ -27,12 +28,17 @@ class UI extends React.Component {
           <meta content={description} property="og:description" />
           <meta content="https://draculatheme.com/ui" property="og:url" />
           <meta content="https://draculatheme.com/static/img/og-ui.jpg" property="og:image" />
+
+          <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
         <div className={styles.header}>
           <p className={styles.comingSoon}>Coming Soon</p>
           <h1 className={styles.title}>Dracula <span className={styles.purple}>UI</span></h1>
           <p className={styles.subtitle}>A dark-first collection of <span className={styles.purple}>UI patterns and components</span></p>
+          <div className={styles.buy}>
+            <a href={gumroadURL} className="gumroad-button" className={styles.cta}>Buy Dracula UI</a>
+          </div>
         </div>
 
         <div className={styles.body}>
