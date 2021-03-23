@@ -8,7 +8,7 @@ class Header extends Component {
       <h2 className={styles.slogan}>Be more productive</h2>
       <p className={styles.body}>
         <img className={styles.emoji} width="28" height="28" src="/static/img/pro/journey/icon-party.svg" alt="Party" />
-        2,106 copies or <a href="/pro/journey" target="_blank" className={styles.link}>$115,177.39</a> sold
+        {this.props.sales.count} copies or <a href="/pro/journey" target="_blank" className={styles.link}>{this.props.sales.total}</a> sold
       </p>
       <a href="#get" className={styles.cta}>Get it now</a>
     </div>

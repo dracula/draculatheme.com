@@ -20,6 +20,7 @@ import Footer from '../../components/pro/Footer';
 
 export async function getStaticProps() {
   try {
+    const sales = await getSalesData();
     const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY });
 
     const records = await airtable
@@ -41,7 +42,7 @@ export async function getStaticProps() {
       };
     });
 
-    return { props: { reviews } };
+    return { props: { sales, reviews } };
   }
   catch (e) {
     console.error(e);
@@ -100,7 +101,7 @@ class Pro extends React.Component {
 
         <Topbar />
         <Discount ppp={this.state.ppp} queryParams={this.state.queryParams} />
-        <Header title={title} description={description} />
+        <Header title={title} description={description} sales={this.props.sales} />
         <Description />
         <Preview app={this.state.app} variant={this.state.variant} changeApp={this.changeApp.bind(this)} changeVariant={this.changeVariant.bind(this)} />
         <Why />
@@ -109,11 +110,25 @@ class Pro extends React.Component {
         <Fonts />
         <Ebook />
         <Testimonial />
-        <Pricing ppp={this.state.ppp} queryParams={this.state.queryParams} />
+        <Pricing ppp={this.state.ppp} queryParams={this.state.queryParams} sales={this.props.sales} />
         <Reviews reviews={this.props.reviews} />
         <Footer />
       </div>
     )
+  }
+}
+
+async function getSalesData() {
+  const accessToken = process.env.GUMROAD_ACCESS_TOKEN;
+  const request = await fetch(`https://api.gumroad.com/v2/products/tPfIDt?access_token=${accessToken}`);
+  const response = await request.json();
+
+  return {
+    count: response.product.sales_count.toLocaleString(),
+    total: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(response.product.sales_usd_cents / 100),
   }
 }
 
