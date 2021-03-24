@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Authors from '../components/ui/Authors';
+import Footer from '../components/ui/Footer';
 import styles from './ui.module.css';
 
 class UI extends React.Component {
@@ -57,6 +58,7 @@ class UI extends React.Component {
           <p style={{ fontFamily: 'Fira Code, monospace', fontSize: 16, margin: 0 }} className="credits">Made with <span style={{ fontSize: 36 }} className="love">♥</span> by <a className="cyan" href="https://zenorocha.com" target="blank">Zeno Rocha</a> & <a className="cyan" href="https://twitter.com/nettofarah" target="blank">Netto Farah</a></p>
         </div>
         <Authors />
+        <Footer />
       </div>
     )
   }
