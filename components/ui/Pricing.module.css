@@ -1,0 +1,155 @@
+.pricing {
+  background: #2a2c37;
+}
+
+.container {
+  max-width: 72em;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.tables {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryTable,
+.secondaryTable {
+  background: #1d1e26;
+  margin-bottom: 20px;
+}
+
+.primaryTable {
+  border: 3px solid #50fa7b;
+  padding: 50px 70px;
+}
+
+.secondaryTable {
+  padding: 50px;
+  border-top-left-radius: var(--rounded-2xl);
+  border-bottom-left-radius: var(--rounded-2xl);
+}
+
+.title {
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.packageName {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.primaryPrice,
+.secondaryPrice {
+  font-weight: 700;
+  text-align: center;
+}
+
+.primaryPrice {
+  font-size: 64px;
+}
+
+.secondaryPrice {
+  font-size: 48px;
+}
+
+.primaryBeforePrice,
+.secondaryBeforePrice {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .4);
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.primaryBeforePrice {
+  font-size: 48px;
+  margin-left: -15px;
+}
+
+.secondaryBeforePrice {
+  font-size: 36px;
+}
+
+.buy {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cta {
+  color: #1d1e26;
+  text-align: center;
+}
+
+.refund {
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 768px) {
+  .tables {
+    flex-direction: column;
+  }
+
+  .primaryTable,
+  .secondaryTable {
+    padding: 50px 40px;
+  }
+
+  .secondaryTable {
+    border-radius: var(--rounded-2xl);
+  }
+
+  .primaryPrice {
+    font-size: 48px;
+  }
+
+  .primaryBeforePrice {
+    font-size: 36px;
+  }
+}
+
+.svgContainerTop,
+.svgContainerBottom {
+  display: block;
+  position: relative;
+  top: 0;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1792 335" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(34, 33, 44, 1)" d="M 0 50 C 259 50 259 209 518 209 L 518 209 L 518 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 517 209 C 800 209 800 96 1083 96 L 1083 96 L 1083 0 L 517 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 1082 96 C 1437 96 1437 189 1792 189 L 1792 189 L 1792 0 L 1082 0 Z" stroke-width="0"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width:1791px) {
+  .svgContainerTop,
+  .svgContainerBottom {
+    background-size: contain;
+  }
+}
+
+.svgContainerBottom {
+  transform: rotate(180deg);
+}
+
+.iconCheck {
+  width: 24px;
+  margin-right: 10px;
+  position: relative;
+  top: 7px;
+}
+
+.primary {
+  fill: var(--green)
+}
+
+.secondary {
+  fill: var(--black)
+}
