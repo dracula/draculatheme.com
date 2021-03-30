@@ -100,8 +100,8 @@ class Pro extends React.Component {
         </Head>
 
         <Topbar />
-        <Discount ppp={this.state.ppp} queryParams={this.state.queryParams} />
-        <Header title={title} description={description} sales={this.props.sales} />
+        <Discount ppp={this.state.ppp} suffix="PRO" queryParams={this.state.queryParams} />
+        <Header title={title} description={description} />
         <Description />
         <Preview app={this.state.app} variant={this.state.variant} changeApp={this.changeApp.bind(this)} changeVariant={this.changeVariant.bind(this)} />
         <Why />

@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styles from './Pricing.module.css';
+import { getDiscount } from '../../lib/discount';
 import { Button, Box, List, Paragraph, Heading, Text } from 'dracula-ui';
 
 class Pricing extends Component {
@@ -7,6 +8,12 @@ class Pricing extends Component {
     let beforePrice = 249;
     let afterPrice = 149;
     let gumroadURL = 'https://gum.co/dracula-ui?wanted=true&variant=Complete%20Package';
+
+    if (this.props.ppp.country && this.props.ppp.discount) {
+      beforePrice = 149;
+      afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
+      gumroadURL = `https://gumroad.com/l/dracula-ui/${this.props.ppp.country}UI?wanted=true&variant=Complete%20Package`;
+    }
 
     return <Box rounded="2xl" className={styles.primaryTable}>
       <Paragraph color="cyanGreen" className={styles.packageName}>
@@ -59,6 +66,12 @@ class Pricing extends Component {
     let beforePrice = 129;
     let afterPrice = 99;
     let gumroadURL = 'https://gum.co/dracula-ui?wanted=true';
+
+    if (this.props.ppp.country && this.props.ppp.discount) {
+      beforePrice = 99;
+      afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
+      gumroadURL = `https://gumroad.com/l/dracula-ui/${this.props.ppp.country}UI?wanted=true`;
+    }
 
     return <Box className={styles.secondaryTable}>
       <Paragraph className={styles.packageName}>

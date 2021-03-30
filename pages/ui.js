@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Discount from '../components/pro/Discount';
 import Tagline from '../components/ui/Tagline';
 import Highlights from '../components/ui/Highlights';
 import Authors from '../components/ui/Authors';
@@ -8,6 +9,10 @@ import Footer from '../components/ui/Footer';
 import styles from './ui.module.css';
 
 class UI extends React.Component {
+  state = {
+    ppp: {},
+  };
+
   static async getInitialProps() {
     const query = {
       color: 'green',
@@ -17,10 +22,19 @@ class UI extends React.Component {
     return { query };
   }
 
+  componentDidMount() {
+    this.fetchPPP();
+  }
+
+  async fetchPPP() {
+    const pppReq = await fetch('https://ppp.dracula.workers.dev');
+    const ppp = await pppReq.json();
+    this.setState({ ppp });
+  }
+
   render() {
     const title = 'Dracula UI';
     const description = 'A dark-first collection of UI patterns and components';
-    const gumroadURL = 'https://gum.co/dracula-ui?wanted=true';
 
     return (
       <div className={styles.wrapper}>
@@ -59,8 +73,10 @@ class UI extends React.Component {
         <div className={styles.footer}>
           <p style={{ fontFamily: 'Fira Code, monospace', fontSize: 16, margin: 0 }} className="credits">Made with <span style={{ fontSize: 36 }} className="love">♥</span> by <a className="cyan" href="https://zenorocha.com" target="blank">Zeno Rocha</a> & <a className="cyan" href="https://twitter.com/nettofarah" target="blank">Netto Farah</a></p>
         </div>
+        <Discount ppp={this.state.ppp} suffix="UI" queryParams={{}} />
         <Tagline />
         <Highlights />
+        <Pricing ppp={this.state.ppp} queryParams={{}} />
         <Authors />
         <Footer />
       </div>

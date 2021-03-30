@@ -27,7 +27,7 @@ class Discount extends Component {
           <div className={styles.bodyRight}>
             <p>Hey! You're coming from <span className={styles.highlight}>{countries[this.props.ppp.country].name}</span> where this could be too expensive.</p>
             {this.renderSpecialMessage()}
-            <p>If you need it, use the code <span className={styles.highlight}>{this.props.ppp.country}PRO</span> for an extra <span className={styles.highlight}>{this.props.ppp.discount}% off</span> the regular price.</p>
+            <p>If you need it, use the code <span className={styles.highlight}>{this.props.ppp.country}{this.props.suffix}</span> for an extra <span className={styles.highlight}>{this.props.ppp.discount}% off</span> the regular price.</p>
           </div>
         </div>
       </div>
