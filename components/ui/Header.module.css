@@ -1,0 +1,20 @@
+.header {
+  background: #22212C;
+  text-align: center;
+  padding: 150px 10px 30px;
+}
+
+.title {
+  font-family: "Abril Text";
+  font-size: 70px;
+}
+
+.subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 390px;
+}
+
+.bodyText {
+  font-size: 24px;
+}
