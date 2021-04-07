@@ -5,6 +5,7 @@ import Discount from '../components/pro/Discount';
 import Tagline from '../components/ui/Tagline';
 import Highlights from '../components/ui/Highlights';
 import Authors from '../components/ui/Authors';
+import Testimonial from '../components/ui/Testimonial';
 import Footer from '../components/ui/Footer';
 import styles from './ui.module.css';
 
@@ -76,6 +77,7 @@ class UI extends React.Component {
         <Discount ppp={this.state.ppp} suffix="UI" queryParams={{}} />
         <Tagline />
         <Highlights />
+        <Testimonial />
         <Pricing ppp={this.state.ppp} queryParams={{}} />
         <Authors />
         <Footer />
