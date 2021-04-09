@@ -1,0 +1,200 @@
+.features {
+  background-color: #22212C;
+  overflow: hidden;
+}
+
+.features ::selection {
+  background: #9580FF;
+  color: #000;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.container .content:last-child {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.contentLeft,
+.contentRightInverted {
+  width: 380px;
+  flex-shrink: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+}
+
+.contentRight,
+.contentLeftInverted {
+  margin-left: 108px;
+  align-items: flex-start;
+  justify-content: center;  
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.contentLeftInverted {
+  margin-left: -288px;
+  margin-right: 108px;
+  align-items: flex-end;
+}
+
+.background,
+.backgroundSecond,
+.backgroundThird {
+  width: 1000px;
+  height: 640px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  max-width: 1100px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.background {
+  composes: drac-bg-purple-cyan from global;
+}
+
+.backgroundSecond {
+  composes: drac-bg-cyan-green from global;
+}
+
+.backgroundThird {
+  composes: drac-bg-yellow-pink from global;
+}
+
+.paragraph {
+  color: #8a8f98;
+}
+
+.paragraph,
+.highlight {
+  font-size: 22px;
+}
+
+.image {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .contentLeftInverted {
+    margin-left: -500px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 512px;
+  }
+
+  .contentLeft,
+  .contentRightInverted {
+    float: none;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .contentRight,
+  .contentLeftInverted {
+    float: none;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .background,
+  .backgroundSecond,
+  .backgroundThird {
+    display: none;
+  }
+}
+
+.svgContainerTop,
+.svgContainerBottom {
+  display: block;
+  position: relative;
+  top: 0;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1792 335" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(34, 33, 44, 1)" d="M 0 50 C 259 50 259 209 518 209 L 518 209 L 518 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 517 209 C 800 209 800 96 1083 96 L 1083 96 L 1083 0 L 517 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 1082 96 C 1437 96 1437 189 1792 189 L 1792 189 L 1792 0 L 1082 0 Z" stroke-width="0"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width:1791px) {
+  .svgContainerTop,
+  .svgContainerBottom {
+    background-size: contain;
+  }
+}
+
+.svgContainerBottom {
+  transform: rotate(180deg);
+}
+
+.icon {
+  width: 36px;
+}
+
+.primaryFirst {
+  fill: var(--purpleSecondary);
+}
+
+.secondaryFirst {
+  fill: var(--purple);
+}
+
+.iconContainerFirst {
+  background: var(--purple-transparent);
+}
+
+.primarySecond {
+  fill: var(--greenSecondary);
+}
+
+.secondarySecond {
+  fill: var(--green);
+}
+
+.iconContainerSecond {
+  background: var(--green-transparent);
+}
+
+.primaryThird {
+  fill: var(--red);
+}
+
+.secondaryThird {
+  fill: #22212C;
+}
+
+.iconContainerThird {
+  background: var(--red-transparent);
+}
+
+.iconContainerFirst,
+.iconContainerSecond,
+.iconContainerThird {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
