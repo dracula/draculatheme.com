@@ -21,7 +21,7 @@ const items = [
   },
   {
     question: `Is there a light theme included?`,
-    answer: `No, at this point Dracula UI is 100% focused on dark mode apps. Although vampires can't stand the light, we're open to the possibility of adding a light color palette in the future.`
+    answer: `At this point Dracula UI is 100% focused on dark mode apps. Although vampires can't stand the light, we're open to the possibility of adding a light color palette in the future.`
   },
   {
     question: `What is your refund policy?`,

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Discount from '../components/pro/Discount';
 import Tagline from '../components/ui/Tagline';
+import Newsletter from '../components/ui/Newsletter';
 import Features from '../components/ui/Features';
 import Highlights from '../components/ui/Highlights';
 import Faq from '../components/ui/Faq';
@@ -83,6 +84,7 @@ class UI extends React.Component {
         <Testimonial />
         <Pricing ppp={this.state.ppp} queryParams={{}} />
         <Faq />
+        <Newsletter />
         <Authors />
         <Footer />
       </div>
