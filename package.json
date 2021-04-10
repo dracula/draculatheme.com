@@ -12,7 +12,7 @@
   "author": "Zeno Rocha",
   "license": "MIT",
   "dependencies": {
-    "@dracula/dracula-ui": "^0.5.1",
+    "@dracula/dracula-ui": "^0.6.0",
     "airtable": "^0.10.1",
     "color-convert": "^2.0.1",
     "countries-list": "^2.6.0",
@@ -35,7 +35,8 @@
     "react-select": "^3.1.0",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
-    "shufflejs": "^5.2.3"
+    "shufflejs": "^5.2.3",
+    "twilio": "^3.60.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
