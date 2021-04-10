@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Discount from '../components/pro/Discount';
 import Tagline from '../components/ui/Tagline';
 import Newsletter from '../components/ui/Newsletter';
+import Pricing from '../components/ui/Pricing';
 import Features from '../components/ui/Features';
 import Highlights from '../components/ui/Highlights';
 import Faq from '../components/ui/Faq';
