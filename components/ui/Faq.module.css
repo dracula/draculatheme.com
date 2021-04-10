@@ -1,0 +1,30 @@
+.faq {
+  background: #22212C;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 70px 15px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-count: 3;
+  grid-column-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+.title {
+  text-align: center;
+}
+
+.answer {
+  color: #8a8f98;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-column-gap: 20px;
+  }
+}

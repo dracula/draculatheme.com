@@ -5,6 +5,7 @@ import Discount from '../components/pro/Discount';
 import Tagline from '../components/ui/Tagline';
 import Features from '../components/ui/Features';
 import Highlights from '../components/ui/Highlights';
+import Faq from '../components/ui/Faq';
 import Authors from '../components/ui/Authors';
 import Testimonial from '../components/ui/Testimonial';
 import Footer from '../components/ui/Footer';
@@ -81,6 +82,7 @@ class UI extends React.Component {
         <Highlights />
         <Testimonial />
         <Pricing ppp={this.state.ppp} queryParams={{}} />
+        <Faq />
         <Authors />
         <Footer />
       </div>
