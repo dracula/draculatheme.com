@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import styles from './Highlights.module.css';
-import { Box, Paragraph, Heading, Text } from 'dracula-ui';
+import { Box, Paragraph, Heading, Text } from '@dracula/dracula-ui';
 
 const gradients = [
   {
@@ -39,8 +39,8 @@ class Highlights extends Component {
           </Box>
         </Box>
         <Box p="md">
-          <Heading size="heading-2">Enhanced Accessibility</Heading>
-          <Paragraph mt="sm" lineHeight="large">All <Text color="yellowPink">accent colors</Text> are tested not only against the WCAG 2.1 Level AA spec, but also <Text color="yellowPink">WCAG Level AAA</Text>, which requires a contrast ratio of at least 7:1. This gives you the <Text color="yellowPink">best readability</Text> possible.</Paragraph>
+          <Heading size="lg">Enhanced Accessibility</Heading>
+          <Paragraph mt="sm" lineHeight="lg">All <Text color="yellowPink">accent colors</Text> are tested not only against the WCAG 2.1 Level AA spec, but also <Text color="yellowPink">WCAG Level AAA</Text>, which requires a contrast ratio of at least 7:1. This gives you the <Text color="yellowPink">best readability</Text> possible.</Paragraph>
         </Box>
       </Box>
     </Box>
@@ -59,8 +59,8 @@ class Highlights extends Component {
           </Box>
         </Box>
         <Box p="md">
-          <Heading size="heading-2">Aesthetically Pleasing</Heading>
-          <Paragraph mt="sm" lineHeight="large">Gradients are a surprisingly versatile tool. They can introduce <Text color="purpleCyan">depth and dimension</Text> to your app. By using one of our well-designed gradients, you can subconsciously lead users toward the <Text color="purpleCyan">focal point</Text>.</Paragraph>
+          <Heading size="lg">Aesthetically Pleasing</Heading>
+          <Paragraph mt="sm" lineHeight="lg">Gradients are a surprisingly versatile tool. They can introduce <Text color="purpleCyan">depth and dimension</Text> to your app. By using one of our well-designed gradients, you can subconsciously lead users toward the <Text color="purpleCyan">focal point</Text>.</Paragraph>
         </Box>
       </Box>
     </Box>
@@ -81,8 +81,8 @@ class Highlights extends Component {
           </Box>
         </Box>
         <Box p="md">
-          <Heading size="heading-2">Appealing Typography</Heading>
-          <Paragraph mt="sm" lineHeight="large"><Text color="pinkPurple">Good legibility</Text> is crucial to make sure the users can do their job well and with as <Text color="pinkPurple">little fatigue</Text> as possible. You can choose between <Text color="pinkPurple">different monospaced</Text>, serif, and sans-serif fonts.</Paragraph>
+          <Heading size="lg">Appealing Typography</Heading>
+          <Paragraph mt="sm" lineHeight="lg"><Text color="pinkPurple">Good legibility</Text> is crucial to make sure the users can do their job well and with as <Text color="pinkPurple">little fatigue</Text> as possible. You can choose between <Text color="pinkPurple">different monospaced</Text>, serif, and sans-serif fonts.</Paragraph>
         </Box>
       </Box>
     </Box>
