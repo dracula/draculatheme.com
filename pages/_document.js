@@ -1,15 +1,14 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default class extends Document {
   render() {
     return (
-      <html lang="en">
+      <Html>
         <Head>
           <meta charSet="utf-8" />
-          <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta property="og:type" content="website" />
           <meta content="summary_large_image" name="twitter:card" />
           <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
@@ -40,7 +39,7 @@ export default class extends Document {
 
         <Main />
         <NextScript />
-      </html>
+      </Html>
     )
   }
 }
