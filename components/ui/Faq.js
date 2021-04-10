@@ -32,7 +32,7 @@ const items = [
 class Faq extends Component {
   renderQuestionsAndAnswers() {
     return items.map((item, index) => {
-      return <Box key={index} mb="lg">
+      return <Box key={index} mx="sm" mb="lg">
         <Paragraph weight="bold">{item.question}</Paragraph>
         <Paragraph lineHeight="md" pt="none" className={styles.answer}>{item.answer}</Paragraph>
       </Box>
