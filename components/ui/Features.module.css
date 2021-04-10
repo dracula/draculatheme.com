@@ -3,11 +3,6 @@
   overflow: hidden;
 }
 
-.features ::selection {
-  background: #9580FF;
-  color: #000;
-}
-
 .container {
   padding: 0 15px;
   margin: 0 auto;
