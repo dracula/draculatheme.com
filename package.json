@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@dracula/dracula-ui": "^0.6.0",
+    "@octokit/rest": "^18.5.2",
     "airtable": "^0.10.1",
     "color-convert": "^2.0.1",
     "countries-list": "^2.6.0",
@@ -26,7 +27,7 @@
     "moment": "^2.24.0",
     "next": "^9.4.0",
     "next-seo": "^4.18.0",
-    "next-transpile-modules": "^6.4.0",
+    "next-transpile-modules": "^3.2.0",
     "probe-image-size": "^5.0.0",
     "query-string": "^6.12.0",
     "react": "^16.13.1",
