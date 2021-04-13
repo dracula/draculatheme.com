@@ -1,5 +1,6 @@
 .env
 .next
+.npmrc
 node_modules
 out
 .now

@@ -1,0 +1,27 @@
+.body {
+  background: #22212C;
+  text-align: center;
+}
+
+.bodyText {
+  margin: 20px auto;
+}
+
+.bodyForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyForm input[type=email] {
+  background: #14141b;
+  color: var(--yellow);
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+}
+
+.bodyForm input[type=submit] {
+  background: var(--yellow-pink);
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+}

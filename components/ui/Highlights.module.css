@@ -1,0 +1,105 @@
+.features {
+  background: #2a2c37;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 82em;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.card {
+  flex: 1;
+  border-radius: var(--rounded-2xl);
+  background: #1d1e26;
+  margin: 0 15px;
+  margin-bottom: 40px;
+}
+
+.cardBackground {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardDetailsContainer {
+  background: #22212C;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardDetails {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.typographyDetail {
+  color: #22212C;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.gray {
+  color: hsl(230, 15%, 60%);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 32rem;
+  }
+}
+
+.svgContainerTop,
+.svgContainerBottom {
+  display: block;
+  position: relative;
+  top: 0;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1792 335" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(34, 33, 44, 1)" d="M 0 50 C 259 50 259 209 518 209 L 518 209 L 518 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 517 209 C 800 209 800 96 1083 96 L 1083 96 L 1083 0 L 517 0 Z" stroke-width="0"></path> <path fill="rgba(34, 33, 44, 1)" d="M 1082 96 C 1437 96 1437 189 1792 189 L 1792 189 L 1792 0 L 1082 0 Z" stroke-width="0"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width:1791px) {
+  .svgContainerTop,
+  .svgContainerBottom {
+    background-size: contain;
+  }
+}
+
+.svgContainerBottom {
+  transform: rotate(180deg);
+}
+
+.iconCheck {
+  width: 36px;
+  margin-right: 10px;
+}
+
+.primary {
+  fill: var(--yellow)
+}
+
+.secondary {
+  fill: var(--black)
+}

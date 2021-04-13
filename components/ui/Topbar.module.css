@@ -1,0 +1,20 @@
+.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.topbar {
+  background: #14141b;
+  height: 60px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px;
+  justify-content: space-between;
+}
+
+.secondPart {
+  font-family: "Abril Text";
+  font-size: 24px;
+}

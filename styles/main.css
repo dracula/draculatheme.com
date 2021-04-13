@@ -64,6 +64,7 @@ body {
   display: inline-block;
   color: #f2f2f2;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .cyan .topbar-title:hover { color: rgba(139, 233, 253, 1); }

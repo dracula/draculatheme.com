@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { countries } from 'countries-list';
 import styles from './Pricing.module.css';
+import { getDiscount } from '../../lib/discount';
 import apps from '../../lib/pro';
 
 class Pricing extends Component {
@@ -17,7 +18,7 @@ class Pricing extends Component {
     if (!this.props.queryParams.a && this.props.ppp.country && this.props.ppp.discount) {
       promoName = `${countries[this.props.ppp.country].name} Promo`;
       beforePrice = 79;
-      afterPrice = (beforePrice * (1 - this.props.ppp.discount / 100)).toFixed(0);
+      afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
       gumroadURL = `https://gumroad.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`;
     }
 
