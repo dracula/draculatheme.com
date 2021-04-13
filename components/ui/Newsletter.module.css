@@ -1,6 +1,7 @@
 .body {
   background: #22212C;
   text-align: center;
+  padding: 0 15px;
 }
 
 .bodyText {
@@ -24,4 +25,10 @@
   background: var(--yellow-pink);
   font-family: 'Fira Code', monospace;
   font-size: 18px;
+}
+
+@media (max-width: 960px) {
+  .body {
+    padding: 0 15px 60px;
+  }
 }

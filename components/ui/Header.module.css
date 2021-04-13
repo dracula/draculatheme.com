@@ -18,3 +18,9 @@
 .bodyText {
   font-size: 24px;
 }
+
+@media (max-width: 960px) {
+  .header {
+    padding: 150px 10px 80px;
+  }
+}

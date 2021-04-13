@@ -42,7 +42,7 @@ class Faq extends Component {
   render() {
     return <Box className={styles.faq}>
       <Box className={styles.container}>
-        <Heading size="2xl" color="yellowPink" pb="lg" className={styles.title}>Frequently Asked Questions</Heading>
+        <Heading size="2xl" color="yellowPink" pb="lg" px="sm" className={styles.title}>Frequently Asked Questions</Heading>
         <Box className={styles.grid}>
           {this.renderQuestionsAndAnswers()}
         </Box>
