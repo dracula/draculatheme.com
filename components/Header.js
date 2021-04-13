@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
 import malarkey from 'malarkey';
 import Topbar from './Topbar';
