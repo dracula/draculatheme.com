@@ -114,7 +114,6 @@ class Pricing extends Component {
           Get early access to dozens of components and start building gorgeous dark sites today.
         </Paragraph>
         <Box className={styles.tables}>
-          {this.renderSecondary()}
           {this.renderPrimary()}
         </Box>
       </Box>
