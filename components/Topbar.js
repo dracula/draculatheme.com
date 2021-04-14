@@ -3,8 +3,17 @@ import Link from 'next/link';
 import styles from './Topbar.module.css';
 
 class Topbar extends Component {
+  renderBanner() {
+    return <Link href="/ui">
+      <a className={styles.banner}>
+        <p className={styles.bannerContent}>Dracula UI is here! Get early access</p>
+      </a>
+    </Link>
+  }
+
   render() {
     return <div className={styles.fixed}>
+      {this.renderBanner()}
       <nav className={styles.topbar}>
         <Link href="/">
           <a className="topbar-title">Dracula</a>
