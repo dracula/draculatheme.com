@@ -13,7 +13,7 @@ const authors = [
   {
     avatar: "nettofarah",
     intro: "And I'm Netto",
-    bio: "I love building tools to empower engineers to <span class='drac-text-cyan-green'>build things faster</span> and more reliably.<br /><br />On my day to day job at Segment (Twilio), I write JavaScript code that <span class='drac-text-cyan-green'>runs on billions of devices</span> every single day.<br /><br />I'm always looking for creative ways to build great user experiences on the web and <span class='drac-text-cyan-green'>I can't wait</span> to see what you're going to create with this.",
+    bio: "I love building tools to empower engineers to <span class='drac-text-cyan-green'>build things faster</span> and more reliably.<br /><br />On my day to day job at Segment (Twilio), I write JavaScript code that <span class='drac-text-cyan-green'>runs on billions of devices</span> every single day.<br /><br />I'm always looking for creative ways to build great experiences on the web and <span class='drac-text-cyan-green'>I can't wait</span> to see what you're going to create with this package.",
     location: "Austin, TX",
     color: "cyanGreen"
   },

@@ -65,6 +65,7 @@ body {
   color: #f2f2f2;
   font-size: 24px;
   cursor: pointer;
+  transition: none;
 }
 
 .cyan .topbar-title:hover { color: rgba(139, 233, 253, 1); }
