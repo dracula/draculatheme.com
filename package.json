@@ -12,7 +12,7 @@
   "author": "Zeno Rocha",
   "license": "MIT",
   "dependencies": {
-    "@dracula/dracula-ui": "^0.6.2",
+    "@dracula/dracula-ui": "^0.7.2",
     "@octokit/rest": "^18.5.2",
     "airtable": "^0.10.1",
     "color-convert": "^2.0.1",
