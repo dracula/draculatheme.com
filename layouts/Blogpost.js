@@ -1,7 +1,7 @@
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 
-export default ({ children }) => {
+export default function Blogpost({ children }) {
   return <div className={children.props.post.color}>
     <div className="blog-wraper">
       <Topbar />
