@@ -18,6 +18,27 @@
   font-size: 24px;
 }
 
+.worksWith {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-size: 24px;
+  color: #8a8f98;
+}
+
+.supportedList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: "Fira Code", monospace;
+}
+
+.supportedItem {
+  margin: 1rem;
+}
+
 .svgContainerTop,
 .svgContainerBottom {
   display: block;
@@ -28,7 +49,7 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width:1791px) {
+@media (max-width: 1791px) {
   .svgContainerTop,
   .svgContainerBottom {
     background-size: contain;
