@@ -6,8 +6,54 @@
           <description>The journey of building the most universal dark theme ever made.</description>
           <language>en</language>
           <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml" />
-          <lastBuildDate>Wed, 10 Feb 2021 00:00:00 GMT</lastBuildDate>
+          <lastBuildDate>Wed, 24 Mar 2021 00:00:00 GMT</lastBuildDate>
     <item>
+        <title><![CDATA[Making a Physical Book]]></title>
+        <link>https://draculatheme.com/blog/making-a-physical-book</link>
+        <guid>https://draculatheme.com/blog/making-a-physical-book</guid>
+        <pubDate>Wed, 24 Mar 2021 00:00:00 GMT</pubDate>
+        <description>
+        <![CDATA[I can't believe this is real... My book is now available in hardcover. Building this physical copy has been a really intense process.]]>
+        </description>
+        <content:encoded>
+          <![CDATA[<p>I can't believe this is real...</p>
+<p>My book is now available in hardcover 🎉🎉🎉</p>
+<ul>
+<li><a href="https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531">English Edition</a></li>
+<li><a href="https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X">Portuguese Edition</a></li>
+</ul>
+<figure>
+  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-a.jpg" alt="Zeno holding the physical book" />
+</figure>
+<p>Building this physical copy has been a really intense process.</p>
+<p>At first, I hired a person from Fiverr to do the entire formatting. After a lot of back and forth, I wasn't super happy with the quality, so I decided to do it myself.</p>
+<p>You see, I know nothing about formatting books, but the internet is a magical place, so I started to learn Adobe InDesign.</p>
+<figure>
+  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-b.png" alt="Adobe InDesign" />
+</figure>
+<p>After hours of adding content, choosing fonts, moving images, and optimizing line breaks, I was finally ready to print!</p>
+<p>Before sending it to the publishing company, I decided to test everything at home using my good old printer. I made sure to read the entire book again to feel the experience on real paper. It's impressive how different it is.</p>
+<figure>
+  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-c.jpg" alt="Book printed at home" />
+</figure>
+<p>I didn't want to order hundreds of copies and have them stored at my home. That's why I picked a service called IngramSpark, which is a print-on-demand publisher. This basically means that when someone buys a copy, they print and send it to you directly.</p>
+<p>Designing a book is crazy because you have to make all these decisions like paperback vs. hardcover, white vs. creme paper, gloss vs. matte cover.</p>
+<p>In the end, I chose hardcover since it's more durable and has a premium touch. I also chose creme paper since it's easier on the eyes. Once all those decisions were made, I pressed <em>Submit</em> and waited a couple of weeks for the book to be produced.</p>
+<figure>
+  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-d.jpg" alt="Book interior" />
+</figure>
+<p>I can't describe the feeling of receiving that first copy.</p>
+<p>It's so amazing to see the words you wrote on real paper. To be honest, I never thought about writing a book, but now we have a digital book, an audio book, and now a physical book. Unbelievable.</p>
+<p>I hope you enjoy this and thanks for all your support so far.</p>
+<p>Grab your physical copy today or send it as a gift to a friend!</p>
+<ul>
+<li><a href="https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531">English Edition</a></li>
+<li><a href="https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X">Portuguese Edition</a></li>
+</ul>
+<p>Happy reading!</p>
+]]>
+        </content:encoded>
+      </item> <item>
         <title><![CDATA[14 Best Free Fonts for Programming]]></title>
         <link>https://draculatheme.com/blog/best-free-fonts-for-programming</link>
         <guid>https://draculatheme.com/blog/best-free-fonts-for-programming</guid>
