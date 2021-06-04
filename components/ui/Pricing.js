@@ -44,7 +44,7 @@ class Pricing extends Component {
         </li>
         <li>
           <svg xmlns="http://www.w3.org/2000/svg" className={styles.iconCheck} viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" className={styles.primary} /><path className={styles.secondary} d="M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z" /></svg>
-          <Text>Exclusive Community</Text>
+          <Text>Discord Community</Text>
         </li>
       </List>
       <Box className={styles.buy}>
