@@ -41,7 +41,7 @@ class Reviews extends Component {
             <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
             <img className={styles.avgRatingStar} src="/static/img/pro/star-filled.svg" alt="Star" />
           </div>
-          <p>225 ratings</p>
+          <p>302 ratings</p>
         </div>
         <div className={styles.progressBars}>
           <div className={styles.progressBarContainer}>
