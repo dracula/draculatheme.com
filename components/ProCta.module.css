@@ -5,7 +5,7 @@
 }
 
 .cta {
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
   margin: 0 auto;
   background: rgba(80, 250, 123, 1);
@@ -20,5 +20,5 @@
 
 .cta:hover,
 .cta:focus {
-  background: rgba(80, 250, 123, .8);
+  background: rgba(80, 250, 123, 0.8);
 }

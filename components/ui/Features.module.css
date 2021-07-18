@@ -1,5 +1,5 @@
 .features {
-  background-color: #22212C;
+  background-color: #22212c;
   overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
 .contentLeftInverted {
   margin-left: 108px;
   align-items: flex-start;
-  justify-content: center;  
+  justify-content: center;
   flex-direction: column;
   position: relative;
   display: flex;
@@ -153,7 +153,7 @@
 }
 
 .secondaryThird {
-  fill: #22212C;
+  fill: #22212c;
 }
 
 .iconContainerThird {

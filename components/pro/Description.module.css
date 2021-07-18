@@ -55,13 +55,12 @@
 
 .company svg {
   fill: #8d8f92;
-  transition: fill .3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
 }
 
 .company svg:hover {
   fill: #50fa7b;
 }
-
 
 @media (max-width: 1040px) {
   .container::before {

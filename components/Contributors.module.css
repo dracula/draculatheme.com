@@ -1,5 +1,5 @@
 .contributors {
-  margin: 1em 0 .3em;
+  margin: 1em 0 0.3em;
 }
 
 .contributors li {
@@ -9,7 +9,7 @@
 }
 
 .contributors li a {
-  transition: border .1s ease-in-out;
+  transition: border 0.1s ease-in-out;
   border: 3px solid #546179;
   border-radius: 5px;
   display: block;

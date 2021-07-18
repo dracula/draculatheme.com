@@ -64,7 +64,7 @@
 .primaryBeforePrice,
 .secondaryBeforePrice {
   font-weight: 700;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: line-through;
   margin-right: 10px;
 }
@@ -91,7 +91,7 @@
 
 .refund {
   text-align: center;
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -127,7 +127,7 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width:1791px) {
+@media (max-width: 1791px) {
   .svgContainerTop,
   .svgContainerBottom {
     background-size: contain;
@@ -146,11 +146,11 @@
 }
 
 .primary {
-  fill: var(--green)
+  fill: var(--green);
 }
 
 .secondary {
-  fill: var(--black)
+  fill: var(--black);
 }
 
 @media (max-width: 960px) {

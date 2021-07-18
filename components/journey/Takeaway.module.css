@@ -58,7 +58,7 @@
   .takeawayEven .emojiContainer {
     margin: 30px 0 0 0;
   }
-  
+
   .takeawayOdd .emojiContainer {
     margin: 0 0 30px 0;
   }
@@ -67,7 +67,7 @@
     display: block;
     margin: 0 0 30px 0;
   }
-  
+
   .takeawayEven .emojiContainer:last-child {
     display: none;
   }

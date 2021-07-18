@@ -1,9 +1,9 @@
 .features {
-  background-color: #2C2122;
+  background-color: #2c2122;
 }
 
 .features ::selection {
-  background: #FF9580;
+  background: #ff9580;
   color: #000;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .title {
-  color: #FF9580;
+  color: #ff9580;
   font-size: 26px;
   font-weight: 700;
   margin-top: 10px;
@@ -43,7 +43,7 @@
 }
 
 .highlight {
-  color: #FF9580;
+  color: #ff9580;
 }
 
 @media (max-width: 768px) {

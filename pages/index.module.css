@@ -28,7 +28,7 @@
 .button {
   background: #282a36;
   border: 1px solid rgba(189, 147, 249, 1);
-  color: #BCC2CD;
+  color: #bcc2cd;
   cursor: pointer;
   display: inline-block;
   font-family: "Source Sans Pro";
@@ -37,7 +37,7 @@
   outline: none;
   padding: 5px 20px;
   text-align: center;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
@@ -88,7 +88,7 @@
 }
 
 .search::placeholder {
-  color: #BCC2CD;
+  color: #bcc2cd;
 }
 
 .results {

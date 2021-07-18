@@ -16,22 +16,22 @@
 .red .sales,
 .red a,
 .red strong {
-  color: #FF9580;
+  color: #ff9580;
 }
 
 .red ::selection {
-  background: #FF9580;
+  background: #ff9580;
   color: #000;
 }
 
 .orange .sales,
 .orange a,
 .orange strong {
-  color: #FFCA80;
+  color: #ffca80;
 }
 
 .orange ::selection {
-  background: #FFCA80;
+  background: #ffca80;
   color: #000;
 }
 
@@ -71,11 +71,11 @@
 .green .sales,
 .green a,
 .green strong {
-  color: #8AFF80;
+  color: #8aff80;
 }
 
 .green ::selection {
-  background: #8AFF80;
+  background: #8aff80;
   color: #000;
 }
 

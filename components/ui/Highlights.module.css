@@ -30,7 +30,7 @@
 }
 
 .cardDetailsContainer {
-  background: #22212C;
+  background: #22212c;
   padding: 15px 25px;
   display: flex;
   flex-direction: row;
@@ -49,7 +49,7 @@
 }
 
 .typographyDetail {
-  color: #22212C;
+  color: #22212c;
   font-size: 28px;
   font-weight: 300;
 }
@@ -79,7 +79,7 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width:1791px) {
+@media (max-width: 1791px) {
   .svgContainerTop,
   .svgContainerBottom {
     background-size: contain;
@@ -96,9 +96,9 @@
 }
 
 .primary {
-  fill: var(--yellow)
+  fill: var(--yellow);
 }
 
 .secondary {
-  fill: var(--black)
+  fill: var(--black);
 }

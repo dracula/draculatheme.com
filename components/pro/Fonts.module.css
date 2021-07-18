@@ -3,7 +3,7 @@
 }
 
 .fonts ::selection {
-  background: #9580FF;
+  background: #9580ff;
   color: #000;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .title {
-  color: #9580FF;
+  color: #9580ff;
   font-size: 48px;
   font-weight: 700;
   margin: 10px 0 30px;
@@ -46,14 +46,14 @@
 }
 
 .highlight {
-  color: #9580FF;
+  color: #9580ff;
 }
 
 .cta {
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin: 0 20px 20px 0;
   display: inline-block;
-  background: #9580FF;
+  background: #9580ff;
   text-align: center;
   color: #2a2c37;
   padding: 8px 16px;
@@ -62,7 +62,7 @@
 
 .cta:hover,
 .cta:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #9580FF;
+  box-shadow: 0 0.5em 0.5em -0.4em #9580ff;
   transform: translateY(-0.25em);
 }
 

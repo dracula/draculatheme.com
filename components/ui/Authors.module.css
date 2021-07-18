@@ -1,5 +1,5 @@
 .authors {
-  background: #2A2C37;
+  background: #2a2c37;
 }
 
 .author {
@@ -57,7 +57,7 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width:1791px) {
+@media (max-width: 1791px) {
   .svgContainerTop {
     background-size: contain;
   }

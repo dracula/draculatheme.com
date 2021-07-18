@@ -16,7 +16,7 @@
 }
 
 .link {
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   color: rgba(189, 147, 249, 1);
   border-bottom: 2px solid rgba(189, 147, 249, 1);
   font-size: 42px;
@@ -24,6 +24,6 @@
 
 .link:hover,
 .link:focus {
-  color: rgba(189, 147, 249, .7);
-  border-bottom: 2px solid rgba(189, 147, 249, .7);
+  color: rgba(189, 147, 249, 0.7);
+  border-bottom: 2px solid rgba(189, 147, 249, 0.7);
 }

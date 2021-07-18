@@ -1,5 +1,5 @@
 .testimonial {
-  background: #22212C;
+  background: #22212c;
 }
 
 .container {
@@ -20,16 +20,16 @@
 
 .body {
   font-size: 20px;
-  line-height: 28px;;
+  line-height: 28px;
   text-align: center;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   margin: 30px 40px;
   position: relative;
 }
 
 .body::before,
 .body::after {
-  content: "\"";
+  content: '"';
   color: var(--disabled);
   font-size: 74px;
   display: block;

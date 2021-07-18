@@ -57,7 +57,7 @@
 
 .colorName {
   margin-bottom: 10px;
-  transition: .3s ease-in-out color;
+  transition: 0.3s ease-in-out color;
 }
 
 .colorPreview {
@@ -70,7 +70,7 @@
 }
 
 .colorPreview:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -86,81 +86,81 @@
 }
 
 .colorsList li:nth-child(1) .colorPreview {
-  background-color: #9580FF;
+  background-color: #9580ff;
 }
 
 .colorsList li:nth-child(1) .colorPreview:after {
-  border-color: #9580FF;
+  border-color: #9580ff;
 }
 
 .colorsList li:nth-child(1).active .colorName,
 .colorsList li:nth-child(1):hover .colorName {
-  color: #9580FF;
+  color: #9580ff;
 }
 
 .colorsList li:nth-child(2) .colorPreview {
-  background-color: #8AFF80;
+  background-color: #8aff80;
 }
 
 .colorsList li:nth-child(2) .colorPreview:after {
-  border-color: #8AFF80;
+  border-color: #8aff80;
 }
 
 .colorsList li:nth-child(2).active .colorName,
 .colorsList li:nth-child(2):hover .colorName {
-  color: #8AFF80;
+  color: #8aff80;
 }
 
 .colorsList li:nth-child(3) .colorPreview {
-  background-color: #FF80BF;
+  background-color: #ff80bf;
 }
 
 .colorsList li:nth-child(3) .colorPreview:after {
-  border-color: #FF80BF;
+  border-color: #ff80bf;
 }
 
 .colorsList li:nth-child(3).active .colorName,
 .colorsList li:nth-child(3):hover .colorName {
-  color: #FF80BF;
+  color: #ff80bf;
 }
 
 .colorsList li:nth-child(4) .colorPreview {
-  background-color: #FFFF80;
+  background-color: #ffff80;
 }
 
 .colorsList li:nth-child(4) .colorPreview:after {
-  border-color: #FFFF80;
+  border-color: #ffff80;
 }
 
 .colorsList li:nth-child(4).active .colorName,
 .colorsList li:nth-child(4):hover .colorName {
-  color: #FFFF80;
+  color: #ffff80;
 }
 
 .colorsList li:nth-child(5) .colorPreview {
-  background-color: #FF9580;
+  background-color: #ff9580;
 }
 
 .colorsList li:nth-child(5) .colorPreview:after {
-  border-color: #FF9580;
+  border-color: #ff9580;
 }
 
 .colorsList li:nth-child(5).active .colorName,
 .colorsList li:nth-child(5):hover .colorName {
-  color: #FF9580;
+  color: #ff9580;
 }
 
 .colorsList li:nth-child(6) .colorPreview {
-  background-color: #80FFEA;
+  background-color: #80ffea;
 }
 
 .colorsList li:nth-child(6) .colorPreview:after {
-  border-color: #80FFEA;
+  border-color: #80ffea;
 }
 
 .colorsList li:nth-child(6).active .colorName,
 .colorsList li:nth-child(6):hover .colorName {
-  color: #80FFEA;
+  color: #80ffea;
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 .ppp {
   background: #1d1e26;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .container {
@@ -18,7 +18,7 @@
 
 .bodyRight {
   font-size: 15px;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .flag {

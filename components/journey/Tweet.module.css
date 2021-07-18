@@ -56,7 +56,7 @@
 .handle {
   display: block;
   font-size: 0.875rem;
-  color: #767E87;
+  color: #767e87;
 }
 
 .text {
@@ -71,7 +71,7 @@
 }
 
 .timestamp {
-  color: #767E87;
+  color: #767e87;
   font-size: 0.875rem;
   margin: 15px 0;
 }
@@ -86,10 +86,10 @@
 .icons {
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
-  color: #767E87;
+  color: #767e87;
 }
 
 .data {
   transition: all 0.3s ease-in-out;
-  color: #767E87;
+  color: #767e87;
 }
