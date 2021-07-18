@@ -9,7 +9,7 @@ import download from 'download';
 import probe from 'probe-image-size';
 
 export async function getStaticPaths() {
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
   query.imageWidth = metadata.width;
   query.imageHeight = metadata.height;
 
-  return { props: { query } };
+  return { props: { query }, revalidate: 60 };
 }
 
 class Theme extends React.Component {
