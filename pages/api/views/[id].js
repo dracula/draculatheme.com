@@ -37,11 +37,12 @@ async function getData(id) {
     }
   })
 
-  const data = result.data.reports[0].data;
-  const total = parseInt(data.rows[0].metrics[0].values[0], 10) +
-    parseInt(data.rows[1].metrics[0].values[0], 10);
+  const totalWithoutTrailingSlash = parseInt(
+    result.data.reports[0].data.rows[0].metrics[0].values[0], 10) || 0;
+  const totalWithTrailingSlash = parseInt(
+    result.data.reports[0].data.rows[1]?.metrics[0].values[0], 10) || 0;
 
-  return total;
+  return totalWithoutTrailingSlash + totalWithTrailingSlash;
 }
 
 export default async ({ query: { id } }, res) => {
