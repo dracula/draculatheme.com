@@ -11,11 +11,12 @@
   background: rgba(80, 250, 123, 1);
   border-radius: 4px;
   text-align: center;
-  color: #000;
+  color: #000 !important;
   font-weight: 400;
   padding: 10px 18px;
   font-size: 18px;
   border: 0 !important;
+  text-decoration-line: none !important;
 }
 
 .cta:hover,

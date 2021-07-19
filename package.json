@@ -12,9 +12,10 @@
   "author": "Zeno Rocha",
   "license": "MIT",
   "dependencies": {
-    "@dracula/dracula-ui": "^0.7.2",
+    "@dracula/dracula-ui": "^0.8.1",
     "@octokit/rest": "^18.5.2",
     "airtable": "^0.10.1",
+    "clipboard": "^2.0.8",
     "color-convert": "^2.0.1",
     "countries-list": "^2.6.0",
     "date-fns": "^2.16.1",

@@ -314,6 +314,7 @@ h4 {
   margin: 1em 0 0.3em;
 }
 
+pre,
 code {
   font-family: "Source Sans Pro";
 }
@@ -322,7 +323,7 @@ pre {
   background-color: #252525;
   padding: 20px;
   margin: 0 0 2em 0;
-  border-radius: 5px;
+  border-radius: var(--rounded-md);
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -383,6 +384,7 @@ a {
 .orange .subtitle a,
 .orange .theme a,
 .orange .theme h3,
+.orange .theme pre,
 .orange .theme code,
 .orange .form input[type="email"] {
   color: rgba(255, 184, 108, 1);
@@ -406,6 +408,7 @@ a {
 .pink .subtitle a,
 .pink .theme a,
 .pink .theme h3,
+.pink .theme pre,
 .pink .theme code,
 .pink .form input[type="email"] {
   color: rgba(255, 121, 198, 1);
@@ -429,6 +432,7 @@ a {
 .cyan .subtitle a,
 .cyan .theme a,
 .cyan .theme h3,
+.cyan .theme pre,
 .cyan .theme code,
 .cyan .form input[type="email"] {
   color: rgba(139, 233, 253, 1);
@@ -452,6 +456,7 @@ a {
 .purple .subtitle a,
 .purple .theme a,
 .purple .theme h3,
+.purple .theme pre,
 .purple .theme code,
 .purple .form input[type="email"] {
   color: rgba(189, 147, 249, 1);
@@ -475,6 +480,7 @@ a {
 .yellow .subtitle a,
 .yellow .theme a,
 .yellow .theme h3,
+.yellow .theme pre,
 .yellow .theme code,
 .yellow .form input[type="email"] {
   color: rgba(241, 250, 140, 1);
@@ -502,6 +508,7 @@ a {
 .green .subtitle a,
 .green .theme a,
 .green .theme h3,
+.green .theme pre,
 .green .theme code,
 .green .form input[type="email"] {
   color: rgba(80, 250, 123, 1);
@@ -642,47 +649,87 @@ a {
   margin-bottom: 20px;
 }
 
+.single a {
+  text-decoration-line: underline;
+  text-underline-offset: 5px;
+}
+
 .cyan .single a {
-  border-bottom: 2px solid rgba(139, 233, 253, 1);
+  color: rgba(139, 233, 253, 1);
+  text-decoration-color: rgba(139, 233, 253, 1);
 }
 
 .green .single a {
-  border-bottom: 2px solid rgba(80, 250, 123, 1);
+  color: rgba(80, 250, 123, 1);
+  text-decoration-color: rgba(80, 250, 123, 1);
 }
 
 .orange .single a {
-  border-bottom: 2px solid rgba(255, 184, 108, 1);
+  color: rgba(255, 184, 108, 1);
+  text-decoration-color: rgba(255, 184, 108, 1);
 }
 
 .pink .single a {
-  border-bottom: 2px solid rgba(255, 121, 198, 1);
+  color: rgba(255, 121, 198, 1);
+  text-decoration-color: rgba(255, 121, 198, 1);
 }
 
 .purple .single a {
-  border-bottom: 2px solid rgba(189, 147, 249, 1);
+  color: rgba(189, 147, 249, 1);
+  text-decoration-color: rgba(189, 147, 249, 1);
 }
 
 .yellow .single a {
-  border-bottom: 2px solid rgba(241, 250, 140, 1);
+  color: rgba(241, 250, 140, 1);
+  text-decoration-color: rgba(241, 250, 140, 1);
 }
 
-.single figure {
+.cyan .single a:hover {
+  color: rgba(139, 233, 253, 0.7);
+  text-decoration-color: rgba(139, 233, 253, 0.7);
+}
+
+.green .single a:hover {
+  color: rgba(80, 250, 123, 0.7);
+  text-decoration-color: rgba(80, 250, 123, 0.7);
+}
+
+.orange .single a:hover {
+  color: rgba(255, 184, 108, 0.7);
+  text-decoration-color: rgba(255, 184, 108, 0.7);
+}
+
+.pink .single a:hover {
+  color: rgba(255, 121, 198, 0.7);
+  text-decoration-color: rgba(255, 121, 198, 0.7);
+}
+
+.purple .single a:hover {
+  color: rgba(189, 147, 249, 0.7);
+  text-decoration-color: rgba(189, 147, 249, 0.7);
+}
+
+.yellow .single a:hover {
+  color: rgba(241, 250, 140, 0.7);
+  text-decoration-color: rgba(241, 250, 140, 0.7);
+}
+
+.single img {
   margin-bottom: 20px;
 }
 
-.single figure a {
-  border: 0;
-}
-
-.single figure img {
+.single img {
   border-radius: 10px;
   border: 5px solid #8be9fd;
   margin-top: 10px;
   max-width: 100%;
 }
 
-.single figure figcaption {
+.single img + em {
+  display: block;
   font-style: italic;
+  margin-bottom: 20px;
+  margin-top: -15px;
   text-align: center;
 }
 
@@ -879,7 +926,7 @@ a {
   margin: 60px auto 0;
 }
 
-.blog figure img {
+.blog img {
   border: none;
 }
 
@@ -895,11 +942,6 @@ a {
   font-weight: 700;
   font-size: 2.2em;
   margin-bottom: 20px;
-}
-
-.blog a {
-  color: #f2f2f2;
-  border-bottom: 2px solid #f2f2f2;
 }
 
 .blog ol,
@@ -956,6 +998,7 @@ a {
 
 .blog-item a {
   color: #f2f2f2;
+  text-decoration-line: none;
 }
 
 .blog-item-header {

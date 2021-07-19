@@ -11,7 +11,7 @@
   border-radius: var(--rounded-md);
   outline: 0;
   cursor: pointer;
-  background: transparent;
+  background: rgba(255, 255, 255, 3%);
 }
 
 .copyIcon {
@@ -39,14 +39,4 @@
 
 .check {
   color: var(--green);
-}
-
-.pre {
-  /* padding: 1rem;
-  composes: drac-text-xs from global;
-  border-radius: var(--rounded-md);
-  margin: 0;
-  font-family: "Fira Code", monospace;
-  line-height: var(--line-height-md);
-  overflow: auto; */
 }

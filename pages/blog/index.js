@@ -27,17 +27,17 @@ function Blog({ allPosts }) {
         {allPosts.map(post => {
           return <div className={post.color} key={post.slug}>
             <div className="blog-item">
-              <Link href={`/blog/${post.slug}`}>
-                <a>
-                  <div className="blog-item-header">
+              <div className="blog-item-header">
+                <Link href={`/blog/${post.slug}`}>
+                  <a>
                     <h2 className="blog-item-title">{post.title}</h2>
-                    <span className="blog-item-date">
-                      <BlogDate dateString={post.createdAt} />
-                    </span>
-                  </div>
-                  <div className="blog-item-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-                </a>
-              </Link>
+                  </a>
+                </Link>
+                <span className="blog-item-date">
+                  <BlogDate dateString={post.createdAt} />
+                </span>
+              </div>
+              <div className="blog-item-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
             </div>
           </div>
         })}
