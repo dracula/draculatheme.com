@@ -42,7 +42,7 @@ export async function getStaticProps() {
       };
     });
 
-    return { props: { sales, reviews } };
+    return { props: { sales, reviews }, revalidate: 3600 };
   }
   catch (e) {
     console.error(e);

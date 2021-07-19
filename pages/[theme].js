@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
   query.imageWidth = metadata.width;
   query.imageHeight = metadata.height;
 
-  return { props: { query }, revalidate: 60 };
+  return { props: { query }, revalidate: 3600 };
 }
 
 class Theme extends React.Component {
