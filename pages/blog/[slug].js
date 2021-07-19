@@ -5,7 +5,8 @@ import { BlogJsonLd } from 'next-seo';
 import Blogpost from '../../layouts/Blogpost';
 import BlogDate from '../../components/BlogDate';
 import Updates from '../../components/Updates';
-import { getPostBySlug, getAllPosts, convertMarkdownToHtml } from '../../lib/blog';
+import { getPostBySlug, getAllPosts } from '../../lib/blog';
+import { convertMarkdownToReact } from '../../lib/markdown';
 
 function Post({ post }) {
   const router = useRouter()
@@ -15,6 +16,7 @@ function Post({ post }) {
 
   const url = `https://draculatheme.com/blog/${post.slug}`;
   const image = post.ogImage ? `https://draculatheme.com${post.ogImage}` : 'https://draculatheme.com/static/img/facebook.png';
+  const content = convertMarkdownToReact(post.content);
 
   return <div className="single">
     <Head>
@@ -37,7 +39,7 @@ function Post({ post }) {
           <span className="blog-author-separator">/</span>
           <BlogDate dateString={post.createdAt} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        {content}
       </div>
     </div>
 
@@ -69,13 +71,11 @@ export async function getStaticProps({ params }) {
     'ogImage',
     'color',
   ])
-  const content = await convertMarkdownToHtml(post.content || '')
 
   return {
     props: {
       post: {
-        ...post,
-        content
+        ...post
       },
     },
   }

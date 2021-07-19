@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import marked from 'marked';
 import paths from '../lib/paths';
 import ThemeLayout from '../layouts/Theme';
 import Contributors from '../components/Contributors';
 import Updates from '../components/Updates';
 import download from 'download';
 import probe from 'probe-image-size';
+import { convertMarkdownToReact } from '../lib/markdown';
 
 export async function getStaticPaths() {
   return { paths, fallback: 'blocking' };
@@ -24,7 +24,7 @@ export async function getStaticProps({ params }) {
   const installReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`, header);
   const installRes = await installReq.json();
   const installBuffer = Buffer.from(installRes.content, 'base64');
-  query.install = marked(installBuffer.toString('utf8'));
+  query.install = installBuffer.toString('utf8');
 
   const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
   const contributors = await contributorsReq.json();
@@ -73,6 +73,7 @@ class Theme extends React.Component {
     }
 
     const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
+    const content = convertMarkdownToReact(this.props.query.install);
 
     return <div>
       <Head>
@@ -87,7 +88,9 @@ class Theme extends React.Component {
       <div className="theme">
         <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight} />
         {this.renderViews()}
-        <div className="instructions" dangerouslySetInnerHTML={{ __html: this.props.query.install }} />
+        <div className="instructions">
+          {content}
+        </div>
         <Updates type="theme" />
         <Contributors repo={this.props.query.repo} data={this.props.query.contributors} />
       </div>
