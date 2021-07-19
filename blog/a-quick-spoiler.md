@@ -16,18 +16,14 @@ I have some exciting news to share!
 It's been quite a ride to get here. I've been studying colors like never before.
 I read all the way from Isaac Newton to modern color theory papers.
 
-<figure>
-  <img src="/static/img/blog/a-quick-spoiler-a.jpg" alt="Getting some inspiration from Pantone" />
-  <figcaption>Getting some inspiration from Pantone</figcaption>
-</figure>
+![Getting some inspiration from Pantone](/static/img/blog/a-quick-spoiler-a.jpg)
+*Getting some inspiration from Pantone*
 
 One of my favorite parts was picking names for the Dracula PRO variations.
 Here's a spoiler - can you identify the naming pattern?
 
-<figure>
-  <img src="/static/img/blog/a-quick-spoiler-b.png" alt="A sneak peek of Visual Studio Code" />
-  <figcaption>A sneak peek of Visual Studio Code</figcaption>
-</figure>
+![A sneak peek of Visual Studio Code](/static/img/blog/a-quick-spoiler-b.png)
+*A sneak peek of Visual Studio Code*
 
 I'm super excited that it's almost here! I can't wait to share this with the world.
 I'd also appreciate your help to make some noise when this is live.

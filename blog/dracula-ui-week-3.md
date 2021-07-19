@@ -17,11 +17,7 @@ Good news! We have more components to share with you. We spent the past couple o
 Here's a demo of what some of the components look like.
 We believe these forms will look great on web and mobile apps.
 
-<a href="/ui">
-  <figure>
-    <img src="/static/img/blog/dracula-ui-week-3-a.png" alt="Dracula UI Gradients" />
-  </figure>
-</a>
+[![Dracula UI Gradients](/static/img/blog/dracula-ui-week-3-a.png)](/ui)
 
 As always, feel free to reply to this email directly if you have any feedback.
 

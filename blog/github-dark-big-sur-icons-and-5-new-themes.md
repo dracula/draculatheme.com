@@ -12,12 +12,8 @@ color: "yellow"
 
 Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P
 
-<a href="https://github.com/settings/appearance">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png" alt="GitHub Dark Mode" />
-  </figure>
-</a>
- 
+[![GitHub Dark Mode](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png)](https://github.com/settings/appearance)
+
 ## New on Dracula
 
 This week 5 new themes have joined the Dracula clan!
@@ -28,50 +24,22 @@ This week 5 new themes have joined the Dracula clan!
 * [Linear](/linear): The **issue tracking** tool you'll enjoy using
 * [Standard Notes](/standard-notes): A simple and **private notes** app
 
-<a href="/standard-notes">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-b.png" alt="Google Analytics in 2020" />
-  </figure>
-</a>
+[![Google Analytics in 2020](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-b.png)](/standard-notes)
 
 ## New on Dracula PRO
 
 Dracula PRO received an update with new icons for **macOS Big Sur**, support for **JetBrains 2020.3**, and an **8K resolution wallpaper**. Here's a preview of the icons.
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-c.jpg" alt="Dracula PRO Icons" />
-  </figure>
-</a>
+[![Dracula PRO Icons](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-c.jpg)](/pro)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-d.jpg" alt="Dracula PRO Icons - Blade" />
-  </figure>
-</a>
+[![Dracula PRO Icons - Blade](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-d.jpg)](/pro)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-e.jpg" alt="Dracula PRO Icons - Buffy" />
-  </figure>
-</a>
+[![Dracula PRO Icons - Buffy](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-e.jpg)](/pro)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-f.jpg" alt="Dracula PRO Icons - Lincoln" />
-  </figure>
-</a>
+[![Dracula PRO Icons - Lincoln](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-f.jpg)](/pro)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-g.jpg" alt="Dracula PRO Icons - Morbius" />
-  </figure>
-</a>
+[![Dracula PRO Icons - Morbius](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-g.jpg)](/pro)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-h.jpg" alt="Dracula PRO Icons - Van Helsing" />
-  </figure>
-</a>
+[![Dracula PRO Icons - Van Helsing](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-h.jpg)](/pro)
 
 Happy hacking!

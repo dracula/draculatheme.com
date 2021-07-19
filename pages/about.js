@@ -35,10 +35,8 @@ class About extends React.Component {
             <p>Two days later, I was still at the hospital. My blood results were pretty bad, they didn't allow me to leave, so I asked a co-worker to bring my laptop. At least with the internet, I could <a href="https://twitter.com/zenorocha/status/390120821257039872">have a distraction</a>.</p>
             <p>One day I left my room to get some water. <span className="highlight">When I got back, my computer was stolen</span>.</p>
 
-            <figure>
-              <img src={image} alt="Me and my friend Iliyan Peychev" />
-              <figcaption>Me and my friend Iliyan Peychev</figcaption>
-            </figure>
+            <img src={image} alt="Me and my friend Iliyan Peychev" />
+            <em>Me and my friend Iliyan Peychev</em>
 
             <p>I was completely devastated. That computer was the only way I could communicate with my family in Brazil. How could someone steal a person in a hospital bed? I couldn't believe that whole situation.</p>
             <p>The next day, my co-workers tried to cheer me up and <span className="highlight">brought a new laptop for me</span>. I had no backup to restore from, so I started to install everything back again. For every code editor, for every terminal app, I had to choose a different theme.</p>

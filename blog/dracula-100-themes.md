@@ -15,7 +15,7 @@ Today is a special day. We have hit 100 themes on Dracula!
 When I started this little project, I never imagined the community would embrace it the way it did. Thank you so much for everyone involved in this.
 
 Let's continue to make the most cross-platform theme ever created :)
- 
+
 ## New on Dracula
 
 On November, 2013, Matheus [opened an issue on GitHub](https://github.com/dracula/dracula-theme/issues/29) asking for an Eclipse theme. It took us 7 years lol, but the Eclipse theme is here. Besides that, we have a new theme for game devs.
@@ -23,43 +23,29 @@ On November, 2013, Matheus [opened an issue on GitHub](https://github.com/dracul
 * [Eclipse](/eclipse): A famous IDE for Java, but with support for many other languages.
 * [Godot](/godot): A 2D and 3D, cross-platform, free and open-source game engine.
 
-<a href="/eclipse">
-  <figure>
-    <img src="/static/img/blog/dracula-100-themes-a.png" alt="Dracula for Eclipse" />
-  </figure>
-</a>
- 
+[![Dracula for Eclipse](/static/img/blog/dracula-100-themes-a.png)](/eclipse)
+
 ## New on Dracula PRO
 
 The #1 most requested Dracula PRO theme is finally available!
 
 Vim users, Neovim users, MacVim users, [here it is](/pro) :)
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/dracula-100-themes-b.png" alt="Dracula PRO for Vim" />
-  </figure>
-</a>
+[![Dracula PRO for Vim](/static/img/blog/dracula-100-themes-b.png)](/pro)
 
 P.S.: This wouldn't be possible without the help of [D. Ben Knoble](https://github.com/benknoble) and the initial work done by [Derek Sifford](https://github.com/dsifford). You guys are the best!
- 
+
 ## Wallpapers everywhere
 
 Since the launch of the Dracula PRO wallpapers, lots of people started sharing their workstation.
 
-<figure>
-  <img src="/static/img/blog/dracula-100-themes-c.jpeg" alt="Miha Filej (@mfilej)" />
-  <figcaption>Miha Filej (@mfilej)</figcaption>
-</figure>
+![Miha Filej (@mfilej)](/static/img/blog/dracula-100-themes-c.jpeg)
+*Miha Filej (@mfilej)*
 
-<figure>
-  <img src="/static/img/blog/dracula-100-themes-d.jpeg" alt="Tim Koopmans (@tim_koopmans)" />
-  <figcaption>Tim Koopmans (@tim_koopmans)</figcaption>
-</figure>
+![Tim Koopmans (@tim_koopmans)](/static/img/blog/dracula-100-themes-d.jpeg)
+*Tim Koopmans (@tim_koopmans)*
 
-<figure>
-  <img src="/static/img/blog/dracula-100-themes-e.jpeg" alt="Dinh Quoc Han (@handinh157)" />
-  <figcaption>Dinh Quoc Han (@handinh157)</figcaption>
-</figure>
+![Dinh Quoc Han (@handinh157)](/static/img/blog/dracula-100-themes-e.jpeg)
+*Dinh Quoc Han (@handinh157)*
 
 Happy hacking!

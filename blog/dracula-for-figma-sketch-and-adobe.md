@@ -13,10 +13,8 @@ color: "cyan"
 I'm not a designer, but I'm always amazed by the kind of work these people do. Their ability to create entire screens out of a blank canvas is just incredible.
 
 That's why I decided to spend some time to build color palettes for the most popular design apps out there. And the good news is - this is available for both PRO and open source users.
- 
-<figure>
-  <img src="/static/img/blog/dracula-for-figma-sketch-and-adobe-a.jpg" alt="Figma, Sketch, Photoshop and Illustrator Logos" />
-</figure>
+
+![Figma, Sketch, Photoshop and Illustrator Logos](/static/img/blog/dracula-for-figma-sketch-and-adobe-a.jpg)
 
 Go ahead and download the files for:
 * [Adobe](/adobe)

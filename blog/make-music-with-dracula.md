@@ -11,7 +11,7 @@ color: "cyan"
 ---
 
 I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you :)
- 
+
 ## New on Dracula
 
 The list of themes just keeps growing and growing. We just reached 106 themes created by the community. What is surprising is to see not only developers but DJs and producers using Dracula to create music.
@@ -20,11 +20,7 @@ The list of themes just keeps growing and growing. We just reached 106 themes cr
 * [Total Commander](/total-commander): a file manager replacement for Windows
 * [Ableton Live](/ableton-live): a digital audio workstation for macOS and Windows
 
-<a href="/ableton-live">
-  <figure>
-    <img src="/static/img/blog/make-music-with-dracula-a.png" alt="Dracula for Ableton Live" />
-  </figure>
-</a>
+[![Dracula for Ableton Live](/static/img/blog/make-music-with-dracula-a.png)](/ableton-live)
 
 ## New on Dracula PRO
 
@@ -38,20 +34,12 @@ That's why having a Dracula PRO theme for the most popular browsers is not only 
 
 Starting with the most used browser in the world. Here are all six variations of Dracula PRO on Google Chrome.
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/make-music-with-dracula-b.png" alt="Dracula PRO for Chrome" />
-  </figure>
-</a>
- 
+[![Dracula PRO for Chrome](/static/img/blog/make-music-with-dracula-b.png)](/pro)
+
 **Firefox**
 
 Now let's talk about Mozilla's main project - Firefox. What I love about this theme are the accent colors present on the active tabs and buttons. It's a simple, gorgeous detail.
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/make-music-with-dracula-c.png" alt="Dracula PRO for Firefox" />
-  </figure>
-</a>
+[![Dracula PRO for Firefox](/static/img/blog/make-music-with-dracula-c.png)](/pro)
 
 Happy hacking!

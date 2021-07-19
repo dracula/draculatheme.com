@@ -14,10 +14,8 @@ If you have been following me on [Twitter](https://twitter.com/zenorocha), I'm s
 
 In the [first 24 hours](https://twitter.com/zenorocha/status/1227622330731335686), Dracula PRO sold $3,149.37. In the [first 3 days](https://twitter.com/zenorocha/status/1228353130267475969), it sold $5,428.91. And now, 7 days after the launch, it sold $7,128.57.
 
-<figure>
-  <img src="/static/img/blog/7128-dollars-in-sales-in-7-days-a.png" alt="Gumroad Sales Dashboard" />
-  <figcaption>Gumroad Sales Dashboard</figcaption>
-</figure>
+![Gumroad Sales Dashboard](/static/img/blog/7128-dollars-in-sales-in-7-days-a.png)
+*Gumroad Sales Dashboard*
 
 I want to take this opportunity to say **THANK YOU**. Thank you for using Dracula all these years. Thank you for supporting this new initiative. And thank you for trusting me.
 

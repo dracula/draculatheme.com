@@ -12,16 +12,12 @@ color: "purple"
 
 I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is [Night Eye](https://nighteye.app). What I like about this browser extension is that they convert colors instead of inverting.
 
-<a href="https://nighteye.app">
-  <figure>
-    <img src="/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png" alt="Night Eye applied to Night Eye" />
-  </figure>
-</a>
+[![Night Eye applied to Night Eye](/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png)](https://nighteye.app)
 
 Remember when I was trying to adapt one code snippet into other programming languages?
 
 So far more than 17 languages have been added there! You can see [full GitHub thread](https://github.com/dracula/dracula-theme/discussions/444) showing Swift, PHP, Kotlin, Ruby, Python, TypeScript, Go, Scala, and more :)
- 
+
 ## New on Dracula
 
 This week 11 new themes have joined the Dracula clan!
@@ -38,20 +34,12 @@ This week 11 new themes have joined the Dracula clan!
 * [TiddlyWiki](/tiddlywiki): Non-linear personal web notebook
 * [Zathura](/zathura): Customizable and functional document viewer
 
-<a href="/colorls">
-  <figure>
-    <img src="/static/img/blog/dark-mode-everywhere-and-11-new-themes-b.png" alt="Dracula for colorls" />
-  </figure>
-</a>
+[![Dracula for colorls](/static/img/blog/dark-mode-everywhere-and-11-new-themes-b.png)](/colorls)
 
 ## New on Dracula PRO
 
 Dracula PRO continues to evolve with new themes and updates. This time, we added a new **Alacritty** theme, support for **JetBrains EAP 2020.3** (Early Access Program), and **Android Studio** icons.
- 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/dark-mode-everywhere-and-11-new-themes-c.png" alt="Dracula PRO for Alacritty" />
-  </figure>
-</a>
+
+[![Dracula PRO for Alacritty](/static/img/blog/dark-mode-everywhere-and-11-new-themes-c.png)](/pro)
 
 Happy hacking!

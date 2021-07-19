@@ -16,12 +16,8 @@ Enough about the book. Let's talk about Dracula! I was recently interviewed by o
 
 The Dracula community surprises me every day. Recently, a Reddit user shared his Dracula setup on r/unixporn. It looks rad, doesn't it? In case you want to replicate, he shared the full list of configurations there.
 
-<a href="https://www.reddit.com/r/unixporn/comments/hvrp6f/bspwm_dracula_theme/">
-  <figure>
-    <img src="/static/img/blog/3-new-themes-and-better-code-screenshots-a.png" alt="Reddit thread about bspwm" />
-  </figure>
-</a>
- 
+[![Reddit thread about bspwm](/static/img/blog/3-new-themes-and-better-code-screenshots-a.png)](https://www.reddit.com/r/unixporn/comments/hvrp6f/bspwm_dracula_theme/)
+
 ## New on Dracula
 
 We just reached 110 themes created by the community! Here are the newest ones:
@@ -30,22 +26,14 @@ We just reached 110 themes created by the community! Here are the newest ones:
 * [Mailspring](/mailspring): An open-source, extensible email app by *Thiago Avelino*
 * [Tower](/tower): A powerful Git client for Mac and Windows by *David Sullivan*
 
-<a href="/aseprite">
-  <figure>
-    <img src="/static/img/blog/3-new-themes-and-better-code-screenshots-b.jpg" alt="Dracula for Aseprite" />
-  </figure>
-</a>
- 
+[![Dracula for Aseprite](/static/img/blog/3-new-themes-and-better-code-screenshots-b.jpg)](/aseprite)
+
 ## New on Dracula PRO
 
 Do you know those beautiful code screenshots that people share on social media? Let me tell you a secret... they are all created using this super cool tool called Carbon.
 
 I recently worked with their team, and we have some news to share. You can now generate good-looking screenshots using [Dracula PRO colors on Carbon](https://carbon.now.sh/?t=dracula-pro).
 
-<a href="https://carbon.now.sh/?t=dracula-pro">
-  <figure>
-    <img src="/static/img/blog/3-new-themes-and-better-code-screenshots-c.png" alt="Dracula PRO colors on Carbon" />
-  </figure>
-</a>
+[![Dracula PRO colors on Carbon](/static/img/blog/3-new-themes-and-better-code-screenshots-c.png)](https://carbon.now.sh/?t=dracula-pro)
 
 Happy hacking!

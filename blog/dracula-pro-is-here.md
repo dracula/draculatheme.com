@@ -16,19 +16,15 @@ This is a very special moment for me. It's been almost 7 years since I launched 
 
 The original colors created in 2013 were based on personal taste. This new PRO version brings a more refined and mathematical approach that **normalizes lightness and saturation**.
 
-<figure>
-  <img src="/static/img/blog/dracula-pro-is-here-a.jpg" alt="Color Palette Comparison" />
-  <figcaption>Color Palette Comparison</figcaption>
-</figure>
+![Color Palette Comparison](/static/img/blog/dracula-pro-is-here-a.jpg)
+*Color Palette Comparison*
 
 Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, Xcode, and ZSH.
 
 Plus, 4 hand-picked fonts with ligatures and a screencast with my personal productivity tips.
 
-<figure>
-  <img src="/static/img/blog/dracula-pro-is-here-b.jpg" alt="Bonus Screencast" />
-  <figcaption>Bonus Screencast</figcaption>
-</figure>
+![Bonus Screencast](/static/img/blog/dracula-pro-is-here-b.jpg)
+*Bonus Screencast*
 
 On top of that, I'm also working on an e-book about the habits of highly productive developers, which will be released in Q2 2020.
 

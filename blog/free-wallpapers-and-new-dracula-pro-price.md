@@ -20,45 +20,25 @@ That's why we're announcing the end of the Launch Promo.
 In a couple of days, the price will increase to $79.
 
 [Get Dracula PRO at special price](/pro)
- 
+
 ## Wallpapers
 
 A community member, kajwski, created a series of wallpapers for different operating systems.
 
-<a href="/wallpaper">
-  <figure>
-    <img src="/static/img/blog/free-wallpapers-and-new-dracula-pro-price-a.png" alt="Dracula Wallpaper for Windows" />
-    <figcaption>Windows</figcaption>
-  </figure>
-</a>
+[![Dracula Wallpaper for Windows](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-a.png)](/wallpaper)
+*Windows*
 
-<a href="/wallpaper">
-  <figure>
-    <img src="/static/img/blog/free-wallpapers-and-new-dracula-pro-price-b.png" alt="Dracula Wallpaper for Debian" />
-    <figcaption>Debian</figcaption>
-  </figure>
-</a>
+[![Dracula Wallpaper for Debian](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-b.png)](/wallpaper)
+*Debian*
 
-<a href="/wallpaper">
-  <figure>
-    <img src="/static/img/blog/free-wallpapers-and-new-dracula-pro-price-c.png" alt="Dracula Wallpaper for Fedora" />
-    <figcaption>Fedora</figcaption>
-  </figure>
-</a>
+[![Dracula Wallpaper for Fedora](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-c.png)](/wallpaper)
+*Fedora*
 
-<a href="/wallpaper">
-  <figure>
-    <img src="/static/img/blog/free-wallpapers-and-new-dracula-pro-price-d.png" alt="Dracula Wallpaper for Ubuntu" />
-    <figcaption>Ubuntu</figcaption>
-  </figure>
-</a>
+[![Dracula Wallpaper for Ubuntu](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-d.png)](/wallpaper)
+*Ubuntu*
 
-<a href="/wallpaper">
-  <figure>
-    <img src="/static/img/blog/free-wallpapers-and-new-dracula-pro-price-e.png" alt="Dracula Wallpaper for Arch" />
-    <figcaption>Arch</figcaption>
-  </figure>
-</a>
+[![Dracula Wallpaper for Arch](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-e.png)](/wallpaper)
+*Arch*
 
 See the [full list of wallpapers](/wallpaper).
 

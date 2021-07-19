@@ -16,9 +16,7 @@ My book is now available in hardcover 🎉🎉🎉
 * [English Edition](https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531)
 * [Portuguese Edition](https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X)
 
-<figure>
-  <img src="/static/img/blog/making-a-physical-book-a.jpg" alt="Zeno holding the physical book" />
-</figure>
+![Zeno holding the physical book](/static/img/blog/making-a-physical-book-a.jpg)
 
 Building this physical copy has been a really intense process.
 
@@ -26,17 +24,13 @@ At first, I hired a person from Fiverr to do the entire formatting. After a lot 
 
 You see, I know nothing about formatting books, but the internet is a magical place, so I started to learn Adobe InDesign.
 
-<figure>
-  <img src="/static/img/blog/making-a-physical-book-b.png" alt="Adobe InDesign" />
-</figure>
- 
+![Adobe InDesign](/static/img/blog/making-a-physical-book-b.png)
+
 After hours of adding content, choosing fonts, moving images, and optimizing line breaks, I was finally ready to print!
 
 Before sending it to the publishing company, I decided to test everything at home using my good old printer. I made sure to read the entire book again to feel the experience on real paper. It's impressive how different it is.
 
-<figure>
-  <img src="/static/img/blog/making-a-physical-book-c.jpg" alt="Book printed at home" />
-</figure>
+![Book printed at home](/static/img/blog/making-a-physical-book-c.jpg)
 
 I didn't want to order hundreds of copies and have them stored at my home. That's why I picked a service called IngramSpark, which is a print-on-demand publisher. This basically means that when someone buys a copy, they print and send it to you directly.
 
@@ -44,9 +38,7 @@ Designing a book is crazy because you have to make all these decisions like pape
 
 In the end, I chose hardcover since it's more durable and has a premium touch. I also chose creme paper since it's easier on the eyes. Once all those decisions were made, I pressed *Submit* and waited a couple of weeks for the book to be produced.
 
-<figure>
-  <img src="/static/img/blog/making-a-physical-book-d.jpg" alt="Book interior" />
-</figure>
+![Book interior](/static/img/blog/making-a-physical-book-d.jpg)
 
 I can't describe the feeling of receiving that first copy.
 

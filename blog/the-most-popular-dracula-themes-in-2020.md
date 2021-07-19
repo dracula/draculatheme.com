@@ -14,9 +14,7 @@ color: "cyan"
 
 Here are the total number of visits and the most popular Dracula themes on each platform.
 
-<figure>
-  <img src="/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png" alt="Google Analytics in 2020" />
-</figure>
+![Google Analytics in 2020](/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png)
 
 **Windows**
 1. [Notepad++](/notepad-plus-plus): 254,035 views
@@ -32,7 +30,7 @@ Here are the total number of visits and the most popular Dracula themes on each 
 1. [Zsh](/zsh): 66,494 views
 2. [Vim](/vim): 58,503 views
 3. [Gnome Terminal](/gnome-terminal): 52,676 views
- 
+
 ## New on Dracula
 
 We just crossed 150 themes! Only this week 8 new themes have joined the Dracula clan!
@@ -46,12 +44,8 @@ We just crossed 150 themes! Only this week 8 new themes have joined the Dracula 
 * [Terminator](/terminator): Alternative **terminal emulator** for Linux
 * [Xournal++](/xournalpp): Open source **hand note-taking** software
 
-<a href="/xournalpp">
-  <figure>
-    <img src="/static/img/blog/the-most-popular-dracula-themes-in-2020-b.png" alt="Dracula for Xournal++" />
-  </figure>
-</a>
- 
+[![Dracula for Xournal++](/static/img/blog/the-most-popular-dracula-themes-in-2020-b.png)](/xournalpp)
+
 ## New on Dracula PRO
 
 [JetBrains launched the EAP 2021.1](https://blog.jetbrains.com/idea/2021/01/intellij-idea-2021-1-eap-1/) today and I just published a new update to support it.

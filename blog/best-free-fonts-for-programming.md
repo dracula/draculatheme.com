@@ -20,11 +20,7 @@ I've used Monaco for 10+ years until I finally met Fira Code. This font has more
 
 [Download](https://github.com/tonsky/FiraCode/releases/download/5.2/Fira_Code_v5.2.zip) • [Github](https://github.com/tonsky/FiraCode)
 
-<a href="https://github.com/tonsky/FiraCode">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-a.png" alt="Fira Code" />
-  </figure>
-</a>
+[![Fira Code](/static/img/blog/best-free-fonts-for-programming-a.png)](https://github.com/tonsky/FiraCode)
 
 ## 2. IBM Plex Mono
 
@@ -32,11 +28,7 @@ The Plex family was created to replace Helvetica as the IBM corporate typeface a
 
 [Download](https://github.com/IBM/plex/archive/v5.1.3.zip) • [Github](https://github.com/IBM/plex)
 
-<a href="https://www.ibm.com/plex">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-b.png" alt="IBM Plex Mono" />
-  </figure>
-</a>
+[![IBM Plex Mono](/static/img/blog/best-free-fonts-for-programming-b.png)](https://www.ibm.com/plex)
 
 ## 3. Source Code Pro
 
@@ -44,11 +36,7 @@ This was one of the first open source fonts made by Adobe. After its release in 
 
 [Download](https://github.com/adobe-fonts/source-code-pro/archive/2.038R-ro/1.058R-it/1.018R-VAR.zip) • [Github](https://github.com/adobe-fonts/source-code-pro)
 
-<a href="https://adobe-fonts.github.io/source-code-pro">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-c.png" alt="Source Code Pro" />
-  </figure>
-</a>
+[![Source Code Pro](/static/img/blog/best-free-fonts-for-programming-c.png)](https://adobe-fonts.github.io/source-code-pro)
 
 ## 4. Monoid
 
@@ -56,11 +44,7 @@ If you're one of those people who hate horizontal scrolling, this is the right f
 
 [Download](https://github.com/larsenwork/monoid/archive/0.61.zip) • [Github](https://github.com/larsenwork/monoid)
 
-<a href="https://larsenwork.com/monoid">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-d.png" alt="Monoid" />
-  </figure>
-</a>
+[![Monoid](/static/img/blog/best-free-fonts-for-programming-d.png)](https://larsenwork.com/monoid)
 
 ## 5. Hack
 
@@ -68,11 +52,7 @@ This is one of the most customizable fonts of all. It has 1,573 glyphs, and you 
 
 [Download](https://github.com/source-foundry/Hack/archive/v3.003.zip) • [Github](https://github.com/source-foundry/Hack)
 
-<a href="https://sourcefoundry.org/hack">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-e.png" alt="Hack" />
-  </figure>
-</a>
+[![Hack](/static/img/blog/best-free-fonts-for-programming-e.png)](https://sourcefoundry.org/hack)
 
 ## 6. Iosevka
 
@@ -80,11 +60,7 @@ This font provides a slender outfit by default: glyphs are exactly 1/2em wide. C
 
 [Download](https://github.com/be5invis/Iosevka/archive/v4.5.0.zip) • [Github](https://github.com/be5invis/Iosevka)
 
-<a href="https://typeof.net/Iosevka">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-f.png" alt="Iosevka" />
-  </figure>
-</a>
+[![Iosevka](/static/img/blog/best-free-fonts-for-programming-f.png)](https://typeof.net/Iosevka)
 
 ## 7. JetBrains Mono
 
@@ -92,11 +68,7 @@ JetBrains, the company behind IntelliJ, WebStorm, and so many other IDEs, surpri
 
 [Download](https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip) • [Github](https://github.com/JetBrains/JetBrainsMono)
 
-<a href="https://www.jetbrains.com/lp/mono">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-g.png" alt="JetBrains Mono" />
-  </figure>
-</a>
+[![JetBrains Mono](/static/img/blog/best-free-fonts-for-programming-g.png)](https://www.jetbrains.com/lp/mono)
 
 ## 8. Fantasque Sans Mono
 
@@ -104,11 +76,7 @@ Designed with functionality in mind, this is the kind of font that adds an extra
 
 [Download](https://github.com/belluzj/fantasque-sans/archive/v1.8.0.zip) • [Github](https://github.com/belluzj/fantasque-sans)
 
-<a href="https://fontlibrary.org/en/font/fantasque-sans-mono">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-h.png" alt="Fantasque Sans Mono" />
-  </figure>
-</a>
+[![Fantasque Sans Mono](/static/img/blog/best-free-fonts-for-programming-h.png)](https://fontlibrary.org/en/font/fantasque-sans-mono)
 
 ## 9. Ubuntu Mono
 
@@ -116,11 +84,7 @@ Especifically created to complement the Ubuntu tone of voice. It has a contempor
 
 [Download](https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip) • [Site](https://design.ubuntu.com/font/)
 
-<a href="https://design.ubuntu.com/font/">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-i.png" alt="Ubuntu Mono" />
-  </figure>
-</a>
+[![Ubuntu Mono](/static/img/blog/best-free-fonts-for-programming-i.png)](https://design.ubuntu.com/font/)
 
 ## 10. Anonymous Pro
 
@@ -128,11 +92,7 @@ The cool thing about this font is that characters that could be mistaken for eac
 
 [Download](https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip) • [Site](https://www.marksimonson.com/fonts/view/anonymous-pro)
 
-<a href="https://www.marksimonson.com/fonts/view/anonymous-pro">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-j.png" alt="Anonymous Pro" />
-  </figure>
-</a>
+[![Anonymous Pro](/static/img/blog/best-free-fonts-for-programming-j.png)](https://www.marksimonson.com/fonts/view/anonymous-pro)
 
 ## 11. Inconsolata
 
@@ -140,11 +100,7 @@ An open source alternative to the proprietary Consolas font from Microsoft. It's
 
 [Download](https://github.com/googlefonts/Inconsolata/archive/v3.000.zip) • [GitHub](https://github.com/googlefonts/Inconsolata)
 
-<a href="https://levien.com/type/myfonts/inconsolata.html">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-k.png" alt="Inconsolata" />
-  </figure>
-</a>
+[![Inconsolata](/static/img/blog/best-free-fonts-for-programming-k.png)](https://levien.com/type/myfonts/inconsolata.html)
 
 ## 12. Victor Mono
 
@@ -152,11 +108,7 @@ This typeface is clean, crisp and narrow, with a large x-height and clear punctu
 
 [Download](https://github.com/rubjo/victor-mono/archive/v1.4.2.zip) • [Github](https://github.com/rubjo/victor-mono)
 
-<a href="https://rubjo.github.io/victor-mono/">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-l.png" alt="Victor Mono" />
-  </figure>
-</a>
+[![Victor Mono](/static/img/blog/best-free-fonts-for-programming-l.png)](https://rubjo.github.io/victor-mono/)
 
 ## 13. Space Mono
 
@@ -164,11 +116,7 @@ Developed explicitly for use in headline and display typography, the letterforms
 
 [Download](https://github.com/googlefonts/spacemono/archive/f5ebc1e1c0.zip) • [GitHub](https://github.com/googlefonts/spacemono)
 
-<a href="https://www.colophon-foundry.org/custom/spacemono/">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-m.png" alt="Space Mono" />
-  </figure>
-</a>
+[![Space Mono](/static/img/blog/best-free-fonts-for-programming-m.png)](https://www.colophon-foundry.org/custom/spacemono/)
 
 ## 14. Hasklig
 
@@ -176,11 +124,7 @@ Based on Source Code Pro, this font solves the problem the way typographers have
 
 [Download](https://github.com/i-tu/Hasklig/archive/v1.2.zip) • [Github](https://github.com/i-tu/Hasklig)
 
-<a href="https://github.com/i-tu/Hasklig">
-  <figure>
-    <img src="/static/img/blog/best-free-fonts-for-programming-n.png" alt="Hasklig" />
-  </figure>
-</a>
+[![Hasklig](/static/img/blog/best-free-fonts-for-programming-n.png)](https://github.com/i-tu/Hasklig)
 
 ## What's your favorite one?
 

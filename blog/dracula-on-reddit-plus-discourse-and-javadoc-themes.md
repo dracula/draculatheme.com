@@ -13,7 +13,7 @@ color: "orange"
 It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral 😅
 
 Here's the post: [$17,876.38 in 7 weeks](https://www.reddit.com/r/Entrepreneur/comments/fub13w/1787638_in_7_weeks/)
- 
+
 ## New on Dracula
 
 We just hit 97 open source themes on Dracula! Check out the new ones:
@@ -24,20 +24,12 @@ We just hit 97 open source themes on Dracula! Check out the new ones:
 * [Kakoune](/kakoune), a code editor based on Vi's model
 * [Tabletop Simulator](/tabletop-simulator), a video game platform
 
-<a href="/bspwm">
-  <figure>
-    <img src="/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png" alt="Dracula for bspwm" />
-  </figure>
-</a>
- 
+[![Dracula for bspwm](/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png)](/bspwm)
+
 ## New on Dracula PRO
 
 Atom, a code editor built by GitHub, was one of the most requested themes. I'm glad to announce that it's now available for PRO users. Besides that, beta users of JetBrains IDEs can now use Dracula PRO on versions +2020.1.
 
-<a href="/pro">
-  <figure>
-    <img src="/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-b.jpg" alt="Dracula PRO for Atom" />
-  </figure>
-</a>
+[![Dracula PRO for Atom](/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-b.jpg)](/pro)
 
 Have a great week!

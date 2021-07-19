@@ -10,7 +10,7 @@ ogImage: "/static/img/blog/2020-halloween-costume-contest-a.png"
 color: "pink"
 ---
 
-Halloween is almost here and this year I want to do something different... 
+Halloween is almost here and this year I want to do something different...
 
 Introducing the 2020 Halloween Costume Contest!
 
@@ -20,10 +20,8 @@ The best post will get a free [Dracula PRO](/pro) and the winner will be announc
 
 I'll start, here's my current setup.
 
-<figure>
-  <img src="/static/img/blog/2020-halloween-costume-contest-a.png" alt="My Dracula setup" />
-</figure>
- 
+![My Dracula setup](/static/img/blog/2020-halloween-costume-contest-a.png)
+
 ## New on Dracula
 
 This week 6 new themes have joined the Dracula family!
@@ -35,10 +33,6 @@ This week 6 new themes have joined the Dracula family!
 * [Midnight Commander](/midnight-commander): Orthodox file manager
 * [ReNoise](/renoise): Digital Audio Workstation
 
-<a href="/midnight-commander">
-  <figure>
-    <img src="/static/img/blog/2020-halloween-costume-contest-b.png" alt="Dracula for Midnight Commander" />
-  </figure>
-</a>
+[![Dracula for Midnight Commander](/static/img/blog/2020-halloween-costume-contest-b.png)](/midnight-commander)
 
 Happy hacking!
