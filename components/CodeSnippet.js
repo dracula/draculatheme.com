@@ -5,10 +5,11 @@ import CopyToClipboard from 'clipboard'
 export default class CodeSnippet extends Component {
   state = { copied: false }
   copyButton = React.createRef()
+  copyContent = React.createRef()
 
   componentDidMount() {
     new CopyToClipboard(this.copyButton.current, {
-      text: () => this.props.children
+      text: () => this.copyContent.current.textContent
     })
   }
 
@@ -31,7 +32,6 @@ export default class CodeSnippet extends Component {
         <button
           ref={this.copyButton}
           aria-label="Copy to clipboard"
-          data-clipboard-text={this.props.children}
           onClick={this.onCopy}
           className={styles.copyButton}
         >
@@ -58,7 +58,7 @@ export default class CodeSnippet extends Component {
     return (
       <div style={{ position: 'relative' }}>
         {this.renderButton()}
-        <pre className={styles.pre}>
+        <pre ref={this.copyContent} className={styles.pre}>
           {this.props.children}
         </pre>
       </div>
