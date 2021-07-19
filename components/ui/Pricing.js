@@ -48,7 +48,7 @@ class Pricing extends Component {
         </li>
       </List>
       <Box className={styles.buy}>
-        <Button as="a" href={gumroadURL} color="cyanGreen" mt="md" mb="sm" size="lg">
+        <Button as="a" href={gumroadURL} color="cyanGreen" mt="md" mb="sm" size="lg"  style={{ color: '#000' }}>
           Get Early Access
         </Button>
       </Box>

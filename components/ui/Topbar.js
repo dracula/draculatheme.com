@@ -12,7 +12,7 @@ class Topbar extends Component {
             Dracula <Text color="purpleCyan" className={styles.secondPart}>UI</Text>
           </Anchor>
         </Link>
-        <Button as="a" href="#get" color="purpleCyan" size="sm" mx="xs">
+        <Button as="a" href="#get" color="purpleCyan" size="sm" mx="xs" style={{ color: '#000' }}>
           Get Early Access
         </Button>
       </Box>

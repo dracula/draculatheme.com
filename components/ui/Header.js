@@ -14,7 +14,7 @@ class Header extends Component {
         </Text>
       </Box>
       <Box style={{ marginTop: 20 }}>
-        <Button as="a" href="#get" color="purpleCyan" size="lg">
+        <Button as="a" href="#get" color="purpleCyan" size="lg" style={{ color: '#000' }}>
           Get Early Access
         </Button>
       </Box>
