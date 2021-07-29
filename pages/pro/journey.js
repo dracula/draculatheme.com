@@ -52,8 +52,8 @@ class Journey extends React.Component {
   }
 
   render() {
-    const title = 'How I made $101,578.04 selling colors online - Dracula';
-    const description = 'Dracula PRO has hit 100K in sales — here\'s everything I learned along the way';
+    const title = 'How I made $151,328.16 selling colors online - Dracula';
+    const description = 'Dracula PRO has hit 150K in sales — here\'s everything I learned along the way';
 
     return (
       <div className="green" style={{ backgroundColor: '#2a2c37', fontFamily: 'Fira Code, monospace' }}>

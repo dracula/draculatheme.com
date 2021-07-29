@@ -8,8 +8,13 @@
   margin: 0 auto;
 }
 
+.header ::selection {
+  background: #ffff80;
+  color: #000;
+}
+
 .title {
-  color: #50fa7b;
+  color: #ffff80;
   margin: 0;
   font-size: 70px;
   text-align: center;
