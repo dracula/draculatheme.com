@@ -38,7 +38,7 @@ class About extends React.Component {
             <img src={image} alt="Me and my friend Iliyan Peychev" />
             <em>Me and my friend Iliyan Peychev</em>
 
-            <p>I was completely devastated. That computer was the only way I could communicate with my family in Brazil. How could someone steal a person in a hospital bed? I couldn't believe that whole situation.</p>
+            <p>I was completely devastated. That computer was the only way I could communicate with my family in Brazil. How could someone steal from a person in a hospital bed? I couldn't believe that whole situation.</p>
             <p>The next day, my co-workers tried to cheer me up and <span className="highlight">brought a new laptop for me</span>. I had no backup to restore from, so I started to install everything back again. For every code editor, for every terminal app, I had to choose a different theme.</p>
             <p>I always believed in the cost of context switching. I know how it feels when you're <em>"in the zone"</em>, then suddenly, you get distracted and lose focus. It shouldn't be that way, so <span className="highlight">I decided to create my own color scheme</span>, and my mission was to make it <span className="highlight">available everywhere</span>.</p>
             <p><strong>October 27th, 2013</strong> - <a href="https://github.com/dracula/dracula-theme/commit/7e4d17ade6a54b7b7d8037a0d2160a293f17ef5c">My first commit</a> was the ZSH theme. Then I moved to iTerm, Terminal.app, Sublime Text, and Textmate. At the end of the first day, I already had 5 themes. I <a href="https://twitter.com/zenorocha/status/395216794249486336">tweeted about it</a> and the community started to contribute.</p>
