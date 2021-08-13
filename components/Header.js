@@ -64,8 +64,8 @@ class Header extends Component {
   renderGithubButtons() {
     if (this.props.query.title !== 'About Dracula') {
       return <p className="gh-buttons">
-        <GitHubButton href="https://github.com/dracula/dracula-theme" data-size="large" data-show-count="true" aria-label="Star dracula/dracula-theme on GitHub">Star</GitHubButton>
-        <GitHubButton href="https://github.com/dracula/dracula-theme/fork" data-size="large" data-show-count="true" aria-label="Fork dracula/dracula-theme on GitHub">Fork</GitHubButton>
+        <GitHubButton href="https://github.com/dracula/dracula-theme" data-color-scheme="dark" data-size="large" data-show-count="true" aria-label="Star dracula/dracula-theme on GitHub">Star</GitHubButton>
+        <GitHubButton href="https://github.com/dracula/dracula-theme/fork" data-color-scheme="dark" data-size="large" data-show-count="true" aria-label="Fork dracula/dracula-theme on GitHub">Fork</GitHubButton>
       </p>
     }
   }
