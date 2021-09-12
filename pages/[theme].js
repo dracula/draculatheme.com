@@ -28,7 +28,10 @@ export async function getStaticProps({ params }) {
 
   const contributorsReq = await fetch(`https://api.github.com/repos/dracula/${query.repo}/contributors`, header);
   const contributors = await contributorsReq.json();
-  query.contributors = contributors;
+  query.contributors = contributors.filter(contributor => {
+    if (contributor.login === 'ImgBotApp') return;
+    return contributor;
+  });
 
   const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`;
   await download(image, 'public/static/img/screenshots', { filename: `${query.theme}.png` });
