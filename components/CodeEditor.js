@@ -4,7 +4,7 @@ import Editor from "@monaco-editor/react";
 import snippets from '../lib/snippets/all';
 import theme from '../lib/monaco.json'
 
-function CodeEditor() {
+function CodeEditor({ language }) {
   const editorRef = useRef(null);
   const [editorLoaded, setEditorLoaded] = useState(false);
 
@@ -22,9 +22,10 @@ function CodeEditor() {
     <Editor
       height="90vh"
       width="100%"
-      defaultLanguage="javascript"
       theme="dracula"
-      defaultValue={snippets.javascript.value}
+      path={language}
+      defaultLanguage={language}
+      defaultValue={snippets[language].value}
       options={{
         cursorSmoothCaretAnimation: true,
         scrollBeyondLastLine: false,

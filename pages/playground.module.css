@@ -1,0 +1,27 @@
+.main {
+  margin-top: 60px;
+}
+
+.wrapper {
+  background: #282a36;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar {
+  background: #282a36;
+  padding: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 18px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
