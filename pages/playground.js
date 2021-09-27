@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 import dynamic from 'next/dynamic';
+import queryString from 'query-string';
 import Blogpost from '../layouts/Blogpost';
 import CodeEditor from '../components/CodeEditor';
 import styles from './playground.module.css';
@@ -22,7 +24,16 @@ class Playground extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const queryParams = queryString.parse(location.search);
+
+    if (queryParams && queryParams.lang) {
+      this.setState({ language: queryParams.lang });
+    }
+  }
+
   changeLanguage(e) {
+    Router.push(`?lang=${e.value}`);
     this.setState({ language: e.value });
   }
 
@@ -52,7 +63,7 @@ class Playground extends React.Component {
             <div className={styles.sidebar}>
               <h1 className={styles.title}>Playground</h1>
               <span className={styles.label}>Languages</span>
-              <SelectInput id="languages" defaultValue={{value: 'javascript', label: 'JavaScript'}} options={languages} onChange={this.changeLanguage.bind(this)} isSearchable={true}
+              <SelectInput id="languages" defaultValue={{value: this.state.language, label: snippets[this.state.language].name}} options={languages} onChange={this.changeLanguage.bind(this)} isSearchable={true}
                 styles={{
                   option: (styles, state) => ({
                     ...styles,
