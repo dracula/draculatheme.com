@@ -14,6 +14,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const isProd = process.env.NODE_ENV === 'production';
+  const base = isProd ? 'https://draculatheme.com' : 'http://localhost:3000';
   const header = {
     headers: {
       'Authorization': `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`
@@ -41,13 +43,21 @@ export async function getStaticProps({ params }) {
   query.imageWidth = metadata.width;
   query.imageHeight = metadata.height;
 
+  const viewsReq = await fetch(`${base}/api/views/${params.theme}`);
+  const viewsRes = await viewsReq.json();
+  query.views = new Intl.NumberFormat().format(viewsRes.views || 0);
+
   return { props: { query }, revalidate: 7200 };
 }
 
 class Theme extends React.Component {
-  state = {
-    views: ''
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      views: props.query.views
+    };
+  }
 
   componentDidMount() {
     this.getViews();
@@ -59,14 +69,6 @@ class Theme extends React.Component {
     const views = new Intl.NumberFormat().format(viewsRes.views || 0);
 
     this.setState({ views });
-  }
-
-  renderViews() {
-    if (this.state.views) {
-      return <p className="views">{this.state.views} views</p>
-    }
-
-    return <p className="views loading" />
   }
 
   render() {
@@ -98,7 +100,7 @@ class Theme extends React.Component {
 
       <div className="theme">
         <img className="preview" src={`/static/img/screenshots/${this.props.query.theme}.png`} alt={`${this.props.query.title} Theme Preview`} width={this.props.query.imageWidth} height={this.props.query.imageHeight} />
-        {this.renderViews()}
+        <p className="views">{this.state.views} views</p>
         <div className="instructions">
           {content}
         </div>
