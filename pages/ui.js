@@ -53,6 +53,7 @@ class UI extends React.Component {
           <meta content={description} property="og:description" />
           <meta content="https://draculatheme.com/ui" property="og:url" />
           <meta content="https://draculatheme.com/static/img/ui/og.jpg" property="og:image" />
+          <meta name="theme-color" content="#9580ff" />
 
           <link rel="icon" type="image/x-icon" href="/static/img/ui/favicon.ico" />
           <script src="https://gumroad.com/js/gumroad.js"></script>
