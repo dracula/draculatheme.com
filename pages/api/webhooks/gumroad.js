@@ -31,7 +31,7 @@ async function fallback(to, github) {
 }
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
+  auth: process.env.GITHUB_INVITATION_ACCESS_TOKEN
 })
 
 export default async (req, res) => {
