@@ -81,7 +81,7 @@ class Theme extends React.Component {
     const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
     const content = convertMarkdownToReact(this.props.query.install);
 
-    const api = 'https://microlink.vercel.app/?adblock=false&waitForTimeout=1500&meta=false&screenshot&element=%23screenshot&embed=screenshot.url&url=';
+    const api = 'https://i.microlink.io/';
     const cardUrl = `https://cards.microlink.io/?preset=dracula&color=%23${getColorFromName(this.props.query.color)}&contributors=${this.props.query.contributors.length}&icon=${this.props.query.icon}&views=${this.state.views}&repo=${this.props.query.repo}&title=${this.props.query.title}`;
     const image = `${api}${encodeURIComponent(cardUrl)}`;
 
