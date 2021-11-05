@@ -59,7 +59,7 @@ class UI extends React.Component {
           <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
-        <Topbar ppp={this.state.ppp} />
+        <Topbar />
         <Discount ppp={this.state.ppp} suffix="UI" queryParams={{}} />
         <Header />
         <Tagline />

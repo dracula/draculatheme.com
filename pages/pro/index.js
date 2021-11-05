@@ -99,7 +99,7 @@ class Pro extends React.Component {
           <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
-        <Topbar ppp={this.state.ppp} />
+        <Topbar />
         <Discount ppp={this.state.ppp} suffix="PRO" queryParams={this.state.queryParams} />
         <Header title={title} description={description} sales={this.props.sales} />
         <Description />

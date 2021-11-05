@@ -4,6 +4,22 @@
   z-index: 1;
 }
 
+.banner {
+  background: #8aff80;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bannerContent {
+  color: #000;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
 .topbar {
   background: #1d1e26;
   height: 50px;
