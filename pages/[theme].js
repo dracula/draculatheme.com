@@ -43,22 +43,10 @@ export async function getStaticProps({ params }) {
   query.imageWidth = metadata.width;
   query.imageHeight = metadata.height;
 
-  const viewsReq = await fetch(`${base}/api/views/${params.theme}`);
-  const viewsRes = await viewsReq.json();
-  query.views = new Intl.NumberFormat().format(viewsRes.views || 0);
-
   return { props: { query }, revalidate: 7200 };
 }
 
 class Theme extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      views: props.query.views
-    };
-  }
-
   componentDidMount() {
     this.getViews();
   }
