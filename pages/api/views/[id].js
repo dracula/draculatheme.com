@@ -48,6 +48,10 @@ async function getData(id) {
 export default async ({ query: { id } }, res) => {
   try {
     const views = await getData(id);
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=1200, stale-while-revalidate=600'
+    );
     res.status(200).json({ views });
   }
   catch(e) {
