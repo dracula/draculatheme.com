@@ -8,8 +8,8 @@ class Pricing extends Component {
   render() {
     let promoName = `${new Date().toLocaleString('default', { month: 'long' })} Promo`;
     let beforePrice = 79;
-    let afterPrice = 49;
-    let gumroadURL = 'https://gum.co/dracula-pro/HALLOWEEN21?wanted=true';
+    let afterPrice = 47;
+    let gumroadURL = 'https://gum.co/dracula-pro/bl3ckfr1d3y?wanted=true';
 
     if (this.props.queryParams.a) {
       gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}?wanted=true`;
