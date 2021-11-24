@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import Link from 'next/link';
+import Countdown from '../Countdown';
 import styles from './Topbar.module.css';
 import { Anchor, Box, Button, Text } from '@dracula/dracula-ui';
 
 class Topbar extends Component {
   render() {
     return <Box className={styles.fixed}>
+      <Countdown ppp={this.props.ppp} color="#9580ff" />
       <Box className={styles.topbar}>
         <Link href="/" passHref>
           <Anchor hoverColor="purpleCyan" className="topbar-title">
