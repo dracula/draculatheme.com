@@ -7,7 +7,7 @@ class Pricing extends Component {
   renderPrimary() {
     let beforePrice = 79;
     let afterPrice = 47;
-    let gumroadURL = 'https://gum.co/dracula-ui/bl3ckfr1d3y?wanted=true';
+    let gumroadURL = 'https://gum.co/dracula-ui/cyb3rm0nd3y?wanted=true';
 
     if (this.props.ppp.country && this.props.ppp.discount) {
       beforePrice = 79;

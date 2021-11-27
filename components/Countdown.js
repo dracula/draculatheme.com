@@ -21,7 +21,7 @@ class Countdown extends Component {
   }
 
   updateCountdown() {
-    let time = Date.parse('2021-11-27') - Date.parse(new Date());
+    let time = Date.parse('2021-11-30') - Date.parse(new Date());
 
     if (time < 0) return;
 
@@ -38,7 +38,7 @@ class Countdown extends Component {
 
     if (this.props.ppp && this.props.ppp.discount === null) {
       return <div className={styles.banner} style={{ background: this.props.color }}>
-        <p className={styles.bannerContent}>Black Friday 40% discount ends in {this.state.days} days, {this.state.hours} hours, {this.state.minutes} minutes, {this.state.seconds} seconds</p>
+        <p className={styles.bannerContent}>Cyber Monday 40% discount ends in {this.state.days} days, {this.state.hours} hours, {this.state.minutes} minutes, {this.state.seconds} seconds</p>
       </div>
     }
 
