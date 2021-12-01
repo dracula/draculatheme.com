@@ -5,9 +5,9 @@ import { Button, Box, List, Paragraph, Heading, Text } from '@dracula/dracula-ui
 
 class Pricing extends Component {
   renderPrimary() {
-    let beforePrice = 79;
-    let afterPrice = 47;
-    let gumroadURL = 'https://gum.co/dracula-ui/cyb3rm0nd3y?wanted=true';
+    let beforePrice = 99;
+    let afterPrice = 79;
+    let gumroadURL = 'https://gum.co/dracula-ui?wanted=true';
 
     if (this.props.ppp.country && this.props.ppp.discount) {
       beforePrice = 79;
