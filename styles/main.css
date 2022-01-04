@@ -1035,6 +1035,9 @@ a {
   width: 24px;
   height: 24px;
   margin-right: 10px;
+  top: 5px;
+  display: block;
+  position: relative;
 }
 
 .blog-author-separator {
