@@ -7,12 +7,12 @@ class Pricing extends Component {
   renderPrimary() {
     let beforePrice = 99;
     let afterPrice = 79;
-    let gumroadURL = 'https://gum.co/dracula-ui?wanted=true';
+    let gumroadURL = 'https://store.draculatheme.com/l/dracula-ui?wanted=true';
 
     if (this.props.ppp.country && this.props.ppp.discount) {
       beforePrice = 79;
       afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
-      gumroadURL = `https://gumroad.com/l/dracula-ui/${this.props.ppp.country}UI?wanted=true`;
+      gumroadURL = `https://store.draculatheme.com/l/dracula-ui/${this.props.ppp.country}UI?wanted=true`;
     }
 
     return <Box rounded="2xl" className={styles.primaryTable}>

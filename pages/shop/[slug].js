@@ -149,7 +149,7 @@ class Product extends React.Component {
           </div>
         </div>
         <div className="item-cta">
-          <a href={`https://gumroad.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`} className="item-add">Pre-order</a>
+          <a href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`} className="item-add">Pre-order</a>
         </div>
       </div>
     </div>
@@ -169,7 +169,7 @@ class Product extends React.Component {
             </a>
           </Link>
           <div className="item-cta">
-            <a className="item-add" href={`https://gumroad.com/l/${product.custom_permalink}?wanted=true`}>Pre-order</a>
+            <a className="item-add" href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true`}>Pre-order</a>
           </div>
         </div>
       });
@@ -191,8 +191,6 @@ class Product extends React.Component {
           <meta content="Zeno Rocha" name="author" />
           <meta content={`https://draculatheme.com/shop/${this.props.slug}`} property="og:url" />
           <meta content={`https://draculatheme.com${image}`} property="og:image" />
-
-          <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
         <div>
