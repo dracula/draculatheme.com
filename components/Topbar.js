@@ -26,11 +26,6 @@ class Topbar extends Component {
             </Link>
           </li>
           <li className={styles.items}>
-            <Link href="/shop">
-              <a>Shop</a>
-            </Link>
-          </li>
-          <li className={styles.items}>
             <Link href="/ui">
               <a>Dracula UI</a>
             </Link>
