@@ -9,17 +9,17 @@ class Pricing extends Component {
     let promoName = `${new Date().toLocaleString('default', { month: 'long' })} Promo`;
     let beforePrice = 99;
     let afterPrice = 79;
-    let gumroadURL = 'https://gum.co/dracula-pro?wanted=true';
+    let gumroadURL = 'https://store.draculatheme.com/l/dracula-pro?wanted=true';
 
     if (this.props.queryParams.a) {
-      gumroadURL = `https://gumroad.com/a/${this.props.queryParams.a}?wanted=true`;
+      gumroadURL = `https://store.draculatheme.com/a/${this.props.queryParams.a}?wanted=true`;
     }
 
     if (!this.props.queryParams.a && this.props.ppp.country && this.props.ppp.discount) {
       promoName = `${countries[this.props.ppp.country].name} Promo`;
       beforePrice = 79;
       afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
-      gumroadURL = `https://gumroad.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`;
+      gumroadURL = `https://store.draculatheme.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`;
     }
 
     return <div id="get" className={styles.pricing}>

@@ -13,6 +13,7 @@ export default class extends Document {
           <meta content="summary_large_image" name="twitter:card" />
           <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
 
+          <script src="https://store.draculatheme.com/js/gumroad.js"></script>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script dangerouslySetInnerHTML={{
             __html: `

@@ -96,7 +96,6 @@ class Pro extends React.Component {
           <meta name="theme-color" content="#50fa7b" />
 
           <link rel="icon" type="image/x-icon" href="/static/img/pro/favicon.ico" />
-          <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
         <Topbar ppp={this.state.ppp} />
