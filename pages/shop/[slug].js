@@ -115,7 +115,7 @@ class Product extends React.Component {
   }
 
   renderProduct() {
-    return <div className="item" key={this.props.slug}>
+    return <div className="item">
       <div className="item-column-left">
         <div className="item-image">
           <img src={`/static/img/shop/${this.props.images[this.state.selectedImage]}`} />
@@ -149,7 +149,7 @@ class Product extends React.Component {
           </div>
         </div>
         <div className="item-cta">
-          <a href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`} className="item-add">Pre-order</a>
+          <a key={`${this.props.slug}-${this.state.size.value}-${this.state.quantity}`} href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`} className="item-add">Pre-order</a>
         </div>
       </div>
     </div>
