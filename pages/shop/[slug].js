@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Blogpost from '../../layouts/Blogpost';
+import ShopLayout from '../../layouts/Shop';
 import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
 import products from '../../lib/shop';
@@ -213,6 +213,6 @@ class Product extends React.Component {
   }
 }
 
-Product.Layout = Blogpost;
+Product.Layout = ShopLayout;
 
 export default Product;

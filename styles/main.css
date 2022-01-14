@@ -68,22 +68,32 @@ body {
   transition: none;
 }
 
-.cyan .topbar-title:hover {
+.topbar-subtitle {
+  margin-left: 5px;
+}
+
+.cyan .topbar-title:hover,
+.cyan .topbar-subtitle {
   color: rgba(139, 233, 253, 1);
 }
-.green .topbar-title:hover {
+.green .topbar-title:hover,
+.green .topbar-subtitle {
   color: rgba(80, 250, 123, 1);
 }
-.orange .topbar-title:hover {
+.orange .topbar-title:hover,
+.orange .topbar-subtitle {
   color: rgba(255, 184, 108, 1);
 }
-.pink .topbar-title:hover {
+.pink .topbar-title:hover,
+.pink .topbar-subtitle {
   color: rgba(255, 121, 198, 1);
 }
-.purple .topbar-title:hover {
+.purple .topbar-title:hover,
+.purple .topbar-subtitle {
   color: rgba(189, 147, 249, 1);
 }
-.yellow .topbar-title:hover {
+.yellow .topbar-title:hover,
+.yellow .topbar-subtitle {
   color: rgba(241, 250, 140, 1);
 }
 
@@ -147,7 +157,7 @@ nav ul li a {
 .category-title {
   margin: 0 0 40px;
   font-size: 48px;
-  text-align: center;
+  text-align: left;
   font-family: "Abril Text";
   font-weight: 700;
 }
@@ -1314,10 +1324,6 @@ a {
   text-decoration-line: none !important;
   font-family: "Source Sans Pro", sans-serif;
   cursor: pointer;
-}
-
-body .gumroad-scroll-container {
-  top: 60px !important;
 }
 
 .related-products-title {
