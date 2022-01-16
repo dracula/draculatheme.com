@@ -6,11 +6,16 @@ class Topbar extends Component {
   render() {
     return <div className={styles.fixed}>
       <nav className={styles.topbar}>
-        <Link href="/">
-          <a className="topbar-title" style={{ display: 'flex' }}>
-            Dracula
-            <span className="topbar-subtitle">Shop</span></a>
-        </Link>
+        <div className={styles.title}>
+          <Link href="/">
+            <a className="topbar-title">
+              Dracula
+            </a>
+          </Link>
+          <Link href="/shop">
+            <a className="topbar-subtitle">Shop</a>
+          </Link>
+        </div>
         <ul>
           <li className={styles.items}>
             <Link href="/shop/collections/shirts">

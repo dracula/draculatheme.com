@@ -70,6 +70,11 @@ body {
 
 .topbar-subtitle {
   margin-left: 5px;
+  font-family: "Abril Text";
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+  transition: none;
 }
 
 .cyan .topbar-title:hover,

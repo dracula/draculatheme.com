@@ -17,6 +17,10 @@
   z-index: 1;
 }
 
+.title {
+  display: flex;
+}
+
 @media (max-width: 600px) {
   .items {
     display: none;
