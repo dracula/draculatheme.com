@@ -158,9 +158,9 @@ class Product extends React.Component {
   renderRelatedProducts() {
     return this.props.relatedProducts
       .map(product => {
-        return <div key={product.custom_permalink}>
+        return <div className="product" key={product.custom_permalink}>
           <Link href={`/shop/${product.custom_permalink}`}>
-            <a className="product">
+            <a>
               <div className="product-image">
                 <img src={`/static/img/shop/${product.custom_permalink}-1.png`} />
               </div>
