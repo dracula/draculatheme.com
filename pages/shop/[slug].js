@@ -114,10 +114,23 @@ class Product extends React.Component {
     this.setState({ selectedImage: index });
   }
 
+  renderAvailability() {
+    if (this.props.product.max_purchase_count > 0) {
+      return <div className="item-ribbon-container">
+        <span className="item-ribbon">
+          {this.props.product.max_purchase_count}
+          {' '}
+          left
+        </span>
+      </div>
+    }
+  }
+
   renderProduct() {
     return <div className="item">
       <div className="item-column-left">
         <div className="item-image">
+          {this.renderAvailability()}
           <img src={`/static/img/shop/${this.props.images[this.state.selectedImage]}`} />
         </div>
         {this.renderOtherImages()}

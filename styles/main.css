@@ -1210,11 +1210,36 @@ a {
   background: #303442;
   border-radius: 20px;
   height: 380px;
+  position: relative;
 }
 
 .item-image img {
   max-width: 100%;
   max-height: 400px;
+}
+
+.item-ribbon-container {
+  height: 120px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+
+.item-ribbon {
+  background: #fdce71;
+  color: #614611;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  left: -32px;
+  line-height: 21px;
+  padding: 5px 10px;
+  position: relative;
+  text-align: center;
+  top: 15px;
+  transform: rotate(-45deg);
 }
 
 .item-other-images {
