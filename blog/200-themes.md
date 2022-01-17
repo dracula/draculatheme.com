@@ -1,6 +1,6 @@
 ---
 title: "200 Themes!"
-excerpt: "Today I have some exciting news to share. Dracula just crossed 200 open source themes!"
+excerpt: "When I started this project 8 years ago, I never thought it could become so big. I'm beyond grateful for this fantastic developer community."
 createdAt: "2021-09-02"
 updatedAt: "2022-01-14"
 author:

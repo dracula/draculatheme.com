@@ -1,6 +1,6 @@
 ---
 title: "Dracula Keycaps And 6 New Themes"
-excerpt: "After two years of waiting, the GMK Dracula keycaps finally arrived."
+excerpt: "After two years of waiting, the GMK Dracula keycaps finally arrived. If you're into mechanical keyboards, you're going to love this."
 createdAt: "2021-10-27"
 updatedAt: "2022-01-14"
 author:

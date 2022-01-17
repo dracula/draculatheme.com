@@ -1,6 +1,6 @@
 ---
 title: "Quick Question... Slack Or Discord?"
-excerpt: "I've been thinking about creating a Dracula Community for a long time."
+excerpt: "I've been thinking about creating a Dracula Community for a long time. But I want to make sure we pick the best platform, that's why I need your help."
 createdAt: "2021-06-02"
 updatedAt: "2022-01-14"
 author:

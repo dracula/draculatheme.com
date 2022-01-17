@@ -1,6 +1,6 @@
 ---
 title: "Dracula T-Shirt... A? B? Or C?"
-excerpt: "2022 is here, and like everybody else, I decided to write a 'Year in Review' blog post."
+excerpt: "I'm starting to play around with the idea of having Dracula merch! Now I need your help deciding which designs look better."
 createdAt: "2022-01-06"
 updatedAt: "2022-01-14"
 author:
@@ -9,11 +9,11 @@ author:
 color: "yellow"
 ---
 
-2022 is here, and like everybody else, I decided to write a ["Year in Review" blog post](/blog/2021-year-in-review).
+2022 is here, and like everybody else, I decided to write a ["Year in Review" post](/blog/2021-year-in-review).
 
 I'm also starting to play around with the idea of having Dracula merch! Yes, think of t-shirts, stickers, hoodies, that kind of stuff. I need your help deciding which designs look better...
 
-**What t-shirt would you use in real-life? A or B or C? Hit reply and let me know.**
+**What t-shirt would you use in real-life? A or B or C?**
 
 _Option A: Hexadecimal Shirt_
 

@@ -1,6 +1,6 @@
 ---
 title: "Why Is Dracula So Popular?"
-excerpt: "Two weeks ago, Dracula showed up on the front page of Hacker News."
+excerpt: "Two weeks ago, Dracula showed up on the front page of Hacker News. The thread had 227 comments, but one comment caught my attention."
 createdAt: "2021-12-23"
 updatedAt: "2022-01-14"
 author:

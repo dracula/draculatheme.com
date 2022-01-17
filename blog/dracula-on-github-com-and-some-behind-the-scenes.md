@@ -1,6 +1,6 @@
 ---
-title: "Dracula On GitHub.Com And Some Behind-The-Scenes"
-excerpt: "Since my last email, I got a LOT of responses about doing Dracula merch."
+title: "Dracula On GitHub.com And Some Behind-The-Scenes"
+excerpt: "I got a LOT of responses about doing Dracula merch, so I started ordering some samples to learn more about how can I make the absolute best products."
 createdAt: "2022-01-13"
 updatedAt: "2022-01-14"
 author:
