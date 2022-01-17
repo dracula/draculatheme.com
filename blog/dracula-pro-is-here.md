@@ -7,7 +7,7 @@ author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-pro-is-here-a.jpg"
-color: "orange"
+color: "yellow"
 ---
 
 The wait is over... [Dracula PRO is live](/pro)!

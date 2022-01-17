@@ -6,7 +6,7 @@ updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
-color: "green"
+color: "cyan"
 ---
 
 I thought it would be a good idea to gather the most popular Dracula themes from 2019, in case you missed, so here it is:

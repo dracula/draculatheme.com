@@ -6,7 +6,7 @@ updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
-color: "cyan"
+color: "purple"
 ---
 
 Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.

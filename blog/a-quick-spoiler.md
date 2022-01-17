@@ -7,7 +7,7 @@ author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/a-quick-spoiler-a.jpg"
-color: "pink"
+color: "orange"
 ---
 
 I have some exciting news to share!
