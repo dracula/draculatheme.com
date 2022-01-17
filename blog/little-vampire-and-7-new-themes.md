@@ -2,7 +2,7 @@
 title: "Little Vampire And 7 New Themes"
 excerpt: "Say hello to my newest little vampire - Victoria Rocha ;)"
 createdAt: "2021-10-12"
-updatedAt: "2021-10-12"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

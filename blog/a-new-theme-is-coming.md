@@ -6,7 +6,7 @@ updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
-color: "yellow"
+color: "green"
 ---
 
 In 2013, I decided to create a theme. At that time there were hundreds of thousands of color schemes out there, but none of them were appealing to me. So I decided to create my own.

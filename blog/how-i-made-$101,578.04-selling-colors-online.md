@@ -2,7 +2,7 @@
 title: "How I Made $101,578.04 Selling Colors Online"
 excerpt: "Today is a special day. Dracula PRO has hit 100K in sales, which is absolutely insane. When I started this thing I never thought this would happen."
 createdAt: "2021-02-25"
-updatedAt: "2021-02-25"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

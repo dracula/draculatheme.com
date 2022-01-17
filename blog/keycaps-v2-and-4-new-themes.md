@@ -2,7 +2,7 @@
 title: "Keycaps V2 And 4 New Themes"
 excerpt: "For those of you who are into mechanical keyboards, today is the last day to get the Dracula GMK Keycaps v2."
 createdAt: "2021-12-06"
-updatedAt: "2021-12-06"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

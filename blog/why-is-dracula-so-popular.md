@@ -2,7 +2,7 @@
 title: "Why Is Dracula So Popular?"
 excerpt: "Two weeks ago, Dracula showed up on the front page of Hacker News."
 createdAt: "2021-12-23"
-updatedAt: "2021-12-23"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

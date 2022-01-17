@@ -2,7 +2,7 @@
 title: "3D, Physical Book, And 4 New Themes"
 excerpt: "Last year I wrote an e-book called 14 Habits of Highly Productive Developers. I made this specifically for Dracula PRO."
 createdAt: "2021-03-25"
-updatedAt: "2021-03-25"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

@@ -2,7 +2,7 @@
 title: "Dracula Community And 6 New Themes"
 excerpt: "After dozens of responses, it's clear that Discord is where the cool kids hang out nowadays, so here it is!"
 createdAt: "2021-07-20"
-updatedAt: "2021-07-20"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

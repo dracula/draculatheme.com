@@ -2,7 +2,7 @@
 title: "200 Themes!"
 excerpt: "Today I have some exciting news to share. Dracula just crossed 200 open source themes!"
 createdAt: "2021-09-02"
-updatedAt: "2021-09-02"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"

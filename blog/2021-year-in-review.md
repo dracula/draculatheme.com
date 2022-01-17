@@ -6,7 +6,7 @@ updatedAt: "2022-01-03"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
-color: "green"
+color: "orange"
 ---
 
 Transparency is a major value for me, so I thought it would be nice to gather some interesting numbers about Dracula in 2021.

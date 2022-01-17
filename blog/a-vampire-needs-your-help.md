@@ -6,7 +6,7 @@ updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
   avatar: "https://github.com/zenorocha.png?size=48"
-color: "purple"
+color: "pink"
 ---
 
 For the past few weeks, I've been working non-stop to make sure that Dracula, the open source project, is well organized and with fewer issues as possible. We even crossed the number of **90 themes**, which is totally insane!
