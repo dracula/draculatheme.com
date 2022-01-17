@@ -1638,3 +1638,12 @@ a {
   font-style: normal;
   font-display: swap;
 }
+
+/* Control visibility of Gumroad's cart */
+:root {
+  --cart-visibility: none;
+}
+
+body .gumroad-scroll-container {
+  display: var(--cart-visibility);
+}

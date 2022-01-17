@@ -41,6 +41,14 @@ class Product extends React.Component {
     selectedImage: 0
   };
 
+  componentDidMount() {
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+  }
+
+  componentWillUnmount() {
+    document.documentElement.style.setProperty("--cart-visibility", "none");
+  }
+
   renderSelect() {
     const sizes = this.props.product.variants[0].options.map(option => {
       return { value: option.name.toUpperCase(), label: option.name };

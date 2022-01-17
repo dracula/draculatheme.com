@@ -61,6 +61,12 @@ class Pro extends React.Component {
     const queryParams = queryString.parse(location.search);
     this.setState({ queryParams });
     this.fetchPPP();
+
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+  }
+
+  componentWillUnmount() {
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   async fetchPPP() {

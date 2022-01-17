@@ -31,6 +31,11 @@ class UI extends React.Component {
 
   componentDidMount() {
     this.fetchPPP();
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+  }
+
+  componentWillUnmount() {
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   async fetchPPP() {

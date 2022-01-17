@@ -15,6 +15,14 @@ export async function getStaticProps() {
 }
 
 class Shop extends React.Component {
+  componentDidMount() {
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+  }
+
+  componentWillUnmount() {
+    document.documentElement.style.setProperty("--cart-visibility", "none");
+  }
+
   renderProducts() {
     return this.props.list.map(product => {
       return <Link href={`/shop/${product.custom_permalink}`} key={product.custom_permalink}>
