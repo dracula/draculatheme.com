@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ShopLayout from '../../layouts/Shop';
 import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
+import Faq from '../../components/shop/Faq';
 import products from '../../lib/shop';
 import dynamic from 'next/dynamic';
 import { Magnifier } from 'react-image-magnifiers';
@@ -39,15 +40,23 @@ class Product extends React.Component {
   state = {
     size: { value: 'm', label: 'M' },
     quantity: 1,
-    selectedImage: 0
+    selectedImage: 0,
+    ppp: {},
   };
 
   componentDidMount() {
     document.documentElement.style.setProperty("--cart-visibility", "block");
+    this.fetchPPP();
   }
 
   componentWillUnmount() {
     document.documentElement.style.setProperty("--cart-visibility", "none");
+  }
+
+  async fetchPPP() {
+    const pppReq = await fetch('https://ppp.dracula.workers.dev');
+    const ppp = await pppReq.json();
+    this.setState({ ppp });
   }
 
   renderSelect() {
@@ -230,6 +239,11 @@ class Product extends React.Component {
             <div className="related-products products">
               {this.renderRelatedProducts()}
             </div>
+
+            <h2 className="related-products-title">
+              Frequently asked questions
+            </h2>
+            <Faq ppp={this.state.ppp} />
           </div>
         </div>
       </div>
