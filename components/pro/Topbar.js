@@ -9,7 +9,6 @@ class Topbar extends Component {
         <Link href="/">
           <a className="topbar-title">Dracula <span className={styles.titlePro}>PRO</span></a>
         </Link>
-        <a href="/pro#get" className={styles.cta}>Get it now</a>
       </nav>
     </div>
   }

@@ -1,0 +1,40 @@
+.container {
+  margin-top: 30px;
+}
+
+.title {
+  margin: 0 0 40px;
+  font-size: 24px;
+  text-align: left;
+  font-family: "Abril Text";
+  font-weight: 700;
+}
+
+.item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #303442;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.itemIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #f2f2f2;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.question {
+  color: #f2f2f2;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.answer {
+  color: #bcc2cd;
+  font-size: 20px;
+}

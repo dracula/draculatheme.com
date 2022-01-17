@@ -61,6 +61,12 @@ class Pro extends React.Component {
     const queryParams = queryString.parse(location.search);
     this.setState({ queryParams });
     this.fetchPPP();
+
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+  }
+
+  componentWillUnmount() {
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   async fetchPPP() {
@@ -96,7 +102,6 @@ class Pro extends React.Component {
           <meta name="theme-color" content="#50fa7b" />
 
           <link rel="icon" type="image/x-icon" href="/static/img/pro/favicon.ico" />
-          <script src="https://gumroad.com/js/gumroad.js"></script>
         </Head>
 
         <Topbar ppp={this.state.ppp} />
