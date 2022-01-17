@@ -6,6 +6,7 @@ import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
 import products from '../../lib/shop';
 import dynamic from 'next/dynamic';
+import { Magnifier } from 'react-image-magnifiers';
 const SelectInput = dynamic(() => import('react-select'), { ssr: false });
 
 export async function getStaticPaths() {
@@ -124,12 +125,10 @@ class Product extends React.Component {
 
   renderAvailability() {
     if (this.props.product.max_purchase_count > 0) {
-      return <div className="item-ribbon-container">
-        <span className="item-ribbon">
-          {this.props.product.max_purchase_count}
-          {' '}
-          left
-        </span>
+      return <div className="item-ribbon">
+        {this.props.product.max_purchase_count}
+        {' '}
+        left
       </div>
     }
   }
@@ -139,7 +138,11 @@ class Product extends React.Component {
       <div className="item-column-left">
         <div className="item-image">
           {this.renderAvailability()}
-          <img src={`/static/img/shop/${this.props.images[this.state.selectedImage]}`} />
+          <Magnifier
+            imageSrc={`/static/img/shop/${this.props.images[this.state.selectedImage]}`}
+            imageAlt={this.props.product.name}
+            dragToMove={false}
+          />
         </div>
         {this.renderOtherImages()}
       </div>
