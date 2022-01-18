@@ -92,10 +92,10 @@ class Theme extends React.Component {
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
         <meta content={`https://draculatheme.com/${this.props.query.theme}`} property="og:url" />
-        <meta name="image" content={image} />
-        <meta itemProp="image" content={image} />
-        <meta name="twitter:image" content={image} />
-        <meta property="og:image" content={image} />
+        <meta content={image} name="image" />
+        <meta content={image} itemProp="image" />
+        <meta content={image} name="twitter:image" />
+        <meta content={image} property="og:image" />
       </Head>
 
       <div className="theme">
