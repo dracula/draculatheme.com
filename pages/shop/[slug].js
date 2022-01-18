@@ -6,6 +6,7 @@ import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
 import Faq from '../../components/shop/Faq';
 import products from '../../lib/shop';
+import { stripHtml } from '../../lib/string';
 import dynamic from 'next/dynamic';
 import { Magnifier } from 'react-image-magnifiers';
 const SelectInput = dynamic(() => import('react-select'), { ssr: false });
@@ -210,8 +211,7 @@ class Product extends React.Component {
 
   render() {
     const title = `${this.props.product.name} — Dracula Shop`;
-    const { description } = this.props.product;
-    const image = '/static/img/shop/og.jpg';
+    const description = stripHtml(this.props.product.description);
 
     return (
       <div className="shop">

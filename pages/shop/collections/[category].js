@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ShopLayout from '../../../layouts/Shop';
 import products from '../../../lib/shop';
+import { toTitleCase } from '../../../lib/string';
 import { getProduct } from '../../../lib/gumroad';
 
 export async function getStaticPaths() {
@@ -75,15 +76,6 @@ class Shop extends React.Component {
       </div>
     )
   }
-}
-
-function toTitleCase(str) {
-  return str.replace(
-    /\w\S*/g,
-    function(txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    }
-  );
 }
 
 Shop.Layout = ShopLayout;
