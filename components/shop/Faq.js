@@ -9,7 +9,7 @@ class Faq extends Component {
     this.state = {
       items: [
         {
-          question: `Do you ship ${props.ppp.country ? `to ${countries[props.ppp.country].name}` : 'worldwide'}?`,
+          question: `Do you ship worldwide?`,
           answer: `Yes, we ship internationally.`,
           visible: false,
         },
@@ -49,6 +49,14 @@ class Faq extends Component {
           visible: false,
         },
       ]
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.ppp !== prevProps.ppp) {
+      let items = this.state.items;
+      items[0].question = `Do you ship ${this.props.ppp.country ? `to ${countries[this.props.ppp.country].name}` : 'worldwide'}?`;
+      this.setState({ items });
     }
   }
 
