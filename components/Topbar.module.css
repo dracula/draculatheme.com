@@ -39,6 +39,17 @@
   background: rgba(80, 250, 123, 0.8);
 }
 
+.new {
+  color: rgba(189, 147, 249, 1);
+  position: absolute;
+  top: -15px;
+  right: 0px;
+}
+
+.items {
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .items {
     display: none;
