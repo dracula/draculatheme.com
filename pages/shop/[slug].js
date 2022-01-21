@@ -33,7 +33,8 @@ export async function getStaticProps({ params }) {
       product,
       relatedProducts,
       post: { color: query.color }
-    }
+    },
+    revalidate: 3600
   };
 }
 
@@ -134,9 +135,11 @@ class Product extends React.Component {
   }
 
   renderAvailability() {
-    if (this.props.product.max_purchase_count > 0) {
+    const { max_purchase_count, sales_count } = this.props.product;
+
+    if (max_purchase_count > 0) {
       return <div className="item-ribbon">
-        {this.props.product.max_purchase_count}
+        {max_purchase_count - sales_count}
         {' '}
         left
       </div>
