@@ -19,6 +19,10 @@ class Footer extends Component {
             name: 'Dracula UI',
             url: '/ui',
           },
+          {
+            name: 'Dracula Shop',
+            url: '/shop',
+          },
         ]
       },
       {
@@ -36,6 +40,11 @@ class Footer extends Component {
             name: 'Contribute',
             url: '/contribute'
           },
+          {
+            name: 'Spec',
+            url: 'https://spec.draculatheme.com',
+            isExternal: true,
+          },
         ]
       },
       {
@@ -50,7 +59,17 @@ class Footer extends Component {
             name: 'Discord',
             url: 'https://discord.gg/yDcFsrYuq9',
             isExternal: true,
-          }
+          },
+          {
+            name: 'Reddit',
+            url: 'https://www.reddit.com/r/draculatheme',
+            isExternal: true,
+          },
+          {
+            name: 'Wikipedia',
+            url: 'https://en.wikipedia.org/wiki/Dracula_(color_scheme)',
+            isExternal: true,
+          },
         ]
       }
     ];
