@@ -4,7 +4,7 @@ import Theme from '../layouts/Theme';
 import ProCta from '../components/ProCta';
 
 export async function getStaticProps() {
-  const query = { title: 'About', color: 'cyan', icon: 'pack-1/045-dracula.svg' };
+  const query = { title: 'About', color: 'cyan', icon: 'used/pack-1/045-dracula.svg' };
   return { props: { query } };
 }
 
