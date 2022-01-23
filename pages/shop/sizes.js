@@ -19,9 +19,10 @@ class Sizes extends React.Component {
 
   renderSizes() {
     return sizes.map((size, index) => {
+      const sizeKey = Object.keys(size);
       return <div key={index} className="sizes">
-        <h2 className="category-title">{Object.keys(size)}</h2>
-        <SizeChart items={sizes[index][Object.keys(size)]} />
+        <h2 id={sizeKey[0].toLowerCase()} className="sizes-title">{sizeKey[0]}</h2>
+        <SizeChart items={sizes[index][sizeKey]} />
       </div>
     })
   }

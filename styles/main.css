@@ -1313,6 +1313,12 @@ a {
   margin: 10px 0 0;
 }
 
+.item-size-link {
+  top: 3px;
+  left: 3px;
+  position: relative;
+}
+
 .item-number {
   background-color: #1d1e26;
   padding: 10px 8px;
@@ -1351,8 +1357,13 @@ a {
   font-weight: 300;
 }
 
-.sizes {
-  margin-bottom: 40px;
+.sizes-title {
+  margin: 0 0 40px;
+  padding-top: 60px;
+  font-size: 48px;
+  text-align: left;
+  font-family: "Abril Text";
+  font-weight: 700;
 }
 
 .purple .item-add,

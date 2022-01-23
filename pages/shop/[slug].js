@@ -5,6 +5,7 @@ import ShopLayout from '../../layouts/Shop';
 import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
 import Faq from '../../components/shop/Faq';
+import SizeChart from '../../components/shop/SizeChart';
 import products from '../../lib/shop';
 import { stripHtml } from '../../lib/string';
 import dynamic from 'next/dynamic';
@@ -110,9 +111,17 @@ class Product extends React.Component {
   renderVariants() {
     if (this.props.variants && this.props.variants.length > 0) {
       return <div className="item-variant">
-        <p>Size</p>
+        <p>Size {this.renderSizes()}</p>
         {this.renderSelect()}
       </div>
+    }
+  }
+
+  renderSizes() {
+    if (this.props.size) {
+      return <a className="item-size-link" target="_blank" href={`/shop/sizes${this.props.size}`}>
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.1em" width="1.1em" xmlns="http://www.w3.org/2000/svg"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"></path></svg>
+      </a>
     }
   }
 
