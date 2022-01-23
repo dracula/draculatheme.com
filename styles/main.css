@@ -1351,6 +1351,10 @@ a {
   font-weight: 300;
 }
 
+.sizes {
+  margin-bottom: 40px;
+}
+
 .purple .item-add,
 .purple .item-add:hover,
 .purple .item-add:focus {
