@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Shop from '../../layouts/Shop';
-import sizes from '../../lib/sizes';
+import { sizesInInches, sizesInCm } from '../../lib/sizes';
 import SizeChart from '../../components/shop/SizeChart';
 
 export async function getStaticProps() {
@@ -9,6 +9,15 @@ export async function getStaticProps() {
 }
 
 class Sizes extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sizes: sizesInInches,
+      isInches: true,
+    }
+  }
+
   componentDidMount() {
     document.documentElement.style.setProperty("--cart-visibility", "block");
   }
@@ -17,12 +26,43 @@ class Sizes extends React.Component {
     document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
+  onClickUnit(index) {
+    if (index === 0) {
+      this.setState({
+        sizes: sizesInInches,
+        isInches: true
+      });
+    }
+    else {
+      this.setState({
+        sizes: sizesInCm,
+        isInches: false
+      });
+    }
+  }
+
+  renderUnits() {
+    return <span>
+      <button
+        onClick={this.onClickUnit.bind(this, 0)}
+        className={this.state.isInches ? 'size-unit-selected' : 'size-unit'}>
+          in
+      </button>
+
+      <button
+        onClick={this.onClickUnit.bind(this, 1)}
+        className={this.state.isInches ? 'size-unit' : 'size-unit-selected'}>
+          cm
+      </button>
+    </span>
+  }
+
   renderSizes() {
-    return sizes.map((size, index) => {
+    return this.state.sizes.map((size, index) => {
       const sizeKey = Object.keys(size);
       return <div key={index} className="sizes">
-        <h2 id={sizeKey[0].toLowerCase()} className="sizes-title">{sizeKey[0]}</h2>
-        <SizeChart items={sizes[index][sizeKey]} />
+        <h2 id={sizeKey[0].toLowerCase()} className="size-subtitle">{sizeKey[0]}</h2>
+        <SizeChart items={this.state.sizes[index][sizeKey]} />
       </div>
     })
   }
@@ -41,12 +81,19 @@ class Sizes extends React.Component {
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />
           <meta content="Zeno Rocha" name="author" />
-          <meta content="https://draculatheme.com/shop" property="og:url" />
+          <meta content="https://draculatheme.com/shop/sizes" property="og:url" />
           <meta content={`https://draculatheme.com${image}`} property="og:image" />
         </Head>
 
         <div>
           <div className="theme">
+            <div className="size-header">
+              <h1 className="size-title">Size Charts</h1>
+              <div className="size-units">
+                <span>Units</span>
+                {this.renderUnits()}
+              </div>
+            </div>
             {this.renderSizes()}
           </div>
         </div>

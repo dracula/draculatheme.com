@@ -1357,13 +1357,56 @@ a {
   font-weight: 300;
 }
 
-.sizes-title {
-  margin: 0 0 40px;
-  padding-top: 60px;
+.size-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.size-title {
+  color: #bd93f9;
+  margin: 0;
   font-size: 48px;
   text-align: left;
   font-family: "Abril Text";
   font-weight: 700;
+}
+
+.size-subtitle {
+  margin: 0 0 10px;
+  padding-top: 60px;
+  font-size: 36px;
+  text-align: left;
+  font-family: "Abril Text";
+  font-weight: 700;
+}
+
+.size-units {
+  text-align: right;
+  font-size: 18px;
+}
+
+.size-unit,
+.size-unit-selected {
+  background: #303442;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  height: 30px;
+  margin-left: 5px;
+  padding: 5px;
+  width: 30px;
+}
+
+.size-unit {
+  color: #f2f2f2;
+}
+
+.size-unit-selected {
+  background: #bd93f9;
+  color: #000;
 }
 
 .purple .item-add,

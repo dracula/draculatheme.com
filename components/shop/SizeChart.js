@@ -16,11 +16,11 @@ class SizeChart extends Component {
       return <tr key={index}>
         <td>{itemKey}</td>
         {Object.keys(sizes).map(size => {
-          if (Array.isArray(sizes[size])) {
-            return <td key={size}>{sizes[size].join(' - ')}</td>
+          if (sizes[size].length === 1) {
+            return <td key={size}>{sizes[size][0]}</td>
           }
 
-          return <td key={size}>{sizes[size]}</td>
+          return <td key={size}>{sizes[size].join(' - ')}</td>
         })}
       </tr>
     })
@@ -30,14 +30,16 @@ class SizeChart extends Component {
     const itemsKeys = Object.keys(this.props.items);
     const sizesKeys = Object.keys(this.props.items[itemsKeys[0]]);
 
-    return <table className="table">
-      <thead>
-        {this.renderHeader(sizesKeys)}
-      </thead>
-      <tbody>
-        {this.renderBody(itemsKeys)}
-      </tbody>
-    </table>
+    return <div>
+      <table className="table">
+        <thead>
+          {this.renderHeader(sizesKeys)}
+        </thead>
+        <tbody>
+          {this.renderBody(itemsKeys)}
+        </tbody>
+      </table>
+    </div>
   }
 }
 
