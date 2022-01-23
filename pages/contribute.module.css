@@ -2,33 +2,6 @@
   margin-bottom: 60px;
 }
 
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.table th {
-  font-weight: 700;
-  padding: 10px;
-}
-
-.table th:first-child,
-.table td:first-child {
-  text-align: left;
-}
-
-.table td {
-  text-align: center;
-  border: 1px solid #4c5067;
-  padding: 10px;
-}
-
-.table td:hover {
-  background: #323543;
-}
-
 .copy {
   cursor: pointer;
   width: 180px;

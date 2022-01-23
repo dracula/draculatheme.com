@@ -129,7 +129,7 @@ class Contribute extends React.Component {
     return <div>
       <h3 id="color-palette">Color Palette</h3>
       {this.renderSelect()}
-      <table className={styles.table}>
+      <table className="table">
         <thead>
           <tr>
             <th>Palette</th>

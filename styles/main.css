@@ -1442,6 +1442,39 @@ a {
 }
 
 /* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.table th {
+  font-weight: 700;
+  padding: 10px;
+}
+
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  border: 1px solid #4c5067;
+  padding: 10px;
+}
+
+.table th:hover,
+.table td:hover {
+  background: #323543;
+}
+
+/* ==========================================================================
    Microtip
    ========================================================================== */
 
