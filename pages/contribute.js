@@ -9,7 +9,7 @@ import styles from './contribute.module.css';
 const SelectInput = dynamic(() => import('react-select'), { ssr: false });
 
 export async function getStaticProps() {
-  const query = { title: 'Contribute', color: 'pink', icon: 'pack-1/045-dracula.svg' };
+  const query = { title: 'Contribute', color: 'pink', icon: 'used/pack-1/045-dracula.svg' };
   return { props: { query } };
 }
 
