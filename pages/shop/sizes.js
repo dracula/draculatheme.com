@@ -13,8 +13,7 @@ class Sizes extends React.Component {
     super(props);
 
     this.state = {
-      sizes: sizesInInches,
-      isInches: false,
+      isInches: false
     };
   }
 
@@ -40,15 +39,9 @@ class Sizes extends React.Component {
 
   onClickUnit(index) {
     if (index === 0) {
-      this.setState({
-        sizes: sizesInInches,
-        isInches: true,
-      });
+      this.setState({ isInches: true });
     } else {
-      this.setState({
-        sizes: sizesInCm,
-        isInches: false,
-      });
+      this.setState({ isInches: false });
     }
   }
 
@@ -73,14 +66,20 @@ class Sizes extends React.Component {
   }
 
   renderSizes() {
-    return this.state.sizes.map((size, index) => {
+    let sizes = sizesInCm;
+
+    if (this.state.isInches) {
+      sizes = sizesInInches;
+    }
+
+    return sizes.map((size, index) => {
       const sizeKey = Object.keys(size);
       return (
         <div key={index} className="sizes">
           <h2 id={sizeKey[0].toLowerCase()} className="size-subtitle">
             {sizeKey[0]}
           </h2>
-          <SizeChart items={this.state.sizes[index][sizeKey]} />
+          <SizeChart items={sizes[index][sizeKey]} />
         </div>
       );
     });
