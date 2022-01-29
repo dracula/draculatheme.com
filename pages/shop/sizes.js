@@ -4,8 +4,18 @@ import Shop from "../../layouts/Shop";
 import { sizesInInches, sizesInCm } from "../../lib/sizes";
 import SizeChart from "../../components/shop/SizeChart";
 
-export async function getStaticProps() {
-  return { props: { post: { color: "purple" } } };
+export async function getServerSideProps({ req }) {
+  const country = req.headers['x-vercel-ip-country'];
+
+  let isInches = false;
+
+  if (country === "CA" || country === "GB" || country === "US") {
+    isInches = true;
+  }
+
+  return {
+    props: { post: { color: "purple", isInches } }
+  }
 }
 
 class Sizes extends React.Component {
@@ -13,28 +23,16 @@ class Sizes extends React.Component {
     super(props);
 
     this.state = {
-      isInches: false
+      isInches: props.isInches
     };
   }
 
   componentDidMount() {
     document.documentElement.style.setProperty("--cart-visibility", "block");
-    this.fetchPPP();
   }
 
   componentWillUnmount() {
     document.documentElement.style.setProperty("--cart-visibility", "none");
-  }
-
-  async fetchPPP() {
-    const pppReq = await fetch("https://ppp.dracula.workers.dev");
-    const ppp = await pppReq.json();
-
-    let country = ppp.country;
-
-    if (country === "CA" || country === "GB" || country === "US") {
-      this.setState({ isInches: true });
-    }
   }
 
   onClickUnit(index) {
