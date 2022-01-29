@@ -5,4 +5,6 @@ if (!process.env.GITHUB_PERSONAL_ACCESS_TOKEN) {
 
 const withTM = require('next-transpile-modules')(['react-github-btn']);
 
-module.exports = withTM();
+module.exports = withTM({
+  swcMinify: true
+});
