@@ -5,7 +5,6 @@ import ShopLayout from '../../layouts/Shop';
 import { getColorFromName } from '../../lib/color';
 import { getProduct } from '../../lib/gumroad';
 import Faq from '../../components/shop/Faq';
-import SizeChart from '../../components/shop/SizeChart';
 import products from '../../lib/shop';
 import { stripHtml } from '../../lib/string';
 import dynamic from 'next/dynamic';
@@ -228,7 +227,7 @@ class Product extends React.Component {
     const api = 'https://i.microlink.io/';
     const ogPrice = this.props.product.price / 100;
     const ogImage = `${this.props.product.custom_permalink}-1.png`;
-    const cardUrl = `https://cards.microlink.io/?preset=draculashop&color=%23${getColorFromName(this.props.color)}&title=${this.props.product.name}&price=${ogPrice}&image=${ogImage}`;
+    const cardUrl = `https://cards.microlink.io/?preset=dracula-shop&color=%23${getColorFromName(this.props.color)}&title=${this.props.product.name}&price=${ogPrice}&image=${ogImage}`;
     const image = `${api}${encodeURIComponent(cardUrl)}`;
 
     return (
