@@ -17,8 +17,9 @@ That's why I decided to spend some time to build color palettes for the most pop
 ![Figma, Sketch, Photoshop and Illustrator Logos](/static/img/blog/dracula-for-figma-sketch-and-adobe-a.jpg)
 
 Go ahead and download the files for:
-* [Adobe](/adobe)
-* [Figma](/figma)
-* [Sketch](/sketch)
+
+- [Adobe](/adobe)
+- [Figma](/figma)
+- [Sketch](/sketch)
 
 I can't wait to see what you're all going to create :)

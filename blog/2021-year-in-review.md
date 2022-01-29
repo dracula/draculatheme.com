@@ -73,7 +73,7 @@ These are the most popular themes from 2021 in terms of website views.
 
 1. [Chrome](/chrome): 34,475 views
 1. [Firefox](/firefox): 16,962 views
-3. [Qutebrowser](/qutebrowser): 2,155 views
+1. [Qutebrowser](/qutebrowser): 2,155 views
 
 ## Visitors
 

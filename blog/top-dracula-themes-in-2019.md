@@ -13,21 +13,21 @@ I thought it would be a good idea to gather the most popular Dracula themes from
 
 **Windows**
 
-1. [Notepad++](/notepad-plus-plus) *(208,398 views)*
-2. [Visual Studio](/visual-studio) *(57,235 views)*
-3. [Slack](/slack) *(29,189 views)*
+1. [Notepad++](/notepad-plus-plus) _(208,398 views)_
+2. [Visual Studio](/visual-studio) _(57,235 views)_
+3. [Slack](/slack) _(29,189 views)_
 
 **macOS**
 
-1. [Terminal.app](/terminal) *(66,386 views)*
-2. [iTerm](/iterm) *(66,253 views)*
-3. [Visual Studio Code](/visual-studio-code) *(57,235 views)*
+1. [Terminal.app](/terminal) _(66,386 views)_
+2. [iTerm](/iterm) _(66,253 views)_
+3. [Visual Studio Code](/visual-studio-code) _(57,235 views)_
 
 **Linux**
 
-1. [Vim](/vim) *(57,410 views)*
-2. [Zsh](/zsh) *(44,998 views)*
-3. [Emacs](/emacs) *(17,058 views)*
+1. [Vim](/vim) _(57,410 views)_
+2. [Zsh](/zsh) _(44,998 views)_
+3. [Emacs](/emacs) _(17,058 views)_
 
 And that's it for today.
 

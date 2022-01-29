@@ -26,12 +26,12 @@ I'll start, here's my current setup.
 
 This week 6 new themes have joined the Dracula family!
 
-* [CopyQ](/copyq): Clipboard manager with scripting features
-* [Cryptowatch](/cryptowatch): Real-time market dashboards
-* [fman](/fman): Dual-pane file manager
-* [Micro](/micro): Terminal-based text editor
-* [Midnight Commander](/midnight-commander): Orthodox file manager
-* [ReNoise](/renoise): Digital Audio Workstation
+- [CopyQ](/copyq): Clipboard manager with scripting features
+- [Cryptowatch](/cryptowatch): Real-time market dashboards
+- [fman](/fman): Dual-pane file manager
+- [Micro](/micro): Terminal-based text editor
+- [Midnight Commander](/midnight-commander): Orthodox file manager
+- [ReNoise](/renoise): Digital Audio Workstation
 
 [![Dracula for Midnight Commander](/static/img/blog/2020-halloween-costume-contest-b.png)](/midnight-commander)
 

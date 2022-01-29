@@ -1,7 +1,12 @@
 .env
+
 .next
+
+.vscode/
 .npmrc
-node_modules
+node_modules/
+package-lock.json
+
 out
 .now
 auth.json

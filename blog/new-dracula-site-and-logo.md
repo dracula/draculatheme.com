@@ -20,9 +20,9 @@ Now that we have 92 different themes, I decided to spend time on **discoverabili
 
 I love Static Site Generators (SSG) since the day I became a web developer. The Dracula site had a long journey, and I feel like now we have a great stack.
 
-* 2013: Created the site using Jekyll
-* 2016: Migrated from Jekyll to Metalsmith
-* 2020: Migrated from Metalsmith to Next.js
+- 2013: Created the site using Jekyll
+- 2016: Migrated from Jekyll to Metalsmith
+- 2020: Migrated from Metalsmith to Next.js
 
 ## New Logo
 

@@ -5,7 +5,7 @@ import { sizesInInches, sizesInCm } from "../../lib/sizes";
 import SizeChart from "../../components/shop/SizeChart";
 
 export async function getServerSideProps({ req }) {
-  const country = req.headers['x-vercel-ip-country'];
+  const country = req.headers["x-vercel-ip-country"];
 
   let isInches = false;
 
@@ -14,8 +14,8 @@ export async function getServerSideProps({ req }) {
   }
 
   return {
-    props: { post: { color: "purple", isInches } }
-  }
+    props: { post: { color: "purple", isInches } },
+  };
 }
 
 class Sizes extends React.Component {
@@ -23,7 +23,7 @@ class Sizes extends React.Component {
     super(props);
 
     this.state = {
-      isInches: props.isInches
+      isInches: props.isInches,
     };
   }
 

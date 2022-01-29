@@ -1,6 +1,6 @@
-import { Component } from 'react';
-import styles from './Faq.module.css';
-import { countries } from 'countries-list';
+import { Component } from "react";
+import styles from "./Faq.module.css";
+import { countries } from "countries-list";
 
 class Faq extends Component {
   constructor(props) {
@@ -48,14 +48,18 @@ class Faq extends Component {
           answer: `You can contact me by e-mailing zeno@draculatheme.com.`,
           visible: false,
         },
-      ]
-    }
+      ],
+    };
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.ppp !== prevProps.ppp) {
       let items = this.state.items;
-      items[0].question = `Do you ship ${this.props.ppp.country ? `to ${countries[this.props.ppp.country].name}` : 'worldwide'}?`;
+      items[0].question = `Do you ship ${
+        this.props.ppp.country
+          ? `to ${countries[this.props.ppp.country].name}`
+          : "worldwide"
+      }?`;
       this.setState({ items });
     }
   }
@@ -70,22 +74,35 @@ class Faq extends Component {
 
   renderQuestionsAndAnswers() {
     return this.state.items.map((item, index) => {
-      return <a className={styles.item} key={index} onClick={this.toggleVisibility.bind(this, index)}>
-        <p className={styles.question}>{item.question}</p>
-        <p style={this.state.items[index].visible ? { display: 'block'} : { display: 'none' }} className={styles.answer}>
-          {item.answer}
-        </p>
-        <span className={styles.itemIcon}>
-          {this.state.items[index].visible ? '-' : '+'}
-        </span>
-      </a>
+      return (
+        <a
+          className={styles.item}
+          key={index}
+          onClick={this.toggleVisibility.bind(this, index)}
+        >
+          <p className={styles.question}>{item.question}</p>
+          <p
+            style={
+              this.state.items[index].visible
+                ? { display: "block" }
+                : { display: "none" }
+            }
+            className={styles.answer}
+          >
+            {item.answer}
+          </p>
+          <span className={styles.itemIcon}>
+            {this.state.items[index].visible ? "-" : "+"}
+          </span>
+        </a>
+      );
     });
   }
 
   render() {
-    return <div className={styles.container}>
-      {this.renderQuestionsAndAnswers()}
-    </div>
+    return (
+      <div className={styles.container}>{this.renderQuestionsAndAnswers()}</div>
+    );
   }
 }
 

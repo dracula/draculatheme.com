@@ -13,7 +13,7 @@ I'm building something new... it's called [Dracula UI](/ui).
 
 Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - **it should be a top priority**. That's why I decided to invest time in this.
 
-But before I start developing like crazy, I want to ask - what's important to you? 
+But before I start developing like crazy, I want to ask - what's important to you?
 
 What's your favorite way to build apps?
 

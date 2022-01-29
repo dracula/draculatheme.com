@@ -1,16 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 
-import snippets from '../lib/snippets/all';
-import theme from '../lib/monaco.json'
+import snippets from "../lib/snippets/all";
+import theme from "../lib/monaco.json";
 
 function CodeEditor({ language }) {
   const editorRef = useRef(null);
   const [editorLoaded, setEditorLoaded] = useState(false);
 
   function handleEditorWillMount(monaco) {
-    monaco.editor.defineTheme('dracula', theme);
-    monaco.editor.setTheme('dracula');
+    monaco.editor.defineTheme("dracula", theme);
+    monaco.editor.setTheme("dracula");
   }
 
   function handleEditorDidMount(editor, monaco) {
@@ -32,8 +32,8 @@ function CodeEditor({ language }) {
         fontLigatures: true,
         fontSize: "18px",
         minimap: {
-          enabled: false
-        }
+          enabled: false,
+        },
       }}
       beforeMount={handleEditorWillMount}
       onMount={handleEditorDidMount}

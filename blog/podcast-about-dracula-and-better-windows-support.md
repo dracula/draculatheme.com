@@ -22,8 +22,8 @@ When I launched the PRO version, I didn't have time to focus on different OS's. 
 
 This past week I added two new themes to Dracula PRO:
 
-* [Notepad++](/notepad-plus-plus)
-* [Windows Terminal](/windows-terminal)
+- [Notepad++](/notepad-plus-plus)
+- [Windows Terminal](/windows-terminal)
 
 [![Dracula PRO on Notepad++ and Windows Terminal](/static/img/blog/podcast-about-dracula-and-better-windows-support-b.png)](/pro)
 

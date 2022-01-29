@@ -20,17 +20,17 @@ I'm trying to standardize all the Dracula screenshots using the same code snippe
 
 This week 6 new themes have been created by the community!
 
-[Marp](/marp): Markdown system that generates slide decks by *Daniel Gisolfi*
+[Marp](/marp): Markdown system that generates slide decks by _Daniel Gisolfi_
 
-[DOOM Emacs](/doom-emacs): Configuration framework for Emacs by *Helder Burato*
+[DOOM Emacs](/doom-emacs): Configuration framework for Emacs by _Helder Burato_
 
-[MATLAB](/matlab): Multi-paradigm numerical computing environment by *j-hap*
+[MATLAB](/matlab): Multi-paradigm numerical computing environment by _j-hap_
 
-[Thonny](/thonny): Python IDE for beginners by *Daniel Spinola*
+[Thonny](/thonny): Python IDE for beginners by _Daniel Spinola_
 
-[MusicBee](/musicbee): Music manager and player by *Michael Ye*
+[MusicBee](/musicbee): Music manager and player by _Michael Ye_
 
-[B4X](/b4x): Proprietary language, very similar to Visual Basic by *Lucas Siqueira*
+[B4X](/b4x): Proprietary language, very similar to Visual Basic by _Lucas Siqueira_
 
 [![Dracula for B4X](/static/img/blog/6-new-themes-and-20-desktop-icons-b.png)](/b4x)
 

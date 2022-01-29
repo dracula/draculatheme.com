@@ -26,19 +26,19 @@ In a couple of days, the price will increase to $79.
 A community member, kajwski, created a series of wallpapers for different operating systems.
 
 [![Dracula Wallpaper for Windows](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-a.png)](/wallpaper)
-*Windows*
+_Windows_
 
 [![Dracula Wallpaper for Debian](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-b.png)](/wallpaper)
-*Debian*
+_Debian_
 
 [![Dracula Wallpaper for Fedora](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-c.png)](/wallpaper)
-*Fedora*
+_Fedora_
 
 [![Dracula Wallpaper for Ubuntu](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-d.png)](/wallpaper)
-*Ubuntu*
+_Ubuntu_
 
 [![Dracula Wallpaper for Arch](/static/img/blog/free-wallpapers-and-new-dracula-pro-price-e.png)](/wallpaper)
-*Arch*
+_Arch_
 
 See the [full list of wallpapers](/wallpaper).
 

@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10"
+    "@babel/node": "^7.12.10",
+    "prettier": "2.5.1"
   }
 }

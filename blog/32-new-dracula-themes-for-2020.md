@@ -15,6 +15,7 @@ The result? Last week there were 53 themes on the site, now there are 85 themes!
 To make your life easier, here's a compilation of them.
 
 **Code Editors**
+
 1. [Arduino IDE](/arduino-ide)
 2. [CotEditor](/coteditor)
 3. [Editplus](/editplus)
@@ -23,6 +24,7 @@ To make your life easier, here's a compilation of them.
 6. [Wing](/wing)
 
 **Notes & Messaging**
+
 1. [Bear](/bear)
 2. [Facebook Messenger](/facebook-messenger)
 3. [LimeChat](/limechat)
@@ -31,6 +33,7 @@ To make your life easier, here's a compilation of them.
 6. [Typora](/typora)
 
 **Terminal & Shell**
+
 1. [Alacritty](/alacritty)
 2. [CMDer](/cmder)
 3. [Fish](/fish)
@@ -43,6 +46,7 @@ To make your life easier, here's a compilation of them.
 10. [Windows Terminal](/windows-terminal)
 
 **Miscellaneous**
+
 1. [Blender](/blender)
 2. [Couscous](/couscous)
 3. [DuckDuckGo](/duckduckgo)

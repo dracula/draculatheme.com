@@ -1,20 +1,20 @@
-import fs from 'fs';
-import moment from 'moment';
-import paths from './lib/paths.js';
-import { getAllPosts, convertMarkdownToHtml } from './lib/blog.js';
+import fs from "fs";
+import moment from "moment";
+import paths from "./lib/paths.js";
+import { getAllPosts, convertMarkdownToHtml } from "./lib/blog.js";
 
 async function getBlog() {
   const posts = getAllPosts([
-    'title',
-    'excerpt',
-    'content',
-    'createdAt',
-    'updatedAt',
-    'slug',
+    "title",
+    "excerpt",
+    "content",
+    "createdAt",
+    "updatedAt",
+    "slug",
   ]);
 
   for (const post of posts) {
-    post.content = await convertMarkdownToHtml(post.content || '');
+    post.content = await convertMarkdownToHtml(post.content || "");
     post.content = post.content
       .replaceAll('href="/', 'href="https://draculatheme.com/')
       .replaceAll('src="/', 'src="https://draculatheme.com/');
@@ -24,9 +24,9 @@ async function getBlog() {
 }
 
 function getPages() {
-  const pages = ['about', 'blog', 'contribute', 'ui', 'pro'];
+  const pages = ["about", "blog", "contribute", "ui", "pro"];
 
-  paths.forEach(path => {
+  paths.forEach((path) => {
     pages.push(path.params.theme);
   });
 
@@ -38,23 +38,26 @@ async function buildSitemap() {
     const posts = await getBlog();
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${getPages().map(page => {
-      return `<url>
+    ${getPages()
+      .map((page) => {
+        return `<url>
         <loc>https://draculatheme.com/${page}</loc>
-        <lastmod>${moment().format('YYYY-MM-DD')}</lastmod>
+        <lastmod>${moment().format("YYYY-MM-DD")}</lastmod>
       </url>`;
-    }).join(' ')}
-    ${posts.map(post => {
-      return `<url>
+      })
+      .join(" ")}
+    ${posts
+      .map((post) => {
+        return `<url>
         <loc>https://draculatheme.com/blog/${post.slug}</loc>
         <lastmod>${post.updatedAt}</lastmod>
       </url>`;
-    }).join(' ')}
+      })
+      .join(" ")}
   </urlset>`;
 
-    fs.writeFileSync('public/sitemap.xml', xml);
-  }
-  catch (e) {
+    fs.writeFileSync("public/sitemap.xml", xml);
+  } catch (e) {
     console.error(e);
   }
 }
@@ -70,9 +73,12 @@ async function buildRss() {
           <description>The journey of building the most universal dark theme ever made.</description>
           <language>en</language>
           <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml" />
-          <lastBuildDate>${new Date(posts[0].createdAt).toUTCString()}</lastBuildDate>
-    ${posts.map(post => {
-      return `<item>
+          <lastBuildDate>${new Date(
+            posts[0].createdAt
+          ).toUTCString()}</lastBuildDate>
+    ${posts
+      .map((post) => {
+        return `<item>
         <title><![CDATA[${post.title}]]></title>
         <link>https://draculatheme.com/blog/${post.slug}</link>
         <guid>https://draculatheme.com/blog/${post.slug}</guid>
@@ -84,13 +90,13 @@ async function buildRss() {
           <![CDATA[${post.content}]]>
         </content:encoded>
       </item>`;
-    }).join(' ')}
+      })
+      .join(" ")}
         </channel>
       </rss>`;
 
-    fs.writeFileSync('public/rss.xml', xml);
-  }
-  catch (e) {
+    fs.writeFileSync("public/rss.xml", xml);
+  } catch (e) {
     console.error(e);
   }
 }

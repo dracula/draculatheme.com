@@ -1,31 +1,31 @@
-import React, { Component } from 'react'
-import styles from './CodeSnippet.module.css'
-import CopyToClipboard from 'clipboard'
+import React, { Component } from "react";
+import styles from "./CodeSnippet.module.css";
+import CopyToClipboard from "clipboard";
 
 export default class CodeSnippet extends Component {
-  state = { copied: false }
-  copyButton = React.createRef()
-  copyContent = React.createRef()
+  state = { copied: false };
+  copyButton = React.createRef();
+  copyContent = React.createRef();
 
   componentDidMount() {
     new CopyToClipboard(this.copyButton.current, {
-      text: () => this.copyContent.current.textContent
-    })
+      text: () => this.copyContent.current.textContent,
+    });
   }
 
   onCopy = () => {
     this.setState(
       {
-        copied: true
+        copied: true,
       },
       () => {
-        setTimeout(() => this.setState({ copied: false }), 1000)
+        setTimeout(() => this.setState({ copied: false }), 1000);
       }
-    )
-  }
+    );
+  };
 
   renderButton() {
-    const { copied } = this.state
+    const { copied } = this.state;
 
     return (
       <div className={styles.copyButtonContainer}>
@@ -39,30 +39,30 @@ export default class CodeSnippet extends Component {
             <Clippy
               className={styles.clippy}
               style={{
-                strokeDashoffset: copied ? -50 : 0
+                strokeDashoffset: copied ? -50 : 0,
               }}
             />
             <Check
               className={styles.check}
               style={{
-                strokeDashoffset: copied ? 0 : -50
+                strokeDashoffset: copied ? 0 : -50,
               }}
             />
           </div>
         </button>
       </div>
-    )
+    );
   }
 
   render() {
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: "relative" }}>
         {this.renderButton()}
         <pre ref={this.copyContent} className={styles.pre}>
           {this.props.children}
         </pre>
       </div>
-    )
+    );
   }
 }
 
