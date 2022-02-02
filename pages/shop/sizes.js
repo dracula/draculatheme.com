@@ -4,8 +4,9 @@ import Shop from "../../layouts/Shop";
 import { sizesInInches, sizesInCm } from "../../lib/sizes";
 import SizeChart from "../../components/shop/SizeChart";
 
-export async function getServerSideProps({ req }) {
-  const country = req.headers["x-vercel-ip-country"];
+export async function getServerSideProps() {
+  const pppReq = await fetch('https://ppp.dracula.workers.dev');
+  const { country } = await pppReq.json();
 
   let isInches = false;
 
@@ -14,8 +15,8 @@ export async function getServerSideProps({ req }) {
   }
 
   return {
-    props: { post: { color: "purple", isInches } },
-  };
+    props: { isInches, post: { color: "purple" } }
+  }
 }
 
 class Sizes extends React.Component {
