@@ -7,14 +7,15 @@ mailchimp.setConfig({
 
 export default async (req, res) => {
   try {
-    const response = await mailchimp.ping.get();
+    const { stats } = await mailchimp.lists.getList("05d188e2db");
 
-    console.log(process.env.MAILCHIMP_API_KEY);
-    console.log(response);
-
-    return res.status(200).json(response);
-  } catch (e) {
-    console.log(e);
-    return res.status(400).json(e);
+    return res.status(200).json({
+      total: stats.member_count + stats.unsubscribe_count
+    });
+  } catch (error) {
+    return res.status(error.status).json({
+      total: 0,
+      error: JSON.parse(error.response.text).title
+    });
   }
 };
