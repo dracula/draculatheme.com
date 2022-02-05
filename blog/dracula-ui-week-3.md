@@ -4,8 +4,8 @@ excerpt: "It's been almost two weeks since we last shared an update with you. We
 createdAt: "2020-09-24"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-ui-week-3-a.png"
 color: "cyan"
 ---

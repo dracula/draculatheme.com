@@ -4,8 +4,8 @@ excerpt: "For those of you who are into mechanical keyboards, today is the last 
 createdAt: "2021-12-06"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "purple"
 ---
 

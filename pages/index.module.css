@@ -1,82 +1,82 @@
 .main {
-  background: #282a36;
-  padding: 80px 0 0;
+	background: #282a36;
+	padding: 80px 0 0;
 }
 
 .toolbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 920px;
-  padding-bottom: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 920px;
+	padding-bottom: 80px;
 }
 
 .group {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .label {
-  font-size: 20px;
-  font-weight: 400;
-  margin-top: 5px;
-  text-align: center;
-  width: 165px;
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 5px;
+	text-align: center;
+	width: 165px;
 }
 
 .searchLabel {
-  display: none;
+	display: none;
 }
 
 .search {
-  padding: 5px 20px;
-  height: 37px;
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  background: #282a36;
-  color: #fff;
-  border: 1px solid rgba(189, 147, 249, 1);
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  width: 345px;
-  -webkit-appearance: textfield;
+	padding: 5px 20px;
+	height: 37px;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	background: #282a36;
+	color: #fff;
+	border: 1px solid rgba(189, 147, 249, 1);
+	border-radius: 4px;
+	width: 100%;
+	outline: none;
+	width: 345px;
+	-webkit-appearance: textfield;
 }
 
 .search::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 .search::placeholder {
-  color: #bcc2cd;
+	color: #bcc2cd;
 }
 
 .results {
-  display: flex;
-  margin: 0 auto;
-  max-width: 1080px;
-  flex-wrap: wrap;
-  align-content: space-between;
-  flex-direction: row;
+	display: flex;
+	margin: 0 auto;
+	max-width: 1080px;
+	flex-wrap: wrap;
+	align-content: space-between;
+	flex-direction: row;
 }
 
 @media (max-width: 1080px) {
-  .results {
-    max-width: 720px;
-  }
+	.results {
+		max-width: 720px;
+	}
 
-  .toolbar {
-    flex-direction: column;
-  }
+	.toolbar {
+		flex-direction: column;
+	}
 
-  .group {
-    margin: 0 auto 20px;
-  }
+	.group {
+		margin: 0 auto 20px;
+	}
 }
 
 @media (max-width: 720px) {
-  .results {
-    max-width: 360px;
-  }
+	.results {
+		max-width: 360px;
+	}
 }

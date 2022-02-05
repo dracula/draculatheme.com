@@ -4,8 +4,8 @@ excerpt: "Before I start working like crazy on Dracula PRO, I decided to spend m
 createdAt: "2020-01-14"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "purple"
 ---
 

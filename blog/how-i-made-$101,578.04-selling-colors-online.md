@@ -4,8 +4,8 @@ excerpt: "Today is a special day. Dracula PRO has hit 100K in sales, which is ab
 createdAt: "2021-02-25"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "pink"
 ---
 

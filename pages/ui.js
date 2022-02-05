@@ -16,77 +16,73 @@ import Footer from "../components/ui/Footer";
 import styles from "./ui.module.css";
 
 class UI extends React.Component {
-  state = {
-    ppp: {},
-  };
+	state = {
+		ppp: {},
+	};
 
-  static async getInitialProps() {
-    const query = {
-      color: "green",
-      icon: "dracula.svg",
-    };
+	static async getInitialProps() {
+		const query = {
+			color: "green",
+			icon: "dracula.svg",
+		};
 
-    return { query };
-  }
+		return { query };
+	}
 
-  componentDidMount() {
-    this.fetchPPP();
-    document.documentElement.style.setProperty("--cart-visibility", "block");
-  }
+	componentDidMount() {
+		this.fetchPPP();
+		document.documentElement.style.setProperty("--cart-visibility", "block");
+	}
 
-  componentWillUnmount() {
-    document.documentElement.style.setProperty("--cart-visibility", "none");
-  }
+	componentWillUnmount() {
+		document.documentElement.style.setProperty("--cart-visibility", "none");
+	}
 
-  async fetchPPP() {
-    const pppReq = await fetch("https://ppp.dracula.workers.dev");
-    const ppp = await pppReq.json();
-    this.setState({ ppp });
-  }
+	async fetchPPP() {
+		const pppReq = await fetch("https://ppp.dracula.workers.dev");
+		const ppp = await pppReq.json();
+		this.setState({ ppp });
+	}
 
-  render() {
-    const title = "Dracula UI";
-    const description = "A dark-first collection of UI patterns and components";
+	render() {
+		const title = "Dracula UI";
+		const description = "A dark-first collection of UI patterns and components";
 
-    return (
-      <div className={styles.wrapper}>
-        <Head>
-          <meta charSet="utf-8" />
-          <title>
-            {title} &mdash; {description}
-          </title>
-          <meta content={title} property="og:title" />
-          <meta content={description} name="description" />
-          <meta content={description} property="og:description" />
-          <meta content="https://draculatheme.com/ui" property="og:url" />
-          <meta
-            content="https://draculatheme.com/static/img/ui/og.jpg"
-            property="og:image"
-          />
-          <meta name="theme-color" content="#9580ff" />
+		return (
+			<div className={styles.wrapper}>
+				<Head>
+					<meta charSet="utf-8" />
+					<title>
+						{title} &mdash; {description}
+					</title>
+					<meta content={title} property="og:title" />
+					<meta content={description} name="description" />
+					<meta content={description} property="og:description" />
+					<meta content="https://draculatheme.com/ui" property="og:url" />
+					<meta
+						content="https://draculatheme.com/static/img/ui/og.jpg"
+						property="og:image"
+					/>
+					<meta name="theme-color" content="#9580ff" />
 
-          <link
-            rel="icon"
-            type="image/x-icon"
-            href="/static/img/ui/favicon.ico"
-          />
-        </Head>
+					<link rel="icon" type="image/x-icon" href="/static/img/ui/favicon.ico" />
+				</Head>
 
-        <Topbar ppp={this.state.ppp} />
-        <Discount ppp={this.state.ppp} suffix="UI" queryParams={{}} />
-        <Header />
-        <Tagline />
-        <Features />
-        <Highlights />
-        <Testimonial />
-        <Pricing ppp={this.state.ppp} queryParams={{}} />
-        <Faq />
-        <Newsletter />
-        <Authors />
-        <Footer />
-      </div>
-    );
-  }
+				<Topbar ppp={this.state.ppp} />
+				<Discount ppp={this.state.ppp} suffix="UI" queryParams={{}} />
+				<Header />
+				<Tagline />
+				<Features />
+				<Highlights />
+				<Testimonial />
+				<Pricing ppp={this.state.ppp} queryParams={{}} />
+				<Faq />
+				<Newsletter />
+				<Authors />
+				<Footer />
+			</div>
+		);
+	}
 }
 
 export default UI;

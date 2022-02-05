@@ -4,8 +4,8 @@ excerpt: "It's been 7 weeks since the launch of Dracula PRO and I've been sharin
 createdAt: "2020-04-07"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png"
 color: "orange"
 ---

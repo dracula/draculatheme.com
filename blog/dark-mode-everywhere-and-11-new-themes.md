@@ -4,8 +4,8 @@ excerpt: "I love dark mode and I've been experimenting with different setups lat
 createdAt: "2020-09-29"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png"
 color: "purple"
 ---

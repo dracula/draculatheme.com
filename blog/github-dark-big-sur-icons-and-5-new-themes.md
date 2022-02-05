@@ -4,8 +4,8 @@ excerpt: "Here it is... The moment we've all been waiting for - GitHub finally h
 createdAt: "2020-12-15"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png"
 color: "yellow"
 ---

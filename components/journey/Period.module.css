@@ -1,172 +1,172 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 90px 15px;
-  text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 90px 15px;
+	text-align: center;
 }
 
 .date {
-  color: #8d8f92;
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+	color: #8d8f92;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .red .sales,
 .red a,
 .red strong {
-  color: #ff9580;
+	color: #ff9580;
 }
 
 .red ::selection {
-  background: #ff9580;
-  color: #000;
+	background: #ff9580;
+	color: #000;
 }
 
 .orange .sales,
 .orange a,
 .orange strong {
-  color: #ffca80;
+	color: #ffca80;
 }
 
 .orange ::selection {
-  background: #ffca80;
-  color: #000;
+	background: #ffca80;
+	color: #000;
 }
 
 .purple .sales,
 .purple a,
 .purple strong {
-  color: #9580ff;
+	color: #9580ff;
 }
 
 .purple ::selection {
-  background: #9580ff;
-  color: #000;
+	background: #9580ff;
+	color: #000;
 }
 
 .pink .sales,
 .pink a,
 .pink strong {
-  color: #ff80bf;
+	color: #ff80bf;
 }
 
 .pink ::selection {
-  background: #ff80bf;
-  color: #000;
+	background: #ff80bf;
+	color: #000;
 }
 
 .yellow .sales,
 .yellow a,
 .yellow strong {
-  color: #ffff80;
+	color: #ffff80;
 }
 
 .yellow ::selection {
-  background: #ffff80;
-  color: #000;
+	background: #ffff80;
+	color: #000;
 }
 
 .green .sales,
 .green a,
 .green strong {
-  color: #8aff80;
+	color: #8aff80;
 }
 
 .green ::selection {
-  background: #8aff80;
-  color: #000;
+	background: #8aff80;
+	color: #000;
 }
 
 .cyan .sales,
 .cyan a,
 .cyan strong {
-  color: #92ffff;
+	color: #92ffff;
 }
 
 .cyan ::selection {
-  background: #92ffff;
-  color: #000;
+	background: #92ffff;
+	color: #000;
 }
 
 .lessons {
-  color: #8d8f92;
-  font-size: 18px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  text-align: center;
+	color: #8d8f92;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .tweets {
-  color: #8d8f92;
-  font-size: 18px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  margin-top: 90px;
-  text-align: center;
+	color: #8d8f92;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	margin-top: 90px;
+	text-align: center;
 }
 
 .title {
-  color: #f2f2f2;
-  font-size: 48px;
-  text-align: center;
-  font-family: "Fira Code", monospace;
+	color: #f2f2f2;
+	font-size: 48px;
+	text-align: center;
+	font-family: "Fira Code", monospace;
 }
 
 .sales {
-  background: #1d1e26;
-  display: inline-block;
-  font-size: 20px;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
+	background: #1d1e26;
+	display: inline-block;
+	font-size: 20px;
+	margin-top: 20px;
+	padding: 10px 20px;
+	border-radius: 8px;
 }
 
 .screenshot {
-  margin-top: 40px;
-  max-width: 100%;
-  border-radius: 8px;
+	margin-top: 40px;
+	max-width: 100%;
+	border-radius: 8px;
 }
 
 .emailContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .email {
-  color: #f2f2f2;
-  position: relative;
-  padding: 24px;
-  margin-bottom: 24px;
-  background: #1d1e26;
-  border-radius: 8px;
-  display: inline-block;
+	color: #f2f2f2;
+	position: relative;
+	padding: 24px;
+	margin-bottom: 24px;
+	background: #1d1e26;
+	border-radius: 8px;
+	display: inline-block;
 }
 
 .tweetList {
-  max-width: 1200px;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: auto;
-  column-count: 3;
-  margin: 48px auto 96px;
-  padding: 0 24px;
+	max-width: 1200px;
+	grid-auto-flow: row;
+	grid-auto-columns: 1fr;
+	grid-column-gap: 24px;
+	grid-row-gap: 24px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-rows: auto;
+	column-count: 3;
+	margin: 48px auto 96px;
+	padding: 0 24px;
 }
 
 @media (max-width: 960px) {
-  .tweetList {
-    column-count: 2;
-    padding: 0 15px;
-    grid-column-gap: 15px;
-  }
+	.tweetList {
+		column-count: 2;
+		padding: 0 15px;
+		grid-column-gap: 15px;
+	}
 }
 
 @media (max-width: 680px) {
-  .tweetList {
-    column-count: 1;
-  }
+	.tweetList {
+		column-count: 1;
+	}
 }

@@ -4,8 +4,8 @@ excerpt: "Last time we saw each other I was telling you all about this new book 
 createdAt: "2020-08-05"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/3-new-themes-and-better-code-screenshots-a.png"
 color: "purple"
 ---

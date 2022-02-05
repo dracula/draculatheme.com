@@ -1,179 +1,179 @@
 .features {
-  background-color: #22212c;
-  overflow: hidden;
+	background-color: #22212c;
+	overflow: hidden;
 }
 
 .container {
-  padding: 0 15px;
-  margin: 0 auto;
-  max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	max-width: 1200px;
 }
 
 .container .content:last-child {
-  margin: 0;
+	margin: 0;
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  margin-bottom: 200px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 200px;
 }
 
 .contentLeft,
 .contentRightInverted {
-  width: 380px;
-  flex-shrink: 0;
-  overflow: hidden;
-  justify-content: center;
-  align-content: center;
+	width: 380px;
+	flex-shrink: 0;
+	overflow: hidden;
+	justify-content: center;
+	align-content: center;
 }
 
 .contentRight,
 .contentLeftInverted {
-  margin-left: 108px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  display: flex;
-  flex-grow: 1;
+	margin-left: 108px;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	display: flex;
+	flex-grow: 1;
 }
 
 .contentLeftInverted {
-  margin-left: -288px;
-  margin-right: 108px;
-  align-items: flex-end;
+	margin-left: -288px;
+	margin-right: 108px;
+	align-items: flex-end;
 }
 
 .background,
 .backgroundSecond,
 .backgroundThird {
-  width: 1000px;
-  height: 640px;
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  max-width: 1100px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+	width: 1000px;
+	height: 640px;
+	border-radius: 24px;
+	overflow: hidden;
+	position: relative;
+	max-width: 1100px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 .background {
-  composes: drac-bg-purple-cyan from global;
+	composes: drac-bg-purple-cyan from global;
 }
 
 .backgroundSecond {
-  composes: drac-bg-cyan-green from global;
+	composes: drac-bg-cyan-green from global;
 }
 
 .backgroundThird {
-  composes: drac-bg-yellow-pink from global;
+	composes: drac-bg-yellow-pink from global;
 }
 
 .paragraph {
-  color: #8a8f98;
+	color: #8a8f98;
 }
 
 .paragraph,
 .highlight {
-  font-size: 22px;
+	font-size: 22px;
 }
 
 .image {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 @media (max-width: 1200px) {
-  .contentLeftInverted {
-    margin-left: -500px;
-  }
+	.contentLeftInverted {
+		margin-left: -500px;
+	}
 }
 
 @media (max-width: 1024px) {
-  .content {
-    margin-bottom: 40px;
-    flex-direction: column;
-  }
+	.content {
+		margin-bottom: 40px;
+		flex-direction: column;
+	}
 
-  .container {
-    max-width: 512px;
-  }
+	.container {
+		max-width: 512px;
+	}
 
-  .contentLeft,
-  .contentRightInverted {
-    float: none;
-    max-width: 100%;
-    width: auto;
-  }
+	.contentLeft,
+	.contentRightInverted {
+		float: none;
+		max-width: 100%;
+		width: auto;
+	}
 
-  .contentRight,
-  .contentLeftInverted {
-    float: none;
-    max-width: 100%;
-    margin-left: 0;
-  }
+	.contentRight,
+	.contentLeftInverted {
+		float: none;
+		max-width: 100%;
+		margin-left: 0;
+	}
 
-  .background,
-  .backgroundSecond,
-  .backgroundThird {
-    display: none;
-  }
+	.background,
+	.backgroundSecond,
+	.backgroundThird {
+		display: none;
+	}
 }
 
 .icon {
-  width: 36px;
+	width: 36px;
 }
 
 .primaryFirst {
-  fill: var(--purpleSecondary);
+	fill: var(--purpleSecondary);
 }
 
 .secondaryFirst {
-  fill: var(--purple);
+	fill: var(--purple);
 }
 
 .iconContainerFirst {
-  background: var(--purple-transparent);
+	background: var(--purple-transparent);
 }
 
 .primarySecond {
-  fill: var(--greenSecondary);
+	fill: var(--greenSecondary);
 }
 
 .secondarySecond {
-  fill: var(--green);
+	fill: var(--green);
 }
 
 .iconContainerSecond {
-  background: var(--green-transparent);
+	background: var(--green-transparent);
 }
 
 .primaryThird {
-  fill: var(--red);
+	fill: var(--red);
 }
 
 .secondaryThird {
-  fill: #22212c;
+	fill: #22212c;
 }
 
 .iconContainerThird {
-  background: var(--red-transparent);
+	background: var(--red-transparent);
 }
 
 .iconContainerFirst,
 .iconContainerSecond,
 .iconContainerThird {
-  width: 56px;
-  height: 56px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+	width: 56px;
+	height: 56px;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 
 @media (max-width: 960px) {
-  .container {
-    padding: 30px 15px;
-  }
+	.container {
+		padding: 30px 15px;
+	}
 }

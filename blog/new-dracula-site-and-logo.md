@@ -4,8 +4,8 @@ excerpt: "The Dracula site and logo were the same since 2013. I've always wanted
 createdAt: "2020-03-24"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/new-dracula-site-and-logo-b.jpg"
 color: "pink"
 ---

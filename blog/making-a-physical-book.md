@@ -4,8 +4,8 @@ excerpt: "I can't believe this is real... My book is now available in hardcover.
 createdAt: "2021-03-24"
 updatedAt: "2021-03-24"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/making-a-physical-book-a.jpg"
 color: "yellow"
 ---

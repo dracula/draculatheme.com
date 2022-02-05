@@ -4,8 +4,8 @@ excerpt: "Most templates are built using light colors and later on adapted to da
 createdAt: "2020-09-03"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "yellow"
 ---
 

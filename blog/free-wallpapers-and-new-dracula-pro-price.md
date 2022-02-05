@@ -4,8 +4,8 @@ excerpt: "On February 11th, Dracula PRO was being launched. Today, exactly six m
 createdAt: "2020-08-11"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "pink"
 ---
 

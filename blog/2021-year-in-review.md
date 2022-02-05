@@ -4,8 +4,8 @@ excerpt: "Transparency is a major value for me, so I thought it would be a good 
 createdAt: "2022-01-03"
 updatedAt: "2022-01-03"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "orange"
 ---
 

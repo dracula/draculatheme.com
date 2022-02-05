@@ -4,8 +4,8 @@ excerpt: "If you have been following me on Twitter, I'm sharing some lessons lea
 createdAt: "2020-02-19"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/7128-dollars-in-sales-in-7-days-a.png"
 color: "green"
 ---

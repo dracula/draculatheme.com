@@ -1,9 +1,9 @@
 .wrapper {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .purple {
-  color: #9580ff;
+	color: #9580ff;
 }

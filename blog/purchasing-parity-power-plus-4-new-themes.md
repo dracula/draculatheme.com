@@ -4,8 +4,8 @@ excerpt: "I'm super happy to announce Purchasing Parity Power on Dracula PRO! Wh
 createdAt: "2021-01-14"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/purchasing-parity-power-plus-4-new-themes-a.png"
 color: "green"
 ---

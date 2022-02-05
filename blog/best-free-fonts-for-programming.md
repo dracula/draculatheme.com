@@ -4,8 +4,8 @@ excerpt: "We spend the entire day using code editors, terminal emulators, and ot
 createdAt: "2021-02-10"
 updatedAt: "2021-02-10"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/best-free-fonts-for-programming-a.png"
 color: "purple"
 ---

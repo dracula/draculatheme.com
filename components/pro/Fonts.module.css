@@ -1,84 +1,84 @@
 .fonts {
-  background: #24202e;
+	background: #24202e;
 }
 
 .fonts ::selection {
-  background: #9580ff;
-  color: #000;
+	background: #9580ff;
+	color: #000;
 }
 
 .container {
-  display: table;
-  padding: 100px 15px;
-  margin: auto;
-  max-width: 72em;
+	display: table;
+	padding: 100px 15px;
+	margin: auto;
+	max-width: 72em;
 }
 
 .contentLeft {
-  float: left;
-  max-width: 50em;
-  width: 40%;
+	float: left;
+	max-width: 50em;
+	width: 40%;
 }
 
 .contentRight {
-  float: right;
-  margin: 0 auto;
-  max-width: 50%;
+	float: right;
+	margin: 0 auto;
+	max-width: 50%;
 }
 
 .video {
-  display: block;
-  margin: 210px auto 0;
-  max-width: 100%;
+	display: block;
+	margin: 210px auto 0;
+	max-width: 100%;
 }
 
 .title {
-  color: #9580ff;
-  font-size: 48px;
-  font-weight: 700;
-  margin: 10px 0 30px;
+	color: #9580ff;
+	font-size: 48px;
+	font-weight: 700;
+	margin: 10px 0 30px;
 }
 
 .body {
-  color: #f2f2f2;
-  font-size: 18px;
-  margin-bottom: 20px;
+	color: #f2f2f2;
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 .highlight {
-  color: #9580ff;
+	color: #9580ff;
 }
 
 .cta {
-  transition: all 0.3s ease-in-out;
-  margin: 0 20px 20px 0;
-  display: inline-block;
-  background: #9580ff;
-  text-align: center;
-  color: #2a2c37;
-  padding: 8px 16px;
-  font-size: 16px;
+	transition: all 0.3s ease-in-out;
+	margin: 0 20px 20px 0;
+	display: inline-block;
+	background: #9580ff;
+	text-align: center;
+	color: #2a2c37;
+	padding: 8px 16px;
+	font-size: 16px;
 }
 
 .cta:hover,
 .cta:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #9580ff;
-  transform: translateY(-0.25em);
+	box-shadow: 0 0.5em 0.5em -0.4em #9580ff;
+	transform: translateY(-0.25em);
 }
 
 @media (max-width: 768px) {
-  .contentLeft {
-    float: none;
-    max-width: 100%;
-    width: auto;
-  }
+	.contentLeft {
+		float: none;
+		max-width: 100%;
+		width: auto;
+	}
 
-  .video {
-    margin: 0 0 60px;
-  }
+	.video {
+		margin: 0 0 60px;
+	}
 
-  .contentRight {
-    float: none;
-    max-width: 100%;
-  }
+	.contentRight {
+		float: none;
+		max-width: 100%;
+	}
 }

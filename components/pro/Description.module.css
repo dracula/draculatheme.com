@@ -1,83 +1,83 @@
 .description {
-  background: #1d1e26;
+	background: #1d1e26;
 }
 
 .container {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 60px 15px 90px;
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 60px 15px 90px;
 }
 
 .container::before {
-  content: "{";
-  float: left;
-  color: #50fa7b;
-  font-size: 68px;
-  margin-right: 10px;
-  display: block;
+	content: "{";
+	float: left;
+	color: #50fa7b;
+	font-size: 68px;
+	margin-right: 10px;
+	display: block;
 }
 
 .body {
-  color: #f2f2f2;
-  font-size: 21px;
-  margin: 0;
+	color: #f2f2f2;
+	font-size: 21px;
+	margin: 0;
 }
 
 .highlight {
-  color: #50fa7b;
+	color: #50fa7b;
 }
 
 .used {
-  color: #8d8f92;
-  font-size: 16px;
-  margin: 0;
-  text-align: center;
+	color: #8d8f92;
+	font-size: 16px;
+	margin: 0;
+	text-align: center;
 }
 
 .companies {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 30px 15px;
-  list-style: none;
-  text-align: center;
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 30px 15px;
+	list-style: none;
+	text-align: center;
 }
 
 .company {
-  display: inline-block;
-  margin-right: 40px;
-  vertical-align: top;
-  margin-bottom: 30px;
+	display: inline-block;
+	margin-right: 40px;
+	vertical-align: top;
+	margin-bottom: 30px;
 }
 
 .company:last-child {
-  margin: 0;
+	margin: 0;
 }
 
 .company svg {
-  fill: #8d8f92;
-  transition: fill 0.3s ease-in-out;
+	fill: #8d8f92;
+	transition: fill 0.3s ease-in-out;
 }
 
 .company svg:hover {
-  fill: #50fa7b;
+	fill: #50fa7b;
 }
 
 @media (max-width: 1040px) {
-  .container::before {
-    display: none;
-  }
+	.container::before {
+		display: none;
+	}
 
-  .body {
-    margin-bottom: 30px;
-  }
+	.body {
+		margin-bottom: 30px;
+	}
 
-  .body:last-child {
-    margin: 0;
-  }
+	.body:last-child {
+		margin: 0;
+	}
 }
 
 @media (max-width: 768px) {
-  .body {
-    font-size: 20px;
-  }
+	.body {
+		font-size: 20px;
+	}
 }

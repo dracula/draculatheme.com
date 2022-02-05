@@ -4,8 +4,8 @@ excerpt: "Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C? I'm trying t
 createdAt: "2020-08-18"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/6-new-themes-and-20-desktop-icons-a.png"
 color: "orange"
 ---

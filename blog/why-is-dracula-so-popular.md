@@ -4,8 +4,8 @@ excerpt: "Two weeks ago, Dracula showed up on the front page of Hacker News. The
 createdAt: "2021-12-23"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "pink"
 ---
 

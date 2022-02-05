@@ -1,95 +1,95 @@
 .tweet {
-  color: #f2f2f2;
-  position: relative;
-  padding: 24px;
-  margin-bottom: 24px;
-  background: #1d1e26;
-  border-radius: 8px;
-  display: inline-block;
-  width: calc(100% - 48px);
+	color: #f2f2f2;
+	position: relative;
+	padding: 24px;
+	margin-bottom: 24px;
+	background: #1d1e26;
+	border-radius: 8px;
+	display: inline-block;
+	width: calc(100% - 48px);
 }
 
 .tweet:hover {
-  background: #14151b;
+	background: #14151b;
 }
 
 .tweet strong {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .tweet:hover .logoContainer,
 .tweet:hover .icons,
 .tweet:hover .data {
-  color: inherit;
+	color: inherit;
 }
 
 .logoContainer {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  color: #3c424a;
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	color: #3c424a;
 }
 
 .logoLink {
-  transition: all 0.3s ease-in-out;
-  color: inherit;
+	transition: all 0.3s ease-in-out;
+	color: inherit;
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
-  margin-right: 12px;
-  border-radius: 100%;
+	width: 48px;
+	height: 48px;
+	margin-right: 12px;
+	border-radius: 100%;
 }
 
 .author {
-  display: flex;
-  margin-bottom: 10px;
+	display: flex;
+	margin-bottom: 10px;
 }
 
 .name {
-  display: block;
-  font-weight: 700;
-  color: #f2f2f2;
+	display: block;
+	font-weight: 700;
+	color: #f2f2f2;
 }
 
 .handle {
-  display: block;
-  font-size: 0.875rem;
-  color: #767e87;
+	display: block;
+	font-size: 0.875rem;
+	color: #767e87;
 }
 
 .text {
-  white-space: pre-line;
-  color: #f2f2f2;
+	white-space: pre-line;
+	color: #f2f2f2;
 }
 
 .image {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+	max-width: 100%;
+	border-radius: 8px;
+	margin-top: 10px;
 }
 
 .timestamp {
-  color: #767e87;
-  font-size: 0.875rem;
-  margin: 15px 0;
+	color: #767e87;
+	font-size: 0.875rem;
+	margin: 15px 0;
 }
 
 .metadata {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #2a2c37;
-  padding: 15px 0 0;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #2a2c37;
+	padding: 15px 0 0;
 }
 
 .icons {
-  margin-right: 10px;
-  transition: all 0.3s ease-in-out;
-  color: #767e87;
+	margin-right: 10px;
+	transition: all 0.3s ease-in-out;
+	color: #767e87;
 }
 
 .data {
-  transition: all 0.3s ease-in-out;
-  color: #767e87;
+	transition: all 0.3s ease-in-out;
+	color: #767e87;
 }

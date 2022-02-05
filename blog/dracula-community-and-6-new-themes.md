@@ -4,8 +4,8 @@ excerpt: "After dozens of responses, it's clear that Discord is where the cool k
 createdAt: "2021-07-20"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "pink"
 ---
 

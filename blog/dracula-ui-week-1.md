@@ -4,8 +4,8 @@ excerpt: "Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building
 createdAt: "2020-09-10"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-ui-week-1-a.png"
 color: "green"
 ---

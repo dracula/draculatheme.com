@@ -1,74 +1,74 @@
 .ebook {
-  background: #2c2a21;
+	background: #2c2a21;
 }
 
 .ebook ::selection {
-  background: #ffff80;
-  color: #000;
+	background: #ffff80;
+	color: #000;
 }
 
 .container {
-  display: table;
-  padding: 100px 15px;
-  margin: auto;
-  max-width: 72em;
+	display: table;
+	padding: 100px 15px;
+	margin: auto;
+	max-width: 72em;
 }
 
 .contentLeft {
-  float: left;
-  max-width: 50em;
-  width: 40%;
+	float: left;
+	max-width: 50em;
+	width: 40%;
 }
 
 .contentRight {
-  float: right;
-  margin: 0 auto;
-  max-width: 50%;
+	float: right;
+	margin: 0 auto;
+	max-width: 50%;
 }
 
 .title {
-  color: #ffff80;
-  font-size: 48px;
-  font-weight: 700;
-  margin: 10px 0 30px;
+	color: #ffff80;
+	font-size: 48px;
+	font-weight: 700;
+	margin: 10px 0 30px;
 }
 
 .body {
-  color: #f2f2f2;
-  font-size: 18px;
-  margin-bottom: 20px;
+	color: #f2f2f2;
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 .highlight {
-  color: #ffff80;
+	color: #ffff80;
 }
 
 .cta {
-  transition: all 0.3s ease-in-out;
-  margin-right: 20px;
-  display: inline-block;
-  background: #ffff80;
-  text-align: center;
-  color: #2a2c37;
-  padding: 8px 16px;
-  font-size: 16px;
+	transition: all 0.3s ease-in-out;
+	margin-right: 20px;
+	display: inline-block;
+	background: #ffff80;
+	text-align: center;
+	color: #2a2c37;
+	padding: 8px 16px;
+	font-size: 16px;
 }
 
 .cta:hover,
 .cta:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #ffff80;
-  transform: translateY(-0.25em);
+	box-shadow: 0 0.5em 0.5em -0.4em #ffff80;
+	transform: translateY(-0.25em);
 }
 
 @media (max-width: 768px) {
-  .contentLeft {
-    float: none;
-    max-width: 100%;
-    width: auto;
-  }
+	.contentLeft {
+		float: none;
+		max-width: 100%;
+		width: auto;
+	}
 
-  .contentRight {
-    float: none;
-    max-width: 100%;
-  }
+	.contentRight {
+		float: none;
+		max-width: 100%;
+	}
 }

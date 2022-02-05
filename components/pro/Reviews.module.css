@@ -1,185 +1,185 @@
 .reviews {
-  background: #1d1e26;
+	background: #1d1e26;
 }
 
 .container {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 60px 15px;
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 60px 15px;
 }
 
 /* Summary */
 
 .summaryContainer {
-  margin: 40px 0;
-  text-align: center;
+	margin: 40px 0;
+	text-align: center;
 }
 
 .summary {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .avgRating {
-  font-size: 76px;
-  font-weight: 900;
-  letter-spacing: -10px;
-  margin: 0 0 0 -10px;
+	font-size: 76px;
+	font-weight: 900;
+	letter-spacing: -10px;
+	margin: 0 0 0 -10px;
 }
 
 .avgRatingStar {
-  width: 32px;
+	width: 32px;
 }
 
 .progressBars {
-  margin: 0 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	margin: 0 30px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .progressBarContainer {
-  width: 230px;
-  background: #2a2c37;
-  height: 25px;
-  margin-bottom: 10px;
+	width: 230px;
+	background: #2a2c37;
+	height: 25px;
+	margin-bottom: 10px;
 }
 
 .progressBarContent {
-  width: 0%;
-  background: #50fa7b;
-  height: 25px;
+	width: 0%;
+	background: #50fa7b;
+	height: 25px;
 }
 
 .percentRating {
-  display: flex;
+	display: flex;
 }
 
 .percent {
-  font-size: 24px;
-  position: relative;
-  top: 2px;
-  margin-left: 5px;
+	font-size: 24px;
+	position: relative;
+	top: 2px;
+	margin-left: 5px;
 }
 
 .leaveReview {
-  transition: all 0.3s linear;
-  color: rgba(255, 202, 128, 1);
-  border-bottom: 1px solid rgba(255, 202, 128, 1);
-  margin-top: 20px;
-  display: inline-block;
+	transition: all 0.3s linear;
+	color: rgba(255, 202, 128, 1);
+	border-bottom: 1px solid rgba(255, 202, 128, 1);
+	margin-top: 20px;
+	display: inline-block;
 }
 
 .leaveReview:hover,
 .leaveReview:focus {
-  color: rgba(255, 202, 128, 0.7);
-  border-bottom: 1px solid rgba(255, 202, 128, 0.7);
+	color: rgba(255, 202, 128, 0.7);
+	border-bottom: 1px solid rgba(255, 202, 128, 0.7);
 }
 
 @media (max-width: 768px) {
-  .summary {
-    flex-direction: column;
-  }
+	.summary {
+		flex-direction: column;
+	}
 
-  .progressBars,
-  .percentageRatings {
-    display: none;
-  }
+	.progressBars,
+	.percentageRatings {
+		display: none;
+	}
 }
 
 /* Review */
 
 .review {
-  display: flex;
-  padding-top: 60px;
+	display: flex;
+	padding-top: 60px;
 }
 
 .review:hover .anchor {
-  visibility: visible;
+	visibility: visible;
 }
 
 .avatarContainer {
-  display: flex;
+	display: flex;
 }
 
 .anchor {
-  color: #f2f2f2;
-  font-family: "Abril Text";
-  font-size: 36px;
-  line-height: 36px;
-  margin-right: 10px;
-  visibility: hidden;
+	color: #f2f2f2;
+	font-family: "Abril Text";
+	font-size: 36px;
+	line-height: 36px;
+	margin-right: 10px;
+	visibility: hidden;
 }
 
 .anchorIcon {
-  fill: #f2f2f2;
-  margin-top: 24px;
+	fill: #f2f2f2;
+	margin-top: 24px;
 }
 
 .avatar {
-  border-radius: 100%;
-  margin-right: 30px;
-  height: 70px;
-  width: 70px;
+	border-radius: 100%;
+	margin-right: 30px;
+	height: 70px;
+	width: 70px;
 }
 
 .country {
-  max-width: 25px;
-  border-radius: 5px;
-  margin-left: 10px;
-  position: relative;
-  top: 2px;
+	max-width: 25px;
+	border-radius: 5px;
+	margin-left: 10px;
+	position: relative;
+	top: 2px;
 }
 
 .name {
-  font-size: 24px;
-  font-weight: 600;
+	font-size: 24px;
+	font-weight: 600;
 }
 
 .date {
-  color: rgba(255, 255, 255, 0.5);
-  margin: 5px 0 10px;
+	color: rgba(255, 255, 255, 0.5);
+	margin: 5px 0 10px;
 }
 
 .body {
-  color: #f2f2f2;
-  font-size: 18px;
-  margin: 0;
+	color: #f2f2f2;
+	font-size: 18px;
+	margin: 0;
 }
 
 .body em {
-  color: rgba(255, 202, 128, 1);
-  font-style: normal;
+	color: rgba(255, 202, 128, 1);
+	font-style: normal;
 }
 
 /* Cta */
 
 .ctaContainer {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .cta {
-  transition: all 0.3s ease-in-out;
-  margin-top: 60px;
-  margin-right: 20px;
-  display: inline-block;
-  cursor: pointer;
-  background: #ffca80;
-  text-align: center;
-  color: #2a2c37;
-  padding: 8px 16px;
-  font-size: 16px;
+	transition: all 0.3s ease-in-out;
+	margin-top: 60px;
+	margin-right: 20px;
+	display: inline-block;
+	cursor: pointer;
+	background: #ffca80;
+	text-align: center;
+	color: #2a2c37;
+	padding: 8px 16px;
+	font-size: 16px;
 }
 
 .cta:hover,
 .cta:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #ffca80;
-  transform: translateY(-0.25em);
+	box-shadow: 0 0.5em 0.5em -0.4em #ffca80;
+	transform: translateY(-0.25em);
 }

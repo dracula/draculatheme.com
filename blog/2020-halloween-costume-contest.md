@@ -4,8 +4,8 @@ excerpt: "Halloween is almost here and this year I want to do something differen
 createdAt: "2020-10-28"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/2020-halloween-costume-contest-a.png"
 color: "pink"
 ---

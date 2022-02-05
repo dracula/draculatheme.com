@@ -4,8 +4,8 @@ excerpt: "It's been a crazy couple of weeks. I have to admit I'm a little bit ov
 createdAt: "2020-03-19"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/podcast-about-dracula-and-better-windows-support-a.png"
 color: "purple"
 ---

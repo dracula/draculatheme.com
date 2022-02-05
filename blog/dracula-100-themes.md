@@ -4,8 +4,8 @@ excerpt: "Today is a special day. We have hit 100 themes on Dracula! When I star
 createdAt: "2020-05-04"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-100-themes-a.png"
 color: "green"
 ---

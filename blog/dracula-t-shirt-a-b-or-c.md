@@ -4,8 +4,8 @@ excerpt: "I'm starting to play around with the idea of having Dracula merch! Now
 createdAt: "2022-01-06"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "yellow"
 ---
 

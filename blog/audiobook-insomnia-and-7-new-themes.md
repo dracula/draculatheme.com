@@ -4,8 +4,8 @@ excerpt: "The last two weeks have been really busy. I decided to create this pag
 createdAt: "2021-03-10"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "orange"
 ---
 

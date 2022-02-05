@@ -12,18 +12,18 @@ Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 const Noop = ({ children }) => children;
 
 export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    const Layout = Component.Layout || Noop;
+	render() {
+		const { Component, pageProps } = this.props;
+		const Layout = Component.Layout || Noop;
 
-    // if (process.env.NODE_ENV === 'production') {
-    //   console.log(easterEgg, "font-family:monospace");
-    // }
+		// if (process.env.NODE_ENV === 'production') {
+		//   console.log(easterEgg, "font-family:monospace");
+		// }
 
-    return (
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    );
-  }
+		return (
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		);
+	}
 }

@@ -4,8 +4,8 @@ excerpt: "I have some exciting news to share! Dracula PRO will be launched in 3 
 createdAt: "2020-02-08"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/a-quick-spoiler-a.jpg"
 color: "orange"
 ---

@@ -4,8 +4,8 @@ excerpt: "2021 is here and its first month is almost over. Still, I decided to t
 createdAt: "2021-01-28"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png"
 color: "cyan"
 ---

@@ -4,8 +4,8 @@ excerpt: "The wait is over... Dracula PRO is live! This is a very special moment
 createdAt: "2020-02-11"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-pro-is-here-a.jpg"
 color: "yellow"
 ---

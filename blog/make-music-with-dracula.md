@@ -4,8 +4,8 @@ excerpt: "I'm getting ready for a big announcement next week, but before we talk
 createdAt: "2020-05-21"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/make-music-with-dracula-a.png"
 color: "cyan"
 ---
