@@ -445,6 +445,11 @@ a {
   margin-bottom: 20px;
 }
 
+.featured-word {
+  font-weight: 600;
+  color: rgba(189, 147, 249, 1);
+}
+
 .orange .title,
 .orange .subtitle a,
 .orange .theme a,

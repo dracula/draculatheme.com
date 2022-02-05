@@ -10,12 +10,12 @@ export default async (req, res) => {
     const { stats } = await mailchimp.lists.getList("05d188e2db");
 
     return res.status(200).json({
-      total: stats.member_count + stats.unsubscribe_count
+      total: stats.member_count + stats.unsubscribe_count,
     });
   } catch (error) {
     return res.status(error.status).json({
       total: 0,
-      error: JSON.parse(error.response.text).title
+      error: JSON.parse(error.response.text).title,
     });
   }
 };
