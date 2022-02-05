@@ -6,6 +6,7 @@ import Theme from '../layouts/Theme';
 import ProCta from '../components/ProCta';
 import paths from '../lib/paths';
 import styles from './index.module.css';
+import PlatformToggle from '../components/PlatformToggle';
 
 export async function getStaticProps() {
   const query = { title: 'Dracula', color: 'purple', icon: 'used/pack-1/045-dracula.svg' }
@@ -167,12 +168,7 @@ class Index extends React.Component {
             </div>
 
             <div className={styles.group}>
-              <div className={styles.buttonGroup}>
-                <button className={this.state.filter === 'all' ? styles.buttonSelected : styles.button} onClick={this.onFilter.bind(this, 'all')}>All</button>
-                <button className={this.state.filter === 'linux' ? styles.buttonSelected : styles.button} onClick={this.onFilter.bind(this, 'linux')}>Linux</button>
-                <button className={this.state.filter === 'mac' ? styles.buttonSelected : styles.button} onClick={this.onFilter.bind(this, 'mac')}>Mac</button>
-                <button className={this.state.filter === 'windows' ? styles.buttonSelected : styles.button} onClick={this.onFilter.bind(this, 'windows')}>Windows</button>
-              </div>
+              <PlatformToggle onFilter={this.onFilter.bind(this)} />
             </div>
           </div>
           <div ref={this.element} className={styles.results}>
