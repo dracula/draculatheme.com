@@ -4,8 +4,8 @@ excerpt: "I'm getting ready for a big announcement next week, but before we talk
 createdAt: "2020-05-21"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/make-music-with-dracula-a.png"
 color: "cyan"
 ---
@@ -16,9 +16,9 @@ I'm getting ready for a big announcement next week, but before we talk about tha
 
 The list of themes just keeps growing and growing. We just reached 106 themes created by the community. What is surprising is to see not only developers but DJs and producers using Dracula to create music.
 
-* [Spacemacs](/spacemacs): a community-driven Emacs distribution
-* [Total Commander](/total-commander): a file manager replacement for Windows
-* [Ableton Live](/ableton-live): a digital audio workstation for macOS and Windows
+- [Spacemacs](/spacemacs): a community-driven Emacs distribution
+- [Total Commander](/total-commander): a file manager replacement for Windows
+- [Ableton Live](/ableton-live): a digital audio workstation for macOS and Windows
 
 [![Dracula for Ableton Live](/static/img/blog/make-music-with-dracula-a.png)](/ableton-live)
 

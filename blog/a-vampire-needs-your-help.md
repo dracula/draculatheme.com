@@ -4,8 +4,8 @@ excerpt: "For the past few weeks, I've been working non-stop to make sure that D
 createdAt: "2020-01-23"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "pink"
 ---
 

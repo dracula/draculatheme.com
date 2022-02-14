@@ -4,8 +4,8 @@ excerpt: "The wait is over... Dracula PRO is live! This is a very special moment
 createdAt: "2020-02-11"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-pro-is-here-a.jpg"
 color: "yellow"
 ---
@@ -17,14 +17,14 @@ This is a very special moment for me. It's been almost 7 years since I launched 
 The original colors created in 2013 were based on personal taste. This new PRO version brings a more refined and mathematical approach that **normalizes lightness and saturation**.
 
 ![Color Palette Comparison](/static/img/blog/dracula-pro-is-here-a.jpg)
-*Color Palette Comparison*
+_Color Palette Comparison_
 
 Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, Xcode, and ZSH.
 
 Plus, 4 hand-picked fonts with ligatures and a screencast with my personal productivity tips.
 
 ![Bonus Screencast](/static/img/blog/dracula-pro-is-here-b.jpg)
-*Bonus Screencast*
+_Bonus Screencast_
 
 On top of that, I'm also working on an e-book about the habits of highly productive developers, which will be released in Q2 2020.
 

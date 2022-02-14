@@ -14,16 +14,16 @@
   justify-content: center;
 }
 
-.bodyForm input[type="email"] {
+.bodyForm input[type='email'] {
   background: #14141b;
   color: var(--yellow);
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
   font-size: 18px;
 }
 
-.bodyForm input[type="submit"] {
+.bodyForm input[type='submit'] {
   background: var(--yellow-pink);
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
   font-size: 18px;
 }
 

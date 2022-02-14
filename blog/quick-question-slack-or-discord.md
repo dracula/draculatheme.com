@@ -4,8 +4,8 @@ excerpt: "I've been thinking about creating a Dracula Community for a long time.
 createdAt: "2021-06-02"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "purple"
 ---
 

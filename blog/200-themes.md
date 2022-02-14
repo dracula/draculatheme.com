@@ -4,8 +4,8 @@ excerpt: "When I started this project 8 years ago, I never thought it could beco
 createdAt: "2021-09-02"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "orange"
 ---
 

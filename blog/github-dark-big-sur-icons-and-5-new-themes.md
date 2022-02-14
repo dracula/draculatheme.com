@@ -4,8 +4,8 @@ excerpt: "Here it is... The moment we've all been waiting for - GitHub finally h
 createdAt: "2020-12-15"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png"
 color: "yellow"
 ---
@@ -18,11 +18,11 @@ Here it is... The moment we've all been waiting for - GitHub finally has a Dark 
 
 This week 5 new themes have joined the Dracula clan!
 
-* [Arduino Pro](/arduino-pro-ide): New **IDE** for more advanced developers
-* [Albert](/albert): A desktop agnostic **launcher** written in C++
-* [KiCad](/kicad): Cross-platform **electronics** design automation suite
-* [Linear](/linear): The **issue tracking** tool you'll enjoy using
-* [Standard Notes](/standard-notes): A simple and **private notes** app
+- [Arduino Pro](/arduino-pro-ide): New **IDE** for more advanced developers
+- [Albert](/albert): A desktop agnostic **launcher** written in C++
+- [KiCad](/kicad): Cross-platform **electronics** design automation suite
+- [Linear](/linear): The **issue tracking** tool you'll enjoy using
+- [Standard Notes](/standard-notes): A simple and **private notes** app
 
 [![Google Analytics in 2020](/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-b.png)](/standard-notes)
 

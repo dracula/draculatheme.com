@@ -14,33 +14,33 @@ We use [Next.js](https://nextjs.org/), a React framework that does static export
 
 2. Now clone this repository:
 
-    ```sh
-    $ git clone https://github.com/dracula/draculatheme.com.git
-    ```
+   ```sh
+   $ git clone https://github.com/dracula/draculatheme.com.git
+   ```
 
 3. Then go to the project's folder:
 
-    ```sh
-    $ cd draculatheme.com
-    ```
+   ```sh
+   $ cd draculatheme.com
+   ```
 
 4. Install all dependencies:
 
-    ```sh
-    $ npm install
-    ```
+   ```sh
+   $ npm install
+   ```
 
 5. Generate a [GitHub Personal Access Token](https://help.github.com/en/enterprise/2.17/user/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) with `repo` permissions and create a `.env` file containing this variable.
 
-    ```sh
-    GITHUB_PERSONAL_ACCESS_TOKEN=cdf5fa84cc07c2ea66fae8f2140118c9e9fa4f55
-    ```
+   ```sh
+   GITHUB_PERSONAL_ACCESS_TOKEN=cdf5fa84cc07c2ea66fae8f2140118c9e9fa4f55
+   ```
 
 6. And finally run:
 
-    ```sh
-    $ npm run dev
-    ```
+   ```sh
+   $ npm run dev
+   ```
 
 Now you can see the website running in `localhost:3000` :D
 

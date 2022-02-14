@@ -4,8 +4,8 @@ excerpt: "In 2013, I decided to create a theme. At that time there were hundreds
 createdAt: "2020-01-06"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "green"
 ---
 

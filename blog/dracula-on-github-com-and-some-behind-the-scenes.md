@@ -4,8 +4,8 @@ excerpt: "I got a LOT of responses about doing Dracula merch, so I started order
 createdAt: "2022-01-13"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "green"
 ---
 

@@ -4,8 +4,8 @@ excerpt: "I can't believe this is real... My book is now available in hardcover.
 createdAt: "2021-03-24"
 updatedAt: "2021-03-24"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/making-a-physical-book-a.jpg"
 color: "yellow"
 ---
@@ -13,8 +13,9 @@ color: "yellow"
 I can't believe this is real...
 
 My book is now available in hardcover 🎉🎉🎉
-* [English Edition](https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531)
-* [Portuguese Edition](https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X)
+
+- [English Edition](https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531)
+- [Portuguese Edition](https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X)
 
 ![Zeno holding the physical book](/static/img/blog/making-a-physical-book-a.jpg)
 
@@ -36,7 +37,7 @@ I didn't want to order hundreds of copies and have them stored at my home. That'
 
 Designing a book is crazy because you have to make all these decisions like paperback vs. hardcover, white vs. creme paper, gloss vs. matte cover.
 
-In the end, I chose hardcover since it's more durable and has a premium touch. I also chose creme paper since it's easier on the eyes. Once all those decisions were made, I pressed *Submit* and waited a couple of weeks for the book to be produced.
+In the end, I chose hardcover since it's more durable and has a premium touch. I also chose creme paper since it's easier on the eyes. Once all those decisions were made, I pressed _Submit_ and waited a couple of weeks for the book to be produced.
 
 ![Book interior](/static/img/blog/making-a-physical-book-d.jpg)
 
@@ -47,7 +48,8 @@ It's so amazing to see the words you wrote on real paper. To be honest, I never 
 I hope you enjoy this and thanks for all your support so far.
 
 Grab your physical copy today or send it as a gift to a friend!
-* [English Edition](https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531)
-* [Portuguese Edition](https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X)
+
+- [English Edition](https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531)
+- [Portuguese Edition](https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X)
 
 Happy reading!

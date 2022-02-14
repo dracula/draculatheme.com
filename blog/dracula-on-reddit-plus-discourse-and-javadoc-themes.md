@@ -4,8 +4,8 @@ excerpt: "It's been 7 weeks since the launch of Dracula PRO and I've been sharin
 createdAt: "2020-04-07"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png"
 color: "orange"
 ---
@@ -18,11 +18,11 @@ Here's the post: [$17,876.38 in 7 weeks](https://www.reddit.com/r/Entrepreneur/c
 
 We just hit 97 open source themes on Dracula! Check out the new ones:
 
-* [bspwm](/bspwm), a window manager for Linux
-* [Discourse](/discourse), an online forum platform
-* [Javadoc](/javadoc), a documentation tool for Java
-* [Kakoune](/kakoune), a code editor based on Vi's model
-* [Tabletop Simulator](/tabletop-simulator), a video game platform
+- [bspwm](/bspwm), a window manager for Linux
+- [Discourse](/discourse), an online forum platform
+- [Javadoc](/javadoc), a documentation tool for Java
+- [Kakoune](/kakoune), a code editor based on Vi's model
+- [Tabletop Simulator](/tabletop-simulator), a video game platform
 
 [![Dracula for bspwm](/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png)](/bspwm)
 

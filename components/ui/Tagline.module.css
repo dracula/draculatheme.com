@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 .supportedItem {

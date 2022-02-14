@@ -22,7 +22,7 @@
   font-size: 20px;
   line-height: 28px;
   text-align: center;
-  font-family: "Fira Code";
+  font-family: 'Fira Code';
   margin: 30px 40px;
   position: relative;
 }
@@ -38,13 +38,13 @@
 }
 
 .body::before {
-  content: "“";
+  content: '“';
   left: -20px;
   transform: translateX(-100%);
 }
 
 .body::after {
-  content: "”";
+  content: '”';
   right: -20px;
   transform: translateX(100%);
 }

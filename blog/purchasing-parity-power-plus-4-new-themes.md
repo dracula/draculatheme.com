@@ -4,13 +4,13 @@ excerpt: "I'm super happy to announce Purchasing Parity Power on Dracula PRO! Wh
 createdAt: "2021-01-14"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/purchasing-parity-power-plus-4-new-themes-a.png"
 color: "green"
 ---
 
-I'm super happy to announce *Purchasing Parity Power* on [Dracula PRO](/pro)!
+I'm super happy to announce _Purchasing Parity Power_ on [Dracula PRO](/pro)!
 
 Why? Because not **everyone earns in dollars**.
 
@@ -24,10 +24,10 @@ It took me an entire Saturday, but I managed to build my own solution using Clou
 
 This week 4 new themes have joined the Dracula clan!
 
-* [Bashtop](/bashtop): Linux/OSX/FreeBSD **resource monitor tool**
-* [LiteIDE](/liteide): A simple, open source, **cross-platform Go IDE**
-* [Logseq](/logseq): Privacy-first platform for **knowledge sharing**
-* [Thunderbird](/thunderbird): The good ol' **email client** from Mozilla
+- [Bashtop](/bashtop): Linux/OSX/FreeBSD **resource monitor tool**
+- [LiteIDE](/liteide): A simple, open source, **cross-platform Go IDE**
+- [Logseq](/logseq): Privacy-first platform for **knowledge sharing**
+- [Thunderbird](/thunderbird): The good ol' **email client** from Mozilla
 
 [![Dracula for Bashtop](/static/img/blog/purchasing-parity-power-plus-4-new-themes-b.png)](/bashtop)
 

@@ -4,8 +4,8 @@ excerpt: "Last time we saw each other I was telling you all about this new book 
 createdAt: "2020-08-05"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/3-new-themes-and-better-code-screenshots-a.png"
 color: "purple"
 ---
@@ -22,9 +22,9 @@ The Dracula community surprises me every day. Recently, a Reddit user shared his
 
 We just reached 110 themes created by the community! Here are the newest ones:
 
-* [Aseprite](/aseprite): An animated sprite editor & pixel art tool by *Amit Netanel*
-* [Mailspring](/mailspring): An open-source, extensible email app by *Thiago Avelino*
-* [Tower](/tower): A powerful Git client for Mac and Windows by *David Sullivan*
+- [Aseprite](/aseprite): An animated sprite editor & pixel art tool by _Amit Netanel_
+- [Mailspring](/mailspring): An open-source, extensible email app by _Thiago Avelino_
+- [Tower](/tower): A powerful Git client for Mac and Windows by _David Sullivan_
 
 [![Dracula for Aseprite](/static/img/blog/3-new-themes-and-better-code-screenshots-b.jpg)](/aseprite)
 

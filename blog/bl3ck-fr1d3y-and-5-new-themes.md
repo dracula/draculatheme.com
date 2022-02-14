@@ -4,8 +4,8 @@ excerpt: "Dracula PRO and Dracula UI are 40% off. I'm running this Black Friday 
 createdAt: "2021-11-25"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "cyan"
 ---
 

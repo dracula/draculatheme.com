@@ -1,10 +1,10 @@
-import { Component } from 'react';
-import styles from './Faq.module.css';
-import { countries } from 'countries-list';
+import { Component } from 'react'
+import styles from './Faq.module.css'
+import { countries } from 'countries-list'
 
 class Faq extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       items: [
@@ -48,45 +48,62 @@ class Faq extends Component {
           answer: `You can contact me by e-mailing zeno@draculatheme.com.`,
           visible: false,
         },
-      ]
+      ],
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.ppp !== prevProps.ppp) {
-      let items = this.state.items;
-      items[0].question = `Do you ship ${this.props.ppp.country ? `to ${countries[this.props.ppp.country].name}` : 'worldwide'}?`;
-      this.setState({ items });
+      let items = this.state.items
+      items[0].question = `Do you ship ${
+        this.props.ppp.country
+          ? `to ${countries[this.props.ppp.country].name}`
+          : 'worldwide'
+      }?`
+      this.setState({ items })
     }
   }
 
   toggleVisibility(index, e) {
-    e.preventDefault();
+    e.preventDefault()
 
-    let items = this.state.items;
-    items[index].visible = !items[index].visible;
-    this.setState(items);
+    let items = this.state.items
+    items[index].visible = !items[index].visible
+    this.setState(items)
   }
 
   renderQuestionsAndAnswers() {
     return this.state.items.map((item, index) => {
-      return <a className={styles.item} key={index} onClick={this.toggleVisibility.bind(this, index)}>
-        <p className={styles.question}>{item.question}</p>
-        <p style={this.state.items[index].visible ? { display: 'block'} : { display: 'none' }} className={styles.answer}>
-          {item.answer}
-        </p>
-        <span className={styles.itemIcon}>
-          {this.state.items[index].visible ? '-' : '+'}
-        </span>
-      </a>
-    });
+      return (
+        <a
+          className={styles.item}
+          key={index}
+          onClick={this.toggleVisibility.bind(this, index)}
+        >
+          <p className={styles.question}>{item.question}</p>
+          <p
+            style={
+              this.state.items[index].visible
+                ? { display: 'block' }
+                : { display: 'none' }
+            }
+            className={styles.answer}
+          >
+            {item.answer}
+          </p>
+          <span className={styles.itemIcon}>
+            {this.state.items[index].visible ? '-' : '+'}
+          </span>
+        </a>
+      )
+    })
   }
 
   render() {
-    return <div className={styles.container}>
-      {this.renderQuestionsAndAnswers()}
-    </div>
+    return (
+      <div className={styles.container}>{this.renderQuestionsAndAnswers()}</div>
+    )
   }
 }
 
-export default Faq;
+export default Faq

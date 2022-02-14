@@ -4,8 +4,8 @@ excerpt: "For the next few weeks, I'll be out on paternity leave. This means tha
 createdAt: "2021-10-12"
 updatedAt: "2022-01-14"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "yellow"
 ---
 

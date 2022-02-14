@@ -1,13 +1,13 @@
-import App from 'next/app';
-import Router from 'next/router';
+import App from 'next/app'
+import Router from 'next/router'
 
-import "@dracula/dracula-ui/styles/dracula-ui.css";
-import '../styles/main.css';
+import '@dracula/dracula-ui/styles/dracula-ui.css'
+import '../styles/main.css'
 
-import * as gtag from '../lib/gtag';
-import easterEgg from '../lib/easter-egg';
+import * as gtag from '../lib/gtag'
+import easterEgg from '../lib/easter-egg'
 
-Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
 const Noop = ({ children }) => children
 

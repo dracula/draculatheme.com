@@ -4,8 +4,8 @@ excerpt: "The Dracula site and logo were the same since 2013. I've always wanted
 createdAt: "2020-03-24"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/new-dracula-site-and-logo-b.jpg"
 color: "pink"
 ---
@@ -20,9 +20,9 @@ Now that we have 92 different themes, I decided to spend time on **discoverabili
 
 I love Static Site Generators (SSG) since the day I became a web developer. The Dracula site had a long journey, and I feel like now we have a great stack.
 
-* 2013: Created the site using Jekyll
-* 2016: Migrated from Jekyll to Metalsmith
-* 2020: Migrated from Metalsmith to Next.js
+- 2013: Created the site using Jekyll
+- 2016: Migrated from Jekyll to Metalsmith
+- 2020: Migrated from Metalsmith to Next.js
 
 ## New Logo
 

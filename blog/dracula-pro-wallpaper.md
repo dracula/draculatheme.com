@@ -4,8 +4,8 @@ excerpt: "Ohhh there is so much exciting news to share that I don't even know wh
 createdAt: "2020-04-16"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/dracula-pro-wallpaper-a.png"
 color: "yellow"
 ---
@@ -20,11 +20,11 @@ A new major theme has been added to Dracula - meet the official [tmux](/tmux) th
 
 What I like about this one is that it has all the things you need right on your terminal like:
 
-* Day, date, time, timezone
-* Current location based on network
-* Temperature and forecast
-* Network connection status and SSID
-* Battery percentage and AC power connection status
+- Day, date, time, timezone
+- Current location based on network
+- Temperature and forecast
+- Network connection status and SSID
+- Battery percentage and AC power connection status
 
 [![Dracula for tmux](/static/img/blog/dracula-pro-wallpaper-a.png)](/tmux)
 

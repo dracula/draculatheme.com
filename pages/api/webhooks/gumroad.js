@@ -15,7 +15,7 @@ async function fallback(to, github) {
     twilio.messages.create({
       from: fromPhone,
       to,
-      body: `Dracula UI: ${github}`
+      body: `Dracula UI: ${github}`,
     }),
 
     twilio.calls.create({
@@ -25,13 +25,13 @@ async function fallback(to, github) {
       <Response>
         <Say>Dracula UI sale: ${github}</Say>
       </Response>
-      `
-    })
+      `,
+    }),
   ])
 }
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_INVITATION_ACCESS_TOKEN
+  auth: process.env.GITHUB_INVITATION_ACCESS_TOKEN,
 })
 
 export default async (req, res) => {
@@ -46,23 +46,24 @@ export default async (req, res) => {
       return
     }
 
-    await octokit.request('PUT /repos/{owner}/{repo}/collaborators/{username}', {
-      repo: 'dracula-ui',
-      username: github,
-      permission: 'triage',
-      owner: 'dracula'
-    }).catch(async (err) => {
-      console.error(err)
+    await octokit
+      .request('PUT /repos/{owner}/{repo}/collaborators/{username}', {
+        repo: 'dracula-ui',
+        username: github,
+        permission: 'triage',
+        owner: 'dracula',
+      })
+      .catch(async err => {
+        console.error(err)
 
-      await Promise.all([
-        fallback(nettoPhone, github),
-        fallback(zenoPhone, github)
-      ])
-    })
+        await Promise.all([
+          fallback(nettoPhone, github),
+          fallback(zenoPhone, github),
+        ])
+      })
 
     res.status(200).json()
-  }
-  catch (e) {
+  } catch (e) {
     console.error(e)
     res.status(400)
     res.end()

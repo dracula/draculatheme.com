@@ -4,8 +4,8 @@ excerpt: "Halloween is almost here and this year I want to do something differen
 createdAt: "2020-10-28"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/2020-halloween-costume-contest-a.png"
 color: "pink"
 ---
@@ -26,12 +26,12 @@ I'll start, here's my current setup.
 
 This week 6 new themes have joined the Dracula family!
 
-* [CopyQ](/copyq): Clipboard manager with scripting features
-* [Cryptowatch](/cryptowatch): Real-time market dashboards
-* [fman](/fman): Dual-pane file manager
-* [Micro](/micro): Terminal-based text editor
-* [Midnight Commander](/midnight-commander): Orthodox file manager
-* [ReNoise](/renoise): Digital Audio Workstation
+- [CopyQ](/copyq): Clipboard manager with scripting features
+- [Cryptowatch](/cryptowatch): Real-time market dashboards
+- [fman](/fman): Dual-pane file manager
+- [Micro](/micro): Terminal-based text editor
+- [Midnight Commander](/midnight-commander): Orthodox file manager
+- [ReNoise](/renoise): Digital Audio Workstation
 
 [![Dracula for Midnight Commander](/static/img/blog/2020-halloween-costume-contest-b.png)](/midnight-commander)
 

@@ -1,6 +1,6 @@
-import { Component } from 'react';
-import styles from './Testimonial.module.css';
-import { Box, Paragraph } from '@dracula/dracula-ui';
+import { Component } from 'react'
+import styles from './Testimonial.module.css'
+import { Box, Paragraph } from '@dracula/dracula-ui'
 
 class Testimonial extends Component {
   render() {
@@ -11,19 +11,38 @@ class Testimonial extends Component {
           avatar: 'cassiozen.jpeg',
           name: 'Cassio Zen',
           title: 'Software Engineer at Microsoft',
-        }
-      }
-    ];
+        },
+      },
+    ]
 
-    return <Box className={styles.testimonial}>
-      <Box className={styles.container}>
-        <img className={styles.avatar} src={`/static/img/ui/${testimonials[0].author.avatar}`} alt={testimonials[0].author.name} loading="lazy" />
-        <blockquote className={styles.body} dangerouslySetInnerHTML={{ __html: testimonials[0].content }} />
-        <Paragraph color="yellowPink" size="lg" mb="xs" className={styles.authorName}>{testimonials[0].author.name}</Paragraph>
-        <Paragraph className={styles.authorTitle}>{testimonials[0].author.title}</Paragraph>
+    return (
+      <Box className={styles.testimonial}>
+        <Box className={styles.container}>
+          <img
+            className={styles.avatar}
+            src={`/static/img/ui/${testimonials[0].author.avatar}`}
+            alt={testimonials[0].author.name}
+            loading="lazy"
+          />
+          <blockquote
+            className={styles.body}
+            dangerouslySetInnerHTML={{ __html: testimonials[0].content }}
+          />
+          <Paragraph
+            color="yellowPink"
+            size="lg"
+            mb="xs"
+            className={styles.authorName}
+          >
+            {testimonials[0].author.name}
+          </Paragraph>
+          <Paragraph className={styles.authorTitle}>
+            {testimonials[0].author.title}
+          </Paragraph>
+        </Box>
       </Box>
-    </Box>
+    )
   }
 }
 
-export default Testimonial;
+export default Testimonial

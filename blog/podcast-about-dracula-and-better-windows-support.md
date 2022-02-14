@@ -4,8 +4,8 @@ excerpt: "It's been a crazy couple of weeks. I have to admit I'm a little bit ov
 createdAt: "2020-03-19"
 updatedAt: "2021-01-30"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 ogImage: "/static/img/blog/podcast-about-dracula-and-better-windows-support-a.png"
 color: "purple"
 ---
@@ -22,8 +22,8 @@ When I launched the PRO version, I didn't have time to focus on different OS's. 
 
 This past week I added two new themes to Dracula PRO:
 
-* [Notepad++](/notepad-plus-plus)
-* [Windows Terminal](/windows-terminal)
+- [Notepad++](/notepad-plus-plus)
+- [Windows Terminal](/windows-terminal)
 
 [![Dracula PRO on Notepad++ and Windows Terminal](/static/img/blog/podcast-about-dracula-and-better-windows-support-b.png)](/pro)
 

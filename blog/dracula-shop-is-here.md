@@ -4,8 +4,8 @@ excerpt: "There are 12 custom-designed items over there, such as t-shirts, stick
 createdAt: "2022-01-20"
 updatedAt: "2022-01-20"
 author:
-  name: Zeno Rocha
-  avatar: "https://github.com/zenorocha.png?size=48"
+ name: Zeno Rocha
+ avatar: "https://github.com/zenorocha.png?size=48"
 color: "cyan"
 ---
 
