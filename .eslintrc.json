@@ -1,0 +1,12 @@
+{
+  "extends": ["next", "prettier"],
+  "rules": {
+    "@next/next/next-script-for-ga": 0,
+    "@next/next/no-img-element": 0,
+    "@next/next/no-sync-scripts": 0,
+    "import/no-anonymous-default-export": 0,
+    "react/jsx-no-duplicate-props": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/no-unescaped-entities": 0
+  }
+}
