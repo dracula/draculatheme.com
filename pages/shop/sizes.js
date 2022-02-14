@@ -1,125 +1,131 @@
-import React from "react";
-import Head from "next/head";
-import Shop from "../../layouts/Shop";
-import { sizesInInches, sizesInCm } from "../../lib/sizes";
-import SizeChart from "../../components/shop/SizeChart";
+import React from 'react'
+import Head from 'next/head'
+import Shop from '../../layouts/Shop'
+import { sizesInInches, sizesInCm } from '../../lib/sizes'
+import SizeChart from '../../components/shop/SizeChart'
 
 export async function getServerSideProps() {
-	const pppReq = await fetch("https://ppp.dracula.workers.dev");
-	const { country } = await pppReq.json();
+  const pppReq = await fetch('https://ppp.dracula.workers.dev')
+  const { country } = await pppReq.json()
 
-	let isInches = false;
+  let isInches = false
 
-	if (country === "CA" || country === "GB" || country === "US") {
-		isInches = true;
-	}
+  if (country === 'CA' || country === 'GB' || country === 'US') {
+    isInches = true
+  }
 
-	return {
-		props: { isInches, post: { color: "purple" } },
-	};
+  return {
+    props: { isInches, post: { color: 'purple' } },
+  }
 }
 
 class Sizes extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props)
 
-		this.state = {
-			isInches: props.isInches,
-		};
-	}
+    this.state = {
+      isInches: props.isInches,
+    }
+  }
 
-	componentDidMount() {
-		document.documentElement.style.setProperty("--cart-visibility", "block");
-	}
+  componentDidMount() {
+    document.documentElement.style.setProperty('--cart-visibility', 'block')
+  }
 
-	componentWillUnmount() {
-		document.documentElement.style.setProperty("--cart-visibility", "none");
-	}
+  componentWillUnmount() {
+    document.documentElement.style.setProperty('--cart-visibility', 'none')
+  }
 
-	onClickUnit(index) {
-		if (index === 0) {
-			this.setState({ isInches: true });
-		} else {
-			this.setState({ isInches: false });
-		}
-	}
+  onClickUnit(index) {
+    if (index === 0) {
+      this.setState({ isInches: true })
+    } else {
+      this.setState({ isInches: false })
+    }
+  }
 
-	renderUnits() {
-		return (
-			<span>
-				<button
-					onClick={this.onClickUnit.bind(this, 0)}
-					className={this.state.isInches ? "size-unit-selected" : "size-unit"}
-				>
-					in
-				</button>
+  renderUnits() {
+    return (
+      <span>
+        <button
+          onClick={this.onClickUnit.bind(this, 0)}
+          className={this.state.isInches ? 'size-unit-selected' : 'size-unit'}
+        >
+          in
+        </button>
 
-				<button
-					onClick={this.onClickUnit.bind(this, 1)}
-					className={this.state.isInches ? "size-unit" : "size-unit-selected"}
-				>
-					cm
-				</button>
-			</span>
-		);
-	}
+        <button
+          onClick={this.onClickUnit.bind(this, 1)}
+          className={this.state.isInches ? 'size-unit' : 'size-unit-selected'}
+        >
+          cm
+        </button>
+      </span>
+    )
+  }
 
-	renderSizes() {
-		let sizes = sizesInCm;
+  renderSizes() {
+    let sizes = sizesInCm
 
-		if (this.state.isInches) {
-			sizes = sizesInInches;
-		}
+    if (this.state.isInches) {
+      sizes = sizesInInches
+    }
 
-		return sizes.map((size, index) => {
-			const sizeKey = Object.keys(size);
-			return (
-				<div key={index} className="sizes">
-					<h2 id={sizeKey[0].toLowerCase()} className="size-subtitle">
-						{sizeKey[0]}
-					</h2>
-					<SizeChart items={sizes[index][sizeKey]} />
-				</div>
-			);
-		});
-	}
+    return sizes.map((size, index) => {
+      const sizeKey = Object.keys(size)
+      return (
+        <div key={index} className="sizes">
+          <h2 id={sizeKey[0].toLowerCase()} className="size-subtitle">
+            {sizeKey[0]}
+          </h2>
+          <SizeChart items={sizes[index][sizeKey]} />
+        </div>
+      )
+    })
+  }
 
-	render() {
-		const title = `Size Charts — Dracula Shop`;
-		const description =
-			"Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!";
-		const image = "/static/img/shop/og.jpg";
+  render() {
+    const title = `Size Charts — Dracula Shop`
+    const description =
+      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!"
+    const image = '/static/img/shop/og.jpg'
 
-		return (
-			<div className="shop">
-				<Head>
-					<meta charSet="utf-8" />
-					<title>{title}</title>
-					<meta content={title} property="og:title" />
-					<meta content={description} name="description" />
-					<meta content={description} property="og:description" />
-					<meta content="Zeno Rocha" name="author" />
-					<meta content="https://draculatheme.com/shop/sizes" property="og:url" />
-					<meta content={`https://draculatheme.com${image}`} property="og:image" />
-				</Head>
+    return (
+      <div className="shop">
+        <Head>
+          <meta charSet="utf-8" />
+          <title>{title}</title>
+          <meta content={title} property="og:title" />
+          <meta content={description} name="description" />
+          <meta content={description} property="og:description" />
+          <meta content="Zeno Rocha" name="author" />
+          <meta
+            content="https://draculatheme.com/shop/sizes"
+            property="og:url"
+          />
+          <meta
+            content={`https://draculatheme.com${image}`}
+            property="og:image"
+          />
+        </Head>
 
-				<div>
-					<div className="theme">
-						<div className="size-header">
-							<h1 className="size-title">Size Charts</h1>
-							<div className="size-units">
-								<span>Units</span>
-								{this.renderUnits()}
-							</div>
-						</div>
-						{this.renderSizes()}
-					</div>
-				</div>
-			</div>
-		);
-	}
+        <div>
+          <div className="theme">
+            <div className="size-header">
+              <h1 className="size-title">Size Charts</h1>
+              <div className="size-units">
+                <span>Units</span>
+                {this.renderUnits()}
+              </div>
+            </div>
+            {this.renderSizes()}
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-Sizes.Layout = Shop;
+Sizes.Layout = Shop
 
-export default Sizes;
+export default Sizes

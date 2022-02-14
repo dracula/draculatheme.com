@@ -1,170 +1,170 @@
 .preview {
-	background: #2a2c37;
+  background: #2a2c37;
 }
 
 .container {
-	max-width: 72em;
-	margin: 0 auto;
-	padding: 100px 15px;
+  max-width: 72em;
+  margin: 0 auto;
+  padding: 100px 15px;
 }
 
 .title {
-	color: #f2f2f2;
-	font-size: 48px;
-	text-align: center;
+  color: #f2f2f2;
+  font-size: 48px;
+  text-align: center;
 }
 
 .body {
-	color: #f2f2f2;
-	font-size: 18px;
-	text-align: center;
-	margin: 20px 0 0;
+  color: #f2f2f2;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 0;
 }
 
 .select {
-	max-width: 340px;
-	margin: 30px auto;
+  max-width: 340px;
+  margin: 30px auto;
 }
 
 .image {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .imageAlfred {
-	max-width: 50%;
-	margin: 0 auto;
-	display: block;
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
 }
 
 .colors {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .colorsList {
-	list-style: none;
+  list-style: none;
 }
 
 .colorsList li {
-	display: inline-block;
-	margin: 0 20px;
-	text-align: center;
-	width: 110px;
-	cursor: pointer;
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center;
+  width: 110px;
+  cursor: pointer;
 }
 
 .colorName {
-	margin-bottom: 10px;
-	transition: 0.3s ease-in-out color;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out color;
 }
 
 .colorPreview {
-	height: 40px;
-	width: 40px;
-	display: block;
-	border-radius: 50%;
-	margin: 0 auto 15px;
-	position: relative;
+  height: 40px;
+  width: 40px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  position: relative;
 }
 
 .colorPreview:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 0;
-	border: 0.15em solid;
-	border-radius: 50%;
-	transition: padding 250ms;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 0.15em solid;
+  border-radius: 50%;
+  transition: padding 250ms;
 }
 
 .active .colorPreview:after {
-	padding: 1.5em;
+  padding: 1.5em;
 }
 
 .colorsList li:nth-child(1) .colorPreview {
-	background-color: #9580ff;
+  background-color: #9580ff;
 }
 
 .colorsList li:nth-child(1) .colorPreview:after {
-	border-color: #9580ff;
+  border-color: #9580ff;
 }
 
 .colorsList li:nth-child(1).active .colorName,
 .colorsList li:nth-child(1):hover .colorName {
-	color: #9580ff;
+  color: #9580ff;
 }
 
 .colorsList li:nth-child(2) .colorPreview {
-	background-color: #8aff80;
+  background-color: #8aff80;
 }
 
 .colorsList li:nth-child(2) .colorPreview:after {
-	border-color: #8aff80;
+  border-color: #8aff80;
 }
 
 .colorsList li:nth-child(2).active .colorName,
 .colorsList li:nth-child(2):hover .colorName {
-	color: #8aff80;
+  color: #8aff80;
 }
 
 .colorsList li:nth-child(3) .colorPreview {
-	background-color: #ff80bf;
+  background-color: #ff80bf;
 }
 
 .colorsList li:nth-child(3) .colorPreview:after {
-	border-color: #ff80bf;
+  border-color: #ff80bf;
 }
 
 .colorsList li:nth-child(3).active .colorName,
 .colorsList li:nth-child(3):hover .colorName {
-	color: #ff80bf;
+  color: #ff80bf;
 }
 
 .colorsList li:nth-child(4) .colorPreview {
-	background-color: #ffff80;
+  background-color: #ffff80;
 }
 
 .colorsList li:nth-child(4) .colorPreview:after {
-	border-color: #ffff80;
+  border-color: #ffff80;
 }
 
 .colorsList li:nth-child(4).active .colorName,
 .colorsList li:nth-child(4):hover .colorName {
-	color: #ffff80;
+  color: #ffff80;
 }
 
 .colorsList li:nth-child(5) .colorPreview {
-	background-color: #ff9580;
+  background-color: #ff9580;
 }
 
 .colorsList li:nth-child(5) .colorPreview:after {
-	border-color: #ff9580;
+  border-color: #ff9580;
 }
 
 .colorsList li:nth-child(5).active .colorName,
 .colorsList li:nth-child(5):hover .colorName {
-	color: #ff9580;
+  color: #ff9580;
 }
 
 .colorsList li:nth-child(6) .colorPreview {
-	background-color: #80ffea;
+  background-color: #80ffea;
 }
 
 .colorsList li:nth-child(6) .colorPreview:after {
-	border-color: #80ffea;
+  border-color: #80ffea;
 }
 
 .colorsList li:nth-child(6).active .colorName,
 .colorsList li:nth-child(6):hover .colorName {
-	color: #80ffea;
+  color: #80ffea;
 }
 
 @media (max-width: 768px) {
-	.imageAlfred {
-		max-width: 100%;
-	}
+  .imageAlfred {
+    max-width: 100%;
+  }
 }

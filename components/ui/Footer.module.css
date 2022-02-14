@@ -1,8 +1,8 @@
 .footer {
-	background: #22212c;
-	padding: 50px 10px;
-	flex: 1;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
+  background: #22212c;
+  padding: 50px 10px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }

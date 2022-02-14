@@ -1,57 +1,57 @@
 .features {
-	background-color: #2c2122;
+  background-color: #2c2122;
 }
 
 .features ::selection {
-	background: #ff9580;
-	color: #000;
+  background: #ff9580;
+  color: #000;
 }
 
 .container {
-	display: flex;
-	flex-direction: row;
-	list-style: none;
-	max-width: 72em;
-	margin: 0 auto;
-	padding: 60px 15px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  max-width: 72em;
+  margin: 0 auto;
+  padding: 60px 15px;
 }
 
 .item {
-	flex: 1;
-	margin: 0 40px;
+  flex: 1;
+  margin: 0 40px;
 }
 
 .item:first-child {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .item:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .title {
-	color: #ff9580;
-	font-size: 26px;
-	font-weight: 700;
-	margin-top: 10px;
-	margin-bottom: 30px;
+  color: #ff9580;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .body {
-	font-size: 18px;
-	color: #f2f2f2;
+  font-size: 18px;
+  color: #f2f2f2;
 }
 
 .highlight {
-	color: #ff9580;
+  color: #ff9580;
 }
 
 @media (max-width: 768px) {
-	.container {
-		flex-direction: column;
-	}
+  .container {
+    flex-direction: column;
+  }
 
-	.item {
-		margin: 0 0 60px;
-	}
+  .item {
+    margin: 0 0 60px;
+  }
 }

@@ -1,26 +1,26 @@
 .contributors {
-	margin: 1em 0 0.3em;
+  margin: 1em 0 0.3em;
 }
 
 .contributors li {
-	display: inline-block;
-	list-style: none;
-	margin: 0 1em 1em 0;
+  display: inline-block;
+  list-style: none;
+  margin: 0 1em 1em 0;
 }
 
 .contributors li a {
-	transition: border 0.1s ease-in-out;
-	border: 3px solid #546179;
-	border-radius: 5px;
-	display: block;
-	height: 80px;
-	width: 80px;
+  transition: border 0.1s ease-in-out;
+  border: 3px solid #546179;
+  border-radius: 5px;
+  display: block;
+  height: 80px;
+  width: 80px;
 }
 
 .contributors li a:hover {
-	border-color: #282a36;
+  border-color: #282a36;
 }
 
 .contributors li a img {
-	background: white;
+  background: white;
 }

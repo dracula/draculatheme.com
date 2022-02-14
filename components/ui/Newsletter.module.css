@@ -1,34 +1,34 @@
 .body {
-	background: #22212c;
-	text-align: center;
-	padding: 0 15px;
+  background: #22212c;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .bodyText {
-	margin: 20px auto;
+  margin: 20px auto;
 }
 
 .bodyForm {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bodyForm input[type="email"] {
-	background: #14141b;
-	color: var(--yellow);
-	font-family: "Fira Code", monospace;
-	font-size: 18px;
+.bodyForm input[type='email'] {
+  background: #14141b;
+  color: var(--yellow);
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
 }
 
-.bodyForm input[type="submit"] {
-	background: var(--yellow-pink);
-	font-family: "Fira Code", monospace;
-	font-size: 18px;
+.bodyForm input[type='submit'] {
+  background: var(--yellow-pink);
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
 }
 
 @media (max-width: 960px) {
-	.body {
-		padding: 0 15px 60px;
-	}
+  .body {
+    padding: 0 15px 60px;
+  }
 }

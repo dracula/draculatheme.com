@@ -1,13 +1,13 @@
 .faq {
-	margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .copy {
-	cursor: pointer;
-	width: 180px;
+  cursor: pointer;
+  width: 180px;
 }
 
 .select {
-	max-width: 295px;
-	margin: 20px 0;
+  max-width: 295px;
+  margin: 20px 0;
 }

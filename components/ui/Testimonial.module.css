@@ -1,67 +1,67 @@
 .testimonial {
-	background: #22212c;
+  background: #22212c;
 }
 
 .container {
-	max-width: 840px;
-	margin: 0 auto;
-	padding: 60px 15px;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 60px 15px;
 }
 
 .avatar {
-	border-radius: 100%;
-	margin-right: 10px;
-	height: 70px;
-	width: 70px;
-	display: block;
-	margin: 0 auto;
-	box-shadow: 0px 0px 0px 4px #1d1e26, 0px 0px 0px 6px var(--red);
+  border-radius: 100%;
+  margin-right: 10px;
+  height: 70px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 0px 0px 4px #1d1e26, 0px 0px 0px 6px var(--red);
 }
 
 .body {
-	font-size: 20px;
-	line-height: 28px;
-	text-align: center;
-	font-family: "Fira Code";
-	margin: 30px 40px;
-	position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  font-family: 'Fira Code';
+  margin: 30px 40px;
+  position: relative;
 }
 
 .body::before,
 .body::after {
-	content: '"';
-	color: var(--disabled);
-	font-size: 74px;
-	display: block;
-	position: absolute;
-	height: 120px;
+  content: '"';
+  color: var(--disabled);
+  font-size: 74px;
+  display: block;
+  position: absolute;
+  height: 120px;
 }
 
 .body::before {
-	content: "“";
-	left: -20px;
-	transform: translateX(-100%);
+  content: '“';
+  left: -20px;
+  transform: translateX(-100%);
 }
 
 .body::after {
-	content: "”";
-	right: -20px;
-	transform: translateX(100%);
+  content: '”';
+  right: -20px;
+  transform: translateX(100%);
 }
 
 .authorName {
-	text-align: center;
-	text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .authorTitle {
-	color: hsl(230, 15%, 60%);
-	text-align: center;
+  color: hsl(230, 15%, 60%);
+  text-align: center;
 }
 
 @media (max-width: 1040px) {
-	.body::before,
-	.body::after {
-		display: none;
-	}
+  .body::before,
+  .body::after {
+    display: none;
+  }
 }

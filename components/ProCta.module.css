@@ -1,25 +1,25 @@
 .ctaContainer {
-	display: flex;
-	align-items: center;
-	margin: 20px 0 0;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0;
 }
 
 .cta {
-	transition: all 0.3s ease-in-out;
-	display: inline-block;
-	margin: 0 auto;
-	background: rgba(80, 250, 123, 1);
-	border-radius: 4px;
-	text-align: center;
-	color: #000 !important;
-	font-weight: 400;
-	padding: 10px 18px;
-	font-size: 18px;
-	border: 0 !important;
-	text-decoration-line: none !important;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  margin: 0 auto;
+  background: rgba(80, 250, 123, 1);
+  border-radius: 4px;
+  text-align: center;
+  color: #000 !important;
+  font-weight: 400;
+  padding: 10px 18px;
+  font-size: 18px;
+  border: 0 !important;
+  text-decoration-line: none !important;
 }
 
 .cta:hover,
 .cta:focus {
-	background: rgba(80, 250, 123, 0.8);
+  background: rgba(80, 250, 123, 0.8);
 }
