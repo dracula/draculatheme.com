@@ -1,26 +1,21 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Shuffle from 'shufflejs'
-import Theme from '../layouts/Theme'
-import ProCta from '../components/ProCta'
-import paths from '../lib/paths'
-import styles from './index.module.css'
-import PlatformToggle from '../components/PlatformToggle'
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Shuffle from 'shufflejs';
+import Theme from '../layouts/Theme';
+import ProCta from '../components/ProCta';
+import PlatformToggle from '../components/PlatformToggle';
+import paths from '../lib/paths';
+import { isProd, getBasePath} from '../lib/environment';
+import styles from './index.module.css';
 
 export async function getStaticProps() {
-  const query = {
-    title: 'Dracula',
-    color: 'purple',
-    icon: 'used/pack-1/045-dracula.svg',
-  }
-  const isProd = process.env.NODE_ENV === 'production'
-  const base = isProd ? 'https://draculatheme.com' : 'http://localhost:3000'
+  const query = { title: 'Dracula', color: 'purple', icon: 'used/pack-1/045-dracula.svg' }
 
-  if (isProd) {
+  if (isProd()) {
     for (const path of paths) {
-      const viewsReq = await fetch(`${base}/api/views/${path.params.theme}`)
-      const viewsRes = await viewsReq.json()
+      const viewsReq = await fetch(`${getBasePath()}/api/views/${path.params.theme}`);
+      const viewsRes = await viewsReq.json();
 
       path.params.views = parseInt(viewsRes.views)
     }

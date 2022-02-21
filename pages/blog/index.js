@@ -1,15 +1,39 @@
-import Blogpost from "../../layouts/Blogpost";
-import Updates from "../../components/Updates";
-import BlogDate from "../../components/BlogDate";
-import { getAllPosts } from "../../lib/blog";
-import Head from "next/head";
-import Link from "next/link";
+import Blogpost from '../../layouts/Blogpost';
+import Updates from '../../components/Updates';
+import BlogDate from '../../components/BlogDate';
+import { getAllPosts } from '../../lib/blog';
+import { getBasePath } from '../../lib/environment';
+import Head from 'next/head';
+import Link from 'next/link';
 
-function Blog({ allPosts }) {
-	const title = "Blog — Dracula Theme";
-	const description =
-		"The journey of building the most universal dark theme ever made.";
-	const image = "/static/img/facebook.png";
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    'title',
+    'createdAt',
+    'slug',
+    'author',
+    'excerpt',
+    'color',
+  ])
+
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+  const totalSubscribersRes = await totalSubscribersReq.json();
+  const totalSubscribers = totalSubscribersRes.total;
+
+  return {
+    props: {
+      allPosts,
+      totalSubscribers,
+      post: { color: 'yellow' }
+    },
+    revalidate: 7200
+  }
+}
+
+function Blog({ allPosts, totalSubscribers }) {
+  const title = 'Blog — Dracula Theme';
+  const description = 'The journey of building the most universal dark theme ever made.';
+  const image = '/static/img/facebook.png';
 
 	return (
 		<div className="single">
@@ -51,29 +75,14 @@ function Blog({ allPosts }) {
 				</div>
 			</div>
 
-			<div className="blog-updates">
-				<Updates type="blog" />
-			</div>
-		</div>
-	);
-}
-
-export async function getStaticProps() {
-	const allPosts = getAllPosts([
-		"title",
-		"createdAt",
-		"slug",
-		"author",
-		"excerpt",
-		"color",
-	]);
-
-	return {
-		props: {
-			allPosts,
-			post: { color: "yellow" },
-		},
-	};
+      <div className="blog-updates">
+        <Updates
+          type="blog"
+          totalSubscribers={totalSubscribers}
+        />
+      </div>
+    </div>
+  )
 }
 
 Blog.Layout = Blogpost;

@@ -1,13 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 
-import Topbar from '../../components/pro/Topbar'
-import Header from '../../components/journey/Header'
-import About from '../../components/journey/About'
-import Period from '../../components/journey/Period'
-import Updates from '../../components/Updates'
-import Footer from '../../components/pro/Footer'
-import journeys from '../../lib/journeys'
+import Topbar from '../../components/pro/Topbar';
+import Header from '../../components/journey/Header';
+import About from '../../components/journey/About';
+import Period from '../../components/journey/Period';
+import Updates from '../../components/Updates';
+import Footer from '../../components/pro/Footer';
+import journeys from '../../lib/journeys';
+import { getBasePath } from '../../lib/environment';
 
 export async function getStaticProps() {
   try {
@@ -45,9 +46,14 @@ export async function getStaticProps() {
       }
     }
 
-    return { props: { journeys } }
-  } catch (e) {
-    console.error(e)
+    const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+    const totalSubscribersRes = await totalSubscribersReq.json();
+    const totalSubscribers = totalSubscribersRes.total;
+
+    return { props: { journeys, totalSubscribers }, revalidate: 7200 };
+  }
+  catch (e) {
+    console.error(e);
 
     return { props: { journeys } }
   }
@@ -104,7 +110,10 @@ class Journey extends React.Component {
         {this.renderJourneys()}
         <div className="journey-updates-container">
           <div className="journey-updates">
-            <Updates type="journey" />
+            <Updates
+              type="journey"
+              totalSubscribers={this.props.totalSubscribers}
+            />
           </div>
         </div>
         <Footer />
