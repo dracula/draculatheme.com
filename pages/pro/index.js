@@ -3,6 +3,7 @@ import Head from 'next/head'
 import queryString from 'query-string'
 import Airtable from 'airtable'
 
+import { getBasePath } from '../../lib/environment'
 import Topbar from '../../components/pro/Topbar'
 import Discount from '../../components/pro/Discount'
 import Header from '../../components/pro/Header'
@@ -20,7 +21,9 @@ import Footer from '../../components/pro/Footer'
 
 export async function getStaticProps() {
   try {
-    const sales = await getSalesData()
+    const salesReq = await fetch(`${getBasePath()}/api/sales/tPfIDt`)
+    const sales = await salesReq.json()
+
     const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
 
     const records = await airtable
@@ -150,22 +153,6 @@ class Pro extends React.Component {
         <Footer />
       </div>
     )
-  }
-}
-
-async function getSalesData() {
-  const accessToken = process.env.GUMROAD_ACCESS_TOKEN
-  const request = await fetch(
-    `https://api.gumroad.com/v2/products/tPfIDt?access_token=${accessToken}`
-  )
-  const response = await request.json()
-
-  return {
-    count: response.product.sales_count.toLocaleString(),
-    total: new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(response.product.sales_usd_cents / 100),
   }
 }
 
