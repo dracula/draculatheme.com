@@ -27,7 +27,7 @@ We use [Next.js](https://nextjs.org/), a React framework that does static export
 4. Install all dependencies:
 
    ```sh
-   $ npm install
+   $ yarn
    ```
 
 5. Generate a [GitHub Personal Access Token](https://help.github.com/en/enterprise/2.17/user/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) with `repo` permissions and create a `.env` file containing this variable.
