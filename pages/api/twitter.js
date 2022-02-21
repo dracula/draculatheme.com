@@ -10,13 +10,16 @@ export default async (req, res) => {
       }
     )
 
-    const { data } = await twitterReq.json()
+    const twitterRes = await twitterReq.json()
+    const total = new Intl.NumberFormat().format(
+      twitterRes.data.public_metrics.followers_count
+    )
 
     res.setHeader(
       'Cache-Control',
       'public, s-maxage=1200, stale-while-revalidate=600'
     )
-    return res.status(200).json({ total: data.public_metrics.followers_count })
+    return res.status(200).json({ total })
   } catch (error) {
     return res.status(400).json({ total: 0 })
   }
