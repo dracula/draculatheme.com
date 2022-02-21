@@ -41,6 +41,10 @@ class Footer extends Component {
             url: '/contribute',
           },
           {
+            name: 'Dashboard',
+            url: '/dashboard',
+          },
+          {
             name: 'Spec',
             url: 'https://spec.draculatheme.com',
             isExternal: true,

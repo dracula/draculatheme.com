@@ -13,7 +13,7 @@ class Updates extends Component {
     }
 
     return (
-      <div style={{ marginBottom: '2em' }}>
+      <div id="updates" style={{ marginBottom: '2em' }}>
         <h3>{title}</h3>
         <p>
           {description}

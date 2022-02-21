@@ -1,0 +1,58 @@
+.dashboard {
+  background: #282a36;
+  padding: 80px 0;
+  margin-top: 60px;
+}
+
+.container {
+  padding: 0 32px;
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 235px 235px;
+  grid-gap: 60px;
+  margin-top: 30px;
+}
+
+.metric {
+  display: block;
+  background: #303442;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .metrics {
+    display: block;
+  }
+
+  .metric {
+    margin-bottom: 60px;
+  }
+}
+
+.label {
+  color: #f2f2f2;
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: #f2f2f2;
+  width: 18px;
+  margin-left: 5px;
+  top: 2px;
+  position: relative;
+}
+
+.value {
+  color: #f2f2f2;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
