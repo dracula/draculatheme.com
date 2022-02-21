@@ -8,14 +8,13 @@ import download from "download";
 import probe from "probe-image-size";
 import { convertMarkdownToReact } from "../lib/markdown";
 import { getColorFromName } from "../lib/color";
+import { getBasePath } from "../lib/environment";
 
 export async function getStaticPaths() {
   return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
-  const isProd = process.env.NODE_ENV === "production";
-  const base = isProd ? "https://draculatheme.com" : "http://localhost:3000";
   const header = {
     headers: {
       Authorization: `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
@@ -53,11 +52,11 @@ export async function getStaticProps({ params }) {
   query.imageWidth = metadata.width;
   query.imageHeight = metadata.height;
 
-  const viewsReq = await fetch(`${base}/api/views/${params.theme}`);
+  const viewsReq = await fetch(`${getBasePath()}/api/views/${params.theme}`);
   const viewsRes = await viewsReq.json();
   query.views = new Intl.NumberFormat().format(viewsRes.views || 0);
 
-  const totalSubscribersReq = await fetch(`${base}/api/mailchimp`);
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
   const totalSubscribersRes = await totalSubscribersReq.json();
   const totalSubscribers = totalSubscribersRes.total;
 

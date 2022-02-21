@@ -445,17 +445,13 @@ a {
   margin-bottom: 20px;
 }
 
-.featured-word {
-  font-weight: 600;
-  color: rgba(189, 147, 249, 1);
-}
-
 .orange .title,
 .orange .subtitle a,
 .orange .theme a,
 .orange .theme h3,
 .orange .theme pre,
 .orange .theme code,
+.orange .form-highlight,
 .orange .form input[type="email"] {
   color: rgba(255, 184, 108, 1);
 }
@@ -480,6 +476,7 @@ a {
 .pink .theme h3,
 .pink .theme pre,
 .pink .theme code,
+.pink .form-highlight,
 .pink .form input[type="email"] {
   color: rgba(255, 121, 198, 1);
 }
@@ -504,6 +501,7 @@ a {
 .cyan .theme h3,
 .cyan .theme pre,
 .cyan .theme code,
+.cyan .form-highlight,
 .cyan .form input[type="email"] {
   color: rgba(139, 233, 253, 1);
 }
@@ -528,6 +526,7 @@ a {
 .purple .theme h3,
 .purple .theme pre,
 .purple .theme code,
+.purple .form-highlight,
 .purple .form input[type="email"] {
   color: rgba(189, 147, 249, 1);
 }
@@ -552,6 +551,7 @@ a {
 .yellow .theme h3,
 .yellow .theme pre,
 .yellow .theme code,
+.yellow .form-highlight,
 .yellow .form input[type="email"] {
   color: rgba(241, 250, 140, 1);
 }
@@ -580,6 +580,7 @@ a {
 .green .theme h3,
 .green .theme pre,
 .green .theme code,
+.green .form-highlight,
 .green .form input[type="email"] {
   color: rgba(80, 250, 123, 1);
 }
@@ -625,7 +626,7 @@ a {
    ========================================================================== */
 
 .form {
-  max-width: 400px;
+  max-width: 415px;
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
@@ -923,12 +924,12 @@ a {
 }
 
 .journey-updates p {
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px 0 30px;
 }
 
 .journey-updates .form {
-  max-width: 525px;
+  max-width: 530px;
 }
 
 .journey-updates .form input[type="email"] {

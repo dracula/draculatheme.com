@@ -5,8 +5,44 @@ import { BlogJsonLd } from "next-seo";
 import Blogpost from "../../layouts/Blogpost";
 import BlogDate from "../../components/BlogDate";
 import Updates from "../../components/Updates";
+import { getBasePath } from "../../lib/environment";
 import { getPostBySlug, getAllPosts } from "../../lib/blog";
 import { convertMarkdownToReact } from "../../lib/markdown";
+
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "createdAt",
+    "updatedAt",
+    "slug",
+    "author",
+    "excerpt",
+    "content",
+    "ogImage",
+    "color",
+  ]);
+
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+  const totalSubscribersRes = await totalSubscribersReq.json();
+  const totalSubscribers = totalSubscribersRes.total;
+
+  return { props: { post: { ...post }, totalSubscribers }, revalidate: 7200 };
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(["slug"]);
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
 
 function Post({ post, totalSubscribers }) {
   const router = useRouter();
@@ -65,44 +101,6 @@ function Post({ post, totalSubscribers }) {
       />
     </div>
   );
-}
-
-export async function getStaticProps({ params }) {
-  const isProd = process.env.NODE_ENV === "production";
-  const base = isProd ? "https://draculatheme.com" : "http://localhost:3000";
-
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "createdAt",
-    "updatedAt",
-    "slug",
-    "author",
-    "excerpt",
-    "content",
-    "ogImage",
-    "color",
-  ]);
-
-  const totalSubscribersReq = await fetch(`${base}/api/mailchimp`);
-  const totalSubscribersRes = await totalSubscribersReq.json();
-  const totalSubscribers = totalSubscribersRes.total;
-
-  return { props: { post: { ...post }, totalSubscribers }, revalidate: 7200 };
-}
-
-export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
 }
 
 Post.Layout = Blogpost;
