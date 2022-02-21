@@ -9,13 +9,14 @@ export default async (req, res) => {
   try {
     const { stats } = await mailchimp.lists.getList("05d188e2db");
 
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=1200, stale-while-revalidate=600'
+    )
     return res.status(200).json({
       total: stats.member_count + stats.unsubscribe_count,
     });
   } catch (error) {
-    return res.status(error.status).json({
-      total: 0,
-      error: JSON.parse(error.response.text).title,
-    });
+    return res.status(400).json({ total: 0 });
   }
 };
