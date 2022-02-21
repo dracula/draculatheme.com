@@ -56,6 +56,11 @@ class Footer extends Component {
             isExternal: true,
           },
           {
+            name: 'Twitter',
+            url: 'https://twitter.com/draculatheme',
+            isExternal: true,
+          },
+          {
             name: 'Discord',
             url: 'https://discord.gg/yDcFsrYuq9',
             isExternal: true,
