@@ -21,8 +21,12 @@ export async function getStaticProps() {
   const gumroadRes = await gumroadReq.json()
   const gumroad = gumroadRes.total
 
+  const googleAnalyticsReq = await fetch(`${getBasePath()}/api/views`)
+  const googleAnalyticsRes = await googleAnalyticsReq.json()
+  const googleAnalytics = googleAnalyticsRes.views
+
   return {
-    props: { mailchimp, twitter, gumroad, github, post: { color: 'purple' } },
+    props: { mailchimp, twitter, gumroad, github, googleAnalytics, post: { color: 'purple' } },
   }
 }
 
@@ -43,6 +47,10 @@ class Dashboard extends React.Component {
         label: 'Mailchimp Subscribers',
         value: this.props.mailchimp,
         link: 'https://draculatheme.com/pro/journey#updates',
+      },
+      {
+        label: 'GA Pageviews',
+        value: this.props.googleAnalytics,
       },
       {
         label: 'Gumroad Sales',
