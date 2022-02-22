@@ -7,4 +7,13 @@ const withTM = require('next-transpile-modules')(['react-github-btn'])
 
 module.exports = withTM({
   swcMinify: true,
+  async redirects() {
+    return [
+      {
+        source: '/discord-invite',
+        destination: 'https://discord.gg/yDcFsrYuq9',
+        permanent: true,
+      },
+    ]
+  },
 })

@@ -55,18 +55,18 @@ class Footer extends Component {
         section: 'Community',
         children: [
           {
-            name: 'GitHub',
-            url: 'https://github.com/dracula/dracula-theme',
-            isExternal: true,
-          },
-          {
             name: 'Twitter',
             url: 'https://twitter.com/draculatheme',
             isExternal: true,
           },
           {
+            name: 'GitHub',
+            url: 'https://github.com/dracula/dracula-theme',
+            isExternal: true,
+          },
+          {
             name: 'Discord',
-            url: 'https://discord.gg/yDcFsrYuq9',
+            url: '/discord-invite',
             isExternal: true,
           },
           {
