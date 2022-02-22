@@ -16,39 +16,32 @@ class Header extends Component {
     this.startTypewriter()
   }
 
-  componentDidUpdate() {
-    this.startTypewriter()
-  }
-
   startTypewriter() {
-    if (!this.malarkey.current) return
-
-    malarkey(this.malarkey.current, {
+    malarkey(text => {
+      if (!this.malarkey.current) return
+      this.malarkey.current.textContent = text
+    }, {
       typeSpeed: 50,
       deleteSpeed: 50,
-      pauseDelay: 2000,
-      loop: true,
-      postfix: '',
+      pauseDuration: 2000,
+      repeat: true,
     })
       .type('Vim')
       .pause()
       .delete()
-      .type('Notepad++')
+      .type('Zsh')
       .pause()
       .delete()
       .type('iTerm')
       .pause()
       .delete()
-      .type('Visual Studio Code')
+      .type('VSCode')
       .pause()
       .delete()
       .type('Terminal.app')
       .pause()
       .delete()
       .type('JetBrains')
-      .pause()
-      .delete()
-      .type('Zsh')
       .pause()
       .delete()
       .type('Sublime')
