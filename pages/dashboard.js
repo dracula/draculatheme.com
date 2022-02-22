@@ -17,16 +17,28 @@ export async function getStaticProps() {
   const githubRes = await githubReq.json()
   const github = githubRes.total
 
-  const gumroadReq = await fetch(`${getBasePath()}/api/sales/tPfIDt`)
-  const gumroadRes = await gumroadReq.json()
-  const gumroad = gumroadRes.total
+  const proSalesReq = await fetch(`${getBasePath()}/api/sales/tPfIDt`)
+  const proSalesRes = await proSalesReq.json()
+  const proSales = proSalesRes.total
+
+  const uiSalesReq = await fetch(`${getBasePath()}/api/sales/MkxCD`)
+  const uiSalesRes = await uiSalesReq.json()
+  const uiSales = uiSalesRes.total
 
   const googleAnalyticsReq = await fetch(`${getBasePath()}/api/views`)
   const googleAnalyticsRes = await googleAnalyticsReq.json()
   const googleAnalytics = googleAnalyticsRes.views
 
   return {
-    props: { mailchimp, twitter, gumroad, github, googleAnalytics, post: { color: 'purple' } },
+    props: {
+      mailchimp,
+      twitter,
+      proSales,
+      uiSales,
+      github,
+      googleAnalytics,
+      post: { color: 'purple' },
+    },
   }
 }
 
@@ -49,13 +61,18 @@ class Dashboard extends React.Component {
         link: 'https://draculatheme.com/pro/journey#updates',
       },
       {
-        label: 'GA Pageviews',
+        label: 'Website Pageviews',
         value: this.props.googleAnalytics,
       },
       {
-        label: 'Gumroad Sales',
-        value: this.props.gumroad,
-        link: 'https://draculatheme.com/pro/journey',
+        label: 'Dracula UI Sales',
+        value: this.props.uiSales,
+        link: 'https://draculatheme.com/ui',
+      },
+      {
+        label: 'Dracula PRO Sales',
+        value: this.props.proSales,
+        link: 'https://draculatheme.com/pro',
       },
     ]
 
