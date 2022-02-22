@@ -53,7 +53,9 @@ class Index extends React.Component {
       itemSelector: '.app',
       sizer: 360,
     })
+
     const loadFilter = localStorage.getItem('filter')
+
     if (loadFilter) {
       this.setState({ filter: loadFilter })
       this.onFilter(loadFilter)
@@ -209,7 +211,10 @@ class Index extends React.Component {
             </div>
 
             <div className={styles.group}>
-              <PlatformToggle onFilter={this.onFilter.bind(this)} />
+              <PlatformToggle
+                filter={this.state.filter}
+                onFilter={this.onFilter.bind(this)}
+              />
             </div>
           </div>
           <div ref={this.element} className={styles.results}>

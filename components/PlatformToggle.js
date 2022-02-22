@@ -2,9 +2,7 @@ import * as React from 'react'
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import styles from './PlatformToggle.module.css'
 
-export default function PlatformToggle({ onFilter }) {
-  const [selected, setSelected] = React.useState('all')
-
+export default function PlatformToggle({ filter, onFilter }) {
   const options = [
     { label: 'All', value: 'all' },
     { label: 'Mac', value: 'mac' },
@@ -16,18 +14,17 @@ export default function PlatformToggle({ onFilter }) {
     <ToggleGroup.Root
       type="single"
       className={styles.buttonGroup}
-      value={selected}
+      value={filter}
       aria-label="Platform Toggle"
       onValueChange={selected => {
-        if (selected) setSelected(selected)
-        onFilter(selected)
+        if (selected) onFilter(selected)
       }}
     >
       {options.map(({ label, value }) => (
         <ToggleGroup.Item
           key={value}
           value={value}
-          className={selected === value ? styles.buttonSelected : styles.button}
+          className={filter === value ? styles.buttonSelected : styles.button}
         >
           {label}
         </ToggleGroup.Item>
