@@ -21,13 +21,13 @@ You can now follow [@draculatheme](https://twitter.com/draculatheme) to get live
 
 Seven new themes joined the Dracula clan this week.
 
-- [Cider](/foot-terminal): an open source **Apple Music client**
-- [CodeRunner](/foot-terminal): a lightweight **IDE for macOS**
-- [Git](/foot-terminal): the **version control** system that we all love
-- [JDownloader2](/foot-terminal): a **download manager**, written in Java
-- [Openbox](/foot-terminal): a highly configurable **window manager**
-- [Postbox](/foot-terminal): a **desktop email client**, news client, and feed reader
-- [wezterm](/foot-terminal): a GPU-accelerated cross-platform **terminal emulator**
+- [Cider](/cider): an open source **Apple Music client**
+- [CodeRunner](/coderunner): a lightweight **IDE for macOS**
+- [Git](/git): the **version control** system that we all love
+- [JDownloader2](/jdownloader2): a **download manager**, written in Java
+- [Openbox](/openbox): a highly configurable **window manager**
+- [Postbox](/postbox): a **desktop email client**, news client, and feed reader
+- [wezterm](/wezterm): a GPU-accelerated cross-platform **terminal emulator**
 
 ![WezTerm Theme Preview](/static/img/blog/dracula-on-twitter-and-7-new-themes-b.png)
 
