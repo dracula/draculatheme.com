@@ -28,6 +28,7 @@ export default class extends Document {
           `,
             }}
           />
+        </Head>
         <Main />
         <NextScript />
       </Html>
