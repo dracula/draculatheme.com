@@ -29,6 +29,7 @@
     "gh-pages": "^2.1.1",
     "googleapis": "^82.0.0",
     "gray-matter": "^4.0.2",
+    "lottie-web": "^5.8.1",
     "malarkey": "^2.0.2",
     "moment": "^2.24.0",
     "next": "^12.1.0",
