@@ -241,7 +241,7 @@ class Product extends React.Component {
               href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`}
               className="item-add"
             >
-              Pre-order
+              Add to cart
             </a>
           </div>
         </div>
@@ -270,7 +270,7 @@ class Product extends React.Component {
               className="item-add"
               href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true`}
             >
-              Pre-order
+              Add to cart
             </a>
           </div>
         </div>

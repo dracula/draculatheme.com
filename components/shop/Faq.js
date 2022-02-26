@@ -19,8 +19,8 @@ class Faq extends Component {
           visible: false,
         },
         {
-          question: `When will I get my pre-order?`,
-          answer: `Pre-orders will be processed on February 28th. After that date, your order will ship within 2-7 business days. You'll get an e-mail with the tracking info to follow it along the way. Shipping timelines will vary based on location.`,
+          question: `When will I get my order?`,
+          answer: `Your order will ship within 2-7 business days. You'll get an e-mail with the tracking info to follow it along the way. Shipping timelines will vary based on location.`,
           visible: false,
         },
         {
