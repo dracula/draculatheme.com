@@ -105,8 +105,7 @@
 }
 
 .video {
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
   margin: 2rem 0 0 0;
   position: relative;
   overflow: hidden;
@@ -115,61 +114,26 @@
   cursor: pointer;
 }
 
-.video video {
+.video iframe {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
-.video:focus .iconOverlay,
-.video:focus-within .iconOverlay,
-.video:hover .iconOverlay {
-  opacity: 1;
-}
-
-.iconOverlay {
-  opacity: 0;
+.video iframe video {
   width: 100%;
   height: 100%;
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: hsla(0, 0%, 0%, 0.5);
-  transition-property: opacity;
-  transition-duration: 0.16s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: cover;
+  object-position: center;
 }
 
-.iconOverlay button {
-  width: fit-content;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-flow: nowrap row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 1rem;
-  border: none;
-  cursor: pointer;
-  line-height: 1;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 100%);
-  background-color: hsla(0, 0%, 0%, 0.75);
-}
-
-.iconOverlay button span {
-  display: inline-block;
-}
-
-.soundIconContainer svg {
-  width: 1.75em !important;
-  height: 1.75em !important;
+@media (max-width: 90rem) {
+  .title {
+    font-size: 3.125rem;
+  }
 }
 
 @media (max-width: 64rem) {
