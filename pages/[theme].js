@@ -9,6 +9,8 @@ import probe from 'probe-image-size'
 import { convertMarkdownToReact } from '../lib/markdown'
 import { getColorFromName } from '../lib/color'
 import { getBasePath } from '../lib/environment'
+import ThemeDetails from '../components/ThemeDetails'
+import { intervalToDuration } from 'date-fns'
 
 export async function getStaticPaths() {
   return { paths, fallback: 'blocking' }
@@ -60,7 +62,89 @@ export async function getStaticProps({ params }) {
   const totalSubscribersRes = await totalSubscribersReq.json()
   const totalSubscribers = totalSubscribersRes.total
 
+  const totalStarsReq = await fetch(
+    `https://api.github.com/repos/dracula/${query.repo}`,
+    header
+  )
+  const totalStarsRes = await totalStarsReq.json()
+  query.totalStars = new Intl.NumberFormat().format(
+    totalStarsRes.stargazers_count
+  )
+
+  const lastCommitReq = await fetch(
+    `https://api.github.com/repos/dracula/${query.repo}/branches/master`,
+    header
+  )
+  const lastCommitRes = await lastCommitReq.json()
+  query.lastCommit = remaining(lastCommitRes.commit.commit.author.date)
+
+  const totalPullRequestsReq = await fetch(
+    `https://api.github.com/repos/dracula/${query.repo}/pulls?state=all`,
+    header
+  )
+  const totalPullRequestsRes = await totalPullRequestsReq.json()
+  query.totalPullRequests = totalPullRequestsRes.length
+    ? totalPullRequestsRes.length.toString()
+    : '0'
+
+  const totalOpenIssuesReq = await fetch(
+    `https://api.github.com/repos/dracula/${query.repo}`,
+    header
+  )
+  const totalOpenIssuesRes = await totalOpenIssuesReq.json()
+  query.openIssues = totalOpenIssuesRes.open_issues
+
   return { props: { query, totalSubscribers }, revalidate: 7200 }
+}
+
+const remaining = endDate => {
+  const now = new Date()
+  const end = new Date(endDate)
+
+  let dur = intervalToDuration({
+    start: now,
+    end: end,
+  })
+
+  if (dur.years > 0) {
+    if (dur.years === 1) {
+      return `${dur.years} year ago`
+    }
+
+    return `${dur.years} years ago`
+  } else if (dur.months > 0) {
+    if (dur.months === 1) {
+      return `${dur.months} month ago`
+    }
+
+    return `${dur.months} months ago`
+  } else if (dur.days > 0) {
+    if (dur.days === 1) {
+      return `${dur.days} day ago`
+    }
+
+    return `${dur.days} days ago`
+  } else if (dur.hours > 0) {
+    if (dur.hours === 1) {
+      return `${dur.hours} hour ago`
+    }
+
+    return `${dur.hours} hours ago`
+  } else if (dur.minutes > 0) {
+    if (dur.minutes === 1) {
+      return `${dur.minutes} minute ago`
+    }
+
+    return `${dur.minutes} minutes ago`
+  } else if (dur.seconds > 0) {
+    if (dur.seconds === 1) {
+      return `${dur.seconds} second ago`
+    }
+
+    return `${dur.seconds} seconds ago`
+  }
+
+  return ''
 }
 
 class Theme extends React.Component {
@@ -138,6 +222,13 @@ class Theme extends React.Component {
           <Contributors
             repo={this.props.query.repo}
             data={this.props.query.contributors}
+          />
+          <ThemeDetails
+            repo={this.props.query.repo}
+            stars={this.props.query.totalStars}
+            lastCommit={this.props.query.lastCommit}
+            pullRequests={this.props.query.totalPullRequests}
+            openIssues={this.props.query.openIssues}
           />
         </div>
       </div>
