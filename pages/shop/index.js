@@ -67,11 +67,9 @@ class Shop extends React.Component {
             property="og:image"
           />
         </Head>
-        <div>
-          <Hero />
-          <div className="theme">
-            <div className="products">{this.renderProducts()}</div>
-          </div>
+        <Hero />
+        <div id="shopCollection" className="theme">
+          <div className="products">{this.renderProducts()}</div>
         </div>
       </div>
     )

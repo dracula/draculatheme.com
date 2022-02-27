@@ -23,8 +23,20 @@
 body {
   background: #383a59;
   color: rgb(var(--rgbForeground));
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   font-family: var(--body);
   font-weight: 300;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+[id] {
+  scroll-margin-top: calc(2ex + 5.125rem);
 }
 
 .theme {
