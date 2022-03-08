@@ -1,12 +1,12 @@
 :root {
-  --cyan: 139, 233, 253;
-  --green: 80, 250, 123;
-  --orange: 255, 184, 108;
-  --pink: 255, 121, 198;
-  --purple: 189, 147, 249;
-  --yellow: 241, 250, 140;
-  --background: 40, 42, 54;
-  --foreground: 248, 248, 242;
+  --rgbCyan: 139, 233, 253;
+  --rgbGreen: 80, 250, 123;
+  --rgbOrange: 255, 184, 108;
+  --rgbPink: 255, 121, 198;
+  --rgbPurple: 189, 147, 249;
+  --rgbYellow: 241, 250, 140;
+  --rgbBackground: 40, 42, 54;
+  --rgbForeground: 248, 248, 242;
 
   --title: 'Abril Text';
   --body: 'Source Sans Pro';
@@ -23,10 +23,10 @@
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  background: #383a59;
+  color: rgb(var(--rgbForeground));
   font-family: var(--body);
   font-weight: 300;
-  color: rgb(var(--foreground));
-  background: #383a59;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -91,7 +91,7 @@ body {
   font-family: var(--title);
   font-weight: 700;
   display: inline-block;
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   font-size: 24px;
   cursor: pointer;
   transition: none;
@@ -108,27 +108,27 @@ body {
 
 .cyan .topbar-title:hover,
 .cyan .topbar-subtitle {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 .green .topbar-title:hover,
 .green .topbar-subtitle {
-  color: rgb(var(--green));
+  color: rgb(var(--rgbGreen));
 }
 .orange .topbar-title:hover,
 .orange .topbar-subtitle {
-  color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
 }
 .pink .topbar-title:hover,
 .pink .topbar-subtitle {
-  color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
 }
 .purple .topbar-title:hover,
 .purple .topbar-subtitle {
-  color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
 }
 .yellow .topbar-title:hover,
 .yellow .topbar-subtitle {
-  color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
 }
 
 nav {
@@ -149,7 +149,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   font-size: 20px;
   font-weight: 400;
   border-bottom: 2px solid transparent;
@@ -157,33 +157,33 @@ nav ul li a {
 }
 
 .cyan nav ul li a:hover {
-  border-color: rgb(var(--cyan));
-  color: rgb(var(--cyan));
+  border-color: rgb(var(--rgbCyan));
+  color: rgb(var(--rgbCyan));
 }
 
 .green nav ul li a:hover {
-  border-color: rgb(var(--green));
-  color: rgb(var(--green));
+  border-color: rgb(var(--rgbGreen));
+  color: rgb(var(--rgbGreen));
 }
 
 .orange nav ul li a:hover {
-  border-color: rgb(var(--orange));
-  color: rgb(var(--orange));
+  border-color: rgb(var(--rgbOrange));
+  color: rgb(var(--rgbOrange));
 }
 
 .pink nav ul li a:hover {
-  border-color: rgb(var(--pink));
-  color: rgb(var(--pink));
+  border-color: rgb(var(--rgbPink));
+  color: rgb(var(--rgbPink));
 }
 
 .purple nav ul li a:hover {
-  border-color: rgb(var(--purple));
-  color: rgb(var(--purple));
+  border-color: rgb(var(--rgbPurple));
+  color: rgb(var(--rgbPurple));
 }
 
 .yellow nav ul li a:hover {
-  border-color: rgb(var(--yellow));
-  color: rgb(var(--yellow));
+  border-color: rgb(var(--rgbYellow));
+  color: rgb(var(--rgbYellow));
 }
 
 /* Categories
@@ -198,13 +198,13 @@ nav ul li a {
 }
 
 .category-title.orange {
-  color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
 }
 .category-title.cyan {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 .category-title.purple {
-  color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
 }
 
 .category-title.tilt-right {
@@ -234,19 +234,19 @@ nav ul li a {
 }
 
 .app:hover .orange {
-  color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
 }
 .app:hover .pink {
-  color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
 }
 .app:hover .cyan {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 .app:hover .purple {
-  color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
 }
 .app:hover .yellow {
-  color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
 }
 
 .app-img {
@@ -263,7 +263,7 @@ nav ul li a {
 }
 
 .app-views {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   text-align: center;
 }
 
@@ -305,7 +305,7 @@ nav ul li a {
 }
 
 .footer-section {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   font-weight: 500;
   font-size: 18px;
 }
@@ -334,31 +334,31 @@ nav ul li a {
 }
 
 .credits .cyan {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 .credits .cyan:hover {
-  color: rgba(var(--cyan), var(--alpha));
+  color: rgba(var(--rgbCyan), var(--alpha));
 }
 
 .credits .green {
-  color: rgb(var(--green));
+  color: rgb(var(--rgbGreen));
 }
 .credits .green:hover {
-  color: rgba(var(--green), var(--alpha));
+  color: rgba(var(--rgbGreen), var(--alpha));
 }
 
 .credits .orange {
-  color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
 }
 .credits .orange:hover {
-  color: rgb(var(--orange), var(--alpha));
+  color: rgb(var(--rgbOrange), var(--alpha));
 }
 
 .credits .pink {
-  color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
 }
 .credits .pink:hover {
-  color: rgba(var(--pink), var(--alpha));
+  color: rgba(var(--rgbPink), var(--alpha));
 }
 
 .credits .love {
@@ -366,7 +366,7 @@ nav ul li a {
   position: relative;
   top: 0.2em;
   font-size: 1.4em;
-  color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
   transform: scale(0.9);
@@ -494,20 +494,20 @@ a {
 .orange .theme code,
 .orange .form-highlight,
 .orange .form input[type='email'] {
-  color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
 }
 
 .orange .subtitle a:hover,
 .orange .theme a:hover {
-  color: rgb(var(--orange), var(--alpha));
+  color: rgb(var(--rgbOrange), var(--alpha));
 }
 
 .orange .form input[type='submit'] {
-  background: rgb(var(--orange));
+  background: rgb(var(--rgbOrange));
 }
 
 .orange ::selection {
-  background: rgb(var(--orange));
+  background: rgb(var(--rgbOrange));
   color: #000;
 }
 
@@ -519,20 +519,20 @@ a {
 .pink .theme code,
 .pink .form-highlight,
 .pink .form input[type='email'] {
-  color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
 }
 
 .pink .subtitle a:hover,
 .pink .theme a:hover {
-  color: rgba(var(--pink), var(--alpha));
+  color: rgba(var(--rgbPink), var(--alpha));
 }
 
 .pink .form input[type='submit'] {
-  background: rgb(var(--pink));
+  background: rgb(var(--rgbPink));
 }
 
 .pink ::selection {
-  background: rgb(var(--pink));
+  background: rgb(var(--rgbPink));
   color: #000;
 }
 
@@ -544,20 +544,20 @@ a {
 .cyan .theme code,
 .cyan .form-highlight,
 .cyan .form input[type='email'] {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 
 .cyan .subtitle a:hover,
 .cyan .theme a:hover {
-  color: rgba(var(--cyan), var(--alpha));
+  color: rgba(var(--rgbCyan), var(--alpha));
 }
 
 .cyan .form input[type='submit'] {
-  background: rgb(var(--cyan));
+  background: rgb(var(--rgbCyan));
 }
 
 .cyan ::selection {
-  background: rgb(var(--cyan));
+  background: rgb(var(--rgbCyan));
   color: #000;
 }
 
@@ -569,20 +569,20 @@ a {
 .purple .theme code,
 .purple .form-highlight,
 .purple .form input[type='email'] {
-  color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
 }
 
 .purple .subtitle a:hover,
 .purple .theme a:hover {
-  color: rgba(var(--purple), var(--alpha));
+  color: rgba(var(--rgbPurple), var(--alpha));
 }
 
 .purple .form input[type='submit'] {
-  background: rgb(var(--purple));
+  background: rgb(var(--rgbPurple));
 }
 
 .purple ::selection {
-  background: rgb(var(--purple));
+  background: rgb(var(--rgbPurple));
   color: #000;
 }
 
@@ -594,25 +594,25 @@ a {
 .yellow .theme code,
 .yellow .form-highlight,
 .yellow .form input[type='email'] {
-  color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
 }
 
 .yellow .subtitle a:hover,
 .yellow .theme a:hover {
-  color: rgba(var(--yellow), 0.7);
+  color: rgba(var(--rgbYellow), 0.7);
 }
 
 .yellow .form input[type='submit'] {
-  background: rgb(var(--yellow));
+  background: rgb(var(--rgbYellow));
 }
 
 .yellow ::selection {
-  background: rgb(var(--yellow));
+  background: rgb(var(--rgbYellow));
   color: #000;
 }
 
 .pro-highlight {
-  color: rgb(var(--green));
+  color: rgb(var(--rgbGreen));
 }
 
 .green .title,
@@ -623,20 +623,20 @@ a {
 .green .theme code,
 .green .form-highlight,
 .green .form input[type='email'] {
-  color: rgb(var(--green));
+  color: rgb(var(--rgbGreen));
 }
 
 .green .subtitle a:hover,
 .green .theme a:hover {
-  color: rgba(var(--green), 0.7);
+  color: rgba(var(--rgbGreen), 0.7);
 }
 
 .green .form input[type='submit'] {
-  background: rgb(var(--green));
+  background: rgb(var(--rgbGreen));
 }
 
 .green ::selection {
-  background: rgb(var(--green));
+  background: rgb(var(--rgbGreen));
   color: #000;
 }
 
@@ -736,7 +736,7 @@ a {
 }
 
 .rss a {
-  color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
 }
 
 /* ==========================================================================
@@ -744,7 +744,7 @@ a {
    ========================================================================== */
 
 .single .wrap {
-  background: rgb(var(--background));
+  background: rgb(var(--rgbBackground));
   padding: 80px 0;
 }
 
@@ -767,63 +767,63 @@ a {
 }
 
 .cyan .single a {
-  color: rgb(var(--cyan));
-  text-decoration-color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
+  text-decoration-color: rgb(var(--rgbCyan));
 }
 
 .green .single a {
-  color: rgb(var(--green));
-  text-decoration-color: rgb(var(--green));
+  color: rgb(var(--rgbGreen));
+  text-decoration-color: rgb(var(--rgbGreen));
 }
 
 .orange .single a {
-  color: rgb(var(--orange));
-  text-decoration-color: rgb(var(--orange));
+  color: rgb(var(--rgbOrange));
+  text-decoration-color: rgb(var(--rgbOrange));
 }
 
 .pink .single a {
-  color: rgb(var(--pink));
-  text-decoration-color: rgb(var(--pink));
+  color: rgb(var(--rgbPink));
+  text-decoration-color: rgb(var(--rgbPink));
 }
 
 .purple .single a {
-  color: rgb(var(--purple));
-  text-decoration-color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
+  text-decoration-color: rgb(var(--rgbPurple));
 }
 
 .yellow .single a {
-  color: rgb(var(--yellow));
-  text-decoration-color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
+  text-decoration-color: rgb(var(--rgbYellow));
 }
 
 .cyan .single a:hover {
-  color: rgba(var(--cyan), 0.7);
-  text-decoration-color: rgba(var(--cyan), 0.7);
+  color: rgba(var(--rgbCyan), 0.7);
+  text-decoration-color: rgba(var(--rgbCyan), 0.7);
 }
 
 .green .single a:hover {
-  color: rgba(var(--green), 0.7);
-  text-decoration-color: rgba(var(--green), 0.7);
+  color: rgba(var(--rgbGreen), 0.7);
+  text-decoration-color: rgba(var(--rgbGreen), 0.7);
 }
 
 .orange .single a:hover {
-  color: rgb(var(--orange), 0.7);
-  text-decoration-color: rgb(var(--orange), 0.7);
+  color: rgb(var(--rgbOrange), 0.7);
+  text-decoration-color: rgb(var(--rgbOrange), 0.7);
 }
 
 .pink .single a:hover {
-  color: rgba(var(--pink), 0.7);
-  text-decoration-color: rgba(var(--pink), 0.7);
+  color: rgba(var(--rgbPink), 0.7);
+  text-decoration-color: rgba(var(--rgbPink), 0.7);
 }
 
 .purple .single a:hover {
-  color: rgba(var(--purple), var(--alpha));
-  text-decoration-color: rgba(var(--purple), var(--alpha));
+  color: rgba(var(--rgbPurple), var(--alpha));
+  text-decoration-color: rgba(var(--rgbPurple), var(--alpha));
 }
 
 .yellow .single a:hover {
-  color: rgba(var(--yellow), var(--alpha));
-  text-decoration-color: rgba(var(--yellow), var(--alpha));
+  color: rgba(var(--rgbYellow), var(--alpha));
+  text-decoration-color: rgba(var(--rgbYellow), var(--alpha));
 }
 
 .single img {
@@ -832,7 +832,7 @@ a {
 
 .single img {
   border-radius: 10px;
-  border: 5px solid rgb(var(--cyan));
+  border: 5px solid rgb(var(--rgbCyan));
   margin-top: 10px;
   max-width: 100%;
 }
@@ -846,7 +846,7 @@ a {
 }
 
 .single .highlight {
-  color: rgb(var(--cyan));
+  color: rgb(var(--rgbCyan));
 }
 
 /* ==========================================================================
@@ -994,32 +994,32 @@ a {
 
 .cyan .blog-item-title,
 .cyan .blog h1 {
-  color: rgb(var(--cyan)) !important;
+  color: rgb(var(--rgbCyan)) !important;
 }
 
 .green .blog-item-title,
 .green .blog h1 {
-  color: rgb(var(--green)) !important;
+  color: rgb(var(--rgbGreen)) !important;
 }
 
 .orange .blog-item-title,
 .orange .blog h1 {
-  color: rgb(var(--orange)) !important;
+  color: rgb(var(--rgbOrange)) !important;
 }
 
 .pink .blog-item-title,
 .pink .blog h1 {
-  color: rgb(var(--pink)) !important;
+  color: rgb(var(--rgbPink)) !important;
 }
 
 .purple .blog-item-title,
 .purple .blog h1 {
-  color: rgb(var(--purple)) !important;
+  color: rgb(var(--rgbPurple)) !important;
 }
 
 .yellow .blog-item-title,
 .yellow .blog h1 {
-  color: rgb(var(--yellow));
+  color: rgb(var(--rgbYellow));
 }
 
 .blog-wraper {
@@ -1112,7 +1112,7 @@ a {
 }
 
 .blog-item a {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   text-decoration-line: none;
 }
 
@@ -1164,7 +1164,7 @@ a {
    ========================================================================== */
 
 .shop {
-  background: rgb(var(--background));
+  background: rgb(var(--rgbBackground));
   padding: 80px 0;
   margin-top: 60px;
 }
@@ -1190,7 +1190,7 @@ a {
 }
 
 .product-name {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
   font-size: 20px;
   text-align: center;
 }
@@ -1229,7 +1229,7 @@ a {
 }
 
 .back-link:hover {
-  color: rgb(var(--foreground)) !important;
+  color: rgb(var(--rgbForeground)) !important;
 }
 
 /* ==========================================================================
@@ -1411,7 +1411,7 @@ a {
 }
 
 .size-title {
-  color: rgb(var(--purple));
+  color: rgb(var(--rgbPurple));
   margin: 0;
   font-size: 48px;
   text-align: left;
@@ -1448,102 +1448,102 @@ a {
 }
 
 .size-unit {
-  color: rgb(var(--foreground));
+  color: rgb(var(--rgbForeground));
 }
 
 .size-unit-selected {
-  background: rgb(var(--purple));
+  background: rgb(var(--rgbPurple));
   color: #000;
 }
 
 .purple .item-add,
 .purple .item-add:hover,
 .purple .item-add:focus {
-  background: rgb(var(--purple));
+  background: rgb(var(--rgbPurple));
 }
 
 .purple .item-other-images img:hover {
-  border-color: rgb(var(--purple));
+  border-color: rgb(var(--rgbPurple));
 }
 
 .purple .item-number {
-  border: 1px solid rgb(var(--purple));
-  color: rgb(var(--purple));
+  border: 1px solid rgb(var(--rgbPurple));
+  color: rgb(var(--rgbPurple));
 }
 
 .green .item-add,
 .green .item-add:hover,
 .green .item-add:focus {
-  background: rgb(var(--green));
+  background: rgb(var(--rgbGreen));
 }
 
 .green .item-other-images img:hover {
-  border-color: rgb(var(--green));
+  border-color: rgb(var(--rgbGreen));
 }
 
 .green .item-number {
-  border: 1px solid rgb(var(--green));
-  color: rgb(var(--green));
+  border: 1px solid rgb(var(--rgbGreen));
+  color: rgb(var(--rgbGreen));
 }
 
 .cyan .item-add,
 .cyan .item-add:hover,
 .cyan .item-add:focus {
-  background: rgb(var(--cyan));
+  background: rgb(var(--rgbCyan));
 }
 
 .cyan .item-other-images img:hover {
-  border-color: rgb(var(--cyan));
+  border-color: rgb(var(--rgbCyan));
 }
 
 .cyan .item-number {
-  border: 1px solid rgb(var(--cyan));
-  color: rgb(var(--cyan));
+  border: 1px solid rgb(var(--rgbCyan));
+  color: rgb(var(--rgbCyan));
 }
 
 .pink .item-add,
 .pink .item-add:hover,
 .pink .item-add:focus {
-  background: rgb(var(--pink));
+  background: rgb(var(--rgbPink));
 }
 
 .pink .item-other-images img:hover {
-  border-color: rgb(var(--pink));
+  border-color: rgb(var(--rgbPink));
 }
 
 .pink .item-number {
-  border: 1px solid rgb(var(--pink));
-  color: rgb(var(--pink));
+  border: 1px solid rgb(var(--rgbPink));
+  color: rgb(var(--rgbPink));
 }
 
 .orange .item-add,
 .orange .item-add:hover,
 .orange .item-add:focus {
-  background: rgb(var(--orange));
+  background: rgb(var(--rgbOrange));
 }
 
 .orange .item-other-images img:hover {
-  border-color: rgb(var(--orange));
+  border-color: rgb(var(--rgbOrange));
 }
 
 .orange .item-number {
-  border: 1px solid rgb(var(--orange));
-  color: rgb(var(--orange));
+  border: 1px solid rgb(var(--rgbOrange));
+  color: rgb(var(--rgbOrange));
 }
 
 .yellow .item-add,
 .yellow .item-add:hover,
 .yellow .item-add:focus {
-  background: rgb(var(--yellow));
+  background: rgb(var(--rgbYellow));
 }
 
 .yellow .item-other-images img:hover {
-  border-color: rgb(var(--yellow));
+  border-color: rgb(var(--rgbYellow));
 }
 
 .yellow .item-number {
-  border: 1px solid rgb(var(--yellow));
-  color: rgb(var(--yellow));
+  border: 1px solid rgb(var(--rgbYellow));
+  color: rgb(var(--rgbYellow));
 }
 
 /* ==========================================================================
