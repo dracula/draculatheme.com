@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import ShopLayout from '../../layouts/Shop'
-import Hero from '../../components/shop/hero'
+import Hero from '../../components/shop/Hero'
 import products from '../../lib/shop'
 import { getProduct } from '../../lib/gumroad'
 
@@ -53,7 +53,7 @@ class Shop extends React.Component {
     const image = '/static/img/shop/og.jpg'
 
     return (
-      <div className="shop">
+      <div>
         <Head>
           <meta charSet="utf-8" />
           <title>{title}</title>
@@ -68,8 +68,10 @@ class Shop extends React.Component {
           />
         </Head>
         <Hero />
-        <div id="shopCollection" className="theme">
-          <div className="products">{this.renderProducts()}</div>
+        <div id="browse" className="product-container">
+          <div className="theme">
+            <div className="products">{this.renderProducts()}</div>
+          </div>
         </div>
       </div>
     )
