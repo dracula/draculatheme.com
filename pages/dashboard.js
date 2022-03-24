@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { getBasePath } from '../lib/environment'
 import Blogpost from '../layouts/Blogpost'
+import MetricCard from '../components/MetricCard'
 import styles from './dashboard.module.css'
 
 export async function getStaticProps() {
@@ -77,34 +78,10 @@ class Dashboard extends React.Component {
     ]
 
     return metrics.map((metric, index) => {
-      return (
-        <div className={styles.metric} key={index}>
-          <h4 className={styles.label}>
-            {metric.label}
-            {metric.link && (
-              <a target="_blank" href={metric.link}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className={styles.link}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </a>
-            )}
-          </h4>
-          <p className={styles.value}>{metric.value}</p>
-        </div>
-      )
+      return <MetricCard metric={metric} key={index} />
     })
   }
+
   render() {
     const title = 'Dashboard — Public metrics for Dracula Theme'
     const description =
