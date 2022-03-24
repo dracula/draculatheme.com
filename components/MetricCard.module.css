@@ -1,0 +1,60 @@
+.metric {
+  display: flex;
+  flex-flow: wrap column;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid hsl(230, 15%, 30%);
+  background-color: hsl(245, 14%, 15%);
+  box-shadow: 0px 4px 4px hsla(0, 0%, 0%, 0.25);
+}
+
+.label {
+  margin: 0;
+  line-height: 20px;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+}
+
+.link {
+  width: 18px;
+  margin-left: 6px;
+  position: relative;
+  top: 2px;
+  color: hsl(0, 0%, 95%);
+}
+
+.value {
+  margin: 0;
+  line-height: 50px;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-size: 38px;
+  font-weight: 400;
+
+  background: linear-gradient(
+    136.23deg,
+    hsl(330, 100%, 75%) -2.25%,
+    hsl(250, 100%, 75%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.value::selection {
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: hsl(0, 0%, 0%);
+  background-clip: none;
+  text-fill-color: hsl(0, 0%, 0%);
+}
+
+@media (max-width: 900px) {
+  .metric {
+    margin-bottom: 60px;
+  }
+}
