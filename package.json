@@ -40,6 +40,7 @@
     "react-dom": "^17.0.2",
     "react-github-btn": "^1.1.1",
     "react-image-magnifiers": "^1.4.0",
+    "react-lines-ellipsis": "^0.15.0",
     "react-select": "^3.1.0",
     "remark": "^13.0.0",
     "remark-parse": "^9.0.0",

@@ -1,5 +1,5 @@
 .next
 out
-blog
+# blog
 lib/easter-egg.js
 lib/paths.js
