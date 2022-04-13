@@ -1684,6 +1684,30 @@ a {
   color: rgb(var(--rgbYellow));
 }
 
+.featured-blog-post .blog-title.cyan {
+  color: rgb(var(--rgbCyan));
+}
+
+.featured-blog-post .blog-title.green {
+  color: rgb(var(--rgbGreen));
+}
+
+.featured-blog-post .blog-title.orange {
+  color: rgb(var(--rgbOrange));
+}
+
+.featured-blog-post .blog-title.pink {
+  color: rgb(var(--rgbPink));
+}
+
+.featured-blog-post .blog-title.purple {
+  color: rgb(var(--rgbPurple));
+}
+
+.featured-blog-post .blog-title.yellow {
+  color: rgb(var(--rgbYellow));
+}
+
 /* ==========================================================================
    Table
    ========================================================================== */
