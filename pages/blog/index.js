@@ -55,7 +55,7 @@ function Blog({ allPosts, totalSubscribers }) {
       </Head>
 
       <div className="wrap">
-        <FeaturedBlogPosts posts={allPosts.slice(0, 3)} />
+        <FeaturedBlogPosts posts={allPosts.slice(0, 2)} />
 
         <div className="blog">
           {allPosts.map(post => {
