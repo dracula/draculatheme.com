@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { getBasePath } from '../lib/environment'
 import Blogpost from '../layouts/Blogpost'
 import MetricCard from '../components/MetricCard'
-import styles from './dashboard.module.css'
+import styles from './open.module.css'
 
 export async function getStaticProps() {
   const mailchimpReq = await fetch(`${getBasePath()}/api/mailchimp`)
@@ -83,9 +83,9 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const title = 'Dashboard — Public metrics for Dracula Theme'
+    const title = 'Open Dashboard — Public metrics for Dracula Theme'
     const description =
-      'Dracula it operates fully transparent and shares its metrics with the community.'
+      'Dracula operates fully transparent and shares its metrics with the community.'
 
     return (
       <div className={styles.dashboard}>
@@ -107,7 +107,8 @@ class Dashboard extends React.Component {
         </Head>
 
         <div className={styles.container}>
-          <h3>Dashboard</h3>
+          <h3>Open Dashboard</h3>
+          <p className={styles.description}>{description}</p>
           <div className={styles.metrics}>{this.renderMetrics()}</div>
         </div>
       </div>

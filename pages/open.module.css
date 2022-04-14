@@ -10,6 +10,11 @@
   max-width: 656px;
 }
 
+.description {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
 .metrics {
   margin-top: 30px;
   display: grid;

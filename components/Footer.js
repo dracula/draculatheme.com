@@ -42,7 +42,7 @@ class Footer extends Component {
           },
           {
             name: 'Dashboard',
-            url: '/dashboard',
+            url: '/open',
           },
           {
             name: 'Spec',
