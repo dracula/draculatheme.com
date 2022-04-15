@@ -11,7 +11,7 @@ import { getColorFromName } from '../lib/color'
 import { getBasePath } from '../lib/environment'
 
 export async function getStaticPaths() {
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
@@ -21,16 +21,19 @@ export async function getStaticProps({ params }) {
     },
   }
 
-  const query = paths.find(path => path.params.theme === params.theme).params
+  let query = paths.find(path => path.params.theme === params.theme)
 
-  const installReq = await fetch(
-    `https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`,
-    header
-  )
+  if (!query.params) {
+    return { props: {} }
+  }
+  else {
+    query = query.params
+  }
 
-  const installRes = await installReq.json()
-  const installBuffer = Buffer.from(installRes.content, 'base64')
-  query.install = installBuffer.toString('utf8')
+  const installReq = await fetch(`${getBasePath()}/api/installs/${query.repo}`)
+  const { install } = await installReq.json()
+  const buffer = Buffer.from(install, 'base64')
+  query.install = buffer.toString('utf8')
 
   const contributorsReq = await fetch(
     `https://api.github.com/repos/dracula/${query.repo}/contributors`,
