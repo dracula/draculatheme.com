@@ -35,16 +35,9 @@ export async function getStaticProps({ params }) {
   const buffer = Buffer.from(install, 'base64')
   query.install = buffer.toString('utf8')
 
-  const contributorsReq = await fetch(
-    `https://api.github.com/repos/dracula/${query.repo}/contributors`,
-    header
-  )
-
-  const contributors = await contributorsReq.json()
-  query.contributors = contributors.filter(contributor => {
-    if (contributor.login === 'ImgBotApp') return
-    return contributor
-  })
+  const contributorsReq = await fetch(`${getBasePath()}/api/contributors/${params.theme}`)
+  const { contributors } = await contributorsReq.json()
+  query.contributors = contributors
 
   const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`
   await download(image, 'public/static/img/screenshots', {
