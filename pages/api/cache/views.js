@@ -4,7 +4,7 @@ import { getData } from '../../../lib/ga'
 import pLimit from 'p-limit'
 
 // Number of concurrent requests allowed by Google Analytics API
-const limit = pLimit(10)
+const limit = pLimit(8)
 
 export default async (req, res) => {
   try {
