@@ -29,7 +29,7 @@ class Updates extends Component {
         </p>
 
         <form
-          action="https://draculatheme.us4.list-manage.com/subscribe/post?u=91b5113403e18d357704e4b08&ampid=05d188e2db"
+          action="https://draculatheme.us4.list-manage.com/subscribe/post?u=91b5113403e18d357704e4b08&amp;id=05d188e2db"
           method="post"
           className="form"
         >
