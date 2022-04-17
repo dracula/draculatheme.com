@@ -25,5 +25,5 @@ async function fetchAndOrganize(views, path) {
   const key = path.params.theme
   const value = await getData(key)
 
-  return views[key] = value
+  return (views[key] = value)
 }

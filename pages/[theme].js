@@ -25,8 +25,7 @@ export async function getStaticProps({ params }) {
 
   if (!query.params) {
     return { props: {} }
-  }
-  else {
+  } else {
     query = query.params
   }
 
@@ -35,7 +34,9 @@ export async function getStaticProps({ params }) {
   const buffer = Buffer.from(install, 'base64')
   query.install = buffer.toString('utf8')
 
-  const contributorsReq = await fetch(`${getBasePath()}/api/contributors/${params.theme}`)
+  const contributorsReq = await fetch(
+    `${getBasePath()}/api/contributors/${params.theme}`
+  )
   const { contributors } = await contributorsReq.json()
   query.contributors = contributors
 

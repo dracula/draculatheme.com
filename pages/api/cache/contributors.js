@@ -11,9 +11,7 @@ export default async (req, res) => {
   try {
     let contributors = {}
 
-    await Promise.all(
-      paths.map(path => fetchAndOrganize(contributors, path))
-    )
+    await Promise.all(paths.map(path => fetchAndOrganize(contributors, path)))
 
     await redis.hmset('contributors', contributors)
     return res.status(200).json({ contributors })
@@ -38,9 +36,9 @@ async function fetchAndOrganize(contributors, path) {
     .map(contributor => {
       return {
         login: contributor.login,
-        avatar_url: contributor.avatar_url
+        avatar_url: contributor.avatar_url,
       }
     })
 
-  return contributors[key] = JSON.stringify(value)
+  return (contributors[key] = JSON.stringify(value))
 }

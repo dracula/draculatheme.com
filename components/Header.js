@@ -17,15 +17,18 @@ class Header extends Component {
   }
 
   startTypewriter() {
-    malarkey(text => {
-      if (!this.malarkey.current) return
-      this.malarkey.current.textContent = text
-    }, {
-      typeSpeed: 50,
-      deleteSpeed: 50,
-      pauseDuration: 2000,
-      repeat: true,
-    })
+    malarkey(
+      text => {
+        if (!this.malarkey.current) return
+        this.malarkey.current.textContent = text
+      },
+      {
+        typeSpeed: 50,
+        deleteSpeed: 50,
+        pauseDuration: 2000,
+        repeat: true,
+      }
+    )
       .type('Vim')
       .pause()
       .delete()
