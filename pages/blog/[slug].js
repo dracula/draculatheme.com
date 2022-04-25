@@ -1,60 +1,57 @@
-import Head from "next/head";
-import ErrorPage from "next/error";
-import { useRouter } from "next/router";
-import { BlogJsonLd } from "next-seo";
-import Blogpost from "../../layouts/Blogpost";
-import BlogDate from "../../components/BlogDate";
-import Updates from "../../components/Updates";
-import { getBasePath } from "../../lib/environment";
-import { getPostBySlug, getAllPosts } from "../../lib/blog";
-import { convertMarkdownToReact } from "../../lib/markdown";
-
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "createdAt",
-    "updatedAt",
-    "slug",
-    "author",
-    "excerpt",
-    "content",
-    "ogImage",
-    "color",
-  ]);
-
-  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
-  const totalSubscribersRes = await totalSubscribersReq.json();
-  const totalSubscribers = totalSubscribersRes.total;
-
-  return { props: { post: { ...post }, totalSubscribers }, revalidate: 7200 };
-}
+import { allBlogPosts } from 'contentlayer/generated'
+import { BlogJsonLd } from 'next-seo'
+import { format, parseISO } from 'date-fns'
+import { getBasePath } from '../../lib/environment'
+import Blogpost from '../../layouts/Blogpost'
+import Head from 'next/head'
+import Updates from '../../components/Updates'
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
-
+  const paths = allBlogPosts.map(post => post.url)
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths,
     fallback: false,
-  };
+  }
 }
 
-function Post({ post, totalSubscribers }) {
-  const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
+export async function getStaticProps({ params }) {
+  const post = allBlogPosts.find(
+    post => post._raw.flattenedPath === params.slug
+  )
 
-  const url = `https://draculatheme.com/blog/${post.slug}`;
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`)
+  const totalSubscribersRes = await totalSubscribersReq.json()
+  const totalSubscribers = totalSubscribersRes.total
+
+  return { props: { post, totalSubscribers }, revalidate: 7200 }
+}
+
+const createBlogPostMarkup = post => {
+  return {
+    __html: `
+        <h1>${post.title}</h1>
+        <div class="blog-metadata">
+        <img
+            class="blog-author-avatar"
+            src=${post.author.avatar}
+            alt=${post.author.name}
+        />
+        <span class="blog-author-name">${post.author.name}</span>
+        <span class="blog-author-separator">/</span>
+        <time dateTime=${post.createdAt}>
+            ${format(parseISO(post.createdAt), 'LLLL d, yyyy')}
+        </time>
+        </div>
+        ${post.body.html}
+        `,
+  }
+}
+
+export default function Post({ post, totalSubscribers }) {
+  const url = `https://draculatheme.com/blog/${post.slug}`
   const image = post.ogImage
     ? `https://draculatheme.com${post.ogImage}`
-    : "https://draculatheme.com/static/img/facebook.png";
-  const content = convertMarkdownToReact(post.content);
+    : 'https://draculatheme.com/static/img/facebook.png'
 
   return (
     <div className="single">
@@ -70,20 +67,10 @@ function Post({ post, totalSubscribers }) {
       </Head>
 
       <div className="wrap">
-        <div className="blog">
-          <h1>{post.title}</h1>
-          <div className="blog-metadata">
-            <img
-              className="blog-author-avatar"
-              src={post.author.avatar}
-              alt={post.author.name}
-            />
-            <span className="blog-author-name">{post.author.name}</span>
-            <span className="blog-author-separator">/</span>
-            <BlogDate dateString={post.createdAt} />
-          </div>
-          {content}
-        </div>
+        <div
+          className="blog"
+          dangerouslySetInnerHTML={createBlogPostMarkup(post)}
+        ></div>
       </div>
 
       <div className="blog-updates">
@@ -100,9 +87,7 @@ function Post({ post, totalSubscribers }) {
         description={post.excerpt}
       />
     </div>
-  );
+  )
 }
 
-Post.Layout = Blogpost;
-
-export default Post;
+Post.Layout = Blogpost

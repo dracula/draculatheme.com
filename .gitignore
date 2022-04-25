@@ -11,3 +11,5 @@ out
 .now
 auth.json
 .vercel
+
+.contentlayer
