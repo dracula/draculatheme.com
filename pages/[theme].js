@@ -1,6 +1,6 @@
 import Contributors from '../components/Contributors'
+import EditDocumentation from '../components/EditDocumentation'
 import Head from 'next/head'
-import HelpImproveLink from '../components/HelpImproveLink'
 import React from 'react'
 import ThemeLayout from '../layouts/Theme'
 import Updates from '../components/Updates'
@@ -140,11 +140,6 @@ class Theme extends React.Component {
           />
           <p className="views">{this.state.views} views</p>
           <div className="instructions">{content}</div>
-          <HelpImproveLink
-            color={this.props.query.color}
-            repo={this.props.query.repo}
-            defaultBranch={this.state.defaultBranch}
-          />
           <Updates
             type="theme"
             totalSubscribers={this.props.totalSubscribers}
@@ -152,6 +147,11 @@ class Theme extends React.Component {
           <Contributors
             repo={this.props.query.repo}
             data={this.props.query.contributors}
+          />
+          <EditDocumentation
+            color={this.props.query.color}
+            repo={this.props.query.repo}
+            defaultBranch={this.state.defaultBranch}
           />
         </div>
       </div>
