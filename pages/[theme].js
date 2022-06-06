@@ -1,14 +1,15 @@
-import React from 'react'
-import Head from 'next/head'
-import paths from '../lib/paths'
-import ThemeLayout from '../layouts/Theme'
 import Contributors from '../components/Contributors'
+import EditDocumentation from '../components/EditDocumentation'
+import Head from 'next/head'
+import React from 'react'
+import ThemeLayout from '../layouts/Theme'
 import Updates from '../components/Updates'
-import download from 'download'
-import probe from 'probe-image-size'
 import { convertMarkdownToReact } from '../lib/markdown'
-import { getColorFromName } from '../lib/color'
+import download from 'download'
 import { getBasePath } from '../lib/environment'
+import { getColorFromName } from '../lib/color'
+import paths from '../lib/paths'
+import probe from 'probe-image-size'
 
 export async function getStaticPaths() {
   return { paths, fallback: false }
@@ -71,6 +72,7 @@ class Theme extends React.Component {
 
   componentDidMount() {
     this.getViews()
+    this.getDefaultBranch()
   }
 
   async getViews() {
@@ -79,6 +81,16 @@ class Theme extends React.Component {
     const views = new Intl.NumberFormat().format(viewsRes.views || 0)
 
     this.setState({ views })
+  }
+
+  async getDefaultBranch() {
+    const defaultBranchReq = await fetch(
+      `https://api.github.com/repos/dracula/${this.props.query.repo}`
+    )
+    const defaultBranchRes = await defaultBranchReq.json()
+    const defaultBranch = defaultBranchRes.default_branch
+
+    this.setState({ defaultBranch })
   }
 
   render() {
@@ -135,6 +147,11 @@ class Theme extends React.Component {
           <Contributors
             repo={this.props.query.repo}
             data={this.props.query.contributors}
+          />
+          <EditDocumentation
+            color={this.props.query.color}
+            repo={this.props.query.repo}
+            defaultBranch={this.state.defaultBranch}
           />
         </div>
       </div>

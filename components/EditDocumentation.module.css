@@ -1,0 +1,12 @@
+.EditDocumentation {
+  margin: 1.5em 0;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.5;
+}
+
+.EditDocumentation a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
