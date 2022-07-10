@@ -72,7 +72,7 @@ export const BlogPost = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: 'blogPosts',
+  contentDirPath: 'posts',
   documentTypes: [BlogPost],
   mdx: {
     remarkPlugins: [],
