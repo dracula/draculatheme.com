@@ -62,24 +62,24 @@ class Reviews extends Component {
                 alt="Star"
               />
             </div>
-            <p>302 ratings</p>
+            <p>540 ratings</p>
           </div>
           <div className={styles.progressBars}>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '95%' }}
+                style={{ width: '96%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '5%' }}
+                style={{ width: '3%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: 0 }}
+                style={{ width: '1%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
@@ -123,7 +123,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-filled.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>95%</span>
+              <span className={styles.percent}>96%</span>
             </div>
             <div className={styles.percentRating}>
               <img
@@ -151,7 +151,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-empty.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>5%</span>
+              <span className={styles.percent}>3%</span>
             </div>
             <div className={styles.percentRating}>
               <img
@@ -179,7 +179,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-empty.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>0%</span>
+              <span className={styles.percent}>1%</span>
             </div>
             <div className={styles.percentRating}>
               <img
