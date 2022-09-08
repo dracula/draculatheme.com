@@ -1,6 +1,18 @@
+import * as Avatar from '@radix-ui/react-avatar'
+
 import { Component } from 'react'
 import moment from 'moment'
 import styles from './Reviews.module.css'
+
+const getFirstLetters = str => {
+  const firstLetters = str
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .substring(0, 2)
+
+  return firstLetters
+}
 
 class Reviews extends Component {
   constructor(props) {
@@ -276,13 +288,27 @@ class Reviews extends Component {
                     ></path>
                   </svg>
                 </a>
-                <img
-                  className={styles.avatar}
-                  src={`https://github.com/${review.github}.png?size=140`}
-                  alt={review.name}
-                  width="70"
-                  height="70"
-                />
+                <Avatar.Root className={styles.avatar} width="70" height="70">
+                  <Avatar.Image
+                    src={`https://github.com/${review.github}abc.png?size=140`}
+                    alt={review.name}
+                  />
+                  <Avatar.Fallback delayMs={600}>
+                    {review.name ? (
+                      getFirstLetters(review.name)
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                      </svg>
+                    )}
+                  </Avatar.Fallback>
+                </Avatar.Root>
               </div>
               <div>
                 <div className={styles.name}>
