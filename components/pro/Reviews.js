@@ -290,7 +290,7 @@ class Reviews extends Component {
                 </a>
                 <Avatar.Root className={styles.avatar} width="70" height="70">
                   <Avatar.Image
-                    src={`https://github.com/${review.github}abc.png?size=140`}
+                    src={`https://github.com/${review.github}.png?size=140`}
                     alt={review.name}
                   />
                   <Avatar.Fallback delayMs={600}>
