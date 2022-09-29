@@ -17,7 +17,7 @@ class Footer extends Component {
           },
           {
             name: 'Dracula UI',
-            url: '/ui',
+            url: 'https://ui.draculatheme.com',
           },
           {
             name: 'Dracula Shop',
