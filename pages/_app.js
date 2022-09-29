@@ -1,7 +1,7 @@
 import App from 'next/app'
 import Router from 'next/router'
 
-import '@dracula/dracula-ui/styles/dracula-ui.css'
+import 'dracula-ui/styles/dracula-ui.css'
 import '../styles/main.css'
 
 import * as gtag from '../lib/gtag'

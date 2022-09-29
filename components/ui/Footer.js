@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Footer.module.css'
-import { Anchor, Box, Text, Paragraph } from '@dracula/dracula-ui'
+import { Anchor, Box, Text, Paragraph } from 'dracula-ui'
 
 class Footer extends Component {
   render() {

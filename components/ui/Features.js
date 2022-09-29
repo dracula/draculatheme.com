@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Features.module.css'
-import { Box, Paragraph, Heading, Text } from '@dracula/dracula-ui'
+import { Box, Paragraph, Heading, Text } from 'dracula-ui'
 
 class Features extends Component {
   renderFirstFeature() {

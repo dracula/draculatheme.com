@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Newsletter.module.css'
-import { Box, Heading, Text } from '@dracula/dracula-ui'
+import { Box, Heading, Text } from 'dracula-ui'
 
 class Newsletter extends Component {
   render() {

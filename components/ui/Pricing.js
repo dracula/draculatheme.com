@@ -8,7 +8,7 @@ import {
   Paragraph,
   Heading,
   Text,
-} from '@dracula/dracula-ui'
+} from 'dracula-ui'
 
 class Pricing extends Component {
   renderPrimary() {

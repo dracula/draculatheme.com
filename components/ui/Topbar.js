@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import Link from 'next/link'
 import styles from './Topbar.module.css'
-import { Anchor, Box, Text } from '@dracula/dracula-ui'
+import { Anchor, Box, Text } from 'dracula-ui'
 
 class Topbar extends Component {
   render() {

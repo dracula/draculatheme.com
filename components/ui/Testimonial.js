@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Testimonial.module.css'
-import { Box, Paragraph } from '@dracula/dracula-ui'
+import { Box, Paragraph } from 'dracula-ui'
 
 class Testimonial extends Component {
   render() {

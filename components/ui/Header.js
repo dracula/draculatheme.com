@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Header.module.css'
-import { Box, Button, Heading, Text } from '@dracula/dracula-ui'
+import { Box, Button, Heading, Text } from 'dracula-ui'
 
 class Header extends Component {
   render() {

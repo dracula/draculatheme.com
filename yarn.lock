@@ -230,15 +230,6 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@dracula/dracula-ui@^0.8.1":
-  version "0.8.1"
-  resolved "https://npm.pkg.github.com/download/@dracula/dracula-ui/0.8.1/2d919875caf259b5bf0097553e0f7c109257d297aa739973f7ef12f813dad742#6ae6935cc7de2e77d684a70ea0c213d9caea475c"
-  integrity sha512-e6P80kA9sUEWo95faWBqWxljB+3dMzQxcXoHJ3Ryty3SDuipGjttOu3PGtBA5MJKurZEkxmc0C/YaERocMRETQ==
-  dependencies:
-    classnames "^2.2.6"
-    lodash "^4.17.20"
-    lodash-es "^4.17.21"
-
 "@emotion/cache@^10.0.27", "@emotion/cache@^10.0.9":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -1629,6 +1620,15 @@ download@^8.0.0:
     make-dir "^2.1.0"
     p-event "^2.1.0"
     pify "^4.0.1"
+
+dracula-ui@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/dracula-ui/-/dracula-ui-0.9.0.tgz#98235db7901f3db84696efb233041e1f6ef8f9ff"
+  integrity sha512-ilxdDItWDmb5oyehKEkeyJKUvCBNVMIpY1A52ZZ7/fZT71KJDXhNY+uWUrdHw0y5vqQ7t0q7kaZqeFiKqWYw2g==
+  dependencies:
+    classnames "^2.2.6"
+    lodash "^4.17.20"
+    lodash-es "^4.17.21"
 
 duplexer3@^0.1.4:
   version "0.1.4"

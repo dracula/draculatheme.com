@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Tagline.module.css'
-import { Box, Paragraph, Heading } from '@dracula/dracula-ui'
+import { Box, Paragraph, Heading } from 'dracula-ui'
 
 class Tagline extends Component {
   render() {

@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Authors.module.css'
-import { Box, Paragraph, Heading } from '@dracula/dracula-ui'
+import { Box, Paragraph, Heading } from 'dracula-ui'
 
 const authors = [
   {

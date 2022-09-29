@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styles from './Highlights.module.css'
-import { Box, Paragraph, Heading, Text } from '@dracula/dracula-ui'
+import { Box, Paragraph, Heading, Text } from 'dracula-ui'
 
 const gradients = [
   {
