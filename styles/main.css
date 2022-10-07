@@ -1768,3 +1768,7 @@ a {
 body .gumroad-scroll-container {
   display: var(--cart-visibility);
 }
+
+.gumroad .cart-button {
+  top: 4.6rem;
+}
