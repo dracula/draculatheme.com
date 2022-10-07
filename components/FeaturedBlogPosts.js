@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import LinesEllipsisLoose from 'react-lines-ellipsis/lib/loose'
+import Link from 'next/link'
 import styles from './FeaturedBlogPosts.module.css'
 
 function FeaturedBlogPosts({ posts }) {
@@ -12,7 +12,6 @@ function FeaturedBlogPosts({ posts }) {
               <Link key={index} href={`/blog/${post.slug}`}>
                 <a className={`featured-blog-post ${styles.blogPost}`}>
                   <div className={styles.image}>
-                    {/* <img src={`https://draculatheme.com/${post.ogImage}`} alt={post.title}/> */}
                     <img
                       src={`/static/img/blog/${post.slug}-a.png`}
                       alt={post.title}
@@ -21,7 +20,7 @@ function FeaturedBlogPosts({ posts }) {
                   <LinesEllipsisLoose
                     text={post.title}
                     maxLine="2"
-                    lineHeight="26"
+                    lineHeight="32px"
                     className={`blog-title ${post.color} ${styles.title}`}
                   />
                   <LinesEllipsisLoose
