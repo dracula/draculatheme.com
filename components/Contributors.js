@@ -12,7 +12,7 @@ class Contributors extends Component {
             data-microtip-position="bottom"
             role="tooltip"
           >
-            <a href={contributor.html_url} target="_blank">
+            <a href={`https://github.com/${contributor.login}`} target="_blank">
               <img
                 loading="lazy"
                 src={`${contributor.avatar_url}&s=160`}

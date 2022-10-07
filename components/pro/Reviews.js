@@ -1,6 +1,18 @@
+import * as Avatar from '@radix-ui/react-avatar'
+
 import { Component } from 'react'
 import moment from 'moment'
 import styles from './Reviews.module.css'
+
+const getFirstLetters = str => {
+  const firstLetters = str
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .substring(0, 2)
+
+  return firstLetters
+}
 
 class Reviews extends Component {
   constructor(props) {
@@ -62,24 +74,24 @@ class Reviews extends Component {
                 alt="Star"
               />
             </div>
-            <p>302 ratings</p>
+            <p>540 ratings</p>
           </div>
           <div className={styles.progressBars}>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '95%' }}
+                style={{ width: '96%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '5%' }}
+                style={{ width: '3%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: 0 }}
+                style={{ width: '1%' }}
                 className={styles.progressBarContent}
               ></div>
             </div>
@@ -123,7 +135,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-filled.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>95%</span>
+              <span className={styles.percent}>96%</span>
             </div>
             <div className={styles.percentRating}>
               <img
@@ -151,7 +163,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-empty.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>5%</span>
+              <span className={styles.percent}>3%</span>
             </div>
             <div className={styles.percentRating}>
               <img
@@ -179,7 +191,7 @@ class Reviews extends Component {
                 src="/static/img/pro/star-empty.svg"
                 alt="Star"
               />
-              <span className={styles.percent}>0%</span>
+              <span className={styles.percent}>1%</span>
             </div>
             <div className={styles.percentRating}>
               <img
@@ -276,13 +288,27 @@ class Reviews extends Component {
                     ></path>
                   </svg>
                 </a>
-                <img
-                  className={styles.avatar}
-                  src={`https://github.com/${review.github}.png?size=140`}
-                  alt={review.name}
-                  width="70"
-                  height="70"
-                />
+                <Avatar.Root className={styles.avatar} width="70" height="70">
+                  <Avatar.Image
+                    src={`https://github.com/${review.github}.png?size=140`}
+                    alt={review.name}
+                  />
+                  <Avatar.Fallback delayMs={600}>
+                    {review.name ? (
+                      getFirstLetters(review.name)
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                      </svg>
+                    )}
+                  </Avatar.Fallback>
+                </Avatar.Root>
               </div>
               <div>
                 <div className={styles.name}>

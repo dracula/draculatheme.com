@@ -1,0 +1,29 @@
+.dashboard {
+  background: #282a36;
+  padding: 80px 0;
+  margin-top: 60px;
+}
+
+.container {
+  padding: 0 32px;
+  margin: 0 auto;
+  max-width: 656px;
+}
+
+.description {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.metrics {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 328px 328px;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .metrics {
+    display: block;
+  }
+}

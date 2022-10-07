@@ -1,17 +1,18 @@
-import React from 'react'
-import Head from 'next/head'
-import paths from '../lib/paths'
-import ThemeLayout from '../layouts/Theme'
 import Contributors from '../components/Contributors'
+import EditDocumentation from '../components/EditDocumentation'
+import Head from 'next/head'
+import React from 'react'
+import ThemeLayout from '../layouts/Theme'
 import Updates from '../components/Updates'
-import download from 'download'
-import probe from 'probe-image-size'
 import { convertMarkdownToReact } from '../lib/markdown'
-import { getColorFromName } from '../lib/color'
+import download from 'download'
 import { getBasePath } from '../lib/environment'
+import { getColorFromName } from '../lib/color'
+import paths from '../lib/paths'
+import probe from 'probe-image-size'
 
 export async function getStaticPaths() {
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
@@ -21,27 +22,24 @@ export async function getStaticProps({ params }) {
     },
   }
 
-  const query = paths.find(path => path.params.theme === params.theme).params
+  let query = paths.find(path => path.params.theme === params.theme)
 
-  const installReq = await fetch(
-    `https://api.github.com/repos/dracula/${query.repo}/contents/INSTALL.md`,
-    header
-  )
+  if (!query.params) {
+    return { props: {} }
+  } else {
+    query = query.params
+  }
 
-  const installRes = await installReq.json()
-  const installBuffer = Buffer.from(installRes.content, 'base64')
-  query.install = installBuffer.toString('utf8')
+  const installReq = await fetch(`${getBasePath()}/api/installs/${query.repo}`)
+  const { install } = await installReq.json()
+  const buffer = Buffer.from(install, 'base64')
+  query.install = buffer.toString('utf8')
 
   const contributorsReq = await fetch(
-    `https://api.github.com/repos/dracula/${query.repo}/contributors`,
-    header
+    `${getBasePath()}/api/contributors/${params.theme}`
   )
-
-  const contributors = await contributorsReq.json()
-  query.contributors = contributors.filter(contributor => {
-    if (contributor.login === 'ImgBotApp') return
-    return contributor
-  })
+  const { contributors } = await contributorsReq.json()
+  query.contributors = contributors
 
   const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`
   await download(image, 'public/static/img/screenshots', {
@@ -74,6 +72,7 @@ class Theme extends React.Component {
 
   componentDidMount() {
     this.getViews()
+    this.getDefaultBranch()
   }
 
   async getViews() {
@@ -82,6 +81,16 @@ class Theme extends React.Component {
     const views = new Intl.NumberFormat().format(viewsRes.views || 0)
 
     this.setState({ views })
+  }
+
+  async getDefaultBranch() {
+    const defaultBranchReq = await fetch(
+      `https://api.github.com/repos/dracula/${this.props.query.repo}`
+    )
+    const defaultBranchRes = await defaultBranchReq.json()
+    const defaultBranch = defaultBranchRes.default_branch
+
+    this.setState({ defaultBranch })
   }
 
   render() {
@@ -138,6 +147,11 @@ class Theme extends React.Component {
           <Contributors
             repo={this.props.query.repo}
             data={this.props.query.contributors}
+          />
+          <EditDocumentation
+            color={this.props.query.color}
+            repo={this.props.query.repo}
+            defaultBranch={this.state.defaultBranch}
           />
         </div>
       </div>

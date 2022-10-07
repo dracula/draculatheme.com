@@ -51,7 +51,7 @@ class Discount extends Component {
                 If you need it, use the code{' '}
                 <span className={styles.highlight}>
                   {this.props.ppp.country}
-                  {this.props.suffix}
+                  PRO
                 </span>{' '}
                 for an extra{' '}
                 <span className={styles.highlight}>

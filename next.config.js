@@ -14,6 +14,11 @@ module.exports = withTM({
         destination: 'https://discord.gg/yDcFsrYuq9',
         permanent: true,
       },
+      {
+        source: '/ui',
+        destination: 'https://ui.draculatheme.com',
+        permanent: true,
+      },
     ]
   },
 })

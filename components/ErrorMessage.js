@@ -9,7 +9,7 @@ export default function ErrorMessage({ code }) {
 
   if (code === 500) {
     title = 'Error 500'
-    description = 'Something isn\'t right.'
+    description = "Something isn't right."
   }
 
   return (
@@ -30,9 +30,7 @@ export default function ErrorMessage({ code }) {
       <div>
         <h1 className={styles.title}>{code}</h1>
         <Link href="/">
-          <a className={styles.link}>
-            Back to Home
-          </a>
+          <a className={styles.link}>Back to Home</a>
         </Link>
       </div>
     </div>

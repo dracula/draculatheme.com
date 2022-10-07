@@ -123,7 +123,6 @@ class Pro extends React.Component {
         <Topbar ppp={this.state.ppp} />
         <Discount
           ppp={this.state.ppp}
-          suffix="PRO"
           queryParams={this.state.queryParams}
         />
         <Header
