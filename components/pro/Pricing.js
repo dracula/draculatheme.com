@@ -1,15 +1,17 @@
 import { Component } from 'react'
-import { countries } from 'countries-list'
-import styles from './Pricing.module.css'
-import { getDiscount } from '../../lib/discount'
 import apps from '../../lib/pro'
+import { countries } from 'countries-list'
+import { getDiscount } from '../../lib/discount'
+import styles from './Pricing.module.css'
 
 class Pricing extends Component {
   render() {
-    let promoName = `${new Date().toLocaleString('default', { month: 'long' })} Promo`;
-    let beforePrice = 79;
-    let afterPrice = 49;
-    let gumroadURL = 'https://gum.co/dracula-pro/HALLOWEEN22?wanted=true';
+    let promoName = `${new Date().toLocaleString('default', {
+      month: 'long',
+    })} Promo`
+    let beforePrice = 79
+    let afterPrice = 49
+    let gumroadURL = 'https://gum.co/dracula-pro/HALLOWEEN22?wanted=true'
 
     if (this.props.queryParams.a) {
       gumroadURL = `https://store.draculatheme.com/a/${this.props.queryParams.a}?wanted=true`
@@ -202,11 +204,7 @@ class Pricing extends Component {
                 </li>
               </ul>
               <div className={styles.buy}>
-                <a
-                  href={gumroadURL}
-                  className="gumroad-button"
-                  className={styles.cta}
-                >
+                <a href={gumroadURL} className={styles.cta}>
                   Buy Dracula PRO
                 </a>
               </div>
