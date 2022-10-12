@@ -42,3 +42,24 @@
   box-shadow: 0 0.5em 0.5em -0.4em #50fa7b;
   transform: translateY(-0.25em);
 }
+
+.items {
+  margin: 0;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(var(--rgbForeground));
+}
+
+.items:hover,
+.items:focus {
+  color: hsl(135, 94%, 65%);
+  border-color: hsl(135, 94%, 65%);
+}
+
+@media (max-width: 600px) {
+  .items {
+    display: none;
+  }
+}

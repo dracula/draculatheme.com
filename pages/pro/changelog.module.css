@@ -1,0 +1,230 @@
+.changelog {
+  --cyan: hsl(170, 100%, 75%);
+  --green: hsl(115, 100%, 75%);
+  --orange: hsl(35, 100%, 75%);
+  --pink: hsl(330, 100%, 75%);
+  --purple: hsl(250, 100%, 75%);
+  --red: hsl(10, 100%, 75%);
+  --yellow: hsl(60, 100%, 75%);
+
+  box-sizing: border-box;
+  line-height: 1.5;
+
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: row;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  font-family: 'Fira Code', monospace;
+  background-color: hsl(233deg, 13%, 13%);
+}
+
+.container {
+  width: 64rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 10rem 10% 6rem 10%;
+  background-color: hsl(231, 13%, 19%);
+}
+
+.titleP {
+  font-family: 'Fira Code', monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.titleS {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.titleT {
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.logs {
+  margin: 0;
+  padding: 4rem 0;
+  position: relative;
+  list-style: none;
+}
+
+.logs li {
+  padding: 2rem 0;
+}
+
+.logs li article {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.logs li:last-child article .date::before {
+  height: 100%;
+}
+
+.date {
+  word-break: keep-all;
+  padding: 0 4rem 0 0;
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--item-color);
+}
+
+.date::before,
+.date::after {
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  left: 100%;
+  background-color: var(--item-color);
+}
+
+.date::before {
+  width: 0.125rem;
+  height: calc(100% + 4rem);
+  border-radius: 0.125rem;
+}
+
+.date::after {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0.375rem solid hsl(245, 14%, 15%);
+  border-radius: 50%;
+}
+
+.date span {
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  padding: 0 0 0 4rem;
+  display: flex;
+  flex-flow: wrap column;
+  gap: 0.875rem;
+}
+
+.content .titleS {
+  color: var(--item-color);
+}
+
+.logContent {
+  width: 100%;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+.logContent ul {
+  margin: 1rem;
+}
+
+.logContent ul li {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.logContent img {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+
+.logContent a {
+  text-decoration: underline;
+  color: hsl(31, 100%, 71%);
+}
+
+.author {
+  width: 100%;
+  margin: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 1.625rem;
+  height: 1.625rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 80rem) {
+  .container {
+    width: 100%;
+  }
+
+  .logs {
+    padding: 0 10% 4rem 10%;
+  }
+
+  .logs li article {
+    position: relative;
+    flex-flow: wrap column;
+  }
+
+  .logs li article::before,
+  .logs li article::after {
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    left: -1.5rem;
+    background-color: var(--item-color);
+  }
+
+  .logs li article::before {
+    width: 0.125rem;
+    height: 100%;
+    border-radius: 0.125rem;
+  }
+
+  .logs li article::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.375rem solid hsl(245, 14%, 15%);
+    border-radius: 50%;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .date {
+    padding: 0 0 1rem 0;
+  }
+
+  .date::before,
+  .date::after {
+    display: none;
+  }
+
+  .author {
+    margin: 1rem 0 0 0;
+  }
+}
