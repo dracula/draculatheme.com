@@ -1,10 +1,10 @@
-import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import ShopLayout from '../../layouts/Shop'
 import Hero from '../../components/shop/Hero'
-import products from '../../lib/shop'
+import Link from 'next/link'
+import React from 'react'
+import ShopLayout from '../../layouts/Shop'
 import { getProduct } from '../../lib/gumroad'
+import products from '../../lib/shop'
 
 export async function getStaticProps() {
   const productPromises = products.map(product => {
@@ -17,7 +17,10 @@ export async function getStaticProps() {
 
 class Shop extends React.Component {
   componentDidMount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'block')
+    document.documentElement.style.setProperty(
+      '--cart-visibility',
+      'inline-flex'
+    )
   }
 
   componentWillUnmount() {

@@ -17,6 +17,10 @@
   z-index: 1;
 }
 
+.topbar ul {
+  margin: 20px 90px 20px 0;
+}
+
 .title {
   display: flex;
 }

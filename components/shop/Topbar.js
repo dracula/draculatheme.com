@@ -31,9 +31,6 @@ class Topbar extends Component {
                 <a>Other</a>
               </Link>
             </li>
-            <li className={styles.cart}>
-              <i className={styles.cartIcon} />
-            </li>
           </ul>
         </nav>
       </div>

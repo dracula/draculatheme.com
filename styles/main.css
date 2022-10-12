@@ -1765,6 +1765,19 @@ a {
   --cart-visibility: none;
 }
 
-body .gumroad-scroll-container {
+.gumroad .cart-button {
   display: var(--cart-visibility);
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  gap: 0.5rem;
+  border: none;
+  color: rgb(var(--rgbForeground));
+  background: none;
+}
+
+.gumroad .cart-button:hover {
+  transform: none !important;
+  color: rgb(var(--rgbPurple));
+  box-shadow: none !important;
 }
