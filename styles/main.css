@@ -1781,3 +1781,8 @@ a {
   color: rgb(var(--rgbPurple));
   box-shadow: none !important;
 }
+
+.gumroad-button .logo-full,
+.gumroad .logo-full {
+  display: none;
+}

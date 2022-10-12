@@ -204,8 +204,7 @@ class Pricing extends Component {
               <div className={styles.buy}>
                 <a
                   href={gumroadURL}
-                  className="gumroad-button"
-                  className={styles.cta}
+                  className={`${styles.cta} gumroad-button`}
                 >
                   Buy Dracula PRO
                 </a>
