@@ -1,5 +1,6 @@
 import ChangelogDate from '../../components/pro/ChangelogDate'
 import Footer from '../../components/pro/Footer'
+import Head from 'next/head'
 import Topbar from '../../components/pro/Topbar'
 import { convertMarkdownToReact } from '../../lib/markdown'
 import getLogs from '../../lib/changelog.js'
@@ -16,6 +17,28 @@ export async function getStaticProps() {
 export default function Changelog({ logs }) {
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Dracula PRO - Changelog</title>
+        <meta content="Dracula PRO - Changelog" property="og:title" />
+        <meta
+          content="Discover the latest updates and improvements for Dracula Pro."
+          name="description"
+        />
+        <meta
+          content="Discover the latest updates and improvements for Dracula Pro."
+          property="og:description"
+        />
+        <meta content="Dracula PRO Team" name="author" />
+        <meta
+          content="https://draculatheme.com/pro/changelog"
+          property="og:url"
+        />
+        <meta
+          content="https://draculatheme.com/static/img/pro/why-dracula.jpg"
+          property="og:image"
+        />
+      </Head>
       <Topbar />
       <div className={styles.changelog}>
         <div className={styles.header}>
