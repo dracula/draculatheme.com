@@ -3,7 +3,7 @@ title: 'Videos added'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
-date: '09/02/2020'
+date: '2020-02-09'
 color: 'green'
 ---
 

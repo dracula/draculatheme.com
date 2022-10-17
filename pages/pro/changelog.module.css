@@ -76,6 +76,7 @@
 }
 
 .date {
+  min-width: 10rem;
   word-break: keep-all;
   padding: 0 4rem 0 0;
   position: relative;

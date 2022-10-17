@@ -3,7 +3,7 @@ title: 'Android Studio'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
-date: '12/02/2020'
+date: '2020-02-12'
 color: 'cyan'
 ---
 

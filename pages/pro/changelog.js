@@ -1,3 +1,4 @@
+import ChangelogDate from '../../components/pro/ChangelogDate'
 import Footer from '../../components/pro/Footer'
 import Topbar from '../../components/pro/Topbar'
 import { convertMarkdownToReact } from '../../lib/markdown'
@@ -21,7 +22,7 @@ export default function Changelog({ logs }) {
           <div className={styles.container}>
             <h1 className={styles.titleP}>Changelog</h1>
             <h2 className={styles.titleT}>
-              New updates and improvements to Dracula Theme projects.
+              Discover the latest updates and improvements for Dracula Pro.
             </h2>
           </div>
         </div>
@@ -34,7 +35,7 @@ export default function Changelog({ logs }) {
                   <article>
                     <div className={styles.date}>
                       <span>
-                        <time dateTime={log.date}>{log.date}</time>
+                        <ChangelogDate dateString={log.date} />
                       </span>
                     </div>
                     <div className={styles.content}>

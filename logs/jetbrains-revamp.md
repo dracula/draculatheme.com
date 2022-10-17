@@ -3,7 +3,7 @@ title: 'JetBrains Revamp'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
-date: '14/02/2020'
+date: '2020-02-14'
 color: 'purple'
 ---
 
@@ -20,5 +20,3 @@ Although all editors are different and it's not possible to have a 100% match, t
 ![JetBrains Revamp After](/static/img/logs/jetbrains-revamp-b.png)
 
 Not only the sidebar, file tree, tabs, and line numbers were updated. I also revisited the syntax highlighting for all languages.
-
-Let me know what you think.
