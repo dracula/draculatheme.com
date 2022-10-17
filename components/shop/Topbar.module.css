@@ -28,6 +28,7 @@
 }
 
 .cart {
+  min-width: 30px;
   margin-right: 34px;
   margin-left: 30px;
   position: relative;
@@ -35,10 +36,6 @@
 }
 
 .cartIcon {
-  width: 80px;
-  display: inline-block;
-  height: 17px;
-  width: 17px;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNyIgaGVpZ2h0PSIxNyI+PHBhdGggZD0iTTEyLjc1IDEyLjc1YTIuMTI1IDIuMTI1IDAgMSAwIDAgNC4yNSAyLjEyNSAyLjEyNSAwIDAgMCAwLTQuMjV6bS01LjY2NyAwYTIuMTI1IDIuMTI1IDAgMSAwIDAgNC4yNSAyLjEyNSAyLjEyNSAwIDAgMCAwLTQuMjV6TTMuNjM3IDIuODMzIDIuNjI0IDBILjcwOGEuNzA4LjcwOCAwIDEgMCAwIDEuNDE3aC45MThsMy4wMzggOC41MDZhMi4xMyAyLjEzIDAgMCAwIDIgMS40MWg2LjYxYy45NDcgMCAxLjc2NS0uNjA4IDIuMDQ3LTEuNTVMMTcgMi44MzJIMy42Mzd6IiBmaWxsPSIjNzk3ODc0IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=)
-    50% no-repeat;
+  max-width: 16px;
+  object-fit: contain;
 }

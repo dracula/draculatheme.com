@@ -1765,6 +1765,22 @@ a {
   --cart-visibility: none;
 }
 
-body .gumroad-scroll-container {
+.gumroad .cart-button {
+  padding: 6px 10px;
+  top: 14px;
+  right: 20px;
   display: var(--cart-visibility);
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.125rem;
+  font-family: var(--body);
+  font-weight: 700;
+  color: #282a36;
+}
+
+.gumroad .cart-button:hover,
+.gumroad .cart-button:focus {
+  transform: none !important;
+  box-shadow: none !important;
+  background-color: rgb(var(--rgbPurple));
 }

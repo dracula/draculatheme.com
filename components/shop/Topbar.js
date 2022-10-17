@@ -32,7 +32,11 @@ class Topbar extends Component {
               </Link>
             </li>
             <li className={styles.cart}>
-              <i className={styles.cartIcon} />
+              <img
+                className={styles.icon}
+                src="/static/icons/site/cart.svg"
+                alt="Cart"
+              />
             </li>
           </ul>
         </nav>

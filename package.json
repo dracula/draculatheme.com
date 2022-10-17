@@ -2,16 +2,20 @@
   "name": "draculatheme.com",
   "version": "4.0.0",
   "description": "A dark website for an amazing theme",
+  "author": "Zeno Rocha",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
     "build": "next build",
     "export": "next export",
     "xml": "babel-node xml.js",
-    "deploy": "npm run sitemap && vercel --prod"
+    "deploy": "npm run sitemap && vercel --prod",
+    "prepare": "husky install"
   },
-  "author": "Zeno Rocha",
-  "license": "MIT",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.74",
     "@monaco-editor/react": "^4.2.2",
@@ -54,6 +58,8 @@
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
     "eslint": "^8.9.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
   }
 }
