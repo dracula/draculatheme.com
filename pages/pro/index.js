@@ -1,23 +1,22 @@
-import React from 'react'
-import Head from 'next/head'
-import queryString from 'query-string'
 import Airtable from 'airtable'
-
-import { getBasePath } from '../../lib/environment'
-import Topbar from '../../components/pro/Topbar'
-import Discount from '../../components/pro/Discount'
-import Header from '../../components/pro/Header'
 import Description from '../../components/pro/Description'
-import Preview from '../../components/pro/Preview'
-import Why from '../../components/pro/Why'
-import Palette from '../../components/pro/Palette'
+import Discount from '../../components/pro/Discount'
+import Ebook from '../../components/pro/Ebook'
 import Features from '../../components/pro/Features'
 import Fonts from '../../components/pro/Fonts'
-import Ebook from '../../components/pro/Ebook'
-import Testimonial from '../../components/pro/Testimonial'
-import Pricing from '../../components/pro/Pricing'
-import Reviews from '../../components/pro/Reviews'
 import Footer from '../../components/pro/Footer'
+import Head from 'next/head'
+import Header from '../../components/pro/Header'
+import Palette from '../../components/pro/Palette'
+import Preview from '../../components/pro/Preview'
+import Pricing from '../../components/pro/Pricing'
+import React from 'react'
+import Reviews from '../../components/pro/Reviews'
+import Testimonial from '../../components/pro/Testimonial'
+import Topbar from '../../components/pro/Topbar'
+import Why from '../../components/pro/Why'
+import { getBasePath } from '../../lib/environment'
+import queryString from 'query-string'
 
 export async function getStaticProps() {
   try {
@@ -64,10 +63,6 @@ class Pro extends React.Component {
     this.setState({ queryParams })
     this.fetchPPP()
 
-    document.documentElement.style.setProperty('--cart-visibility', 'block')
-  }
-
-  componentWillUnmount() {
     document.documentElement.style.setProperty('--cart-visibility', 'none')
   }
 
@@ -121,10 +116,7 @@ class Pro extends React.Component {
         </Head>
 
         <Topbar ppp={this.state.ppp} />
-        <Discount
-          ppp={this.state.ppp}
-          queryParams={this.state.queryParams}
-        />
+        <Discount ppp={this.state.ppp} queryParams={this.state.queryParams} />
         <Header
           title={title}
           description={description}
