@@ -61,7 +61,7 @@
 }
 
 .logs li {
-  padding: 2rem 0;
+  padding: 2rem 0 4rem 0;
 }
 
 .logs li article {
@@ -96,7 +96,7 @@
 
 .date::before {
   width: 0.125rem;
-  height: calc(100% + 4rem);
+  height: calc(100% + 6rem);
   border-radius: 0.125rem;
 }
 
@@ -129,6 +129,17 @@
   line-height: 2;
 }
 
+.logContent h1,
+.logContent h2,
+.logContent h3,
+.logContent h4,
+.logContent h5,
+.logContent h6 {
+  margin: 1.75rem 0 0.75rem 0;
+  font-size: 1rem;
+  color: var(--item-color);
+}
+
 .logContent ul {
   margin: 1rem;
 }
@@ -146,7 +157,7 @@
 
 .logContent a {
   text-decoration: underline;
-  color: hsl(31, 100%, 71%);
+  color: var(--item-color);
 }
 
 .author {
