@@ -1196,6 +1196,7 @@ a {
   background: #303442;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .product:hover img {
@@ -1270,6 +1271,11 @@ a {
   width: 100px;
   text-align: center;
   z-index: 2;
+}
+
+.item-ribbon-sold-out {
+  background: #1f2023;
+  color: #999;
 }
 
 .item-other-images {

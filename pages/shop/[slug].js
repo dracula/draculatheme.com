@@ -180,13 +180,54 @@ class Product extends React.Component {
   }
 
   renderAvailability() {
-    const { max_purchase_count, sales_count } = this.props.product
+    const { max_purchase_count, sales_count, published } = this.props.product
+
+    if (!published) {
+      return (
+        <div className="item-ribbon item-ribbon-sold-out">
+          sold out
+        </div>
+      )
+    }
 
     if (max_purchase_count > 0) {
       return (
         <div className="item-ribbon">
           {max_purchase_count - sales_count} left
         </div>
+      )
+    }
+  }
+
+  renderOptions() {
+    if (this.props.product.published) {
+      return (
+        <>
+          <div className="item-variants">
+            {this.renderVariants()}
+            <div className="item-variant">
+              <p>Quantity</p>
+              <input
+                className="item-number"
+                value={this.state.quantity}
+                onChange={this.changeQuantity.bind(this)}
+                name="quantity"
+                type="number"
+                max="100"
+                min="1"
+              />
+            </div>
+          </div>
+          <div className="item-cta">
+            <a
+              key={`${this.props.slug}-${this.state.size.value}-${this.state.quantity}`}
+              href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`}
+              className="item-add"
+            >
+              Add to cart
+            </a>
+          </div>
+        </>
       )
     }
   }
@@ -220,30 +261,7 @@ class Product extends React.Component {
             className="item-description"
             dangerouslySetInnerHTML={{ __html: this.props.product.description }}
           />
-          <div className="item-variants">
-            {this.renderVariants()}
-            <div className="item-variant">
-              <p>Quantity</p>
-              <input
-                className="item-number"
-                value={this.state.quantity}
-                onChange={this.changeQuantity.bind(this)}
-                name="quantity"
-                type="number"
-                max="100"
-                min="1"
-              />
-            </div>
-          </div>
-          <div className="item-cta">
-            <a
-              key={`${this.props.slug}-${this.state.size.value}-${this.state.quantity}`}
-              href={`https://store.draculatheme.com/l/${this.props.slug}?wanted=true&variant=${this.state.size.value}&quantity=${this.state.quantity}`}
-              className="item-add"
-            >
-              Add to cart
-            </a>
-          </div>
+          {this.renderOptions()}
         </div>
       </div>
     )
@@ -265,14 +283,16 @@ class Product extends React.Component {
               <p className="product-price">{product.formatted_price}</p>
             </a>
           </Link>
-          <div className="item-cta">
-            <a
-              className="item-add"
-              href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true`}
-            >
-              Add to cart
-            </a>
-          </div>
+          {product.published && (
+            <div className="item-cta">
+              <a
+                className="item-add"
+                href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true`}
+              >
+                Add to cart
+              </a>
+            </div>
+          )}
         </div>
       )
     })

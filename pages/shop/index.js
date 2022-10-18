@@ -27,6 +27,16 @@ class Shop extends React.Component {
     document.documentElement.style.setProperty('--cart-visibility', 'none')
   }
 
+  renderAvailability(product) {
+    if (!product.published) {
+      return (
+        <div className="item-ribbon item-ribbon-sold-out">
+          sold out
+        </div>
+      )
+    }
+  }
+
   renderProducts() {
     return this.props.list.map(product => {
       return (
@@ -36,6 +46,7 @@ class Shop extends React.Component {
         >
           <a className="product">
             <div className="product-image">
+              {this.renderAvailability(product)}
               <img
                 src={`/static/img/shop/${product.custom_permalink}-1.png`}
                 alt={product.name}
