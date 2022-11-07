@@ -19,6 +19,11 @@ module.exports = withTM({
         destination: 'https://ui.draculatheme.com',
         permanent: true,
       },
+      {
+        source: '/shop/dracula-sticker-pack',
+        destination: 'https://draculatheme.com/shop/dracula-sticker-pack-n1',
+        permanent: true,
+      },
     ]
   },
 })

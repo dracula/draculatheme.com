@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import Countdown from '../Countdown'
 import Link from 'next/link'
 import styles from './Topbar.module.css'
 
@@ -7,7 +6,6 @@ class Topbar extends Component {
   render() {
     return (
       <div className={styles.fixed}>
-        <Countdown ppp={this.props.ppp} color="#8aff80" />
         <nav className={styles.topbar}>
           <Link href="/">
             <a className="topbar-title">
