@@ -29,11 +29,7 @@ class Shop extends React.Component {
 
   renderAvailability(product) {
     if (!product.published) {
-      return (
-        <div className="item-ribbon item-ribbon-sold-out">
-          sold out
-        </div>
-      )
+      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>
     }
   }
 
