@@ -1158,9 +1158,82 @@ a {
    ========================================================================== */
 
 .shop {
-  background: rgb(var(--rgbBackground));
+  background: linear-gradient(
+    180deg,
+    hsl(227, 16%, 22%) 0%,
+    hsl(255, 13%, 6%) 100%
+  );
   padding: 80px 0;
   margin-top: 60px;
+  position: relative;
+}
+
+.shop .theme {
+  position: relative;
+  z-index: 2;
+}
+
+.divisor {
+  opacity: 0.75;
+  width: 100%;
+  height: 105%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  mask-image: radial-gradient(
+    circle at center center,
+    hsl(0, 0%, 0%),
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+.divisor svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  mask-image: radial-gradient(
+    circle at center bottom,
+    hsl(0, 0%, 0%),
+    transparent
+  );
+  z-index: -1;
+}
+
+.divisor::before {
+  content: '';
+  opacity: 0.25;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at bottom center,
+    hsl(0, 0%, 100%),
+    transparent 60%
+  );
+}
+
+.divisor::after {
+  content: '';
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 1 / 0.7;
+  border-radius: 50%;
+  border-top: 1px solid hsla(241, 41%, 62%, 0.4);
+  background: hsl(255, 13%, 6%);
+}
+
+@media (max-width: 900px) {
+  .divisor {
+    display: none;
+  }
 }
 
 .product-container {
@@ -1212,11 +1285,11 @@ a {
   );
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.1);
-  transition: box-shadow 0.25s;
+  transition: box-shadow 0.32s;
 }
 
 .product img {
-  transition: transform 0.25s;
+  transition: transform 0.26s;
 }
 
 .product-image:hover {
@@ -1260,8 +1333,9 @@ a {
 }
 
 .item-name {
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 38px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .item-column-left {
@@ -1269,14 +1343,34 @@ a {
 }
 
 .item-image {
+  height: 380px;
+  padding: 4px 16px;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #303442;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 380px;
+  cursor: pointer;
+  border-radius: 16px;
+  background: radial-gradient(
+    circle,
+    rgba(48, 52, 66, 1) 0%,
+    rgba(37, 33, 55, 1) 100%
+  );
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 5%), 0px 8px 15px rgb(0 0 0 / 10%),
+    0 0 0 1px rgb(255 255 255 / 10%);
+  transition: box-shadow 0.32s;
+}
+
+.item-image:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.03), 0px 15px 25px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.item-image div div {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .item-ribbon {
@@ -1320,6 +1414,13 @@ a {
   margin: 0 5px;
   transition: border 0.3s ease-in-out;
   cursor: pointer;
+  background: radial-gradient(
+    circle,
+    rgba(48, 52, 66, 1) 0%,
+    rgba(37, 33, 55, 1) 100%
+  );
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 5%), 0px 8px 15px rgb(0 0 0 / 10%),
+    0 0 0 1px rgb(255 255 255 / 10%);
 }
 
 .item-details {

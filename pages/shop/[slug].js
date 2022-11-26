@@ -1,14 +1,16 @@
-import React from 'react'
+import Faq from '../../components/shop/Faq'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Magnifier } from 'react-image-magnifiers'
+import React from 'react'
+import ShopDivisor from '../../components/shop/ShopDivisor'
 import ShopLayout from '../../layouts/Shop'
+import dynamic from 'next/dynamic'
 import { getColorFromName } from '../../lib/color'
 import { getProduct } from '../../lib/gumroad'
-import Faq from '../../components/shop/Faq'
 import products from '../../lib/shop'
 import { stripHtml } from '../../lib/string'
-import dynamic from 'next/dynamic'
-import { Magnifier } from 'react-image-magnifiers'
+
 const SelectInput = dynamic(() => import('react-select'), { ssr: false })
 
 export async function getStaticPaths() {
@@ -183,11 +185,7 @@ class Product extends React.Component {
     const { max_purchase_count, sales_count, published } = this.props.product
 
     if (!published) {
-      return (
-        <div className="item-ribbon item-ribbon-sold-out">
-          sold out
-        </div>
-      )
+      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>
     }
 
     if (max_purchase_count > 0) {
@@ -329,24 +327,21 @@ class Product extends React.Component {
           <meta content={image} property="og:image" />
         </Head>
 
-        <div>
-          <div className="theme">
-            <Link href="/shop">
-              <a className="back-link">← Back to Products</a>
-            </Link>
-            {this.renderProduct()}
-
-            <h2 className="related-products-title">You might also like</h2>
-            <div className="related-products products">
-              {this.renderRelatedProducts()}
-            </div>
-
-            <h2 className="related-products-title">
-              Frequently asked questions
-            </h2>
-            <Faq ppp={this.state.ppp} />
+        <div className="theme">
+          <Link href="/shop">
+            <a className="back-link">← Back to Products</a>
+          </Link>
+          {this.renderProduct()}
+          <h2 className="related-products-title">You might also like</h2>
+          <div className="related-products products">
+            {this.renderRelatedProducts()}
           </div>
+
+          <h2 className="related-products-title">Frequently asked questions</h2>
+          <Faq ppp={this.state.ppp} />
         </div>
+
+        <ShopDivisor />
       </div>
     )
   }
