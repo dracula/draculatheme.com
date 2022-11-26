@@ -1161,7 +1161,7 @@ a {
   background: linear-gradient(
     180deg,
     hsl(227, 16%, 22%) 0%,
-    hsl(255, 13%, 6%) 100%
+    hsl(233, 100%, 4%) 100%
   );
   padding: 80px 0;
   margin-top: 60px;
@@ -1227,7 +1227,7 @@ a {
   aspect-ratio: 1 / 0.7;
   border-radius: 50%;
   border-top: 1px solid hsla(241, 41%, 62%, 0.4);
-  background: hsl(255, 13%, 6%);
+  background: hsl(233, 100%, 4%);
 }
 
 @media (max-width: 900px) {
