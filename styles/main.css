@@ -1463,6 +1463,19 @@ a {
   margin: 0;
 }
 
+.item-description p:has(em) {
+  margin: 1rem 0 0 0;
+}
+
+.item-description p em {
+  font-size: 1rem;
+}
+
+.item-description ul {
+  margin: 1rem 0 20px 30px;
+  font-size: 1rem;
+}
+
 .item-price {
   font-size: 24px;
   margin: 20px 0;
