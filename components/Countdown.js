@@ -21,7 +21,7 @@ class Countdown extends Component {
   }
 
   updateCountdown() {
-    let time = Date.parse('2022-11-27') - Date.parse(new Date())
+    let time = Date.parse('2022-11-01') - Date.parse(new Date())
 
     if (time < 0) return
 
@@ -46,7 +46,7 @@ class Countdown extends Component {
       return (
         <div className={styles.banner} style={{ background: this.props.color }}>
           <p className={styles.bannerContent}>
-            Black Friday's 40% discount ends in {this.state.days} days,{' '}
+            Halloween's 38% discount ends in {this.state.days} days,{' '}
             {this.state.hours} hours, {this.state.minutes} minutes,{' '}
             {this.state.seconds} seconds
           </p>
