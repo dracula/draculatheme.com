@@ -1391,11 +1391,12 @@ a {
   z-index: 2;
   text-transform: uppercase;
   font-weight: 700;
+  box-shadow: 0.4px 2px 2px 0.24px hsla(0, 0%, 0%, 0.12);
 }
 
 .item-ribbon-sold-out {
-  background: rgb(247, 116, 89);
-  color: #1b1a23;
+  background: hsl(250deg, 54%, 54%);
+  color: hsl(0, 0%, 100%);
 }
 
 .item-other-images {
