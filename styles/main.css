@@ -15,10 +15,8 @@
   --alpha: 0.7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: auto;
 }
 
 * {
@@ -1344,7 +1342,7 @@ a {
 
 .item-image {
   height: 380px;
-  padding: 4px 16px;
+  padding: 0;
   position: relative;
   overflow: hidden;
   display: flex;
