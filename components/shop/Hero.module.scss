@@ -6,6 +6,7 @@
 }
 
 .hero {
+  box-sizing: border-box;
   max-width: 75rem;
   margin: 0 auto;
   padding: 10rem 2rem 7rem;
@@ -19,6 +20,7 @@
 
 .content,
 .videoContainer {
+  box-sizing: border-box;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
