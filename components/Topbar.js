@@ -26,7 +26,7 @@ class Topbar extends Component {
                 <a>Contribute</a>
               </Link>
             </li>
-            <li className={styles.items}>
+            <li className={`${styles.snowCursor} ${styles.items}`}>
               <Link href="/shop">
                 <a>Shop</a>
               </Link>
