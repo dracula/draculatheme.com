@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import styles from './Faq.module.css'
 import { countries } from 'countries-list'
+import styles from './Faq.module.css'
 
 class Faq extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Faq extends Component {
         },
         {
           question: `Can I edit or cancel my order?`,
-          answer: `You cannot edit your order once placed, but if you would like to cancel your order before it has been fulfilled and shipped, please send me an email: zeno@draculatheme.com.`,
+          answer: `You cannot edit your order once placed, but if you would like to cancel your order before it has been fulfilled and shipped, please send me an email: support@draculatheme.com.`,
           visible: false,
         },
         {
@@ -40,12 +40,12 @@ class Faq extends Component {
         },
         {
           question: `What is your return policy?`,
-          answer: `We currently do not accept returns. If you get the wrong item or defective product, please email me: zeno@draculatheme.com.`,
+          answer: `We currently do not accept returns. If you get the wrong item or defective product, please email me: support@draculatheme.com.`,
           visible: false,
         },
         {
           question: `How do I contact support?`,
-          answer: `You can contact me by e-mailing zeno@draculatheme.com.`,
+          answer: `You can contact me by e-mailing support@draculatheme.com.`,
           visible: false,
         },
       ],
