@@ -12,9 +12,20 @@ class Topbar extends Component {
               Dracula <span className={styles.titlePro}>PRO</span>
             </a>
           </Link>
-          <a href="/pro#get" className={styles.cta}>
-            Get it now
-          </a>
+          <ul className={styles.topbarMenu}>
+            <li>
+              <Link href="/pro/changelog">
+                <a className={styles.items}>
+                  <span>Changelog</span>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/pro#get">
+                <a className={styles.cta}>Get it now</a>
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     )
