@@ -11,3 +11,8 @@ out
 .now
 auth.json
 .vercel
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
