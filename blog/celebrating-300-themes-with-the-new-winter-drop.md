@@ -1,12 +1,13 @@
 ---
 title: 'Celebrating 300 Themes With The New Winter Drop'
-excerpt: "Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a single commit."
+excerpt: 'Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a single commit.'
 createdAt: '2022-12-22'
 updatedAt: '2023-01-10'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 ogImage: '/static/img/blog/celebrating-300-themes-with-the-new-winter-drop-a.png'
+highlighted: 'true'
 color: 'orange'
 ---
 

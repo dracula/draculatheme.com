@@ -7,6 +7,7 @@ author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 ogImage: '/static/img/blog/aws-new-wallpapers-and-five-new-themes-a.png'
+highlighted: 'false'
 color: 'yellow'
 ---
 
