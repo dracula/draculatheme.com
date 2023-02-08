@@ -1,11 +1,11 @@
-import Blogpost from '../../layouts/Blogpost'
-import Updates from '../../components/Updates'
 import BlogDate from '../../components/BlogDate'
-import { getAllPosts } from '../../lib/blog'
-import { getBasePath } from '../../lib/environment'
+import Blogpost from '../../layouts/Blogpost'
+import FeaturedBlogPosts from '../../components/FeaturedBlogPosts'
 import Head from 'next/head'
 import Link from 'next/link'
-import FeaturedBlogPosts from '../../components/FeaturedBlogPosts'
+import Updates from '../../components/Updates'
+import { getAllPosts } from '../../lib/blog'
+import { getBasePath } from '../../lib/environment'
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
@@ -15,6 +15,7 @@ export async function getStaticProps() {
     'author',
     'excerpt',
     'ogImage',
+    'highlighted',
     'color',
   ])
 
@@ -55,7 +56,12 @@ function Blog({ allPosts, totalSubscribers }) {
       </Head>
 
       <div className="wrap">
-        <FeaturedBlogPosts posts={allPosts.slice(0, 2)} />
+        {/* <FeaturedBlogPosts posts={allPosts.slice(0, 2)} /> */}
+        <FeaturedBlogPosts
+          posts={allPosts
+            .filter(post => post.highlighted === 'true')
+            .slice(0, 2)}
+        />
 
         <div className="blog">
           {allPosts.map(post => {

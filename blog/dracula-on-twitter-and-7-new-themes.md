@@ -1,17 +1,18 @@
 ---
-title: "Dracula On Twitter And 7 New Themes"
+title: 'Dracula On Twitter And 7 New Themes'
 excerpt: "I joined Twitter in March 2009 (yes, I'm that old), and it has been my favorite place to stay up to date with the tech community since then."
-createdAt: "2022-02-22"
-updatedAt: "2022-02-24"
+createdAt: '2022-02-22'
+updatedAt: '2022-02-24'
 author:
-    name: "Zeno Rocha"
-    avatar: "https://github.com/zenorocha.png?size=48"
-color: "purple"
+  name: 'Zeno Rocha'
+  avatar: 'https://github.com/zenorocha.png?size=48'
+highlighted: 'false'
+color: 'purple'
 ---
 
 I joined Twitter in March 2009 (yes, I'm that old), and it has been my favorite place to stay up to date with the tech community since then.
 
-I've always wanted to create a dedicated account for Dracula but never felt like it had enough updates to keep it active. This email list made me realize that there's a TON of stuff happening in the community, so I decided to *just do it*.
+I've always wanted to create a dedicated account for Dracula but never felt like it had enough updates to keep it active. This email list made me realize that there's a TON of stuff happening in the community, so I decided to _just do it_.
 
 You can now follow [@draculatheme](https://twitter.com/draculatheme) to get live updates every day.
 
