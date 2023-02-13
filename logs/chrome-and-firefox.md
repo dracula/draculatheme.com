@@ -1,9 +1,11 @@
 ---
 title: 'Chrome and Firefox'
+excerpt: 'From Mosaic to Netscape to IE6'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-05-21'
+id: 'log-10'
 color: 'pink'
 ---
 

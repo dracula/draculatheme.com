@@ -1,9 +1,11 @@
 ---
 title: 'XCode Major Update'
+excerpt: 'The XCode theme received a major update.'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-02-19'
+id: 'log-04'
 color: 'pink'
 ---
 

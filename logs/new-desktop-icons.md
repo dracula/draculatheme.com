@@ -1,9 +1,11 @@
 ---
 title: 'New Desktop Icons'
+excerpt: 'The 20 icons are available in 6 different flavors, just like the themes!'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-08-18'
+id: 'log-12'
 color: 'yellow'
 ---
 

@@ -1,9 +1,11 @@
 ---
 title: 'VIM'
+excerpt: 'The #1 most requested Dracula PRO theme is finally available!'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-04-15'
+id: 'log-09'
 color: 'purple'
 ---
 
