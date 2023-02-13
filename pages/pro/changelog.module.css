@@ -20,6 +20,7 @@
   align-items: flex-start;
   gap: 2rem;
   font-family: 'Fira Code', monospace;
+  color: hsl(0, 0%, 100%);
   background-color: hsl(233deg, 13%, 13%);
 }
 
@@ -31,7 +32,13 @@
 
 .header {
   padding: 10rem 10% 6rem 10%;
+  position: relative;
   background-color: hsl(231, 13%, 19%);
+  background-image: url('/static/img/pro/changelog/pattern.png');
+  background-size: 40%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
 }
 
 .titleP,
@@ -57,6 +64,21 @@
   font-family: 'Fira Code', monospace;
   font-size: 1rem;
   font-weight: 400;
+}
+
+.rssLink {
+  margin: 0;
+  padding: 1rem 1rem 0.75rem 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 12%;
+  display: block;
+  border-radius: 0.625rem 0.625rem 0 0;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--orange);
+  background-color: hsl(233deg, 13%, 13%);
 }
 
 .logs {
