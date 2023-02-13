@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Dracula Theme - Changelog]]></title>
+        <description><![CDATA[Discover the latest updates and improvements for Dracula Pro.]]></description>
+        <link>https://draculatheme.com/pro/changelog</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 13 Feb 2023 17:57:40 GMT</lastBuildDate>
+        <atom:link href="https://draculatheme.com/changelog-rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[27% smaller and JetBrains 2022]]></title>
+            <description><![CDATA[I decided to remove the videos, which makes it 27% smaller now.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-18</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-18</guid>
+            <pubDate>Thu, 14 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Alacritty Revamp]]></title>
+            <description><![CDATA[Earlier last week, we published an updated version of the pack with a complete overhaul of the theme for the Alacritty app.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-19</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-19</guid>
+            <pubDate>Tue, 31 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Android Studio]]></title>
+            <description><![CDATA[Hey 👋 I just made an update for the JetBrains IDEs theme to support Android Studio.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-02</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-02</guid>
+            <pubDate>Wed, 12 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Becoming more Windows-friendly]]></title>
+            <description><![CDATA[Dracula PRO is now available for Notepad++ and Windows Terminal]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-06</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-06</guid>
+            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Big Sur icons and JetBrains 2020.3]]></title>
+            <description><![CDATA[Dracula PRO for JetBrains, 2020.3 stable version, and more!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-15</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-15</guid>
+            <pubDate>Mon, 14 Dec 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Chrome and Firefox]]></title>
+            <description><![CDATA[From Mosaic to Netscape to IE6]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-10</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-10</guid>
+            <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Design Files]]></title>
+            <description><![CDATA[Many people asked if the Dracula PRO package included the color codes for them to use in other apps.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-05</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-05</guid>
+            <pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula PRO for Visual Studio and minor fixes]]></title>
+            <description><![CDATA[Our users have long requested Dracula PRO support for Visual Studio, and it is finally here!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-20</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-20</guid>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Free Audiobook and Insomnia]]></title>
+            <description><![CDATA[I couldn't be more proud to see this community growing.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-16</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-16</guid>
+            <pubDate>Wed, 10 Mar 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[🎃 It's Halloween!]]></title>
+            <description><![CDATA[Happy Halloween!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-14</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-14</guid>
+            <pubDate>Sat, 31 Oct 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[JetBrains 2021.2 and 150k mark]]></title>
+            <description><![CDATA[It's time to update your Dracula PRO plugin.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-17</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-17</guid>
+            <pubDate>Thu, 29 Jul 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[JetBrains Revamp]]></title>
+            <description><![CDATA[I decided to rethink the entire JetBrains theme]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-03</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-03</guid>
+            <pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New Alacritty theme and JetBrains update]]></title>
+            <description><![CDATA[New Alacritty theme, JetBrains update and Desktop Icons]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-13</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-13</guid>
+            <pubDate>Tue, 29 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New Atom theme + JetBrains 2020.1]]></title>
+            <description><![CDATA[One of the most requested themes. I'm glad to announce that it's now available for PRO users.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-07</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-07</guid>
+            <pubDate>Sun, 29 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New Desktop Icons]]></title>
+            <description><![CDATA[The 20 icons are available in 6 different flavors, just like the themes!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-12</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-12</guid>
+            <pubDate>Tue, 18 Aug 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Updates on JetBrains, VSCode, Notepad++]]></title>
+            <description><![CDATA[Support for _EAP 2020.2_ (Early Access Program), Enable semantic highlighting and Add support for LaTeX highlight]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-11</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-11</guid>
+            <pubDate>Fri, 05 Jun 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Videos added]]></title>
+            <description><![CDATA[New Welcome Video, Alfred Screencast and Font Instructions!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-01</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-01</guid>
+            <pubDate>Sun, 09 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[VIM]]></title>
+            <description><![CDATA[The #1 most requested Dracula PRO theme is finally available!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-09</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-09</guid>
+            <pubDate>Wed, 15 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Wallpapers]]></title>
+            <description><![CDATA[I'm super excited to announce the Dracula PRO Wallpapers!]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-08</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-08</guid>
+            <pubDate>Wed, 15 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[XCode Major Update]]></title>
+            <description><![CDATA[The XCode theme received a major update.]]></description>
+            <link>https://draculatheme.com/pro/changelog#log-04</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#log-04</guid>
+            <pubDate>Wed, 19 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

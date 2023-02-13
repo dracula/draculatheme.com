@@ -56,7 +56,6 @@ function Blog({ allPosts, totalSubscribers }) {
       </Head>
 
       <div className="wrap">
-        {/* <FeaturedBlogPosts posts={allPosts.slice(0, 2)} /> */}
         <FeaturedBlogPosts
           posts={allPosts
             .filter(post => post.highlighted === 'true')

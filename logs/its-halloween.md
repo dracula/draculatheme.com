@@ -1,9 +1,11 @@
 ---
 title: "🎃 It's Halloween!"
+excerpt: 'Happy Halloween!'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-10-31'
+id: 'log-14'
 color: 'purple'
 ---
 

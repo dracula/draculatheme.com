@@ -1,9 +1,11 @@
 ---
 title: 'New Atom theme + JetBrains 2020.1'
+excerpt: "One of the most requested themes. I'm glad to announce that it's now available for PRO users."
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-03-29'
+id: 'log-07'
 color: 'green'
 ---
 

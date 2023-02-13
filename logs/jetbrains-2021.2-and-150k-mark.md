@@ -1,9 +1,11 @@
 ---
 title: 'JetBrains 2021.2 and 150k mark'
+excerpt: "It's time to update your Dracula PRO plugin."
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2021-07-29'
+id: 'log-17'
 color: 'yellow'
 ---
 

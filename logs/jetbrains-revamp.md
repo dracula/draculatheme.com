@@ -1,9 +1,11 @@
 ---
 title: 'JetBrains Revamp'
+excerpt: 'I decided to rethink the entire JetBrains theme'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-02-14'
+id: 'log-03'
 color: 'purple'
 ---
 

@@ -48,13 +48,21 @@ export default function Changelog({ logs }) {
               Discover the latest updates and improvements for Dracula Pro.
             </h2>
           </div>
+          <a
+            href="/changelog-rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.rssLink}
+          >
+            RSS Feed
+          </a>
         </div>
         <div className={styles.container}>
           <ul className={styles.logs}>
             {logs.map((log, index) => {
               let style = { '--item-color': 'var(--' + log.color + ')' }
               return (
-                <li key={index} style={style}>
+                <li key={index} id={log.id} style={style}>
                   <article>
                     <div className={styles.date}>
                       <span>

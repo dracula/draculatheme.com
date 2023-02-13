@@ -1,9 +1,11 @@
 ---
 title: 'Updates on JetBrains, VSCode, Notepad++'
+excerpt: 'Support for _EAP 2020.2_ (Early Access Program), Enable semantic highlighting and Add support for LaTeX highlight'
 author:
   name: Zeno Rocha
   avatar: 'https://github.com/zenorocha.png?size=48'
 date: '2020-06-05'
+id: 'log-11'
 color: 'orange'
 ---
 
