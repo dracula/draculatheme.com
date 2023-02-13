@@ -1,1178 +1,388 @@
-<?xml version="1.0" encoding="UTF-8"?>
-      <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
-        <channel>
-          <title>Dracula Theme Blog</title>
-          <link>https://draculatheme.com/blog</link>
-          <description>The journey of building the most universal dark theme ever made.</description>
-          <language>en</language>
-          <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml" />
-          <lastBuildDate>Wed, 24 Mar 2021 00:00:00 GMT</lastBuildDate>
-    <item>
-        <title><![CDATA[Making a Physical Book]]></title>
-        <link>https://draculatheme.com/blog/making-a-physical-book</link>
-        <guid>https://draculatheme.com/blog/making-a-physical-book</guid>
-        <pubDate>Wed, 24 Mar 2021 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I can't believe this is real... My book is now available in hardcover. Building this physical copy has been a really intense process.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I can't believe this is real...</p>
-<p>My book is now available in hardcover 🎉🎉🎉</p>
-<ul>
-<li><a href="https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531">English Edition</a></li>
-<li><a href="https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X">Portuguese Edition</a></li>
-</ul>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-a.jpg" alt="Zeno holding the physical book" />
-</figure>
-<p>Building this physical copy has been a really intense process.</p>
-<p>At first, I hired a person from Fiverr to do the entire formatting. After a lot of back and forth, I wasn't super happy with the quality, so I decided to do it myself.</p>
-<p>You see, I know nothing about formatting books, but the internet is a magical place, so I started to learn Adobe InDesign.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-b.png" alt="Adobe InDesign" />
-</figure>
-<p>After hours of adding content, choosing fonts, moving images, and optimizing line breaks, I was finally ready to print!</p>
-<p>Before sending it to the publishing company, I decided to test everything at home using my good old printer. I made sure to read the entire book again to feel the experience on real paper. It's impressive how different it is.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-c.jpg" alt="Book printed at home" />
-</figure>
-<p>I didn't want to order hundreds of copies and have them stored at my home. That's why I picked a service called IngramSpark, which is a print-on-demand publisher. This basically means that when someone buys a copy, they print and send it to you directly.</p>
-<p>Designing a book is crazy because you have to make all these decisions like paperback vs. hardcover, white vs. creme paper, gloss vs. matte cover.</p>
-<p>In the end, I chose hardcover since it's more durable and has a premium touch. I also chose creme paper since it's easier on the eyes. Once all those decisions were made, I pressed <em>Submit</em> and waited a couple of weeks for the book to be produced.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/making-a-physical-book-d.jpg" alt="Book interior" />
-</figure>
-<p>I can't describe the feeling of receiving that first copy.</p>
-<p>It's so amazing to see the words you wrote on real paper. To be honest, I never thought about writing a book, but now we have a digital book, an audio book, and now a physical book. Unbelievable.</p>
-<p>I hope you enjoy this and thanks for all your support so far.</p>
-<p>Grab your physical copy today or send it as a gift to a friend!</p>
-<ul>
-<li><a href="https://amazon.com/14-Habits-Highly-Productive-Developers/dp/1735266531">English Edition</a></li>
-<li><a href="https://amazon.com.br/H%C3%A1bitos-Desenvolvedores-Altamente-Produtivos-Portuguese/dp/173526654X">Portuguese Edition</a></li>
-</ul>
-<p>Happy reading!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[14 Best Free Fonts for Programming]]></title>
-        <link>https://draculatheme.com/blog/best-free-fonts-for-programming</link>
-        <guid>https://draculatheme.com/blog/best-free-fonts-for-programming</guid>
-        <pubDate>Wed, 10 Feb 2021 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity.</p>
-<p>Here's a compilation of the best free monospace fonts for coding, along with additional comments and download links.</p>
-<h2>1. Fira Code</h2>
-<p>I've used Monaco for 10+ years until I finally met Fira Code. This font has more than 53,600 stars on GitHub, and it's popular for a reason. Nikita Prokopov puts a lot of effort into the ligatures, which transforms characters into single logical tokens. It's my favorite font nowadays.</p>
-<p><a href="https://github.com/tonsky/FiraCode/releases/download/5.2/Fira_Code_v5.2.zip">Download</a> • <a href="https://github.com/tonsky/FiraCode">Github</a></p>
-<a href="https://github.com/tonsky/FiraCode">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-a.png" alt="Fira Code" />
-  </figure>
-</a>
-<h2>2. IBM Plex Mono</h2>
-<p>The Plex family was created to replace Helvetica as the IBM corporate typeface after more than 50 years. The italics look great, and it features very crisp and easy-to-read glyphs. Unfortunately, it doesn't include ligatures.</p>
-<p><a href="https://github.com/IBM/plex/archive/v5.1.3.zip">Download</a> • <a href="https://github.com/IBM/plex">Github</a></p>
-<a href="https://www.ibm.com/plex">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-b.png" alt="IBM Plex Mono" />
-  </figure>
-</a>
-<h2>3. Source Code Pro</h2>
-<p>This was one of the first open source fonts made by Adobe. After its release in 2012, the font got extremely popular and was adopted by many developers. It preserves the design features and vertical proportions of Source Sans, but alters the glyph widths so that they are uniform across all weights.</p>
-<p><a href="https://github.com/adobe-fonts/source-code-pro/archive/2.038R-ro/1.058R-it/1.018R-VAR.zip">Download</a> • <a href="https://github.com/adobe-fonts/source-code-pro">Github</a></p>
-<a href="https://adobe-fonts.github.io/source-code-pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-c.png" alt="Source Code Pro" />
-  </figure>
-</a>
-<h2>4. Monoid</h2>
-<p>If you're one of those people who hate horizontal scrolling, this is the right font for you. It's optimized for coding with bitmap-like sharpness at 12px/9pt even on low res displays. There's also a Font Awesome integration called Monoisome.</p>
-<p><a href="https://github.com/larsenwork/monoid/archive/0.61.zip">Download</a> • <a href="https://github.com/larsenwork/monoid">Github</a></p>
-<a href="https://larsenwork.com/monoid">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-d.png" alt="Monoid" />
-  </figure>
-</a>
-<h2>5. Hack</h2>
-<p>This is one of the most customizable fonts of all. It has 1,573 glyphs, and you can change the details of each one yourself. Powerline glyphs are also included in the regular set.</p>
-<p><a href="https://github.com/source-foundry/Hack/archive/v3.003.zip">Download</a> • <a href="https://github.com/source-foundry/Hack">Github</a></p>
-<a href="https://sourcefoundry.org/hack">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-e.png" alt="Hack" />
-  </figure>
-</a>
-<h2>6. Iosevka</h2>
-<p>This font provides a slender outfit by default: glyphs are exactly 1/2em wide. Compared to the competitors, you could fit more columns within the same screen width. It also has two widths, Normal and Extended, so if you prefer more breeze between the character, go with the Extended version.</p>
-<p><a href="https://github.com/be5invis/Iosevka/archive/v4.5.0.zip">Download</a> • <a href="https://github.com/be5invis/Iosevka">Github</a></p>
-<a href="https://typeof.net/Iosevka">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-f.png" alt="Iosevka" />
-  </figure>
-</a>
-<h2>7. JetBrains Mono</h2>
-<p>JetBrains, the company behind IntelliJ, WebStorm, and so many other IDEs, surprised us all in 2020 when it came with its own font. Their approach is to keep code lines to the length that developers expect, making each letter occupy more pixels. They do that by having characters remain standard in width, but the height of the lowercase is maximized.</p>
-<p><a href="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip">Download</a> • <a href="https://github.com/JetBrains/JetBrainsMono">Github</a></p>
-<a href="https://www.jetbrains.com/lp/mono">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-g.png" alt="JetBrains Mono" />
-  </figure>
-</a>
-<h2>8. Fantasque Sans Mono</h2>
-<p>Designed with functionality in mind, this is the kind of font that adds an extra touch to your code. Its handwriting-like fuzziness makes it a really cool option.</p>
-<p><a href="https://github.com/belluzj/fantasque-sans/archive/v1.8.0.zip">Download</a> • <a href="https://github.com/belluzj/fantasque-sans">Github</a></p>
-<a href="https://fontlibrary.org/en/font/fantasque-sans-mono">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-h.png" alt="Fantasque Sans Mono" />
-  </figure>
-</a>
-<h2>9. Ubuntu Mono</h2>
-<p>Especifically created to complement the Ubuntu tone of voice. It has a contemporary style and contains characteristics unique to the Ubuntu brand that convey a precise, reliable, and free attitude. If you enjoy Linux but have to work in Windows or MacOS, this font gives you a little happiness.</p>
-<p><a href="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip">Download</a> • <a href="https://design.ubuntu.com/font/">Site</a></p>
-<a href="https://design.ubuntu.com/font/">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-i.png" alt="Ubuntu Mono" />
-  </figure>
-</a>
-<h2>10. Anonymous Pro</h2>
-<p>The cool thing about this font is that characters that could be mistaken for each other like 0 (zero) vs O (capital O) are intentionally differentiated. It's a family of four fixed-width fonts designed especially with coding in mind.</p>
-<p><a href="https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip">Download</a> • <a href="https://www.marksimonson.com/fonts/view/anonymous-pro">Site</a></p>
-<a href="https://www.marksimonson.com/fonts/view/anonymous-pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-j.png" alt="Anonymous Pro" />
-  </figure>
-</a>
-<h2>11. Inconsolata</h2>
-<p>An open source alternative to the proprietary Consolas font from Microsoft. It's a monospace font designed for printed code listings, terminal emulators, and similar uses. Comes with ligatures for a great coding experience.</p>
-<p><a href="https://github.com/googlefonts/Inconsolata/archive/v3.000.zip">Download</a> • <a href="https://github.com/googlefonts/Inconsolata">GitHub</a></p>
-<a href="https://levien.com/type/myfonts/inconsolata.html">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-k.png" alt="Inconsolata" />
-  </figure>
-</a>
-<h2>12. Victor Mono</h2>
-<p>This typeface is clean, crisp and narrow, with a large x-height and clear punctuation, making it legible and ideal for code. It comes in seven weights and Roman, Italic and Oblique styles. It also has optional semi-connected cursive italics and programming symbol ligatures.</p>
-<p><a href="https://github.com/rubjo/victor-mono/archive/v1.4.2.zip">Download</a> • <a href="https://github.com/rubjo/victor-mono">Github</a></p>
-<a href="https://rubjo.github.io/victor-mono/">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-l.png" alt="Victor Mono" />
-  </figure>
-</a>
-<h2>13. Space Mono</h2>
-<p>Developed explicitly for use in headline and display typography, the letterforms infuse a geometric slab core with novel over-rationalized forms. It supports a Latin Extended glyph set, enabling typesetting for English and other Western European languages.</p>
-<p><a href="https://github.com/googlefonts/spacemono/archive/f5ebc1e1c0.zip">Download</a> • <a href="https://github.com/googlefonts/spacemono">GitHub</a></p>
-<a href="https://www.colophon-foundry.org/custom/spacemono/">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-m.png" alt="Space Mono" />
-  </figure>
-</a>
-<h2>14. Hasklig</h2>
-<p>Based on Source Code Pro, this font solves the problem the way typographers have always solved ill-fitting characters, which co-occur often: ligatures. The underlying code stays the same — only the representation changes.</p>
-<p><a href="https://github.com/i-tu/Hasklig/archive/v1.2.zip">Download</a> • <a href="https://github.com/i-tu/Hasklig">Github</a></p>
-<a href="https://github.com/i-tu/Hasklig">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/best-free-fonts-for-programming-n.png" alt="Hasklig" />
-  </figure>
-</a>
-<h2>What's your favorite one?</h2>
-<p>Fonts, just like themes, are a very personal subject. Different developers like different fonts. Some love ligatures, others hate. Some love italics, others hate.</p>
-<p>Hopefully, this compilation was useful to identify what works best for you. Give it a shot, try them for a couple of days, and you'll notice the difference.</p>
-<p>I'd love to hear which one you like the most. Hit me up on <a href="https://twitter.com/zenorocha">Twitter</a>!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[The Most Popular Dracula Themes in 2020]]></title>
-        <link>https://draculatheme.com/blog/the-most-popular-dracula-themes-in-2020</link>
-        <guid>https://draculatheme.com/blog/the-most-popular-dracula-themes-in-2020</guid>
-        <pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020.</p>
-<p>Here are the total number of visits and the most popular Dracula themes on each platform.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png" alt="Google Analytics in 2020" />
-</figure>
-<p><strong>Windows</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/notepad-plus-plus">Notepad++</a>: 254,035 views</li>
-<li><a href="https://draculatheme.com/windows-terminal">Windows Terminal</a>: 57,760 views</li>
-<li><a href="https://draculatheme.com/visual-studio">Visual Studio</a>: 37,636 views</li>
-</ol>
-<p><strong>macOS</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/iterm">iTerm</a>: 77,490 views</li>
-<li><a href="https://draculatheme.com/terminal">Terminal.app</a>: 66,350 views</li>
-<li><a href="https://draculatheme.com/visual-studio-code">Visual Studio Code</a>: 61,407 views</li>
-</ol>
-<p><strong>Linux</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/zsh">Zsh</a>: 66,494 views</li>
-<li><a href="https://draculatheme.com/vim">Vim</a>: 58,503 views</li>
-<li><a href="https://draculatheme.com/gnome-terminal">Gnome Terminal</a>: 52,676 views</li>
-</ol>
-<h2>New on Dracula</h2>
-<p>We just crossed 150 themes! Only this week 8 new themes have joined the Dracula clan!</p>
-<ul>
-<li><a href="https://draculatheme.com/ditto">Ditto</a>: An extension to the standard <strong>windows clipboard</strong></li>
-<li><a href="https://draculatheme.com/ida">IDA Pro</a>: Translates <strong>machine code</strong> into a human-readable format</li>
-<li><a href="https://draculatheme.com/matplotlib">Matplotlib</a>: Library for creating interactive <strong>visualizations in Python</strong></li>
-<li><a href="https://draculatheme.com/netbeans">Netbeans</a>: An integrated development <strong>environment for Java</strong></li>
-<li><a href="https://draculatheme.com/qt5">Qt5</a>: Cross-platform <strong>application development</strong> framework</li>
-<li><a href="https://draculatheme.com/telegram-ios">Telegram iOS</a>: <strong>Messaging app</strong> with end-to-end encryption</li>
-<li><a href="https://draculatheme.com/terminator">Terminator</a>: Alternative <strong>terminal emulator</strong> for Linux</li>
-<li><a href="https://draculatheme.com/xournalpp">Xournal++</a>: Open source <strong>hand note-taking</strong> software</li>
-</ul>
-<a href="https://draculatheme.com/xournalpp">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/the-most-popular-dracula-themes-in-2020-b.png" alt="Dracula for Xournal++" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p><a href="https://blog.jetbrains.com/idea/2021/01/intellij-idea-2021-1-eap-1/">JetBrains launched the EAP 2021.1</a> today and I just published a new update to support it.</p>
-<p>Go to <a href="https://gumroad.com">Gumroad</a> to download the latest version ;)</p>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Purchasing Parity Power + 4 New Themes]]></title>
-        <link>https://draculatheme.com/blog/purchasing-parity-power-plus-4-new-themes</link>
-        <guid>https://draculatheme.com/blog/purchasing-parity-power-plus-4-new-themes</guid>
-        <pubDate>Thu, 14 Jan 2021 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I'm super happy to announce Purchasing Parity Power on Dracula PRO! Why? Because not everyone earns in dollars.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I'm super happy to announce <em>Purchasing Parity Power</em> on <a href="https://draculatheme.com/pro">Dracula PRO</a>!</p>
-<p>Why? Because not <strong>everyone earns in dollars</strong>.</p>
-<p>Now 160 countries have unique discounts based on their currency value and social climate 💚</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/purchasing-parity-power-plus-4-new-themes-a.png" alt="Purchasing Parity Power on Dracula PRO" />
-  </figure>
-</a>
-<p>It took me an entire Saturday, but I managed to build my own solution using Cloudflare Workers, Vercel, and Gumroad. If you're interested in implementing something like this too, I shared some resources that were useful to me on Twitter.</p>
-<h2>New on Dracula</h2>
-<p>This week 4 new themes have joined the Dracula clan!</p>
-<ul>
-<li><a href="https://draculatheme.com/bashtop">Bashtop</a>: Linux/OSX/FreeBSD <strong>resource monitor tool</strong></li>
-<li><a href="https://draculatheme.com/liteide">LiteIDE</a>: A simple, open source, <strong>cross-platform Go IDE</strong></li>
-<li><a href="https://draculatheme.com/logseq">Logseq</a>: Privacy-first platform for <strong>knowledge sharing</strong></li>
-<li><a href="https://draculatheme.com/thunderbird">Thunderbird</a>: The good ol' <strong>email client</strong> from Mozilla</li>
-</ul>
-<a href="https://draculatheme.com/bashtop">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/purchasing-parity-power-plus-4-new-themes-b.png" alt="Dracula for Bashtop" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>I just added the Portuguese and Spanish versions of my book 14 Habits of Highly Productive Developers into the Dracula PRO package. Enjoy ;)</p>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[GitHub Dark, Big Sur Icons, And 5 New Themes]]></title>
-        <link>https://draculatheme.com/blog/github-dark-big-sur-icons-and-5-new-themes</link>
-        <guid>https://draculatheme.com/blog/github-dark-big-sur-icons-and-5-new-themes</guid>
-        <pubDate>Tue, 15 Dec 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P</p>
-<a href="https://github.com/settings/appearance">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png" alt="GitHub Dark Mode" />
-  </figure>
-</a>
-<h2>New on Dracula</h2>
-<p>This week 5 new themes have joined the Dracula clan!</p>
-<ul>
-<li><a href="https://draculatheme.com/arduino-pro-ide">Arduino Pro</a>: New <strong>IDE</strong> for more advanced developers</li>
-<li><a href="https://draculatheme.com/albert">Albert</a>: A desktop agnostic <strong>launcher</strong> written in C++</li>
-<li><a href="https://draculatheme.com/kicad">KiCad</a>: Cross-platform <strong>electronics</strong> design automation suite</li>
-<li><a href="https://draculatheme.com/linear">Linear</a>: The <strong>issue tracking</strong> tool you'll enjoy using</li>
-<li><a href="https://draculatheme.com/standard-notes">Standard Notes</a>: A simple and <strong>private notes</strong> app</li>
-</ul>
-<a href="https://draculatheme.com/standard-notes">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-b.png" alt="Google Analytics in 2020" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>Dracula PRO received an update with new icons for <strong>macOS Big Sur</strong>, support for <strong>JetBrains 2020.3</strong>, and an <strong>8K resolution wallpaper</strong>. Here's a preview of the icons.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-c.jpg" alt="Dracula PRO Icons" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-d.jpg" alt="Dracula PRO Icons - Blade" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-e.jpg" alt="Dracula PRO Icons - Buffy" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-f.jpg" alt="Dracula PRO Icons - Lincoln" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-g.jpg" alt="Dracula PRO Icons - Morbius" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-h.jpg" alt="Dracula PRO Icons - Van Helsing" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[It's Halloween!]]></title>
-        <link>https://draculatheme.com/blog/it-is-halloween</link>
-        <guid>https://draculatheme.com/blog/it-is-halloween</guid>
-        <pubDate>Sat, 31 Oct 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Happy Halloween!</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/it-is-halloween-a.gif" alt="Dracula animation" />
-</figure>
-<p>First of all, I would like to say THANKS to all the Dracula users out there. Our clan continues to grow, just take a look at these crazy numbers...</p>
-<p>👻 <a href="https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula">VSCode</a>: 1,661,819 users</p>
-<p>🧟 <a href="https://plugins.jetbrains.com/plugin/12275-dracula-theme">JetBrains</a>: 280,392 users</p>
-<p>💀 <a href="https://atom.io/themes/dracula-syntax">Atom</a>: 219,224 users</p>
-<p>Let's continue to build the most used theme for developers in the world.</p>
-<h2>2020 Halloween Costume Contest</h2>
-<p>As promised, today I'm here to announce the winner of our first costume contest! In case you missed, the idea was to publish a photo or screenshot of your setup on social media. The best post would get a free <a href="https://draculatheme.com/pro">Dracula PRO</a> license.</p>
-<p>And the winners are... (drum roll) 🥁🥁🥁</p>
-<p>🥇 <a href="https://twitter.com/pqDuh_/status/1322294369165234182">Eduardo</a> who did a mix of ASCII art and custom shortcuts on his Window machine</p>
-<a href="https://twitter.com/pqDuh_/status/1322294369165234182">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/it-is-halloween-b.jpeg" alt="Eduardo's desktop" />
-  </figure>
-</a>
-<p>🥈 <a href="https://www.linkedin.com/posts/activity-6727256146886893568-sZ4N/">Matt</a> who got a sweet wallpaper, custom Doom Emacs, and ZSH on his Linux machine</p>
-<a href="https://www.linkedin.com/posts/activity-6727256146886893568-sZ4N/">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/it-is-halloween-c.jpeg" alt="Matt's desktop" />
-  </figure>
-</a>
-<p>🥉 <a href="https://twitter.com/RogerioOrioli/status/1321586501625483267">Rogerio</a> who customized his whole website with Dracula colors</p>
-<a href="https://twitter.com/RogerioOrioli/status/1321586501625483267">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/it-is-halloween-d.jpeg" alt="Matt's desktop" />
-  </figure>
-</a>
-<p>Thank you all for participating, this was fun!</p>
-<p>Enjoy Halloween!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[2020 Halloween Costume Contest]]></title>
-        <link>https://draculatheme.com/blog/2020-halloween-costume-contest</link>
-        <guid>https://draculatheme.com/blog/2020-halloween-costume-contest</guid>
-        <pubDate>Wed, 28 Oct 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Halloween is almost here and this year I want to do something different... Introducing the 2020 Halloween Costume Contest!]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Halloween is almost here and this year I want to do something different...</p>
-<p>Introducing the 2020 Halloween Costume Contest!</p>
-<p>Take a photo or screenshot of your setup and share it on <a href="https://twitter.com/hashtag/draculatheme?f=live">Twitter</a>, <a href="https://www.instagram.com/explore/tags/draculatheme/">Instagram</a>, or <a href="https://www.linkedin.com/feed/hashtag/draculatheme/">Linkedin</a> using the hashtag #draculatheme. Feel free to show your wallpaper, your editor, or anything else.</p>
-<p>The best post will get a free <a href="https://draculatheme.com/pro">Dracula PRO</a> and the winner will be announced on <strong>October 31st</strong>!</p>
-<p>I'll start, here's my current setup.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/2020-halloween-costume-contest-a.png" alt="My Dracula setup" />
-</figure>
-<h2>New on Dracula</h2>
-<p>This week 6 new themes have joined the Dracula family!</p>
-<ul>
-<li><a href="https://draculatheme.com/copyq">CopyQ</a>: Clipboard manager with scripting features</li>
-<li><a href="https://draculatheme.com/cryptowatch">Cryptowatch</a>: Real-time market dashboards</li>
-<li><a href="https://draculatheme.com/fman">fman</a>: Dual-pane file manager</li>
-<li><a href="https://draculatheme.com/micro">Micro</a>: Terminal-based text editor</li>
-<li><a href="https://draculatheme.com/midnight-commander">Midnight Commander</a>: Orthodox file manager</li>
-<li><a href="https://draculatheme.com/renoise">ReNoise</a>: Digital Audio Workstation</li>
-</ul>
-<a href="https://draculatheme.com/midnight-commander">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/2020-halloween-costume-contest-b.png" alt="Dracula for Midnight Commander" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dark Mode Everywhere And 11 New Themes]]></title>
-        <link>https://draculatheme.com/blog/dark-mode-everywhere-and-11-new-themes</link>
-        <guid>https://draculatheme.com/blog/dark-mode-everywhere-and-11-new-themes</guid>
-        <pubDate>Tue, 29 Sep 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is Night Eye.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is <a href="https://nighteye.app">Night Eye</a>. What I like about this browser extension is that they convert colors instead of inverting.</p>
-<a href="https://nighteye.app">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png" alt="Night Eye applied to Night Eye" />
-  </figure>
-</a>
-<p>Remember when I was trying to adapt one code snippet into other programming languages?</p>
-<p>So far more than 17 languages have been added there! You can see <a href="https://github.com/dracula/dracula-theme/discussions/444">full GitHub thread</a> showing Swift, PHP, Kotlin, Ruby, Python, TypeScript, Go, Scala, and more :)</p>
-<h2>New on Dracula</h2>
-<p>This week 11 new themes have joined the Dracula clan!</p>
-<ul>
-<li><a href="https://draculatheme.com/adminer">Adminer</a>: Database management in a single PHP file</li>
-<li><a href="https://draculatheme.com/betterdiscord">BetterDiscord</a>: Enhances Discord with several features</li>
-<li><a href="https://draculatheme.com/colorls">colorls</a>: Ruby gem that beautifies the terminal's ls command</li>
-<li><a href="https://draculatheme.com/idle">IDLE</a>: Python’s Integrated Development and Learning Environment</li>
-<li><a href="https://draculatheme.com/obsidian">Obsidian</a>: Knowledge base on top of Markdown files</li>
-<li><a href="https://draculatheme.com/plank">Plank</a>: Simplest dock on the planet</li>
-<li><a href="https://draculatheme.com/pywal">Pywal</a>: Generates a color palette from colors in an image</li>
-<li><a href="https://draculatheme.com/roam-research">Roam Research</a>: Note taking tool for networked thought</li>
-<li><a href="https://draculatheme.com/thelounge">The Lounge</a>: Self-hosted web IRC client</li>
-<li><a href="https://draculatheme.com/tiddlywiki">TiddlyWiki</a>: Non-linear personal web notebook</li>
-<li><a href="https://draculatheme.com/zathura">Zathura</a>: Customizable and functional document viewer</li>
-</ul>
-<a href="https://draculatheme.com/colorls">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dark-mode-everywhere-and-11-new-themes-b.png" alt="Dracula for colorls" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>Dracula PRO continues to evolve with new themes and updates. This time, we added a new <strong>Alacritty</strong> theme, support for <strong>JetBrains EAP 2020.3</strong> (Early Access Program), and <strong>Android Studio</strong> icons.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dark-mode-everywhere-and-11-new-themes-c.png" alt="Dracula PRO for Alacritty" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula UI - Week 3]]></title>
-        <link>https://draculatheme.com/blog/dracula-ui-week-3</link>
-        <guid>https://draculatheme.com/blog/dracula-ui-week-3</guid>
-        <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[It's been almost two weeks since we last shared an update with you. We have missed you and your feedback.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>It's been almost two weeks since we last shared an update with you. We have missed you and your feedback 🥺</p>
-<p>Good news! We have more components to share with you. We spent the past couple of weeks doing research, experimenting with new patterns, and honing our form components.</p>
-<p>Here's a demo of what some of the components look like.
-We believe these forms will look great on web and mobile apps.</p>
-<a href="https://draculatheme.com/ui">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-ui-week-3-a.png" alt="Dracula UI Gradients" />
-  </figure>
-</a>
-<p>As always, feel free to reply to this email directly if you have any feedback.</p>
-<p>Thank you!
-Netto &#x26; Zeno</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula UI - Week 1]]></title>
-        <link>https://draculatheme.com/blog/dracula-ui-week-1</link>
-        <guid>https://draculatheme.com/blog/dracula-ui-week-1</guid>
-        <pubDate>Thu, 10 Sep 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>It's now one week since we started working on Dracula UI. 🥳</p>
-<p>Our team of 3 (<a href="https://twitter.com/nettofarah">Netto</a>, <a href="https://twitter.com/zenorocha">Zeno</a>, and <a href="https://www.instagram.com/p/CE9pSsYnCM6/">Cookie</a>) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns.</p>
-<p>The results from the <a href="https://draculatheme.typeform.com/to/YvwgNntQ">Dracula UI questionnaire</a> has been insane with over 430 responses. We're really happy to see some amazing engagement, great ideas, and just how much love folks have for Dracula. 🧛‍♀️💜</p>
-<p>We plan on sharing weekly updates of our progress, so stay tuned for some sweet screenshots, demos, and prototypes coming soon. Did we also mention we love feedback?</p>
-<p>Here's a sneak peek of our color system:</p>
-<a href="https://draculatheme.com/ui">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-ui-week-1-a.png" alt="Dracula UI Gradients" />
-  </figure>
-</a>
-<p>And here you can see the colors applied to specific Components such as Badge.</p>
-<a href="https://draculatheme.com/ui">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-ui-week-1-b.png" alt="Dracula UI Gradients" />
-  </figure>
-</a>
-<p>Besides Components, we also want to explore the concept of Patterns.</p>
-<p>In the following screenshot, you can see a Card Pattern that uses lower-level Dracula UI components such as Title, Avatar, and Badge.</p>
-<a href="https://draculatheme.com/ui">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-ui-week-1-c.png" alt="Dracula UI Gradients" />
-  </figure>
-</a>
-<p>Thanks again for the amazing support so far.</p>
-<p>Please drop us a note by replying to this email, or reach out on Twitter at @zenorocha and @nettofarah.</p>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula UI - Web Or React Native?]]></title>
-        <link>https://draculatheme.com/blog/dracula-ui-web-or-react-native</link>
-        <guid>https://draculatheme.com/blog/dracula-ui-web-or-react-native</guid>
-        <pubDate>Thu, 03 Sep 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - it should be a top priority. That's why I decided to invest time in this.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I'm building something new... it's called <a href="https://draculatheme.com/ui">Dracula UI</a>.</p>
-<p>Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - <strong>it should be a top priority</strong>. That's why I decided to invest time in this.</p>
-<p>But before I start developing like crazy, I want to ask - what's important to you?</p>
-<p>What's your favorite way to build apps?</p>
-<ul>
-<li>HTML/CSS/JS?</li>
-<li>React Native?</li>
-<li>SwiftUI?</li>
-<li>Android?</li>
-<li>Flutter?</li>
-</ul>
-<p><a href="https://draculatheme.typeform.com/to/YvwgNntQ">Help me build this new thing</a> by answering some questions about your dev setup :)</p>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[6 New Themes And 20 Desktop Icons]]></title>
-        <link>https://draculatheme.com/blog/6-new-themes-and-20-desktop-icons</link>
-        <guid>https://draculatheme.com/blog/6-new-themes-and-20-desktop-icons</guid>
-        <pubDate>Tue, 18 Aug 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C? I'm trying to standardize all the Dracula screenshots using the same code snippet structure.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C?</p>
-<p>I'm trying to standardize all the Dracula screenshots using the same code snippet structure. If you know those languages, can you help me convert the following snippet (<a href="https://github.com/dracula/dracula-theme/discussions/444">see GitHub thread</a>)?</p>
-<a href="https://github.com/dracula/dracula-theme/discussions/444">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-a.png" alt="GitHub Discussion" />
-  </figure>
-</a>
-<h2>New on Dracula</h2>
-<p>This week 6 new themes have been created by the community!</p>
-<p><a href="https://draculatheme.com/marp">Marp</a>: Markdown system that generates slide decks by <em>Daniel Gisolfi</em></p>
-<p><a href="https://draculatheme.com/doom-emacs">DOOM Emacs</a>: Configuration framework for Emacs by <em>Helder Burato</em></p>
-<p><a href="https://draculatheme.com/matlab">MATLAB</a>: Multi-paradigm numerical computing environment by <em>j-hap</em></p>
-<p><a href="https://draculatheme.com/thonny">Thonny</a>: Python IDE for beginners by <em>Daniel Spinola</em></p>
-<p><a href="https://draculatheme.com/musicbee">MusicBee</a>: Music manager and player by <em>Michael Ye</em></p>
-<p><a href="https://draculatheme.com/b4x">B4X</a>: Proprietary language, very similar to Visual Basic by <em>Lucas Siqueira</em></p>
-<a href="https://draculatheme.com/b4x">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-b.png" alt="Dracula for B4X" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>Last weekend I started playing around with some custom app icons. People seemed to like it, so I decided to take it to the next level.</p>
-<p>Presenting the Dracula PRO Desktop Icons!</p>
-<p>The 20 icons are available in 6 different flavors, just like the themes.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-c.jpeg" alt="Dracula PRO Icons" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-d.jpeg" alt="Dracula PRO Icons - Blade" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-e.jpeg" alt="Dracula PRO Icons - Buffy" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-f.jpeg" alt="Dracula PRO Icons - Lincoln" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-g.jpeg" alt="Dracula PRO Icons - Morbius" />
-  </figure>
-</a>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/6-new-themes-and-20-desktop-icons-h.jpeg" alt="Dracula PRO Icons - Van Helsing" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Free Wallpapers And New Dracula PRO Price]]></title>
-        <link>https://draculatheme.com/blog/free-wallpapers-and-new-dracula-pro-price</link>
-        <guid>https://draculatheme.com/blog/free-wallpapers-and-new-dracula-pro-price</guid>
-        <pubDate>Tue, 11 Aug 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[On February 11th, Dracula PRO was being launched. Today, exactly six months later, more than 1,143 copies have been sold. What started as a simple side project, became something much bigger.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>On February 11th, Dracula PRO was being launched.</p>
-<p>Today, exactly six months later, more than 1,143 copies have been sold. What started as a simple side project, became something much bigger.</p>
-<p>Maintaining a high-quality theme is not easy. Each application has a different syntax highlighter, theme system, and other peculiarities, which makes the process of standardizing even harder.</p>
-<p>That's why we're announcing the end of the Launch Promo.</p>
-<p>In a couple of days, the price will increase to $79.</p>
-<p><a href="https://draculatheme.com/pro">Get Dracula PRO at special price</a></p>
-<h2>Wallpapers</h2>
-<p>A community member, kajwski, created a series of wallpapers for different operating systems.</p>
-<a href="https://draculatheme.com/wallpaper">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/free-wallpapers-and-new-dracula-pro-price-a.png" alt="Dracula Wallpaper for Windows" />
-    <figcaption>Windows</figcaption>
-  </figure>
-</a>
-<a href="https://draculatheme.com/wallpaper">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/free-wallpapers-and-new-dracula-pro-price-b.png" alt="Dracula Wallpaper for Debian" />
-    <figcaption>Debian</figcaption>
-  </figure>
-</a>
-<a href="https://draculatheme.com/wallpaper">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/free-wallpapers-and-new-dracula-pro-price-c.png" alt="Dracula Wallpaper for Fedora" />
-    <figcaption>Fedora</figcaption>
-  </figure>
-</a>
-<a href="https://draculatheme.com/wallpaper">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/free-wallpapers-and-new-dracula-pro-price-d.png" alt="Dracula Wallpaper for Ubuntu" />
-    <figcaption>Ubuntu</figcaption>
-  </figure>
-</a>
-<a href="https://draculatheme.com/wallpaper">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/free-wallpapers-and-new-dracula-pro-price-e.png" alt="Dracula Wallpaper for Arch" />
-    <figcaption>Arch</figcaption>
-  </figure>
-</a>
-<p>See the <a href="https://draculatheme.com/wallpaper">full list of wallpapers</a>.</p>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[3 New Themes And Better Code Screenshots]]></title>
-        <link>https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</link>
-        <guid>https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</guid>
-        <pubDate>Wed, 05 Aug 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception.</p>
-<p>Enough about the book. Let's talk about Dracula! I was recently interviewed by one of my favorite podcasts, The Changelog, to tell the journey of Dracula PRO. If you like podcasts, listen now - It's OK to make money from your open source.</p>
-<p>The Dracula community surprises me every day. Recently, a Reddit user shared his Dracula setup on r/unixporn. It looks rad, doesn't it? In case you want to replicate, he shared the full list of configurations there.</p>
-<a href="https://www.reddit.com/r/unixporn/comments/hvrp6f/bspwm_dracula_theme/">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/3-new-themes-and-better-code-screenshots-a.png" alt="Reddit thread about bspwm" />
-  </figure>
-</a>
-<h2>New on Dracula</h2>
-<p>We just reached 110 themes created by the community! Here are the newest ones:</p>
-<ul>
-<li><a href="https://draculatheme.com/aseprite">Aseprite</a>: An animated sprite editor &#x26; pixel art tool by <em>Amit Netanel</em></li>
-<li><a href="https://draculatheme.com/mailspring">Mailspring</a>: An open-source, extensible email app by <em>Thiago Avelino</em></li>
-<li><a href="https://draculatheme.com/tower">Tower</a>: A powerful Git client for Mac and Windows by <em>David Sullivan</em></li>
-</ul>
-<a href="https://draculatheme.com/aseprite">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/3-new-themes-and-better-code-screenshots-b.jpg" alt="Dracula for Aseprite" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>Do you know those beautiful code screenshots that people share on social media? Let me tell you a secret... they are all created using this super cool tool called Carbon.</p>
-<p>I recently worked with their team, and we have some news to share. You can now generate good-looking screenshots using <a href="https://carbon.now.sh/?t=dracula-pro">Dracula PRO colors on Carbon</a>.</p>
-<a href="https://carbon.now.sh/?t=dracula-pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/3-new-themes-and-better-code-screenshots-c.png" alt="Dracula PRO colors on Carbon" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Make Music With Dracula]]></title>
-        <link>https://draculatheme.com/blog/make-music-with-dracula</link>
-        <guid>https://draculatheme.com/blog/make-music-with-dracula</guid>
-        <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you :)</p>
-<h2>New on Dracula</h2>
-<p>The list of themes just keeps growing and growing. We just reached 106 themes created by the community. What is surprising is to see not only developers but DJs and producers using Dracula to create music.</p>
-<ul>
-<li><a href="https://draculatheme.com/spacemacs">Spacemacs</a>: a community-driven Emacs distribution</li>
-<li><a href="https://draculatheme.com/total-commander">Total Commander</a>: a file manager replacement for Windows</li>
-<li><a href="https://draculatheme.com/ableton-live">Ableton Live</a>: a digital audio workstation for macOS and Windows</li>
-</ul>
-<a href="https://draculatheme.com/ableton-live">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/make-music-with-dracula-a.png" alt="Dracula for Ableton Live" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>From Mosaic to Netscape to IE6.</p>
-<p>We all love using browsers to navigate through this crazy world called the internet. We spend a lot of time on our code editors and terminals, but I bet we spend even more time on web browsers.</p>
-<p>That's why having a Dracula PRO theme for the most popular browsers is not only cool; it's a must-have.</p>
-<p><strong>Chrome</strong></p>
-<p>Starting with the most used browser in the world. Here are all six variations of Dracula PRO on Google Chrome.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/make-music-with-dracula-b.png" alt="Dracula PRO for Chrome" />
-  </figure>
-</a>
-<p><strong>Firefox</strong></p>
-<p>Now let's talk about Mozilla's main project - Firefox. What I love about this theme are the accent colors present on the active tabs and buttons. It's a simple, gorgeous detail.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/make-music-with-dracula-c.png" alt="Dracula PRO for Firefox" />
-  </figure>
-</a>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula 100 Themes]]></title>
-        <link>https://draculatheme.com/blog/dracula-100-themes</link>
-        <guid>https://draculatheme.com/blog/dracula-100-themes</guid>
-        <pubDate>Mon, 04 May 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Today is a special day. We have hit 100 themes on Dracula! When I started this little project, I never imagined the community would embrace it the way it did. Thank you so much for everyone involved in this.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Today is a special day. We have hit 100 themes on Dracula!</p>
-<p>When I started this little project, I never imagined the community would embrace it the way it did. Thank you so much for everyone involved in this.</p>
-<p>Let's continue to make the most cross-platform theme ever created :)</p>
-<h2>New on Dracula</h2>
-<p>On November, 2013, Matheus <a href="https://github.com/dracula/dracula-theme/issues/29">opened an issue on GitHub</a> asking for an Eclipse theme. It took us 7 years lol, but the Eclipse theme is here. Besides that, we have a new theme for game devs.</p>
-<ul>
-<li><a href="https://draculatheme.com/eclipse">Eclipse</a>: A famous IDE for Java, but with support for many other languages.</li>
-<li><a href="https://draculatheme.com/godot">Godot</a>: A 2D and 3D, cross-platform, free and open-source game engine.</li>
-</ul>
-<a href="https://draculatheme.com/eclipse">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-100-themes-a.png" alt="Dracula for Eclipse" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>The #1 most requested Dracula PRO theme is finally available!</p>
-<p>Vim users, Neovim users, MacVim users, <a href="https://draculatheme.com/pro">here it is</a> :)</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-100-themes-b.png" alt="Dracula PRO for Vim" />
-  </figure>
-</a>
-<p>P.S.: This wouldn't be possible without the help of <a href="https://github.com/benknoble">D. Ben Knoble</a> and the initial work done by <a href="https://github.com/dsifford">Derek Sifford</a>. You guys are the best!</p>
-<h2>Wallpapers everywhere</h2>
-<p>Since the launch of the Dracula PRO wallpapers, lots of people started sharing their workstation.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-100-themes-c.jpeg" alt="Miha Filej (@mfilej)" />
-  <figcaption>Miha Filej (@mfilej)</figcaption>
-</figure>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-100-themes-d.jpeg" alt="Tim Koopmans (@tim_koopmans)" />
-  <figcaption>Tim Koopmans (@tim_koopmans)</figcaption>
-</figure>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-100-themes-e.jpeg" alt="Dinh Quoc Han (@handinh157)" />
-  <figcaption>Dinh Quoc Han (@handinh157)</figcaption>
-</figure>
-<p>Happy hacking!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula PRO Wallpaper]]></title>
-        <link>https://draculatheme.com/blog/dracula-pro-wallpaper</link>
-        <guid>https://draculatheme.com/blog/dracula-pro-wallpaper</guid>
-        <pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Ohhh there is so much exciting news to share that I don't even know where to being. Let's get right to it...]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Ohhh there is so much exciting news to share that I don't even know where to being.</p>
-<p>Let's get right to it...</p>
-<h2>New on Dracula</h2>
-<p>A new major theme has been added to Dracula - meet the official <a href="https://draculatheme.com/tmux">tmux</a> theme.</p>
-<p>What I like about this one is that it has all the things you need right on your terminal like:</p>
-<ul>
-<li>Day, date, time, timezone</li>
-<li>Current location based on network</li>
-<li>Temperature and forecast</li>
-<li>Network connection status and SSID</li>
-<li>Battery percentage and AC power connection status</li>
-</ul>
-<a href="https://draculatheme.com/tmux">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-pro-wallpaper-a.png" alt="Dracula for tmux" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>I'm super excited to announce the Dracula PRO Wallpapers!</p>
-<p>They are programmatically generated with JavaScript, converted to SVGs, and then exported as PNGs to fit every platform and screen size.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-pro-wallpaper-b.gif" alt="Dracula PRO wallpaper on a phone" />
-  </figure>
-</a>
-<p>We spend the entire day on our computers, so having a wallpaper that consistently matches the rest of your applications is key.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-pro-wallpaper-c.gif" alt="Dracula PRO wallpaper on a desktop" />
-  </figure>
-</a>
-<p>And here's how it looks on a watch. It's simply gorgeous.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-pro-wallpaper-d.gif" alt="Dracula PRO wallpaper on a watch" />
-  </figure>
-</a>
-<p>You can get all these wallpapers and more at <a href="https://draculatheme.com/pro">draculatheme.com/pro</a> :)</p>
-<p>Have a great week!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula On Reddit + Discourse And Javadoc Themes]]></title>
-        <link>https://draculatheme.com/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes</link>
-        <guid>https://draculatheme.com/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes</guid>
-        <pubDate>Tue, 07 Apr 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral 😅</p>
-<p>Here's the post: <a href="https://www.reddit.com/r/Entrepreneur/comments/fub13w/1787638_in_7_weeks/">$17,876.38 in 7 weeks</a></p>
-<h2>New on Dracula</h2>
-<p>We just hit 97 open source themes on Dracula! Check out the new ones:</p>
-<ul>
-<li><a href="https://draculatheme.com/bspwm">bspwm</a>, a window manager for Linux</li>
-<li><a href="https://draculatheme.com/discourse">Discourse</a>, an online forum platform</li>
-<li><a href="https://draculatheme.com/javadoc">Javadoc</a>, a documentation tool for Java</li>
-<li><a href="https://draculatheme.com/kakoune">Kakoune</a>, a code editor based on Vi's model</li>
-<li><a href="https://draculatheme.com/tabletop-simulator">Tabletop Simulator</a>, a video game platform</li>
-</ul>
-<a href="https://draculatheme.com/bspwm">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png" alt="Dracula for bspwm" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>Atom, a code editor built by GitHub, was one of the most requested themes. I'm glad to announce that it's now available for PRO users. Besides that, beta users of JetBrains IDEs can now use Dracula PRO on versions +2020.1.</p>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-b.jpg" alt="Dracula PRO for Atom" />
-  </figure>
-</a>
-<p>Have a great week!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[New Dracula Site And Logo]]></title>
-        <link>https://draculatheme.com/blog/new-dracula-site-and-logo</link>
-        <guid>https://draculatheme.com/blog/new-dracula-site-and-logo</guid>
-        <pubDate>Tue, 24 Mar 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[The Dracula site and logo were the same since 2013. I've always wanted to give it a refresh, but I was never able to prioritize it.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>The Dracula site and logo were the same since 2013. I've always wanted to give it a refresh, but I was never able to prioritize it. Now that Dracula PRO exists, I have some funding to invest and the energy to keep improving the open source version even more :)</p>
-<h2>New Site</h2>
-<p>Now that we have 92 different themes, I decided to spend time on <strong>discoverability</strong>. The new search finds not only by name, but also by synonyms. The new filter helps you see only what matters to you. And the animation is gorgeous (I just wanna click those buttons lol).</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/new-dracula-site-and-logo-a.gif" alt="Dracula Site" />
-</figure>
-<p>I love Static Site Generators (SSG) since the day I became a web developer. The Dracula site had a long journey, and I feel like now we have a great stack.</p>
-<ul>
-<li>2013: Created the site using Jekyll</li>
-<li>2016: Migrated from Jekyll to Metalsmith</li>
-<li>2020: Migrated from Metalsmith to Next.js</li>
-</ul>
-<h2>New Logo</h2>
-<p>Like JavaScript frameworks, design trends come and go. When I first started Dracula, Skeuomorphism was the coolest thing ever, and now it feels outdated. Besides that, the icon library I used was very limited, and I had to re-use the same icons for different themes.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/new-dracula-site-and-logo-b.jpg" alt="Dracula Logo" />
-</figure>
-<p>This new Detailed Circular Flat style has a modern, simple, clean look. I'm still getting used to the change, but I love the consistency it brings to the entire experience.</p>
-<p>What do you think?</p>
-<p>Just hit reply and I will answer :)</p>
-<p>Have a great week!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Podcast About Dracula And Better Windows Support]]></title>
-        <link>https://draculatheme.com/blog/podcast-about-dracula-and-better-windows-support</link>
-        <guid>https://draculatheme.com/blog/podcast-about-dracula-and-better-windows-support</guid>
-        <pubDate>Thu, 19 Mar 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on. For the next two weeks, I'll be <a href="https://twitter.com/zenorocha/status/1239558074693632002">working from home</a>, how about you? Are you enjoying the remote work life?</p>
-<p>Ok, let's talk about Dracula... Recently I've been <a href="https://sustain.codefund.fm/27">interviewed on the Sustain Podcast</a> about open source monetization. It was a really nice conversation, and I think you'll like it too.</p>
-<a href="https://sustain.codefund.fm/27">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/podcast-about-dracula-and-better-windows-support-a.png" alt="Sustain Podcast Player" />
-  </figure>
-</a>
-<h2>New on Dracula PRO</h2>
-<p>When I launched the PRO version, I didn't have time to focus on different OS's. Now I'm spending more time on them, especially on Windows.</p>
-<p>This past week I added two new themes to Dracula PRO:</p>
-<ul>
-<li><a href="https://draculatheme.com/notepad-plus-plus">Notepad++</a></li>
-<li><a href="https://draculatheme.com/windows-terminal">Windows Terminal</a></li>
-</ul>
-<a href="https://draculatheme.com/pro">
-  <figure>
-    <img src="https://draculatheme.com/static/img/blog/podcast-about-dracula-and-better-windows-support-b.png" alt="Dracula PRO on Notepad++ and Windows Terminal" />
-  </figure>
-</a>
-<p>Have a good quarantine!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula For Figma, Sketch, And Adobe]]></title>
-        <link>https://draculatheme.com/blog/dracula-for-figma-sketch-and-adobe</link>
-        <guid>https://draculatheme.com/blog/dracula-for-figma-sketch-and-adobe</guid>
-        <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I'm not a designer, but I'm always amazed by the kind of work these people do. Their ability to create entire screens out of a blank canvas is just incredible.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I'm not a designer, but I'm always amazed by the kind of work these people do. Their ability to create entire screens out of a blank canvas is just incredible.</p>
-<p>That's why I decided to spend some time to build color palettes for the most popular design apps out there. And the good news is - this is available for both PRO and open source users.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-for-figma-sketch-and-adobe-a.jpg" alt="Figma, Sketch, Photoshop and Illustrator Logos" />
-</figure>
-<p>Go ahead and download the files for:</p>
-<ul>
-<li><a href="https://draculatheme.com/adobe">Adobe</a></li>
-<li><a href="https://draculatheme.com/figma">Figma</a></li>
-<li><a href="https://draculatheme.com/sketch">Sketch</a></li>
-</ul>
-<p>I can't wait to see what you're all going to create :)</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[$7,128.57 In Sales In 7 Days]]></title>
-        <link>https://draculatheme.com/blog/7128-dollars-in-sales-in-7-days</link>
-        <guid>https://draculatheme.com/blog/7128-dollars-in-sales-in-7-days</guid>
-        <pubDate>Wed, 19 Feb 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[If you have been following me on Twitter, I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been insane!]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>If you have been following me on <a href="https://twitter.com/zenorocha">Twitter</a>, I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been <strong>insane</strong>!</p>
-<p>In the <a href="https://twitter.com/zenorocha/status/1227622330731335686">first 24 hours</a>, Dracula PRO sold $3,149.37. In the <a href="https://twitter.com/zenorocha/status/1228353130267475969">first 3 days</a>, it sold $5,428.91. And now, 7 days after the launch, it sold $7,128.57.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/7128-dollars-in-sales-in-7-days-a.png" alt="Gumroad Sales Dashboard" />
-  <figcaption>Gumroad Sales Dashboard</figcaption>
-</figure>
-<p>I want to take this opportunity to say <strong>THANK YOU</strong>. Thank you for using Dracula all these years. Thank you for supporting this new initiative. And thank you for trusting me.</p>
-<p>These past few days have been really intense. I'm trying to absorb all the feedback and making changes as fast as I can. The themes for JetBrains IDEs and Xcode, for example, already receive major updates, and they look so much better.</p>
-<p>I'm also collecting some testimonials to include in the site. This is one of my favorites:</p>
-<blockquote>
-<p>"If I’m going to be staring at a screen for 8-10 hours a day, I want it to be as painless as possible. Dracula’s theme allows me to be more productive by having a consistent interface with all of my applications open. Also, the theme just looks badass."  - Hannah Burzynski, Data Scientist</p>
-</blockquote>
-<p>Seeing messages like this make me smile. My ultimate goal is to help you be more productive.</p>
-<p><strong>If you didn't get Dracula PRO yet, here it is: <a href="https://draculatheme.com/pro">draculatheme.com/pro</a></strong></p>
-<p>Thank you again!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Dracula PRO Is Here!]]></title>
-        <link>https://draculatheme.com/blog/dracula-pro-is-here</link>
-        <guid>https://draculatheme.com/blog/dracula-pro-is-here</guid>
-        <pubDate>Tue, 11 Feb 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[The wait is over... Dracula PRO is live! This is a very special moment for me. It's been almost 7 years since I launched Dracula, and I'm super excited about this next step.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>The wait is over... <a href="https://draculatheme.com/pro">Dracula PRO is live</a>!</p>
-<p>This is a very special moment for me. It's been almost 7 years since I launched Dracula, and I'm super excited about this next step.</p>
-<p>The original colors created in 2013 were based on personal taste. This new PRO version brings a more refined and mathematical approach that <strong>normalizes lightness and saturation</strong>.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-pro-is-here-a.jpg" alt="Color Palette Comparison" />
-  <figcaption>Color Palette Comparison</figcaption>
-</figure>
-<p>Dracula PRO comes with 6 theme variations for 10 different apps such as Alfred, Hyper, iTerm, JetBrains IDEs, Slack, Sublime Text, Terminal.app, Visual Studio Code, Xcode, and ZSH.</p>
-<p>Plus, 4 hand-picked fonts with ligatures and a screencast with my personal productivity tips.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/dracula-pro-is-here-b.jpg" alt="Bonus Screencast" />
-  <figcaption>Bonus Screencast</figcaption>
-</figure>
-<p>On top of that, I'm also working on an e-book about the habits of highly productive developers, which will be released in Q2 2020.</p>
-<p>I put a lot of energy to prepare all this for you and I hope you love Dracula PRO as much as I do.</p>
-<p>Thanks for your support over the years!</p>
-<p>P.S.: It will help a lot if you share this with your friends: <a href="https://draculatheme.com/pro">draculatheme.com/pro</a></p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[A Quick Spoiler...]]></title>
-        <link>https://draculatheme.com/blog/a-quick-spoiler</link>
-        <guid>https://draculatheme.com/blog/a-quick-spoiler</guid>
-        <pubDate>Sat, 08 Feb 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I have some exciting news to share! Dracula PRO will be launched in 3 days on February 11th. It's been quite a ride to get here. I've been studying colors like never before.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I have some exciting news to share!
-<strong>Dracula PRO will be launched in 3 days on February 11th.</strong></p>
-<p>It's been quite a ride to get here. I've been studying colors like never before.
-I read all the way from Isaac Newton to modern color theory papers.</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/a-quick-spoiler-a.jpg" alt="Getting some inspiration from Pantone" />
-  <figcaption>Getting some inspiration from Pantone</figcaption>
-</figure>
-<p>One of my favorite parts was picking names for the Dracula PRO variations.
-Here's a spoiler - can you identify the naming pattern?</p>
-<figure>
-  <img src="https://draculatheme.com/static/img/blog/a-quick-spoiler-b.png" alt="A sneak peek of Visual Studio Code" />
-  <figcaption>A sneak peek of Visual Studio Code</figcaption>
-</figure>
-<p>I'm super excited that it's almost here! I can't wait to share this with the world.
-I'd also appreciate your help to make some noise when this is live.</p>
-<p>On Tuesday, I'll send another email with all the details.</p>
-<p>Thanks for all the support!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[A Vampire Needs Your Help...]]></title>
-        <link>https://draculatheme.com/blog/a-vampire-needs-your-help</link>
-        <guid>https://draculatheme.com/blog/a-vampire-needs-your-help</guid>
-        <pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[For the past few weeks, I've been working non-stop to make sure that Dracula, the open source project, is well organized and with fewer issues as possible. We even crossed the number of 90 themes, which is totally insane!]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>For the past few weeks, I've been working non-stop to make sure that Dracula, the open source project, is well organized and with fewer issues as possible. We even crossed the number of <strong>90 themes</strong>, which is totally insane!</p>
-<p>I realized that people are only interested in themes because they want to be more productive. For a long time, I avoided talking about productivity tips here since that's not Dracula's primary focus. But I decided to create something new...</p>
-<p>Now I'm going to shift my attention to Dracula PRO, but before I start making all these assumptions about what people need, I want to ask - <strong>what's important to you?</strong></p>
-<p><a href="https://draculatheme.typeform.com/to/VjaC6t">Help me build this new thing</a> by answering some questions about your dev setup.</p>
-<p>P.S.: I know forms are boring, I hate them too, but I spent a lot of time trying to make this one suck less. Can't wait to hear what you have to say.</p>
-<p>See ya!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[32 New Dracula Themes For 2020]]></title>
-        <link>https://draculatheme.com/blog/32-new-dracula-themes-for-2020</link>
-        <guid>https://draculatheme.com/blog/32-new-dracula-themes-for-2020</guid>
-        <pubDate>Tue, 14 Jan 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.</p>
-<p>The result? Last week there were 53 themes on the site, now there are 85 themes!
-To make your life easier, here's a compilation of them.</p>
-<p><strong>Code Editors</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/arduino-ide">Arduino IDE</a></li>
-<li><a href="https://draculatheme.com/coteditor">CotEditor</a></li>
-<li><a href="https://draculatheme.com/editplus">Editplus</a></li>
-<li><a href="https://draculatheme.com/gamemaker-studio">GameMaker Studio</a></li>
-<li><a href="https://draculatheme.com/geany">Geany</a></li>
-<li><a href="https://draculatheme.com/wing">Wing</a></li>
-</ol>
-<p><strong>Notes &#x26; Messaging</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/bear">Bear</a></li>
-<li><a href="https://draculatheme.com/facebook-messenger">Facebook Messenger</a></li>
-<li><a href="https://draculatheme.com/limechat">LimeChat</a></li>
-<li><a href="https://draculatheme.com/mattermost">Mattermost</a></li>
-<li><a href="https://draculatheme.com/telegram-android">Telegram Android</a></li>
-<li><a href="https://draculatheme.com/typora">Typora</a></li>
-</ol>
-<p><strong>Terminal &#x26; Shell</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/alacritty">Alacritty</a></li>
-<li><a href="https://draculatheme.com/cmder">CMDer</a></li>
-<li><a href="https://draculatheme.com/fish">Fish</a></li>
-<li><a href="https://draculatheme.com/fluent-terminal">Fluent Terminal</a></li>
-<li><a href="https://draculatheme.com/gnome-terminal">Gnome Terminal</a></li>
-<li><a href="https://draculatheme.com/kitty">Kitty</a></li>
-<li><a href="https://draculatheme.com/mobaxterm">MobaXterm</a></li>
-<li><a href="https://draculatheme.com/termite">Termite</a></li>
-<li><a href="https://draculatheme.com/termux">Termux</a></li>
-<li><a href="https://draculatheme.com/windows-terminal">Windows Terminal</a></li>
-</ol>
-<p><strong>Miscellaneous</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/blender">Blender</a></li>
-<li><a href="https://draculatheme.com/couscous">Couscous</a></li>
-<li><a href="https://draculatheme.com/duckduckgo">DuckDuckGo</a></li>
-<li><a href="https://draculatheme.com/i3">i3</a></li>
-<li><a href="https://draculatheme.com/jgrasp">jGrasp</a></li>
-<li><a href="https://draculatheme.com/oracle-sql-developer">Oracle SQL Developer</a></li>
-<li><a href="https://draculatheme.com/steam">Steam</a></li>
-<li><a href="https://draculatheme.com/ulauncher">uLauncher</a></li>
-<li><a href="https://draculatheme.com/vimium">Vimium</a></li>
-<li><a href="https://draculatheme.com/wordpress">Wordpress</a></li>
-</ol>
-<p>Now that the Dracula project is in order, I'll put my heads down to work on Dracula PRO.
-It's not going to be easy and I'll definitely need your help, so let's stay in touch ;)</p>
-<p>Talk to you soon!</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[Top Dracula Themes In 2019]]></title>
-        <link>https://draculatheme.com/blog/top-dracula-themes-in-2019</link>
-        <guid>https://draculatheme.com/blog/top-dracula-themes-in-2019</guid>
-        <pubDate>Thu, 09 Jan 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[I thought it would be a good idea to gather the most popular Dracula themes from 2019, in case you missed, so here it is.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>I thought it would be a good idea to gather the most popular Dracula themes from 2019, in case you missed, so here it is:</p>
-<p><strong>Windows</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/notepad-plus-plus">Notepad++</a> <em>(208,398 views)</em></li>
-<li><a href="https://draculatheme.com/visual-studio">Visual Studio</a> <em>(57,235 views)</em></li>
-<li><a href="https://draculatheme.com/slack">Slack</a> <em>(29,189 views)</em></li>
-</ol>
-<p><strong>macOS</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/terminal">Terminal.app</a> <em>(66,386 views)</em></li>
-<li><a href="https://draculatheme.com/iterm">iTerm</a> <em>(66,253 views)</em></li>
-<li><a href="https://draculatheme.com/visual-studio-code">Visual Studio Code</a> <em>(57,235 views)</em></li>
-</ol>
-<p><strong>Linux</strong></p>
-<ol>
-<li><a href="https://draculatheme.com/vim">Vim</a> <em>(57,410 views)</em></li>
-<li><a href="https://draculatheme.com/zsh">Zsh</a> <em>(44,998 views)</em></li>
-<li><a href="https://draculatheme.com/emacs">Emacs</a> <em>(17,058 views)</em></li>
-</ol>
-<p>And that's it for today.</p>
-<p>Stay tuned, exciting things are coming :)</p>
-]]>
-        </content:encoded>
-      </item> <item>
-        <title><![CDATA[A new theme is coming]]></title>
-        <link>https://draculatheme.com/blog/a-new-theme-is-coming</link>
-        <guid>https://draculatheme.com/blog/a-new-theme-is-coming</guid>
-        <pubDate>Mon, 06 Jan 2020 00:00:00 GMT</pubDate>
-        <description>
-        <![CDATA[In 2013, I decided to create a theme. At that time there were hundreds of thousands of color schemes out there, but none of them were appealing to me. So I decided to create my own.]]>
-        </description>
-        <content:encoded>
-          <![CDATA[<p>In 2013, I decided to create a theme. At that time there were hundreds of thousands of color schemes out there, but none of them were appealing to me. So I decided to create my own.</p>
-<p>Fast forward to 2020, Dracula is one of the most popular themes in the world. Still, I felt that something was missing. I wanted to use a premium theme with a premium experience, that's why I'm creating Dracula PRO.</p>
-<p>This will be a theme built for top developers who are willing to invest in their productivity.</p>
-]]>
-        </content:encoded>
-      </item>
-        </channel>
-      </rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Dracula Theme - Blog]]></title>
+        <description><![CDATA[The journey of building the most universal dark theme ever made.]]></description>
+        <link>https://draculatheme.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 13 Feb 2023 17:57:40 GMT</lastBuildDate>
+        <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[200 Themes!]]></title>
+            <description><![CDATA[When I started this project 8 years ago, I never thought it could become so big. I'm beyond grateful for this fantastic developer community.]]></description>
+            <link>https://draculatheme.com/blog/200-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/200-themes</guid>
+            <pubDate>Thu, 02 Sep 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2020 Halloween Costume Contest]]></title>
+            <description><![CDATA[Halloween is almost here and this year I want to do something different... Introducing the 2020 Halloween Costume Contest!]]></description>
+            <link>https://draculatheme.com/blog/2020-halloween-costume-contest</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/2020-halloween-costume-contest</guid>
+            <pubDate>Wed, 28 Oct 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2021 Year in Review]]></title>
+            <description><![CDATA[Transparency is a major value for me, so I thought it would be a good idea to gather some interesting numbers about Dracula in 2021.]]></description>
+            <link>https://draculatheme.com/blog/2021-year-in-review</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/2021-year-in-review</guid>
+            <pubDate>Mon, 03 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[3 New Themes And Better Code Screenshots]]></title>
+            <description><![CDATA[Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception.]]></description>
+            <link>https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</guid>
+            <pubDate>Wed, 05 Aug 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[32 New Dracula Themes For 2020]]></title>
+            <description><![CDATA[Before I start working like crazy on Dracula PRO, I decided to spend my entire weekend doing some housekeeping on the original Dracula project.]]></description>
+            <link>https://draculatheme.com/blog/32-new-dracula-themes-for-2020</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/32-new-dracula-themes-for-2020</guid>
+            <pubDate>Tue, 14 Jan 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[3D, Physical Book, And 4 New Themes]]></title>
+            <description><![CDATA[Last year I wrote an e-book called 14 Habits of Highly Productive Developers. I made this specifically for Dracula PRO.]]></description>
+            <link>https://draculatheme.com/blog/3d-physical-book-and-4-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/3d-physical-book-and-4-new-themes</guid>
+            <pubDate>Thu, 25 Mar 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[6 New Themes And 20 Desktop Icons]]></title>
+            <description><![CDATA[Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C? I'm trying to standardize all the Dracula screenshots using the same code snippet structure.]]></description>
+            <link>https://draculatheme.com/blog/6-new-themes-and-20-desktop-icons</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/6-new-themes-and-20-desktop-icons</guid>
+            <pubDate>Tue, 18 Aug 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[$7,128.57 In Sales In 7 Days]]></title>
+            <description><![CDATA[If you have been following me on Twitter, I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been insane!]]></description>
+            <link>https://draculatheme.com/blog/7128-dollars-in-sales-in-7-days</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/7128-dollars-in-sales-in-7-days</guid>
+            <pubDate>Wed, 19 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A new theme is coming]]></title>
+            <description><![CDATA[In 2013, I decided to create a theme. At that time there were hundreds of thousands of color schemes out there, but none of them were appealing to me. So I decided to create my own.]]></description>
+            <link>https://draculatheme.com/blog/a-new-theme-is-coming</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/a-new-theme-is-coming</guid>
+            <pubDate>Mon, 06 Jan 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A Quick Spoiler...]]></title>
+            <description><![CDATA[I have some exciting news to share! Dracula PRO will be launched in 3 days on February 11th. It's been quite a ride to get here. I've been studying colors like never before.]]></description>
+            <link>https://draculatheme.com/blog/a-quick-spoiler</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/a-quick-spoiler</guid>
+            <pubDate>Sat, 08 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A Vampire Needs Your Help...]]></title>
+            <description><![CDATA[For the past few weeks, I've been working non-stop to make sure that Dracula, the open source project, is well organized and with fewer issues as possible. We even crossed the number of 90 themes, which is totally insane!]]></description>
+            <link>https://draculatheme.com/blog/a-vampire-needs-your-help</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/a-vampire-needs-your-help</guid>
+            <pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Audiobook, Insomnia, And 7 New Themes]]></title>
+            <description><![CDATA[The last two weeks have been really busy. I decided to create this page to show Dracula PRO's journey.]]></description>
+            <link>https://draculatheme.com/blog/audiobook-insomnia-and-7-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/audiobook-insomnia-and-7-new-themes</guid>
+            <pubDate>Wed, 10 Mar 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[AWS, New Wallpapers And Five New Themes]]></title>
+            <description><![CDATA[A couple of days ago, I was configuring some stuff on AWS and noticed that they are using Dracula!]]></description>
+            <link>https://draculatheme.com/blog/aws-new-wallpapers-and-five-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/aws-new-wallpapers-and-five-new-themes</guid>
+            <pubDate>Tue, 31 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[14 Best Free Fonts for Programming]]></title>
+            <description><![CDATA[We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity.]]></description>
+            <link>https://draculatheme.com/blog/best-free-fonts-for-programming</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/best-free-fonts-for-programming</guid>
+            <pubDate>Wed, 10 Feb 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bl3ck Fr1d3y And 5 New Themes]]></title>
+            <description><![CDATA[Dracula PRO and Dracula UI are 40% off. I'm running this Black Friday deal as a way of saying thank you.]]></description>
+            <link>https://draculatheme.com/blog/bl3ck-fr1d3y-and-5-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/bl3ck-fr1d3y-and-5-new-themes</guid>
+            <pubDate>Thu, 25 Nov 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Black Friday And 12 New Dracula Themes]]></title>
+            <description><![CDATA[Dracula PRO is now 40% off! If you are thinking about getting PRO or giving it to a friend, now is the time.]]></description>
+            <link>https://draculatheme.com/blog/black-friday-and-12-new-dracula-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/black-friday-and-12-new-dracula-themes</guid>
+            <pubDate>Wed, 23 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Celebrating 300 Themes With The New Winter Drop]]></title>
+            <description><![CDATA[Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a single commit.]]></description>
+            <link>https://draculatheme.com/blog/celebrating-300-themes-with-the-new-winter-drop</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/celebrating-300-themes-with-the-new-winter-drop</guid>
+            <pubDate>Thu, 22 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dark Mode Everywhere And 11 New Themes]]></title>
+            <description><![CDATA[I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is Night Eye.]]></description>
+            <link>https://draculatheme.com/blog/dark-mode-everywhere-and-11-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dark-mode-everywhere-and-11-new-themes</guid>
+            <pubDate>Tue, 29 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula 100 Themes]]></title>
+            <description><![CDATA[Today is a special day. We have hit 100 themes on Dracula! When I started this little project, I never imagined the community would embrace it the way it did. Thank you so much for everyone involved in this.]]></description>
+            <link>https://draculatheme.com/blog/dracula-100-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-100-themes</guid>
+            <pubDate>Mon, 04 May 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Community And 6 New Themes]]></title>
+            <description><![CDATA[After dozens of responses, it's clear that Discord is where the cool kids hang out nowadays, so here it is!]]></description>
+            <link>https://draculatheme.com/blog/dracula-community-and-6-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-community-and-6-new-themes</guid>
+            <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula For CodeSandbox And 9 New Themes]]></title>
+            <description><![CDATA[I don't know about you, but I always struggle to find a good syntax highlighter library for showing code on a page.]]></description>
+            <link>https://draculatheme.com/blog/dracula-for-codesandbox-and-9-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-for-codesandbox-and-9-new-themes</guid>
+            <pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula For Figma, Sketch, And Adobe]]></title>
+            <description><![CDATA[I'm not a designer, but I'm always amazed by the kind of work these people do. Their ability to create entire screens out of a blank canvas is just incredible.]]></description>
+            <link>https://draculatheme.com/blog/dracula-for-figma-sketch-and-adobe</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-for-figma-sketch-and-adobe</guid>
+            <pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Keycaps And 6 New Themes]]></title>
+            <description><![CDATA[After two years of waiting, the GMK Dracula keycaps finally arrived. If you're into mechanical keyboards, you're going to love this.]]></description>
+            <link>https://draculatheme.com/blog/dracula-keycaps-and-6-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-keycaps-and-6-new-themes</guid>
+            <pubDate>Wed, 27 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Livestream And 3 New Themes]]></title>
+            <description><![CDATA[The fine folks from Microsoft invited me to talk about how to build your own VS Code theme.]]></description>
+            <link>https://draculatheme.com/blog/dracula-livestream-and-3-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-livestream-and-3-new-themes</guid>
+            <pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula On CodePen And Open Startup]]></title>
+            <description><![CDATA[I've always admired this concept of 'open startup' in which people gather all their private metrics and make them public.]]></description>
+            <link>https://draculatheme.com/blog/dracula-on-codepen-and-open-startup</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-on-codepen-and-open-startup</guid>
+            <pubDate>Wed, 15 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula On GitHub.com And Some Behind-The-Scenes]]></title>
+            <description><![CDATA[I got a LOT of responses about doing Dracula merch, so I started ordering some samples to learn more about how can I make the absolute best products.]]></description>
+            <link>https://draculatheme.com/blog/dracula-on-github-com-and-some-behind-the-scenes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-on-github-com-and-some-behind-the-scenes</guid>
+            <pubDate>Thu, 13 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula On Reddit + Discourse And Javadoc Themes]]></title>
+            <description><![CDATA[It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral.]]></description>
+            <link>https://draculatheme.com/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes</guid>
+            <pubDate>Tue, 07 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula On Super Nintendo, Tailwind, And LaTeX]]></title>
+            <description><![CDATA[I've been working on some really exciting new projects!]]></description>
+            <link>https://draculatheme.com/blog/dracula-on-super-nintendo-tailwind-and-latex</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-on-super-nintendo-tailwind-and-latex</guid>
+            <pubDate>Wed, 07 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula On Twitter And 7 New Themes]]></title>
+            <description><![CDATA[I joined Twitter in March 2009 (yes, I'm that old), and it has been my favorite place to stay up to date with the tech community since then.]]></description>
+            <link>https://draculatheme.com/blog/dracula-on-twitter-and-7-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-on-twitter-and-7-new-themes</guid>
+            <pubDate>Tue, 22 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula PRO Is Here!]]></title>
+            <description><![CDATA[The wait is over... Dracula PRO is live! This is a very special moment for me. It's been almost 7 years since I launched Dracula, and I'm super excited about this next step.]]></description>
+            <link>https://draculatheme.com/blog/dracula-pro-is-here</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-pro-is-here</guid>
+            <pubDate>Tue, 11 Feb 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula PRO Wallpaper]]></title>
+            <description><![CDATA[Ohhh there is so much exciting news to share that I don't even know where to being. Let's get right to it...]]></description>
+            <link>https://draculatheme.com/blog/dracula-pro-wallpaper</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-pro-wallpaper</guid>
+            <pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Shop Is Here!]]></title>
+            <description><![CDATA[There are 12 custom-designed items over there, such as t-shirts, stickers, hoodies, pins, pullovers, hats, and even baby clothing.]]></description>
+            <link>https://draculatheme.com/blog/dracula-shop-is-here</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-shop-is-here</guid>
+            <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Stickers, StackOverflow and 5 new themes]]></title>
+            <description><![CDATA[These past few days have been difficult. I hope you and your family are safe!]]></description>
+            <link>https://draculatheme.com/blog/dracula-stickers-stackoverflow-and-5-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-stickers-stackoverflow-and-5-new-themes</guid>
+            <pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula T-Shirt... A? B? Or C?]]></title>
+            <description><![CDATA[I'm starting to play around with the idea of having Dracula merch! Now I need your help deciding which designs look better.]]></description>
+            <link>https://draculatheme.com/blog/dracula-t-shirt-a-b-or-c</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-t-shirt-a-b-or-c</guid>
+            <pubDate>Thu, 06 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula UI Is Now Free And Open Source]]></title>
+            <description><![CDATA[When Dracula UI was first released, it was a paid product hosted on GitHub as a private repository and a private package.]]></description>
+            <link>https://draculatheme.com/blog/dracula-ui-is-now-free-and-open-source</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-ui-is-now-free-and-open-source</guid>
+            <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula UI - Web Or React Native?]]></title>
+            <description><![CDATA[Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - it should be a top priority. That's why I decided to invest time in this.]]></description>
+            <link>https://draculatheme.com/blog/dracula-ui-web-or-react-native</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-ui-web-or-react-native</guid>
+            <pubDate>Thu, 03 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula UI - Week 1]]></title>
+            <description><![CDATA[Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns.]]></description>
+            <link>https://draculatheme.com/blog/dracula-ui-week-1</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-ui-week-1</guid>
+            <pubDate>Thu, 10 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula UI - Week 3]]></title>
+            <description><![CDATA[It's been almost two weeks since we last shared an update with you. We have missed you and your feedback.]]></description>
+            <link>https://draculatheme.com/blog/dracula-ui-week-3</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-ui-week-3</guid>
+            <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Free Wallpapers And New Dracula PRO Price]]></title>
+            <description><![CDATA[On February 11th, Dracula PRO was being launched. Today, exactly six months later, more than 1,143 copies have been sold. What started as a simple side project, became something much bigger.]]></description>
+            <link>https://draculatheme.com/blog/free-wallpapers-and-new-dracula-pro-price</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/free-wallpapers-and-new-dracula-pro-price</guid>
+            <pubDate>Tue, 11 Aug 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[GitHub Dark, Big Sur Icons, And 5 New Themes]]></title>
+            <description><![CDATA[Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P]]></description>
+            <link>https://draculatheme.com/blog/github-dark-big-sur-icons-and-5-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/github-dark-big-sur-icons-and-5-new-themes</guid>
+            <pubDate>Tue, 15 Dec 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How I Made $101,578.04 Selling Colors Online]]></title>
+            <description><![CDATA[Today is a special day. Dracula PRO has hit 100K in sales, which is absolutely insane. When I started this thing I never thought this would happen.]]></description>
+            <link>https://draculatheme.com/blog/how-i-made-$101,578.04-selling-colors-online</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/how-i-made-$101,578.04-selling-colors-online</guid>
+            <pubDate>Thu, 25 Feb 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Interview with Lucas - the new Dracula team member]]></title>
+            <description><![CDATA[Today, I'm excited to introduce you to Lucas. He has joined Dracula to help in our mission to create the best theme for developers in the world.]]></description>
+            <link>https://draculatheme.com/blog/interview-with-lucas</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/interview-with-lucas</guid>
+            <pubDate>Wed, 13 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[It's Halloween!]]></title>
+            <description><![CDATA[I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you.]]></description>
+            <link>https://draculatheme.com/blog/it-is-halloween</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/it-is-halloween</guid>
+            <pubDate>Sat, 31 Oct 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Keycaps V2 And 4 New Themes]]></title>
+            <description><![CDATA[For those of you who are into mechanical keyboards, today is the last day to get the Dracula GMK Keycaps v2.]]></description>
+            <link>https://draculatheme.com/blog/keycaps-v2-and-4-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/keycaps-v2-and-4-new-themes</guid>
+            <pubDate>Mon, 06 Dec 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Little Vampire And 7 New Themes]]></title>
+            <description><![CDATA[For the next few weeks, I'll be out on paternity leave. This means that I'll be slow to respond to emails, Discord messages, and GitHub issues.]]></description>
+            <link>https://draculatheme.com/blog/little-vampire-and-7-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/little-vampire-and-7-new-themes</guid>
+            <pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Make Music With Dracula]]></title>
+            <description><![CDATA[I'm getting ready for a big announcement next week, but before we talk about that, I want to share a ton of new themes with you.]]></description>
+            <link>https://draculatheme.com/blog/make-music-with-dracula</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/make-music-with-dracula</guid>
+            <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Making a Physical Book]]></title>
+            <description><![CDATA[I can't believe this is real... My book is now available in hardcover. Building this physical copy has been a really intense process.]]></description>
+            <link>https://draculatheme.com/blog/making-a-physical-book</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/making-a-physical-book</guid>
+            <pubDate>Wed, 24 Mar 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New Dracula Site And Logo]]></title>
+            <description><![CDATA[The Dracula site and logo were the same since 2013. I've always wanted to give it a refresh, but I was never able to prioritize it.]]></description>
+            <link>https://draculatheme.com/blog/new-dracula-site-and-logo</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/new-dracula-site-and-logo</guid>
+            <pubDate>Tue, 24 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Podcast About Dracula And Better Windows Support]]></title>
+            <description><![CDATA[It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on.]]></description>
+            <link>https://draculatheme.com/blog/podcast-about-dracula-and-better-windows-support</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/podcast-about-dracula-and-better-windows-support</guid>
+            <pubDate>Thu, 19 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Purchasing Parity Power + 4 New Themes]]></title>
+            <description><![CDATA[I'm super happy to announce Purchasing Parity Power on Dracula PRO! Why? Because not everyone earns in dollars.]]></description>
+            <link>https://draculatheme.com/blog/purchasing-parity-power-plus-4-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/purchasing-parity-power-plus-4-new-themes</guid>
+            <pubDate>Thu, 14 Jan 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Quick Question... Slack Or Discord?]]></title>
+            <description><![CDATA[I've been thinking about creating a Dracula Community for a long time. But I want to make sure we pick the best platform, that's why I need your help.]]></description>
+            <link>https://draculatheme.com/blog/quick-question-slack-or-discord</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/quick-question-slack-or-discord</guid>
+            <pubDate>Wed, 02 Jun 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Most Popular Dracula Themes in 2020]]></title>
+            <description><![CDATA[2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020.]]></description>
+            <link>https://draculatheme.com/blog/the-most-popular-dracula-themes-in-2020</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/the-most-popular-dracula-themes-in-2020</guid>
+            <pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Top Dracula Themes In 2019]]></title>
+            <description><![CDATA[I thought it would be a good idea to gather the most popular Dracula themes from 2019, in case you missed, so here it is.]]></description>
+            <link>https://draculatheme.com/blog/top-dracula-themes-in-2019</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/top-dracula-themes-in-2019</guid>
+            <pubDate>Thu, 09 Jan 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why Is Dracula So Popular?]]></title>
+            <description><![CDATA[Two weeks ago, Dracula showed up on the front page of Hacker News. The thread had 227 comments, but one comment caught my attention.]]></description>
+            <link>https://draculatheme.com/blog/why-is-dracula-so-popular</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/why-is-dracula-so-popular</guid>
+            <pubDate>Thu, 23 Dec 2021 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
