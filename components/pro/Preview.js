@@ -1,7 +1,7 @@
 import { Component } from 'react'
+import apps from '../../lib/pro'
 import dynamic from 'next/dynamic'
 import styles from './Preview.module.css'
-import apps from '../../lib/pro'
 
 const SelectInput = dynamic(() => import('react-select'), { ssr: false })
 
@@ -11,7 +11,7 @@ class Preview extends Component {
       <div className={styles.select}>
         <SelectInput
           id="theme"
-          defaultValue={apps[apps.length - 1]}
+          defaultValue={apps[apps.length - 3]}
           options={apps}
           onChange={this.props.changeApp.bind(this)}
           isSearchable={true}
