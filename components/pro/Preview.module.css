@@ -44,6 +44,7 @@
 }
 
 .colorsList {
+  margin: 0;
   list-style: none;
 }
 
@@ -51,7 +52,7 @@
   display: inline-block;
   margin: 0 20px;
   text-align: center;
-  width: 110px;
+  width: 120px;
   cursor: pointer;
 }
 
@@ -65,7 +66,7 @@
   width: 40px;
   display: block;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
   position: relative;
 }
 
