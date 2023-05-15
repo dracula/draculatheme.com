@@ -1,18 +1,18 @@
-.env
-
 .next
 
 .vscode/
-.npmrc
 node_modules/
+.yarn
 package-lock.json
 
 out
 .now
-auth.json
 .vercel
+
+.npmrc
+auth.json
 
 .env*
 .flaskenv*
-!.env.project
-!.env.vault
+.env.project
+.env.vault
