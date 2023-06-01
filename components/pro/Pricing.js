@@ -206,7 +206,7 @@ class Pricing extends Component {
               <div className={styles.buy}>
                 <a
                   href={gumroadURL}
-                  className="gumroad-button"
+                  // className="gumroad-button"
                   className={styles.cta}
                 >
                   Buy Dracula PRO
@@ -216,7 +216,10 @@ class Pricing extends Component {
             </div>
           </div>
           <p className={styles.questions}>
-            <a className={styles.contact} href="mailto:zeno@draculatheme.com">
+            <a
+              className={styles.contact}
+              href="mailto:support@draculatheme.com"
+            >
               Contact me
             </a>{' '}
             to get a <span className={styles.highlight}>Team License</span> to
