@@ -1,12 +1,13 @@
-import React from 'react'
+import { getBasePath, isProd } from '../lib/environment'
+
 import Head from 'next/head'
 import Link from 'next/link'
+import PlatformToggle from '../components/PlatformToggle'
+import ProCta from '../components/ProCta'
+import React from 'react'
 import Shuffle from 'shufflejs'
 import Theme from '../layouts/Theme'
-import ProCta from '../components/ProCta'
-import PlatformToggle from '../components/PlatformToggle'
 import paths from '../lib/paths'
-import { isProd, getBasePath } from '../lib/environment'
 import styles from './index.module.css'
 
 export async function getStaticProps() {

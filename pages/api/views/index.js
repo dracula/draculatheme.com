@@ -39,7 +39,7 @@ export default async (req, res) => {
       'Cache-Control',
       'public, s-maxage=1200, stale-while-revalidate=600'
     )
-    console.log(views)
+
     res.status(200).json({ views })
   } catch (e) {
     res.status(500).json({ message: e.message })
