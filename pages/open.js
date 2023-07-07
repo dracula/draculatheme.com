@@ -1,34 +1,34 @@
-import React from 'react'
-import Head from 'next/head'
-import { getBasePath } from '../lib/environment'
 import Blogpost from '../layouts/Blogpost'
+import Head from 'next/head'
 import MetricCard from '../components/MetricCard'
+import React from 'react'
+import { getBasePath } from '../lib/environment'
 import styles from './open.module.css'
 
 export async function getStaticProps() {
   const mailchimpReq = await fetch(`${getBasePath()}/api/mailchimp`)
   const mailchimpRes = await mailchimpReq.json()
-  const mailchimp = mailchimpRes.total
+  const mailchimp = mailchimpRes.total || '---'
 
   const twitterReq = await fetch(`${getBasePath()}/api/twitter`)
   const twitterRes = await twitterReq.json()
-  const twitter = twitterRes.total
+  const twitter = twitterRes.total || '---'
 
   const githubReq = await fetch(`${getBasePath()}/api/github`)
   const githubRes = await githubReq.json()
-  const github = githubRes.total
+  const github = githubRes.total || '---'
 
   const proSalesReq = await fetch(`${getBasePath()}/api/sales/tPfIDt`)
   const proSalesRes = await proSalesReq.json()
-  const proSales = proSalesRes.total
+  const proSales = proSalesRes.total || '---'
 
   const uiSalesReq = await fetch(`${getBasePath()}/api/sales/MkxCD`)
   const uiSalesRes = await uiSalesReq.json()
-  const uiSales = uiSalesRes.total
+  const uiSales = uiSalesRes.total || '---'
 
   const googleAnalyticsReq = await fetch(`${getBasePath()}/api/views`)
   const googleAnalyticsRes = await googleAnalyticsReq.json()
-  const googleAnalytics = googleAnalyticsRes.views
+  const googleAnalytics = googleAnalyticsRes.views || '---'
 
   return {
     props: {
