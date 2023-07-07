@@ -7,6 +7,14 @@
     "import/no-anonymous-default-export": 0,
     "react/jsx-no-duplicate-props": 0,
     "react/jsx-no-target-blank": 0,
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": [
+          "jsx"
+        ]
+      }
+    ]
   }
 }
