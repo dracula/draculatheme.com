@@ -1,14 +1,14 @@
 ---
-title: '11 New Themes And Updates For Dracula PRO'
-excerpt: 'Life has been crazy over here, but Dracula continues to evolve and grow.'
-createdAt: '2023-03-02'
-updatedAt: '2023-03-06'
+title: "11 New Themes And Updates For Dracula PRO"
+excerpt: "Life has been crazy over here, but Dracula continues to evolve and grow."
+createdAt: "2023-03-02"
+updatedAt: "2023-03-06"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/aws-new-wallpapers-and-five-new-themes-a.png'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/aws-new-wallpapers-and-five-new-themes-a.png"
+highlighted: "false"
+color: "green"
 ---
 
 I'm writing from San Francisco, California, the place I call home now. Life has been crazy over here, but Dracula continues to evolve and grow. I still can't believe we crossed 300 themes just recently and we're already at 318 themes.

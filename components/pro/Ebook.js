@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Ebook.module.css'
+import { Component } from "react";
+import styles from "./Ebook.module.css";
 
 class Ebook extends Component {
   render() {
@@ -31,12 +31,12 @@ class Ebook extends Component {
             <h3 className={styles.title}>More than a Theme</h3>
             <p className={styles.body}>
               You can have the best theme, font, and tooling in the world, but
-              if you cultivate bad habits, it will be hard for you to{' '}
+              if you cultivate bad habits, it will be hard for you to{" "}
               <span className={styles.highlight}>become a top developer</span>.
             </p>
             <p className={styles.body}>
               Because of that, I decided to reach out to the best developers I
-              know and ask them tips on{' '}
+              know and ask them tips on{" "}
               <span className={styles.highlight}>
                 how to be more productive
               </span>
@@ -56,8 +56,8 @@ class Ebook extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Ebook
+export default Ebook;

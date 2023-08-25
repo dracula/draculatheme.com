@@ -1109,5 +1109,5 @@ export default function ShopDivisor() {
         </g>
       </svg>
     </div>
-  )
+  );
 }

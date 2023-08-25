@@ -1,14 +1,14 @@
 ---
-title: '$7,128.57 In Sales In 7 Days'
+title: "$7,128.57 In Sales In 7 Days"
 excerpt: "If you have been following me on Twitter, I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been insane!"
-createdAt: '2020-02-19'
-updatedAt: '2021-01-30'
+createdAt: "2020-02-19"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/7128-dollars-in-sales-in-7-days-a.png'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/7128-dollars-in-sales-in-7-days-a.png"
+highlighted: "false"
+color: "green"
 ---
 
 If you have been following me on [Twitter](https://twitter.com/zenorocha), I'm sharing some lessons learned since the Dracula PRO launch. The response from the community has been **insane**!

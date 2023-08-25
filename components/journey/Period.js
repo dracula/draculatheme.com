@@ -1,7 +1,7 @@
-import { Component } from 'react'
-import Tweet from './Tweet.js'
-import Takeaway from './Takeaway.js'
-import styles from './Period.module.css'
+import { Component } from "react";
+import Tweet from "./Tweet.js";
+import Takeaway from "./Takeaway.js";
+import styles from "./Period.module.css";
 
 class Period extends Component {
   render() {
@@ -15,8 +15,8 @@ class Period extends Component {
       takeaways,
       tweets,
       color,
-    } = this.props.journey
-    const date = endDate ? `${startDate} - ${endDate}` : startDate
+    } = this.props.journey;
+    const date = endDate ? `${startDate} - ${endDate}` : startDate;
 
     return (
       <div className={styles[color]}>
@@ -36,7 +36,7 @@ class Period extends Component {
           <p className={styles.lessons}>Lessons learned</p>
         </div>
         {takeaways.map((takeaway, index) => {
-          return <Takeaway key={index} data={takeaway} index={index} />
+          return <Takeaway key={index} data={takeaway} index={index} />;
         })}
         <div className={styles.divider}>
           <p className={styles.tweets}>Tweets from this period</p>
@@ -44,13 +44,13 @@ class Period extends Component {
         {tweets && (
           <div className={styles.tweetList}>
             {tweets.map((tweet, index) => {
-              return <Tweet key={index} data={tweet} />
+              return <Tweet key={index} data={tweet} />;
             })}
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default Period
+export default Period;

@@ -1,14 +1,14 @@
 ---
-title: 'Dracula UI - Week 3'
+title: "Dracula UI - Week 3"
 excerpt: "It's been almost two weeks since we last shared an update with you. We have missed you and your feedback."
-createdAt: '2020-09-24'
-updatedAt: '2021-01-30'
+createdAt: "2020-09-24"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-ui-week-3-a.png'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-ui-week-3-a.png"
+highlighted: "false"
+color: "cyan"
 ---
 
 It's been almost two weeks since we last shared an update with you. We have missed you and your feedback 🥺

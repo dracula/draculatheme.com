@@ -1,12 +1,12 @@
 ---
-title: 'New Alacritty theme and JetBrains update'
-excerpt: 'New Alacritty theme, JetBrains update and Desktop Icons'
+title: "New Alacritty theme and JetBrains update"
+excerpt: "New Alacritty theme, JetBrains update and Desktop Icons"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2020-09-29'
-id: 'log-13'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2020-09-29"
+id: "log-13"
+color: "cyan"
 ---
 
 ## Alacritty

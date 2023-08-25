@@ -1,14 +1,14 @@
 ---
-title: 'GitHub Dark, Big Sur Icons, And 5 New Themes'
+title: "GitHub Dark, Big Sur Icons, And 5 New Themes"
 excerpt: "Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P"
-createdAt: '2020-12-15'
-updatedAt: '2021-01-30'
+createdAt: "2020-12-15"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/github-dark-big-sur-icons-and-5-new-themes-a.png"
+highlighted: "false"
+color: "yellow"
 ---
 
 Here it is... The moment we've all been waiting for - GitHub finally has a Dark Mode! You can enable it in your settings. I know, it's not a Dracula color palette, but it's better than nothing :P

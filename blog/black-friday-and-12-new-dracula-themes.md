@@ -1,14 +1,14 @@
 ---
-title: 'Black Friday And 12 New Dracula Themes'
-excerpt: 'Dracula PRO is now 40% off! If you are thinking about getting PRO or giving it to a friend, now is the time.'
-createdAt: '2022-11-23'
-updatedAt: '2023-01-10'
+title: "Black Friday And 12 New Dracula Themes"
+excerpt: "Dracula PRO is now 40% off! If you are thinking about getting PRO or giving it to a friend, now is the time."
+createdAt: "2022-11-23"
+updatedAt: "2023-01-10"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/black-friday-and-12-new-dracula-themes-a.png'
-highlighted: 'false'
-color: 'pink'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/black-friday-and-12-new-dracula-themes-a.png"
+highlighted: "false"
+color: "pink"
 ---
 
 Dracula PRO is now 40% off! If you are thinking about getting PRO or giving it to a friend, now is the time. Here's the promo code: [`bl3ckfr1d3y`](https://store.draculatheme.com/l/dracula-pro/bl3ckfr1d3y)

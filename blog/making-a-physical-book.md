@@ -1,14 +1,14 @@
 ---
-title: 'Making a Physical Book'
+title: "Making a Physical Book"
 excerpt: "I can't believe this is real... My book is now available in hardcover. Building this physical copy has been a really intense process."
-createdAt: '2021-03-24'
-updatedAt: '2021-03-24'
+createdAt: "2021-03-24"
+updatedAt: "2021-03-24"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/making-a-physical-book-a.jpg'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/making-a-physical-book-a.jpg"
+highlighted: "false"
+color: "yellow"
 ---
 
 I can't believe this is real...

@@ -1,44 +1,44 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import React from 'react'
-import ShopLayout from '../../../layouts/Shop'
-import { getProduct } from '../../../lib/gumroad'
-import products from '../../../lib/shop'
-import { toTitleCase } from '../../../lib/string'
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import ShopLayout from "../../../layouts/Shop";
+import { getProduct } from "../../../lib/gumroad";
+import products from "../../../lib/shop";
+import { toTitleCase } from "../../../lib/string";
 
 export async function getStaticPaths() {
-  return { paths: products, fallback: 'blocking' }
+  return { paths: products, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
-  const { category } = params
+  const { category } = params;
   const productPromises = products
-    .filter(product => product.params.category === category)
-    .map(product => {
-      return getProduct(product.params.gumroadId)
-    })
+    .filter((product) => product.params.category === category)
+    .map((product) => {
+      return getProduct(product.params.gumroadId);
+    });
 
-  const list = await Promise.all(productPromises)
-  return { props: { category, list, post: { color: 'purple' } } }
+  const list = await Promise.all(productPromises);
+  return { props: { category, list, post: { color: "purple" } } };
 }
 
 class Shop extends React.Component {
   componentDidMount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'block')
+    document.documentElement.style.setProperty("--cart-visibility", "block");
   }
 
   componentWillUnmount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'none')
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   renderAvailability(product) {
     if (!product.published) {
-      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>
+      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>;
     }
   }
 
   renderProducts() {
-    return this.props.list.map(product => {
+    return this.props.list.map((product) => {
       return (
         <Link
           href={`/shop/${product.custom_permalink}`}
@@ -56,15 +56,15 @@ class Shop extends React.Component {
             <p className="product-price">{product.formatted_price}</p>
           </a>
         </Link>
-      )
-    })
+      );
+    });
   }
 
   render() {
-    const title = `${toTitleCase(this.props.category)} — Dracula Shop`
+    const title = `${toTitleCase(this.props.category)} — Dracula Shop`;
     const description =
-      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!"
-    const image = '/static/img/shop/og.jpg'
+      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!";
+    const image = "/static/img/shop/og.jpg";
 
     return (
       <div className="shop">
@@ -91,10 +91,10 @@ class Shop extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-Shop.Layout = ShopLayout
+Shop.Layout = ShopLayout;
 
-export default Shop
+export default Shop;

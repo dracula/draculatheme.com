@@ -1,4 +1,4 @@
-import styles from './MetricCard.module.css'
+import styles from "./MetricCard.module.css";
 
 function MetricCard({ metric }) {
   if (metric.link) {
@@ -23,15 +23,15 @@ function MetricCard({ metric }) {
         </h4>
         <p className={styles.value}>{metric.value}</p>
       </a>
-    )
+    );
   } else {
     return (
       <div className={styles.metric}>
         <h4 className={styles.label}>{metric.label}</h4>
         <p className={styles.value}>{metric.value}</p>
       </div>
-    )
+    );
   }
 }
 
-export default MetricCard
+export default MetricCard;

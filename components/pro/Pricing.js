@@ -1,20 +1,20 @@
-import { Component } from 'react'
-import { countries } from 'countries-list'
-import styles from './Pricing.module.css'
-import { getDiscount } from '../../lib/discount'
-import apps from '../../lib/pro'
+import { Component } from "react";
+import { countries } from "countries-list";
+import styles from "./Pricing.module.css";
+import { getDiscount } from "../../lib/discount";
+import apps from "../../lib/pro";
 
 class Pricing extends Component {
   render() {
-    let promoName = `${new Date().toLocaleString('default', {
-      month: 'long',
-    })} Promo`
-    let beforePrice = 99
-    let afterPrice = 79
-    let gumroadURL = 'https://store.draculatheme.com/l/dracula-pro?wanted=true'
+    let promoName = `${new Date().toLocaleString("default", {
+      month: "long",
+    })} Promo`;
+    let beforePrice = 99;
+    let afterPrice = 79;
+    let gumroadURL = "https://store.draculatheme.com/l/dracula-pro?wanted=true";
 
     if (this.props.queryParams.a) {
-      gumroadURL = `https://store.draculatheme.com/a/${this.props.queryParams.a}?wanted=true`
+      gumroadURL = `https://store.draculatheme.com/a/${this.props.queryParams.a}?wanted=true`;
     }
 
     if (
@@ -22,10 +22,10 @@ class Pricing extends Component {
       this.props.ppp.country &&
       this.props.ppp.discount
     ) {
-      promoName = `${countries[this.props.ppp.country].name} Promo`
-      beforePrice = 79
-      afterPrice = getDiscount(beforePrice, this.props.ppp.discount)
-      gumroadURL = `https://store.draculatheme.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`
+      promoName = `${countries[this.props.ppp.country].name} Promo`;
+      beforePrice = 79;
+      afterPrice = getDiscount(beforePrice, this.props.ppp.discount);
+      gumroadURL = `https://store.draculatheme.com/l/dracula-pro/${this.props.ppp.country}PRO?wanted=true`;
     }
 
     return (
@@ -33,10 +33,10 @@ class Pricing extends Component {
         <div className={styles.container}>
           <h2 className={styles.title}>Become a Vampire</h2>
           <p className={styles.body}>
-            Join{' '}
+            Join{" "}
             <span className={styles.highlight}>
               {this.props.sales.count} developers
-            </span>{' '}
+            </span>{" "}
             using Dracula PRO every day.
           </p>
           <div className={styles.tables}>
@@ -221,14 +221,14 @@ class Pricing extends Component {
               href="mailto:support@draculatheme.com"
             >
               Contact me
-            </a>{' '}
+            </a>{" "}
             to get a <span className={styles.highlight}>Team License</span> to
             share with your team.
           </p>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Pricing
+export default Pricing;

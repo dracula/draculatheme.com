@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './About.module.css'
+import { Component } from "react";
+import styles from "./About.module.css";
 
 class About extends Component {
   render() {
@@ -29,8 +29,8 @@ class About extends Component {
           </p>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default About
+export default About;

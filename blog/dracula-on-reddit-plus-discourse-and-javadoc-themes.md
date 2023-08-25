@@ -1,14 +1,14 @@
 ---
-title: 'Dracula On Reddit + Discourse And Javadoc Themes'
+title: "Dracula On Reddit + Discourse And Javadoc Themes"
 excerpt: "It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral."
-createdAt: '2020-04-07'
-updatedAt: '2021-01-30'
+createdAt: "2020-04-07"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png'
-highlighted: 'false'
-color: 'orange'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-on-reddit-plus-discourse-and-javadoc-themes-a.png"
+highlighted: "false"
+color: "orange"
 ---
 
 It's been 7 weeks since the launch of Dracula PRO and I've been sharing some of the lessons learned. I'm not a big Reddit user, but I decided to publish there and it went semi-viral 😅

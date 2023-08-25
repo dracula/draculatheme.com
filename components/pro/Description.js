@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Description.module.css'
+import { Component } from "react";
+import styles from "./Description.module.css";
 
 class Description extends Component {
   render() {
@@ -7,16 +7,16 @@ class Description extends Component {
       <div className={styles.description}>
         <div className={styles.container}>
           <p className={styles.body}>
-            Dracula PRO is a color scheme and UI theme{' '}
+            Dracula PRO is a color scheme and UI theme{" "}
             <span className={styles.highlight}>tailored for programming</span>.
           </p>
           <p className={styles.body}>
-            Made for terminal emulators,{' '}
+            Made for terminal emulators,{" "}
             <span className={styles.highlight}>code editors</span>, and syntax
             highlighters.
           </p>
           <p className={styles.body}>
-            Designed to be aesthetically pleasing while{' '}
+            Designed to be aesthetically pleasing while{" "}
             <span className={styles.highlight}>keeping you focused</span>.
           </p>
         </div>
@@ -114,8 +114,8 @@ class Description extends Component {
           </li>
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default Description
+export default Description;

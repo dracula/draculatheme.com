@@ -1,13 +1,13 @@
 ---
-title: 'Dracula Shop Is Here!'
-excerpt: 'There are 12 custom-designed items over there, such as t-shirts, stickers, hoodies, pins, pullovers, hats, and even baby clothing.'
-createdAt: '2022-01-20'
-updatedAt: '2022-01-20'
+title: "Dracula Shop Is Here!"
+excerpt: "There are 12 custom-designed items over there, such as t-shirts, stickers, hoodies, pins, pullovers, hats, and even baby clothing."
+createdAt: "2022-01-20"
+updatedAt: "2022-01-20"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "cyan"
 ---
 
 There are **12 custom-designed items** over there, such as t-shirts, stickers, hoodies, pins, pullovers, hats, and even baby clothing.

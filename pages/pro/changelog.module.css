@@ -19,7 +19,7 @@
   align-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   color: hsl(0, 0%, 100%);
   background-color: hsl(233deg, 13%, 13%);
 }
@@ -34,7 +34,7 @@
   padding: 10rem 10% 6rem 10%;
   position: relative;
   background-color: hsl(231, 13%, 19%);
-  background-image: url('/static/img/pro/changelog/pattern.png');
+  background-image: url("/static/img/pro/changelog/pattern.png");
   background-size: 40%;
   background-position: left;
   background-repeat: no-repeat;
@@ -48,20 +48,20 @@
 }
 
 .titleP {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 3rem;
   font-weight: 700;
   color: var(--green);
 }
 
 .titleS {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .titleT {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -114,7 +114,7 @@
 
 .date::before,
 .date::after {
-  content: '';
+  content: "";
   position: absolute;
   transform: translateX(-50%);
   top: 0;
@@ -233,7 +233,7 @@
 
   .logs li article::before,
   .logs li article::after {
-    content: '';
+    content: "";
     position: absolute;
     transform: translateX(-50%);
     top: 0;

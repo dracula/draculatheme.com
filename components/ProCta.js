@@ -1,31 +1,31 @@
-import { Component } from 'react'
-import Link from 'next/link'
+import { Component } from "react";
+import Link from "next/link";
 
-import styles from './ProCta.module.css'
+import styles from "./ProCta.module.css";
 
 class ProCta extends Component {
   render() {
     return (
-      <div className="green" style={{ padding: '50px 10px 80px' }}>
+      <div className="green" style={{ padding: "50px 10px 80px" }}>
         <h4 style={{ marginBottom: 20 }} className="title">
           Dracula PRO
         </h4>
         <div
           style={{
-            backgroundColor: '#282a36',
-            borderRadius: '10px',
-            margin: '0 auto',
+            backgroundColor: "#282a36",
+            borderRadius: "10px",
+            margin: "0 auto",
           }}
           className="box"
         >
-          <h5 style={{ textAlign: 'center', color: '#fff' }}>
+          <h5 style={{ textAlign: "center", color: "#fff" }}>
             the new theme is here!
           </h5>
           <p
             style={{
-              textAlign: 'center',
+              textAlign: "center",
               fontSize: 20,
-              color: 'rgba(255, 255, 255, .6)',
+              color: "rgba(255, 255, 255, .6)",
             }}
           >
             Meet the premium version with tons of goodies.
@@ -71,8 +71,8 @@ class ProCta extends Component {
           }
         `}</style>
       </div>
-    )
+    );
   }
 }
 
-export default ProCta
+export default ProCta;

@@ -1,12 +1,12 @@
 ---
-title: 'Big Sur icons and JetBrains 2020.3'
-excerpt: 'Dracula PRO for JetBrains, 2020.3 stable version, and more!'
+title: "Big Sur icons and JetBrains 2020.3"
+excerpt: "Dracula PRO for JetBrains, 2020.3 stable version, and more!"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2020-12-14'
-id: 'log-15'
-color: 'pink'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2020-12-14"
+id: "log-15"
+color: "pink"
 ---
 
 - JetBrains recently launched the **2020.3 stable version**. Two months ago I released an update for that, but many users didn't download it yet, so this is a friendly reminder to get the latest version.

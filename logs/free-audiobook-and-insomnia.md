@@ -1,12 +1,12 @@
 ---
-title: 'Free Audiobook and Insomnia'
+title: "Free Audiobook and Insomnia"
 excerpt: "I couldn't be more proud to see this community growing."
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2021-03-10'
-id: 'log-16'
-color: 'orange'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2021-03-10"
+id: "log-16"
+color: "orange"
 ---
 
 The last two weeks have been really busy. I decided to create [this page to show Dracula PRO's journey](/pro/journey) from $0 to $100k and it blew up. Since then, 218 people bought Dracula PRO, which represents $13,599.35.

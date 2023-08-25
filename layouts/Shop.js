@@ -1,5 +1,5 @@
-import Topbar from '../components/shop/Topbar'
-import Footer from '../components/Footer'
+import Topbar from "../components/shop/Topbar";
+import Footer from "../components/Footer";
 
 export default function Blogpost({ children }) {
   return (
@@ -10,5 +10,5 @@ export default function Blogpost({ children }) {
         <Footer />
       </div>
     </div>
-  )
+  );
 }

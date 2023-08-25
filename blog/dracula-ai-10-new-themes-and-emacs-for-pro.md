@@ -1,14 +1,14 @@
 ---
-title: 'Dracula AI, 10 New Themes And Emacs For PRO'
+title: "Dracula AI, 10 New Themes And Emacs For PRO"
 excerpt: "We couldn't help ourselves, so we introduced 🤖 Dracula AI (on April 1st)!"
-createdAt: '2023-04-04'
-updatedAt: '2023-04-10'
+createdAt: "2023-04-04"
+updatedAt: "2023-04-10"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-ai-10-new-themes-and-emacs-for-pro-a.png'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-ai-10-new-themes-and-emacs-for-pro-a.png"
+highlighted: "false"
+color: "cyan"
 ---
 
 We couldn't help ourselves, so we introduced Dracula AI (on April 1st)!

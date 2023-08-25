@@ -1,60 +1,60 @@
-import Head from 'next/head'
-import ErrorPage from 'next/error'
-import { useRouter } from 'next/router'
-import { BlogJsonLd } from 'next-seo'
-import Blogpost from '../../layouts/Blogpost'
-import BlogDate from '../../components/BlogDate'
-import Updates from '../../components/Updates'
-import { getBasePath } from '../../lib/environment'
-import { getPostBySlug, getAllPosts } from '../../lib/blog'
-import { convertMarkdownToReact } from '../../lib/markdown'
+import Head from "next/head";
+import ErrorPage from "next/error";
+import { useRouter } from "next/router";
+import { BlogJsonLd } from "next-seo";
+import Blogpost from "../../layouts/Blogpost";
+import BlogDate from "../../components/BlogDate";
+import Updates from "../../components/Updates";
+import { getBasePath } from "../../lib/environment";
+import { getPostBySlug, getAllPosts } from "../../lib/blog";
+import { convertMarkdownToReact } from "../../lib/markdown";
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
-    'title',
-    'createdAt',
-    'updatedAt',
-    'slug',
-    'author',
-    'excerpt',
-    'content',
-    'ogImage',
-    'color',
-  ])
+    "title",
+    "createdAt",
+    "updatedAt",
+    "slug",
+    "author",
+    "excerpt",
+    "content",
+    "ogImage",
+    "color",
+  ]);
 
-  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`)
-  const totalSubscribersRes = await totalSubscribersReq.json()
-  const totalSubscribers = totalSubscribersRes.total
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+  const totalSubscribersRes = await totalSubscribersReq.json();
+  const totalSubscribers = totalSubscribersRes.total;
 
-  return { props: { post: { ...post }, totalSubscribers }, revalidate: 7200 }
+  return { props: { post: { ...post }, totalSubscribers }, revalidate: 7200 };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(["slug"]);
 
   return {
-    paths: posts.map(post => {
+    paths: posts.map((post) => {
       return {
         params: {
           slug: post.slug,
         },
-      }
+      };
     }),
     fallback: false,
-  }
+  };
 }
 
 function Post({ post, totalSubscribers }) {
-  const router = useRouter()
+  const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
 
-  const url = `https://draculatheme.com/blog/${post.slug}`
+  const url = `https://draculatheme.com/blog/${post.slug}`;
   const image = post.ogImage
     ? `https://draculatheme.com${post.ogImage}`
-    : 'https://draculatheme.com/static/img/facebook.png'
-  const content = convertMarkdownToReact(post.content)
+    : "https://draculatheme.com/static/img/facebook.png";
+  const content = convertMarkdownToReact(post.content);
 
   return (
     <div className="single">
@@ -100,9 +100,9 @@ function Post({ post, totalSubscribers }) {
         description={post.excerpt}
       />
     </div>
-  )
+  );
 }
 
-Post.Layout = Blogpost
+Post.Layout = Blogpost;
 
-export default Post
+export default Post;

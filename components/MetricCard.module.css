@@ -12,7 +12,7 @@
 .label {
   margin: 0;
   line-height: 20px;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   font-style: normal;
   font-size: 16px;
   font-weight: 600;
@@ -30,7 +30,7 @@
 .value {
   margin: 0;
   line-height: 50px;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
   font-style: normal;
   font-size: 38px;
   font-weight: 400;

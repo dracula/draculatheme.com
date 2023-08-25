@@ -1,14 +1,14 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-import Topbar from '../../components/pro/Topbar'
-import Header from '../../components/journey/Header'
-import About from '../../components/journey/About'
-import Period from '../../components/journey/Period'
-import Updates from '../../components/Updates'
-import Footer from '../../components/pro/Footer'
-import journeys from '../../lib/journeys'
-import { getBasePath } from '../../lib/environment'
+import Topbar from "../../components/pro/Topbar";
+import Header from "../../components/journey/Header";
+import About from "../../components/journey/About";
+import Period from "../../components/journey/Period";
+import Updates from "../../components/Updates";
+import Footer from "../../components/pro/Footer";
+import journeys from "../../lib/journeys";
+import { getBasePath } from "../../lib/environment";
 
 export async function getStaticProps() {
   try {
@@ -16,66 +16,66 @@ export async function getStaticProps() {
       if (obj.tweets) {
         const twitterReq = await fetch(
           `https://api.twitter.com/2/tweets?tweet.fields=created_at,public_metrics,entities&expansions=attachments.media_keys&media.fields=url&ids=${obj.tweets.join(
-            ','
+            ","
           )}`,
           {
             headers: {
               Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
             },
           }
-        )
+        );
 
-        const twitterRes = await twitterReq.json()
+        const twitterRes = await twitterReq.json();
 
         journeys[index].tweets = twitterRes.data
           .map((data, index) => {
-            twitterRes.includes.media.map(media => {
+            twitterRes.includes.media.map((media) => {
               if (
                 data?.attachments?.media_keys[0] === media.media_key &&
                 media.url
               ) {
-                data.image = media.url
+                data.image = media.url;
               }
-            })
+            });
 
-            return data
+            return data;
           })
           .sort((a, b) => {
-            return new Date(a.created_at) - new Date(b.created_at)
-          })
+            return new Date(a.created_at) - new Date(b.created_at);
+          });
       }
     }
 
-    const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`)
-    const totalSubscribersRes = await totalSubscribersReq.json()
-    const totalSubscribers = totalSubscribersRes.total
+    const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+    const totalSubscribersRes = await totalSubscribersReq.json();
+    const totalSubscribers = totalSubscribersRes.total;
 
-    return { props: { journeys, totalSubscribers }, revalidate: 7200 }
+    return { props: { journeys, totalSubscribers }, revalidate: 7200 };
   } catch (e) {
-    console.error(e)
+    console.error(e);
 
-    return { props: { journeys } }
+    return { props: { journeys } };
   }
 }
 
 class Journey extends React.Component {
   renderJourneys() {
     return this.props.journeys.map((journey, index) => {
-      return <Period journey={journey} key={index} />
-    })
+      return <Period journey={journey} key={index} />;
+    });
   }
 
   render() {
-    const title = 'How I made $151,328.16 selling colors online - Dracula'
+    const title = "How I made $151,328.16 selling colors online - Dracula";
     const description =
-      "Dracula PRO has hit 150K in sales — here's everything I learned along the way"
+      "Dracula PRO has hit 150K in sales — here's everything I learned along the way";
 
     return (
       <div
         className="green"
         style={{
-          backgroundColor: '#2a2c37',
-          fontFamily: 'Fira Code, monospace',
+          backgroundColor: "#2a2c37",
+          fontFamily: "Fira Code, monospace",
         }}
       >
         <Head>
@@ -117,8 +117,8 @@ class Journey extends React.Component {
         </div>
         <Footer />
       </div>
-    )
+    );
   }
 }
 
-export default Journey
+export default Journey;

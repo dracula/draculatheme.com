@@ -1,13 +1,13 @@
 ---
-title: 'Dracula On GitHub.com And Some Behind-The-Scenes'
-excerpt: 'I got a LOT of responses about doing Dracula merch, so I started ordering some samples to learn more about how can I make the absolute best products.'
-createdAt: '2022-01-13'
-updatedAt: '2022-01-14'
+title: "Dracula On GitHub.com And Some Behind-The-Scenes"
+excerpt: "I got a LOT of responses about doing Dracula merch, so I started ordering some samples to learn more about how can I make the absolute best products."
+createdAt: "2022-01-13"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "green"
 ---
 
 Since my last email, I got a LOT of responses about doing Dracula merch. I started ordering some samples to learn more about how can I make the absolute best products possible.

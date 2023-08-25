@@ -1,6 +1,6 @@
-import { Component } from 'react'
-import Link from 'next/link'
-import styles from './Topbar.module.css'
+import { Component } from "react";
+import Link from "next/link";
+import styles from "./Topbar.module.css";
 
 class Topbar extends Component {
   render() {
@@ -41,8 +41,8 @@ class Topbar extends Component {
           </ul>
         </nav>
       </div>
-    )
+    );
   }
 }
 
-export default Topbar
+export default Topbar;

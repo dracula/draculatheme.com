@@ -1,9 +1,9 @@
-import { Component } from 'react'
-import styles from './Takeaway.module.css'
+import { Component } from "react";
+import styles from "./Takeaway.module.css";
 
 class Takeaway extends Component {
   render() {
-    const { data, index } = this.props
+    const { data, index } = this.props;
 
     return (
       <div className={index % 2 ? styles.takeawayOdd : styles.takeawayEven}>
@@ -30,8 +30,8 @@ class Takeaway extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Takeaway
+export default Takeaway;

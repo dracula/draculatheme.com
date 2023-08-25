@@ -1,14 +1,14 @@
 ---
-title: '14 Best Free Fonts for Programming'
-excerpt: 'We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity.'
-createdAt: '2021-02-10'
-updatedAt: '2021-02-10'
+title: "14 Best Free Fonts for Programming"
+excerpt: "We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity."
+createdAt: "2021-02-10"
+updatedAt: "2021-02-10"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/best-free-fonts-for-programming-a.png'
-highlighted: 'true'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/best-free-fonts-for-programming-a.png"
+highlighted: "true"
+color: "purple"
 ---
 
 We spend the entire day using code editors, terminal emulators, and other developer tools. Using a font that feels comfortable to your eyes can make a huge difference and improve your productivity.

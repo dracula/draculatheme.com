@@ -1,13 +1,13 @@
 ---
-title: 'Keycaps V2 And 4 New Themes'
-excerpt: 'For those of you who are into mechanical keyboards, today is the last day to get the Dracula GMK Keycaps v2.'
-createdAt: '2021-12-06'
-updatedAt: '2022-01-14'
+title: "Keycaps V2 And 4 New Themes"
+excerpt: "For those of you who are into mechanical keyboards, today is the last day to get the Dracula GMK Keycaps v2."
+createdAt: "2021-12-06"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "purple"
 ---
 
 For those of you who are into mechanical keyboards, **today is the last day** to get the Dracula GMK Keycaps v2. This is a group buy made by vendors from all over the world. If you didn't have a chance to get the first version, you might want to check these out:

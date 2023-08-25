@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Header.module.css'
+import { Component } from "react";
+import styles from "./Header.module.css";
 
 class Header extends Component {
   render() {
@@ -16,8 +16,8 @@ class Header extends Component {
           alt="Dracula PRO sales from Feb 2020 to Feb 2021"
         />
       </div>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

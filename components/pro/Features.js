@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Features.module.css'
+import { Component } from "react";
+import styles from "./Features.module.css";
 
 class Features extends Component {
   render() {
@@ -21,7 +21,7 @@ class Features extends Component {
             <p className={styles.title}>Easy on the Eyes</p>
             <p className={styles.body}>
               Dark mode is everywhere, and there's a reason for that. From
-              improved battery consumption to{' '}
+              improved battery consumption to{" "}
               <span className={styles.highlight}>better visibility</span> on
               low-light environments, there are many reasons to love.
             </p>
@@ -39,7 +39,7 @@ class Features extends Component {
             </svg>
             <p className={styles.title}>Less Context Switch</p>
             <p className={styles.body}>
-              By having the same color scheme across multiple apps, you{' '}
+              By having the same color scheme across multiple apps, you{" "}
               <span className={styles.highlight}>reduce the time</span> it takes
               to switch context between tasks. That's why Dracula PRO is
               available in as many platforms as possible.
@@ -60,14 +60,14 @@ class Features extends Component {
             <p className={styles.body}>
               The entire palette was tested against the WCAG 2.0 level AA spec,
               which requires a contrast ratio of at least 4.5:1 for normal text,
-              therefore affording the{' '}
+              therefore affording the{" "}
               <span className={styles.highlight}>best readability</span>.
             </p>
           </li>
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default Features
+export default Features;

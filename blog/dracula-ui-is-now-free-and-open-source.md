@@ -1,14 +1,14 @@
 ---
-title: 'Dracula UI Is Now Free And Open Source'
-excerpt: 'When Dracula UI was first released, it was a paid product hosted on GitHub as a private repository and a private package.'
-createdAt: '2022-09-29'
-updatedAt: '2022-10-04'
+title: "Dracula UI Is Now Free And Open Source"
+excerpt: "When Dracula UI was first released, it was a paid product hosted on GitHub as a private repository and a private package."
+createdAt: "2022-09-29"
+updatedAt: "2022-10-04"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-ui-is-now-free-and-open-source-a.jpg'
-highlighted: 'false'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-ui-is-now-free-and-open-source-a.jpg"
+highlighted: "false"
+color: "purple"
 ---
 
 When Dracula UI was first released, it was a paid product hosted on GitHub as a private repository and a private package.

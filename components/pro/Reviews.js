@@ -1,34 +1,34 @@
-import * as Avatar from '@radix-ui/react-avatar'
+import * as Avatar from "@radix-ui/react-avatar";
 
-import { Component } from 'react'
-import moment from 'moment'
-import styles from './Reviews.module.css'
+import { Component } from "react";
+import moment from "moment";
+import styles from "./Reviews.module.css";
 
-const getFirstLetters = str => {
+const getFirstLetters = (str) => {
   const firstLetters = str
-    .split(' ')
-    .map(word => word[0])
-    .join('')
-    .substring(0, 2)
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .substring(0, 2);
 
-  return firstLetters
-}
+  return firstLetters;
+};
 
 class Reviews extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       reviews: props.reviews,
-    }
+    };
   }
 
   componentDidMount() {
-    if (window.location.hash.indexOf('#review') === -1) {
+    if (window.location.hash.indexOf("#review") === -1) {
       this.setState({
         showAllButton: true,
         reviews: this.props.reviews.slice(0, 3),
-      })
+      });
     }
   }
 
@@ -36,9 +36,9 @@ class Reviews extends Component {
     this.setState({
       showAllButton: false,
       reviews: this.props.reviews,
-    })
+    });
 
-    e.preventDefault()
+    e.preventDefault();
   }
 
   renderSummary() {
@@ -79,19 +79,19 @@ class Reviews extends Component {
           <div className={styles.progressBars}>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '96%' }}
+                style={{ width: "96%" }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '3%' }}
+                style={{ width: "3%" }}
                 className={styles.progressBarContent}
               ></div>
             </div>
             <div className={styles.progressBarContainer}>
               <div
-                style={{ width: '1%' }}
+                style={{ width: "1%" }}
                 className={styles.progressBarContent}
               ></div>
             </div>
@@ -259,13 +259,13 @@ class Reviews extends Component {
           Write a review
         </a>
       </div>
-    )
+    );
   }
 
   renderReviews() {
     return (
       <div>
-        {this.state.reviews.map(review => {
+        {this.state.reviews.map((review) => {
           return (
             <div
               id={`review-${review.github}`}
@@ -329,10 +329,10 @@ class Reviews extends Component {
                 />
               </div>
             </div>
-          )
+          );
         })}
       </div>
-    )
+    );
   }
 
   render() {
@@ -343,7 +343,7 @@ class Reviews extends Component {
           {this.renderReviews()}
           <div className={styles.ctaContainer}>
             <a
-              style={{ display: this.state.showAllButton ? 'block' : 'none' }}
+              style={{ display: this.state.showAllButton ? "block" : "none" }}
               className={styles.cta}
               onClick={this.showAll.bind(this)}
             >
@@ -352,8 +352,8 @@ class Reviews extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Reviews
+export default Reviews;

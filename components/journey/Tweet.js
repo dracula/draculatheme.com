@@ -1,22 +1,22 @@
-import { Component } from 'react'
-import moment from 'moment'
-import styles from './Tweet.module.css'
+import { Component } from "react";
+import moment from "moment";
+import styles from "./Tweet.module.css";
 
 class Tweet extends Component {
   render() {
-    let { data } = this.props
+    let { data } = this.props;
 
     if (data.entities && data.entities.urls && data.entities.urls.length) {
-      data.entities.urls.map(url => {
-        if (url.display_url.indexOf('twitter.com') !== -1) {
-          data.text = data.text.replace(url.url, '')
+      data.entities.urls.map((url) => {
+        if (url.display_url.indexOf("twitter.com") !== -1) {
+          data.text = data.text.replace(url.url, "");
         }
 
         data.text = data.text.replace(
           url.url,
           `<strong>${url.display_url}</strong>`
-        )
-      })
+        );
+      });
     }
 
     return (
@@ -60,8 +60,8 @@ class Tweet extends Component {
         />
         {data.image && <img className={styles.image} src={data.image} alt="" />}
         <div className={styles.timestamp}>
-          {moment(data.created_at).format('LT')} ·{' '}
-          {moment(data.created_at).format('MMM D, YYYY')}
+          {moment(data.created_at).format("LT")} ·{" "}
+          {moment(data.created_at).format("MMM D, YYYY")}
         </div>
         <div className={styles.metadata}>
           <svg
@@ -76,7 +76,7 @@ class Tweet extends Component {
             </g>
           </svg>
           <span className={styles.data} style={{ marginRight: 20 }}>
-            {data.public_metrics ? data.public_metrics.like_count : '0'}
+            {data.public_metrics ? data.public_metrics.like_count : "0"}
           </span>
           <svg
             className={styles.icons}
@@ -90,12 +90,12 @@ class Tweet extends Component {
             </g>
           </svg>
           <span className={styles.data}>
-            {data.public_metrics ? data.public_metrics.reply_count : '0'}
+            {data.public_metrics ? data.public_metrics.reply_count : "0"}
           </span>
         </div>
       </a>
-    )
+    );
   }
 }
 
-export default Tweet
+export default Tweet;

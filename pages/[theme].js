@@ -1,18 +1,18 @@
-import Contributors from '../components/Contributors'
-import EditDocumentation from '../components/EditDocumentation'
-import Head from 'next/head'
-import React from 'react'
-import ThemeLayout from '../layouts/Theme'
-import Updates from '../components/Updates'
-import { convertMarkdownToReact } from '../lib/markdown'
-import download from 'download'
-import { getBasePath } from '../lib/environment'
-import { getColorFromName } from '../lib/color'
-import paths from '../lib/paths'
-import probe from 'probe-image-size'
+import Contributors from "../components/Contributors";
+import EditDocumentation from "../components/EditDocumentation";
+import Head from "next/head";
+import React from "react";
+import ThemeLayout from "../layouts/Theme";
+import Updates from "../components/Updates";
+import { convertMarkdownToReact } from "../lib/markdown";
+import download from "download";
+import { getBasePath } from "../lib/environment";
+import { getColorFromName } from "../lib/color";
+import paths from "../lib/paths";
+import probe from "probe-image-size";
 
 export async function getStaticPaths() {
-  return { paths, fallback: false }
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
@@ -20,98 +20,98 @@ export async function getStaticProps({ params }) {
     headers: {
       Authorization: `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
     },
-  }
+  };
 
-  let query = paths.find(path => path.params.theme === params.theme)
+  let query = paths.find((path) => path.params.theme === params.theme);
 
   if (!query.params) {
-    return { props: {} }
+    return { props: {} };
   } else {
-    query = query.params
+    query = query.params;
   }
 
-  const installReq = await fetch(`${getBasePath()}/api/installs/${query.repo}`)
-  const { install } = await installReq.json()
-  const buffer = Buffer.from(install, 'base64')
-  query.install = buffer.toString('utf8')
+  const installReq = await fetch(`${getBasePath()}/api/installs/${query.repo}`);
+  const { install } = await installReq.json();
+  const buffer = Buffer.from(install, "base64");
+  query.install = buffer.toString("utf8");
 
   const contributorsReq = await fetch(
     `${getBasePath()}/api/contributors/${params.theme}`
-  )
-  const { contributors } = await contributorsReq.json()
-  query.contributors = contributors
+  );
+  const { contributors } = await contributorsReq.json();
+  query.contributors = contributors;
 
-  const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`
-  await download(image, 'public/static/img/screenshots', {
+  const image = `https://raw.githubusercontent.com/dracula/${query.repo}/master/screenshot.png`;
+  await download(image, "public/static/img/screenshots", {
     filename: `${query.theme}.png`,
-  })
+  });
 
-  const metadata = await probe(image)
-  query.imageWidth = metadata.width
-  query.imageHeight = metadata.height
+  const metadata = await probe(image);
+  query.imageWidth = metadata.width;
+  query.imageHeight = metadata.height;
 
-  const viewsReq = await fetch(`${getBasePath()}/api/views/${params.theme}`)
-  const viewsRes = await viewsReq.json()
-  query.views = new Intl.NumberFormat().format(viewsRes.views || 0)
+  const viewsReq = await fetch(`${getBasePath()}/api/views/${params.theme}`);
+  const viewsRes = await viewsReq.json();
+  query.views = new Intl.NumberFormat().format(viewsRes.views || 0);
 
-  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`)
-  const totalSubscribersRes = await totalSubscribersReq.json()
-  const totalSubscribers = totalSubscribersRes.total
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+  const totalSubscribersRes = await totalSubscribersReq.json();
+  const totalSubscribers = totalSubscribersRes.total;
 
-  return { props: { query, totalSubscribers }, revalidate: 7200 }
+  return { props: { query, totalSubscribers }, revalidate: 7200 };
 }
 
 class Theme extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       views: props.query.views,
-    }
+    };
   }
 
   componentDidMount() {
-    this.getViews()
-    this.getDefaultBranch()
+    this.getViews();
+    this.getDefaultBranch();
   }
 
   async getViews() {
-    const viewsReq = await fetch(`/api/views/${this.props.query.theme}`)
-    const viewsRes = await viewsReq.json()
-    const views = new Intl.NumberFormat().format(viewsRes.views || 0)
+    const viewsReq = await fetch(`/api/views/${this.props.query.theme}`);
+    const viewsRes = await viewsReq.json();
+    const views = new Intl.NumberFormat().format(viewsRes.views || 0);
 
-    this.setState({ views })
+    this.setState({ views });
   }
 
   async getDefaultBranch() {
     const defaultBranchReq = await fetch(
       `https://api.github.com/repos/dracula/${this.props.query.repo}`
-    )
-    const defaultBranchRes = await defaultBranchReq.json()
-    const defaultBranch = defaultBranchRes.default_branch
+    );
+    const defaultBranchRes = await defaultBranchReq.json();
+    const defaultBranch = defaultBranchRes.default_branch;
 
-    this.setState({ defaultBranch })
+    this.setState({ defaultBranch });
   }
 
   render() {
-    let title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`
+    let title = `Dark theme for ${this.props.query.title} and ${paths.length}+ apps — Dracula`;
 
-    if (this.props.query.title === 'Wallpaper') {
-      title = `Dark wallpaper collection — Dracula`
+    if (this.props.query.title === "Wallpaper") {
+      title = `Dark wallpaper collection — Dracula`;
     }
 
-    const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`
-    const content = convertMarkdownToReact(this.props.query.install)
+    const description = `Dracula is a color scheme for code editors and terminal emulators, including ${this.props.query.title} and ${paths.length}+ other apps. Check the instructions to learn how to install it.`;
+    const content = convertMarkdownToReact(this.props.query.install);
 
-    const api = 'https://i.microlink.io/'
+    const api = "https://i.microlink.io/";
     const cardUrl = `https://cards.microlink.io/?preset=dracula&color=%23${getColorFromName(
       this.props.query.color
     )}&contributors=${this.props.query.contributors.length}&icon=${
       this.props.query.icon
     }&views=${this.state.views}&repo=${this.props.query.repo}&title=${
       this.props.query.title
-    }`
-    const image = `${api}${encodeURIComponent(cardUrl)}`
+    }`;
+    const image = `${api}${encodeURIComponent(cardUrl)}`;
 
     return (
       <div>
@@ -155,10 +155,10 @@ class Theme extends React.Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
-Theme.Layout = ThemeLayout
+Theme.Layout = ThemeLayout;
 
-export default Theme
+export default Theme;

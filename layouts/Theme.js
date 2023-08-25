@@ -1,5 +1,5 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Theme({ children }) {
   return (
@@ -8,5 +8,5 @@ export default function Theme({ children }) {
       <div>{children}</div>
       <Footer />
     </div>
-  )
+  );
 }

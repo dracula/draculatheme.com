@@ -1,12 +1,12 @@
 ---
-title: 'Emacs and BetterDiscord'
-excerpt: 'One of the most requested Dracula PRO themes is finally available! Emacs users, here it is! 😉'
+title: "Emacs and BetterDiscord"
+excerpt: "One of the most requested Dracula PRO themes is finally available! Emacs users, here it is! 😉"
 author:
   name: Luxonauta
-  avatar: 'https://github.com/luxonauta.png?size=48'
-date: '2023-04-04'
-id: 'log-21'
-color: 'pink'
+  avatar: "https://github.com/luxonauta.png?size=48"
+date: "2023-04-04"
+id: "log-21"
+color: "pink"
 ---
 
 One of the most requested Dracula PRO themes is finally available! **Emacs** users, here it is! 😉

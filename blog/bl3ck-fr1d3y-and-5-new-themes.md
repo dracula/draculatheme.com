@@ -1,13 +1,13 @@
 ---
-title: 'Bl3ck Fr1d3y And 5 New Themes'
+title: "Bl3ck Fr1d3y And 5 New Themes"
 excerpt: "Dracula PRO and Dracula UI are 40% off. I'm running this Black Friday deal as a way of saying thank you."
-createdAt: '2021-11-25'
-updatedAt: '2022-01-14'
+createdAt: "2021-11-25"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "cyan"
 ---
 
 [Dracula PRO](/pro) and [Dracula UI](/ui) are **40% off**. I'm running this Black Friday deal as a way of saying thank you. This happens only once a year, so you're thinking about getting it, now it's the time.

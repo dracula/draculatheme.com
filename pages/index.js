@@ -1,89 +1,89 @@
-import { getBasePath, isProd } from '../lib/environment'
+import { getBasePath, isProd } from "../lib/environment";
 
-import Head from 'next/head'
-import Link from 'next/link'
-import PlatformToggle from '../components/PlatformToggle'
-import ProCta from '../components/ProCta'
-import React from 'react'
-import Shuffle from 'shufflejs'
-import Theme from '../layouts/Theme'
-import paths from '../lib/paths'
-import styles from './index.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import PlatformToggle from "../components/PlatformToggle";
+import ProCta from "../components/ProCta";
+import React from "react";
+import Shuffle from "shufflejs";
+import Theme from "../layouts/Theme";
+import paths from "../lib/paths";
+import styles from "./index.module.css";
 
 export async function getStaticProps() {
   const query = {
-    title: 'Dracula',
-    color: 'purple',
-    icon: 'used/pack-1/045-dracula.svg',
-  }
+    title: "Dracula",
+    color: "purple",
+    icon: "used/pack-1/045-dracula.svg",
+  };
 
   if (isProd()) {
     for (const path of paths) {
       const viewsReq = await fetch(
         `${getBasePath()}/api/views/${path.params.theme}`
-      )
-      const viewsRes = await viewsReq.json()
+      );
+      const viewsRes = await viewsReq.json();
 
-      path.params.views = parseInt(viewsRes.views)
+      path.params.views = parseInt(viewsRes.views);
     }
 
     paths.sort(function (a, b) {
-      return b.params.views - a.params.views
-    })
+      return b.params.views - a.params.views;
+    });
   }
 
-  return { props: { paths, query } }
+  return { props: { paths, query } };
 }
 
 class Index extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      search: '',
-      filter: 'all',
+      search: "",
+      filter: "all",
       paths: props.paths,
       total: props.paths.length,
-    }
+    };
 
-    this.element = React.createRef()
+    this.element = React.createRef();
   }
 
   componentDidMount() {
     this.shuffle = new Shuffle(this.element.current, {
-      itemSelector: '.app',
+      itemSelector: ".app",
       sizer: 360,
-    })
+    });
 
-    const loadFilter = localStorage.getItem('filter')
+    const loadFilter = localStorage.getItem("filter");
 
     if (loadFilter) {
-      this.setState({ filter: loadFilter })
-      this.onFilter(loadFilter)
+      this.setState({ filter: loadFilter });
+      this.onFilter(loadFilter);
     }
   }
 
   componentWillUnmount() {
-    this.shuffle.destroy()
+    this.shuffle.destroy();
   }
 
   renderItems() {
-    return this.props.paths.map(path => {
-      const views = new Intl.NumberFormat().format(path.params.views || 0)
+    return this.props.paths.map((path) => {
+      const views = new Intl.NumberFormat().format(path.params.views || 0);
       return (
         <Link
           key={path.params.theme}
-          href={'/[theme]'}
+          href={"/[theme]"}
           as={`/${path.params.theme}`}
         >
           <a
             data-title={path.params.title}
             data-groups={JSON.stringify(path.params.platform)}
             data-synonyms={
-              path.params.synonyms ? JSON.stringify(path.params.synonyms) : ''
+              path.params.synonyms ? JSON.stringify(path.params.synonyms) : ""
             }
             className="app"
-            style={{ display: 'block', width: 360, height: 325 }}
+            style={{ display: "block", width: 360, height: 325 }}
           >
             <span className="app-img">
               <img
@@ -99,79 +99,79 @@ class Index extends React.Component {
             <p className="app-views">{views} views</p>
           </a>
         </Link>
-      )
-    })
+      );
+    });
   }
 
   onFilter(platform) {
     this.setState({
-      search: '',
+      search: "",
       filter: platform,
-    })
+    });
 
-    localStorage.setItem('filter', platform)
+    localStorage.setItem("filter", platform);
 
-    if (platform === 'all') {
-      platform = ['all', 'linux', 'mac', 'windows']
+    if (platform === "all") {
+      platform = ["all", "linux", "mac", "windows"];
     } else {
-      platform = ['all'].concat([platform])
+      platform = ["all"].concat([platform]);
     }
 
-    let total = 0
+    let total = 0;
 
-    this.shuffle.filter(element => {
-      const groups = JSON.parse(element.dataset.groups)
+    this.shuffle.filter((element) => {
+      const groups = JSON.parse(element.dataset.groups);
 
-      if (groups.some(group => platform.includes(group))) {
-        total = total + 1
-        return element
+      if (groups.some((group) => platform.includes(group))) {
+        total = total + 1;
+        return element;
       }
-    })
+    });
 
-    this.setState({ total })
+    this.setState({ total });
   }
 
   onSearch(e) {
     this.setState({
       search: e.target.value,
-      filter: 'all',
-    })
+      filter: "all",
+    });
 
-    const searchText = e.target.value.toLowerCase()
+    const searchText = e.target.value.toLowerCase();
 
-    let total = 0
+    let total = 0;
 
-    this.shuffle.filter(element => {
-      let dictionary = []
+    this.shuffle.filter((element) => {
+      let dictionary = [];
 
-      dictionary.push(element.dataset.title.toLowerCase())
+      dictionary.push(element.dataset.title.toLowerCase());
 
       if (element.dataset.synonyms) {
-        const synonyms = JSON.parse(element.dataset.synonyms)
-        dictionary = dictionary.concat(synonyms)
+        const synonyms = JSON.parse(element.dataset.synonyms);
+        dictionary = dictionary.concat(synonyms);
       }
 
-      let hasFound = false
+      let hasFound = false;
 
-      dictionary.forEach(item => {
+      dictionary.forEach((item) => {
         if (item.indexOf(searchText) !== -1) {
-          hasFound = true
+          hasFound = true;
         }
-      })
+      });
 
       if (hasFound) {
-        total = total + 1
-        return element
+        total = total + 1;
+        return element;
       }
-    })
+    });
 
-    this.setState({ total })
+    this.setState({ total });
   }
 
   render() {
-    const title = `Dracula — Dark theme for ${this.state.total}+ apps`
+    const title = `Dracula — Dark theme for ${this.state.total}+ apps`;
     const description =
-      'Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.'
+      "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.";
 
     return (
       <div>
@@ -225,10 +225,10 @@ class Index extends React.Component {
 
         <ProCta />
       </div>
-    )
+    );
   }
 }
 
-Index.Layout = Theme
+Index.Layout = Theme;
 
-export default Index
+export default Index;

@@ -1,14 +1,14 @@
 ---
-title: '2020 Halloween Costume Contest'
-excerpt: 'Halloween is almost here and this year I want to do something different... Introducing the 2020 Halloween Costume Contest!'
-createdAt: '2020-10-28'
-updatedAt: '2021-01-30'
+title: "2020 Halloween Costume Contest"
+excerpt: "Halloween is almost here and this year I want to do something different... Introducing the 2020 Halloween Costume Contest!"
+createdAt: "2020-10-28"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/2020-halloween-costume-contest-a.png'
-highlighted: 'false'
-color: 'pink'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/2020-halloween-costume-contest-a.png"
+highlighted: "false"
+color: "pink"
 ---
 
 Halloween is almost here and this year I want to do something different...

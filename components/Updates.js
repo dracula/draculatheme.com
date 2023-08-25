@@ -1,28 +1,28 @@
-import { Component } from 'react'
+import { Component } from "react";
 
 class Updates extends Component {
   render() {
-    let title = 'Stay up to date'
-    let description = 'Get updates about this theme and more.'
+    let title = "Stay up to date";
+    let description = "Get updates about this theme and more.";
 
-    if (this.props.type === 'blog') {
-      description = 'Get updates about all themes.'
-    } else if (this.props.type === 'journey') {
-      title = 'Follow the Journey'
-      description = 'Every month I send updates.'
+    if (this.props.type === "blog") {
+      description = "Get updates about all themes.";
+    } else if (this.props.type === "journey") {
+      title = "Follow the Journey";
+      description = "Every month I send updates.";
     }
 
     return (
-      <div id="updates" style={{ marginBottom: '2em' }}>
+      <div id="updates" style={{ marginBottom: "2em" }}>
         <h3>{title}</h3>
         <p>
           {description}
           {this.props.totalSubscribers && (
             <span>
-              {' '}
+              {" "}
               <span className="form-highlight">
                 {this.props.totalSubscribers}
-              </span>{' '}
+              </span>{" "}
               people enjoy it.
             </span>
           )}
@@ -34,7 +34,7 @@ class Updates extends Component {
           className="form"
         >
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="checkbox"
             value="1"
             name="group[66939][1]"
@@ -42,7 +42,7 @@ class Updates extends Component {
             defaultChecked
           />
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="checkbox"
             value="2"
             name="group[66939][2]"
@@ -63,14 +63,14 @@ class Updates extends Component {
           />
         </form>
 
-        {this.props.type === 'blog' && (
+        {this.props.type === "blog" && (
           <p className="rss">
             Or subscribe to the <a href="/rss.xml">RSS feed</a>.
           </p>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default Updates
+export default Updates;
