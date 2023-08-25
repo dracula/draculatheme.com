@@ -1,12 +1,12 @@
 ---
-title: 'Wallpapers'
+title: "Wallpapers"
 excerpt: "I'm super excited to announce the Dracula PRO Wallpapers!"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2020-04-15'
-id: 'log-08'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2020-04-15"
+id: "log-08"
+color: "cyan"
 ---
 
 I'm super excited to announce the Dracula PRO Wallpapers!

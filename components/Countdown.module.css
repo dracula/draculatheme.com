@@ -2,7 +2,7 @@
   height: 40px;
   padding: 5px;
   display: flex;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   align-items: center;
   justify-content: space-between;
 }

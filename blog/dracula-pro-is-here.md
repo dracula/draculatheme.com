@@ -1,14 +1,14 @@
 ---
-title: 'Dracula PRO Is Here!'
+title: "Dracula PRO Is Here!"
 excerpt: "The wait is over... Dracula PRO is live! This is a very special moment for me. It's been almost 7 years since I launched Dracula, and I'm super excited about this next step."
-createdAt: '2020-02-11'
-updatedAt: '2021-01-30'
+createdAt: "2020-02-11"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-pro-is-here-a.jpg'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-pro-is-here-a.jpg"
+highlighted: "false"
+color: "yellow"
 ---
 
 The wait is over... [Dracula PRO is live](/pro)!

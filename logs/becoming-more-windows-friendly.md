@@ -1,12 +1,12 @@
 ---
-title: 'Becoming more Windows-friendly'
-excerpt: 'Dracula PRO is now available for Notepad++ and Windows Terminal'
+title: "Becoming more Windows-friendly"
+excerpt: "Dracula PRO is now available for Notepad++ and Windows Terminal"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2020-03-05'
-id: 'log-06'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2020-03-05"
+id: "log-06"
+color: "yellow"
 ---
 
 I have some good news for Windows users.

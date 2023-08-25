@@ -1,14 +1,14 @@
 ---
-title: 'The Most Popular Dracula Themes in 2020'
-excerpt: '2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020.'
-createdAt: '2021-01-28'
-updatedAt: '2021-01-30'
+title: "The Most Popular Dracula Themes in 2020"
+excerpt: "2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020."
+createdAt: "2021-01-28"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/the-most-popular-dracula-themes-in-2020-a.png"
+highlighted: "false"
+color: "cyan"
 ---
 
 2021 is here and its first month is almost over. Still, I decided to take a step back and look at all the data from 2020.

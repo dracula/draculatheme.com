@@ -1,13 +1,13 @@
 ---
-title: 'Dracula UI - Web Or React Native?'
+title: "Dracula UI - Web Or React Native?"
 excerpt: "Most templates are built using light colors and later on adapted to dark colors. The process of building a dark theme shouldn't be an afterthought - it should be a top priority. That's why I decided to invest time in this."
-createdAt: '2020-09-03'
-updatedAt: '2021-01-30'
+createdAt: "2020-09-03"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "yellow"
 ---
 
 I'm building something new... it's called [Dracula UI](/ui).

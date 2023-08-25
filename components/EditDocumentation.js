@@ -1,4 +1,4 @@
-import styles from './EditDocumentation.module.css'
+import styles from "./EditDocumentation.module.css";
 
 function EditDocumentation({ color, repo, defaultBranch }) {
   return (
@@ -25,7 +25,7 @@ function EditDocumentation({ color, repo, defaultBranch }) {
       </a>
       <span>.</span>
     </span>
-  )
+  );
 }
 
-export default EditDocumentation
+export default EditDocumentation;

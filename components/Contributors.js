@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Contributors.module.css'
+import { Component } from "react";
+import styles from "./Contributors.module.css";
 
 class Contributors extends Component {
   renderContributors() {
@@ -22,8 +22,8 @@ class Contributors extends Component {
               />
             </a>
           </li>
-        )
-      })
+        );
+      });
     }
   }
 
@@ -33,7 +33,7 @@ class Contributors extends Component {
         <h3>Contributors</h3>
         <p>
           This theme wouldn't exist without these people. Wanna help too? Check
-          the{' '}
+          the{" "}
           <a
             className="cyan"
             href={`https://github.com/dracula/${this.props.repo}`}
@@ -46,8 +46,8 @@ class Contributors extends Component {
 
         <ul className={styles.contributors}>{this.renderContributors()}</ul>
       </div>
-    )
+    );
   }
 }
 
-export default Contributors
+export default Contributors;

@@ -1,13 +1,13 @@
 ---
-title: 'Dracula On Super Nintendo, Tailwind, And LaTeX'
+title: "Dracula On Super Nintendo, Tailwind, And LaTeX"
 excerpt: "I've been working on some really exciting new projects!"
-createdAt: '2021-04-07'
-updatedAt: '2022-01-14'
+createdAt: "2021-04-07"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "cyan"
 ---
 
 I've been working on some really exciting new projects!

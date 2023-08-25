@@ -1,14 +1,14 @@
 ---
-title: 'Interview with Lucas - the new Dracula team member'
+title: "Interview with Lucas - the new Dracula team member"
 excerpt: "Today, I'm excited to introduce you to Lucas. He has joined Dracula to help in our mission to create the best theme for developers in the world."
-createdAt: '2022-04-13'
-updatedAt: '2022-04-13'
+createdAt: "2022-04-13"
+updatedAt: "2022-04-13"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/interview-with-lucas-a.png'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/interview-with-lucas-a.png"
+highlighted: "false"
+color: "yellow"
 ---
 
 Today, I'm excited to introduce you to Lucas ([@luxonauta](https://twitter.com/luxonauta)).

@@ -1,28 +1,28 @@
-import '../styles/main.css'
+import "../styles/main.css";
 
-import * as gtag from '../lib/gtag'
+import * as gtag from "../lib/gtag";
 
-import Script from 'next/script'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import Script from "next/script";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 // import easterEgg from '../lib/easter-egg'
 
-const Noop = ({ children }) => children
+const Noop = ({ children }) => children;
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = url => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
-  const Layout = Component.Layout || Noop
+  const Layout = Component.Layout || Noop;
 
   // if (process.env.NODE_ENV === 'production') {
   //   console.log(easterEgg, "font-family:monospace");
@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

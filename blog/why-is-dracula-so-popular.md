@@ -1,13 +1,13 @@
 ---
-title: 'Why Is Dracula So Popular?'
-excerpt: 'Two weeks ago, Dracula showed up on the front page of Hacker News. The thread had 227 comments, but one comment caught my attention.'
-createdAt: '2021-12-23'
-updatedAt: '2022-01-14'
+title: "Why Is Dracula So Popular?"
+excerpt: "Two weeks ago, Dracula showed up on the front page of Hacker News. The thread had 227 comments, but one comment caught my attention."
+createdAt: "2021-12-23"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'pink'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "pink"
 ---
 
 Two weeks ago, Dracula showed up on the front page of Hacker News. The [thread](https://news.ycombinator.com/item?id=29494189) had 227 comments, but one comment, in particular, caught my attention. A user said: "_I have a hard time seeing why this is such a popular theme._"

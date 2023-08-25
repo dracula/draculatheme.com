@@ -1,46 +1,46 @@
-import React from 'react'
-import Head from 'next/head'
-import Shop from '../../layouts/Shop'
-import { sizesInInches, sizesInCm } from '../../lib/sizes'
-import SizeChart from '../../components/shop/SizeChart'
+import React from "react";
+import Head from "next/head";
+import Shop from "../../layouts/Shop";
+import { sizesInInches, sizesInCm } from "../../lib/sizes";
+import SizeChart from "../../components/shop/SizeChart";
 
 export async function getServerSideProps() {
-  const pppReq = await fetch('https://ppp.dracula.workers.dev')
-  const { country } = await pppReq.json()
+  const pppReq = await fetch("https://ppp.dracula.workers.dev");
+  const { country } = await pppReq.json();
 
-  let isInches = false
+  let isInches = false;
 
-  if (country === 'CA' || country === 'GB' || country === 'US') {
-    isInches = true
+  if (country === "CA" || country === "GB" || country === "US") {
+    isInches = true;
   }
 
   return {
-    props: { isInches, post: { color: 'purple' } },
-  }
+    props: { isInches, post: { color: "purple" } },
+  };
 }
 
 class Sizes extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       isInches: props.isInches,
-    }
+    };
   }
 
   componentDidMount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'block')
+    document.documentElement.style.setProperty("--cart-visibility", "block");
   }
 
   componentWillUnmount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'none')
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   onClickUnit(index) {
     if (index === 0) {
-      this.setState({ isInches: true })
+      this.setState({ isInches: true });
     } else {
-      this.setState({ isInches: false })
+      this.setState({ isInches: false });
     }
   }
 
@@ -49,30 +49,30 @@ class Sizes extends React.Component {
       <span>
         <button
           onClick={this.onClickUnit.bind(this, 0)}
-          className={this.state.isInches ? 'size-unit-selected' : 'size-unit'}
+          className={this.state.isInches ? "size-unit-selected" : "size-unit"}
         >
           in
         </button>
 
         <button
           onClick={this.onClickUnit.bind(this, 1)}
-          className={this.state.isInches ? 'size-unit' : 'size-unit-selected'}
+          className={this.state.isInches ? "size-unit" : "size-unit-selected"}
         >
           cm
         </button>
       </span>
-    )
+    );
   }
 
   renderSizes() {
-    let sizes = sizesInCm
+    let sizes = sizesInCm;
 
     if (this.state.isInches) {
-      sizes = sizesInInches
+      sizes = sizesInInches;
     }
 
     return sizes.map((size, index) => {
-      const sizeKey = Object.keys(size)
+      const sizeKey = Object.keys(size);
       return (
         <div key={index} className="sizes">
           <h2 id={sizeKey[0].toLowerCase()} className="size-subtitle">
@@ -80,15 +80,15 @@ class Sizes extends React.Component {
           </h2>
           <SizeChart items={sizes[index][sizeKey]} />
         </div>
-      )
-    })
+      );
+    });
   }
 
   render() {
-    const title = `Size Charts — Dracula Shop`
+    const title = `Size Charts — Dracula Shop`;
     const description =
-      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!"
-    const image = '/static/img/shop/og.jpg'
+      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!";
+    const image = "/static/img/shop/og.jpg";
 
     return (
       <div className="shop">
@@ -122,10 +122,10 @@ class Sizes extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-Sizes.Layout = Shop
+Sizes.Layout = Shop;
 
-export default Sizes
+export default Sizes;

@@ -1,14 +1,14 @@
 ---
-title: '6 New Themes And 20 Desktop Icons'
+title: "6 New Themes And 20 Desktop Icons"
 excerpt: "Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C? I'm trying to standardize all the Dracula screenshots using the same code snippet structure."
-createdAt: '2020-08-18'
-updatedAt: '2021-01-30'
+createdAt: "2020-08-18"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/6-new-themes-and-20-desktop-icons-a.png'
-highlighted: 'false'
-color: 'orange'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/6-new-themes-and-20-desktop-icons-a.png"
+highlighted: "false"
+color: "orange"
 ---
 
 Do you know Swift, PHP, Ruby, Java, Typescript, Go, or C?

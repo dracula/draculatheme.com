@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Why.module.css'
+import { Component } from "react";
+import styles from "./Why.module.css";
 
 class Why extends Component {
   render() {
@@ -19,19 +19,19 @@ class Why extends Component {
             </svg>
             <h3 className={styles.title}>Why Dracula PRO</h3>
             <p className={styles.body}>
-              In 2013,{' '}
+              In 2013,{" "}
               <a href="/about" target="_blank" className={styles.link}>
                 my laptop was stolen
-              </a>{' '}
+              </a>{" "}
               and I had to re-configure everything. At that time, there were
               thousands of themes out there, but none of them were appealing to
-              me. So I decided to{' '}
+              me. So I decided to{" "}
               <span className={styles.highlight}>create my own</span>.
             </p>
             <p className={styles.body}>
               Fast forward to 2020, Dracula is one of the most popular themes in
               the world. Still, I felt that something was missing. I wanted to
-              help with{' '}
+              help with{" "}
               <span className={styles.highlight}>more than just a theme</span>,
               that's why I created Dracula PRO.
             </p>
@@ -45,8 +45,8 @@ class Why extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Why
+export default Why;

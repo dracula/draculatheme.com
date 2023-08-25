@@ -1,14 +1,14 @@
 ---
-title: 'Dracula For CodeSandbox And 9 New Themes'
+title: "Dracula For CodeSandbox And 9 New Themes"
 excerpt: "I don't know about you, but I always struggle to find a good syntax highlighter library for showing code on a page."
-createdAt: '2022-09-01'
-updatedAt: '2022-09-13'
+createdAt: "2022-09-01"
+updatedAt: "2022-09-13"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/interview-with-lucas-a.png'
-highlighted: 'false'
-color: 'cyan'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/interview-with-lucas-a.png"
+highlighted: "false"
+color: "cyan"
 ---
 
 I don't know about you, but I always struggle to find a good syntax highlighter library for showing code on a page. I tried almost everything like Ace, CodeMirror, Prism, Monaco Editor, Shiki, etc.

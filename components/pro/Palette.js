@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Palette.module.css'
+import { Component } from "react";
+import styles from "./Palette.module.css";
 
 class Palette extends Component {
   render() {
@@ -47,19 +47,19 @@ class Palette extends Component {
             <p className={styles.body}>
               Isaac Newton was one of the first to organize colors
               geometrically. In 1704, Newton observed the relationships between
-              different wavelengths of light and organized them as a{' '}
+              different wavelengths of light and organized them as a{" "}
               <span className={styles.highlight}>circle of hue</span>.
             </p>
             <p className={styles.body}>
-              {' '}
+              {" "}
               He was then able to identify different patterns that arose out of
-              this representation. This would become the foundation of{' '}
+              this representation. This would become the foundation of{" "}
               <span className={styles.highlight}>modern color theory</span>.
             </p>
             <p className={styles.body}>
               The original Dracula colors created in 2013 were based on personal
-              taste. This new PRO version brings a more refined and{' '}
-              <span className={styles.highlight}>mathematical approach</span>{' '}
+              taste. This new PRO version brings a more refined and{" "}
+              <span className={styles.highlight}>mathematical approach</span>{" "}
               that normalizes lightness and saturation.
             </p>
             <a href="#get" className={styles.cta}>
@@ -68,8 +68,8 @@ class Palette extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Palette
+export default Palette;

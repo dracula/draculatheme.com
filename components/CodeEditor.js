@@ -1,21 +1,21 @@
-import React, { useRef, useState } from 'react'
-import Editor from '@monaco-editor/react'
+import React, { useRef, useState } from "react";
+import Editor from "@monaco-editor/react";
 
-import snippets from '../lib/snippets/all'
-import theme from '../lib/monaco.json'
+import snippets from "../lib/snippets/all";
+import theme from "../lib/monaco.json";
 
 function CodeEditor({ language }) {
-  const editorRef = useRef(null)
-  const [editorLoaded, setEditorLoaded] = useState(false)
+  const editorRef = useRef(null);
+  const [editorLoaded, setEditorLoaded] = useState(false);
 
   function handleEditorWillMount(monaco) {
-    monaco.editor.defineTheme('dracula', theme)
-    monaco.editor.setTheme('dracula')
+    monaco.editor.defineTheme("dracula", theme);
+    monaco.editor.setTheme("dracula");
   }
 
   function handleEditorDidMount(editor, monaco) {
-    editorRef.current = editor
-    setEditorLoaded(true)
+    editorRef.current = editor;
+    setEditorLoaded(true);
   }
 
   return (
@@ -30,7 +30,7 @@ function CodeEditor({ language }) {
         cursorSmoothCaretAnimation: true,
         scrollBeyondLastLine: false,
         fontLigatures: true,
-        fontSize: '18px',
+        fontSize: "18px",
         minimap: {
           enabled: false,
         },
@@ -38,7 +38,7 @@ function CodeEditor({ language }) {
       beforeMount={handleEditorWillMount}
       onMount={handleEditorDidMount}
     />
-  )
+  );
 }
 
-export default CodeEditor
+export default CodeEditor;

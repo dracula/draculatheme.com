@@ -1,6 +1,6 @@
-import LinesEllipsisLoose from 'react-lines-ellipsis/lib/loose'
-import Link from 'next/link'
-import styles from './FeaturedBlogPosts.module.css'
+import LinesEllipsisLoose from "react-lines-ellipsis/lib/loose";
+import Link from "next/link";
+import styles from "./FeaturedBlogPosts.module.css";
 
 function FeaturedBlogPosts({ posts }) {
   return (
@@ -31,12 +31,12 @@ function FeaturedBlogPosts({ posts }) {
                   />
                 </a>
               </Link>
-            )
+            );
           })}
         </div>
       )}
     </>
-  )
+  );
 }
 
-export default FeaturedBlogPosts
+export default FeaturedBlogPosts;

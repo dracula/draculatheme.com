@@ -1,14 +1,14 @@
 ---
-title: 'Celebrating 300 Themes With The New Winter Drop'
-excerpt: 'Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a single commit.'
-createdAt: '2022-12-22'
-updatedAt: '2023-01-10'
+title: "Celebrating 300 Themes With The New Winter Drop"
+excerpt: "Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a single commit."
+createdAt: "2022-12-22"
+updatedAt: "2023-01-10"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/celebrating-300-themes-with-the-new-winter-drop-a.png'
-highlighted: 'true'
-color: 'orange'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/celebrating-300-themes-with-the-new-winter-drop-a.png"
+highlighted: "true"
+color: "orange"
 ---
 
 Today we officially crossed 300 Dracula themes! When I started this project back in 2013 with a [single commit](https://github.com/dracula/dracula-theme/commit/7e4d17ade6a54b7b7d8037a0d2160a293f17ef5c), I never thought that one day it would become such a universal theme.

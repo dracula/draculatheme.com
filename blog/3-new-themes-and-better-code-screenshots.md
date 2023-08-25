@@ -1,14 +1,14 @@
 ---
-title: '3 New Themes And Better Code Screenshots'
+title: "3 New Themes And Better Code Screenshots"
 excerpt: "Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception."
-createdAt: '2020-08-05'
-updatedAt: '2021-01-30'
+createdAt: "2020-08-05"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/3-new-themes-and-better-code-screenshots-a.png'
-highlighted: 'false'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/3-new-themes-and-better-code-screenshots-a.png"
+highlighted: "false"
+color: "purple"
 ---
 
 Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception.

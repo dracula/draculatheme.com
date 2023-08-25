@@ -1,10 +1,10 @@
-import { Component } from 'react'
-import { countries } from 'countries-list'
-import styles from './Faq.module.css'
+import { Component } from "react";
+import { countries } from "countries-list";
+import styles from "./Faq.module.css";
 
 class Faq extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       items: [
@@ -49,27 +49,27 @@ class Faq extends Component {
           visible: false,
         },
       ],
-    }
+    };
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.ppp !== prevProps.ppp) {
-      let items = this.state.items
+      let items = this.state.items;
       items[0].question = `Do you ship ${
         this.props.ppp.country
           ? `to ${countries[this.props.ppp.country].name}`
-          : 'worldwide'
-      }?`
-      this.setState({ items })
+          : "worldwide"
+      }?`;
+      this.setState({ items });
     }
   }
 
   toggleVisibility(index, e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    let items = this.state.items
-    items[index].visible = !items[index].visible
-    this.setState(items)
+    let items = this.state.items;
+    items[index].visible = !items[index].visible;
+    this.setState(items);
   }
 
   renderQuestionsAndAnswers() {
@@ -84,26 +84,26 @@ class Faq extends Component {
           <p
             style={
               this.state.items[index].visible
-                ? { display: 'block' }
-                : { display: 'none' }
+                ? { display: "block" }
+                : { display: "none" }
             }
             className={styles.answer}
           >
             {item.answer}
           </p>
           <span className={styles.itemIcon}>
-            {this.state.items[index].visible ? '-' : '+'}
+            {this.state.items[index].visible ? "-" : "+"}
           </span>
         </a>
-      )
-    })
+      );
+    });
   }
 
   render() {
     return (
       <div className={styles.container}>{this.renderQuestionsAndAnswers()}</div>
-    )
+    );
   }
 }
 
-export default Faq
+export default Faq;

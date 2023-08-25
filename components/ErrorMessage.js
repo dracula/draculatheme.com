@@ -1,15 +1,15 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from './ErrorMessage.module.css'
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "./ErrorMessage.module.css";
 
 export default function ErrorMessage({ code }) {
-  let title = 'Error 404'
-  let description = 'Page Not Found'
+  let title = "Error 404";
+  let description = "Page Not Found";
 
   if (code === 500) {
-    title = 'Error 500'
-    description = "Something isn't right."
+    title = "Error 500";
+    description = "Something isn't right.";
   }
 
   return (
@@ -34,5 +34,5 @@ export default function ErrorMessage({ code }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }

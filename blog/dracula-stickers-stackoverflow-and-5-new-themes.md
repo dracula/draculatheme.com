@@ -1,13 +1,13 @@
 ---
-title: 'Dracula Stickers, StackOverflow and 5 new themes'
-excerpt: 'These past few days have been difficult. I hope you and your family are safe!'
-createdAt: '2022-03-07'
-updatedAt: '2022-03-07'
+title: "Dracula Stickers, StackOverflow and 5 new themes"
+excerpt: "These past few days have been difficult. I hope you and your family are safe!"
+createdAt: "2022-03-07"
+updatedAt: "2022-03-07"
 author:
-  name: 'Zeno Rocha'
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'pink'
+  name: "Zeno Rocha"
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "pink"
 ---
 
 These past few days have been difficult. I hope you and your family are safe! I sent refunds to all the 52 Ukrainians who bought Dracula Pro and UI. If you're a digital creator who sells products online, I encourage you to [do the same](https://twitter.com/zenorocha/status/1499036560234221571).

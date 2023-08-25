@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Fonts.module.css'
+import { Component } from "react";
+import styles from "./Fonts.module.css";
 
 class Fonts extends Component {
   render() {
@@ -22,17 +22,17 @@ class Fonts extends Component {
             <h3 className={styles.title}>Hand-picked Typography</h3>
             <p className={styles.body}>
               I carefully selected 4 monospaced programming fonts that fit
-              perfectly with Dracula PRO. These fonts have{' '}
+              perfectly with Dracula PRO. These fonts have{" "}
               <span className={styles.highlight}>
                 built-in ligature support
-              </span>{' '}
+              </span>{" "}
               that improves readability.
             </p>
             <p className={styles.body}>
-              By displaying one shorter glyph instead of 2 or sometimes 3, the{' '}
+              By displaying one shorter glyph instead of 2 or sometimes 3, the{" "}
               <span className={styles.highlight}>
                 human brain spends less energy
-              </span>{' '}
+              </span>{" "}
               to scan, parse, and join multiple characters into a single one.
             </p>
             <p className={styles.body}>
@@ -50,8 +50,8 @@ class Fonts extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Fonts
+export default Fonts;

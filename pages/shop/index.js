@@ -1,40 +1,40 @@
-import Head from 'next/head'
-import Hero from '../../components/shop/Hero'
-import Link from 'next/link'
-import React from 'react'
-import ShopLayout from '../../layouts/Shop'
-import { getProduct } from '../../lib/gumroad'
-import products from '../../lib/shop'
+import Head from "next/head";
+import Hero from "../../components/shop/Hero";
+import Link from "next/link";
+import React from "react";
+import ShopLayout from "../../layouts/Shop";
+import { getProduct } from "../../lib/gumroad";
+import products from "../../lib/shop";
 
 export async function getStaticProps() {
-  const productPromises = products.map(product => {
-    return getProduct(product.params.gumroadId)
-  })
+  const productPromises = products.map((product) => {
+    return getProduct(product.params.gumroadId);
+  });
 
-  const list = await Promise.all(productPromises)
-  return { props: { list, post: { color: 'purple' } } }
+  const list = await Promise.all(productPromises);
+  return { props: { list, post: { color: "purple" } } };
 }
 
 class Shop extends React.Component {
   componentDidMount() {
     document.documentElement.style.setProperty(
-      '--cart-visibility',
-      'inline-flex'
-    )
+      "--cart-visibility",
+      "inline-flex"
+    );
   }
 
   componentWillUnmount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'none')
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   renderAvailability(product) {
     if (!product.published) {
-      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>
+      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>;
     }
   }
 
   renderProducts() {
-    return this.props.list.map(product => {
+    return this.props.list.map((product) => {
       return (
         <Link
           href={`/shop/${product.custom_permalink}`}
@@ -52,15 +52,15 @@ class Shop extends React.Component {
             <p className="product-price">{product.formatted_price}</p>
           </a>
         </Link>
-      )
-    })
+      );
+    });
   }
 
   render() {
-    const title = 'Shop — Premium merch from the Dracula theme'
+    const title = "Shop — Premium merch from the Dracula theme";
     const description =
-      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!"
-    const image = '/static/img/shop/og.jpg'
+      "Do you like sticker packs? Exclusive t-shirts? Dark mode hoodies? Adorable baby bodysuits? Comfortable joggers? If yes, you'll have a look of fun over here!";
+    const image = "/static/img/shop/og.jpg";
 
     return (
       <div>
@@ -84,10 +84,10 @@ class Shop extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-Shop.Layout = ShopLayout
+Shop.Layout = ShopLayout;
 
-export default Shop
+export default Shop;

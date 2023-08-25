@@ -1,14 +1,14 @@
 ---
-title: 'Dracula UI - Week 1'
-excerpt: 'Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns.'
-createdAt: '2020-09-10'
-updatedAt: '2021-01-30'
+title: "Dracula UI - Week 1"
+excerpt: "Our team of 3 (Netto, Zeno, and Cookie) has been hard at work building what we believe will be the best dark-first collection of UI components and patterns."
+createdAt: "2020-09-10"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dracula-ui-week-1-a.png'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dracula-ui-week-1-a.png"
+highlighted: "false"
+color: "green"
 ---
 
 It's now one week since we started working on Dracula UI. 🥳

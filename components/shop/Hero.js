@@ -1,4 +1,4 @@
-import styles from './Hero.module.scss'
+import styles from "./Hero.module.scss";
 
 function Hero() {
   return (
@@ -292,7 +292,7 @@ function Hero() {
       </div>
       <div className={styles.mountains}></div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

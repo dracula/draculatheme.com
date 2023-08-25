@@ -1,13 +1,13 @@
 ---
-title: 'Dracula On Twitter And 7 New Themes'
+title: "Dracula On Twitter And 7 New Themes"
 excerpt: "I joined Twitter in March 2009 (yes, I'm that old), and it has been my favorite place to stay up to date with the tech community since then."
-createdAt: '2022-02-22'
-updatedAt: '2022-02-24'
+createdAt: "2022-02-22"
+updatedAt: "2022-02-24"
 author:
-  name: 'Zeno Rocha'
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'purple'
+  name: "Zeno Rocha"
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "purple"
 ---
 
 I joined Twitter in March 2009 (yes, I'm that old), and it has been my favorite place to stay up to date with the tech community since then.

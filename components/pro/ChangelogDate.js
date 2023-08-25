@@ -1,6 +1,6 @@
-import { format, parseISO } from 'date-fns'
+import { format, parseISO } from "date-fns";
 
 export default function ChangelogDate({ dateString }) {
-  const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'PP')}</time>
+  const date = parseISO(dateString);
+  return <time dateTime={dateString}>{format(date, "PP")}</time>;
 }

@@ -1,13 +1,13 @@
 ---
-title: 'Dracula T-Shirt... A? B? Or C?'
+title: "Dracula T-Shirt... A? B? Or C?"
 excerpt: "I'm starting to play around with the idea of having Dracula merch! Now I need your help deciding which designs look better."
-createdAt: '2022-01-06'
-updatedAt: '2022-01-14'
+createdAt: "2022-01-06"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "yellow"
 ---
 
 2022 is here, and like everybody else, I decided to write a ["Year in Review" post](/blog/2021-year-in-review).

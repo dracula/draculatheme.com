@@ -1,12 +1,12 @@
 ---
-title: 'JetBrains 2021.2 and 150k mark'
+title: "JetBrains 2021.2 and 150k mark"
 excerpt: "It's time to update your Dracula PRO plugin."
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2021-07-29'
-id: 'log-17'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2021-07-29"
+id: "log-17"
+color: "yellow"
 ---
 
 JetBrains just released a new version called **2021.2**, so if you use IntelliJ, PyCharm, WebStorm, CLion, DataGrip, or RubyMine, it's time to update your Dracula PRO plugin.

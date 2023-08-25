@@ -1,5 +1,5 @@
-import { Component } from 'react'
-import styles from './Header.module.css'
+import { Component } from "react";
+import styles from "./Header.module.css";
 
 class Header extends Component {
   render() {
@@ -15,18 +15,18 @@ class Header extends Component {
             src="/static/img/pro/journey/icon-party.svg"
             alt="Party"
           />
-          {this.props.sales.count} copies or{' '}
+          {this.props.sales.count} copies or{" "}
           <a href="/pro/journey" target="_blank" className={styles.link}>
             {this.props.sales.total}
-          </a>{' '}
+          </a>{" "}
           sold
         </p>
         <a href="#get" className={styles.cta}>
           Get it now
         </a>
       </div>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

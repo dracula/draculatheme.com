@@ -1,43 +1,43 @@
-import BlogDate from '../../components/BlogDate'
-import Blogpost from '../../layouts/Blogpost'
-import FeaturedBlogPosts from '../../components/FeaturedBlogPosts'
-import Head from 'next/head'
-import Link from 'next/link'
-import Updates from '../../components/Updates'
-import { getAllPosts } from '../../lib/blog'
-import { getBasePath } from '../../lib/environment'
+import BlogDate from "../../components/BlogDate";
+import Blogpost from "../../layouts/Blogpost";
+import FeaturedBlogPosts from "../../components/FeaturedBlogPosts";
+import Head from "next/head";
+import Link from "next/link";
+import Updates from "../../components/Updates";
+import { getAllPosts } from "../../lib/blog";
+import { getBasePath } from "../../lib/environment";
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
-    'title',
-    'createdAt',
-    'slug',
-    'author',
-    'excerpt',
-    'ogImage',
-    'highlighted',
-    'color',
-  ])
+    "title",
+    "createdAt",
+    "slug",
+    "author",
+    "excerpt",
+    "ogImage",
+    "highlighted",
+    "color",
+  ]);
 
-  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`)
-  const totalSubscribersRes = await totalSubscribersReq.json()
-  const totalSubscribers = totalSubscribersRes.total
+  const totalSubscribersReq = await fetch(`${getBasePath()}/api/mailchimp`);
+  const totalSubscribersRes = await totalSubscribersReq.json();
+  const totalSubscribers = totalSubscribersRes.total;
 
   return {
     props: {
       allPosts,
       totalSubscribers,
-      post: { color: 'yellow' },
+      post: { color: "yellow" },
     },
     revalidate: 7200,
-  }
+  };
 }
 
 function Blog({ allPosts, totalSubscribers }) {
-  const title = 'Blog — Dracula Theme'
+  const title = "Blog — Dracula Theme";
   const description =
-    'The journey of building the most universal dark theme ever made.'
-  const image = '/static/img/facebook.png'
+    "The journey of building the most universal dark theme ever made.";
+  const image = "/static/img/facebook.png";
 
   return (
     <div className="single">
@@ -58,12 +58,12 @@ function Blog({ allPosts, totalSubscribers }) {
       <div className="wrap">
         <FeaturedBlogPosts
           posts={allPosts
-            .filter(post => post.highlighted === 'true')
+            .filter((post) => post.highlighted === "true")
             .slice(0, 2)}
         />
 
         <div className="blog">
-          {allPosts.map(post => {
+          {allPosts.map((post) => {
             return (
               <div className={post.color} key={post.slug}>
                 <div className="blog-item">
@@ -83,7 +83,7 @@ function Blog({ allPosts, totalSubscribers }) {
                   />
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
@@ -92,9 +92,9 @@ function Blog({ allPosts, totalSubscribers }) {
         <Updates type="blog" totalSubscribers={totalSubscribers} />
       </div>
     </div>
-  )
+  );
 }
 
-Blog.Layout = Blogpost
+Blog.Layout = Blogpost;
 
-export default Blog
+export default Blog;

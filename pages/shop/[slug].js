@@ -1,39 +1,39 @@
-import Faq from '../../components/shop/Faq'
-import Head from 'next/head'
-import Link from 'next/link'
-import { Magnifier } from 'react-image-magnifiers'
-import React from 'react'
-import ShopDivisor from '../../components/shop/ShopDivisor'
-import ShopLayout from '../../layouts/Shop'
-import dynamic from 'next/dynamic'
-import { getColorFromName } from '../../lib/color'
-import { getProduct } from '../../lib/gumroad'
-import products from '../../lib/shop'
-import { stripHtml } from '../../lib/string'
+import Faq from "../../components/shop/Faq";
+import Head from "next/head";
+import Link from "next/link";
+import { Magnifier } from "react-image-magnifiers";
+import React from "react";
+import ShopDivisor from "../../components/shop/ShopDivisor";
+import ShopLayout from "../../layouts/Shop";
+import dynamic from "next/dynamic";
+import { getColorFromName } from "../../lib/color";
+import { getProduct } from "../../lib/gumroad";
+import products from "../../lib/shop";
+import { stripHtml } from "../../lib/string";
 
-const SelectInput = dynamic(() => import('react-select'), { ssr: false })
+const SelectInput = dynamic(() => import("react-select"), { ssr: false });
 
 export async function getStaticPaths() {
-  return { paths: products, fallback: 'blocking' }
+  return { paths: products, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
   const query = products.find(
-    product => product.params.slug === params.slug
-  ).params
-  const product = await getProduct(query.gumroadId)
+    (product) => product.params.slug === params.slug
+  ).params;
+  const product = await getProduct(query.gumroadId);
 
   const relatedProductsPromise = products
     .filter(
-      product =>
+      (product) =>
         product.params.slug !== query.slug &&
-        product.params.category === 'stickers'
+        product.params.category === "stickers"
     )
-    .map(product => {
-      return getProduct(product.params.gumroadId)
-    })
+    .map((product) => {
+      return getProduct(product.params.gumroadId);
+    });
 
-  const relatedProducts = await Promise.all(relatedProductsPromise)
+  const relatedProducts = await Promise.all(relatedProductsPromise);
 
   return {
     props: {
@@ -43,36 +43,36 @@ export async function getStaticProps({ params }) {
       post: { color: query.color },
     },
     revalidate: 3600,
-  }
+  };
 }
 
 class Product extends React.Component {
   state = {
-    size: { value: 'm', label: 'M' },
+    size: { value: "m", label: "M" },
     quantity: 1,
     selectedImage: 0,
     ppp: {},
-  }
+  };
 
   componentDidMount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'block')
-    this.fetchPPP()
+    document.documentElement.style.setProperty("--cart-visibility", "block");
+    this.fetchPPP();
   }
 
   componentWillUnmount() {
-    document.documentElement.style.setProperty('--cart-visibility', 'none')
+    document.documentElement.style.setProperty("--cart-visibility", "none");
   }
 
   async fetchPPP() {
-    const pppReq = await fetch('https://ppp.dracula.workers.dev')
-    const ppp = await pppReq.json()
-    this.setState({ ppp })
+    const pppReq = await fetch("https://ppp.dracula.workers.dev");
+    const ppp = await pppReq.json();
+    this.setState({ ppp });
   }
 
   renderSelect() {
-    const sizes = this.props.product.variants[0].options.map(option => {
-      return { value: option.name.toUpperCase(), label: option.name }
-    })
+    const sizes = this.props.product.variants[0].options.map((option) => {
+      return { value: option.name.toUpperCase(), label: option.name };
+    });
 
     return (
       <div className="item-sizes">
@@ -85,23 +85,23 @@ class Product extends React.Component {
           styles={{
             option: (styles, state) => ({
               ...styles,
-              cursor: 'pointer',
+              cursor: "pointer",
             }),
-            control: styles => ({
+            control: (styles) => ({
               ...styles,
-              cursor: 'pointer',
+              cursor: "pointer",
             }),
           }}
-          theme={theme => ({
+          theme={(theme) => ({
             ...theme,
             borderRadius: 0,
-            cursor: 'pointer',
+            cursor: "pointer",
             colors: {
               ...theme.colors,
               primary: `#${getColorFromName(this.props.color)}`, // Opened - Border
-              primary25: '#2a2c37', // Opened - Active
-              primary50: '#2a2c37', // Opened - Focus
-              neutral0: '#1d1e26', // Closed - Background
+              primary25: "#2a2c37", // Opened - Active
+              primary50: "#2a2c37", // Opened - Focus
+              neutral0: "#1d1e26", // Closed - Background
               neutral10: `#${getColorFromName(this.props.color)}`, // Closed - Arrow
               neutral20: `#${getColorFromName(this.props.color)}`, // Closed - Border
               neutral30: `#${getColorFromName(this.props.color)}`, // Closed - Border Hover
@@ -112,15 +112,15 @@ class Product extends React.Component {
           })}
         />
       </div>
-    )
+    );
   }
 
   changeSize(e) {
-    this.setState({ size: e })
+    this.setState({ size: e });
   }
 
   changeQuantity(e) {
-    this.setState({ quantity: e.target.value })
+    this.setState({ quantity: e.target.value });
   }
 
   renderVariants() {
@@ -130,7 +130,7 @@ class Product extends React.Component {
           <p>Size {this.renderSizes()}</p>
           {this.renderSelect()}
         </div>
-      )
+      );
     }
   }
 
@@ -154,7 +154,7 @@ class Product extends React.Component {
             <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"></path>
           </svg>
         </a>
-      )
+      );
     }
   }
 
@@ -170,22 +170,22 @@ class Product extends React.Component {
                 alt={image}
                 onClick={this.changeImage.bind(this, index)}
               />
-            )
+            );
           })}
         </div>
-      )
+      );
     }
   }
 
   changeImage(index) {
-    this.setState({ selectedImage: index })
+    this.setState({ selectedImage: index });
   }
 
   renderAvailability() {
-    const { max_purchase_count, sales_count, published } = this.props.product
+    const { max_purchase_count, sales_count, published } = this.props.product;
 
     if (!published) {
-      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>
+      return <div className="item-ribbon item-ribbon-sold-out">sold out</div>;
     }
 
     if (max_purchase_count > 0) {
@@ -193,7 +193,7 @@ class Product extends React.Component {
         <div className="item-ribbon">
           {max_purchase_count - sales_count} left
         </div>
-      )
+      );
     }
   }
 
@@ -226,7 +226,7 @@ class Product extends React.Component {
             </a>
           </div>
         </>
-      )
+      );
     }
   }
 
@@ -249,10 +249,10 @@ class Product extends React.Component {
         <div className="item-details">
           <h1 className="item-name">{this.props.product.name}</h1>
           <p className="item-price">
-            {new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency: 'USD',
-            }).format(this.props.product.price / 100)}{' '}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(this.props.product.price / 100)}{" "}
             {this.props.product.currency.toUpperCase()}
           </p>
           <div
@@ -262,11 +262,11 @@ class Product extends React.Component {
           {this.renderOptions()}
         </div>
       </div>
-    )
+    );
   }
 
   renderRelatedProducts() {
-    return this.props.relatedProducts.map(product => {
+    return this.props.relatedProducts.map((product) => {
       return (
         <div className="product" key={product.custom_permalink}>
           <Link href={`/shop/${product.custom_permalink}`}>
@@ -292,21 +292,21 @@ class Product extends React.Component {
             </div>
           )}
         </div>
-      )
-    })
+      );
+    });
   }
 
   render() {
-    const title = `${this.props.product.name} — Dracula Shop`
-    const description = stripHtml(this.props.product.description)
+    const title = `${this.props.product.name} — Dracula Shop`;
+    const description = stripHtml(this.props.product.description);
 
-    const api = 'https://i.microlink.io/'
-    const ogPrice = this.props.product.price / 100
-    const ogImage = `${this.props.product.custom_permalink}-1.png`
+    const api = "https://i.microlink.io/";
+    const ogPrice = this.props.product.price / 100;
+    const ogImage = `${this.props.product.custom_permalink}-1.png`;
     const cardUrl = `https://cards.microlink.io/?preset=dracula-shop&color=%23${getColorFromName(
       this.props.color
-    )}&title=${this.props.product.name}&price=${ogPrice}&image=${ogImage}`
-    const image = `${api}${encodeURIComponent(cardUrl)}`
+    )}&title=${this.props.product.name}&price=${ogPrice}&image=${ogImage}`;
+    const image = `${api}${encodeURIComponent(cardUrl)}`;
 
     return (
       <div className="shop">
@@ -343,10 +343,10 @@ class Product extends React.Component {
 
         <ShopDivisor />
       </div>
-    )
+    );
   }
 }
 
-Product.Layout = ShopLayout
+Product.Layout = ShopLayout;
 
-export default Product
+export default Product;

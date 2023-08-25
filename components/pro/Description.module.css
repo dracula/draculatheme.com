@@ -9,7 +9,7 @@
 }
 
 .container::before {
-  content: '{';
+  content: "{";
   float: left;
   color: #50fa7b;
   font-size: 68px;

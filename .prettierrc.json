@@ -1,9 +1,11 @@
 {
-  "arrowParens": "avoid",
-  "bracketSpacing": true,
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "useTabs": false
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": ["paths.js", "easter-egg.js"],
+      "options": {
+        "printWidth": 500
+      }
+    }
+  ]
 }

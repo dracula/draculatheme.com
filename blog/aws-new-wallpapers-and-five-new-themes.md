@@ -1,14 +1,14 @@
 ---
-title: 'AWS, New Wallpapers And Five New Themes'
-excerpt: 'A couple of days ago, I was configuring some stuff on AWS and noticed that they are using Dracula!'
-createdAt: '2023-01-31'
-updatedAt: '2023-02-02'
+title: "AWS, New Wallpapers And Five New Themes"
+excerpt: "A couple of days ago, I was configuring some stuff on AWS and noticed that they are using Dracula!"
+createdAt: "2023-01-31"
+updatedAt: "2023-02-02"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/aws-new-wallpapers-and-five-new-themes-a.png'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/aws-new-wallpapers-and-five-new-themes-a.png"
+highlighted: "false"
+color: "yellow"
 ---
 
 A couple of days ago, I was configuring some stuff on AWS and noticed that they are using Dracula! Can you believe that? Even Amazon is using Dracula 😱

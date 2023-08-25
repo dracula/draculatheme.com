@@ -1,13 +1,13 @@
 ---
-title: 'Dracula Keycaps And 6 New Themes'
+title: "Dracula Keycaps And 6 New Themes"
 excerpt: "After two years of waiting, the GMK Dracula keycaps finally arrived. If you're into mechanical keyboards, you're going to love this."
-createdAt: '2021-10-27'
-updatedAt: '2022-01-14'
+createdAt: "2021-10-27"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "green"
 ---
 
 After two years of waiting, the [GMK Dracula](/gmk) keycaps finally arrived. I was so excited that I even recorded an [unboxing video](https://youtu.be/gWuWhveVxwo). If you're into mechanical keyboards, you're going to love this.

@@ -1,13 +1,13 @@
 ---
-title: 'Little Vampire And 7 New Themes'
+title: "Little Vampire And 7 New Themes"
 excerpt: "For the next few weeks, I'll be out on paternity leave. This means that I'll be slow to respond to emails, Discord messages, and GitHub issues."
-createdAt: '2021-10-12'
-updatedAt: '2022-01-14'
+createdAt: "2021-10-12"
+updatedAt: "2022-01-14"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "yellow"
 ---
 
 Say hello to my newest little vampire - Victoria Rocha ;)

@@ -1,12 +1,12 @@
 ---
-title: 'New Desktop Icons'
-excerpt: 'The 20 icons are available in 6 different flavors, just like the themes!'
+title: "New Desktop Icons"
+excerpt: "The 20 icons are available in 6 different flavors, just like the themes!"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2020-08-18'
-id: 'log-12'
-color: 'yellow'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2020-08-18"
+id: "log-12"
+color: "yellow"
 ---
 
 Last weekend I started playing around with some custom app icons. People seemed to [like it](https://twitter.com/zenorocha/status/1294681735288877056), so I decided to take it to the next level.

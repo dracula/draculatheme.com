@@ -1,12 +1,12 @@
 ---
-title: '27% smaller and JetBrains 2022'
-excerpt: 'I decided to remove the videos, which makes it 27% smaller now.'
+title: "27% smaller and JetBrains 2022"
+excerpt: "I decided to remove the videos, which makes it 27% smaller now."
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-date: '2022-04-14'
-id: 'log-18'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+date: "2022-04-14"
+id: "log-18"
+color: "green"
 ---
 
 As you know, Dracula PRO used to come with some videos. This made it difficult for folks to update their local themes, since the .zip package is quite large, and re-downloading it takes time. To help with that, I decided to remove the videos, which makes it 27% smaller now.

@@ -1,17 +1,17 @@
-import ChangelogDate from '../../components/pro/ChangelogDate'
-import Footer from '../../components/pro/Footer'
-import Head from 'next/head'
-import Topbar from '../../components/pro/Topbar'
-import { convertMarkdownToReact } from '../../lib/markdown'
-import getLogs from '../../lib/changelog.js'
-import styles from './changelog.module.css'
+import ChangelogDate from "../../components/pro/ChangelogDate";
+import Footer from "../../components/pro/Footer";
+import Head from "next/head";
+import Topbar from "../../components/pro/Topbar";
+import { convertMarkdownToReact } from "../../lib/markdown";
+import getLogs from "../../lib/changelog.js";
+import styles from "./changelog.module.css";
 
 export async function getStaticProps() {
   return {
     props: {
       logs: await getLogs(),
     },
-  }
+  };
 }
 
 export default function Changelog({ logs }) {
@@ -60,7 +60,7 @@ export default function Changelog({ logs }) {
         <div className={styles.container}>
           <ul className={styles.logs}>
             {logs.map((log, index) => {
-              let style = { '--item-color': 'var(--' + log.color + ')' }
+              let style = { "--item-color": "var(--" + log.color + ")" };
               return (
                 <li key={index} id={log.id} style={style}>
                   <article>
@@ -85,12 +85,12 @@ export default function Changelog({ logs }) {
                     </div>
                   </article>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
       </div>
       <Footer />
     </>
-  )
+  );
 }

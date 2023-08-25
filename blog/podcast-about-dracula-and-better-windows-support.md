@@ -1,14 +1,14 @@
 ---
-title: 'Podcast About Dracula And Better Windows Support'
+title: "Podcast About Dracula And Better Windows Support"
 excerpt: "It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on."
-createdAt: '2020-03-19'
-updatedAt: '2021-01-30'
+createdAt: "2020-03-19"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/podcast-about-dracula-and-better-windows-support-a.png'
-highlighted: 'false'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/podcast-about-dracula-and-better-windows-support-a.png"
+highlighted: "false"
+color: "purple"
 ---
 
 It's been a crazy couple of weeks. I have to admit I'm a little bit overwhelmed with all that's happening in the world but, hey, the show must go on. For the next two weeks, I'll be [working from home](https://twitter.com/zenorocha/status/1239558074693632002), how about you? Are you enjoying the remote work life?

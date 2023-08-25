@@ -1,13 +1,13 @@
 ---
-title: 'Dracula Livestream And 3 New Themes'
-excerpt: 'The fine folks from Microsoft invited me to talk about how to build your own VS Code theme.'
-createdAt: '2022-03-17'
-updatedAt: '2022-03-18'
+title: "Dracula Livestream And 3 New Themes"
+excerpt: "The fine folks from Microsoft invited me to talk about how to build your own VS Code theme."
+createdAt: "2022-03-17"
+updatedAt: "2022-03-18"
 author:
-  name: 'Zeno Rocha'
-  avatar: 'https://github.com/zenorocha.png?size=48'
-highlighted: 'false'
-color: 'orange'
+  name: "Zeno Rocha"
+  avatar: "https://github.com/zenorocha.png?size=48"
+highlighted: "false"
+color: "orange"
 ---
 
 The fine folks from Microsoft invited me to talk about how to build your own VS Code theme.

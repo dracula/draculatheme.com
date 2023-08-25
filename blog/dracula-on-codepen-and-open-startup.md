@@ -1,14 +1,14 @@
 ---
-title: 'Dracula On CodePen And Open Startup'
+title: "Dracula On CodePen And Open Startup"
 excerpt: "I've always admired this concept of 'open startup' in which people gather all their private metrics and make them public."
-createdAt: '2022-06-15'
-updatedAt: '2022-07-01'
+createdAt: "2022-06-15"
+updatedAt: "2022-07-01"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/interview-with-lucas-a.png'
-highlighted: 'false'
-color: 'green'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/interview-with-lucas-a.png"
+highlighted: "false"
+color: "green"
 ---
 
 I've always admired this concept of "[open startup](https://twitter.com/levelsio/status/968219339588493312)" in which people gather all their private metrics and make them public. Dracula is not a startup, but I'm all about transparency with the community, so I decided to create this [/open](/open) page to share all the numbers.

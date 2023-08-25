@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import Link from 'next/link'
-import malarkey from 'malarkey'
-import Topbar from './Topbar'
-import paths from '../lib/paths'
-import GitHubButton from 'react-github-btn'
+import React, { Component } from "react";
+import Link from "next/link";
+import malarkey from "malarkey";
+import Topbar from "./Topbar";
+import paths from "../lib/paths";
+import GitHubButton from "react-github-btn";
 
 class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.malarkey = React.createRef()
+    this.malarkey = React.createRef();
   }
 
   componentDidMount() {
-    this.startTypewriter()
+    this.startTypewriter();
   }
 
   startTypewriter() {
     malarkey(
-      text => {
-        if (!this.malarkey.current) return
-        this.malarkey.current.textContent = text
+      (text) => {
+        if (!this.malarkey.current) return;
+        this.malarkey.current.textContent = text;
       },
       {
         typeSpeed: 50,
@@ -29,76 +29,76 @@ class Header extends Component {
         repeat: true,
       }
     )
-      .type('Vim')
+      .type("Vim")
       .pause()
       .delete()
-      .type('Zsh')
+      .type("Zsh")
       .pause()
       .delete()
-      .type('iTerm')
+      .type("iTerm")
       .pause()
       .delete()
-      .type('VSCode')
+      .type("VSCode")
       .pause()
       .delete()
-      .type('Terminal.app')
+      .type("Terminal.app")
       .pause()
       .delete()
-      .type('JetBrains')
+      .type("JetBrains")
       .pause()
       .delete()
-      .type('Sublime')
+      .type("Sublime")
       .pause()
       .delete()
-      .type('Xcode')
+      .type("Xcode")
       .pause()
       .delete()
-      .type('Slack')
+      .type("Slack")
       .pause()
       .delete()
-      .type('Telegram')
+      .type("Telegram")
       .pause()
       .delete()
-      .type('Emacs')
+      .type("Emacs")
       .pause()
       .delete()
-      .type('Windows Terminal')
+      .type("Windows Terminal")
       .pause()
-      .delete()
+      .delete();
   }
 
   renderDescription() {
-    if (this.props.query.title === 'Wallpaper') {
-      return <h2 className="subtitle">Dark wallpaper collection</h2>
+    if (this.props.query.title === "Wallpaper") {
+      return <h2 className="subtitle">Dark wallpaper collection</h2>;
     }
 
     if (this.props.query.repo) {
       return (
         <h2 className="subtitle">
-          Dark theme for {this.props.query.title}{' '}
+          Dark theme for {this.props.query.title}{" "}
           <Link href="/">
             <a>and {paths.length}+ apps</a>
           </Link>
         </h2>
-      )
+      );
     }
 
     if (
-      this.props.query.title === 'About' ||
-      this.props.query.title === 'Contribute'
+      this.props.query.title === "About" ||
+      this.props.query.title === "Contribute"
     ) {
-      return <h2 className="subtitle">Dark theme for {paths.length}+ apps</h2>
+      return <h2 className="subtitle">Dark theme for {paths.length}+ apps</h2>;
     }
 
     return (
       <h2 className="subtitle">
         Dark theme for <span ref={this.malarkey} className="rotating"></span>
       </h2>
-    )
+    );
   }
 
   renderGithubButtons() {
-    if (this.props.query.title !== 'About Dracula') {
+    if (this.props.query.title !== "About Dracula") {
       return (
         <p className="gh-buttons">
           <GitHubButton
@@ -118,7 +118,7 @@ class Header extends Component {
             Fork
           </GitHubButton>
         </p>
-      )
+      );
     }
   }
 
@@ -139,8 +139,8 @@ class Header extends Component {
           {this.renderGithubButtons()}
         </header>
       </div>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

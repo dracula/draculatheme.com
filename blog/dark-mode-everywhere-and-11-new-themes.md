@@ -1,14 +1,14 @@
 ---
-title: 'Dark Mode Everywhere And 11 New Themes'
+title: "Dark Mode Everywhere And 11 New Themes"
 excerpt: "I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is Night Eye."
-createdAt: '2020-09-29'
-updatedAt: '2021-01-30'
+createdAt: "2020-09-29"
+updatedAt: "2021-01-30"
 author:
   name: Zeno Rocha
-  avatar: 'https://github.com/zenorocha.png?size=48'
-ogImage: '/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png'
-highlighted: 'false'
-color: 'purple'
+  avatar: "https://github.com/zenorocha.png?size=48"
+ogImage: "/static/img/blog/dark-mode-everywhere-and-11-new-themes-a.png"
+highlighted: "false"
+color: "purple"
 ---
 
 I love dark mode and I've been experimenting with different setups lately. One of my favorite tools so far is [Night Eye](https://nighteye.app). What I like about this browser extension is that they convert colors instead of inverting.
