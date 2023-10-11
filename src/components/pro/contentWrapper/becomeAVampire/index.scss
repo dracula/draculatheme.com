@@ -1,0 +1,108 @@
+article.become-a-vampire {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.625rem;
+
+  .title-wrapper {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info {
+    color: var(--neutral-03);
+
+    a,
+    .highlighted {
+      color: var(--green);
+    }
+  }
+
+  .pricing-card {
+    min-width: 40%;
+    padding: 4.5rem 3.75rem 3.75rem 3.75rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.875rem;
+    border: 0.125rem solid var(--green);
+    border-radius: var(--radius-03);
+    color: var(--neutral-02);
+    background-color: var(--background-color-02);
+    background-image: url("/images/pro/polka-dots.svg");
+    box-shadow: 0 1rem 2rem 0 hsla(115, 100%, 75%, 0.24);
+
+    .promo {
+      width: fit-content;
+      position: absolute;
+      transform: translateX(-50%) rotate(-3deg);
+      top: 1.875rem;
+      left: 50%;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.125rem;
+      font-family: var(--font-caveat);
+      font-size: 0.875rem;
+      color: var(--green);
+    }
+
+    .pricing-wrapper {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      font-family: var(--font-satoshi);
+      font-weight: 700;
+      gap: 0.75rem;
+
+      .previous-price {
+        text-decoration: line-through;
+        text-decoration-color: var(--green);
+        font-size: var(--title-03);
+        color: var(--neutral-03);
+      }
+
+      .current-price {
+        font-size: var(--title-04);
+        color: var(--neutral-01);
+      }
+    }
+
+    .features {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: wrap column;
+      gap: var(--text-02);
+      line-height: 1;
+      font-size: var(--text-02);
+      list-style: none;
+
+      li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: var(--neutral-06);
+        background-color: var(--green);
+      }
+    }
+  }
+}

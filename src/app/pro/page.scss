@@ -1,0 +1,51 @@
+section.pro {
+  --pro-card-padding: 3.75rem;
+
+  .container {
+    max-width: var(--max-width);
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    gap: 7.75rem;
+    color: var(--neutral-03);
+  }
+
+  .text {
+    width: 100%;
+    margin: 1em 0 0 0;
+    position: relative;
+    display: flex;
+    flex-flow: wrap column;
+    gap: var(--text-01);
+    line-height: 2;
+
+    .highlighted {
+      color: var(--color);
+    }
+
+    * {
+      margin: 0;
+    }
+  }
+
+  .article-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  article {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  section.pro {
+    .container {
+      gap: 4.5rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.color-copy-btn {
+  width: 100%;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  * {
+    outline: none !important;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

@@ -1,0 +1,37 @@
+article.why-pro {
+  --color: var(--yellow);
+
+  .card-plain {
+    padding: 0;
+  }
+
+  .content {
+    padding: 3.75rem 0 3.75rem 1.875rem;
+  }
+
+  .photo {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  article.why-pro {
+    .card-plain {
+      flex-flow: wrap column;
+
+      .content {
+        padding: 1.875rem;
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+      }
+    }
+  }
+}

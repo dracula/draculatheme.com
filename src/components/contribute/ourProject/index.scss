@@ -1,0 +1,19 @@
+.our-project {
+  max-width: 75rem;
+  padding: 5.25rem 3.75rem 5.625rem 48%;
+  border-radius: var(--radius-03);
+  border: 0.25rem dashed var(--background-color-01);
+  background: var(--background-color-02);
+  background-image: url("/images/contribute/our-project.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 64rem) {
+  .our-project {
+    max-width: 100%;
+    padding: 1.875rem 1.5rem;
+    background-position: left center;
+  }
+}

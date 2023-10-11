@@ -1,0 +1,127 @@
+article.more-than-a-theme {
+  --color: var(--yellow);
+
+  .card-plain {
+    padding: 0;
+    align-items: stretch;
+    gap: 1.875rem;
+
+    .content {
+      padding: 3.75rem 1.875rem 3.75rem 0;
+
+      .cta {
+        margin: 1.5rem 0 0 0;
+      }
+    }
+
+    .book-wrapper {
+      --width: 12.5rem;
+      --height: 20rem;
+
+      padding: 3.75rem 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 37.5rem;
+
+      .book {
+        width: var(--width);
+        height: var(--height);
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateY(-30deg);
+        transition: 1s ease;
+        animation: 1s ease 0s 1 bookAnimation;
+
+        img {
+          width: var(--width);
+          height: var(--height);
+          position: absolute;
+          transform: translateZ(1.5625rem);
+          border-radius: 0 0.125rem 0.125rem 0;
+          background-color: hsl(219, 88%, 3%);
+          box-shadow: 0.375rem 0.375rem 1.5rem hsl(0, 0%, 20%);
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          content: " ";
+        }
+
+        &::before {
+          width: 54px;
+          height: 96%;
+          top: 50%;
+          left: 0;
+          transform: translate(315%, -50%) rotateY(90deg);
+          background-color: var(--neutral-05);
+          background: linear-gradient(
+            90deg,
+            hsl(53, 92%, 66%) 0%,
+            hsl(0, 0%, 98%) 5%,
+            hsl(0, 0%, 100%) 10%,
+            hsl(0, 0%, 98%) 15%,
+            hsl(0, 0%, 100%) 20%,
+            hsl(0, 0%, 98%) 25%,
+            hsl(0, 0%, 100%) 30%,
+            hsl(0, 0%, 98%) 35%,
+            hsl(0, 0%, 100%) 40%,
+            hsl(0, 0%, 98%) 45%,
+            hsl(0, 0%, 100%) 50%,
+            hsl(0, 0%, 98%) 55%,
+            hsl(0, 0%, 100%) 60%,
+            hsl(0, 0%, 98%) 65%,
+            hsl(0, 0%, 100%) 70%,
+            hsl(0, 0%, 98%) 75%,
+            hsl(0, 0%, 100%) 80%,
+            hsl(0, 0%, 98%) 85%,
+            hsl(0, 0%, 100%) 90%,
+            hsl(0, 0%, 98%) 95%,
+            hsl(0, 0%, 100%) 100%
+          );
+        }
+
+        &::after {
+          width: var(--width);
+          height: var(--height);
+          top: 0;
+          left: 0;
+          transform: translateZ(-1.5625rem);
+          border-radius: 0 0.125rem 0.125rem 0;
+          background-color: hsl(219, 88%, 3%);
+          box-shadow: -0.625rem 0 3.375rem 0.625rem hsl(0, 0%, 20%);
+        }
+
+        &:hover {
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  article.more-than-a-theme {
+    .card-plain {
+      .book-wrapper {
+        display: none;
+      }
+
+      .content {
+        padding: 1.875rem;
+      }
+    }
+  }
+}
+
+@keyframes bookAnimation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-30deg);
+  }
+}

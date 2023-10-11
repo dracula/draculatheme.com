@@ -1,0 +1,17 @@
+.contribute {
+  .container {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    gap: 6rem;
+
+    .title-wrapper {
+      width: 100%;
+      text-align: center;
+
+      span {
+        color: var(--neutral-03);
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.row {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  &.is-gapless {
+    gap: 0;
+  }
+}
+
+.col {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  @for $i from 0 through 12 {
+    &.is-#{$i} {
+      flex: none;
+      width: percentage(math.div($i, 12));
+    }
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .row {
+    flex-flow: wrap column;
+  }
+
+  .col {
+    width: 100%;
+
+    @for $i from 0 through 12 {
+      &.is-#{$i} {
+        width: 100%;
+      }
+    }
+  }
+}

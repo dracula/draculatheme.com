@@ -1,0 +1,34 @@
+# dependencies
+/node_modules
+# *-lock.yaml
+
+# testing
+/coverage
+
+# next.js
+/.next
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+*-debug.log*
+
+# local env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Contentlayer
+.contentlayer
+
+auth.json

@@ -1,0 +1,16 @@
+.code-copy-btn {
+  padding: 0;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  cursor: pointer;
+
+  * {
+    outline: none !important;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

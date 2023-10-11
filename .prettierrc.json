@@ -1,0 +1,11 @@
+{
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": "paths.ts",
+      "options": {
+        "printWidth": 500
+      }
+    }
+  ]
+}

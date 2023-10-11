@@ -1,0 +1,161 @@
+article.testimonials {
+  flex-flow: wrap column;
+
+  .slider-container {
+    width: 100%;
+    position: relative;
+    cursor: grab;
+
+    .slide {
+      width: 100%;
+      display: flex;
+      flex-flow: wrap column;
+      align-items: center;
+      gap: 1.125rem;
+
+      .review {
+        width: 100%;
+        padding: 2.625rem;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: wrap column;
+        gap: 1.5rem;
+        border: 0.125rem solid var(--neutral-05);
+        border-radius: var(--radius-03);
+        background-color: var(--background-color-02);
+        background-image: url("/images/pro/polka-dots.svg");
+        box-shadow: var(--box-shadow-02);
+
+        .text,
+        .info,
+        .date {
+          position: relative;
+          z-index: 2;
+        }
+
+        .text {
+          color: var(--neutral-02);
+
+          em {
+            font-style: normal;
+            color: var(--color);
+          }
+        }
+
+        .avatar,
+        .country {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          background-color: var(--background-color-01);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        .info {
+          width: 100%;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          border: none;
+          gap: 1.125rem;
+
+          .name {
+            margin: 0;
+          }
+
+          .avatar {
+            width: 3.75rem;
+            height: 3.75rem;
+            border-radius: 50%;
+          }
+
+          .wrapper {
+            display: flex;
+            flex-flow: wrap column;
+            gap: 0.75rem;
+            color: var(--neutral-01);
+
+            .country {
+              width: 1.5rem;
+              height: 1rem;
+              border-radius: 0.25rem;
+            }
+          }
+
+          &:focus-within,
+          &:hover {
+            .name {
+              color: var(--color);
+            }
+          }
+        }
+
+        .date {
+          width: max-content;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 10%;
+          left: 92%;
+          display: block;
+          text-transform: uppercase;
+          letter-spacing: 0.125rem;
+          font-family: var(--font-caveat);
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: var(--neutral-04);
+        }
+
+        &::before {
+          content: '"';
+          position: absolute;
+          top: 0;
+          left: 0;
+          line-height: 1;
+          font-family: var(--font-jetbrains-mono);
+          font-size: 20rem;
+          color: var(--neutral-05);
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .arrows {
+    width: 110%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+
+    button {
+      width: 1.875rem;
+      height: 1.875rem;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--neutral-04);
+      box-shadow: var(--box-shadow-02);
+
+      &:hover {
+        color: var(--color);
+        background-color: var(--neutral-05);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

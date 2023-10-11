@@ -1,0 +1,133 @@
+header {
+  width: 100%;
+  padding: 0.75rem var(--removed-body-scroll-bar-size, 0) 0.75rem 0;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color-01);
+  box-shadow: var(--box-shadow-03);
+  z-index: 2;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    .brand-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      line-height: 1;
+      text-transform: uppercase;
+      font-family: var(--font-satoshi);
+      font-size: var(--text-02);
+      font-weight: 900;
+
+      .route {
+        padding: 0.25rem 0.375rem;
+        display: flex;
+        border-radius: var(--radius-01);
+        color: var(--background-color-01);
+        background-color: var(--color);
+        transition: background-color 0.32s ease;
+      }
+    }
+
+    .mb-menu {
+      display: none;
+
+      button {
+        font-size: var(--text-03);
+      }
+    }
+
+    .options {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 2em;
+
+      nav {
+        ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          list-style: none;
+
+          li {
+            a {
+              &.github {
+                min-width: 6.625rem;
+                justify-content: flex-start;
+              }
+
+              &.shop {
+                cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>☃️</text></svg>"),
+                  auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  header {
+    .container {
+      flex-flow: wrap column;
+      gap: 1em;
+
+      .wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .mb-menu {
+        display: flex;
+      }
+
+      .options {
+        padding: 0 5% 2rem 5%;
+        display: none;
+        flex-flow: wrap column;
+        gap: 1em;
+
+        .search-wrapper {
+          width: 100%;
+          min-height: 2.625rem;
+        }
+
+        nav {
+          width: 100%;
+
+          ul {
+            flex-flow: wrap column;
+
+            li {
+              width: 100%;
+
+              a {
+                width: 100%;
+                justify-content: flex-start;
+
+                &:not(.primary) {
+                  background-color: var(--background-color-02);
+                }
+              }
+            }
+          }
+        }
+
+        &.is-active {
+          display: flex;
+        }
+      }
+    }
+  }
+}

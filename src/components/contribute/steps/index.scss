@@ -1,0 +1,84 @@
+.steps {
+  max-width: 75rem;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+
+  h3 {
+    width: 100%;
+    margin: 3rem 0 0 0;
+  }
+
+  .row {
+    position: relative;
+    overflow: hidden;
+    align-items: stretch;
+
+    .col {
+      display: flex;
+      flex-flow: wrap column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      min-height: 12.5rem;
+      padding: 2.625rem;
+      position: relative;
+      display: flex;
+      flex-flow: wrap column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border-radius: var(--radius-03);
+      border: 0.25rem dashed var(--background-color-01);
+      background: var(--background-color-02);
+
+      .index {
+        opacity: 0.3;
+        pointer-events: none;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 4%;
+        line-height: 1;
+        font-family: var(--font-satoshi);
+        font-size: 20rem;
+        font-weight: 900;
+        color: var(--background-color-01);
+        z-index: 1;
+      }
+
+      .desc {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+      }
+
+      svg {
+        position: relative;
+        transition: stroke 0.8s ease-in-out;
+        z-index: 2;
+      }
+
+      &.step {
+        min-height: 20rem;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: decimal;
+
+    li {
+      margin: 2em 0;
+    }
+  }
+
+  a {
+    color: var(--color);
+  }
+}
