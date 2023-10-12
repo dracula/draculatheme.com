@@ -17,6 +17,7 @@ article.features {
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 1.5rem;
 
     .row {
