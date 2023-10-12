@@ -32,14 +32,14 @@ footer {
       margin: 0;
       padding: 0;
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       gap: 0.5em;
       list-style: none;
     }
 
     .col {
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       gap: 1em;
 
       &-title {
@@ -57,7 +57,7 @@ footer {
 @media screen and (max-width: 64rem) {
   footer {
     .container {
-      flex-flow: wrap column;
+      flex-direction: column;
     }
   }
 }

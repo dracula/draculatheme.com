@@ -1,7 +1,7 @@
 section.about {
   .container {
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     gap: 2.25rem;
 

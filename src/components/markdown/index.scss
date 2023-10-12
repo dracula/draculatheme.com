@@ -1,7 +1,7 @@
 .markdown {
   width: 100%;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   gap: 1.125rem;
   // font-size: var(--text-02);
   color: var(--neutral-03);
@@ -33,7 +33,7 @@
     margin: 0;
     padding-left: 1.5rem;
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     gap: 1.5rem;
 
     li {

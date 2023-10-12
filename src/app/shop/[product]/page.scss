@@ -4,7 +4,7 @@ section.product {
     max-width: var(--max-width);
     margin: var(--negative-top-margin) 0 0 0;
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     gap: 5.25rem;
 
@@ -19,7 +19,7 @@ section.product {
         position: relative;
         overflow: hidden;
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 0.75rem;
         border-radius: var(--radius-02);
         border: 0.125rem solid transparent;
@@ -79,7 +79,7 @@ section.product {
         flex-grow: 1;
         flex-shrink: 1;
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1.125rem;
 
         .name {
@@ -105,7 +105,7 @@ section.product {
           .quantity-input {
             position: relative;
             display: flex;
-            flex-flow: wrap column;
+            flex-direction: column;
             gap: 0.75rem;
           }
 
@@ -167,14 +167,14 @@ section.product {
       width: 100%;
       position: relative;
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       align-items: center;
       gap: 2.625rem;
 
       .grid {
         width: 100%;
         display: flex;
-        flex-flow: wrap row;
+        flex-direction: row;
         justify-content: space-between;
         gap: 1.5rem;
         list-style: none;
@@ -185,7 +185,7 @@ section.product {
           padding: 0;
           position: relative;
           overflow: hidden;
-          flex-flow: wrap column;
+          flex-direction: column;
           align-items: flex-start;
           justify-content: flex-start;
           gap: 0;
@@ -220,7 +220,7 @@ section.product {
             padding: 1.5rem 1.125rem 1.125rem 1.125rem;
             position: relative;
             display: flex;
-            flex-flow: wrap column;
+            flex-direction: column;
             line-height: 1.8;
             background-color: hsl(0deg, 0%, 0%, 60%);
             z-index: 2;
@@ -274,14 +274,14 @@ section.product {
       width: 100%;
       position: relative;
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       align-items: flex-start;
       gap: 2.625rem;
 
       .grid {
         width: 100%;
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1.5rem;
         list-style: none;
 
@@ -290,7 +290,7 @@ section.product {
           padding: 0.75rem 0.75rem 1.125rem 0.75rem;
           position: relative;
           display: flex;
-          flex-flow: wrap column;
+          flex-direction: column;
           cursor: pointer;
 
           * {
@@ -330,7 +330,7 @@ section.product {
     .container {
       .product {
         width: 100%;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1.125rem;
 
         .image-gallery {

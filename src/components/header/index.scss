@@ -74,7 +74,7 @@ header {
 @media screen and (max-width: 64rem) {
   header {
     .container {
-      flex-flow: wrap column;
+      flex-direction: column;
       gap: 1em;
 
       .wrapper {
@@ -90,7 +90,7 @@ header {
       .options {
         padding: 0 5% 2rem 5%;
         display: none;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1em;
 
         .search-wrapper {
@@ -102,7 +102,7 @@ header {
           width: 100%;
 
           ul {
-            flex-flow: wrap column;
+            flex-direction: column;
 
             li {
               width: 100%;

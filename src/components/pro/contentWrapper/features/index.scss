@@ -1,14 +1,14 @@
 article.features {
   width: 100%;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.625rem;
 
   .title-wrapper {
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -16,7 +16,7 @@ article.features {
   .cards-wrapper {
     width: 100%;
     display: flex;
-    flex-flow: wrap row;
+    flex-direction: row;
     gap: 1.5rem;
 
     .row {
@@ -59,7 +59,7 @@ article.features {
 
         .wheels-wrapper {
           display: flex;
-          flex-flow: wrap column;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
           mask-image: linear-gradient(
@@ -216,7 +216,7 @@ article.features {
 @media screen and (max-width: 64rem) {
   article.features {
     .cards-wrapper {
-      flex-flow: wrap column;
+      flex-direction: column;
 
       .card-spotlight {
         width: 100%;
@@ -230,7 +230,7 @@ article.features {
         &.geometric-color-palette,
         &.hand-picked-typography {
           .content {
-            flex-flow: wrap column;
+            flex-direction: column;
 
             .description {
               padding: 1.875rem 1.875rem 0 1.875rem;

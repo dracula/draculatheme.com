@@ -24,12 +24,12 @@ article.why-pro {
 @media screen and (max-width: 64rem) {
   article.why-pro {
     .card-plain {
-      flex-flow: wrap column;
+      flex-direction: column;
 
       .content {
         padding: 1.875rem;
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         align-items: center;
       }
     }

@@ -1,7 +1,7 @@
 article.fixed-testimonial {
   .card-plain {
     padding: 3.75rem;
-    flex-flow: wrap column;
+    flex-direction: column;
     gap: 1.875rem;
 
     .text,
@@ -38,7 +38,7 @@ article.fixed-testimonial {
 
       .info {
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 0.75rem;
         line-height: 1;
 

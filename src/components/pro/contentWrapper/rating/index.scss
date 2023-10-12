@@ -1,5 +1,5 @@
 article.rating {
-  flex-flow: wrap column;
+  flex-direction: column;
   gap: 1.5rem;
 
   .card-plain {
@@ -52,7 +52,7 @@ article.rating {
 
   .total-score {
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
@@ -73,7 +73,7 @@ article.rating {
 
   .bars {
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     justify-content: space-around;
 
     .bar {
@@ -121,7 +121,7 @@ article.rating {
     .card-plain {
       width: 100%;
       padding: 1.875rem;
-      flex-flow: wrap column;
+      flex-direction: column;
     }
 
     .bars {

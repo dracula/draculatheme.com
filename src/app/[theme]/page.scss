@@ -19,7 +19,7 @@ section.theme {
         position: sticky;
         top: 5.625rem;
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1.5rem;
         border-radius: var(--radius-02);
         background-color: var(--background-color-01);
@@ -28,7 +28,7 @@ section.theme {
           width: 100%;
           position: relative;
           display: flex;
-          flex-flow: wrap column;
+          flex-direction: column;
           gap: 0.75rem;
 
           .title {
@@ -74,7 +74,7 @@ section.theme {
             margin: 0;
             padding: 0;
             display: flex;
-            flex-flow: wrap column;
+            flex-direction: column;
             gap: 0.75rem;
             list-style: none;
           }
@@ -100,7 +100,7 @@ section.theme {
       .main {
         max-width: calc(100% - 21rem);
         display: flex;
-        flex-flow: wrap column;
+        flex-direction: column;
         justify-content: center;
         gap: 1.125rem;
 
@@ -137,7 +137,7 @@ section.theme {
     .container {
       .wrapper {
         padding: 1.5rem;
-        flex-flow: wrap column;
+        flex-direction: column;
 
         .main {
           max-width: 100%;

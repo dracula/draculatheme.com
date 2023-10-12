@@ -2,7 +2,7 @@ section#newsletter {
   .container {
     max-width: var(--max-width);
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     gap: 7.75rem;
   }
@@ -17,7 +17,7 @@ section#newsletter {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-flow: wrap column;
+    flex-direction: column;
     gap: 1.5rem;
     border-radius: var(--radius-03);
     border: 0.125rem solid var(--neutral-05);
@@ -30,7 +30,7 @@ section#newsletter {
 
     .title-wrapper {
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       align-items: center;
       text-align: center;
     }
@@ -123,7 +123,7 @@ section#newsletter {
       padding: 2.25rem 1.5rem 1.5rem 1.5rem;
 
       .input-wrapper {
-        flex-flow: wrap column;
+        flex-direction: column;
 
         input {
           max-width: 100%;

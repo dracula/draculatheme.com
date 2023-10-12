@@ -1,5 +1,5 @@
 article.testimonials {
-  flex-flow: wrap column;
+  flex-direction: column;
 
   .slider-container {
     width: 100%;
@@ -9,7 +9,7 @@ article.testimonials {
     .slide {
       width: 100%;
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
       align-items: center;
       gap: 1.125rem;
 
@@ -21,7 +21,7 @@ article.testimonials {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-flow: wrap column;
+        flex-direction: column;
         gap: 1.5rem;
         border: 0.125rem solid var(--neutral-05);
         border-radius: var(--radius-03);
@@ -80,7 +80,7 @@ article.testimonials {
 
           .wrapper {
             display: flex;
-            flex-flow: wrap column;
+            flex-direction: column;
             gap: 0.75rem;
             color: var(--neutral-01);
 

@@ -85,7 +85,7 @@
 [cmdk-root] {
   width: 100%;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   gap: 2em;
 }
 
@@ -154,7 +154,7 @@
 
 [cmdk-list-sizer] {
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   gap: 1em;
 }
 

@@ -1,17 +1,16 @@
 .about-articles {
   position: relative;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   align-items: center;
   gap: 2.25rem;
 
   article {
-    width: var(--blogpost-max-width);
-    max-width: 100%;
+    max-width: var(--blogpost-max-width);
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-flow: wrap column;
+    flex-direction: column;
     align-items: center;
     border-radius: var(--radius-03);
     border: 0.125rem solid var(--neutral-05);
@@ -46,7 +45,7 @@
       padding: 0;
       position: relative;
       display: flex;
-      flex-flow: wrap column;
+      flex-direction: column;
 
       .image-container {
         width: 100%;

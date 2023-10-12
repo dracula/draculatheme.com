@@ -1,7 +1,7 @@
 .row {
   width: 100%;
   display: flex;
-  flex-flow: wrap row;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
@@ -27,7 +27,7 @@
 
 @media screen and (max-width: 64rem) {
   .row {
-    flex-flow: wrap column;
+    flex-direction: column;
   }
 
   .col {

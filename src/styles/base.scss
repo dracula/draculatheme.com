@@ -65,7 +65,7 @@ main {
   width: 100%;
   padding-bottom: 4.5rem;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   align-items: center;
   gap: 1.5rem;
 }
@@ -75,7 +75,7 @@ section {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-flow: wrap column;
+  flex-direction: column;
   align-items: center;
 
   .container {
