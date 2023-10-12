@@ -58,7 +58,7 @@ const Newsletter = () => {
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               disabled={isSubscribed}
-              placeholder="vladtepes@draculatheme.com"
+              placeholder="vlad@transylvania.com"
             />
             <button
               onClick={handleSubscribe}
