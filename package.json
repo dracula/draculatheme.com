@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "node ./src/lib/generate-rss.mjs && node ./src/lib/generate-changelog-rss.mjs",
-    "prepare": "husky install"
+    "postbuild": "node ./src/lib/generate-rss.mjs && node ./src/lib/generate-changelog-rss.mjs"
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",

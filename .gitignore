@@ -32,3 +32,5 @@ next-env.d.ts
 .contentlayer
 
 auth.json
+
+.husky
