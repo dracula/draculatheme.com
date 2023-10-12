@@ -2,25 +2,21 @@ import "./index.scss";
 
 const OurProject = () => (
   <div className="card our-project">
-    <h2>Our Project</h2>
+    <h2>Readme</h2>
     <div className="text">
       <p>
         Dracula Theme is an open-source project driven by and for the community.
         Most apps that support the theme are contributions from our community.
       </p>
       <p>
-        As much as the team responsible for the theme wants to support all
-        available applications, we would need a lot of collaborators, which is
-        currently unsustainable.
+        As much as the team is responsible for the core theme and wants to
+        support all available applications, we simply don't have the capacity
+        to do it all ourselves.
       </p>
       <p>
-        That's why you, a community member, are essential for this project to
-        keep flying! Below are some guidelines, tips and specifications for you
-        who want to apply the theme to any application.
-      </p>
-      <p>
-        Be sure to check them out, install and integrate Dracula Theme into your
-        projects or use it in your favourite apps!
+        That's why the community is essential for this project to keep evolving.
+        Below are some guidelines, tips, and specifications for those who want
+        to apply the theme to any application.
       </p>
     </div>
   </div>

@@ -14,7 +14,7 @@ const items = [
     name: "copyTemplate",
     desc: (
       <p>
-        Create a new repository based on{" "}
+        Create a new repository based on<br />
         <Link
           href="https://github.com/dracula/template"
           target="blank"
@@ -27,7 +27,7 @@ const items = [
     descDetailed: (
       <>
         You can do it by cloning the repository or just clicking on "Use this
-        template";
+        template.
       </>
     ),
     Icon: IconCopyTemplate,
@@ -36,7 +36,7 @@ const items = [
     name: "useColors",
     desc: (
       <p>
-        Build the theme using the{" "}
+        Build the theme using the<br />
         <Link href="#color-palette" className="inline">
           Color Palette
         </Link>{" "}
@@ -44,7 +44,7 @@ const items = [
       </p>
     ),
     descDetailed:
-      "Edit the template info and upload the file with the theme configs itself (if any) to the repository;",
+      "Edit the template info and upload the file with the theme configs to the repository.",
     Icon: IconUseColors,
   },
   {
@@ -58,12 +58,12 @@ const items = [
           className="inline"
         >
           submit an issue
-        </Link>{" "}
+        </Link><br />
         with a link to your repository.
       </p>
     ),
     descDetailed:
-      "Once the theme is accepted, we will move the repository under the Dracula organization and give you the rights to maintain it.",
+      "We will move the repo under the Dracula org and give you permissions to maintain it.",
     Icon: IconSubmitTheme,
   },
 ];
