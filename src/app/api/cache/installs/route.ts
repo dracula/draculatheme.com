@@ -22,6 +22,12 @@ const fetchAndOrganize = async (installs, path) => {
     );
   }
 
+  if (response.data.type !== "file") {
+    throw new Error(
+      `Expected file content but got ${response.data.type} for repo: ${key}`,
+    );
+  }
+
   if (!response.data.content) {
     throw new Error(`Content not found for repo: ${key}`);
   }
