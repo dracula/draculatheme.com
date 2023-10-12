@@ -2,25 +2,25 @@ import "./page.scss";
 
 import Grid from "src/components/home/grid";
 import Sidebar from "src/components/home/sidebar";
-// import fetchData from "src/lib/fetchData";
+import fetchData from "src/lib/fetchData";
 import paths from "src/lib/paths";
 
-// import { getBasePath, isProd } from "src/lib/environment";
+import { getBasePath, isProd } from "src/lib/environment";
 
 const Home = async () => {
-  // if (isProd()) {
-  //   for (const path of paths) {
-  //     const views = await fetchData(
-  //       `${getBasePath()}/api/views?id=${path.params.theme}`,
-  //     );
+  if (isProd()) {
+    for (const path of paths) {
+      const data = await fetchData(
+        `${getBasePath()}/api/views?id=${path.params.theme}`,
+      );
 
-  //     path.params.views = parseInt(views);
-  //   }
+      path.params.views = parseInt(data.views) || 0;
+    }
 
-  //   paths.sort((a, b) => {
-  //     return b.params.views - a.params.views;
-  //   });
-  // }
+    paths.sort((a, b) => {
+      return b.params.views - a.params.views;
+    });
+  }
 
   return (
     <section className="home">

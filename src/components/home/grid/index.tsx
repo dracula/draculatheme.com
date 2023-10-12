@@ -13,11 +13,7 @@ import categories from "src/lib/filters/categories";
 import platforms from "src/lib/filters/platforms";
 import { useAtom } from "jotai";
 
-const formatViews = (views) =>
-  Number(new Intl.NumberFormat().format(views || 0));
-
 const renderApp = (app, index) => {
-  app.params.views = formatViews(app.params.views);
   return <App key={index} path={app} />;
 };
 

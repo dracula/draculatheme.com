@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
           }}
         >
           <img
-            src="https://draculatheme.vercel.app/images/contribute/our-project.svg"
+            src="https://draculatheme.com/images/contribute/our-project.svg"
             alt="Background"
             style={{
               width: "100%",

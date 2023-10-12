@@ -7,6 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { appFadeInUp } from "src/lib/framerMotion";
 
+const formatViews = (views) =>
+  new Intl.NumberFormat().format(views || 0);
+
 const App = ({ path }) => {
   const control = useAnimation();
   const ref = useRef(null);
@@ -39,7 +42,7 @@ const App = ({ path }) => {
         </div>
         <div className="content">
           <span className="title">{path.params.title}</span>
-          <span className="views">{path.params.views} views</span>
+          <span className="views">{formatViews(path.params.views)} views</span>
         </div>
       </Link>
     </motion.li>

@@ -3,5 +3,5 @@ export function isProd() {
 }
 
 export function getBasePath() {
-  return isProd() ? "https://draculatheme.vercel.app" : "http://localhost:3000";
+  return isProd() ? "https://draculatheme.com" : "http://localhost:3000";
 }

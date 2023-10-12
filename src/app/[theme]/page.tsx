@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const title = theme.title;
   const description = `A dark theme for ${theme.title}`;
-  const ogImage = `https://draculatheme.vercel.app/api/og?description=${description}`;
+  const ogImage = `https://draculatheme.com/api/og?description=${description}`;
 
   return {
     title,
@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://draculatheme.vercel.app/${theme.theme}`,
+      url: `https://draculatheme.com/${theme.theme}`,
       images: [
         {
           url: ogImage,
