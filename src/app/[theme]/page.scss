@@ -13,7 +13,7 @@ section.theme {
       background-color: var(--background-color-02);
 
       .info {
-        width: 20rem;
+        max-width: 20rem;
         height: fit-content;
         padding: 2rem 1.5rem;
         position: sticky;

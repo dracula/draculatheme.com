@@ -7,8 +7,7 @@ section.blogpost {
     justify-content: center;
 
     article {
-      width: var(--blogpost-max-width);
-      max-width: 100%;
+      max-width: var(--blogpost-max-width);
       margin-top: var(--negative-top-margin);
       display: flex;
       flex-direction: column;

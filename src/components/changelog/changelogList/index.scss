@@ -3,8 +3,7 @@ section.changelog {
   position: relative;
 
   .container {
-    width: var(--max-width);
-    max-width: 100%;
+    max-width: var(--max-width);
   }
 
   .logs-list {
