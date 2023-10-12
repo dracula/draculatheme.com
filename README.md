@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# draculatheme.com
+
+> This repo contains the source code for [draculatheme.com](https://draculatheme.com).
+
+![Screenshot](./screenshot.png)
 
 ## Getting Started
 
-First, run the development server:
+1. Install [NodeJS](http://nodejs.org/download/), if you don't have it yet.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. Now clone this repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```sh
+   $ git clone https://github.com/dracula/draculatheme.com.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Then go to the project's folder:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```sh
+   $ cd draculatheme.com
+   ```
 
-## Learn More
+4. Install all dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   $ pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. And finally run:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```sh
+   $ pnpm dev
+   ```
 
-## Deploy on Vercel
+Now you should see the website running in `localhost:3000` :D
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Community
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Twitter](https://twitter.com/draculatheme) - Best for getting updates about themes and new stuff.
+- [GitHub](https://github.com/dracula/dracula-theme/discussions) - Best for asking questions and discussing issues.
+- [Discord](https://draculatheme.com/discord-invite) - Best for hanging out with the community.
+
+## License
+
+[MIT License](./LICENSE) © Dracula Theme
