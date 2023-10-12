@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   description:
     "The most famous dark theme ever created and available everywhere. 🦇",
   openGraph: {
-    url: "https://draculatheme.com/api/og",
+    url: "https://draculatheme.com/images/og.png",
     siteName: "Dracula Theme",
     locale: "en_US",
     type: "website",

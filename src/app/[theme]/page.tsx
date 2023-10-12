@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const title = theme.title;
   const description = `A dark theme for ${theme.title}`;
-  const ogImage = `https://draculatheme.com/api/og?description=${description}`;
+  const ogImage = `https://draculatheme.com/images/og.png`;
 
   return {
     title,
