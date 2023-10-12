@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     template: "%s - Dracula Theme",
   },
   description:
-    "The most famous dark theme ever created and available everywhere. 🦇",
+    "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
   openGraph: {
     url: "https://draculatheme.com/images/og.png",
     siteName: "Dracula Theme",
