@@ -11,11 +11,17 @@ import PPP from "../pro/ppp";
 import Particles from "./particles";
 import Snowfall from "react-snowfall";
 import { fadeIn } from "src/lib/framerMotion";
+import fetchData from "src/lib/fetchData";
 import { motion } from "framer-motion";
 import paths from "src/lib/paths";
 import { usePathname } from "next/navigation";
+import { useQuery } from "react-query";
 
-const Hero = ({ ppp }) => {
+const Hero = () => {
+  const { data } = useQuery("ppp", () =>
+    fetchData("https://ppp.dracula.workers.dev"),
+  );
+
   const pathname = usePathname();
   const pathClass = pathname.substring(1) || "";
 
@@ -35,8 +41,7 @@ const Hero = ({ ppp }) => {
     "/": {
       icon: "/images/hero/dracula-icon.svg",
       title: "Dracula",
-      subtitle:
-        "One theme. All platforms.",
+      subtitle: "One theme. All platforms.",
       cta: "",
       anchor: "",
     },
@@ -50,8 +55,7 @@ const Hero = ({ ppp }) => {
     "/contribute": {
       icon: "/images/hero/moon-icon.svg",
       title: "Contribute to Dracula",
-      subtitle:
-        "\"We learn big things from small experiences\" - Bram Stoker",
+      subtitle: '"We learn big things from small experiences" - Bram Stoker',
       cta: "",
       anchor: "",
     },
@@ -104,7 +108,7 @@ const Hero = ({ ppp }) => {
       )}
       {pathClass === "pro" && (
         <>
-          <PPP ppp={ppp} />
+          <PPP ppp={data} />
           <MatrixRain />
           <Link href="/pro/changelog" className="tag-link">
             <span className="icon">

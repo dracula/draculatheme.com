@@ -15,7 +15,6 @@ import Testimonials from "./testimonials";
 import WhyPro from "./whyPro";
 import { appFadeInUp } from "src/lib/framerMotion";
 import fetchData from "src/lib/fetchData";
-import { getBasePath } from "src/lib/environment";
 import { useQuery } from "react-query";
 
 const Wrapper = ({ content }) => {
@@ -46,7 +45,9 @@ const Wrapper = ({ content }) => {
 };
 
 const ContentWrapper = ({ sales, reviews }) => {
-  const ppp = useQuery("ppp", () => fetchData(`${getBasePath()}/api/ppp`));
+  const { data } = useQuery("ppp", () =>
+    fetchData("https://ppp.dracula.workers.dev"),
+  );
 
   const contentList = [
     <Description />,
@@ -56,7 +57,7 @@ const ContentWrapper = ({ sales, reviews }) => {
     <Features />,
     <MoreThanATheme />,
     <FixedTestimonial />,
-    <BecomeAVampire ppp={ppp} sales={sales} />,
+    <BecomeAVampire ppp={data} sales={sales} />,
     <Rating />,
     <Testimonials reviews={reviews} />,
   ];

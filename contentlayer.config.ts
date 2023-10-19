@@ -65,8 +65,8 @@ const Post = defineDocumentType(() => ({
       required: true,
     },
     highlighted: {
-      type: "boolean",
-      default: false,
+      type: "string",
+      default: "false",
       description: "If the post is highlighted",
     },
   },

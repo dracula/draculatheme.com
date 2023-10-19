@@ -58,7 +58,7 @@ const BlogpostList = () => {
   );
 
   const highlightPost = allPosts
-    // .filter((post) => /true/.test(post.highlighted))
+    .filter((post) => /true/.test(post.highlighted))
     .filter((post) => post.highlighted)
     .slice(0, 1)[0];
 

@@ -2,9 +2,6 @@ const fetchData = async (url, method = "GET") => {
   try {
     const response = await fetch(url, {
       method: method,
-      headers: {
-        "Content-Type": "application/json",
-      },
       next: { revalidate: 3600 },
     });
 

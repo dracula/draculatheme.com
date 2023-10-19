@@ -26,7 +26,7 @@ const BecomeAVampire = ({ ppp, sales }) => {
 
   let gumroadURL = "https://store.draculatheme.com/l/dracula-pro?wanted=true";
 
-  if (ppp.country && ppp.discount) {
+  if (ppp && ppp.country && ppp.discount) {
     promoName = `${countries[ppp.country].name} Promo`;
     beforePrice = 79;
     afterPrice = Number(getDiscount(beforePrice, ppp.discount));

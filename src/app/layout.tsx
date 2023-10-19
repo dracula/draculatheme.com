@@ -67,7 +67,6 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = async ({ children }) => {
-  const ppp = await fetchData(`${getBasePath()}/api/ppp`);
   const githubStars = await fetchData(`${getBasePath()}/api/githubStars`);
 
   return (
@@ -77,7 +76,7 @@ const RootLayout = async ({ children }) => {
       >
         <Providers>
           <Header stars={githubStars} />
-          <Hero ppp={ppp} />
+          <Hero />
           <PageTransition>
             {children}
             <Newsletter />
@@ -85,6 +84,11 @@ const RootLayout = async ({ children }) => {
           <Footer />
         </Providers>
         <script src="https://store.draculatheme.com/js/gumroad.js"></script>
+        <script
+          defer
+          src="https://plausible.io/js/script.js"
+          data-domain="draculatheme.com"
+        ></script>
       </body>
     </html>
   );
