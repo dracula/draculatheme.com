@@ -1,12 +1,13 @@
 # dependencies
 /node_modules
-# *-lock.yaml
+package-lock.json
 
 # testing
 /coverage
 
 # next.js
-/.next
+/.next/
+/out/
 
 # production
 /build
@@ -16,10 +17,17 @@
 *.pem
 
 # debug
-*-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # local env files
-.env*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+auth.json
 
 # vercel
 .vercel
@@ -30,7 +38,3 @@ next-env.d.ts
 
 # Contentlayer
 .contentlayer
-
-auth.json
-
-.husky
