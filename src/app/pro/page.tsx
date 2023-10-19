@@ -12,14 +12,13 @@ export const metadata: Metadata = {
 };
 
 const Pro = async () => {
-  const ppp = await fetchData(`${getBasePath()}/api/ppp`);
   const sales = await fetchData(`${getBasePath()}/api/sales?product=tPfIDt`);
   const reviews = await fetchData(`${getBasePath()}/api/reviews`);
 
   return (
     <section className="pro">
       <div className="container">
-        <ContentWrapper ppp={ppp} sales={sales} reviews={reviews} />
+        <ContentWrapper sales={sales} reviews={reviews} />
       </div>
     </section>
   );

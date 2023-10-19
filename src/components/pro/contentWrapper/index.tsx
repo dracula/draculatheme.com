@@ -14,6 +14,8 @@ import Rating from "./rating";
 import Testimonials from "./testimonials";
 import WhyPro from "./whyPro";
 import { appFadeInUp } from "src/lib/framerMotion";
+import fetchData from "src/lib/fetchData";
+import { getBasePath } from "src/lib/environment";
 
 const Wrapper = ({ content }) => {
   const control = useAnimation();
@@ -42,7 +44,13 @@ const Wrapper = ({ content }) => {
   );
 };
 
-const ContentWrapper = ({ ppp, sales, reviews }) => {
+const ContentWrapper = ({ sales, reviews }) => {
+  let ppp = {};
+
+  useEffect(() => {
+    ppp = fetchData(`${getBasePath()}/api/ppp`);
+  }, []);
+
   const contentList = [
     <Description />,
     <LogoWall />,
