@@ -16,6 +16,7 @@ import WhyPro from "./whyPro";
 import { appFadeInUp } from "src/lib/framerMotion";
 import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
+import { useQuery } from "react-query";
 
 const Wrapper = ({ content }) => {
   const control = useAnimation();
@@ -45,11 +46,7 @@ const Wrapper = ({ content }) => {
 };
 
 const ContentWrapper = ({ sales, reviews }) => {
-  let ppp = {};
-
-  useEffect(() => {
-    ppp = fetchData(`${getBasePath()}/api/ppp`);
-  }, []);
+  const ppp = useQuery("ppp", () => fetchData(`${getBasePath()}/api/ppp`));
 
   const contentList = [
     <Description />,
