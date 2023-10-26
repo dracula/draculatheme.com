@@ -38,10 +38,11 @@ const MetricCard = ({ metric }) => {
 };
 
 const Open = async () => {
-  const subscribers = 7.399;
+  const subscribers = 7399;
+  const legacyViews = 10166543;
 
-  // const twitterReq = await fetchData(`${getBasePath()}/api/twitter`);
-  // const twitter = twitterReq.total || "--";
+  const twitterReq = await fetchData(`${getBasePath()}/api/twitter`);
+  const twitter = twitterReq.total || "--";
 
   const githubReq = await fetchData(`${getBasePath()}/api/githubStars`);
   const github = githubReq.total || "--";
@@ -56,8 +57,8 @@ const Open = async () => {
   );
   const uiSales = uiSalesReq.total || "--";
 
-  // const googleAnalyticsReq = await fetchData(`${getBasePath()}/api/views`);
-  // const googleAnalytics = googleAnalyticsReq.total || "--";
+  const plausibleReq = await fetchData(`${getBasePath()}/api/views`);
+  const plausible = plausibleReq.total + legacyViews || "--";
 
   const metrics = [
     {
@@ -67,17 +68,17 @@ const Open = async () => {
     },
     {
       label: "Twitter Followers",
-      value: "--",
+      value: twitter,
       link: "https://twitter.com/draculatheme",
     },
     {
       label: "Resend Subscribers",
-      value: subscribers,
+      value: new Intl.NumberFormat().format(subscribers),
       link: "https://draculatheme.com/pro/journey#updates",
     },
     {
       label: "Website Pageviews",
-      value: "--",
+      value: new Intl.NumberFormat().format(plausible),
     },
     {
       label: "Dracula UI Sales",

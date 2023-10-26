@@ -1,43 +1,49 @@
 import { NextRequest, NextResponse } from "next/server";
+import { endOfDay, format } from "date-fns";
 
-import { google } from "googleapis";
 import redis from "../../../lib/redis";
 
-const getAuthenticatedClient = () => {
-  const scopes = "https://www.googleapis.com/auth/analytics.readonly";
-  const auth = require("../../../../auth.json");
-  const jwt = new google.auth.JWT(
-    auth.client_email,
-    null,
-    auth.private_key,
-    scopes,
-  );
+const API_BASE_URL = "https://plausible.io/api/v1/stats/aggregate";
+const API_KEY = process.env.PLAUSIBLE_API_KEY;
 
-  return jwt;
+class APIError extends Error {
+  status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = "APIError";
+    this.status = status;
+  }
+}
+
+const buildURL = () => {
+  const today = format(endOfDay(new Date()), "yyyy-MM-dd");
+  return `${API_BASE_URL}?site_id=draculatheme.com&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
 };
 
-const getGoogleAnalyticsData = async () => {
-  const jwt = getAuthenticatedClient();
-  await jwt.authorize();
+const getTotal = async () => {
+  if (!API_KEY) {
+    throw new Error("API key is missing");
+  }
 
-  const result = await google.analyticsreporting("v4").reports.batchGet({
-    auth: jwt,
-    requestBody: {
-      reportRequests: [
-        {
-          viewId: "377676805",
-          dateRanges: [{ startDate: "2013-10-30", endDate: "today" }],
-          metrics: [{ expression: "ga:pageviews" }],
-        },
-      ],
+  const requestOptions: RequestInit = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
     },
-  });
+    redirect: "follow",
+  };
 
-  const total = new Intl.NumberFormat().format(
-    parseInt(result.data.reports[0].data.rows[0].metrics[0].values[0], 10),
-  );
+  const response = await fetch(buildURL(), requestOptions);
+  if (!response.ok) {
+    throw new APIError(
+      `Error fetching data: ${response.statusText}`,
+      response.status,
+    );
+  }
 
-  return { total };
+  const data = await response.json();
+  return { total: data.results.pageviews.value };
 };
 
 const getRedisData = async (id) => {
@@ -52,13 +58,10 @@ export async function GET(request: NextRequest) {
   try {
     if (id) {
       const { views } = await getRedisData(id);
-      return NextResponse.json({ type: "redis", views }, { status: 200 });
+      return NextResponse.json({ type: "redis-cache", views }, { status: 200 });
     } else {
-      const { total } = await getGoogleAnalyticsData();
-      return NextResponse.json(
-        { type: "googleAnalytics", total },
-        { status: 200 },
-      );
+      const total = await getTotal();
+      return NextResponse.json({ type: "total", ...total }, { status: 200 });
     }
   } catch (error) {
     console.error(error);

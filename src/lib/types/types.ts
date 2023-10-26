@@ -29,6 +29,7 @@ type Params = {
     synonyms?: string[];
     theme: string;
     title: string;
+    legacyViews?: number;
     views?: number;
   };
 };

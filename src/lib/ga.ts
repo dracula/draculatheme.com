@@ -1,52 +1,51 @@
-const { google } = require("googleapis");
+import { endOfDay, format } from "date-fns";
 
-const scopes = "https://www.googleapis.com/auth/analytics.readonly";
-const auth = require("../../auth.json");
-const jwt = new google.auth.JWT(
-  auth.client_email,
-  null,
-  auth.private_key,
-  scopes,
-);
+const API_BASE_URL = "https://plausible.io/api/v1/stats/aggregate";
+const API_KEY = process.env.PLAUSIBLE_API_KEY;
+
+class APIError extends Error {
+  status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = "APIError";
+    this.status = status;
+  }
+}
+
+function buildURL(id) {
+  const today = format(endOfDay(new Date()), "yyyy-MM-dd");
+  return `${API_BASE_URL}?site_id=draculatheme.com&filters=event:page==/${id}&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
+}
 
 export async function getData(id) {
-  await jwt.authorize();
+  if (!API_KEY) {
+    throw new Error("API key is missing");
+  }
 
-  const result = await google.analyticsreporting("v4").reports.batchGet({
-    auth: jwt,
-    requestBody: {
-      reportRequests: [
-        {
-          viewId: "78543755",
-          dateRanges: [{ startDate: "2013-10-30", endDate: "today" }],
-          metrics: [{ expression: "ga:pageviews" }],
-          dimensions: [{ name: "ga:pagePath" }],
-          dimensionFilterClauses: [
-            {
-              filters: [
-                {
-                  operator: "EXACT",
-                  dimensionName: "ga:pagePath",
-                  expressions: [`/${id}`],
-                },
-                {
-                  operator: "EXACT",
-                  dimensionName: "ga:pagePath",
-                  expressions: [`/${id}/`],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  });
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", `Bearer ${API_KEY}`);
 
-  const totalWithoutTrailingSlash =
-    parseInt(result.data.reports[0].data.rows[0].metrics[0].values[0], 10) || 0;
-  const totalWithTrailingSlash =
-    parseInt(result.data.reports[0].data.rows[1]?.metrics[0].values[0], 10) ||
-    0;
+  const requestOptions: RequestInit = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+    next: { revalidate: 3600 },
+  };
 
-  return totalWithoutTrailingSlash + totalWithTrailingSlash;
+  try {
+    const response = await fetch(buildURL(id), requestOptions);
+
+    if (!response.ok) {
+      throw new APIError(
+        `Error fetching data: ${response.statusText}`,
+        response.status,
+      );
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
 }

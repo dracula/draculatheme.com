@@ -10,7 +10,7 @@ const fetchAndOrganize = async (views, path) => {
   const key = path.params.theme;
   const value = await getData(key);
 
-  return (views[key] = value);
+  return (views[key] = value.results.pageviews.value + path.params.legacyViews);
 };
 
 export async function GET() {
