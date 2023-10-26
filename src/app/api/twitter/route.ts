@@ -5,7 +5,6 @@ export async function GET() {
 
   try {
     const response = await fetch(
-      // `https://api.twitter.com/2/users/${userId}?user.fields=public_metrics`,
       `https://api.twitter.com/1.1/users/show.json?user_id=${userId}`,
       {
         headers: {

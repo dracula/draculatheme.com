@@ -2,7 +2,7 @@
 
 > This repo contains the source code for [draculatheme.com](https://draculatheme.com).
 
-![Screenshot](./screenshot.png)
+![Preview](./preview.gif)
 
 ## Getting Started
 
@@ -23,16 +23,16 @@
 4. Install all dependencies:
 
    ```sh
-   $ pnpm install
+   $ npm install
    ```
 
 5. And finally run:
 
    ```sh
-   $ pnpm dev
+   $ npm dev
    ```
 
-Now you should see the website running in `localhost:3000` :D
+Now you should see the website running in `localhost:3000` 😁
 
 ## Community
 

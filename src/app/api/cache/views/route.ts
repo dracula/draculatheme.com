@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getData } from "src/lib/ga";
+import { getData } from "src/lib/plausible";
 import pLimit from "p-limit";
 import paths from "src/lib/paths";
 import redis from "src/lib/redis";
@@ -10,7 +10,9 @@ const fetchAndOrganize = async (views, path) => {
   const key = path.params.theme;
   const value = await getData(key);
 
-  return (views[key] = value.results.pageviews.value + path.params.legacyViews);
+  const legacyViews = path.params.legacyViews ? path.params.legacyViews : 0;
+
+  return (views[key] = value.results.pageviews.value + legacyViews);
 };
 
 export async function GET() {
