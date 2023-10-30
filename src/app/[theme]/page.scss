@@ -13,7 +13,6 @@ section.theme {
       background-color: var(--background-color-02);
 
       .info {
-        max-width: 20rem;
         height: fit-content;
         padding: 2rem 1.5rem;
         position: sticky;
@@ -98,7 +97,7 @@ section.theme {
       }
 
       .main {
-        max-width: calc(100% - 21rem);
+        width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -117,7 +116,8 @@ section.theme {
           background-color: var(--background-color-01);
 
           img {
-            width: 100%;
+            width: auto;
+            height: auto;
             border-radius: var(--radius-02);
             object-fit: contain;
             object-position: center;
@@ -140,7 +140,7 @@ section.theme {
         flex-direction: column;
 
         .main {
-          max-width: 100%;
+          width: 100%;
 
           .preview {
             min-height: auto;

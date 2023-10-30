@@ -1,9 +1,15 @@
+import {
+  BugIcon,
+  FolderDownIcon,
+  GithubIcon,
+  PenSquareIcon,
+} from "lucide-react";
+
 import Contributor from "../contributor";
-import { GithubIcon, PenSquareIcon, FolderDownIcon, BugIcon } from "lucide-react";
 import Link from "next/link";
 
 const Info = ({ theme, contributors }) => (
-  <div className="info">
+  <div className="col info">
     <div className="item">
       <span className="title">Details</span>
       <Link

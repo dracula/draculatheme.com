@@ -6,11 +6,11 @@ import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
 import paths from "src/lib/paths";
 
-// export async function generateStaticParams() {
-//   return paths.map((path) => ({
-//     theme: path.params.theme,
-//   }));
-// }
+export async function generateStaticParams() {
+  return paths.map((path) => ({
+    theme: path.params.theme,
+  }));
+}
 
 export async function generateMetadata({
   params,

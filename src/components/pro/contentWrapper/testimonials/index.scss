@@ -3,7 +3,10 @@ article.testimonials {
 
   .slider-container {
     width: 100%;
+    min-height: 100dvh;
     position: relative;
+    display: flex;
+    align-items: center;
     cursor: grab;
 
     .slide {
@@ -50,6 +53,8 @@ article.testimonials {
           position: relative;
           overflow: hidden;
           display: flex;
+          align-items: center;
+          justify-content: center;
           background-color: var(--background-color-01);
 
           img {
@@ -101,11 +106,7 @@ article.testimonials {
 
         .date {
           width: max-content;
-          position: absolute;
-          transform: translate(-50%, -50%);
-          top: 10%;
-          left: 92%;
-          display: block;
+          display: inline-flex;
           text-transform: uppercase;
           letter-spacing: 0.125rem;
           font-family: var(--font-caveat);

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const duration = 0.4;
 
-const CodeCopyBtn = ({ children, textToCopy }) => {
+const CodeCopyBtn = ({ textToCopy }) => {
   const [isCopied, setIsCopied] = useState(false);
   const pathLength = useMotionValue(0);
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
@@ -19,10 +19,9 @@ const CodeCopyBtn = ({ children, textToCopy }) => {
     pressed: (isCopied) => ({
       opacity: isCopied ? 0 : 1,
       scale: 0.95,
-      strokeWidth: 1,
     }),
     copied: { opacity: 0 },
-    notCopied: { stroke: "var(--neutral-04)", strokeWidth: 2, opacity: 1 },
+    notCopied: { stroke: "var(--neutral-04)", opacity: 1 },
   };
 
   const tickVariants = {

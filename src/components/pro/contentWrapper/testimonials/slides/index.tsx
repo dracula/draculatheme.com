@@ -1,9 +1,13 @@
 "use client";
 
+import * as Avatar from "@radix-ui/react-avatar";
+
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 
 import Image from "next/image";
 import Link from "next/link";
+import { User2Icon } from "lucide-react";
+import { formatDistanceToNow } from "date-fns";
 import { useRef } from "react";
 import { wrap } from "@popmotion/popcorn";
 
@@ -58,26 +62,6 @@ const Slides = ({ reviews, pages, currentPage, setPage, direction }) => {
     }
   };
 
-  const relativeTime = (date: Date | string): string => {
-    const now = new Date();
-    const diffInSeconds = (now.getTime() - new Date(date).getTime()) / 1000;
-    const diffInMinutes = diffInSeconds / 60;
-    const diffInHours = diffInMinutes / 60;
-    const diffInDays = diffInHours / 24;
-
-    const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-
-    if (Math.abs(diffInDays) > 1) {
-      return rtf.format(Math.round(-diffInDays), "day");
-    } else if (Math.abs(diffInHours) > 1) {
-      return rtf.format(Math.round(-diffInHours), "hour");
-    } else if (Math.abs(diffInMinutes) > 1) {
-      return rtf.format(Math.round(-diffInMinutes), "minute");
-    } else {
-      return rtf.format(Math.round(-diffInSeconds), "second");
-    }
-  };
-
   return (
     <AnimatePresence initial={false} custom={direction}>
       <LayoutGroup id="slider-layout-group">
@@ -111,14 +95,15 @@ const Slides = ({ reviews, pages, currentPage, setPage, direction }) => {
                   target="_blank"
                   className="info"
                 >
-                  <div className="avatar">
-                    <Image
+                  <Avatar.Root className="avatar">
+                    <Avatar.Image
                       src={`https://github.com/${reviewValue.github}.png?size=140`}
-                      width={100}
-                      height={100}
                       alt={reviewValue.name}
                     />
-                  </div>
+                    <Avatar.Fallback delayMs={600}>
+                      <User2Icon />
+                    </Avatar.Fallback>
+                  </Avatar.Root>
                   <div className="col wrapper">
                     <p className="name">{reviewValue.name}</p>
                     <div className="country">
@@ -131,7 +116,11 @@ const Slides = ({ reviews, pages, currentPage, setPage, direction }) => {
                     </div>
                   </div>
                 </Link>
-                <span className="date">{relativeTime(reviewValue.date)}</span>
+                <span className="date">
+                  {formatDistanceToNow(new Date(reviewValue.date), {
+                    addSuffix: true,
+                  })}
+                </span>
               </div>
             ))}
           </motion.div>

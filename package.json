@@ -12,6 +12,7 @@
   "dependencies": {
     "@octokit/rest": "^20.0.2",
     "@popmotion/popcorn": "^0.4.4",
+    "@radix-ui/react-avatar": "^1.0.4",
     "@vercel/og": "^0.5.18",
     "airtable": "^0.12.2",
     "cmdk": "^0.2.0",

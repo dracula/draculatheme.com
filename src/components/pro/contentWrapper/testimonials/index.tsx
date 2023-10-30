@@ -5,7 +5,15 @@ import Slides from "./slides";
 import { useState } from "react";
 
 const Testimonials = ({ reviews }) => {
-  if (!reviews || !Array.isArray(reviews) || reviews.length === 0) {
+  if (!reviews) {
+    return null;
+  }
+
+  if (!Array.isArray(reviews)) {
+    reviews = Object.values(reviews);
+  }
+
+  if (reviews.length === 0) {
     return null;
   }
 

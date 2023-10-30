@@ -1,3 +1,5 @@
+"use client";
+
 import "./index.scss";
 
 import CardPlain from "../../wrappers/cardPlain";
@@ -24,40 +26,54 @@ const testimonials = [
   },
 ];
 
+const getRandomTestimonial = () => {
+  const randomIndex = Math.floor(Math.random() * testimonials.length);
+  return testimonials[randomIndex];
+};
+
+const TestimonialItem = ({ testimonial }) => {
+  const { content, author } = testimonial;
+  const { avatar, name, title, location } = author;
+
+  return (
+    <>
+      <div className="text">
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
+      <div className="author">
+        <div className="pic">
+          {avatar && (
+            <Image
+              src={`/images/pro/${avatar}`}
+              width={100}
+              height={100}
+              alt={name}
+            />
+          )}
+        </div>
+        <div className="info">
+          <div className="author-name">
+            <span>{name}</span>
+          </div>
+          <div className="author-title">
+            <span>{title}</span>
+          </div>
+          <div className="author-location">
+            <span>{location}</span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const FixedTestimonial = () => {
-  const random = Math.floor(Math.random() * Math.floor(testimonials.length));
+  const testimonial = getRandomTestimonial();
 
   return (
     <article className="fixed-testimonial">
       <CardPlain>
-        <div className="text">
-          <div
-            dangerouslySetInnerHTML={{ __html: testimonials[random].content }}
-          />
-        </div>
-        <div className="author">
-          <div className="pic">
-            {testimonials[random].author.avatar && (
-              <Image
-                src={`/images/pro/${testimonials[random].author.avatar}`}
-                width={100}
-                height={100}
-                alt={testimonials[random].author.name}
-              />
-            )}
-          </div>
-          <div className="info">
-            <div className="author-name">
-              <span>{testimonials[random].author.name}</span>
-            </div>
-            <div className="author-title">
-              <span>{testimonials[random].author.title}</span>
-            </div>
-            <div className="author-location">
-              <span>{testimonials[random].author.location}</span>
-            </div>
-          </div>
-        </div>
+        <TestimonialItem testimonial={testimonial} />
       </CardPlain>
     </article>
   );

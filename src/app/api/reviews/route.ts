@@ -25,7 +25,7 @@ export async function GET() {
       };
     });
 
-    return NextResponse.json([...reviews], { status: 200 });
+    return NextResponse.json(reviews, { status: 200 });
   } catch (error) {
     console.error("Error fetching from Airtable:", error);
     return NextResponse.json([], { status: 400 });

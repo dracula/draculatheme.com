@@ -12,11 +12,13 @@ const Markdown: FC<MarkdownProps> = ({ markdown }) => {
 
   const MarkdownComponents: object = {
     pre({ children }) {
-      const textToCopy = children?.[0]?.props?.children?.[0] || "";
+      const textToCopy = children?.props?.children || "";
+
+      console.log(children);
 
       return (
         <pre>
-          <CodeCopyBtn textToCopy={textToCopy}>{children}</CodeCopyBtn>
+          <CodeCopyBtn textToCopy={textToCopy} />
           {children}
         </pre>
       );

@@ -7,11 +7,11 @@ import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
 import products from "src/lib/shop";
 
-// export async function generateStaticParams() {
-//   return products.map((product) => ({
-//     product: product.params.slug,
-//   }));
-// }
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    product: product.params.slug,
+  }));
+}
 
 const fetchProduct = async (id) => {
   return fetchData(`${getBasePath()}/api/products?id=${id}`);

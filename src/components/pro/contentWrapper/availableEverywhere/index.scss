@@ -60,13 +60,14 @@ article.available-everywhere {
         position: relative;
         overflow-x: auto;
         display: flex;
-        justify-content: center;
 
         .list {
+          width: 100%;
           margin: 0;
           padding: 1rem 0 0 0;
           list-style: none;
-          display: flex;
+          display: inline-flex;
+          justify-content: center;
           gap: 0.75rem;
 
           li {
@@ -147,6 +148,12 @@ article.available-everywhere {
         .select {
           width: 100%;
           max-width: 100%;
+        }
+
+        .color-picker {
+          .list {
+            justify-content: flex-start;
+          }
         }
       }
     }
