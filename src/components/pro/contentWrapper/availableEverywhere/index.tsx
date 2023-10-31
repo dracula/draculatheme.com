@@ -8,7 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import CardPlain from "../../wrappers/cardPlain";
 import ColorPicker from "./colorPicker";
 import Image from "next/image";
-import Select from "react-select";
+import SelectComponent from "./select";
 import apps from "src/lib/pro";
 import { textStagger } from "src/lib/framerMotion";
 
@@ -103,52 +103,7 @@ const AvailableEverywhere = () => {
             >
               Select and see the variants in the apps
             </motion.span>
-            <Select
-              instanceId={"theme"}
-              className="select"
-              defaultValue={apps[apps.length - 3]}
-              options={apps}
-              onChange={(selectedOption) => {
-                setSelectedOption(selectedOption);
-              }}
-              isSearchable={true}
-              styles={{
-                option: (styles) => ({
-                  ...styles,
-                  cursor: "pointer",
-                  borderRadius: "var(--radius-01)",
-                }),
-                control: (styles) => ({
-                  ...styles,
-                  cursor: "pointer",
-                  border: ".125rem solid var(--yellow)",
-                  borderRadius: "var(--radius-01)",
-                }),
-                menu: (styles) => ({
-                  ...styles,
-                  padding: ".5rem",
-                  borderRadius: "var(--radius-01)",
-                }),
-              }}
-              theme={(theme) => ({
-                ...theme,
-                borderRadius: 0,
-                cursor: "pointer",
-                colors: {
-                  ...theme.colors,
-                  neutral0: "var(--background-color-02)", // Closed - Background
-                  neutral10: `var(--yellow)`, // Closed - Arrow
-                  neutral20: `var(--yellow)`, // Closed - Border
-                  neutral30: `var(--yellow)`, // Closed - Border Hover
-                  neutral40: `var(--yellow)`, // Closed - Arrow Hover
-                  neutral60: `var(--yellow)`, // Opened - Arrow
-                  neutral80: `var(--yellow)`, // Closed - Text
-                  primary: `var(--yellow)`, // Opened - Border
-                  primary25: "var(--background-color-01)", // Opened - Active
-                  primary50: "var(--background-color-01)", // Opened - Focus
-                },
-              })}
-            />
+            <SelectComponent setSelectedOption={setSelectedOption} />
             <ColorPicker
               colorMap={colorMap}
               variant={variant}

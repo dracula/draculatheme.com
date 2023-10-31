@@ -1,9 +1,9 @@
 article.testimonials {
   flex-direction: column;
+  gap: 1.125rem;
 
   .slider-container {
     width: 100%;
-    min-height: 100dvh;
     position: relative;
     display: flex;
     align-items: center;
@@ -131,21 +131,13 @@ article.testimonials {
   }
 
   .arrows {
-    width: 110%;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    z-index: 2;
+    justify-content: center;
+    gap: 1.125rem;
 
     button {
-      width: 1.875rem;
-      height: 1.875rem;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background-color: var(--neutral-04);
+      min-width: 8rem;
       box-shadow: var(--box-shadow-02);
 
       &:hover {

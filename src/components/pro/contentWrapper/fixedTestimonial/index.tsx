@@ -2,6 +2,8 @@
 
 import "./index.scss";
 
+import { useEffect, useState } from "react";
+
 import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
 
@@ -68,14 +70,22 @@ const TestimonialItem = ({ testimonial }) => {
 };
 
 const FixedTestimonial = () => {
-  const testimonial = getRandomTestimonial();
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
+  useEffect(() => {
+    const testimonial = getRandomTestimonial();
+
+    setSelectedTestimonial(testimonial);
+  }, []);
 
   return (
-    <article className="fixed-testimonial">
-      <CardPlain>
-        <TestimonialItem testimonial={testimonial} />
-      </CardPlain>
-    </article>
+    selectedTestimonial && (
+      <article className="fixed-testimonial">
+        <CardPlain>
+          <TestimonialItem testimonial={selectedTestimonial} />
+        </CardPlain>
+      </article>
+    )
   );
 };
 

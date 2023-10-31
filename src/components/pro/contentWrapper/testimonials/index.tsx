@@ -20,17 +20,27 @@ const Testimonials = ({ reviews }) => {
   const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
 
   const pages = Array.from(
-    { length: Math.ceil(reviews.length / 3) },
+    { length: Math.ceil(reviews.length / 2) },
     (_, i) => i,
   );
 
   const setPage = (newPage, newDirection) => {
-    if (!newDirection) newDirection = newPage - currentPage;
+    if (newPage < 0) {
+      newPage = 0;
+    } else if (newPage >= pages.length) {
+      newPage = pages.length - 1;
+    }
+
+    if (!newDirection) {
+      newDirection = newPage - currentPage;
+    }
+
     setCurrentPage([newPage, newDirection]);
   };
 
   return (
     <article className="testimonials">
+      <Pagination pages={pages} currentPage={currentPage} setPage={setPage} />
       <Slides
         reviews={reviews}
         pages={pages}
@@ -38,7 +48,6 @@ const Testimonials = ({ reviews }) => {
         direction={direction}
         setPage={setPage}
       />
-      <Pagination pages={pages} currentPage={currentPage} setPage={setPage} />
     </article>
   );
 };

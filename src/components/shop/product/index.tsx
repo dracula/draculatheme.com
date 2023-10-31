@@ -1,6 +1,7 @@
 "use client";
 
 import ImageGallery from "./imageGallery";
+import Link from "next/link";
 import QuantityInput from "./quantityInput";
 import SizeSelect from "./sizeSelect";
 import { useState } from "react";
@@ -47,7 +48,7 @@ const Product = ({ product }) => {
                 />
               )}
             </div>
-            <a
+            <Link
               href={`https://store.draculatheme.com/l/${
                 product.slug
               }?wanted=true&variant=${
@@ -56,7 +57,7 @@ const Product = ({ product }) => {
               className="primary add-to-cart"
             >
               <span>Add to cart</span>
-            </a>
+            </Link>
           </>
         )}
       </div>

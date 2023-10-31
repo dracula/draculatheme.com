@@ -12,6 +12,7 @@ const Pagination = ({ pages, currentPage, setPage }) => {
         <span className="icon">
           <ArrowLeftIcon />
         </span>
+        <span>Prev</span>
       </button>
       <button
         disabled={currentPage === pages.length - 1}
@@ -19,6 +20,7 @@ const Pagination = ({ pages, currentPage, setPage }) => {
         title="Next"
         className="right"
       >
+        <span>Next</span>
         <span className="icon">
           <ArrowRightIcon />
         </span>
