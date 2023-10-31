@@ -6,6 +6,7 @@ import { GithubIcon, MenuIcon } from "lucide-react";
 
 import CommandMenu from "./commandMenu";
 import Link from "next/link";
+import PromoBanner from "./promoBanner";
 import { useState } from "react";
 
 const Header = ({ stars }) => {
@@ -31,6 +32,7 @@ const Header = ({ stars }) => {
 
   return (
     <header>
+      <PromoBanner />
       <div className="container">
         <div className="wrapper">
           <Link href={"/"} onClick={() => isActive && setIsActive(false)}>

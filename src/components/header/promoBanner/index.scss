@@ -1,0 +1,20 @@
+.promo-banner {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border: none;
+  font-weight: 700;
+  color: var(--neutral-06);
+  background-color: var(--orange);
+
+  .container {
+    justify-content: center;
+  }
+
+  &:hover {
+    color: var(--neutral-05);
+  }
+}

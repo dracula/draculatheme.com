@@ -1,15 +1,18 @@
 header {
   width: 100%;
-  padding: 0.75rem var(--removed-body-scroll-bar-size, 0) 0.75rem 0;
+  padding: 0 var(--removed-body-scroll-bar-size, 0) 0 0;
   position: fixed;
   top: 0;
   display: flex;
+  flex-flow: wrap column;
+  align-items: center;
   justify-content: center;
   background-color: var(--background-color-01);
   box-shadow: var(--box-shadow-03);
   z-index: 2;
 
   .container {
+    padding: 0.75rem 0;
     display: flex;
     align-items: center;
     gap: 2em;
