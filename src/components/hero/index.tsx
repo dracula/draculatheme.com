@@ -7,7 +7,7 @@ import { RssIcon, TagIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import MatrixRain from "../pro/codeRain";
-import PPP from "../pro/ppp";
+import PPP from "./ppp";
 import Particles from "./particles";
 import Snowfall from "react-snowfall";
 import { fadeIn } from "src/lib/framerMotion";
