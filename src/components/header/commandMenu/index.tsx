@@ -3,7 +3,6 @@ import "./index.scss";
 import {
   BarChart3Icon,
   BookOpenCheckIcon,
-  CircleSlash,
   CircleSlashIcon,
   CoffeeIcon,
   CommandIcon,
@@ -23,12 +22,29 @@ import { useRouter } from "next/navigation";
 
 const CommandMenu = () => {
   const appsCount = paths.length;
-
   const router = useRouter();
+
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
 
-  const toggleOpen = useCallback(() => setOpen((prevOpen) => !prevOpen), []);
+  const toggleOpen = useCallback(() => {
+    setOpen((prevOpen) => !prevOpen);
+  }, []);
+
+  const navigate = useCallback(
+    (route) => {
+      router.push(route);
+      toggleOpen();
+    },
+    [router, toggleOpen],
+  );
+
+  const handleSearchInputChange = useCallback(
+    (newValue) => {
+      setSearch(newValue.trim());
+    },
+    [search],
+  );
 
   const handleKeyDown = useCallback(
     (e) => {
@@ -45,30 +61,28 @@ const CommandMenu = () => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
-  const navigate = useCallback(
-    (route) => {
-      router.push(route);
-      toggleOpen();
-    },
-    [router, toggleOpen],
-  );
-
   const renderSearchResults = () => {
+    if (!search) return null;
+
     const searchMatch = paths.filter((app) =>
       app.params.title.toLowerCase().includes(search.toLowerCase()),
     );
 
-    return searchMatch.map((app, index) => (
-      <Command.Item
-        key={index}
-        onSelect={() => navigate(`/${app.params.theme}`)}
-      >
-        <span className="icon">
-          <StickerIcon />
-        </span>
-        <span>{app.params.title}</span>
-      </Command.Item>
-    ));
+    return (
+      <Command.Group heading="Apps">
+        {searchMatch.map((app) => (
+          <Command.Item
+            key={app.params.theme}
+            onSelect={() => navigate(`/${app.params.theme}`)}
+          >
+            <span className="icon">
+              <StickerIcon />
+            </span>
+            <span>{app.params.title}</span>
+          </Command.Item>
+        ))}
+      </Command.Group>
+    );
   };
 
   return (
@@ -98,7 +112,7 @@ const CommandMenu = () => {
           <Command.Input
             placeholder="Search for a theme"
             value={search}
-            onValueChange={setSearch}
+            onValueChange={handleSearchInputChange}
           />
           <span className="icon search">
             <SearchIcon />
@@ -111,11 +125,7 @@ const CommandMenu = () => {
             </span>
             <span>No results found.</span>
           </Command.Empty>
-          {search ? (
-            <Command.Group heading="Apps">
-              {renderSearchResults()}
-            </Command.Group>
-          ) : null}
+          {renderSearchResults()}
           <Command.Group heading="Pages">
             <Command.Item onSelect={() => navigate("/")}>
               <span className="icon inline">
