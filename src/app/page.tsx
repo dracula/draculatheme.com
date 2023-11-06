@@ -30,7 +30,7 @@ const Home = async () => {
   }
 
   return (
-    <section className="home">
+    <section id="apps" className="home">
       <div className="container">
         <Sidebar />
         <div className="apps-wrapper">

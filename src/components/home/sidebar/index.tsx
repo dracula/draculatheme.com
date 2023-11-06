@@ -41,7 +41,6 @@ const Sidebar = () => {
   const [categoriesFilters, setCategoriesFilters] = useAtom(
     categoriesFiltersAtom,
   );
-
   const [search, setSearch] = useAtom(searchAtom);
 
   const soundUrl = "/sounds/click.mp3";
@@ -52,6 +51,7 @@ const Sidebar = () => {
       index === position ? !item : false,
     );
     setPlatformsFilters(newPlatformsFilters);
+    scrollToTop();
   };
 
   const handleOnChangeCategories = (position) => {
@@ -59,6 +59,14 @@ const Sidebar = () => {
       index === position ? !item : false,
     );
     setCategoriesFilters(newCategoriesFilters);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    const appsElement = document.querySelector("#apps");
+    if (appsElement) {
+      appsElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -96,7 +104,7 @@ const Sidebar = () => {
           <FilterOption
             key={index}
             id={`platforms-${platform.value}`}
-            group={"platforms"}
+            group="platforms"
             name={platform.name}
             value={platform.value}
             checked={platformsFilters[index]}
@@ -113,7 +121,7 @@ const Sidebar = () => {
           <FilterOption
             key={index}
             id={`categories-${category.value}`}
-            group={"categories"}
+            group="categories"
             name={category.name}
             value={category.value}
             checked={categoriesFilters[index]}
