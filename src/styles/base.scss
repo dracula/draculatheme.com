@@ -39,23 +39,20 @@
   }
 }
 
-html {
-  text-size-adjust: 100%;
-  font-size: 100%;
-  font-variation-settings: normal;
-}
-
 html,
 body {
   margin: 0;
   padding: 0;
-  word-break: unset;
+  word-break: unset !important;
+}
+
+html {
+  font-size: 100% !important;
 }
 
 body {
-  line-height: 1.8;
   font-family: var(--font-inter);
-  font-size: var(--base-size);
+  font-size: var(--base-size) !important;
   font-weight: 500;
   color: var(--neutral-02);
   background-color: var(--background-color-01);
