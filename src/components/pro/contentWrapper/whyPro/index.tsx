@@ -8,7 +8,7 @@ const WhyPro = () => {
   return (
     <article className="why-pro">
       <CardPlain>
-        <div className="col content">
+        <div className="lx-col content">
           <span className="title s">Why Dracula PRO</span>
           <div className="text">
             <p>
@@ -33,7 +33,7 @@ const WhyPro = () => {
             </p>
           </div>
         </div>
-        <div className="col photo">
+        <div className="lx-col photo">
           <Image
             src="/images/pro/why-dracula.jpg"
             alt="Zeno Rocha"

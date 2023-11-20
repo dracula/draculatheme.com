@@ -9,7 +9,7 @@ import Contributor from "../contributor";
 import Link from "next/link";
 
 const Info = ({ theme, contributors }) => (
-  <div className="col info">
+  <div className="lx-col info">
     <div className="item">
       <span className="title">Details</span>
       <Link

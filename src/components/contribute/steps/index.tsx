@@ -14,7 +14,8 @@ const items = [
     name: "copyTemplate",
     desc: (
       <p>
-        Create a new repository based on<br />
+        Create a new repository based on
+        <br />
         <Link
           href="https://github.com/dracula/template"
           target="blank"
@@ -36,7 +37,8 @@ const items = [
     name: "useColors",
     desc: (
       <p>
-        Build the theme using the<br />
+        Build the theme using the
+        <br />
         <Link href="#color-palette" className="inline">
           Color Palette
         </Link>{" "}
@@ -58,7 +60,8 @@ const items = [
           className="inline"
         >
           submit an issue
-        </Link><br />
+        </Link>
+        <br />
         with a link to your repository.
       </p>
     ),
@@ -91,14 +94,14 @@ const Steps = () => {
   return (
     <div className="steps">
       <h2>How do I submit a new theme?</h2>
-      <div className="row">
+      <div className="lx-row">
         {items.map((step, index) => (
           <div
             key={index}
             aria-label={`Step 0${index + 1}`}
             onMouseOver={() => handleMouseOver(step.name)}
             onMouseOut={() => handleMouseOut(step.name)}
-            className="col"
+            className="lx-col"
           >
             <div className="card step">
               <span className="index">{index + 1}</span>

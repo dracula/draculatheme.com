@@ -30,7 +30,7 @@ const PPP = ({ ppp }) => {
             height={100}
           />
         </div>
-        <div className="message col">
+        <div className="message lx-col">
           <p>
             Hey! 👋🏻 You're coming from{" "}
             <span className="highlight">{countries[ppp.country].name}</span>,

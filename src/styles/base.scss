@@ -8,7 +8,6 @@
 
   &::-webkit-scrollbar {
     width: 1.125rem;
-    // background-color: hsl(var(--hue), 12%, 8%);
   }
 
   &::-webkit-scrollbar-track {
@@ -50,6 +49,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  word-break: unset;
 }
 
 body {
@@ -263,4 +263,10 @@ button {
       box-shadow: none !important;
     }
   }
+}
+
+.lx-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
 }

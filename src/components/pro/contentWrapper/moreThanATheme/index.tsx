@@ -8,7 +8,7 @@ const MoreThanATheme = () => {
   return (
     <article className="more-than-a-theme">
       <CardPlain>
-        <div className="col is-4 book-wrapper">
+        <div className="lx-col is-4 book-wrapper">
           <div className="book">
             <Image
               src="/images/pro/ebook.jpg"
@@ -21,7 +21,7 @@ const MoreThanATheme = () => {
             />
           </div>
         </div>
-        <div className="col content">
+        <div className="lx-col content">
           <span className="title s">More than a Theme</span>
           <div className="text">
             <p>

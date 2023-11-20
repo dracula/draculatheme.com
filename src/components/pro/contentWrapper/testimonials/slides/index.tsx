@@ -68,7 +68,7 @@ const renderReview = (review: Review, index: number) => {
             <User2Icon />
           </Avatar.Fallback>
         </Avatar.Root>
-        <div className="col wrapper">
+        <div className="lx-col wrapper">
           <p className="name">{review.name}</p>
           <div className="country">
             <Image

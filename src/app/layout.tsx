@@ -1,3 +1,4 @@
+import "luxacss";
 import "../styles/globals.scss";
 
 import Footer from "src/components/footer";
