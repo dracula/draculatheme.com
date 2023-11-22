@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Wrapper from "src/components/theme/wrapper";
 import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
+import { notFound } from "next/navigation";
 import paths from "src/lib/paths";
 
 export async function generateStaticParams() {
@@ -15,10 +16,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  const theme = paths.find((path) => path.params.theme === params.theme).params;
-  if (!theme) {
-    return;
-  }
+  const pathObj = paths.find((path) => path.params.theme === params.theme);
+
+  if (!pathObj) notFound();
+
+  const theme = pathObj.params;
 
   const title = theme.title;
   const description = `A dark theme for ${theme.title}`;
@@ -47,16 +49,20 @@ export async function generateMetadata({
 }
 
 const Theme = async ({ params }) => {
-  const query = paths.find((path) => path.params.theme === params.theme).params;
+  const pathObj = paths.find((path) => path.params.theme === params.theme);
+
+  if (!pathObj) notFound();
+
+  const theme = pathObj.params;
 
   const installData = await fetchData(
-    `${getBasePath()}/api/installs?id=${query.repo}`,
+    `${getBasePath()}/api/installs?id=${theme.repo}`,
   );
   const buffer = Buffer.from(installData.install, "base64");
   const markdown = buffer.toString("utf8");
 
   const contributorsData = await fetchData(
-    `${getBasePath()}/api/contributors?id=${query.repo}`,
+    `${getBasePath()}/api/contributors?id=${theme.repo}`,
   );
   const contributors = [...JSON.parse(contributorsData.contributors)];
   contributors.sort((a, b) => a.login.localeCompare(b.login));
@@ -65,7 +71,7 @@ const Theme = async ({ params }) => {
     <section className="theme">
       <div className="container">
         <Wrapper
-          query={query}
+          query={theme}
           markdown={markdown}
           contributors={contributors}
         />
