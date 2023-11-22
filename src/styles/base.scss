@@ -83,6 +83,23 @@ section {
       padding-bottom: 0;
     }
   }
+
+  &#not-found {
+    min-height: 30rem;
+    margin: -30rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .lx-row {
+      gap: 1em;
+      line-height: 1;
+
+      .lx-row {
+        margin: 1em 0 0 0;
+      }
+    }
+  }
 }
 
 .container {
