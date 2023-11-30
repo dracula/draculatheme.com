@@ -34,11 +34,11 @@ const BecomeAVampire = ({ ppp, sales }) => {
   }
 
   // Cyber Monday Promo
-  promoName = "Cyber Monday";
-  beforePrice = 79;
-  afterPrice = Number(getDiscount(beforePrice, 40));
-  gumroadURL =
-    "https://draculatheme.gumroad.com/l/dracula-pro/HAPPYCYBERMONDAY23";
+  // promoName = "Cyber Monday";
+  // beforePrice = 79;
+  // afterPrice = Number(getDiscount(beforePrice, 40));
+  // gumroadURL =
+  //   "https://draculatheme.gumroad.com/l/dracula-pro/HAPPYCYBERMONDAY23";
 
   useEffect(() => {
     if (inView) {

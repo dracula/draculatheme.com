@@ -8,7 +8,7 @@ import CommandMenu from "./commandMenu";
 import Link from "next/link";
 import { useState } from "react";
 
-import PromoBanner from "./promoBanner";
+// import PromoBanner from "./promoBanner";
 
 const Header = ({ stars }) => {
   const [isActive, setIsActive] = useState(false);
@@ -33,7 +33,7 @@ const Header = ({ stars }) => {
 
   return (
     <header>
-      <PromoBanner />
+      {/* <PromoBanner /> */}
       <div className="container">
         <div className="wrapper">
           <Link href={"/"} onClick={() => isActive && setIsActive(false)}>
