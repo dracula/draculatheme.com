@@ -8,7 +8,7 @@ import {
 import Contributor from "../contributor";
 import Link from "next/link";
 
-const Info = ({ theme, contributors }) => (
+const Info = ({ theme, contributors, defaultBranch }) => (
   <div className="lx-col info">
     <div className="item">
       <span className="title">Details</span>
@@ -23,7 +23,7 @@ const Info = ({ theme, contributors }) => (
         <span>View source code</span>
       </Link>
       <Link
-        href={`https://github.com/dracula/${theme}/archive/refs/heads/master.zip`}
+        href={`https://github.com/dracula/${theme}/archive/refs/heads/${defaultBranch}.zip`}
         target="_blank"
         className="inline"
       >
@@ -43,7 +43,7 @@ const Info = ({ theme, contributors }) => (
         <span>Report an issue</span>
       </Link>
       <Link
-        href={`https://github.com/dracula/${theme}/edit/master/README.md`}
+        href={`https://github.com/dracula/${theme}/edit/${defaultBranch}/README.md`}
         target="_blank"
         className="inline"
       >

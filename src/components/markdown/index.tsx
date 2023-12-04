@@ -14,8 +14,6 @@ const Markdown: FC<MarkdownProps> = ({ markdown }) => {
     pre({ children }) {
       const textToCopy = children?.props?.children || "";
 
-      console.log(children);
-
       return (
         <pre>
           <CodeCopyBtn textToCopy={textToCopy} />

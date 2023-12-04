@@ -55,6 +55,11 @@ const Theme = async ({ params }) => {
 
   const theme = pathObj.params;
 
+  const defaultBranchData = await fetchData(
+    `${getBasePath()}/api/branches?id=${theme.repo}`,
+  );
+  const defaultBranch = defaultBranchData.branches;
+
   const installData = await fetchData(
     `${getBasePath()}/api/installs?id=${theme.repo}`,
   );
@@ -72,6 +77,7 @@ const Theme = async ({ params }) => {
       <div className="container">
         <Wrapper
           query={theme}
+          defaultBranch={defaultBranch}
           markdown={markdown}
           contributors={contributors}
         />
