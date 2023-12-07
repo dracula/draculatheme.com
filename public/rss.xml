@@ -4,7 +4,7 @@
         <description><![CDATA[The journey of building the most universal dark theme ever made.]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 06 Nov 2023 19:57:54 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 Dec 2023 15:53:52 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[11 New Themes And Updates For Dracula PRO]]></title>
@@ -115,6 +115,12 @@
             <guid isPermaLink="true">https://draculatheme.com./content/posts/black-friday-and-12-new-dracula-themesx</guid>
         </item>
         <item>
+            <title><![CDATA[Black Friday And 7 New Dracula Themes]]></title>
+            <description><![CDATA[If you have considered upgrading your setup, this is the perfect opportunity.]]></description>
+            <link>https://draculatheme.com./content/posts/black-friday-and-7-new-dracula-themesx</link>
+            <guid isPermaLink="true">https://draculatheme.com./content/posts/black-friday-and-7-new-dracula-themesx</guid>
+        </item>
+        <item>
             <title><![CDATA[Celebrating 10 years of Dracula]]></title>
             <description><![CDATA[This month marks a significant milestone for us — the 10th anniversary of Dracula. What started as one theme for one application, has now become a global movement.]]></description>
             <link>https://draculatheme.com./content/posts/celebrating-10-years-of-draculax</link>
@@ -173,6 +179,12 @@
             <description><![CDATA[The fine folks from Microsoft invited me to talk about how to build your own VS Code theme.]]></description>
             <link>https://draculatheme.com./content/posts/dracula-livestream-and-3-new-themesx</link>
             <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-livestream-and-3-new-themesx</guid>
+        </item>
+        <item>
+            <title><![CDATA[🎃 Dracula-o-ween 2023!]]></title>
+            <description><![CDATA[Is it the spookiest time of the year already? Time truly has wings!]]></description>
+            <link>https://draculatheme.com./content/posts/dracula-o-ween-2023x</link>
+            <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-o-ween-2023x</guid>
         </item>
         <item>
             <title><![CDATA[Dracula On CodePen And Open Startup]]></title>
