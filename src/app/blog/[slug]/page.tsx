@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   const title = post.title;
   const description = post.excerpt;
-  const ogImage = "https://draculatheme.com/images/og.png";
+  const ogImage = post.coverImage;
 
   return {
     title,
