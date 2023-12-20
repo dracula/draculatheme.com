@@ -23,7 +23,9 @@ const Info = ({ theme, contributors, defaultBranch }) => (
         <span>View source code</span>
       </Link>
       <Link
-        href={`https://github.com/dracula/${theme}/archive/refs/heads/${defaultBranch}.zip`}
+        href={`https://github.com/dracula/${theme}/archive/refs/heads/${
+          defaultBranch ? defaultBranch : "master"
+        }.zip`}
         target="_blank"
         className="inline"
       >
@@ -43,7 +45,9 @@ const Info = ({ theme, contributors, defaultBranch }) => (
         <span>Report an issue</span>
       </Link>
       <Link
-        href={`https://github.com/dracula/${theme}/edit/${defaultBranch}/README.md`}
+        href={`https://github.com/dracula/${theme}/edit/${
+          defaultBranch ? defaultBranch : "master"
+        }/README.md`}
         target="_blank"
         className="inline"
       >
