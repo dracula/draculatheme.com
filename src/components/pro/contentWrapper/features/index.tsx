@@ -50,7 +50,7 @@ const Features = () => {
             geometrically.
           </p>
           <p>
-            In 1704, He observed the relationships between different wavelengths
+            In 1704, he observed the relationships between different wavelengths
             of light and arranged them as a{" "}
             <span className="highlighted">Hue circle</span>, identifying
             different patterns that emerged from this representation. This would
