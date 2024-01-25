@@ -1,0 +1,45 @@
+.promo-banner {
+  width: 100%;
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  border-radius: var(--radius-02);
+  border: 0.125rem solid transparent;
+  background-color: var(--background-color-02);
+  background-image: url("/images/pro/banner-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: border-color 0.32s ease-in-out;
+
+  span {
+    display: block;
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-shadow: 0 0.125rem 0.125rem hsla(0, 0%, 0%, 0.3);
+  }
+
+  h2 {
+    font-weight: 900;
+    text-shadow: 0 0.125rem 0.125rem hsla(0, 0%, 0%, 0.3);
+  }
+
+  .text {
+    width: 100%;
+    margin: 1em 0 0 0;
+    line-height: 2;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-shadow: 0 0.125rem 0.125rem hsla(0, 0%, 0%, 0.3);
+  }
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    border-color: var(--purple);
+  }
+}

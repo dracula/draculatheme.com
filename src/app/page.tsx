@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import Sidebar from "src/components/home/sidebar";
 import fetchData from "src/lib/fetchData";
 import paths from "src/lib/paths";
+import PromoBanner from "src/components/promoBanner";
 
 export const metadata: Metadata = {
   title: "Dracula — Dark theme for 300+ apps",
@@ -32,13 +33,16 @@ const Home = async () => {
   return (
     <section id="apps" className="home">
       <div className="container">
-        <Sidebar />
+        <div className="side-wrapper">
+          <Sidebar />
+          <PromoBanner />
+        </div>
         <div className="apps-wrapper">
           <div className="title-wrapper">
             <h2>Discover</h2>
             <span>Browse the ever-growing selection of apps supported.</span>
           </div>
-          <Grid paths={paths} />
+          <Grid paths={paths} />P
         </div>
       </div>
     </section>

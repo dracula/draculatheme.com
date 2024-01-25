@@ -11,11 +11,19 @@ section.home {
       width: 100%;
     }
 
-    .themes-sidebar {
+    .side-wrapper {
       max-width: 22rem;
-      padding: 1.125rem;
       position: sticky;
       top: 6.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 1.125rem;
+    }
+
+    .themes-sidebar {
+      width: 100%;
+      padding: 1.125rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -244,12 +252,7 @@ section.home {
         text-align: center;
       }
 
-      .themes-sidebar {
-        // position: fixed;
-        // transform: translateY(-50%);
-        // top: 50%;
-        // right: 100%;
-
+      .side-wrapper {
         display: none;
       }
 

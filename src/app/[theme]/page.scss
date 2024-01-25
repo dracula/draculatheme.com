@@ -6,17 +6,26 @@ section.theme {
 
     .wrapper {
       width: 100%;
+      position: relative;
       padding: 3.75rem;
       display: flex;
       gap: 1.875rem;
       border-radius: var(--radius-03);
       background-color: var(--background-color-02);
 
+      .info-wrapper {
+        height: fit-content;
+        position: sticky;
+        top: 5.625rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1.875rem;
+      }
+
       .info {
         height: fit-content;
         padding: 2rem 1.5rem;
-        position: sticky;
-        top: 5.625rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -152,7 +161,7 @@ section.theme {
           }
         }
 
-        .info {
+        .info-wrapper {
           position: relative;
           top: unset;
         }
