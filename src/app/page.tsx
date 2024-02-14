@@ -42,7 +42,7 @@ const Home = async () => {
             <h2>Discover</h2>
             <span>Browse the ever-growing selection of apps supported.</span>
           </div>
-          <Grid paths={paths} />P
+          <Grid paths={paths} />
         </div>
       </div>
     </section>
