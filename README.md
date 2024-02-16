@@ -29,7 +29,7 @@
 5. And finally run:
 
    ```sh
-   $ npm dev
+   $ npm run dev
    ```
 
 Now you should see the website running in `localhost:3000` 😁
