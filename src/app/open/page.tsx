@@ -53,7 +53,7 @@ const Open = async () => {
   const proSales = proSalesReq.total || "--";
 
   const uiSalesReq = await fetchData(
-    `${getBasePath()}/api/sales?product=tPfIDt`,
+    `${getBasePath()}/api/sales?product=MkxCD`,
   );
   const uiSales = uiSalesReq.total || "--";
 

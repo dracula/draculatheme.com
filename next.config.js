@@ -4,10 +4,16 @@ const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
   images: {
-    domains: [
-      "avatars.githubusercontent.com",
-      "github.com",
-      "raw.githubusercontent.com",
+    remotePatterns: [
+      {
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        hostname: "github.com",
+      },
+      {
+        hostname: "raw.githubusercontent.com",
+      },
     ],
   },
   pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
