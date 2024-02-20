@@ -164,6 +164,7 @@ section.theme {
         .info-wrapper {
           position: relative;
           top: unset;
+          flex-wrap: nowrap;
         }
       }
     }

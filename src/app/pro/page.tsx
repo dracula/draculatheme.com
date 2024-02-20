@@ -8,7 +8,7 @@ import { getBasePath } from "src/lib/environment";
 export const metadata: Metadata = {
   title: "Dracula PRO - Be more productive",
   description:
-    "Dracula PRO is a color scheme and UI theme tailored for programming. Made for terminal emulators, code editors, and syntax highlighters. Designed to be aesthetically pleasing while keeping you focused.",
+    "Dracula PRO is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
 };
 
 const Pro = async () => {

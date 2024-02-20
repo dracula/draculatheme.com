@@ -3,6 +3,7 @@ export default function robots() {
     rules: [
       {
         userAgent: "*",
+        allow: "/",
       },
     ],
     sitemap: "https://draculatheme.com/sitemap.xml",

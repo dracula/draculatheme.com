@@ -23,7 +23,7 @@ export async function generateMetadata({
   const theme = pathObj.params;
 
   const title = theme.title;
-  const description = `A dark theme for ${theme.title}`;
+  const description = `A dark theme for ${theme.title}, Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.`;
   const ogImage = `https://draculatheme.com/images/og.png`;
 
   return {

@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Because every story opens the door to a new one.",
+  description:
+    "The origin story - Because every story opens the door to a new one.",
 };
 
 const About = () => {

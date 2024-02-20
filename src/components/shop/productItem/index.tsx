@@ -16,7 +16,7 @@ const ProductItem = ({ product }) => (
     </div>
     <div className="content">
       {renderAvailability(product)}
-      <h1 className="name">{product.name}</h1>
+      <h2 className="name">{product.name}</h2>
       <span className="price">{product.formatted_price}</span>
     </div>
   </Link>
