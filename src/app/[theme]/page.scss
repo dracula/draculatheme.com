@@ -126,6 +126,7 @@ section.theme {
 
           img {
             width: auto;
+            min-width: 100%;
             height: auto;
             border-radius: var(--radius-02);
             object-fit: contain;

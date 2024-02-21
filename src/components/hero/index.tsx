@@ -94,6 +94,8 @@ const Hero = () => {
 
   const { icon, title, subtitle, cta, anchor } = titleMapping[pathname] || {};
 
+  const isThemePath = themes.hasOwnProperty(pathname);
+
   return (
     <div className={`hero ${pathClass}`}>
       {pathClass === "shop" && (
@@ -135,7 +137,7 @@ const Hero = () => {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="dracula-icon"
+              className={`dracula-icon${isThemePath ? " theme" : ""}`}
             >
               <Image
                 src={icon}
