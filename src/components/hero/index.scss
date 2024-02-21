@@ -44,12 +44,22 @@
       width: 11.25rem;
       height: 11.25rem;
       display: flex;
+      align-items: center;
+      justify-content: center;
 
       img,
       svg {
         width: 100%;
         height: 100%;
         object-fit: contain;
+      }
+
+      &.theme {
+        img,
+        svg {
+          width: 80%;
+          height: 80%;
+        }
       }
     }
 

@@ -19,8 +19,8 @@ const Main = ({ theme, markdown }) => {
           src={`https://raw.githubusercontent.com/dracula/${theme}/master/screenshot.png`}
           alt={`${theme} - Theme Preview`}
           quality={100}
-          width={500}
-          height={500}
+          width={800}
+          height={800}
         />
       </motion.div>
       <motion.div
