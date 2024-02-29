@@ -44,8 +44,8 @@ const Open = async () => {
   const subscribers = 7399;
   const legacyViews = 10166543;
 
-  const twitterReq = await fetchData(`${getBasePath()}/api/twitter`);
-  const twitter = twitterReq.total || "--";
+  // const twitterReq = await fetchData(`${getBasePath()}/api/twitter`);
+  // const twitter = twitterReq.total || "--";
 
   const githubReq = await fetchData(`${getBasePath()}/api/githubStars`);
   const github = githubReq.total || "--";
@@ -69,11 +69,11 @@ const Open = async () => {
       value: github,
       link: "https://github.com/dracula/dracula-theme",
     },
-    {
-      label: "Twitter Followers",
-      value: twitter,
-      link: "https://twitter.com/draculatheme",
-    },
+    // {
+    //   label: "Twitter Followers",
+    //   value: twitter,
+    //   link: "https://twitter.com/draculatheme",
+    // },
     {
       label: "Resend Subscribers",
       value: new Intl.NumberFormat().format(subscribers),
