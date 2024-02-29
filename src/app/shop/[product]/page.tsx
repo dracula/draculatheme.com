@@ -71,7 +71,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `/shop/${query.slug}/`,
+      canonical: `/shop/${query.slug}`,
     },
   };
 }

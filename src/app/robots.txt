@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://draculatheme.com/sitemap.xml
+Host: https://draculatheme.com

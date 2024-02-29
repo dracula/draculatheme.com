@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Check this guide to understand how to contribute to Dracula, including the most commonly asked questions and the color palette.",
   alternates: {
-    canonical: "/contribute/",
+    canonical: "/contribute",
   },
 };
 

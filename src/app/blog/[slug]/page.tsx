@@ -38,7 +38,7 @@ export async function generateMetadata({
       images: [ogImage],
     },
     alternates: {
-      canonical: `/blog/${params.slug}/`,
+      canonical: `/blog/${params.slug}`,
     },
   };
 }

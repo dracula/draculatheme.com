@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "The journey of building the most universal dark theme ever made.",
   alternates: {
-    canonical: "/blog/",
+    canonical: "/blog",
   },
 };
 

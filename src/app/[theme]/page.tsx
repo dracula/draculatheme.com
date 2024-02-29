@@ -23,7 +23,7 @@ export async function generateMetadata({
   const theme = pathObj.params;
 
   const title = theme.title;
-  const description = `The most famous dark theme for ${theme.title}. 🦇`;
+  const description = `The most famous dark theme for ${theme.title} and an ever-growing selection of apps! 🦇`;
   const ogImage = `https://draculatheme.com/images/og.png`;
 
   return {
@@ -46,7 +46,7 @@ export async function generateMetadata({
       images: [ogImage],
     },
     alternates: {
-      canonical: `/${theme.theme}/`,
+      canonical: `/${theme.theme}`,
     },
   };
 }

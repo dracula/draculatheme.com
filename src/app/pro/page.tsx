@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Dracula PRO is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
   alternates: {
-    canonical: "/pro/",
+    canonical: "/pro",
   },
 };
 

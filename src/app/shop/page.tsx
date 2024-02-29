@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
   alternates: {
-    canonical: "/shop/",
+    canonical: "/shop",
   },
 };
 

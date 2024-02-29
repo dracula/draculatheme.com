@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "The origin story - Because every story opens the door to a new one.",
   alternates: {
-    canonical: "/about/",
+    canonical: "/about",
   },
 };
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.",
   alternates: {
-    canonical: "/open/",
+    canonical: "/open",
   },
 };
 
