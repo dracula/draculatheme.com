@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Shop",
   description:
     "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
+  alternates: {
+    canonical: "/shop/",
+  },
 };
 
 const Shop = async () => {

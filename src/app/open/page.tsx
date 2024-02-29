@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Open Dashboard",
   description:
     "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.",
+  alternates: {
+    canonical: "/open/",
+  },
 };
 
 const MetricCard = ({ metric }) => {
