@@ -97,7 +97,7 @@ const Hero = () => {
   const isThemePath = themes.hasOwnProperty(pathname);
 
   return (
-    <div className={`hero ${pathClass}`}>
+    <section className={`hero ${pathClass}`}>
       {pathClass === "shop" && (
         <div className="snowfall">
           <Snowfall
@@ -190,7 +190,7 @@ const Hero = () => {
         )}
       </div>
       <div className="castle"></div>
-    </div>
+    </section>
   );
 };
 
