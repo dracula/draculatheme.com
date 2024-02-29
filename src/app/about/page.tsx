@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "The origin story - Because every story opens the door to a new one.",
+  alternates: {
+    canonical: "/about/",
+  },
 };
 
 const About = () => {

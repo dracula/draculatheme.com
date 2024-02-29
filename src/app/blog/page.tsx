@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "The journey of building the most universal dark theme ever made.",
+  alternates: {
+    canonical: "/blog/",
+  },
 };
 
 const Blog = () => {

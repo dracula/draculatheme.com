@@ -9,7 +9,8 @@ import { allPosts } from "contentlayer/generated";
 import { appFadeInUp } from "src/lib/framerMotion";
 import { compareDesc } from "date-fns";
 
-const Post = ({ post }) => {
+const Post = ({ post, containerElementType = "li" }) => {
+  const MotionContainer = motion[containerElementType];
   const control = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref);
@@ -25,7 +26,7 @@ const Post = ({ post }) => {
   const modifiedUrl = post.url.replace("/posts", "");
 
   return (
-    <motion.li
+    <MotionContainer
       ref={ref}
       variants={appFadeInUp}
       initial="hidden"
@@ -44,11 +45,15 @@ const Post = ({ post }) => {
           />
         </div>
         <div className="content">
-          <span className="title">{post.title}</span>
+          {containerElementType === "div" ? (
+            <h1 className="title">{post.title}</h1>
+          ) : (
+            <span className="title">{post.title}</span>
+          )}
           <span className="excerpt">{post.excerpt}</span>
         </div>
       </Link>
-    </motion.li>
+    </MotionContainer>
   );
 };
 
@@ -67,7 +72,7 @@ const BlogpostList = () => {
       <motion.section className="blog">
         <motion.div className="container">
           <div className="highlighted-post">
-            <Post post={highlightPost} />
+            <Post post={highlightPost} containerElementType="div" />
           </div>
           <ul className="blogpost-list">
             {posts.map((post, index) => (

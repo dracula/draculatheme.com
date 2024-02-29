@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Dracula PRO - Be more productive",
   description:
     "Dracula PRO is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
+  alternates: {
+    canonical: "/pro/",
+  },
 };
 
 const Pro = async () => {

@@ -122,15 +122,14 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport = {
-  themeColor: "#7359F8",
-};
-
 const RootLayout = async ({ children }) => {
   const githubStars = await fetchData(`${getBasePath()}/api/githubStars`);
 
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#7359F8" />
+      </head>
       <body
         className={`${inter.variable} ${satoshi.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
       >
