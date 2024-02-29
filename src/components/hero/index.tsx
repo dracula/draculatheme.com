@@ -9,7 +9,6 @@ import Link from "next/link";
 import MatrixRain from "../pro/codeRain";
 import PPP from "./ppp";
 import Particles from "./particles";
-import Snowfall from "react-snowfall";
 import { fadeIn } from "src/lib/framerMotion";
 import fetchData from "src/lib/fetchData";
 import { motion } from "framer-motion";
@@ -98,16 +97,6 @@ const Hero = () => {
 
   return (
     <section className={`hero ${pathClass}`}>
-      {pathClass === "shop" && (
-        <div className="snowfall">
-          <Snowfall
-            snowflakeCount={90}
-            speed={[0.5, 1.5]}
-            wind={[-0.5, 0.5]}
-            radius={[0.5, 1]}
-          />
-        </div>
-      )}
       {pathClass === "pro" && (
         <>
           <PPP ppp={data} />

@@ -214,6 +214,7 @@
 
   &.shop {
     .container {
+      flex-direction: row;
       justify-content: space-evenly;
       gap: 1.5rem;
     }
