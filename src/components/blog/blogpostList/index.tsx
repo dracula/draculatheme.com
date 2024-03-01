@@ -58,14 +58,16 @@ const Post = ({ post, containerElementType = "li" }) => {
 };
 
 const BlogpostList = () => {
-  const posts = allPosts.sort((a, b) =>
-    compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt)),
-  );
-
   const highlightPost = allPosts
     .filter((post) => /true/.test(post.highlighted))
     .filter((post) => post.highlighted)
     .slice(0, 1)[0];
+
+  const posts = allPosts
+    .filter((post) => post._id !== highlightPost._id)
+    .sort((a, b) =>
+      compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt)),
+    );
 
   return (
     <LayoutGroup>
