@@ -24,8 +24,8 @@ const FeatureCard = ({
   text,
   children
 }: FeatureCardProps) => (
-  <CardSpotlight className={`lx-col ${className}`}>
-    <div className="lx-col description">
+  <CardSpotlight className={`col ${className}`}>
+    <div className="col description">
       <span className="icon">{icon}</span>
       <span className="title t">{title}</span>
       <div className="text">{text}</div>
@@ -63,7 +63,7 @@ const Features = () => {
         </>
       ),
       children: (
-        <div className="lx-col wheels-wrapper">
+        <div className="col wheels-wrapper">
           <div className="wheel normal">
             <div className="indicator">
               <Image
@@ -153,7 +153,7 @@ const Features = () => {
         </>
       ),
       children: (
-        <div className="lx-col animation">
+        <div className="col animation">
           <video autoPlay loop>
             <source src="/videos/ligatures.mp4" type="video/mp4" />
           </video>

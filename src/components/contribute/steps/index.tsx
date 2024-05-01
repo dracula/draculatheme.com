@@ -93,14 +93,14 @@ const Steps = () => {
   return (
     <div className="steps">
       <h2>How do I submit a new theme?</h2>
-      <div className="lx-row">
+      <div className="row">
         {items.map((step, index) => (
           <div
             key={index}
             aria-label={`Step 0${index + 1}`}
             onMouseOver={() => handleMouseOver(step.name)}
             onMouseOut={() => handleMouseOut(step.name)}
-            className="lx-col"
+            className="col"
           >
             <div className="card step">
               <span className="index">{index + 1}</span>

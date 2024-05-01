@@ -18,7 +18,7 @@ const Info = ({ theme, contributors, defaultBranch }) => {
   const editPageUrl = `https://github.com/dracula/${theme}/edit/${branch}/README.md`;
 
   return (
-    <div className="lx-col info-wrapper">
+    <div className="col info-wrapper">
       <div className="info">
         <div className="item">
           <span className="title">Details</span>

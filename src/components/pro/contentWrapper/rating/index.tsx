@@ -28,7 +28,7 @@ const Bar = ({ value }) => {
 
 const BarChart = ({ values }) => {
   return (
-    <div className="lx-col bars">
+    <div className="col bars">
       {values.map((value, index) => (
         <Bar key={index} value={value} />
       ))}
@@ -40,7 +40,7 @@ const Rating = () => {
   return (
     <article className="rating">
       <CardPlain>
-        <div className="lx-col total-score">
+        <div className="col total-score">
           <span className="media">4.9</span>
           <StarsLine filledStars={5} />
           <div className="rating-total">
@@ -48,7 +48,7 @@ const Rating = () => {
           </div>
         </div>
         <BarChart values={[96, 3, 1, 0, 0]} />
-        <div className="lx-col is-4 stars">
+        <div className="col is-4 stars">
           <div className="wrapper">
             <StarsLine filledStars={5} />
             <span className="total-value">96%</span>
