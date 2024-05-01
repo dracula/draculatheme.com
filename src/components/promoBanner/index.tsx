@@ -1,5 +1,5 @@
-import Link from "next/link";
 import "./index.scss";
+import Link from "next/link";
 
 const PromoBanner = () => {
   return (

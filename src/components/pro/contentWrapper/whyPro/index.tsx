@@ -1,8 +1,7 @@
 import "./index.scss";
-
-import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
 import Link from "next/link";
+import CardPlain from "../../wrappers/cardPlain";
 
 const WhyPro = () => {
   return (
@@ -14,7 +13,7 @@ const WhyPro = () => {
             <p>
               In 2013,{" "}
               <Link href="/about" className="inline highlighted">
-                Zeno Rocha's laptop was stolen
+                Zeno Rocha&apos;s laptop was stolen
               </Link>
               , forcing him to reconfigure everything. Thousands of themes were
               out there then, but none appealed to him. So, he decided to{" "}

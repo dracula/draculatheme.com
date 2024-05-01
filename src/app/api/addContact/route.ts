@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   if (!email) {
     return NextResponse.json(
       { error: { message: "The 'email' parameter was not found" } },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   if (!RESEND_API_TOKEN) {
     return NextResponse.json(
       { error: { message: "Server configuration error" } },
-      { status: 500 },
+      { status: 500 }
     );
   }
 
@@ -26,9 +26,9 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${RESEND_API_TOKEN}`,
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email })
     });
 
     if (!response.ok) {
@@ -39,13 +39,13 @@ export async function POST(request: NextRequest) {
           : "API request failed";
       return NextResponse.json(
         { error: { message: errorMessage } },
-        { status: response.status },
+        { status: response.status }
       );
     }
 
     return NextResponse.json(
       { message: "Email added successfully" },
-      { status: 200 },
+      { status: 200 }
     );
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });

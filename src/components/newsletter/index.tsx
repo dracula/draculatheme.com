@@ -1,14 +1,12 @@
 "use client";
 
 import "./index.scss";
-
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
-import fetchData from "src/lib/fetchData";
+import { useEffect, useRef, useState } from "react";
 import { getBasePath } from "src/lib/environment";
+import fetchData from "src/lib/fetchData";
 import { textStagger } from "src/lib/framerMotion";
 
 const Newsletter = () => {
@@ -32,7 +30,7 @@ const Newsletter = () => {
   const handleSubscribe = async () => {
     const response = await fetchData(
       `${getBasePath()}/api/addContact?email=${email}`,
-      "POST",
+      "POST"
     );
 
     setResponseMessage(response.message);

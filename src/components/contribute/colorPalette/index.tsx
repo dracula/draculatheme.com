@@ -1,12 +1,11 @@
 "use client";
 
 import "./index.scss";
-
-import { ClipboardIcon } from "lucide-react";
-import ColorCopyBtn from "./colorCopyBtn";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { ClipboardIcon } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import ColorCopyBtn from "./colorCopyBtn";
 
 const formats = ["Hex", "RGB", "HSL", "Ansi16", "Ansi256"];
 
@@ -17,7 +16,7 @@ const colors = [
     RGB: "RGB(40, 42, 54)",
     HSL: "HSL(231, 15, 18)",
     Ansi16: "30",
-    Ansi256: "59",
+    Ansi256: "59"
   },
   {
     name: "Current Line",
@@ -25,7 +24,7 @@ const colors = [
     RGB: "RGB(68, 71, 90)",
     HSL: "HSL(232, 14, 31)",
     Ansi16: "30",
-    Ansi256: "60",
+    Ansi256: "60"
   },
   {
     name: "Foreground",
@@ -33,7 +32,7 @@ const colors = [
     RGB: "RGB(248, 248, 242)",
     HSL: "HSL(60, 30, 96)",
     Ansi16: "97",
-    Ansi256: "231",
+    Ansi256: "231"
   },
   {
     name: "Comment",
@@ -41,7 +40,7 @@ const colors = [
     RGB: "RGB(98, 114, 164)",
     HSL: "HSL(225, 27, 51)",
     Ansi16: "34",
-    Ansi256: "103",
+    Ansi256: "103"
   },
   {
     name: "Cyan",
@@ -49,7 +48,7 @@ const colors = [
     RGB: "RGB(139, 233, 253)",
     HSL: "HSL(191, 97, 77)",
     Ansi16: "97",
-    Ansi256: "159",
+    Ansi256: "159"
   },
   {
     name: "Green",
@@ -57,7 +56,7 @@ const colors = [
     RGB: "RGB(80, 250, 123)",
     HSL: "HSL(135, 94, 65)",
     Ansi16: "92",
-    Ansi256: "120",
+    Ansi256: "120"
   },
   {
     name: "Orange",
@@ -65,7 +64,7 @@ const colors = [
     RGB: "RGB(255, 184, 108)",
     HSL: "HSL(31, 100, 71)",
     Ansi16: "93",
-    Ansi256: "222",
+    Ansi256: "222"
   },
   {
     name: "Pink",
@@ -73,7 +72,7 @@ const colors = [
     RGB: "RGB(255, 121, 198)",
     HSL: "HSL(326, 100, 74)",
     Ansi16: "95",
-    Ansi256: "212",
+    Ansi256: "212"
   },
   {
     name: "Purple",
@@ -81,7 +80,7 @@ const colors = [
     RGB: "RGB(189, 147, 249)",
     HSL: "HSL(265, 89, 78)",
     Ansi16: "97",
-    Ansi256: "183",
+    Ansi256: "183"
   },
   {
     name: "Red",
@@ -89,7 +88,7 @@ const colors = [
     RGB: "RGB(255, 85, 85)",
     HSL: "HSL(0, 100, 67)",
     Ansi16: "91",
-    Ansi256: "210",
+    Ansi256: "210"
   },
   {
     name: "Yellow",
@@ -97,8 +96,8 @@ const colors = [
     RGB: "RGB(241, 250, 140)",
     HSL: "HSL(65, 92, 76)",
     Ansi16: "97",
-    Ansi256: "229",
-  },
+    Ansi256: "229"
+  }
 ];
 
 const ColorPalette = () => {
@@ -169,7 +168,7 @@ const ColorPalette = () => {
                 key={index}
                 style={
                   {
-                    "--color": getColorByFormat(color, selectedFormat),
+                    "--color": getColorByFormat(color, selectedFormat)
                   } as React.CSSProperties
                 }
               >
@@ -185,7 +184,7 @@ const ColorPalette = () => {
                 </td>
                 <td
                   style={{
-                    backgroundColor: getColorByFormat(color, selectedFormat),
+                    backgroundColor: getColorByFormat(color, selectedFormat)
                   }}
                   className="color"
                 ></td>

@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
 import { Octokit } from "@octokit/rest";
+import { NextResponse } from "next/server";
 import paths from "src/lib/paths";
 import redis from "src/lib/redis";
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
 });
 
 const fetchAndOrganize = async (installs, path) => {
@@ -13,18 +13,18 @@ const fetchAndOrganize = async (installs, path) => {
   const response = await octokit.rest.repos.getContent({
     path: "INSTALL.md",
     owner: "dracula",
-    repo: key,
+    repo: key
   });
 
   if (Array.isArray(response.data)) {
     throw new Error(
-      `Expected file content but got directory listing for repo: ${key}`,
+      `Expected file content but got directory listing for repo: ${key}`
     );
   }
 
   if (response.data.type !== "file") {
     throw new Error(
-      `Expected file content but got ${response.data.type} for repo: ${key}`,
+      `Expected file content but got ${response.data.type} for repo: ${key}`
     );
   }
 

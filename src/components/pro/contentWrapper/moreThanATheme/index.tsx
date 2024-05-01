@@ -1,8 +1,7 @@
 import "./index.scss";
-
-import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
 import Link from "next/link";
+import CardPlain from "../../wrappers/cardPlain";
 
 const MoreThanATheme = () => {
   return (

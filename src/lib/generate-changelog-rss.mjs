@@ -1,8 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
-
-import RSS from "rss";
 import { globby } from "globby";
 import matter from "gray-matter";
+import RSS from "rss";
 
 async function generate() {
   let allLogs = await globby(["./content/logs/*.mdx"]);
@@ -12,7 +11,7 @@ async function generate() {
     description:
       "Discover the latest updates and improvements for Dracula Pro.",
     site_url: "https://draculatheme.com/pro/changelog",
-    feed_url: "https://draculatheme.com/changelog-rss.xml",
+    feed_url: "https://draculatheme.com/changelog-rss.xml"
   });
 
   allLogs.map((log) => {
@@ -23,7 +22,7 @@ async function generate() {
       title: data.title,
       url: `https://draculatheme.com/pro/changelog#${data.id}`,
       date: data.date,
-      description: data.excerpt,
+      description: data.excerpt
     });
   });
 

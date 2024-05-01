@@ -30,7 +30,7 @@ export async function getData(id) {
     method: "GET",
     headers: myHeaders,
     redirect: "follow",
-    next: { revalidate: 3600 },
+    next: { revalidate: 3600 }
   };
 
   try {
@@ -39,7 +39,7 @@ export async function getData(id) {
     if (!response.ok) {
       throw new APIError(
         `Error fetching data: ${response.statusText}`,
-        response.status,
+        response.status
       );
     }
 

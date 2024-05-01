@@ -6,7 +6,7 @@ const categories = [
   { name: "Others", value: "others" },
   { name: "Services", value: "services" },
   { name: "Social", value: "social" },
-  { name: "Terminals", value: "terminals" },
+  { name: "Terminals", value: "terminals" }
 ];
 
 export default categories;

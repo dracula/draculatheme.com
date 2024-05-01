@@ -376,7 +376,7 @@ const paths: Paths = [
   { params: { theme: "zed", title: "Zed", repo: "zed", color: "orange", icon: "used/pack-12/029-kappa.svg", platform: ["all"], categories: ["all", "editors"], legacyViews: 0 } },
   { params: { theme: "zellij", title: "Zellij", repo: "zellij", color: "cyan", icon: "used/pack-3/004-broom.svg", platform: ["linux", "osx"], categories: ["all", "ides"], legacyViews: 516 } },
   { params: { theme: "zsh-syntax-highlighting", title: "zsh-syntax-highlighting", repo: "zsh-syntax-highlighting", color: "yellow", icon: "used/pack-10/020-reaper.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 10231 } },
-  { params: { theme: "zsh", title: "Zsh", repo: "zsh", color: "cyan", icon: "used/pack-1/034-eye.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 276962 } },
+  { params: { theme: "zsh", title: "Zsh", repo: "zsh", color: "cyan", icon: "used/pack-1/034-eye.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 276962 } }
 ];
 
 export default paths;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: `🥲 Not found`,
+  title: `🥲 Not found`
 };
 
 const NotFound = () => {

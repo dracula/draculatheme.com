@@ -1,11 +1,10 @@
 import "./index.scss";
-
-import CodeCopyBtn from "./codeCopyBtn";
+import rangeParser from "parse-numeric-range";
 import { FC } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import rangeParser from "parse-numeric-range";
+import CodeCopyBtn from "./codeCopyBtn";
 
 const Markdown: FC<MarkdownProps> = ({ markdown }) => {
   const syntaxTheme = dracula;
@@ -59,7 +58,7 @@ const Markdown: FC<MarkdownProps> = ({ markdown }) => {
       ) : (
         <code className={className} {...props} />
       );
-    },
+    }
   };
 
   return (

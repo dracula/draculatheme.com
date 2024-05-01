@@ -1,8 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
-
-import RSS from "rss";
 import { globby } from "globby";
 import matter from "gray-matter";
+import RSS from "rss";
 
 async function generate() {
   let allBlogs = await globby(["./content/posts/*.mdx"]);
@@ -12,7 +11,7 @@ async function generate() {
     description:
       "The journey of building the most universal dark theme ever made.",
     site_url: "https://draculatheme.com",
-    feed_url: "https://draculatheme.com/rss.xml",
+    feed_url: "https://draculatheme.com/rss.xml"
   });
 
   allBlogs.map((post) => {
@@ -27,7 +26,7 @@ async function generate() {
       url: `https://draculatheme.com${slug}`,
       date: data.createdAt,
       description: data.excerpt,
-      image_url: image,
+      image_url: image
     });
   });
 

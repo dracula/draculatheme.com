@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
 export const runtime = "edge";
@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
             fontSize: 30,
             letterSpacing: -2,
             color: "white",
-            backgroundColor: "#1D1B22",
+            backgroundColor: "#1D1B22"
           }}
         >
           <img
@@ -43,7 +43,7 @@ export async function GET(request: NextRequest) {
               height: "100%",
               position: "absolute",
               inset: 0,
-              objectFit: "cover",
+              objectFit: "cover"
             }}
           />
           <div style={{ lineHeight: 1, fontSize: 60, fontWeight: 700 }}>
@@ -54,13 +54,13 @@ export async function GET(request: NextRequest) {
       ),
       {
         width: 1200,
-        height: 630,
-      },
+        height: 630
+      }
     );
   } catch (e: any) {
     console.error(e.message, e.stack);
     return new Response(`Failed to generate the image`, {
-      status: 500,
+      status: 500
     });
   }
 }

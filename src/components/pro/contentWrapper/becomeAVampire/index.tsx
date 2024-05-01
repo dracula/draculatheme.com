@@ -1,16 +1,14 @@
 "use client";
 
 import "./index.scss";
-
+import { countries } from "countries-list";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
-import apps from "src/lib/pro";
-import { countries } from "countries-list";
+import { useEffect, useRef } from "react";
 import { getDiscount } from "src/lib/discount";
 import { textStagger } from "src/lib/framerMotion";
+import apps from "src/lib/pro";
 
 const BecomeAVampire = ({ ppp, sales }) => {
   const control = useAnimation();
@@ -18,7 +16,7 @@ const BecomeAVampire = ({ ppp, sales }) => {
   const inView = useInView(tipRef);
 
   let promoName = `${new Date().toLocaleString("default", {
-    month: "long",
+    month: "long"
   })} Promo`;
 
   let beforePrice = 99;

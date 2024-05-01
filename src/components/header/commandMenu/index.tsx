@@ -1,5 +1,5 @@
 import "./index.scss";
-
+import { Command } from "cmdk";
 import {
   BarChart3Icon,
   BookOpenCheckIcon,
@@ -12,13 +12,11 @@ import {
   SearchIcon,
   StickerIcon,
   StoreIcon,
-  TagIcon,
+  TagIcon
 } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
-
-import { Command } from "cmdk";
-import paths from "src/lib/paths";
 import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import paths from "src/lib/paths";
 
 const CommandMenu = () => {
   const appsCount = paths.length;
@@ -36,14 +34,14 @@ const CommandMenu = () => {
       router.push(route);
       toggleOpen();
     },
-    [router, toggleOpen],
+    [router, toggleOpen]
   );
 
   const handleSearchInputChange = useCallback(
     (newValue) => {
       setSearch(newValue.trim());
     },
-    [search],
+    [search]
   );
 
   const handleKeyDown = useCallback(
@@ -53,7 +51,7 @@ const CommandMenu = () => {
         toggleOpen();
       }
     },
-    [toggleOpen],
+    [toggleOpen]
   );
 
   useEffect(() => {
@@ -65,7 +63,7 @@ const CommandMenu = () => {
     if (!search) return null;
 
     const searchMatch = paths.filter((app) =>
-      app.params.title.toLowerCase().includes(search.toLowerCase()),
+      app.params.title.toLowerCase().includes(search.toLowerCase())
     );
 
     return (

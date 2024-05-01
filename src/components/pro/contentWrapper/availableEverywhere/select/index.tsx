@@ -4,8 +4,8 @@ import apps from "src/lib/pro";
 const SelectComponent = ({ setSelectedOption }) => {
   const styles = {
     control: {
-      border: "0.125rem solid var(--yellow)",
-    },
+      border: "0.125rem solid var(--yellow)"
+    }
   };
 
   const themeColors = {
@@ -18,7 +18,7 @@ const SelectComponent = ({ setSelectedOption }) => {
     neutral80: "var(--yellow)",
     primary: "var(--yellow)",
     primary25: "var(--background-color-01)",
-    primary50: "var(--background-color-01)",
+    primary50: "var(--background-color-01)"
   };
 
   return (

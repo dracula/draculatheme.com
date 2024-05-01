@@ -1,15 +1,13 @@
 "use client";
 
 import "./index.scss";
-
-import { LayoutGroup, motion, useAnimation, useInView } from "framer-motion";
-import { compareDesc, format, parseISO } from "date-fns";
-import { useCallback, useEffect, useRef } from "react";
-
-import Image from "next/image";
 import { allLogs } from "contentlayer/generated";
-import { appFadeInUp } from "src/lib/framerMotion";
+import { compareDesc, format, parseISO } from "date-fns";
+import { LayoutGroup, motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import { useCallback, useEffect, useRef } from "react";
+import { appFadeInUp } from "src/lib/framerMotion";
 
 const colors = ["green", "cyan", "purple", "pink", "orange", "yellow"];
 
@@ -82,7 +80,7 @@ const Log = ({ index, log, color }) => {
 
 const ChangelogList = () => {
   const logs = allLogs.sort((a, b) =>
-    compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt)),
+    compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt))
   );
 
   return (

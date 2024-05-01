@@ -1,15 +1,14 @@
 import "./page.scss";
-
-import Grid from "src/components/shop/grid";
 import { Metadata } from "next";
-import fetchData from "src/lib/fetchData";
+import Grid from "src/components/shop/grid";
 import { getBasePath } from "src/lib/environment";
+import fetchData from "src/lib/fetchData";
 import products from "src/lib/shop";
 
 const fetchProducts = async (productsArray) => {
   const productPromises = productsArray.map((product) => {
     return fetchData(
-      `${getBasePath()}/api/products?id=${product.params.gumroadId}`,
+      `${getBasePath()}/api/products?id=${product.params.gumroadId}`
     );
   });
 
@@ -21,8 +20,8 @@ export const metadata: Metadata = {
   description:
     "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
   alternates: {
-    canonical: "/shop",
-  },
+    canonical: "/shop"
+  }
 };
 
 const Shop = async () => {

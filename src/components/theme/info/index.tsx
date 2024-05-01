@@ -2,11 +2,11 @@ import {
   BugIcon,
   FolderDownIcon,
   GithubIcon,
-  PenSquareIcon,
+  PenSquareIcon
 } from "lucide-react";
-import Contributor from "../contributor";
 import Link from "next/link";
 import PromoBanner from "src/components/promoBanner";
+import Contributor from "../contributor";
 
 const Info = ({ theme, contributors, defaultBranch }) => {
   const branch =

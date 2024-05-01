@@ -7,14 +7,14 @@ const products = [
         "periodic-table-shirt-1.png",
         "periodic-table-shirt-2.png",
         "periodic-table-shirt-3.png",
-        "periodic-table-shirt-4.png",
+        "periodic-table-shirt-4.png"
       ],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "cyan",
-    },
+      color: "cyan"
+    }
   },
   {
     params: {
@@ -24,14 +24,14 @@ const products = [
         "dracula-hoodie-1.png",
         "dracula-hoodie-2.png",
         "dracula-hoodie-3.png",
-        "dracula-hoodie-4.png",
+        "dracula-hoodie-4.png"
       ],
       size: "#hoodies",
       defaultVariant: 1,
       variants: ["S", "M", "L", "XL", "2XL", "3XL"],
       category: "other",
-      color: "green",
-    },
+      color: "green"
+    }
   },
   {
     params: {
@@ -40,14 +40,14 @@ const products = [
       images: [
         "color-palette-shirt-1.png",
         "color-palette-shirt-2.png",
-        "color-palette-shirt-3.png",
+        "color-palette-shirt-3.png"
       ],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "purple",
-    },
+      color: "purple"
+    }
   },
   {
     params: {
@@ -57,11 +57,11 @@ const products = [
         "dracula-beanie-1.png",
         "dracula-beanie-2.png",
         "dracula-beanie-3.png",
-        "dracula-beanie-4.png",
+        "dracula-beanie-4.png"
       ],
       category: "other",
-      color: "orange",
-    },
+      color: "orange"
+    }
   },
   {
     params: {
@@ -69,8 +69,8 @@ const products = [
       gumroadId: "jbtvt",
       images: ["dracula-castle-poster-1.png", "dracula-castle-poster-2.png"],
       category: "other",
-      color: "yellow",
-    },
+      color: "yellow"
+    }
   },
   {
     params: {
@@ -82,11 +82,11 @@ const products = [
         "dracula-sticker-pack-n1-3.png",
         "dracula-sticker-pack-n1-4.png",
         "dracula-sticker-pack-n1-5.png",
-        "dracula-sticker-pack-n1-6.png",
+        "dracula-sticker-pack-n1-6.png"
       ],
       category: "stickers",
-      color: "orange",
-    },
+      color: "orange"
+    }
   },
   {
     params: {
@@ -94,8 +94,8 @@ const products = [
       gumroadId: "iyyzn",
       images: ["dracula-pin-n1-1.png"],
       category: "other",
-      color: "purple",
-    },
+      color: "purple"
+    }
   },
   {
     params: {
@@ -106,8 +106,8 @@ const products = [
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "purple",
-    },
+      color: "purple"
+    }
   },
   {
     params: {
@@ -118,8 +118,8 @@ const products = [
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "green",
-    },
+      color: "green"
+    }
   },
   {
     params: {
@@ -130,8 +130,8 @@ const products = [
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "cyan",
-    },
+      color: "cyan"
+    }
   },
   {
     params: {
@@ -142,8 +142,8 @@ const products = [
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       category: "shirts",
-      color: "orange",
-    },
+      color: "orange"
+    }
   },
   {
     params: {
@@ -154,8 +154,8 @@ const products = [
       defaultVariant: 1,
       variants: ["S", "M", "L", "XL", "2XL", "3XL"],
       category: "other",
-      color: "green",
-    },
+      color: "green"
+    }
   },
   {
     params: {
@@ -166,8 +166,8 @@ const products = [
       defaultVariant: 0,
       variants: ["3-6m", "6-12m", "12-18m", "18-24m"],
       category: "other",
-      color: "pink",
-    },
+      color: "pink"
+    }
   },
   {
     params: {
@@ -176,14 +176,14 @@ const products = [
       images: [
         "dark-mode-hoodie-1.png",
         "dark-mode-hoodie-2.png",
-        "dark-mode-hoodie-3.png",
+        "dark-mode-hoodie-3.png"
       ],
       size: "#hoodies",
       defaultVariant: 1,
       variants: ["S", "M", "L", "XL", "2XL", "3XL"],
       category: "other",
-      color: "yellow",
-    },
+      color: "yellow"
+    }
   },
   {
     params: {
@@ -192,12 +192,12 @@ const products = [
       images: [
         "dracula-snapback-hat-1.png",
         "dracula-snapback-hat-2.png",
-        "dracula-snapback-hat-3.png",
+        "dracula-snapback-hat-3.png"
       ],
       defaultVariant: 0,
       category: "other",
-      color: "purple",
-    },
+      color: "purple"
+    }
   },
   {
     params: {
@@ -208,8 +208,8 @@ const products = [
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL"],
       category: "other",
-      color: "cyan",
-    },
+      color: "cyan"
+    }
   },
   {
     params: {
@@ -217,9 +217,9 @@ const products = [
       gumroadId: "oujmc",
       images: ["dracula-stickers-1.png"],
       category: "stickers",
-      color: "pink",
-    },
-  },
+      color: "pink"
+    }
+  }
 ];
 
 export default products;

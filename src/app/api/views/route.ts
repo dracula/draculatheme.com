@@ -1,6 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 import { endOfDay, format } from "date-fns";
-
+import { NextRequest, NextResponse } from "next/server";
 import redis from "../../../lib/redis";
 
 const API_BASE_URL = "https://plausible.io/api/v1/stats/aggregate";
@@ -29,16 +28,16 @@ const getTotal = async () => {
   const requestOptions: RequestInit = {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
+      Authorization: `Bearer ${API_KEY}`
     },
-    redirect: "follow",
+    redirect: "follow"
   };
 
   const response = await fetch(buildURL(), requestOptions);
   if (!response.ok) {
     throw new APIError(
       `Error fetching data: ${response.statusText}`,
-      response.status,
+      response.status
     );
   }
 
@@ -67,7 +66,7 @@ export async function GET(request: NextRequest) {
     console.error(error);
     return NextResponse.json(
       { type: "error", message: error.message, data: 0 },
-      { status: 400 },
+      { status: 400 }
     );
   }
 }

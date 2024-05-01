@@ -1,16 +1,15 @@
 "use client";
 
+import { useAtom } from "jotai";
 import { CheckIcon, CircleSlashIcon, SearchIcon } from "lucide-react";
+import { useEffect } from "react";
 import {
   categoriesFiltersAtom,
   platformsFiltersAtom,
-  searchAtom,
+  searchAtom
 } from "src/lib/atoms";
-
 import categories from "src/lib/filters/categories";
 import platforms from "src/lib/filters/platforms";
-import { useAtom } from "jotai";
-import { useEffect } from "react";
 import useSound from "use-sound";
 
 const FilterOption = ({ id, group, value, name, checked, onChange }) => (
@@ -39,7 +38,7 @@ const FilterOption = ({ id, group, value, name, checked, onChange }) => (
 const Sidebar = () => {
   const [platformsFilters, setPlatformsFilters] = useAtom(platformsFiltersAtom);
   const [categoriesFilters, setCategoriesFilters] = useAtom(
-    categoriesFiltersAtom,
+    categoriesFiltersAtom
   );
   const [search, setSearch] = useAtom(searchAtom);
 
@@ -48,7 +47,7 @@ const Sidebar = () => {
 
   const handleOnChangePlatforms = (position) => {
     const newPlatformsFilters = platformsFilters.map((item, index) =>
-      index === position ? !item : false,
+      index === position ? !item : false
     );
     setPlatformsFilters(newPlatformsFilters);
     scrollToTop();
@@ -56,7 +55,7 @@ const Sidebar = () => {
 
   const handleOnChangeCategories = (position) => {
     const newCategoriesFilters = categoriesFilters.map((item, index) =>
-      index === position ? !item : false,
+      index === position ? !item : false
     );
     setCategoriesFilters(newCategoriesFilters);
     scrollToTop();
@@ -72,13 +71,13 @@ const Sidebar = () => {
   useEffect(() => {
     if (platformsFilters.indexOf(true) === -1) {
       setPlatformsFilters(
-        platformsFilters.map((item, index) => (index === 0 ? !item : item)),
+        platformsFilters.map((item, index) => (index === 0 ? !item : item))
       );
     }
 
     if (categoriesFilters.indexOf(true) === -1) {
       setCategoriesFilters(
-        categoriesFilters.map((item, index) => (index === 0 ? !item : item)),
+        categoriesFilters.map((item, index) => (index === 0 ? !item : item))
       );
     }
   }, [platformsFilters, categoriesFilters, search]);

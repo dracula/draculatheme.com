@@ -3,8 +3,8 @@ import CustomSelect from "src/components/customSelect";
 const SizeSelect = ({ options, defaultVariant, setSelectedOption }) => {
   const styles = {
     control: {
-      minHeight: "2.875rem",
-    },
+      minHeight: "2.875rem"
+    }
   };
   const themeColors = {
     neutral0: "var(--background-color-02)",
@@ -16,7 +16,7 @@ const SizeSelect = ({ options, defaultVariant, setSelectedOption }) => {
     neutral80: "var(--color)",
     primary: "var(--color)",
     primary25: "var(--background-color-01)",
-    primary50: "var(--background-color-01)",
+    primary50: "var(--background-color-01)"
   };
 
   return (

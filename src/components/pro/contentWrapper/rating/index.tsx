@@ -1,8 +1,7 @@
 import "./index.scss";
-
-import CardPlain from "../../wrappers/cardPlain";
-import Link from "next/link";
 import { StarIcon } from "lucide-react";
+import Link from "next/link";
+import CardPlain from "../../wrappers/cardPlain";
 
 const StarsLine = ({ filledStars }) => {
   return (
@@ -21,7 +20,7 @@ const StarsLine = ({ filledStars }) => {
 
 const Bar = ({ value }) => {
   const filledStyle = {
-    backgroundImage: `linear-gradient(90deg, var(--yellow) 0%, var(--yellow) ${value}%, transparent ${value}%, transparent 100%)`,
+    backgroundImage: `linear-gradient(90deg, var(--yellow) 0%, var(--yellow) ${value}%, transparent ${value}%, transparent 100%)`
   };
 
   return <div className="bar" style={filledStyle} />;

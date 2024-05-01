@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-
 import redis from "src/lib/redis";
 
 export async function GET(request: NextRequest) {

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-
 import { useMousePosition } from "../../../lib/mouse";
 
 const Particles = ({
@@ -9,7 +8,7 @@ const Particles = ({
   quantity = 54,
   staticity = 60,
   ease = 60,
-  refresh = false,
+  refresh = false
 }: ParticlesProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -102,7 +101,7 @@ const Particles = ({
       targetAlpha,
       dx,
       dy,
-      magnetism,
+      magnetism
     };
   };
 
@@ -128,7 +127,7 @@ const Particles = ({
         0,
         0,
         canvasSize.current.w,
-        canvasSize.current.h,
+        canvasSize.current.h
       );
     }
   };
@@ -149,7 +148,7 @@ const Particles = ({
     start1: number,
     end1: number,
     start2: number,
-    end2: number,
+    end2: number
   ): number => {
     const remapped =
       ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
@@ -163,12 +162,12 @@ const Particles = ({
         circle.x + circle.translateX - circle.size,
         canvasSize.current.w - circle.x - circle.translateX - circle.size,
         circle.y + circle.translateY - circle.size,
-        canvasSize.current.h - circle.y - circle.translateY - circle.size,
+        canvasSize.current.h - circle.y - circle.translateY - circle.size
       ];
 
       const closestEdge = edge.reduce((a, b) => Math.min(a, b));
       const remapClosestEdge = parseFloat(
-        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
+        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2)
       );
 
       if (remapClosestEdge > 1) {
@@ -207,9 +206,9 @@ const Particles = ({
             y: circle.y,
             translateX: circle.translateX,
             translateY: circle.translateY,
-            alpha: circle.alpha,
+            alpha: circle.alpha
           },
-          true,
+          true
         );
       }
     });

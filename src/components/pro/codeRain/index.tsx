@@ -1,7 +1,6 @@
 "use client";
 
 import "./index.scss";
-
 import React, { useEffect, useRef } from "react";
 
 const MatrixRain = () => {
@@ -12,7 +11,7 @@ const MatrixRain = () => {
     const cntxt = cnvs.getContext("2d");
     let chars: string[] =
       "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑ॐ".split(
-        "",
+        ""
       );
     const font_size = 14;
 

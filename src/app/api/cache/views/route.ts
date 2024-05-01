@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { getData } from "src/lib/plausible";
 import pLimit from "p-limit";
 import paths from "src/lib/paths";
+import { getData } from "src/lib/plausible";
 import redis from "src/lib/redis";
 
 const limit = pLimit(8);
@@ -20,7 +20,7 @@ export async function GET() {
     let views = {};
 
     await Promise.all(
-      paths.map((path) => limit(() => fetchAndOrganize(views, path))),
+      paths.map((path) => limit(() => fetchAndOrganize(views, path)))
     );
 
     await redis.hmset("views", views);

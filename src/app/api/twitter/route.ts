@@ -8,9 +8,9 @@ export async function GET() {
       `https://api.twitter.com/1.1/users/show.json?user_id=${userId}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
-        },
-      },
+          Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`
+        }
+      }
     );
 
     if (!response.ok) {
