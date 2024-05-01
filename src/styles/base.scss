@@ -91,11 +91,11 @@ section {
     align-items: center;
     justify-content: center;
 
-    & > .lx-row {
+    & > .row {
       gap: 1em;
       line-height: 1;
 
-      .lx-row {
+      .row {
         margin: 1em 0 0 0;
       }
     }

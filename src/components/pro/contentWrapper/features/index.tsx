@@ -1,15 +1,13 @@
 import "./index.scss";
-
 import {
   Code2Icon,
   CrosshairIcon,
   EyeIcon,
   PaletteIcon,
-  ToggleRightIcon,
+  ToggleRightIcon
 } from "lucide-react";
-
-import CardSpotlight from "../../wrappers/cardSpotlight";
 import Image from "next/image";
+import CardSpotlight from "../../wrappers/cardSpotlight";
 
 type FeatureCardProps = {
   className: string;
@@ -24,10 +22,10 @@ const FeatureCard = ({
   icon,
   title,
   text,
-  children,
+  children
 }: FeatureCardProps) => (
-  <CardSpotlight className={`lx-col ${className}`}>
-    <div className="lx-col description">
+  <CardSpotlight className={`col ${className}`}>
+    <div className="col description">
       <span className="icon">{icon}</span>
       <span className="title t">{title}</span>
       <div className="text">{text}</div>
@@ -57,15 +55,15 @@ const Features = () => {
             become the basis of modern color theory.
           </p>
           <p>
-            Dracula's original colors, created in 2013, were based on personal
-            taste. This new PRO version brings a more refined and{" "}
+            Dracula&apos;s original colors, created in 2013, were based on
+            personal taste. This new PRO version brings a more refined and{" "}
             <span className="highlighted">mathematical approach</span> that
             normalizes luminosity and saturation.
           </p>
         </>
       ),
       children: (
-        <div className="lx-col wheels-wrapper">
+        <div className="col wheels-wrapper">
           <div className="wheel normal">
             <div className="indicator">
               <Image
@@ -87,7 +85,7 @@ const Features = () => {
             </div>
           </div>
         </div>
-      ),
+      )
     },
     {
       className: "easy-on-the-eyes",
@@ -95,12 +93,12 @@ const Features = () => {
       title: "Easy on the Eyes",
       text: (
         <p>
-          Dark mode is everywhere, and there's a reason for that. There are many
-          reasons to love it, from improved battery consumption to{" "}
+          Dark mode is everywhere, and there&apos;s a reason for that. There are
+          many reasons to love it, from improved battery consumption to{" "}
           <span className="highlighted">better visibility</span> in low-light
           environments.
         </p>
-      ),
+      )
     },
     {
       className: "less-context-switch",
@@ -110,10 +108,10 @@ const Features = () => {
         <p>
           Having the same color scheme across multiple apps{" "}
           <span className="highlighted">reduces the time</span> it takes to
-          switch contexts between tasks. That's why Dracula PRO is available on
-          as many platforms as possible.
+          switch contexts between tasks. That&apos;s why Dracula PRO is
+          available on as many platforms as possible.
         </p>
-      ),
+      )
     },
     {
       className: "precise-contrast",
@@ -125,7 +123,7 @@ const Features = () => {
           Ratio of at least <b>4.5:1</b> for standard text, thus providing the{" "}
           <span className="highlighted">best readability</span>.
         </p>
-      ),
+      )
     },
     {
       className: "is-12 hand-picked-typography",
@@ -149,25 +147,25 @@ const Features = () => {
             scanning, analysing and joining multiple characters into one.
           </p>
           <p>
-            <span className="highlighted">Don't like ligatures?</span> No
+            <span className="highlighted">Don&apos;t like ligatures?</span> No
             problem; you can still use these fonts.
           </p>
         </>
       ),
       children: (
-        <div className="lx-col animation">
+        <div className="col animation">
           <video autoPlay loop>
             <source src="/videos/ligatures.mp4" type="video/mp4" />
           </video>
         </div>
-      ),
-    },
+      )
+    }
   ];
 
   return (
     <article className="features">
       <div className="title-wrapper">
-        <span className="title s">Unlike anything you've used before</span>
+        <span className="title s">Unlike anything you&apos;ve used before</span>
         <span>
           Carefully designed down to the last pixel and engineered for
           relentless precision.

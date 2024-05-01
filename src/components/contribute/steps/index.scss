@@ -11,12 +11,12 @@
     margin: 3rem 0 0 0;
   }
 
-  .lx-row {
+  .row {
     position: relative;
     overflow: hidden;
     align-items: stretch;
 
-    .lx-col {
+    .col {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;

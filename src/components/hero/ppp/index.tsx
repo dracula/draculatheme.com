@@ -1,10 +1,12 @@
-import Image from "next/image";
 import { countries } from "countries-list";
+import Image from "next/image";
 
 const SpecialMessage = ({ country }) => {
   if (country === "BR") {
     return (
-      <p>I'm Brazilian, too, so I know how hard it is to buy things online.</p>
+      <p>
+        I&apos;m Brazilian, too, so I know how hard it is to buy things online.
+      </p>
     );
   }
 
@@ -30,9 +32,9 @@ const PPP = ({ ppp }) => {
             height={100}
           />
         </div>
-        <div className="message lx-col">
+        <div className="message col">
           <p>
-            Hey! 👋🏻 You're coming from{" "}
+            Hey! 👋🏻 You&apos;re coming from{" "}
             <span className="highlight">{countries[ppp.country].name}</span>,
             where this could be too expensive.
           </p>

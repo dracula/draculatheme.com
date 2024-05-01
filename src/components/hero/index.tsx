@@ -1,24 +1,22 @@
 "use client";
 
 import "./index.scss";
-
+import { motion } from "framer-motion";
 import { RssIcon, TagIcon } from "lucide-react";
-
 import Image from "next/image";
 import Link from "next/link";
-import MatrixRain from "../pro/codeRain";
-import PPP from "./ppp";
-import Particles from "./particles";
-import { fadeIn } from "src/lib/framerMotion";
-import fetchData from "src/lib/fetchData";
-import { motion } from "framer-motion";
-import paths from "src/lib/paths";
 import { usePathname } from "next/navigation";
 import { useQuery } from "react-query";
+import fetchData from "src/lib/fetchData";
+import { fadeIn } from "src/lib/framerMotion";
+import paths from "src/lib/paths";
+import MatrixRain from "../pro/codeRain";
+import Particles from "./particles";
+import PPP from "./ppp";
 
 const Hero = () => {
   const { data } = useQuery("ppp", () =>
-    fetchData("https://ppp.dracula.workers.dev"),
+    fetchData("https://ppp.dracula.workers.dev")
   );
 
   const pathname = usePathname();
@@ -30,7 +28,7 @@ const Hero = () => {
       title: path.params.title,
       subtitle: `Dracula Theme for ${path.params.title}`,
       cta: "",
-      anchor: "",
+      anchor: ""
     };
 
     return acc;
@@ -42,21 +40,21 @@ const Hero = () => {
       title: "Dracula",
       subtitle: "One theme. All platforms.",
       cta: "",
-      anchor: "",
+      anchor: ""
     },
     "/about": {
       icon: "/images/hero/dracula-icon.svg",
       title: "The origin story",
       subtitle: "Because every story opens the door to a new one.",
       cta: "",
-      anchor: "",
+      anchor: ""
     },
     "/contribute": {
       icon: "/images/hero/moon-icon.svg",
       title: "Contribute to Dracula",
       subtitle: '"We learn big things from small experiences" - Bram Stoker',
       cta: "",
-      anchor: "",
+      anchor: ""
     },
     "/shop": {
       icon: "",
@@ -64,21 +62,21 @@ const Hero = () => {
       subtitle:
         "A collection of exclusive apparel and limited-run accessories designed for our community.",
       cta: "Browse Products",
-      anchor: "#products",
+      anchor: "#products"
     },
     "/pro": {
       icon: "/images/hero/pro-icon.svg",
       title: "Dracula PRO",
       subtitle: "Be more productive.",
       cta: "Get it now",
-      anchor: "#pricing",
+      anchor: "#pricing"
     },
     "/pro/changelog": {
       icon: "",
       title: "Changelog",
       subtitle: "Discover the latest updates and improvements for Dracula Pro.",
       cta: "",
-      anchor: "",
+      anchor: ""
     },
     "/open": {
       icon: "/images/hero/dracula-icon.svg",
@@ -86,9 +84,9 @@ const Hero = () => {
       subtitle:
         "Dracula operates fully transparent and shares its metrics with the community.",
       cta: "",
-      anchor: "",
+      anchor: ""
     },
-    ...themes,
+    ...themes
   };
 
   const { icon, title, subtitle, cta, anchor } = titleMapping[pathname] || {};

@@ -1,17 +1,16 @@
 import "luxacss";
 import "../styles/globals.scss";
-
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import Script from "next/script";
 import Footer from "src/components/footer";
 import Header from "src/components/header";
 import Hero from "src/components/hero";
-import type { Metadata } from "next";
 import Newsletter from "src/components/newsletter";
 import PageTransition from "src/components/pageTransition";
 import Providers from "src/components/providers";
-import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
-import localFont from "next/font/local";
-import Script from "next/script";
+import fetchData from "src/lib/fetchData";
 
 const inter = localFont({
   adjustFontFallback: false,
@@ -21,15 +20,15 @@ const inter = localFont({
   src: [
     {
       path: "../../public/fonts/inter.woff2",
-      style: "normal",
+      style: "normal"
     },
     {
       path: "../../public/fonts/inter.woff2",
-      style: "italic",
-    },
+      style: "italic"
+    }
   ],
   variable: "--font-inter",
-  weight: "400 900",
+  weight: "400 900"
 });
 
 const satoshi = localFont({
@@ -40,15 +39,15 @@ const satoshi = localFont({
   src: [
     {
       path: "../../public/fonts/satoshi.woff2",
-      style: "normal",
+      style: "normal"
     },
     {
       path: "../../public/fonts/satoshi.woff2",
-      style: "italic",
-    },
+      style: "italic"
+    }
   ],
   variable: "--font-satoshi",
-  weight: "400 900",
+  weight: "400 900"
 });
 
 const jetbrainsMono = localFont({
@@ -58,15 +57,15 @@ const jetbrainsMono = localFont({
   src: [
     {
       path: "../../public/fonts/jetbrains-mono.woff2",
-      style: "normal",
+      style: "normal"
     },
     {
       path: "../../public/fonts/jetbrains-mono.woff2",
-      style: "italic",
-    },
+      style: "italic"
+    }
   ],
   variable: "--font-jetbrains-mono",
-  weight: "400 700",
+  weight: "400 700"
 });
 
 const caveat = localFont({
@@ -76,26 +75,26 @@ const caveat = localFont({
   src: [
     {
       path: "../../public/fonts/caveat.woff2",
-      style: "normal",
+      style: "normal"
     },
     {
       path: "../../public/fonts/caveat.woff2",
-      style: "italic",
-    },
+      style: "italic"
+    }
   ],
   variable: "--font-caveat",
-  weight: "400 700",
+  weight: "400 700"
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://draculatheme.com"),
   title: {
     default: "Dracula Theme",
-    template: "%s • Dracula Theme",
+    template: "%s • Dracula Theme"
   },
   authors: {
     name: "Dracula Team",
-    url: "https://draculatheme.com/about",
+    url: "https://draculatheme.com/about"
   },
   description:
     "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
@@ -109,17 +108,17 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://draculatheme.com/images/og.png",
-      },
-    ],
+        url: "https://draculatheme.com/images/og.png"
+      }
+    ]
   },
   twitter: {
     title: "Dracula Theme",
-    card: "summary_large_image",
+    card: "summary_large_image"
   },
   alternates: {
-    canonical: "/",
-  },
+    canonical: "/"
+  }
 };
 
 const RootLayout = async ({ children }) => {

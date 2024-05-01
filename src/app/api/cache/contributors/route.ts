@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
 import { Octokit } from "@octokit/rest";
+import { NextResponse } from "next/server";
 import paths from "src/lib/paths";
 import redis from "src/lib/redis";
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
 });
 
 const fetchAndOrganize = async (contributors, path) => {
@@ -12,7 +12,7 @@ const fetchAndOrganize = async (contributors, path) => {
 
   const response = await octokit.rest.repos.listContributors({
     owner: "dracula",
-    repo: key,
+    repo: key
   });
 
   const value = response.data
@@ -23,7 +23,7 @@ const fetchAndOrganize = async (contributors, path) => {
     .map((contributor) => {
       return {
         login: contributor.login,
-        avatar_url: contributor.avatar_url,
+        avatar_url: contributor.avatar_url
       };
     });
 
@@ -35,7 +35,7 @@ export async function GET() {
     let contributors = {};
 
     await Promise.all(
-      paths.map((path) => fetchAndOrganize(contributors, path)),
+      paths.map((path) => fetchAndOrganize(contributors, path))
     );
 
     await redis.hmset("contributors", contributors);

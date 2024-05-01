@@ -1,16 +1,15 @@
 import "./page.scss";
-
+import { Metadata } from "next";
 import FAQ from "src/components/shop/faq";
 import Product from "src/components/shop/product";
 import RelatedProducts from "src/components/shop/relatedProducts";
-import fetchData from "src/lib/fetchData";
 import { getBasePath } from "src/lib/environment";
+import fetchData from "src/lib/fetchData";
 import products from "src/lib/shop";
-import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return products.map((product) => ({
-    product: product.params.slug,
+    product: product.params.slug
   }));
 }
 
@@ -23,11 +22,11 @@ const fetchRelatedProducts = async (productsArray, query) => {
     .filter(
       (product) =>
         product.params.slug !== query.slug &&
-        product.params.category === query.category,
+        product.params.category === query.category
     )
     .map((product) => {
       return fetchData(
-        `${getBasePath()}/api/products?id=${product.params.gumroadId}`,
+        `${getBasePath()}/api/products?id=${product.params.gumroadId}`
       );
     });
 
@@ -56,10 +55,10 @@ const sanitizeDescription = (htmlString) => {
 };
 
 export async function generateMetadata({
-  params,
+  params
 }): Promise<Metadata | undefined> {
   const query = products.find(
-    (product) => product.params.slug === params.product,
+    (product) => product.params.slug === params.product
   ).params;
 
   const product = await fetchProduct(query.gumroadId);
@@ -71,14 +70,14 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `/shop/${query.slug}`,
-    },
+      canonical: `/shop/${query.slug}`
+    }
   };
 }
 
 const ProductPage = async ({ params }) => {
   const query = products.find(
-    (product) => product.params.slug === params.product,
+    (product) => product.params.slug === params.product
   ).params;
 
   const product = await fetchProduct(query.gumroadId);

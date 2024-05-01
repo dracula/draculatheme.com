@@ -1,19 +1,17 @@
 "use client";
 
 import "./index.scss";
-
 import {
   AnimatePresence,
   LayoutGroup,
   motion,
   useAnimation,
-  useInView,
+  useInView
 } from "framer-motion";
-import { useEffect, useRef } from "react";
-
+import { ListIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ListIcon } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { appFadeInUp } from "src/lib/framerMotion";
 
 const AboutArticles = () => {
@@ -53,9 +51,7 @@ const AboutArticles = () => {
                 take a plane to speak at another conference in Spain. In the
                 middle of the flight, I called the flight attendant and said I
                 needed help. The{" "}
-                <span>
-                  airplane landed, and I left there in an ambulance.
-                </span>
+                <span>airplane landed, and I left there in an ambulance.</span>
               </p>
               <p>
                 I went to the hospital, took some blood tests, and started to
@@ -69,8 +65,8 @@ const AboutArticles = () => {
               </p>
               <p>
                 Two days later, I was still at the hospital. My blood results
-                were pretty bad, they didn't allow me to leave, so I asked a
-                co-worker to bring my laptop. At least with the internet, I
+                were pretty bad, they didn&apos;t allow me to leave, so I asked
+                a co-worker to bring my laptop. At least with the internet, I
                 could{" "}
                 <Link
                   href="https://twitter.com/zenorocha/status/390120821257039872"
@@ -101,8 +97,8 @@ const AboutArticles = () => {
               <p>
                 I was completely devastated. That computer was the only way I
                 could communicate with my family in Brazil. How could someone
-                steal from a person in a hospital bed? I couldn't believe that
-                whole situation.
+                steal from a person in a hospital bed? I couldn&apos;t believe
+                that whole situation.
               </p>
               <p>
                 The next day, my co-workers tried to cheer me up and{" "}
@@ -113,8 +109,9 @@ const AboutArticles = () => {
               </p>
               <p>
                 I always believed in the cost of context switching. I know how
-                it feels when you're "in the zone", then suddenly, you get
-                distracted and lose focus. It shouldn't be that way, so I{" "}
+                it feels when you&apos;re &quot;in the zone&quot;, then
+                suddenly, you get distracted and lose focus. It shouldn&apos;t
+                be that way, so I{" "}
                 <span>decided to create my own color scheme</span>, and my
                 mission was to make it available everywhere.
               </p>
@@ -145,13 +142,13 @@ const AboutArticles = () => {
                 and the community started to contribute.
               </p>
               <p>
-                Today Dracula is available everywhere and it's one of the{" "}
+                Today Dracula is available everywhere and it&apos;s one of the{" "}
                 <span>most popular themes ever.</span>
               </p>
               <p>
-                I stayed in that hospital bed for 3 weeks. I can't even describe
-                the feeling of being sick in a foreign country, alone and away
-                from your family.
+                I stayed in that hospital bed for 3 weeks. I can&apos;t even
+                describe the feeling of being sick in a foreign country, alone
+                and away from your family.
               </p>
               <p>Thanks Dracula, for distracting me when I needed the most.</p>
             </div>

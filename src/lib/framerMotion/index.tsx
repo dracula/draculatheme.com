@@ -9,10 +9,10 @@ export const textStagger = {
     clipPath: "polygon(0% 0%, 105% 0%, 105% 100%, 0% 100%)",
     transition: {
       duration: 1.6,
-      ease: textEasing,
-    },
+      ease: textEasing
+    }
   },
-  exit: { opacity: 0, clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },
+  exit: { opacity: 0, clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" }
 };
 
 export const fadeIn = {
@@ -21,18 +21,18 @@ export const fadeIn = {
     opacity: 1,
     transition: {
       duration: 0.32,
-      ease: easing,
-    },
+      ease: easing
+    }
   },
-  exit: { opacity: 0 },
+  exit: { opacity: 0 }
 };
 
 export const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
-    },
-  },
+      staggerChildren: 0.1
+    }
+  }
 };
 
 export const fadeInUp = {
@@ -42,10 +42,10 @@ export const fadeInUp = {
     opacity: 1,
     transition: {
       duration: 0.32,
-      ease: easing,
-    },
+      ease: easing
+    }
   },
-  exit: { opacity: 0, y: 20 },
+  exit: { opacity: 0, y: 20 }
 };
 
 export const appFadeInUp = {
@@ -55,8 +55,8 @@ export const appFadeInUp = {
     opacity: 1,
     transition: {
       duration: 0.32,
-      ease: easing,
-    },
+      ease: easing
+    }
   },
-  exit: { opacity: 0, y: 20 },
+  exit: { opacity: 0, y: 20 }
 };

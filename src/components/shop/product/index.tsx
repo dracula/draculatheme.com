@@ -1,22 +1,22 @@
 "use client";
 
-import ImageGallery from "./imageGallery";
 import Link from "next/link";
+import { useState } from "react";
+import ImageGallery from "./imageGallery";
 import QuantityInput from "./quantityInput";
 import SizeSelect from "./sizeSelect";
-import { useState } from "react";
 
 const Product = ({ product }) => {
   const options =
     product?.variants?.[0]?.options?.map((option) => ({
       value: option.name.toUpperCase(),
-      label: option.name,
+      label: option.name
     })) || [];
 
   const defaultVariant = product.defaultVariant || 0;
 
   const [selectedOption, setSelectedOption] = useState(
-    options[defaultVariant] || { value: "", label: "" },
+    options[defaultVariant] || { value: "", label: "" }
   );
 
   const [quantity, setQuantity] = useState(1);

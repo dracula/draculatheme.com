@@ -1,14 +1,12 @@
 "use client";
 
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { appFadeInUp } from "src/lib/framerMotion";
 
-const formatViews = (views) =>
-  new Intl.NumberFormat().format(views || 0);
+const formatViews = (views) => new Intl.NumberFormat().format(views || 0);
 
 const App = ({ path }) => {
   const control = useAnimation();

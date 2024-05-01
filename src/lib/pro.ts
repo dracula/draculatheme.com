@@ -19,7 +19,7 @@ const apps = [
   { value: "visual-studio", label: "Visual Studio" },
   { value: "vscode", label: "Visual Studio Code" },
   { value: "windows-terminal", label: "Windows Terminal" },
-  { value: "xcode", label: "Xcode" },
+  { value: "xcode", label: "Xcode" }
 ];
 
 export default apps;

@@ -1,11 +1,9 @@
 "use client";
 
 import "./index.scss";
-
-import { useEffect, useState } from "react";
-
-import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import CardPlain from "../../wrappers/cardPlain";
 
 const testimonials = [
   {
@@ -14,8 +12,8 @@ const testimonials = [
       avatar: "hannah.jpeg",
       name: "Hannah Burzynski",
       title: "Data Scientist",
-      location: "Austin, Texas",
-    },
+      location: "Austin, Texas"
+    }
   },
   {
     content: `<span class="highlighted">Before Dracula PRO</span> my life was meaningless, colorless and sad. Now it is vibrant, electric and full of the <span class="highlighted">best code I've ever written</span>.`,
@@ -23,9 +21,9 @@ const testimonials = [
       avatar: "kenny.png",
       name: "Kenny Meyers",
       title: "iOS Developer",
-      location: "Seattle, Washington",
-    },
-  },
+      location: "Seattle, Washington"
+    }
+  }
 ];
 
 const getRandomTestimonial = () => {

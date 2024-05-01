@@ -1,9 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Markdown from "src/components/markdown";
 import { fadeInUp } from "src/lib/framerMotion";
-import { motion } from "framer-motion";
 
 const Main = ({ theme, markdown }) => {
   return (

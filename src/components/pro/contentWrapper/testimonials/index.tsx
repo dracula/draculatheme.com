@@ -1,10 +1,11 @@
 import "./index.scss";
-
+import { useState } from "react";
 import Pagination from "./pagination";
 import Slides from "./slides";
-import { useState } from "react";
 
 const Testimonials = ({ reviews }) => {
+  const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
+
   if (!reviews) {
     return null;
   }
@@ -17,11 +18,9 @@ const Testimonials = ({ reviews }) => {
     return null;
   }
 
-  const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
-
   const pages = Array.from(
     { length: Math.ceil(reviews.length / 2) },
-    (_, i) => i,
+    (_, i) => i
   );
 
   const setPage = (newPage, newDirection) => {

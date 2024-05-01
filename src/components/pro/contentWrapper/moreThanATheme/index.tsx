@@ -1,14 +1,13 @@
 import "./index.scss";
-
-import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
 import Link from "next/link";
+import CardPlain from "../../wrappers/cardPlain";
 
 const MoreThanATheme = () => {
   return (
     <article className="more-than-a-theme">
       <CardPlain>
-        <div className="lx-col is-4 book-wrapper">
+        <div className="col is-4 book-wrapper">
           <div className="book">
             <Image
               src="/images/pro/ebook.jpg"
@@ -21,7 +20,7 @@ const MoreThanATheme = () => {
             />
           </div>
         </div>
-        <div className="lx-col content">
+        <div className="col content">
           <span className="title s">More than a Theme</span>
           <div className="text">
             <p>

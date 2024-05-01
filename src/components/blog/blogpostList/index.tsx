@@ -1,13 +1,12 @@
 "use client";
 
+import { allPosts } from "contentlayer/generated";
+import { compareDesc } from "date-fns";
 import { LayoutGroup, motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
-import { allPosts } from "contentlayer/generated";
+import { useEffect, useRef } from "react";
 import { appFadeInUp } from "src/lib/framerMotion";
-import { compareDesc } from "date-fns";
 
 const Post = ({ post, containerElementType = "li" }) => {
   const MotionContainer = motion[containerElementType];
@@ -66,7 +65,7 @@ const BlogpostList = () => {
   const posts = allPosts
     .filter((post) => post._id !== highlightPost._id)
     .sort((a, b) =>
-      compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt)),
+      compareDesc(new Date(a.date.createdAt), new Date(b.date.createdAt))
     );
 
   return (

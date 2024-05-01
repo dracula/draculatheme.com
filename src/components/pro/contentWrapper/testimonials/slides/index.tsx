@@ -1,15 +1,13 @@
 "use client";
 
+import { wrap } from "@popmotion/popcorn";
 import * as Avatar from "@radix-ui/react-avatar";
-
+import { formatDistanceToNow } from "date-fns";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import { memo, useCallback, useRef } from "react";
-
+import { User2Icon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { User2Icon } from "lucide-react";
-import { formatDistanceToNow } from "date-fns";
-import { wrap } from "@popmotion/popcorn";
+import { memo, useCallback, useRef } from "react";
 
 type Review = {
   id: string;
@@ -24,17 +22,17 @@ const xOffset = 100;
 const variants = {
   enter: (direction) => ({
     x: direction > 0 ? xOffset : -xOffset,
-    opacity: 0,
+    opacity: 0
   }),
   active: {
     x: 0,
     opacity: 1,
-    transition: { delay: 0.2 },
+    transition: { delay: 0.2 }
   },
   exit: (direction) => ({
     x: direction > 0 ? -xOffset : xOffset,
-    opacity: 0,
-  }),
+    opacity: 0
+  })
 };
 
 const renderDate = (date) => {
@@ -68,7 +66,7 @@ const renderReview = (review: Review, index: number) => {
             <User2Icon />
           </Avatar.Fallback>
         </Avatar.Root>
-        <div className="lx-col wrapper">
+        <div className="col wrapper">
           <p className="name">{review.name}</p>
           <div className="country">
             <Image
@@ -102,7 +100,7 @@ const Slides = ({ reviews, pages, currentPage, setPage, direction }) => {
         setPage(newPage, newPageOffset);
       }
     },
-    [currentPage, pages],
+    [currentPage, pages]
   );
 
   return (

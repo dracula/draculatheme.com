@@ -1,12 +1,11 @@
 "use client";
 
-import { format, parseISO } from "date-fns";
-
-import Image from "next/image";
 import { allPosts } from "contentlayer/generated";
-import { fadeInUp } from "src/lib/framerMotion";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { format, parseISO } from "date-fns";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { getMDXComponent } from "next-contentlayer/hooks";
+import { fadeInUp } from "src/lib/framerMotion";
 
 // export const generateStaticParams = async () =>
 //   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));

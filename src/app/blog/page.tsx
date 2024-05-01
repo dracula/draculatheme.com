@@ -1,15 +1,14 @@
 import "./page.scss";
-
-import BlogpostList from "src/components/blog/blogpostList";
 import { Metadata } from "next";
+import BlogpostList from "src/components/blog/blogpostList";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "The journey of building the most universal dark theme ever made.",
   alternates: {
-    canonical: "/blog",
-  },
+    canonical: "/blog"
+  }
 };
 
 const Blog = () => {

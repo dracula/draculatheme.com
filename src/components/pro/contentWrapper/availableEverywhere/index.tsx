@@ -1,46 +1,44 @@
 "use client";
 
 import "./index.scss";
-
 import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-
+import { textStagger } from "src/lib/framerMotion";
+import apps from "src/lib/pro";
 import CardPlain from "../../wrappers/cardPlain";
 import ColorPicker from "./colorPicker";
-import Image from "next/image";
 import SelectComponent from "./select";
-import apps from "src/lib/pro";
-import { textStagger } from "src/lib/framerMotion";
 
 const colorMap = [
   {
     name: "Pro",
-    value: "var(--purple)",
+    value: "var(--purple)"
   },
   {
     name: "Blade",
-    value: "var(--green)",
+    value: "var(--green)"
   },
   {
     name: "Buffy",
-    value: "var(--pink)",
+    value: "var(--pink)"
   },
   {
     name: "Lincoln",
-    value: "var(--yellow)",
+    value: "var(--yellow)"
   },
   {
     name: "Morbius",
-    value: "var(--red)",
+    value: "var(--red)"
   },
   {
     name: "Van Helsing",
-    value: "var(--cyan)",
+    value: "var(--cyan)"
   },
   {
     name: "Alucard",
-    value: "var(--neutral-01)",
-  },
+    value: "var(--neutral-01)"
+  }
 ];
 
 const AvailableEverywhere = () => {
@@ -51,7 +49,7 @@ const AvailableEverywhere = () => {
   const articleRef = useRef(null);
 
   const [selectedOption, setSelectedOption] = useState(
-    apps[apps.length - 3] || { value: "", label: "" },
+    apps[apps.length - 3] || { value: "", label: "" }
   );
 
   const [variant, setVariant] = useState(0);
@@ -67,7 +65,7 @@ const AvailableEverywhere = () => {
         "--background-image",
         `url("/images/pro/${color.name
           .replace(/\s+/g, "-")
-          .toLowerCase()}.svg")`,
+          .toLowerCase()}.svg")`
       );
     }
   }, [variant]);

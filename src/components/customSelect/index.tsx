@@ -8,7 +8,7 @@ const CustomSelect = ({
   setSelectedOption,
   instanceId,
   styles,
-  themeColors,
+  themeColors
 }) => {
   return (
     <Select
@@ -22,21 +22,21 @@ const CustomSelect = ({
           ...provided,
           cursor: "pointer",
           borderRadius: "var(--radius-01)",
-          ...styles.option,
+          ...styles.option
         }),
         control: (provided) => ({
           ...provided,
           cursor: "pointer",
           border: ".125rem solid var(--neutral-05)",
           borderRadius: "var(--radius-01)",
-          ...styles.control,
+          ...styles.control
         }),
         menu: (provided) => ({
           ...provided,
           padding: ".5rem",
           borderRadius: "var(--radius-01)",
-          ...styles.menu,
-        }),
+          ...styles.menu
+        })
       }}
       theme={(theme) => ({
         ...theme,
@@ -44,8 +44,8 @@ const CustomSelect = ({
         cursor: "pointer",
         colors: {
           ...theme.colors,
-          ...themeColors,
-        },
+          ...themeColors
+        }
       })}
       className="select"
       classNamePrefix="react-select"

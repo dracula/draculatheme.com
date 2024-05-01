@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     try {
       const accessToken = process.env.GUMROAD_ACCESS_TOKEN;
       const request = await fetch(
-        `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`,
+        `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`
       );
 
       const response = await request.json();

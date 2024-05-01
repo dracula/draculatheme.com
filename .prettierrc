@@ -1,5 +1,7 @@
 {
+  "tabWidth": 2,
   "singleQuote": false,
+  "trailingComma": "none",
   "overrides": [
     {
       "files": "paths.ts",

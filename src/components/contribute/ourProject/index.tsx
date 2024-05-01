@@ -10,13 +10,13 @@ const OurProject = () => (
       </p>
       <p>
         As much as the team is responsible for the core theme and wants to
-        support all available applications, we simply don't have the capacity
-        to do it all ourselves.
+        support all available applications, we simply don&apos;t have the
+        capacity to do it all ourselves.
       </p>
       <p>
-        That's why the community is essential for this project to keep evolving.
-        Below are some guidelines, tips, and specifications for those who want
-        to apply the theme to any application.
+        That&apos;s why the community is essential for this project to keep
+        evolving. Below are some guidelines, tips, and specifications for those
+        who want to apply the theme to any application.
       </p>
     </div>
   </div>

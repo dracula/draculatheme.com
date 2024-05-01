@@ -1,19 +1,18 @@
 "use client";
 
 import { LayoutGroup, motion } from "framer-motion";
-
 import { useState } from "react";
 
 const ImageGallery = ({ imagesProps }) => {
   const [primaryImage, setPrimaryImage] = useState(imagesProps[0]);
   const [images, setImages] = useState(
-    [...imagesProps].filter((image) => image !== primaryImage),
+    [...imagesProps].filter((image) => image !== primaryImage)
   );
 
   const setAsPrimary = (newPrimaryImage: string) => {
     const newCurrentImages = [
       ...images.filter((image: any) => image !== newPrimaryImage),
-      primaryImage,
+      primaryImage
     ];
 
     setPrimaryImage(newPrimaryImage);
@@ -22,7 +21,7 @@ const ImageGallery = ({ imagesProps }) => {
 
   const ProductImage = ({
     image,
-    onExpand,
+    onExpand
   }: {
     image: string;
     onExpand: Function;

@@ -1,12 +1,10 @@
 "use client";
 
 import "./index.scss";
-
 import { GithubIcon, MenuIcon } from "lucide-react";
-
-import CommandMenu from "./commandMenu";
 import Link from "next/link";
 import { useState } from "react";
+import CommandMenu from "./commandMenu";
 
 // import PromoBanner from "./promoBanner";
 

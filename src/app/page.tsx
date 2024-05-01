@@ -1,25 +1,23 @@
 import "./page.scss";
-
-import { getBasePath, isProd } from "src/lib/environment";
-
-import Grid from "src/components/home/grid";
 import { Metadata } from "next";
+import Grid from "src/components/home/grid";
 import Sidebar from "src/components/home/sidebar";
+import PromoBanner from "src/components/promoBanner";
+import { getBasePath, isProd } from "src/lib/environment";
 import fetchData from "src/lib/fetchData";
 import paths from "src/lib/paths";
-import PromoBanner from "src/components/promoBanner";
 
 export const metadata: Metadata = {
   title: "Dracula — Dark theme for 300+ apps",
   description:
-    "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
+    "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more."
 };
 
 const Home = async () => {
   if (isProd()) {
     for (const path of paths) {
       const data = await fetchData(
-        `${getBasePath()}/api/views?id=${path.params.theme}`,
+        `${getBasePath()}/api/views?id=${path.params.theme}`
       );
 
       path.params.views = parseInt(data.views) || 0;

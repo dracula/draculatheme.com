@@ -1,5 +1,4 @@
 import "./index.scss";
-
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -14,20 +13,20 @@ const CodeCopyBtn = ({ textToCopy }) => {
     hover: (isCopied) => ({
       opacity: isCopied ? 0 : 1,
       scale: 1.05,
-      stroke: "var(--neutral-03)",
+      stroke: "var(--neutral-03)"
     }),
     pressed: (isCopied) => ({
       opacity: isCopied ? 0 : 1,
-      scale: 0.95,
+      scale: 0.95
     }),
     copied: { opacity: 0 },
-    notCopied: { stroke: "var(--neutral-04)", opacity: 1 },
+    notCopied: { stroke: "var(--neutral-04)", opacity: 1 }
   };
 
   const tickVariants = {
     pressed: (isCopied) => ({ pathLength: isCopied ? 0.85 : 0.05 }),
     copied: { pathLength: 1 },
-    notCopied: { pathLength: 0 },
+    notCopied: { pathLength: 0 }
   };
 
   useEffect(() => {

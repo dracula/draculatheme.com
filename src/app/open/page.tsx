@@ -1,18 +1,17 @@
 import "./page.scss";
-
 import { ExternalLinkIcon } from "lucide-react";
-import Link from "next/link";
 import { Metadata } from "next";
-import fetchData from "src/lib/fetchData";
+import Link from "next/link";
 import { getBasePath } from "src/lib/environment";
+import fetchData from "src/lib/fetchData";
 
 export const metadata: Metadata = {
   title: "Open Dashboard",
   description:
     "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.",
   alternates: {
-    canonical: "/open",
-  },
+    canonical: "/open"
+  }
 };
 
 const MetricCard = ({ metric }) => {
@@ -51,12 +50,12 @@ const Open = async () => {
   const github = githubReq.total || "--";
 
   const proSalesReq = await fetchData(
-    `${getBasePath()}/api/sales?product=tPfIDt`,
+    `${getBasePath()}/api/sales?product=tPfIDt`
   );
   const proSales = proSalesReq.total || "--";
 
   const uiSalesReq = await fetchData(
-    `${getBasePath()}/api/sales?product=MkxCD`,
+    `${getBasePath()}/api/sales?product=MkxCD`
   );
   const uiSales = uiSalesReq.total || "--";
 
@@ -67,7 +66,7 @@ const Open = async () => {
     {
       label: "GitHub Stars",
       value: github,
-      link: "https://github.com/dracula/dracula-theme",
+      link: "https://github.com/dracula/dracula-theme"
     },
     // {
     //   label: "Twitter Followers",
@@ -77,22 +76,22 @@ const Open = async () => {
     {
       label: "Resend Subscribers",
       value: new Intl.NumberFormat().format(subscribers),
-      link: "https://draculatheme.com/pro/journey#updates",
+      link: "https://draculatheme.com/pro/journey#updates"
     },
     {
       label: "Website Pageviews",
-      value: new Intl.NumberFormat().format(plausible),
+      value: new Intl.NumberFormat().format(plausible)
     },
     {
       label: "Dracula UI Sales",
       value: uiSales,
-      link: "https://draculatheme.com/ui",
+      link: "https://draculatheme.com/ui"
     },
     {
       label: "Dracula PRO Sales",
       value: proSales,
-      link: "https://draculatheme.com/pro",
-    },
+      link: "https://draculatheme.com/pro"
+    }
   ];
 
   return (

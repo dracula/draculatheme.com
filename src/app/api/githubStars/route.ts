@@ -1,19 +1,19 @@
-import { NextResponse } from "next/server";
 import { Octokit } from "@octokit/rest";
+import { NextResponse } from "next/server";
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+  auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
 });
 
 export async function GET() {
   try {
     const githubRes = await octokit.repos.get({
       owner: "dracula",
-      repo: "dracula-theme",
+      repo: "dracula-theme"
     });
 
     const total = new Intl.NumberFormat().format(
-      githubRes.data.stargazers_count,
+      githubRes.data.stargazers_count
     );
 
     return NextResponse.json({ total }, { status: 200 });

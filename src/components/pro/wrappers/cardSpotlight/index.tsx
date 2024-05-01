@@ -1,9 +1,7 @@
 "use client";
 
 import "./index.scss";
-
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-
 import { MouseEvent } from "react";
 
 const CardSpotlight = ({ className = "", children }) => {
@@ -31,7 +29,7 @@ const CardSpotlight = ({ className = "", children }) => {
               hsla(var(--spotlight-hue, var(--main-hue)), 12%, 24%, .24),
               transparent 80%
             )
-          `,
+          `
         }}
       />
       <div className="content">{children}</div>

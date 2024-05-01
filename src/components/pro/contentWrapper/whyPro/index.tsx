@@ -1,20 +1,19 @@
 import "./index.scss";
-
-import CardPlain from "../../wrappers/cardPlain";
 import Image from "next/image";
 import Link from "next/link";
+import CardPlain from "../../wrappers/cardPlain";
 
 const WhyPro = () => {
   return (
     <article className="why-pro">
       <CardPlain>
-        <div className="lx-col content">
+        <div className="col content">
           <span className="title s">Why Dracula PRO</span>
           <div className="text">
             <p>
               In 2013,{" "}
               <Link href="/about" className="inline highlighted">
-                Zeno Rocha's laptop was stolen
+                Zeno Rocha&apos;s laptop was stolen
               </Link>
               , forcing him to reconfigure everything. Thousands of themes were
               out there then, but none appealed to him. So, he decided to{" "}
@@ -33,7 +32,7 @@ const WhyPro = () => {
             </p>
           </div>
         </div>
-        <div className="lx-col photo">
+        <div className="col photo">
           <Image
             src="/images/pro/why-dracula.jpg"
             alt="Zeno Rocha"

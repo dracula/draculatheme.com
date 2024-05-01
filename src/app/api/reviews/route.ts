@@ -4,13 +4,13 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const base = new Airtable({
-      apiKey: process.env.AIRTABLE_API_KEY,
+      apiKey: process.env.AIRTABLE_API_TOKEN
     }).base("appE8qDD7fxpKyDpf");
 
     const records = await base("Table 1")
       .select({
         fields: ["ID", "Name", "Country", "GitHub", "Body", "Date"],
-        view: "Approved",
+        view: "Approved"
       })
       .all();
 
@@ -21,7 +21,7 @@ export async function GET() {
         country: review.get("Country") || "",
         github: review.get("GitHub") || "",
         body: review.get("Body") || "",
-        date: review.get("Date") || "",
+        date: review.get("Date") || ""
       };
     });
 

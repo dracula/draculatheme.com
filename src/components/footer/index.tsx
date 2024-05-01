@@ -1,12 +1,11 @@
 import "./index.scss";
-
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="lx-col is-5 col-title">
+        <div className="col is-5 col-title">
           <span className="title p">Dracula Theme</span>
           <span>
             The most famous dark theme ever created and available everywhere.
@@ -22,7 +21,7 @@ const Footer = () => {
             </Link>
           </span>
         </div>
-        <div className="lx-col col-projects">
+        <div className="col col-projects">
           <span className="title t">Projects</span>
           <ul>
             <li>
@@ -47,7 +46,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lx-col col-resources">
+        <div className="col col-resources">
           <span className="title t">Resources</span>
           <ul>
             <li>
@@ -77,7 +76,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lx-col col-community">
+        <div className="col col-community">
           <span className="title t">Community</span>
           <ul>
             <li>

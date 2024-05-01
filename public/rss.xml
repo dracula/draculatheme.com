@@ -4,7 +4,7 @@
         <description><![CDATA[The journey of building the most universal dark theme ever made.]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 20 Feb 2024 01:31:55 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 May 2024 04:40:46 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[11 New Themes And Updates For Dracula PRO]]></title>
@@ -145,6 +145,12 @@
             <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-100-themesx</guid>
         </item>
         <item>
+            <title><![CDATA[Dracula 2023 Wrapped]]></title>
+            <description><![CDATA[There's a lot to celebrate, but first, I just want to say thank you for making Dracula such a fantastic community to be a part of.]]></description>
+            <link>https://draculatheme.com./content/posts/dracula-2023-wrappedx</link>
+            <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-2023-wrappedx</guid>
+        </item>
+        <item>
             <title><![CDATA[Dracula AI, 10 New Themes And Emacs For PRO]]></title>
             <description><![CDATA[We couldn't help ourselves, so we introduced 🤖 Dracula AI (on April 1st)!]]></description>
             <link>https://draculatheme.com./content/posts/dracula-ai-10-new-themes-and-emacs-for-prox</link>
@@ -181,7 +187,7 @@
             <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-livestream-and-3-new-themesx</guid>
         </item>
         <item>
-            <title><![CDATA[🎃 Dracula-o-ween 2023!]]></title>
+            <title><![CDATA[Dracula-o-ween 2023!]]></title>
             <description><![CDATA[Is it the spookiest time of the year already? Time truly has wings!]]></description>
             <link>https://draculatheme.com./content/posts/dracula-o-ween-2023x</link>
             <guid isPermaLink="true">https://draculatheme.com./content/posts/dracula-o-ween-2023x</guid>
@@ -275,6 +281,12 @@
             <description><![CDATA[On February 11th, Dracula PRO was being launched. Today, exactly six months later, more than 1,143 copies have been sold. What started as a simple side project, became something much bigger.]]></description>
             <link>https://draculatheme.com./content/posts/free-wallpapers-and-new-dracula-pro-pricex</link>
             <guid isPermaLink="true">https://draculatheme.com./content/posts/free-wallpapers-and-new-dracula-pro-pricex</guid>
+        </item>
+        <item>
+            <title><![CDATA[Get ready for Dracula Light Mode]]></title>
+            <description><![CDATA[For years, we heard the same question, "Are you going to create a light color scheme?" and the answer always was, "Nope. Dracula can't stand the light".]]></description>
+            <link>https://draculatheme.com./content/posts/get-ready-for-dracula-light-modex</link>
+            <guid isPermaLink="true">https://draculatheme.com./content/posts/get-ready-for-dracula-light-modex</guid>
         </item>
         <item>
             <title><![CDATA[GitHub Dark, Big Sur Icons, And 5 New Themes]]></title>

@@ -1,17 +1,16 @@
 "use client";
 
+import { LayoutGroup } from "framer-motion";
+import { useAtom } from "jotai";
+import { useCallback, useMemo } from "react";
 import {
   categoriesFiltersAtom,
   platformsFiltersAtom,
-  searchAtom,
+  searchAtom
 } from "src/lib/atoms";
-import { useCallback, useMemo } from "react";
-
-import App from "../app";
-import { LayoutGroup } from "framer-motion";
 import categories from "src/lib/filters/categories";
 import platforms from "src/lib/filters/platforms";
-import { useAtom } from "jotai";
+import App from "../app";
 
 const renderApp = (app, index) => {
   return <App key={index} path={app} />;
@@ -42,7 +41,7 @@ const Grid = ({ paths }) => {
         : true;
       return platformMatch && categoryMatch && searchMatch;
     },
-    [platformsFilters, categoriesFilters, search],
+    [platformsFilters, categoriesFilters, search]
   );
 
   const filteredApps = useMemo(() => {
