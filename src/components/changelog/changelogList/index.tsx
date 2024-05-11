@@ -6,7 +6,7 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { LayoutGroup, motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import { getMDXComponent } from "next-contentlayer/hooks";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { appFadeInUp } from "src/lib/framerMotion";
 
 const colors = ["green", "cyan", "purple", "pink", "orange", "yellow"];
@@ -45,7 +45,7 @@ const Log = ({ index, log, color }) => {
       initial="hidden"
       animate={control}
       exit="exit"
-      id={`log-${index}`}
+      id={index}
       className={color}
     >
       <article className="log">
@@ -91,7 +91,7 @@ const ChangelogList = () => {
             {logs.map((log, index) => (
               <Log
                 key={index}
-                index={index}
+                index={logs.length - index}
                 log={log}
                 color={colors[index % colors.length]}
               />

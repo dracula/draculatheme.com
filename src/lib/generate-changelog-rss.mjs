@@ -6,6 +6,16 @@ import RSS from "rss";
 async function generate() {
   let allLogs = await globby(["./content/logs/*.mdx"]);
 
+  const logsData = allLogs.map((log) => {
+    const fileContents = readFileSync(log, "utf8");
+    const { data } = matter(fileContents);
+    return { log, data };
+  });
+
+  logsData.sort(
+    (a, b) => new Date(b.data.date.createdAt) - new Date(a.data.date.createdAt)
+  );
+
   const feed = new RSS({
     title: "Dracula PRO - Changelog",
     description:
@@ -14,14 +24,13 @@ async function generate() {
     feed_url: "https://draculatheme.com/changelog-rss.xml"
   });
 
-  allLogs.map((log) => {
-    const fileContents = readFileSync(log, "utf8");
-    const { data } = matter(fileContents);
+  logsData.forEach((item, index) => {
+    const { data } = item;
 
     feed.item({
       title: data.title,
-      url: `https://draculatheme.com/pro/changelog#${data.id}`,
-      date: data.date,
+      url: `https://draculatheme.com/pro/changelog#${logsData.length - index}`,
+      date: data.date.createdAt,
       description: data.excerpt
     });
   });

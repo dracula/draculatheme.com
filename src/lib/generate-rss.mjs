@@ -4,7 +4,18 @@ import matter from "gray-matter";
 import RSS from "rss";
 
 async function generate() {
-  let allBlogs = await globby(["./content/posts/*.mdx"]);
+  let allPosts = await globby(["./content/posts/*.mdx"]);
+
+  const postsData = allPosts.map((post) => {
+    const fileContents = readFileSync(post, "utf8");
+    const { data } = matter(fileContents);
+    return { post, data }; // A estrutura retorna um objeto com 'post' e 'data'
+  });
+
+  // Ordenação correta dos posts pela data de criação
+  postsData.sort(
+    (a, b) => new Date(b.data.date.createdAt) - new Date(a.data.date.createdAt)
+  );
 
   const feed = new RSS({
     title: "Dracula Theme - Blog",
@@ -14,17 +25,20 @@ async function generate() {
     feed_url: "https://draculatheme.com/rss.xml"
   });
 
-  allBlogs.map((post) => {
-    const fileContents = readFileSync(post, "utf8");
-    const { data } = matter(fileContents);
-    const slug = post.replace("./blog", "/blog").replace(".md", "");
+  postsData.map((post) => {
+    const { data } = post;
+    const slug = post.post
+      .replace("./content/posts", "/blog")
+      .replace(".mdx", "");
 
-    const image = data.ogImage ? `https://draculatheme.com${data.ogImage}` : "";
+    const image = data.coverImage
+      ? `https://draculatheme.com${data.coverImage}`
+      : "";
 
     feed.item({
       title: data.title,
       url: `https://draculatheme.com${slug}`,
-      date: data.createdAt,
+      date: data.date.createdAt,
       description: data.excerpt,
       image_url: image
     });

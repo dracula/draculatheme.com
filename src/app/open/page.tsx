@@ -43,9 +43,6 @@ const Open = async () => {
   const subscribers = 7399;
   const legacyViews = 10166543;
 
-  // const twitterReq = await fetchData(`${getBasePath()}/api/twitter`);
-  // const twitter = twitterReq.total || "--";
-
   const githubReq = await fetchData(`${getBasePath()}/api/githubStars`);
   const github = githubReq.total || "--";
 
@@ -53,11 +50,6 @@ const Open = async () => {
     `${getBasePath()}/api/sales?product=tPfIDt`
   );
   const proSales = proSalesReq.total || "--";
-
-  const uiSalesReq = await fetchData(
-    `${getBasePath()}/api/sales?product=MkxCD`
-  );
-  const uiSales = uiSalesReq.total || "--";
 
   const plausibleReq = await fetchData(`${getBasePath()}/api/views`);
   const plausible = plausibleReq.total + legacyViews || "--";
@@ -68,11 +60,6 @@ const Open = async () => {
       value: github,
       link: "https://github.com/dracula/dracula-theme"
     },
-    // {
-    //   label: "Twitter Followers",
-    //   value: twitter,
-    //   link: "https://twitter.com/draculatheme",
-    // },
     {
       label: "Resend Subscribers",
       value: new Intl.NumberFormat().format(subscribers),
@@ -81,11 +68,6 @@ const Open = async () => {
     {
       label: "Website Pageviews",
       value: new Intl.NumberFormat().format(plausible)
-    },
-    {
-      label: "Dracula UI Sales",
-      value: uiSales,
-      link: "https://draculatheme.com/ui"
     },
     {
       label: "Dracula PRO Sales",
