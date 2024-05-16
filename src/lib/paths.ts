@@ -319,7 +319,6 @@ const paths: Paths = [
   { params: { theme: "thumb-key", title: "ThumbKey", color: "purple", repo: "thumb-key", icon: "used/pack-10/022-wizard.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "thunderbird", title: "Thunderbird", repo: "thunderbird", color: "purple", icon: "used/pack-4/003-phoenix.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 4140 } },
   { params: { theme: "tiddlywiki", title: "TiddlyWiki", repo: "tiddlywiki", color: "purple", icon: "used/pack-5/035-tent.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 2821 } },
-  { params: { theme: "tig", title: "tig", color: "green", repo: "tig", icon: "used/pack-10/011-cauldron.svg", platform: ["all"], categories: ["all", "terminal"], legacyViews: 0 } },
   { params: { theme: "tig", title: "tig", repo: "tig", color: "green", icon: "used/pack-10/011-cauldron.svg", platform: ["all"], categories: ["all", "terminals"], legacyViews: 0 } },
   { params: { theme: "tilix", title: "Tilix", repo: "tilix", color: "cyan", icon: "used/pack-2/046-ghost.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 7564 } },
   { params: { theme: "tint2", title: "tint2", repo: "tint2", color: "cyan", icon: "used/pack-5/009-potion.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 465 } },
