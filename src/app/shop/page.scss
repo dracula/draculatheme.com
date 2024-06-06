@@ -31,7 +31,6 @@ section.shop {
         background-color: var(--background-color-02);
 
         .image {
-          opacity: 0.6;
           width: 100%;
           flex: 1;
           padding: 1rem;
@@ -39,6 +38,13 @@ section.shop {
           overflow: hidden;
           display: flex;
           border-radius: var(--radius-01);
+          background-image: radial-gradient(
+            circle,
+            var(--background-color-02) 0%,
+            var(--background-color-02) 42%,
+            var(--background-color-01) 100%
+          );
+
           transition: opacity 0.32s ease;
           z-index: 1;
 
@@ -97,8 +103,6 @@ section.shop {
           border-color: var(--neutral-04);
 
           .image {
-            opacity: 1;
-
             img {
               transform: scale(1.06) rotate(-0.6deg);
             }

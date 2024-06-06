@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const renderAvailability = (product) => {
@@ -9,9 +10,12 @@ const renderAvailability = (product) => {
 const ProductItem = ({ product }) => (
   <Link href={`/shop/${product.custom_permalink}`} className="product">
     <div className="image">
-      <img
+      <Image
         src={`/images/shop/${product.custom_permalink}-1.png`}
         alt={product.name}
+        width={576}
+        height={528}
+        quality={100}
       />
     </div>
     <div className="content">

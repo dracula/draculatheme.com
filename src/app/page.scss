@@ -86,6 +86,7 @@ section.home {
             top: 50%;
             left: 1.5rem;
             transition: color 0.16s ease;
+            z-index: 1;
           }
 
           &:focus-within,
