@@ -22,13 +22,13 @@ const BecomeAVampire = ({ ppp, sales }) => {
   let beforePrice = 99;
   let afterPrice = 79;
 
-  let gumroadURL = "https://store.draculatheme.com/l/dracula-pro?wanted=true";
+  let gumroadURL = "https://draculatheme.gumroad.com/l/dracula-pro?wanted=true";
 
   if (ppp && ppp.country && ppp.discount) {
     promoName = `${countries[ppp.country].name} Promo`;
     beforePrice = 79;
     afterPrice = Number(getDiscount(beforePrice, ppp.discount));
-    gumroadURL = `https://store.draculatheme.com/l/dracula-pro/${ppp.country}?wanted=true`;
+    gumroadURL = `https://draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`;
   }
 
   // Cyber Monday Promo
