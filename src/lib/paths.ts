@@ -105,7 +105,7 @@ const paths: Paths = [
   { params: { theme: "gamepad-viewer", title: "Gamepad Viewer", repo: "gamepad-viewer", color: "pink", icon: "used/pack-2/010-game-controller.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 1633 } },
   { params: { theme: "geany", title: "Geany", repo: "geany", color: "orange", icon: "used/pack-3/009-crystal-ball.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 5988 } },
   { params: { theme: "gedit", title: "Gedit", repo: "gedit", color: "cyan", icon: "used/pack-1/036-spellbook.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 34791 } },
-  { params: { theme: "ggplot2", title: "ggplot2", repo: "ggplot2", color: "cyan", icon: "used/pack-9/018-lollipop.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 572 } },
+  { params: { theme: "R", title: "R", repo: "dRacula", color: "cyan", icon: "used/pack-13/002-dracula-hex.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 572 } },
   { params: { theme: "gh-dash", title: "GH-Dash", color: "purple", repo: "gh-dash", icon: "used/pack-3/046-trick.svg", platform: ["all"], categories: ["all", "terminal"], legacyViews: 0 } },
   { params: { theme: "ghostwriter", title: "ghostwriter", repo: "ghostwriter", color: "cyan", icon: "used/pack-10/012-ghost.svg", platform: ["windows", "linux"], categories: ["all", "others"], legacyViews: 1154 } },
   { params: { theme: "gimp", title: "GIMP", repo: "gimp", color: "yellow", icon: "used/pack-5/001-magic-wand.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 860 } },
