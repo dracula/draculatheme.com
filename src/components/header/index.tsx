@@ -63,7 +63,7 @@ const Header = ({ stars }) => {
               <span>Shop</span>
             </NavigationItem>
             <NavigationItem href="/pro" className="primary pro">
-              <span>Dracula PRO 2.0</span>
+              <span>Dracula PRO</span>
             </NavigationItem>
             <li>
               <Link
