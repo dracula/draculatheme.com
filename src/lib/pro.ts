@@ -1,8 +1,5 @@
 const apps = [
   { value: "alacritty", label: "Alacritty" },
-  { value: "alfred", label: "Alfred" },
-  { value: "atom", label: "Atom" },
-  { value: "betterdiscord", label: "BetterDiscord" },
   { value: "emacs", label: "Emacs" },
   { value: "firefox", label: "Firefox" },
   { value: "gnome-terminal", label: "Gnome Terminal" },
@@ -12,14 +9,15 @@ const apps = [
   { value: "iterm", label: "iTerm" },
   { value: "jetbrains", label: "JetBrains IDEs" },
   { value: "notepad-plus-plus", label: "Notepad++" },
+  { value: "raycast", label: "Raycast" },
   { value: "slack", label: "Slack" },
   { value: "sublime", label: "Sublime Text" },
   { value: "terminal", label: "Terminal.app" },
   { value: "vim", label: "Vim" },
-  { value: "visual-studio", label: "Visual Studio" },
   { value: "vscode", label: "Visual Studio Code" },
   { value: "windows-terminal", label: "Windows Terminal" },
-  { value: "xcode", label: "Xcode" }
+  { value: "xcode", label: "Xcode" },
+  { value: "zed", label: "Zed" }
 ];
 
 export default apps;
