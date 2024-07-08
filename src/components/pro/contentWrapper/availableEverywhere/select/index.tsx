@@ -25,7 +25,7 @@ const SelectComponent = ({ setSelectedOption }) => {
     <CustomSelect
       instanceId="theme"
       options={apps}
-      defaultIndex={apps.length - 3}
+      defaultIndex={apps.length - 4}
       setSelectedOption={setSelectedOption}
       styles={styles}
       themeColors={themeColors}

@@ -2,6 +2,8 @@ article.available-everywhere {
   --background-image: url("/images/pro/pro.svg");
 
   .card-plain {
+    width: 100%;
+
     &::before {
       content: "";
       position: absolute;
@@ -76,6 +78,7 @@ article.available-everywhere {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 1.5em;
             position: relative;
             cursor: pointer;
 

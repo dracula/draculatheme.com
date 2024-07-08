@@ -49,7 +49,7 @@ const AvailableEverywhere = () => {
   const articleRef = useRef(null);
 
   const [selectedOption, setSelectedOption] = useState(
-    apps[apps.length - 3] || { value: "", label: "" }
+    apps[apps.length - 4] || { value: "", label: "" }
   );
 
   const [variant, setVariant] = useState(0);
