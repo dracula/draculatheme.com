@@ -65,7 +65,8 @@ const Hero = () => {
       anchor: "#products"
     },
     "/pro": {
-      icon: "/images/hero/pro-icon.svg",
+      // icon: "/images/hero/pro-icon.svg",
+      icon: "/images/hero/alucard-special.svg",
       title: "Dracula PRO",
       subtitle: "Be more productive.",
       cta: "Get it now",
