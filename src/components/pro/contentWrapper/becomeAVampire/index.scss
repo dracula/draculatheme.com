@@ -22,6 +22,16 @@ article.become-a-vampire {
     }
   }
 
+  a.primary {
+    border-color: var(--green);
+    background-color: var(--green);
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
   .pricing-card {
     min-width: 40%;
     padding: 4.5rem 3.75rem 3.75rem 3.75rem;

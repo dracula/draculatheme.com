@@ -66,6 +66,15 @@ header {
                 min-width: 6.625rem;
                 justify-content: flex-start;
               }
+
+              &.pro {
+                border-color: var(--neutral-01);
+                background-color: var(--neutral-01);
+
+                &:hover {
+                  background-color: transparent;
+                }
+              }
             }
           }
         }

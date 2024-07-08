@@ -8,7 +8,8 @@ import { fadeInUp } from "src/lib/framerMotion";
 const colors = ["180", "115", "35", "330", "250", "10", "60"];
 const pathToColor = {
   "/pro/changelog": "115",
-  "/pro": "115",
+  // "/pro": "115",
+  "/pro": "35",
   "/contribute": "35",
   "/shop": "330",
   "/": "250",

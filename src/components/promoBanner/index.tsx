@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PromoBanner = () => {
   return (
-    <Link href="/pro" className="promo-banner">
+    <Link href="/pro" className="card-promo-banner">
       <span>Be more productive</span>
       <h2>Dracula PRO</h2>
       <div className="text">
