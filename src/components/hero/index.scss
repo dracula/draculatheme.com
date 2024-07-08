@@ -115,8 +115,9 @@
 
   .ppp {
     width: 100%;
-    // padding: 9rem 1.5rem 2rem 1.5rem; // promoBanner
-    padding: 6rem 1.5rem 2rem 1.5rem;
+    // promoBanner
+    padding: 9rem 1.5rem 2rem 1.5rem;
+    // padding: 6rem 1.5rem 2rem 1.5rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -237,6 +238,36 @@
         .title {
           &.t {
             line-height: 1.8;
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.pro) {
+    .container {
+      padding: 10rem 1.5rem 4rem 1.5rem;
+    }
+  }
+
+  &.pro {
+    // Alucard launch
+    background-color: var(--hero-background-color-01);
+    background-image: linear-gradient(
+      to bottom,
+      var(--yellow),
+      var(--orange),
+      var(--red)
+    );
+
+    .content {
+      .cta-wrapper {
+        a.primary {
+          border-color: var(--neutral-01);
+          background-color: var(--neutral-01);
+
+          &:hover {
+            background-color: transparent;
           }
         }
       }

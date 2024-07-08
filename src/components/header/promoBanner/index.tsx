@@ -3,13 +3,9 @@ import Link from "next/link";
 
 const PromoBanner = () => {
   return (
-    <Link
-      href={"https://draculatheme.gumroad.com/l/dracula-pro/HAPPYCYBERMONDAY23"}
-      target="_blank"
-      className="promo-banner"
-    >
+    <Link href="/pro" target="_blank" className="promo-banner">
       <div className="container">
-        <span>🦇 Dracula PRO is now at a fang-tastic 40% discount!</span>
+        <span>🌄 Alucard has arrived! Meet our first light theme!</span>
       </div>
     </Link>
   );
