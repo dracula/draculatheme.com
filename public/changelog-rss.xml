@@ -4,8 +4,22 @@
         <description><![CDATA[Discover the latest updates and improvements for Dracula Pro.]]></description>
         <link>https://draculatheme.com/pro/changelog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 11 May 2024 21:12:35 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Jul 2024 14:18:11 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/changelog-rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Raycast fix]]></title>
+            <description><![CDATA[Raycast was absent in the latest package.]]></description>
+            <link>https://draculatheme.com/pro/changelog#23</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#23</guid>
+            <pubDate>Tue, 09 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula PRO 2.0]]></title>
+            <description><![CDATA[Introducing Alucard, numerous fixes and general enhancements!]]></description>
+            <link>https://draculatheme.com/pro/changelog#22</link>
+            <guid isPermaLink="true">https://draculatheme.com/pro/changelog#22</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Emacs and BetterDiscord]]></title>
             <description><![CDATA[One of the most requested Dracula PRO themes is finally available! Emacs users, here it is! 😉]]></description>

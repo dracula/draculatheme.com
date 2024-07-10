@@ -4,8 +4,15 @@
         <description><![CDATA[The journey of building the most universal dark theme ever made.]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 11 May 2024 21:12:35 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Jul 2024 14:18:11 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Dracula PRO 2.0 - Our First Light Theme!]]></title>
+            <description><![CDATA[We're excited to announce the launch of Alucard, the official Dracula light theme & Dracula PRO 2.0]]></description>
+            <link>https://draculatheme.com/blog/dracula-pro-2.0-our-first-light-theme</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-pro-2.0-our-first-light-theme</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Get ready for Dracula Light Mode]]></title>
             <description><![CDATA[For years, we heard the same question, "Are you going to create a light color scheme?" and the answer always was, "Nope. Dracula can't stand the light".]]></description>
