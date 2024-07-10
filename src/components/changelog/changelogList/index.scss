@@ -107,7 +107,9 @@ section.changelog {
               border-radius: var(--radius-03);
             }
 
-            p {
+            p,
+            ol,
+            ul {
               margin: 1em 0 0 0;
             }
           }
