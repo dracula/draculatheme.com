@@ -72,7 +72,6 @@ const Theme = async ({ params }) => {
     `${getBasePath()}/api/contributors?id=${theme.repo}`
   );
   const contributors = [...JSON.parse(contributorsData.contributors)];
-  contributors.sort((a, b) => a.login.localeCompare(b.login));
 
   return (
     <section className="theme">
