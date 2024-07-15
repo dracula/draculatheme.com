@@ -16,6 +16,20 @@ const AvatarItem = ({ url, name, src }) => (
 );
 
 const OurCommunity = ({ contributorsList }) => {
+  if (contributorsList.length === 0) {
+    return (
+      <div id="our-community" role="region" aria-labelledby="community-heading">
+        <h3 id="community-heading">Our Community!</h3>
+        <div className="text">
+          <p>
+            Unfortunately, we can&apos;t find the contributors at this moment.
+            Please check back later. 🌙
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="our-community" role="region" aria-labelledby="community-heading">
       <h3 id="community-heading">Our Community!</h3>

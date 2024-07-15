@@ -22,37 +22,38 @@ const Contribute = async () => {
   );
 
   const contributors = contributorsData.contributors;
-  const contributorsList = [];
+  const contributorsList: { login: string; avatar_url: string }[] = [];
 
   for (const key in contributors) {
     contributorsList.push(...JSON.parse(contributors[key]));
   }
 
-  const filteredContributorsList = contributorsList.filter(
-    (contributor) => !contributor.login.includes("[bot]")
-  );
+  if (contributorsList.length === 0) {
+    return (
+      <section className="contribute">
+        <div className="container">
+          <OurProject />
+          <Steps />
+          <ColorPalette />
+          <OurCommunity contributorsList={[]} />
+        </div>
+      </section>
+    );
+  }
 
-  const contributorCounts = filteredContributorsList.reduce(
-    (acc, contributor) => {
-      acc[contributor.login] = (acc[contributor.login] || 0) + 1;
+  const contributorCounts = contributorsList.reduce(
+    (acc: { [key: string]: number }, contributor: { login: string }) => {
+      if (!contributor.login.includes("[bot]")) {
+        acc[contributor.login] = (acc[contributor.login] || 0) + 1;
+      }
       return acc;
     },
     {}
   );
 
-  filteredContributorsList.sort(
-    (a, b) =>
-      contributorCounts[b.login] - contributorCounts[a.login] ||
-      a.login.localeCompare(b.login)
-  );
-
-  const seen = new Set();
-
-  const uniqueContributors = filteredContributorsList.filter((contributor) => {
-    const duplicate = seen.has(contributor.login);
-    seen.add(contributor.login);
-    return !duplicate;
-  });
+  const uniqueContributors = Object.entries(contributorCounts)
+    .sort(([, a]: [string, number], [, b]: [string, number]) => b - a)
+    .map(([login]) => contributorsList.find((c) => c.login === login)!);
 
   return (
     <section className="contribute">
