@@ -1,0 +1,120 @@
+#faqs {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3.75rem;
+
+  .title-wrapper {
+    line-height: 1.2;
+  }
+
+  .accordion-root {
+    max-width: 38rem;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .accordion {
+      width: 100%;
+      overflow: hidden;
+
+      .header {
+        display: flex;
+      }
+
+      .trigger {
+        height: 3rem;
+        padding: 0 1.5rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        line-height: 1.8;
+        font-family: inherit;
+        font-size: 0.875rem;
+        background-color: transparent;
+
+        .chevron {
+          transition: transform 300ms cubic-bezier(0.36, 0.66, 0.6, 1);
+        }
+
+        &[data-state="open"] > .chevron {
+          transform: rotate(90deg);
+        }
+      }
+
+      .content {
+        overflow: hidden;
+        font-size: 0.75rem;
+
+        .text {
+          margin: 0;
+          padding: 0 3rem;
+
+          ul {
+            padding: 0 0 0 1em;
+          }
+        }
+
+        &[data-state="open"] {
+          animation: slideDown 300ms cubic-bezier(0.36, 0.66, 0.6, 1);
+        }
+
+        &[data-state="closed"] {
+          animation: slideUp 300ms cubic-bezier(0.36, 0.66, 0.6, 1);
+        }
+      }
+    }
+
+    @media (max-width: 48rem) {
+      max-width: 100%;
+      gap: 1.875rem;
+
+      .accordion {
+        .trigger {
+          height: auto;
+          padding: 0;
+          align-items: flex-start;
+
+          .chevron {
+            margin-top: 0.375rem;
+          }
+        }
+
+        .content {
+          .text {
+            padding: 1em 1rem 2em 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 48rem) {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

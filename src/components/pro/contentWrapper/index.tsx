@@ -8,6 +8,7 @@ import { appFadeInUp } from "src/lib/framerMotion";
 import AvailableEverywhere from "./availableEverywhere";
 import BecomeAVampire from "./becomeAVampire";
 import Description from "./description";
+import FAQS from "./faqs";
 import Features from "./features";
 import FixedTestimonial from "./fixedTestimonial";
 import LogoWall from "./logoWall";
@@ -59,7 +60,8 @@ const ContentWrapper = ({ sales, reviews }) => {
     <FixedTestimonial key="fixedTestimonial" />,
     <BecomeAVampire key="becomeAVampire" ppp={data} sales={sales} />,
     <Rating key="rating" />,
-    <Testimonials key="testimonials" reviews={reviews} />
+    <Testimonials key="testimonials" reviews={reviews} />,
+    <FAQS key="faqs" />
   ];
 
   return (
