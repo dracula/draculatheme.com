@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const renderAvailability = (product) => {
@@ -20,7 +21,7 @@ const RelatedProducts = ({ products }) => {
             className="item"
           >
             <div className="image">
-              <img
+              <Image
                 src={`/images/shop/${product.custom_permalink}-1.png`}
                 alt={product.name}
               />

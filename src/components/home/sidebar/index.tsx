@@ -80,7 +80,13 @@ const Sidebar = () => {
         categoriesFilters.map((item, index) => (index === 0 ? !item : item))
       );
     }
-  }, [platformsFilters, categoriesFilters, search]);
+  }, [
+    platformsFilters,
+    categoriesFilters,
+    search,
+    setPlatformsFilters,
+    setCategoriesFilters
+  ]);
 
   return (
     <aside className="themes-sidebar">

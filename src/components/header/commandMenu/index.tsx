@@ -37,12 +37,9 @@ const CommandMenu = () => {
     [router, toggleOpen]
   );
 
-  const handleSearchInputChange = useCallback(
-    (newValue) => {
-      setSearch(newValue.trim());
-    },
-    [search]
-  );
+  const handleSearchInputChange = useCallback((newValue) => {
+    setSearch(newValue.trim());
+  }, []);
 
   const handleKeyDown = useCallback(
     (e) => {

@@ -72,7 +72,7 @@ const AvailableEverywhere = () => {
 
   useEffect(() => {
     setColor();
-  }, [variant]);
+  }, [setColor, variant]);
 
   useEffect(() => {
     if (inView) {

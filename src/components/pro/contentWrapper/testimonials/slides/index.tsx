@@ -100,7 +100,7 @@ const Slides = ({ reviews, pages, currentPage, setPage, direction }) => {
         setPage(newPage, newPageOffset);
       }
     },
-    [currentPage, pages]
+    [currentPage, pages.length, setPage]
   );
 
   return (

@@ -50,7 +50,7 @@ const Grid = ({ paths }) => {
       categoriesFilters.indexOf(true) > -1;
     const apps = shouldFilter ? paths.filter(filterApps) : paths;
     return apps.map(renderApp);
-  }, [paths, platformsFilters, categoriesFilters, search, filterApps]);
+  }, [paths, platformsFilters, categoriesFilters, filterApps]);
 
   return (
     <LayoutGroup>

@@ -141,14 +141,11 @@ const RootLayout = async ({ children }) => {
           </PageTransition>
           <Footer />
         </Providers>
+        <Script src="https://store.draculatheme.com/js/gumroad.js" />
         <Script
-          src="https://store.draculatheme.com/js/gumroad.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          src="https://plausible.io/js/script.js"
+          defer
           data-domain="draculatheme.com"
-          strategy="lazyOnload"
+          src="https://plausible.io/js/script.js"
         />
       </body>
     </html>

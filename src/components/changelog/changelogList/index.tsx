@@ -18,14 +18,6 @@ const Log = ({ index, log, color }) => {
 
   const Content = getMDXComponent(log.body.code);
 
-  const setColor = () => {
-    const logElement = ref.current;
-
-    if (logElement) {
-      logElement.style.setProperty("--color", `var(--${color})`);
-    }
-  };
-
   useEffect(() => {
     if (inView) {
       control.start("visible");
@@ -35,8 +27,16 @@ const Log = ({ index, log, color }) => {
   }, [control, inView]);
 
   useEffect(() => {
+    const setColor = () => {
+      const logElement = ref.current;
+
+      if (logElement) {
+        logElement.style.setProperty("--color", `var(--${color})`);
+      }
+    };
+
     setColor();
-  }, []);
+  }, [color]);
 
   return (
     <motion.li
