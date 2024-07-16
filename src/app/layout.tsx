@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
+
 import "luxacss";
 import "../styles/globals.scss";
 import type { Metadata } from "next";
@@ -141,7 +143,10 @@ const RootLayout = async ({ children }) => {
           </PageTransition>
           <Footer />
         </Providers>
-        <Script src="https://store.draculatheme.com/js/gumroad.js" />
+        <Script
+          src="https://store.draculatheme.com/js/gumroad.js"
+          strategy="beforeInteractive"
+        />
         <Script
           defer
           data-domain="draculatheme.com"

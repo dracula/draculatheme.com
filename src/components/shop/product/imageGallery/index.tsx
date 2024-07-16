@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { LayoutGroup, motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 const ImageGallery = ({ imagesProps }) => {
@@ -33,7 +33,7 @@ const ImageGallery = ({ imagesProps }) => {
         onClick={() => onExpand(image)}
         className="non-active-image-wrapper"
       >
-        <Image src={`/images/shop/${image}`} alt={image} />
+        <img src={`/images/shop/${image}`} alt={image} />
       </motion.div>
     );
   };
@@ -47,7 +47,7 @@ const ImageGallery = ({ imagesProps }) => {
             layoutId={`product-${imagesProps.indexOf(primaryImage)}`}
             className="active-image-container"
           >
-            <Image src={`/images/shop/${primaryImage}`} alt={primaryImage} />
+            <img src={`/images/shop/${primaryImage}`} alt={primaryImage} />
           </motion.div>
         </div>
         <motion.div layoutScroll className="non-active-images">

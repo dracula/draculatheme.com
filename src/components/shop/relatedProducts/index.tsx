@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const renderAvailability = (product) => {
@@ -21,7 +21,7 @@ const RelatedProducts = ({ products }) => {
             className="item"
           >
             <div className="image">
-              <Image
+              <img
                 src={`/images/shop/${product.custom_permalink}-1.png`}
                 alt={product.name}
               />
