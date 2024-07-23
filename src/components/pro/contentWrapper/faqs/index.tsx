@@ -86,10 +86,7 @@ const faqs = [
           For a team license to activate the theme on more devices, please get
           in{" "}
           <a
-            href="mailto:support@draculatheme.com?subject=Team License
-        &body=I need a team license! 🚀
-        &cc=foo@bar.com
-        &bcc=test@example.com"
+            href="mailto:support@draculatheme.com?subject=Team License&body=I need a team license! 🚀"
             target="_blank"
             className="inline"
           >
@@ -128,10 +125,7 @@ const faqs = [
         <p>
           You can contact us at{" "}
           <a
-            href="mailto:support@draculatheme.com?subject=Support Request
-        &body=I found a bug! 🐝
-        &cc=foo@bar.com
-        &bcc=test@example.com"
+            href="mailto:support@draculatheme.com?subject=Support Request&body=I found a bug! 🐝"
             target="_blank"
             className="inline"
           >
@@ -148,10 +142,7 @@ const faqs = [
         <p>
           If you have more questions, you can contact us at{" "}
           <a
-            href="mailto:support@draculatheme.com?subject=Support Request
-        &body=Schrodinger, is the cat dead or alive? 🤔
-        &cc=foo@bar.com
-        &bcc=test@example.com"
+            href="mailto:support@draculatheme.com?subject=Support Request&body=Schrodinger, is the cat dead or alive? 🤔"
             target="_blank"
             className="inline"
           >

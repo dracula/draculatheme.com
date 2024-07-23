@@ -32,7 +32,9 @@ const OurCommunity = ({ contributorsList }) => {
 
   return (
     <div id="our-community" role="region" aria-labelledby="community-heading">
-      <h3 id="community-heading">Our Community!</h3>
+      <h3 id="community-heading">
+        Join over {contributorsList.length} contributors
+      </h3>
       <div className="text">
         <p>
           Whether you&apos;re maintaining a port, contributing via a pull
