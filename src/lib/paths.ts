@@ -344,7 +344,7 @@ const paths: Paths = [
   { params: { theme: "visual-basic", title: "Visual Basic 6", repo: "visual-basic-6", color: "yellow", icon: "used/pack-3/024-magic-wand.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 1336 } },
   { params: { theme: "visual-spigot", title: "Visual Spigot", repo: "visual-spigot", color: "purple", icon: "used/pack-10/018-owl.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 645 } },
   { params: { theme: "visual-studio-code", title: "Visual Studio Code", repo: "visual-studio-code", color: "orange", icon: "used/pack-1/048-frankenstein.svg", platform: ["all"], synonyms: ["vscode"], categories: ["all", "editors"], legacyViews: 314788 } },
-  { params: { theme: "visual-studio", title: "Visual Studio", repo: "visual-studio", color: "purple", icon: "used/pack-1/041-skeleton.svg", platform: ["all"], categories: ["all", "ides"], legacyViews: 192815 } },
+  { params: { theme: "visual-studio", title: "Visual Studio", repo: "visual-studio", color: "purple", icon: "used/pack-1/041-skeleton.svg", platform: ["osx", "windows"], categories: ["all", "ides"], legacyViews: 192815 } },
   { params: { theme: "vital", title: "Vital", repo: "vital", color: "purple", icon: "used/pack-4/049-lyre.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 170 } },
   { params: { theme: "vivado", title: "Vivado", repo: "vivado", color: "pink", icon: "used/pack-8/002-satellite.svg", platform: ["linux", "windows"], categories: ["all", "others"], legacyViews: 5392 } },
   { params: { theme: "vivaldi", title: "Vivaldi", repo: "vivaldi", color: "cyan", icon: "used/pack-1/003-broom.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 18989 } },
