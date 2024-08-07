@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { useQuery } from "react-query";
 import fetchData from "src/lib/fetchData";
 import { appFadeInUp } from "src/lib/framerMotion";
+import Alucard from "./alucard";
 import AvailableEverywhere from "./availableEverywhere";
 import BecomeAVampire from "./becomeAVampire";
 import Description from "./description";
@@ -55,6 +56,7 @@ const ContentWrapper = ({ sales, reviews }) => {
     <LogoWall key="logoWall" />,
     <AvailableEverywhere key="availableEverywhere" />,
     <WhyPro key="whyPro" />,
+    <Alucard key="alucard" />,
     <Features key="features" />,
     <MoreThanATheme key="moreThanATheme" />,
     <FixedTestimonial key="fixedTestimonial" />,
