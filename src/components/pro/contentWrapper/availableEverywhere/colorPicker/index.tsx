@@ -16,6 +16,7 @@ const ColorPicker = ({ colorMap, variant, setVariant }) => (
         >
           <span className="preview" />
           <p className="name">{color.name}</p>
+          {index === colorMap.length - 1 && <span className="new">New!</span>}
         </li>
       ))}
     </ul>
