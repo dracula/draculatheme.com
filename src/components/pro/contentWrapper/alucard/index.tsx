@@ -10,17 +10,15 @@ const Alucard = () => {
           <span className="title s">Our First Light Theme</span>
           <div className="text">
             <p>
-              This light theme isn&apos;t just a matter of preference; it&apos;s
-              essential for accessibility and usability in bright conditions,
-              accommodating visually impaired users and ensuring readability.
+              For years, we resisted the idea of a light theme for Dracula.
+              However, we recognized its importance for accessibility and use in
+              bright environments.
             </p>
             <p>
-              Alucard maintains visual consistency with other Dracula variants,
-              making it easy to switch between dark and light themes. Ideal for
-              bright environments or developers who prefer light themes, Alucard
-              meets WCAG AA contrast standards, reflecting our meticulous
-              approach to accessibility through multiple iterations and
-              refinements.
+              Alucard, a light variant that seamlessly integrates with Dracula
+              PRO, was born. It meets WCAG AA contrast standards, a testament to
+              our careful development process that ensures legibility and
+              inclusivity.
             </p>
           </div>
         </div>
