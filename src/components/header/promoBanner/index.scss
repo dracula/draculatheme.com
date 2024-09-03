@@ -11,7 +11,13 @@
   background-color: var(--neutral-01);
 
   .container {
+    align-items: center;
     justify-content: center;
+    gap: .5em;
+  }
+
+  .icon {
+    margin-top: .0625rem;
   }
 
   &:hover {
