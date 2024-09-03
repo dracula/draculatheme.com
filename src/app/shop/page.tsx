@@ -12,7 +12,14 @@ const fetchProducts = async (productsArray) => {
     );
   });
 
-  return await Promise.all(productPromises);
+  const productsList = await Promise.all(productPromises);
+
+  productsList.sort((a, b) => {
+    if (a.published === b.published) return a.name.localeCompare(b.name);
+    return a.published ? -1 : 1;
+  });
+
+  return productsList;
 };
 
 export const metadata: Metadata = {
