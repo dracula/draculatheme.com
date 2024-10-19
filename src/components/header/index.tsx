@@ -30,7 +30,7 @@ const Header = ({ stars }) => {
 
   return (
     <header>
-      <PromoBanner />
+      {/* <PromoBanner /> */}
       <div className="container">
         <div className="wrapper">
           <Link href={"/"} onClick={() => isActive && setIsActive(false)}>

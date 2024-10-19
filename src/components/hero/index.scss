@@ -7,11 +7,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--hero-background-color-01);
-  background-image: linear-gradient(
-    to bottom,
-    var(--hero-background-color-01),
-    var(--hero-background-color-02)
-  );
+  background-image: linear-gradient(to bottom,
+      var(--hero-background-color-01),
+      var(--hero-background-color-02));
   z-index: 1;
 
   .snowfall,
@@ -55,6 +53,7 @@
       }
 
       &.theme {
+
         img,
         svg {
           width: 80%;
@@ -116,8 +115,8 @@
   .ppp {
     width: 100%;
     // promoBanner
-    padding: 9rem 1.5rem 2rem 1.5rem;
-    // padding: 6rem 1.5rem 2rem 1.5rem;
+    // padding: 9rem 1.5rem 2rem 1.5rem;
+    padding: 6rem 1.5rem 2rem 1.5rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -253,12 +252,10 @@
   &.pro {
     // Alucard launch
     background-color: var(--hero-background-color-01);
-    background-image: linear-gradient(
-      to bottom,
-      var(--yellow),
-      var(--orange),
-      var(--red)
-    );
+    background-image: linear-gradient(to bottom,
+        var(--yellow),
+        var(--orange),
+        var(--red));
 
     .content {
       .cta-wrapper {
