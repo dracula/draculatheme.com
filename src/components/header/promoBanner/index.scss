@@ -8,16 +8,16 @@
   border: none;
   font-weight: 700;
   color: var(--neutral-06);
-  background-color: var(--neutral-01);
+  background-color: var(--orange);
 
   .container {
     align-items: center;
     justify-content: center;
-    gap: .5em;
+    gap: 0.5em;
   }
 
   .icon {
-    margin-top: .0625rem;
+    margin-top: 0.0625rem;
   }
 
   &:hover {

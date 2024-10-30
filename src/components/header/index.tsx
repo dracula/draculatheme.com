@@ -30,7 +30,7 @@ const Header = ({ stars }) => {
 
   return (
     <header>
-      {/* <PromoBanner /> */}
+      <PromoBanner />
       <div className="container">
         <div className="wrapper">
           <Link href={"/"} onClick={() => isActive && setIsActive(false)}>
@@ -40,7 +40,7 @@ const Header = ({ stars }) => {
             </div>
           </Link>
           <div className="mb-menu">
-            <button onClick={() => setIsActive(!isActive)}>
+            <button type="button" onClick={() => setIsActive(!isActive)}>
               <span className="icon">
                 <MenuIcon />
               </span>

@@ -92,7 +92,7 @@ const Hero = () => {
 
   const { icon, title, subtitle, cta, anchor } = titleMapping[pathname] || {};
 
-  const isThemePath = themes.hasOwnProperty(pathname);
+  const isThemePath = Object.prototype.hasOwnProperty.call(themes, pathname);
 
   return (
     <section className={`hero ${pathClass}`}>
@@ -172,12 +172,12 @@ const Hero = () => {
                 title="Video showing the manufacture of products from the Dracula collection"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           </div>
         )}
       </div>
-      <div className="castle"></div>
+      <div className="castle" />
     </section>
   );
 };

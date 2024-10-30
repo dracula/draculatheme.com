@@ -6,7 +6,12 @@ article.alucard {
     padding: 0 0 0 3rem;
     gap: 3rem;
     background-color: var(--neutral-01);
-    background-image: linear-gradient(90deg, var(--neutral-01) 0%, var(--neutral-01) 48%, var(--purple) 100%);
+    background-image: linear-gradient(
+      90deg,
+      var(--neutral-01) 0%,
+      var(--neutral-01) 48%,
+      var(--purple) 100%
+    );
 
     .content {
       padding: 3.75rem 0;
@@ -31,7 +36,12 @@ article.alucard {
     .card-plain {
       padding: 0;
       flex-direction: column;
-      background-image: linear-gradient(180deg, var(--neutral-01) 0%, var(--neutral-01) 48%, var(--purple) 100%);
+      background-image: linear-gradient(
+        180deg,
+        var(--neutral-01) 0%,
+        var(--neutral-01) 48%,
+        var(--purple) 100%
+      );
 
       .content {
         padding: 1.875rem;

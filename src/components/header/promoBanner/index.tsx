@@ -4,13 +4,9 @@ import Link from "next/link";
 
 const PromoBanner = () => {
   return (
-    <Link
-      href="https://codinginpublic.dev/fundraiser?ref=draculatheme.com"
-      className="promo-banner"
-    >
+    <Link href="/pro" className="promo-banner">
       <span className="container">
-        Part of September&apos;s purchases will go towards curing childhood
-        cancer. <i>Read more </i>
+        Join Dracula PRO Spooky Celebration. 40% OFF!
         <ChevronRightIcon size={12} strokeWidth={3} className="icon" />
       </span>
     </Link>

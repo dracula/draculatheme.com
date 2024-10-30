@@ -15,28 +15,45 @@ const BecomeAVampire = ({ ppp, sales }) => {
   const tipRef = useRef(null);
   const inView = useInView(tipRef);
 
-  let promoName = `${new Date().toLocaleString("default", {
-    month: "long"
-  })} Promo`;
+  const defaultPrice = 99;
+  const promos = [
+    // Spooky Celebration
+    {
+      name: `${new Date().toLocaleString("default", { month: "long" })} Promo`,
+      beforePrice: 99,
+      afterPrice: 79,
+      url: "draculatheme.gumroad.com/l/dracula-pro?wanted=true",
+      discount: ((99 - 79) / 99) * 100
+    },
+    // PPP
+    ...(ppp?.country && ppp.discount
+      ? [
+          {
+            name: `${countries[ppp.country].name} Promo`,
+            beforePrice: 79,
+            afterPrice: Number(getDiscount(79, ppp.discount)),
+            url: `draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`,
+            discount: ppp.discount
+          }
+        ]
+      : []),
+    // Halloween promo
+    {
+      name: "Spooky Celebration",
+      beforePrice: 79,
+      afterPrice: Number(getDiscount(79, 40)),
+      url: "draculatheme.gumroad.com/l/dracula-pro/SPOOKYCELEBRATION24?wanted=true",
+      discount: 40
+    }
+  ];
 
-  let beforePrice = 99;
-  let afterPrice = 79;
-
-  let gumroadURL = "https://draculatheme.gumroad.com/l/dracula-pro?wanted=true";
-
-  if (ppp && ppp.country && ppp.discount) {
-    promoName = `${countries[ppp.country].name} Promo`;
-    beforePrice = 79;
-    afterPrice = Number(getDiscount(beforePrice, ppp.discount));
-    gumroadURL = `https://draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`;
-  }
-
-  // Cyber Monday Promo
-  // promoName = "Cyber Monday";
-  // beforePrice = 79;
-  // afterPrice = Number(getDiscount(beforePrice, 40));
-  // gumroadURL =
-  //   "https://draculatheme.gumroad.com/l/dracula-pro/HAPPYCYBERMONDAY23";
+  const bestPromo = promos.reduce((best, current) => {
+    const currentDiscount =
+      ((current.beforePrice - current.afterPrice) / current.beforePrice) * 100;
+    const bestDiscount =
+      ((best.beforePrice - best.afterPrice) / best.beforePrice) * 100;
+    return currentDiscount > bestDiscount ? current : best;
+  }, promos[0]);
 
   useEffect(() => {
     if (inView) {
@@ -67,11 +84,11 @@ const BecomeAVampire = ({ ppp, sales }) => {
           exit="exit"
           className="promo"
         >
-          With {promoName}
+          {bestPromo.name}
         </motion.span>
         <div className="pricing-wrapper">
-          <span className="previous-price">${beforePrice}</span>
-          <span className="current-price">${afterPrice}</span>
+          <span className="previous-price">${bestPromo.beforePrice}</span>
+          <span className="current-price">${bestPromo.afterPrice}</span>
         </div>
         <span className="info">One-time payment</span>
         <ul className="features">
@@ -142,7 +159,7 @@ const BecomeAVampire = ({ ppp, sales }) => {
             <span>License for 3 computers</span>
           </li>
         </ul>
-        <Link href={gumroadURL} className="primary">
+        <Link href={bestPromo.url} className="primary">
           Buy Dracula PRO
         </Link>
         <span className="info">30 days refund (no Q/A)</span>
