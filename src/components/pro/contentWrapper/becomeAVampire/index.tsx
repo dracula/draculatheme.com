@@ -17,22 +17,22 @@ const BecomeAVampire = ({ ppp, sales }) => {
 
   const defaultPrice = 99;
   const promos = [
-    // Spooky Celebration
+    // Default promo
     {
       name: `${new Date().toLocaleString("default", { month: "long" })} Promo`,
       beforePrice: 99,
       afterPrice: 79,
-      url: "draculatheme.gumroad.com/l/dracula-pro?wanted=true",
+      url: "https://draculatheme.gumroad.com/l/dracula-pro?wanted=true",
       discount: ((99 - 79) / 99) * 100
     },
-    // PPP
+    // PPP promo
     ...(ppp?.country && ppp.discount
       ? [
           {
             name: `${countries[ppp.country].name} Promo`,
             beforePrice: 79,
             afterPrice: Number(getDiscount(79, ppp.discount)),
-            url: `draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`,
+            url: `https://draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`,
             discount: ppp.discount
           }
         ]
@@ -42,7 +42,7 @@ const BecomeAVampire = ({ ppp, sales }) => {
       name: "Spooky Celebration",
       beforePrice: 79,
       afterPrice: Number(getDiscount(79, 40)),
-      url: "draculatheme.gumroad.com/l/dracula-pro/SPOOKYCELEBRATION24?wanted=true",
+      url: "https://draculatheme.gumroad.com/l/dracula-pro/SPOOKYCELEBRATION24?wanted=true",
       discount: 40
     }
   ];

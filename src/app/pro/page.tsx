@@ -1,5 +1,5 @@
 import "./page.scss";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import ContentWrapper from "src/components/pro/contentWrapper";
 import { getBasePath } from "src/lib/environment";
 import fetchData from "src/lib/fetchData";
