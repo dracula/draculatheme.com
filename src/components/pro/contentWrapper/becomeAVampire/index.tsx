@@ -10,48 +10,57 @@ import { getDiscount } from "src/lib/discount";
 import { textStagger } from "src/lib/framerMotion";
 import apps from "src/lib/pro";
 
+const calculateEffectiveDiscount = (promo) => {
+  return ((promo.beforePrice - promo.afterPrice) / promo.beforePrice) * 100;
+};
+
 const BecomeAVampire = ({ ppp, sales }) => {
   const control = useAnimation();
   const tipRef = useRef(null);
   const inView = useInView(tipRef);
 
-  const defaultPrice = 99;
-  const promos = [
-    // Default promo
-    {
-      name: `${new Date().toLocaleString("default", { month: "long" })} Promo`,
-      beforePrice: 99,
-      afterPrice: 79,
-      url: "https://draculatheme.gumroad.com/l/dracula-pro?wanted=true",
-      discount: ((99 - 79) / 99) * 100
-    },
-    // PPP promo
-    ...(ppp?.country && ppp.discount
-      ? [
-          {
-            name: `${countries[ppp.country].name} Promo`,
-            beforePrice: 79,
-            afterPrice: Number(getDiscount(79, ppp.discount)),
-            url: `https://draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`,
-            discount: ppp.discount
-          }
-        ]
-      : []),
-    // Halloween promo
-    {
-      name: "Spooky Celebration",
-      beforePrice: 79,
-      afterPrice: Number(getDiscount(79, 40)),
-      url: "https://draculatheme.gumroad.com/l/dracula-pro/SPOOKYCELEBRATION24?wanted=true",
-      discount: 40
-    }
-  ];
+  const defaultPromo = {
+    name: `${new Date().toLocaleString("default", { month: "long" })} Promo`,
+    beforePrice: 99,
+    afterPrice: 79,
+    url: "https://draculatheme.gumroad.com/l/dracula-pro?wanted=true",
+    discount: ((99 - 79) / 99) * 100
+  };
 
+  // const spookyPromo = {
+  //   name: "Spooky Celebration",
+  //   beforePrice: 79,
+  //   afterPrice: Number(getDiscount(79, 40)),
+  //   url: "https://draculatheme.gumroad.com/l/dracula-pro/SPOOKYCELEBRATION24?wanted=true",
+  //   discount: 40
+  // };
+
+  // Calculate PPP promo if available
+  const pppPromo =
+    ppp?.country && ppp.discount
+      ? {
+          name: `${countries[ppp.country].name} Promo`,
+          beforePrice: 79,
+          afterPrice: Number(getDiscount(79, ppp.discount)),
+          url: `https://draculatheme.gumroad.com/l/dracula-pro/${ppp.country}PRO?wanted=true`,
+          discount: ppp.discount
+        }
+      : null;
+
+  const promos = [defaultPromo];
+
+  // Add PPP promo if it exists
+  if (pppPromo) {
+    promos.push(pppPromo);
+  }
+
+  // Add spooky promo
+  // promos.push(spookyPromo);
+
+  // Find the best promo by comparing effective discounts
   const bestPromo = promos.reduce((best, current) => {
-    const currentDiscount =
-      ((current.beforePrice - current.afterPrice) / current.beforePrice) * 100;
-    const bestDiscount =
-      ((best.beforePrice - best.afterPrice) / best.beforePrice) * 100;
+    const currentDiscount = calculateEffectiveDiscount(current);
+    const bestDiscount = calculateEffectiveDiscount(best);
     return currentDiscount > bestDiscount ? current : best;
   }, promos[0]);
 
