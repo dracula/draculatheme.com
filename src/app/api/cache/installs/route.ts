@@ -10,36 +10,43 @@ const octokit = new Octokit({
 const fetchAndOrganize = async (installs, path) => {
   const key = path.params.repo;
 
-  const response = await octokit.rest.repos.getContent({
-    path: "INSTALL.md",
-    owner: "dracula",
-    repo: key
-  });
+  try {
+    const response = await octokit.rest.repos.getContent({
+      path: "INSTALL.md",
+      owner: "dracula",
+      repo: key
+    });
 
-  if (Array.isArray(response.data)) {
+    if (Array.isArray(response.data)) {
+      throw new Error(
+        `Expected file content but got directory listing for repo: ${key}`
+      );
+    }
+
+    if (response.data.type !== "file") {
+      throw new Error(
+        `Expected file content but got ${response.data.type} for repo: ${key}`
+      );
+    }
+
+    if (!response.data.content) {
+      throw new Error(`Content not found for repo: ${key}`);
+    }
+
+    const value = response.data.content;
+    installs[key] = value;
+
+    return value;
+  } catch (error) {
     throw new Error(
-      `Expected file content but got directory listing for repo: ${key}`
+      `Failed to fetch content for repo ${key}: ${error.message}`
     );
   }
-
-  if (response.data.type !== "file") {
-    throw new Error(
-      `Expected file content but got ${response.data.type} for repo: ${key}`
-    );
-  }
-
-  if (!response.data.content) {
-    throw new Error(`Content not found for repo: ${key}`);
-  }
-
-  const value = response.data.content;
-
-  return (installs[key] = value);
 };
 
 export async function GET() {
   try {
-    let installs = {};
+    const installs = {};
 
     await Promise.all(paths.map((path) => fetchAndOrganize(installs, path)));
 
