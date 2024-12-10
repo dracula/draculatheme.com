@@ -51,6 +51,14 @@
       color: var(--color);
     }
   }
+
+  @media (max-width: 60rem) {
+    .icon {
+      &.cmdk {
+        display: none;
+      }
+    }
+  }
 }
 
 [cmdk-overlay] {
@@ -221,6 +229,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
