@@ -6,7 +6,7 @@ const PromoBanner = () => {
   return (
     <Link href="/pro" className="promo-banner">
       <span className="container">
-        Join Dracula PRO Spooky Celebration. 40% OFF!
+        Dracula's locked up by the Grinch. 40% OFF!
         <ChevronRightIcon size={12} strokeWidth={3} className="icon" />
       </span>
     </Link>
