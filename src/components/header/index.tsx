@@ -3,10 +3,10 @@
 import "./index.scss";
 import { GithubIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import CommandMenu from "./commandMenu";
 import PromoBanner from "./promoBanner";
-import { usePathname } from "next/navigation";
 
 const Header = ({ stars }) => {
   const [isActive, setIsActive] = useState(false);
