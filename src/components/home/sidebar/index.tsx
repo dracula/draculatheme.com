@@ -10,6 +10,7 @@ import {
 } from "src/lib/atoms";
 import categories from "src/lib/filters/categories";
 import platforms from "src/lib/filters/platforms";
+import paths from "src/lib/paths";
 import useSound from "use-sound";
 
 const FilterOption = ({ id, group, value, name, checked, onChange }) => (
@@ -41,6 +42,7 @@ const Sidebar = () => {
     categoriesFiltersAtom
   );
   const [search, setSearch] = useAtom(searchAtom);
+  const appsCount = paths.length;
 
   const soundUrl = "/sounds/click.mp3";
   const [play] = useSound(soundUrl);
@@ -98,7 +100,7 @@ const Sidebar = () => {
           <input
             type="search"
             id="header-search"
-            placeholder="Search for a theme"
+            placeholder={`Search ${appsCount} themes`}
             onChange={(e) => setSearch(e.target.value.toLowerCase())}
           />
         </div>

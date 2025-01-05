@@ -338,7 +338,7 @@ const paths: Paths = [
   { params: { theme: "tilix", title: "Tilix", repo: "tilix", color: "cyan", icon: "used/pack-2/046-ghost.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 7564 } },
   { params: { theme: "tint2", title: "tint2", repo: "tint2", color: "cyan", icon: "used/pack-5/009-potion.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 465 } },
   { params: { theme: "tlrc", title: "tlrc", repo: "tlrc", color: "orange", icon: "used/pack-3/049-vial.svg", platform: ["all"], categories: ["terminals", "others"], legacyViews: 0 } },
-  // { params: { theme: "tmux", title: "tmux", repo: "tmux", color: "purple", icon: "used/pack-1/030-clown.svg", platform: ["linux", "osx"], categories: ["all", "others"], legacyViews: 38512 } },
+  { params: { theme: "tmux", title: "tmux", repo: "tmux", color: "purple", icon: "used/pack-1/030-clown.svg", platform: ["linux", "osx"], categories: ["all", "others"], legacyViews: 38512 } },
   { params: { theme: "todoist", title: "Todoist", repo: "todoist", color: "yellow", icon: "used/pack-4/004-hephaestus.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "tofi", title: "Tofi", repo: "tofi", color: "cyan", icon: "used/pack-12/021-werewolf.svg", platform: ["linux"], categories: ["terminals", "others"], legacyViews: 0 } },
   { params: { theme: "total-commander", title: "Total Commander", repo: "total-commander", color: "purple", icon: "used/pack-3/044-spell-1.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 4995 } },
