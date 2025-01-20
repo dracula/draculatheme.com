@@ -144,7 +144,7 @@ const paths: Paths = [
   { params: { theme: "ida", title: "IDA Pro", repo: "ida", color: "cyan", icon: "used/pack-7/018-cleaver.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 4300 } },
   { params: { theme: "idle", title: "IDLE", repo: "idle", color: "cyan", icon: "used/pack-5/042-handcuffs.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 8443 } },
   { params: { theme: "imageglass", title: "ImageGlass", repo: "imageglass", color: "purple", icon: "used/pack-10/032-crystal.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 650 } },
-  { params: { theme: "inav", title: "Inav", repo: "inav", color: "purple", icon: "used/pack-2/001-billiard.svg", platform: ["all"], categories: ["terminals", "others"], legacyViews: 0 } },
+  { params: { theme: "lnav", title: "lnav", repo: "lnav", color: "purple", icon: "used/pack-2/001-billiard.svg", platform: ["all"], categories: ["terminals", "others"], legacyViews: 0 } },
   { params: { theme: "infinity-for-reddit", title: "Infinity for Reddit", repo: "infinity-for-reddit", color: "cyan", icon: "used/pack-8/016-galaxy.svg", platform: ["all"], categories: ["all", "social"], legacyViews: 7 } },
   { params: { theme: "inkscape", title: "Inkscape", repo: "inkscape", color: "purple", icon: "used/pack-7/030-skull.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 2818 } },
   { params: { theme: "insomnia", title: "Insomnia", repo: "insomnia", color: "cyan", icon: "used/pack-1/043-scythe.svg", platform: ["all"], categories: ["all", "others", "services"], legacyViews: 25560 } },
