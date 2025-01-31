@@ -22,9 +22,10 @@ const RequestAccess = () => (
           <Link
             href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/changing-your-primary-email-address"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline"
           >
-            Check the docs on setting email as primary
+            Learn how to set your GitHub email as primary or public
           </Link>
           );
         </li>
