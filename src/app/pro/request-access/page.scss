@@ -14,6 +14,7 @@
   border: 0.125rem solid var(--neutral-05);
   border-radius: var(--radius-03);
   background-color: var(--background-color-02);
+  z-index: 2;
 
   .borders {
     position: absolute;
@@ -162,10 +163,12 @@
 
   .notes {
     width: 100%;
+    max-width: 27rem;
     margin: -0.25rem 0 0 0;
     padding: 0.625rem 1.125rem 0.1875rem 0.625rem;
     border-top: 0.0625rem dashed hsl(0, 0%, 16%);
     border-bottom: 0.0625rem dashed hsl(0, 0%, 16%);
+    text-wrap: pretty;
 
     p {
       font-weight: 600;
@@ -173,8 +176,16 @@
 
     ul {
       margin-top: 0.5rem;
-      padding: 0 0 0 1.5rem;
+      padding: 0 0 0 1.125rem;
       font-size: 0.8125rem;
+
+      li {
+        margin: .375rem 0;
+      }
+    }
+
+    a {
+      color: var(--color);
     }
   }
 }

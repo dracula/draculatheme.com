@@ -1,6 +1,6 @@
-import RequestAccessForm from "src/components/pro/request-access-form";
 import "./page.scss";
 import Link from "next/link";
+import RequestAccessForm from "src/components/pro/request-access-form";
 
 const RequestAccess = () => (
   <section id="request-access">
@@ -17,17 +17,16 @@ const RequestAccess = () => (
       <ul>
         <li>Use the same email used to purchase the product;</li>
         <li>
-          The email must be associated with a GitHub account and set as either
-          primary or public email (
+          The email must be linked to your GitHub account and{" "}
           <Link
             href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/changing-your-primary-email-address"
             target="_blank"
             rel="noopener noreferrer"
             className="inline"
           >
-            Learn how to set your GitHub email as primary or public
+            set to primary or public
           </Link>
-          );
+          ;
         </li>
         <li>After confirmation, you will receive an invitation from GitHub.</li>
       </ul>
