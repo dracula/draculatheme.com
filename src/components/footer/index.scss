@@ -58,6 +58,10 @@ footer {
   footer {
     .container {
       flex-direction: column;
+
+      .col-title {
+        width: 100%;
+      }
     }
   }
 }
