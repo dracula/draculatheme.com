@@ -134,7 +134,7 @@ section.home {
             visibility: hidden;
 
             &:checked {
-              ~span {
+              ~ span {
                 color: var(--green);
               }
             }
@@ -269,7 +269,6 @@ section.home {
         }
 
         .filter-group {
-
           &.platforms,
           &.categories {
             display: none;
