@@ -41,7 +41,7 @@ const Sidebar = () => {
   const [categoriesFilters, setCategoriesFilters] = useAtom(
     categoriesFiltersAtom
   );
-  const [search, setSearch] = useAtom(searchAtom);
+  const [_search, setSearch] = useAtom(searchAtom);
   const appsCount = paths.length;
 
   const soundUrl = "/sounds/click.mp3";
@@ -85,13 +85,16 @@ const Sidebar = () => {
   }, [
     platformsFilters,
     categoriesFilters,
-    search,
     setPlatformsFilters,
     setCategoriesFilters
   ]);
 
   return (
     <aside className="themes-sidebar">
+      <div className="title-wrapper">
+        <h2>Discover</h2>
+        <span>An ever-growing selection of supported apps.</span>
+      </div>
       <div className="filter-group">
         <div className="search-wrapper">
           <span className="icon search">
@@ -105,11 +108,11 @@ const Sidebar = () => {
           />
         </div>
       </div>
-      <div className="filter-group">
+      <div className="filter-group platforms">
         <span className="title">Platforms</span>
         {platforms.map((platform, index) => (
           <FilterOption
-            key={index}
+            key={platform.name}
             id={`platforms-${platform.value}`}
             group="platforms"
             name={platform.name}
@@ -122,11 +125,11 @@ const Sidebar = () => {
           />
         ))}
       </div>
-      <div className="filter-group">
+      <div className="filter-group categories">
         <span className="title">Categories</span>
         {categories.map((category, index) => (
           <FilterOption
-            key={index}
+            key={category.name}
             id={`categories-${category.value}`}
             group="categories"
             name={category.name}

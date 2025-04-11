@@ -1,5 +1,5 @@
 import "./page.scss";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Grid from "src/components/home/grid";
 import Sidebar from "src/components/home/sidebar";
 import PromoBanner from "src/components/promoBanner";
@@ -20,7 +20,7 @@ const Home = async () => {
         `${getBasePath()}/api/views?id=${path.params.theme}`
       );
 
-      path.params.views = parseInt(data.views) || 0;
+      path.params.views = Number.parseInt(data.views) || 0;
     }
 
     paths.sort((a, b) => {
@@ -38,7 +38,7 @@ const Home = async () => {
         <div className="apps-wrapper">
           <div className="title-wrapper">
             <h2>Discover</h2>
-            <span>Browse the ever-growing selection of apps supported.</span>
+            <span>An ever-growing selection of supported apps.</span>
           </div>
           <Grid paths={paths} />
         </div>

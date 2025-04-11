@@ -31,6 +31,11 @@ section.home {
       border-radius: var(--radius-02);
       background-color: var(--background-color-02);
 
+      .title-wrapper {
+        display: none;
+        flex-direction: column;
+      }
+
       .filter-group {
         width: 100%;
         margin: 0;
@@ -254,10 +259,35 @@ section.home {
       }
 
       .side-wrapper {
-        display: none;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        top: unset;
+
+        .title-wrapper {
+          display: flex;
+        }
+
+        .filter-group {
+          &.platforms,
+          &.categories {
+            display: none;
+          }
+        }
+
+        .card-promo-banner {
+          display: none;
+        }
       }
 
       .apps-wrapper {
+        flex: none;
+        width: 100%;
+
+        .title-wrapper {
+          display: none;
+        }
+
         .apps-grid {
           justify-content: center;
 
