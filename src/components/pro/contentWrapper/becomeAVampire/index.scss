@@ -13,8 +13,22 @@ article.become-a-vampire {
     justify-content: center;
   }
 
+  div.info {
+    display: flex;
+    flex-direction: column;
+  }
+
   .info {
+    width: 100%;
+    text-align: center;
     color: var(--neutral-03);
+
+    span {
+      &.support {
+        font-style: italic;
+        font-size: .75rem;
+      }
+    }
 
     a,
     .highlighted {
