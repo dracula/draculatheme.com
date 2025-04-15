@@ -27,13 +27,13 @@ const BecomeAVampire = ({ ppp, sales }) => {
 		discount: ((99 - 79) / 99) * 100,
 	};
 
-	// const spookyPromo = {
-	//   name: "A Scary Christmas!",
-	//   beforePrice: 79,
-	//   afterPrice: Number(getDiscount(79, 40)),
-	//   url: "https://draculatheme.gumroad.com/l/dracula-pro/GRINCHSMISCHIEF?wanted=true",
-	//   discount: 40
-	// };
+	const specialPromo = {
+		name: "Happy easter!",
+		beforePrice: 79,
+		afterPrice: Number(getDiscount(79, 30)),
+		url: "https://draculatheme.gumroad.com/l/dracula-pro/EASTER30?wanted=true",
+		discount: 30,
+	};
 
 	// Calculate PPP promo if available
 	const pppPromo =
@@ -54,8 +54,8 @@ const BecomeAVampire = ({ ppp, sales }) => {
 		promos.push(pppPromo);
 	}
 
-	// Add spooky promo
-	// promos.push(spookyPromo);
+	// Add promo
+	promos.push(specialPromo);
 
 	// Find the best promo by comparing effective discounts
 	const bestPromo = promos.reduce((best, current) => {

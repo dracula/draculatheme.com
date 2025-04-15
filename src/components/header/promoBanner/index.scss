@@ -1,5 +1,5 @@
 .promo-banner {
-  width: 100%;
+  width: 100% !important;
   padding: 0;
   display: flex;
   align-items: center;
@@ -7,8 +7,8 @@
   border-radius: 0;
   border: none;
   font-weight: 700;
-  color: var(--neutral-06);
-  background-color: var(--green);
+  color: var(--neutral-01);
+  background-color: var(--purple);
 
   .container {
     align-items: center;
@@ -21,6 +21,6 @@
   }
 
   &:hover {
-    color: var(--neutral-05);
+    color: var(--neutral-02);
   }
 }

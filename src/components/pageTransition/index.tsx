@@ -7,42 +7,41 @@ import { fadeInUp } from "src/lib/framerMotion";
 
 const colors = ["180", "115", "35", "330", "250", "10", "60"];
 const pathToColor = {
-  "/pro/changelog": "115",
-  // "/pro": "115",
-  "/pro": "35",
-  "/contribute": "35",
-  "/shop": "330",
-  "/": "250",
-  "/blog": "10",
-  "/about": "180"
+	"/": "250",
+	"/about": "180",
+	"/blog": "10",
+	"/contribute": "35",
+	"/pro": "180",
+	"/pro/changelog": "115",
+	"/shop": "330",
 };
 
 const PageTransition = ({ children }) => {
-  const pathname = usePathname();
+	const pathname = usePathname();
 
-  const setColor = useCallback(() => {
-    let color =
-      pathToColor[pathname] ||
-      colors[Math.floor(Math.random() * colors.length)];
-    document.documentElement.style.setProperty("--main-hue", `${color}`);
-  }, [pathname]);
+	const setColor = useCallback(() => {
+		const color =
+			pathToColor[pathname] ||
+			colors[Math.floor(Math.random() * colors.length)];
+		document.documentElement.style.setProperty("--main-hue", `${color}`);
+	}, [pathname]);
 
-  useEffect(() => {
-    setColor();
-  }, [setColor]);
+	useEffect(() => {
+		setColor();
+	}, [setColor]);
 
-  return (
-    <AnimatePresence>
-      <motion.main
-        variants={fadeInUp}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
-        {children}
-      </motion.main>
-    </AnimatePresence>
-  );
+	return (
+		<AnimatePresence>
+			<motion.main
+				variants={fadeInUp}
+				initial="initial"
+				animate="animate"
+				exit="exit"
+			>
+				{children}
+			</motion.main>
+		</AnimatePresence>
+	);
 };
 
 export default PageTransition;
