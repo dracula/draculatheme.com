@@ -7,6 +7,7 @@
   border-radius: 0;
   border: none;
   font-weight: 700;
+  text-shadow: -0.0625rem 0 hsla(0, 0%, 0%, 42%);
   color: var(--neutral-01);
   background-color: var(--purple);
 
@@ -22,5 +23,13 @@
 
   &:hover {
     color: var(--neutral-02);
+  }
+
+  @media screen and (max-width: 64rem) {
+    font-size: .75rem;
+
+    .container {
+      flex-direction: row;
+    }
   }
 }
