@@ -3,14 +3,14 @@
 import "./index.scss";
 import { GithubIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { useState } from "react";
 import CommandMenu from "./commandMenu";
-import PromoBanner from "./promoBanner";
+// import PromoBanner from "./promoBanner";
 
 const Header = ({ stars }) => {
 	const [isActive, setIsActive] = useState(false);
-	const pathname = usePathname();
+	// const pathname = usePathname();
 
 	const Navigation = ({ children }) => (
 		<nav>
@@ -32,7 +32,7 @@ const Header = ({ stars }) => {
 
 	return (
 		<header>
-			{pathname !== "/pro" && <PromoBanner />}
+			{/* {pathname !== "/pro" && <PromoBanner />} */}
 			<div className="container">
 				<div className="wrapper">
 					<Link href={"/"} onClick={() => isActive && setIsActive(false)}>
