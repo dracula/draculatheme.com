@@ -14,6 +14,7 @@ const paths: Paths = [
   { params: { theme: "aliucord", title: "Aliucord", repo: "aliucord", color: "purple", icon: "used/pack-9/027-candy-cane.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 2845 } },
   { params: { theme: "amfora", title: "Amfora", repo: "amfora", color: "cyan", icon: "used/pack-9/011-bucket.svg", platform: ["all"], categories: ["all", "terminals"], legacyViews: 470 } },
   { params: { theme: "anne-pro-2", title: "Anne Pro 2", color: "cyan", repo: "anne-pro-2", icon: "used/pack-9/043-halloween.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
+  { params: { theme: "anytype", title: "Anytype", repo: "anytype", color: "cyan", icon: "used/pack-2/008-cards.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "apollo", title: "Apollo", repo: "apollo", color: "purple", icon: "used/pack-8/001-space.svg", platform: ["osx"], synonyms: ["reddit"], categories: ["all", "others"], legacyViews: 1076 } },
   { params: { theme: "archive-of-our-own", title: "Archive of Our Own", repo: "archive-of-our-own", color: "cyan", icon: "used/pack-3/008-chest.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 438 } },
   { params: { theme: "arduino-ide", title: "Arduino IDE", repo: "arduino-ide", color: "cyan", icon: "used/pack-1/001-gallows.svg", platform: ["all"], categories: ["all", "ides"], legacyViews: 12946 } },
@@ -228,6 +229,7 @@ const paths: Paths = [
   { params: { theme: "newterm2", title: "NewTerm2", repo: "NewTerm2", color: "orange", icon: "used/pack-7/026-mask.svg", platform: ["all"], categories: ["all", "terminals"], legacyViews: 0 } },
   { params: { theme: "nextcloud", title: "Nextcloud", repo: "nextcloud", color: "cyan", icon: "used/pack-2/044-podium.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 566 } },
   { params: { theme: "ngenuity", title: "HyperX NGNUITY", repo: "ngenuity", color: "yellow", icon: "used/pack-3/018-key.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 605 } },
+  { params: { theme: "nilesoft-shell", title: "Nilesoft Shell", repo: "nilesoft-shell", color: "pink", icon: "used/pack-2/016-game controller.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "nitter", title: "Nitter", repo: "nitter", color: "orange", icon: "used/pack-4/007-owl.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 8 } },
   { params: { theme: "nnn", title: "nnn", repo: "nnn", color: "cyan", icon: "used/pack-3/050-wand.svg", platform: ["all"], categories: ["all", "terminals"], legacyViews: 0 } },
   { params: { theme: "node-console", title: "Node Console", repo: "node-console", color: "cyan", icon: "used/pack-9/025-owl.svg", platform: ["all"], categories: ["all", "terminals"], legacyViews: 1150 } },
@@ -298,6 +300,7 @@ const paths: Paths = [
   { params: { theme: "sketch", title: "Sketch", repo: "sketch", color: "cyan", icon: "used/pack-3/025-magic-wand-1.svg", platform: ["all"], categories: ["all", "others", "services"], legacyViews: 2350 } },
   { params: { theme: "slack", title: "Slack", repo: "slack", color: "cyan", icon: "used/pack-1/047-cleaver.svg", platform: ["all"], categories: ["all", "social"], legacyViews: 114299 } },
   { params: { theme: "smartgit", title: "SmartGit", color: "green", repo: "smartgit", icon: "used/pack-8/026-alien.svg", platform: ["all"], categories: ["all", "services"], legacyViews: 0 } },
+  { params: { theme: "snappy-driver-installer", title: "Snappy Driver Installer", repo: "snappy-driver-installer", color: "cyan", icon: "used/pack-2/019-console.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "sniffnet", title: "Sniffnet", color: "purple", repo: "sniffnet", icon: "used/pack-3/029-enchanted-mirror.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "snippetslab", title: "SnippetsLab", repo: "snippetslab", color: "purple", icon: "used/pack-5/037-powder.svg", platform: ["osx"], categories: ["all", "others"], legacyViews: 328 } },
   { params: { theme: "solidworks", title: "SolidWorks", repo: "solidworks", color: "cyan", icon: "used/pack-10/044-monster-1.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 980 } },
@@ -319,6 +322,7 @@ const paths: Paths = [
   { params: { theme: "sumatra-pdf", title: "Sumatra PDF", repo: "sumatra-pdf", color: "orange", icon: "used/pack-10/013-frankenstein.svg", platform: ["windows"], categories: ["all", "others"], legacyViews: 2814 } },
   { params: { theme: "swaylock", title: "Swaylock", repo: "swaylock", color: "purple", icon: "used/pack-2/027-shield.svg", platform: ["linux"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "swiftui", title: "SwiftUI", repo: "swiftui", color: "cyan", icon: "used/pack-10/031-wizard-1.svg", platform: ["osx"], categories: ["all", "others"], legacyViews: 1370 } },
+  { params: { theme: "tableplus", title: "TablePlus", repo: "tableplus", color: "yellow", icon: "used/pack-13/045-halloween.svg", platform: ["all"], categories: ["all", "ides", "others"], legacyViews: 0 } },
   { params: { theme: "tabletop-simulator", title: "Tabletop Simulator", repo: "tabletop-simulator", color: "pink", icon: "used/pack-2/048-cards.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 3311 } },
   { params: { theme: "tailwind", title: "Tailwind", repo: "tailwind", color: "cyan", icon: "used/pack-10/034-moon.svg", platform: ["all"], categories: ["all", "others", "services"], legacyViews: 4335 } },
   { params: { theme: "telegram-android", title: "Telegram Android", repo: "telegram-android", color: "orange", icon: "used/pack-6/038-skull.svg", platform: ["all"], categories: ["all", "social"], legacyViews: 13607 } },
@@ -398,8 +402,7 @@ const paths: Paths = [
   { params: { theme: "zed", title: "Zed", repo: "zed", color: "orange", icon: "used/pack-12/029-kappa.svg", platform: ["all"], categories: ["all", "editors"], legacyViews: 0 } },
   { params: { theme: "zellij", title: "Zellij", repo: "zellij", color: "cyan", icon: "used/pack-3/004-broom.svg", platform: ["linux", "osx"], categories: ["all", "ides"], legacyViews: 516 } },
   { params: { theme: "zsh-syntax-highlighting", title: "zsh-syntax-highlighting", repo: "zsh-syntax-highlighting", color: "yellow", icon: "used/pack-10/020-reaper.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 10231 } },
-  { params: { theme: "zsh", title: "Zsh", repo: "zsh", color: "cyan", icon: "used/pack-1/034-eye.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 276962 } }
-  // { params: { theme: "binary-ninja", title: "Binary Ninja", repo: "binary-ninja", color: "purple", icon: "used/pack-2/020-medal", platform: ["all"], categories: ["terminals", "others"], legacyViews: 0 } }
+  { params: { theme: "zsh", title: "Zsh", repo: "zsh", color: "cyan", icon: "used/pack-1/034-eye.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 276962 } },
 ];
 
 export default paths;
