@@ -65,6 +65,7 @@ const paths: Paths = [
   { params: { theme: "coteditor", title: "CotEditor", repo: "coteditor", color: "cyan", icon: "used/pack-1/026-mummy.svg", platform: ["osx"], categories: ["all", "editors"], legacyViews: 1719 } },
   { params: { theme: "couscous", title: "Couscous", repo: "couscous", color: "cyan", icon: "used/pack-1/024-tombstone-1.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 2001 } },
   { params: { theme: "cryptowatch", title: "Cryptowatch", repo: "cryptowatch", color: "purple", icon: "used/pack-7/037-halloween.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 1589 } },
+  { params: { theme: "cursor", title: "Cursor", repo: "cursor", color: "purple", icon: "used/pack-8/029-telescope.svg", platform: ["all"], categories: ["all", "editors", "ides", "services"], legacyViews: 0 } },
   { params: { theme: "cutter", title: "Cutter", repo: "cutter", color: "purple", icon: "used/pack-3/006-cards.svg", platform: ["all"], categories: ["terminals", "others"], legacyViews: 0 } },
   { params: { theme: "delphi", title: "Delphi", repo: "delphi", color: "yellow", icon: "used/pack-9/032-tree.svg", platform: ["all"], categories: ["all", "ides"], legacyViews: 875 } },
   { params: { theme: "dev-cpp", title: "Dev-C++", repo: "dev-cpp", color: "cyan", icon: "used/pack-9/021-scream.svg", platform: ["windows"], categories: ["all", "ides"], legacyViews: 9935 } },
