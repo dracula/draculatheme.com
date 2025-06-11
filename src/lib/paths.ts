@@ -280,6 +280,7 @@ const paths: Paths = [
   { params: { theme: "qutebrowser", title: "Qutebrowser", repo: "qutebrowser", color: "purple", icon: "used/pack-5/015-box.svg", platform: ["all"], categories: ["all", "browsers"], legacyViews: 7550 } },
   { params: { theme: "R", title: "R", repo: "dRacula", color: "cyan", icon: "used/pack-13/002-dracula-hex.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 572 } },
   { params: { theme: "ranger", title: "ranger", repo: "ranger", color: "pink", icon: "used/pack-9/019-brain.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 2664 } },
+  { params: { theme: "raycast", title: "Raycast", repo: "raycast", color: "cyan", icon: "used/pack-8/027-satellite.svg", platform: ["all"], categories: ["all", "services", "others"], legacyViews: 0 } },
   { params: { theme: "renoise", title: "ReNoise", repo: "renoise", color: "cyan", icon: "used/pack-8/047-computer.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 1683 } },
   { params: { theme: "replugged", title: "Replugged", repo: "replugged", color: "purple", icon: "used/pack-2/025-tetris.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 0 } },
   { params: { theme: "revolt", title: "Revolt", repo: "revolt", color: "cyan", icon: "used/pack-9/030-coffin.svg", platform: ["all"], categories: ["all", "others"], legacyViews: 454 } },
