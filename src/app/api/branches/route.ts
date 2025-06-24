@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import redis from "src/lib/redis";
+import { type NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+import { redis } from "@/lib/redis";
+
+export const GET = async (request: NextRequest) => {
   const id = request.nextUrl.searchParams.get("id");
 
   if (id) {
@@ -10,10 +11,10 @@ export async function GET(request: NextRequest) {
       const branches = value || {};
 
       return NextResponse.json({ branches }, { status: 200 });
-    } catch (error) {
+    } catch (_error) {
       return NextResponse.json({ branches: {} }, { status: 400 });
     }
   }
 
   return NextResponse.json({ branches: {} }, { status: 400 });
-}
+};

@@ -1,0 +1,30 @@
+header {
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color-primary);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: fit-content;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 0;
+        padding: 0;
+        gap: var(--spacing-default);
+        list-style: none;
+      }
+    }
+  }
+}

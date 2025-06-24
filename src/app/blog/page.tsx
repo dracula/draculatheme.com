@@ -1,18 +1,41 @@
-import "./page.scss";
-import { Metadata } from "next";
-import BlogpostList from "src/components/blog/blogpostList";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "The journey of building the most universal dark theme ever made.",
-  alternates: {
-    canonical: "/blog"
-  }
+import type { Post } from "@/lib/markdown";
+import { getMdxDataFromDirectory } from "@/utils/mdx/get-mdx-data-from-directory";
+
+const BlogPage = async () => {
+  const posts = getMdxDataFromDirectory<Post>("content/blog");
+  const featured = posts.filter((post: Post) => post.featured).slice(0, 2);
+
+  return (
+    <section className="container">
+      {featured.length > 0 && (
+        <>
+          <h3>Featured Posts</h3>
+          <ul>
+            {featured.map((post: Post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`}>
+                  <h4>{post.title}</h4>
+                  <p>{post.excerpt}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      <ul>
+        {posts.map((post: Post) => (
+          <li key={post.slug}>
+            <Link href={post.slug}>
+              <h4>{post.title}</h4>
+              <p>{post.excerpt}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 };
 
-const Blog = () => {
-  return <BlogpostList />;
-};
-
-export default Blog;
+export default BlogPage;

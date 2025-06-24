@@ -1,0 +1,193 @@
+:root {
+  --page-max-width: 64rem;
+  --page-padding-horizontal: 2em;
+  --page-padding-vertical: 1.5em;
+  --page-sections-spacing: 4em;
+
+  --font-size-caption: 0.75rem;
+  --font-size-body: 0.8125rem;
+  --font-size-heading: 1.125rem;
+  --font-size-display: 1.875rem;
+
+  --action-height: 2.25rem;
+  --action-padding: 0 1rem;
+  --action-icon-size: 1em;
+  --action-border-radius: 1.5rem;
+
+  --spacing-default: 0.75rem;
+
+  --hue: 254;
+  --main-hue: 250;
+
+  --cyan: hsl(180, 88%, 66%);
+  --green: hsl(115, 92%, 66%);
+  --orange: hsl(35, 92%, 66%);
+  --pink: hsl(330, 92%, 66%);
+  --purple: hsl(250, 92%, 66%);
+  --red: hsl(10, 92%, 66%);
+  --yellow: hsl(60, 92%, 66%);
+
+  --color: hsl(var(--main-hue), 92%, 66%);
+
+  --color-caption: hsl(var(--hue), 12%, 84%);
+  --color-body: hsl(var(--hue), 12%, 90%);
+  --color-heading: hsl(var(--hue), 12%, 96%);
+  --color-display: hsl(var(--hue), 12%, 100%);
+
+  --background-color-primary: hsl(var(--hue), 12%, 6%);
+  --background-color-secondary: hsl(var(--hue), 12%, 12%);
+  --background-color-tertiary: hsl(var(--hue), 12%, 18%);
+
+  --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
+
+  --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
+  --hero-background-color-secondary: hsl(var(--main-hue), 24%, 30%);
+
+  --box-shadow-primary: 0 0.0625rem 0.125rem 0 hsla(var(--hue), 6%, 0%, 0.06);
+  --box-shadow-secondary:
+    0 0.0625rem 0.1875rem 0 hsla(var(--hue), 6%, 0%, 0.12),
+    0 0.0625rem 0.125rem -0.0625rem hsla(var(--hue), 6%, 0%, 0.12);
+  --box-shadow-tertiary:
+    0 0.25rem 0.375rem -0.0625rem hsla(var(--hue), 6%, 0%, 0.12),
+    0 0.125rem 0.25rem -0.125rem hsla(var(--hue), 6%, 0%, 0.12);
+
+  --ease-fluid: cubic-bezier(0.36, 0.66, 0.6, 1);
+  --ease-sharp: cubic-bezier(0.6, 0.12, 0.34, 0.96);
+  --ease-elastic: cubic-bezier(0.42, 0, 0.58, 1.8);
+  --ease-impact: cubic-bezier(0.24, 0.9, 0.32, 1.4);
+}
+
+::selection {
+  background-color: var(--purple);
+  color: var(--color-display);
+  text-shadow: 0.0625rem 0.0625rem 0.125rem hsla(var(--hue), 0%, 0%, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color-primary);
+  color: var(--color-body);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  font-family: var(--font-inter);
+}
+
+header,
+main,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+main {
+  flex-direction: column;
+  gap: var(--page-sections-spacing);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  padding: var(--page-padding-vertical) var(--page-padding-horizontal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--font-size-heading);
+  font-weight: 600;
+  font-size: var(--font-size-heading);
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+strong,
+b,
+em {
+  font-weight: 500;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.action {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: fit-content;
+  height: var(--action-height);
+  padding: var(--action-padding);
+  gap: var(--spacing-default);
+  border: none;
+  border-radius: var(--action-border-radius);
+  background-color: transparent;
+  box-shadow: 0 0 0 transparent;
+  color: var(--color-body);
+  font-weight: 600;
+  font-size: inherit;
+  text-decoration: none;
+  transition:
+    background-color 250ms var(--ease-fluid),
+    box-shadow 250ms var(--ease-fluid),
+    color 250ms var(--ease-fluid);
+
+  &.primary {
+    background-color: var(--color-display);
+    box-shadow: var(--box-shadow-primary);
+    color: var(--background-color-primary);
+  }
+
+  &:hover {
+    background-color: var(--background-color-tertiary);
+    box-shadow: var(--box-shadow-primary);
+    color: var(--color-display);
+  }
+}

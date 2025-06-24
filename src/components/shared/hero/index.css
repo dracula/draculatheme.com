@@ -1,0 +1,80 @@
+.hero {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--hero-background-color-primary),
+    var(--hero-background-color-secondary)
+  );
+  background-color: var(--hero-background-color-primary);
+
+  .starry-sky {
+    position: absolute;
+    inset: 0;
+  }
+
+  .castle {
+    z-index: 2;
+    position: absolute;
+    bottom: -0.5rem;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/hero/castle.svg");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    display: flex;
+    z-index: 3;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-default);
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 11.25rem;
+      height: 11.25rem;
+      border-radius: 100%;
+
+      img,
+      svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      &.dynamic {
+        img,
+        svg {
+          width: 80%;
+          height: 80%;
+        }
+      }
+    }
+
+    .header {
+      width: fit-content;
+      text-align: center;
+
+      h1 {
+        color: var(--color-display);
+        font-size: var(--font-size-display);
+      }
+
+      p {
+        color: var(--color-heading);
+        font-weight: 500;
+      }
+    }
+  }
+}

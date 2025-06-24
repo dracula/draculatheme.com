@@ -1,55 +1,62 @@
-import "./page.scss";
-import { allPosts } from "contentlayer/generated";
-import { Metadata } from "next";
-import Post from "src/components/blog/post";
+import Image from "next/image";
+import Link from "next/link";
+import { Fragment } from "react";
 
-export async function generateMetadata({
-  params
-}): Promise<Metadata | undefined> {
-  const slug = "posts/" + params.slug;
-  const post = allPosts.find((post) => post._raw.flattenedPath === slug);
+import { CustomMDX } from "@/components/shared/mdx";
+import { type Author, authors } from "@/lib/authors";
+import type { Post } from "@/lib/markdown";
+import type { Props } from "@/lib/types";
+import {
+  getMdxDataFromDirectory,
+  getMdxFromFile
+} from "@/utils/mdx/get-mdx-data-from-directory";
 
-  if (!post) {
-    return;
-  }
+export const generateStaticParams = async () => {
+  const posts = getMdxDataFromDirectory<Post>("content/blog");
+  return posts.map((post) => ({ slug: post.slug }));
+};
 
-  const title = post.title;
-  const description = post.excerpt;
-  const ogImage = post.coverImage;
+const BlogPostPage = async (props: Props) => {
+  const params = await props.params;
+  const { slug } = params;
+  const post = (await getMdxFromFile("content/blog", slug)) as Post;
 
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url: `https://draculatheme.com/blog/${params.slug}`,
-      images: [
-        {
-          url: ogImage
-        }
-      ]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage]
-    },
-    alternates: {
-      canonical: `/blog/${params.slug}`
-    }
-  };
-}
-
-const Blogpost = ({ params }) => {
   return (
-    <section className="blogpost">
-      <div className="container">
-        <Post params={params} />
+    <section className="container">
+      <Link href="/blog">Blog</Link>
+      <time dateTime={post.date.createdAt}>
+        {new Date(post.date.createdAt).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        })}
+      </time>
+      <h1>{post.title}</h1>
+      <div>
+        {post.authors.map((humanId) => {
+          const author = authors.find(
+            (author: Author) => author.id === humanId
+          );
+          if (!author) return null;
+
+          return (
+            <Fragment key={humanId}>
+              <div>
+                <Image
+                  src={author?.avatar}
+                  width={40}
+                  height={40}
+                  alt={author?.name}
+                />
+              </div>
+              <p>{author?.name}</p>
+            </Fragment>
+          );
+        })}
       </div>
+      <CustomMDX {...post.content} />
     </section>
   );
 };
 
-export default Blogpost;
+export default BlogPostPage;

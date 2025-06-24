@@ -1,90 +1,109 @@
-import "./page.scss";
-import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import Wrapper from "src/components/theme/wrapper";
-import { getBasePath } from "src/lib/environment";
-import fetchData from "src/lib/fetchData";
-import paths from "src/lib/paths";
+import { serialize } from "next-mdx-remote/serialize";
 
-export async function generateStaticParams() {
-  return paths.map((path) => ({
-    theme: path.params.theme
+import Hero from "@/components/shared/hero";
+import { CustomMDX } from "@/components/shared/mdx";
+import { paths } from "@/lib/paths";
+import type { Props } from "@/lib/types";
+import { fetcher } from "@/utils/fetcher";
+
+export const generateStaticParams = async () => {
+  return paths.map((item) => ({
+    theme: item.repo
   }));
-}
+};
 
-export async function generateMetadata({
-  params
-}): Promise<Metadata | undefined> {
-  const pathObj = paths.find((path) => path.params.theme === params.theme);
+const ThemePage = async (props: Props) => {
+  const params = await props.params;
+  const theme = paths.find((item) => item.repo === params.theme);
 
-  if (!pathObj) notFound();
+  if (!theme) {
+    notFound();
+  }
 
-  const theme = pathObj.params;
+  const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
+  const branch = branchData.branches || "main";
 
-  const title = theme.title;
-  const description = `The most famous dark theme for ${theme.title} and an ever-growing selection of apps! 🦇`;
-  const ogImage = `https://draculatheme.com/images/og.png`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url: `https://draculatheme.com/${theme.theme}`,
-      images: [
-        {
-          url: ogImage
-        }
-      ]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage]
-    },
-    alternates: {
-      canonical: `/${theme.theme}`
-    }
-  };
-}
-
-const Theme = async ({ params }) => {
-  const pathObj = paths.find((path) => path.params.theme === params.theme);
-
-  if (!pathObj) notFound();
-
-  const theme = pathObj.params;
-
-  const defaultBranchData = await fetchData(
-    `${getBasePath()}/api/branches?id=${theme.repo}`
-  );
-  const defaultBranch = defaultBranchData.branches;
-
-  const installData = await fetchData(
-    `${getBasePath()}/api/installs?id=${theme.repo}`
-  );
-  const buffer = Buffer.from(installData.install, "base64");
-  const markdown = buffer.toString("utf8");
-
-  const contributorsData = await fetchData(
-    `${getBasePath()}/api/contributors?id=${theme.repo}`
-  );
+  const contributorsData = await fetcher(`/api/contributors?id=${theme.repo}`);
   const contributors = [...JSON.parse(contributorsData.contributors)];
 
+  const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
+  const decodedBuffer = Buffer.from(installsResponse.install, "base64");
+  const installsContent = decodedBuffer.toString("utf8");
+  const serializedMdx = await serialize(installsContent);
+
   return (
-    <section className="theme">
-      <div className="container">
-        <Wrapper
-          query={theme}
-          defaultBranch={defaultBranch}
-          markdown={markdown}
-          contributors={contributors}
-        />
-      </div>
-    </section>
+    <>
+      <Hero />
+      <section className="container">
+        <div>
+          <Image
+            src={`https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`}
+            alt={`${theme.repo} - Theme Preview`}
+            quality={100}
+            width={800}
+            height={800}
+          />
+        </div>
+        <CustomMDX {...serializedMdx} />
+        <aside>
+          <a
+            href={`https://github.com/dracula/${theme.repo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View source code
+          </a>
+          <a
+            href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download ZIP file
+          </a>
+          <a
+            href={`https://github.com/dracula/${theme.repo}/issues/new`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Report an issue
+          </a>
+          <a
+            href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Edit this page
+          </a>
+          <p>Contributors</p>
+          <ul>
+            {contributors.map((contributor) => (
+              <li key={contributor.login}>
+                <a
+                  href={`https://github.com/${contributor.login}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    {contributor.avatar_url && (
+                      <Image
+                        src={contributor.avatar_url}
+                        width={24}
+                        height={24}
+                        alt={contributor.login}
+                      />
+                    )}
+                  </div>
+                  <span>{contributor.login}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </section>
+    </>
   );
 };
 
-export default Theme;
+export default ThemePage;
