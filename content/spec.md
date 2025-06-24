@@ -34,11 +34,11 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 
 | Token            | Hex       | RGB           | HSL            | Usage                        |
 | ---------------- | --------- | ------------- | -------------- | ---------------------------- |
-| **Background**   | `#F5F5F5` | 245, 245, 245 | 0°, 0%, 96%    | Main background              |
-| **Current Line** | `#635D97` | 99, 93, 151   | 246°, 24%, 48% | Line highlight               |
+| **Background**   | `#FFFBEB` | 255, 251, 235 | 48°, 100%, 96% | Main background              |
+| **Current Line** | `#6C664B` | 108, 102, 75  | 49°, 18%, 36%  | Line highlight               |
 | **Selection**    | `#CFCFDE` | 207, 207, 222 | 240°, 18%, 84% | Text selection               |
 | **Foreground**   | `#1F1F1F` | 31, 31, 31    | 0°, 0%, 12%    | Default text                 |
-| **Comment**      | `#635D97` | 99, 93, 151   | 246°, 24%, 48% | Comments, disabled code      |
+| **Comment**      | `#6C664B` | 108, 102, 75  | 49°, 18%, 36%  | Comments, disabled code      |
 | **Red**          | `#CB3A2A` | 203, 58, 42   | 6°, 66%, 48%   | Errors, warnings, deletion   |
 | **Orange**       | `#A34D14` | 163, 77, 20   | 24°, 78%, 36%  | Numbers, constants, booleans |
 | **Yellow**       | `#846E15` | 132, 110, 21  | 48°, 73%, 30%  | Functions, methods           |
@@ -76,7 +76,7 @@ For terminal applications, Dracula also defines ANSI colors.
 
 | ANSI Token            | Hex Code  | RGB           |
 | --------------------- | --------- | ------------- |
-| **AnsiBlack**         | `#F5F5F5` | 245, 245, 245 |
+| **AnsiBlack**         | `#FFFBEB` | 255, 251, 235 |
 | **AnsiRed**           | `#CB3A2A` | 203, 58, 42   |
 | **AnsiGreen**         | `#14710A` | 20, 113, 10   |
 | **AnsiYellow**        | `#846E15` | 132, 110, 21  |
@@ -84,7 +84,7 @@ For terminal applications, Dracula also defines ANSI colors.
 | **AnsiMagenta**       | `#A3144D` | 163, 20, 77   |
 | **AnsiCyan**          | `#036A96` | 3, 106, 150   |
 | **AnsiWhite**         | `#1F1F1F` | 31, 31, 31    |
-| **AnsiBrightBlack**   | `#635D97` | 99, 93, 151   |
+| **AnsiBrightBlack**   | `#6C664B` | 108, 102, 75  |
 | **AnsiBrightRed**     | `#D74C3D` | 215, 76, 61   |
 | **AnsiBrightGreen**   | `#198D0C` | 25, 141, 12   |
 | **AnsiBrightYellow**  | `#9E841A` | 158, 132, 26  |
@@ -107,13 +107,13 @@ For terminal applications, Dracula also defines ANSI colors.
 
 ### Alucard (Light Theme)
 
-| Context                           | Hex       | RGB           | HSL            |
-| --------------------------------- | --------- | ------------- | -------------- |
-| **Floating interactive elements** | `#E2E2E9` | 226, 226, 233 | 240°, 15%, 90% |
-| **Background Lighter**            | `#FFFFFF` | 255, 255, 255 | 0°, 0%, 100%   |
-| **Background Light**              | `#F5F5F5` | 245, 245, 245 | 0°, 0%, 96%    |
-| **Background Dark**               | `#E6E6E6` | 230, 230, 230 | 0°, 0%, 90%    |
-| **Background Darker**             | `#B8B8B8` | 184, 184, 184 | 0°, 0%, 72%    |
+| Context                           | Hex       | RGB           | HSL           |
+| --------------------------------- | --------- | ------------- | ------------- |
+| **Floating interactive elements** | `#EFEDDC` | 239, 237, 220 | 54°, 37%, 90% |
+| **Background Lighter**            | `#ECE9DF` | 236, 233, 223 | 46°, 25%, 90% |
+| **Background Light**              | `#DEDCCF` | 222, 220, 207 | 52°, 19%, 84% |
+| **Background Dark**               | `#CECCC0` | 206, 204, 192 | 51°, 13%, 78% |
+| **Background Darker**             | `#BCBAB3` | 188, 186, 179 | 47°, 6%, 72%  |
 
 ### Functional Colors
 
