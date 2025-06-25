@@ -1,5 +1,7 @@
 import React from "react";
 
+import { SearchIcon } from "@/icons/search";
+import { TickIcon } from "@/icons/tick";
 import { categories, platforms } from "@/lib/filter";
 import { paths } from "@/lib/paths";
 
@@ -20,17 +22,21 @@ export const FilterSidebar = ({
   onPlatformChange,
   onCategoryChange
 }: FilterSidebarProps) => (
-  <aside>
-    <input
-      type="text"
-      value={searchQuery}
-      placeholder={`Search over ${paths.length} themes`}
-      onChange={(e) => onSearchChange(e.target.value)}
-    />
-    <fieldset>
-      <legend>Platforms</legend>
+  <>
+    <div className="search">
+      <SearchIcon className="icon" />
+      <input
+        type="search"
+        name="search"
+        value={searchQuery}
+        placeholder={`Search over ${paths.length} themes`}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
+    </div>
+    <div className="filter-group">
+      <span className="label">Platforms</span>
       {platforms.map((opt) => (
-        <label key={opt.name}>
+        <label key={opt.name} className="item">
           <input
             type="radio"
             name="platforms"
@@ -38,14 +44,15 @@ export const FilterSidebar = ({
             checked={selectedPlatform === opt.name}
             onChange={() => onPlatformChange(opt.name)}
           />
-          {opt.label}
+          <TickIcon className="icon" />
+          <span>{opt.label}</span>
         </label>
       ))}
-    </fieldset>
-    <fieldset>
-      <legend>Categories</legend>
+    </div>
+    <div className="filter-group">
+      <span className="label">Categories</span>
       {categories.map((opt) => (
-        <label key={opt.name}>
+        <label key={opt.name} className="item">
           <input
             type="radio"
             name="categories"
@@ -53,9 +60,10 @@ export const FilterSidebar = ({
             checked={selectedCategory === opt.name}
             onChange={() => onCategoryChange(opt.name)}
           />
-          {opt.label}
+          <TickIcon className="icon" />
+          <span>{opt.label}</span>
         </label>
       ))}
-    </fieldset>
-  </aside>
+    </div>
+  </>
 );

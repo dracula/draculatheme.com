@@ -9,6 +9,12 @@ header {
     align-items: center;
     justify-content: space-between;
 
+    .logo {
+      font-size: 0.875rem;
+      color: var(--color-display);
+      font-weight: 600;
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -22,7 +28,7 @@ header {
         width: fit-content;
         margin: 0;
         padding: 0;
-        gap: var(--spacing-default);
+        gap: var(--spacing-medium);
         list-style: none;
       }
     }

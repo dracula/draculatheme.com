@@ -1,5 +1,5 @@
 :root {
-  --page-max-width: 64rem;
+  --page-max-width: 80rem;
   --page-padding-horizontal: 2em;
   --page-padding-vertical: 1.5em;
   --page-sections-spacing: 4em;
@@ -14,7 +14,9 @@
   --action-icon-size: 1em;
   --action-border-radius: 1.5rem;
 
-  --spacing-default: 0.75rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 0.75rem;
+  --spacing-large: 1.125rem;
 
   --hue: 254;
   --main-hue: 250;
@@ -29,10 +31,10 @@
 
   --color: hsl(var(--main-hue), 92%, 66%);
 
-  --color-caption: hsl(var(--hue), 12%, 84%);
-  --color-body: hsl(var(--hue), 12%, 90%);
-  --color-heading: hsl(var(--hue), 12%, 96%);
-  --color-display: hsl(var(--hue), 12%, 100%);
+  --color-caption: hsl(var(--hue), 12%, 72%);
+  --color-body: hsl(var(--hue), 12%, 78%);
+  --color-heading: hsl(var(--hue), 12%, 84%);
+  --color-display: hsl(var(--hue), 12%, 90%);
 
   --background-color-primary: hsl(var(--hue), 12%, 6%);
   --background-color-secondary: hsl(var(--hue), 12%, 12%);
@@ -57,10 +59,10 @@
   --ease-impact: cubic-bezier(0.24, 0.9, 0.32, 1.4);
 }
 
-::selection {
-  background-color: var(--purple);
-  color: var(--color-display);
-  text-shadow: 0.0625rem 0.0625rem 0.125rem hsla(var(--hue), 0%, 0%, 0.6);
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
 }
 
 * {
@@ -78,8 +80,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  &::selection {
+    background-color: var(--purple);
+    color: var(--color-display);
+    text-shadow: 0.0625rem 0.0625rem 0.125rem hsla(var(--hue), 0%, 0%, 0.6);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
-    interpolate-size: allow-keywords;
     scroll-behavior: smooth;
   }
 }
@@ -94,8 +101,9 @@ body {
   background-color: var(--background-color-primary);
   color: var(--color-body);
   font-size: var(--font-size-body);
+  font-weight: 500;
   line-height: 1.5;
-  font-family: var(--font-inter);
+  font-family: var(--font-sans);
 }
 
 header,
@@ -142,6 +150,11 @@ em {
   font-weight: 500;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 input,
 button,
 textarea,
@@ -165,7 +178,7 @@ svg {
   width: fit-content;
   height: var(--action-height);
   padding: var(--action-padding);
-  gap: var(--spacing-default);
+  gap: var(--spacing-medium);
   border: none;
   border-radius: var(--action-border-radius);
   background-color: transparent;

@@ -13,8 +13,8 @@ const navItems = [
 export const Header = () => (
   <header>
     <div className="container">
-      <Link href="/">
-        <span>Dracula Theme</span>
+      <Link href="/" className="logo">
+        Dracula Theme
       </Link>
       <nav>
         <ul>
