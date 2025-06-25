@@ -158,6 +158,8 @@
       outline-color: transparent;
       box-shadow: var(--box-shadow-secondary);
       transition:
+        opacity 250ms var(--ease-fluid),
+        transform 360ms var(--ease-fluid),
         background-color 250ms var(--ease-fluid),
         outline 250ms var(--ease-fluid);
 
@@ -176,6 +178,11 @@
         outline-width: 0.125rem;
         outline-style: solid;
         outline-color: var(--background-color-tertiary);
+      }
+
+      @starting-style {
+        opacity: 0;
+        transform: translateY(1em);
       }
     }
   }

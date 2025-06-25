@@ -9,8 +9,13 @@ interface ItemListProps {
 
 export const ItemList = ({ items }: ItemListProps) => (
   <ul>
-    {items.map((item) => (
-      <li key={item.repo}>
+    {items.map((item, index) => (
+      <li
+        key={item.repo}
+        style={{
+          transitionDelay: `${index * 100}ms`
+        }}
+      >
         <Link href={`/${item.repo}`}>
           <h3>{item.title}</h3>
         </Link>
