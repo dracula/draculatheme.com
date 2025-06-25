@@ -6,7 +6,8 @@ export const TickIcon = ({ size = 12, className = "" }) => (
     height={size}
     color="currentColor"
     fill="none"
-    className={className}
+    className={`icon ${className}`}
+    aria-hidden="true"
   >
     <title>Tick Icon</title>
     <path

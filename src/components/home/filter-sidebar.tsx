@@ -24,7 +24,7 @@ export const FilterSidebar = ({
 }: FilterSidebarProps) => (
   <>
     <div className="search">
-      <SearchIcon className="icon" />
+      <SearchIcon />
       <input
         type="search"
         name="search"
@@ -44,7 +44,7 @@ export const FilterSidebar = ({
             checked={selectedPlatform === opt.name}
             onChange={() => onPlatformChange(opt.name)}
           />
-          <TickIcon className="icon" />
+          <TickIcon />
           <span>{opt.label}</span>
         </label>
       ))}

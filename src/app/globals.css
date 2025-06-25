@@ -12,7 +12,7 @@
   --action-height: 2.25rem;
   --action-padding: 0 1rem;
   --action-icon-size: 1em;
-  --action-border-radius: 1.5rem;
+  --action-border-radius: 0.75rem;
 
   --spacing-small: 0.5rem;
   --spacing-medium: 0.75rem;
@@ -203,4 +203,9 @@ svg {
     box-shadow: var(--box-shadow-primary);
     color: var(--color-display);
   }
+}
+
+.icon {
+  pointer-events: none;
+  user-select: none;
 }

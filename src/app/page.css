@@ -91,7 +91,7 @@
         width: fit-content;
         background-color: var(--background-color-primary);
         padding: 0.5rem 0.875rem;
-        border-radius: 1.125rem;
+        border-radius: var(--action-border-radius);
         font-weight: 600;
         transition: width 250ms var(--ease-elastic);
         gap: 0.5em;
