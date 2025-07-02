@@ -1,31 +1,31 @@
 .home {
   display: flex;
   position: relative;
-  gap: 4em;
+  gap: 3em;
 
   aside {
-    width: 19rem;
+    display: flex;
     position: sticky;
     top: 8em;
-    height: fit-content;
-    display: flex;
     flex-direction: column;
-    gap: var(--spacing-large);
-    background-color: var(--background-color-secondary);
+    width: 19rem;
+    height: fit-content;
     padding: var(--spacing-large);
+    gap: var(--spacing-large);
     border-radius: 0.75rem;
+    background-color: var(--background-color-secondary);
     box-shadow: var(--box-shadow-secondary);
 
     .search {
-      width: 100%;
       position: relative;
+      width: 100%;
 
       .icon {
-        position: absolute;
-        left: 1em;
-        top: 50%;
-        transform: translateY(-50%);
         z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        transform: translateY(-50%);
         transform-origin: center;
         transition:
           transform 250ms var(--ease-elastic),
@@ -33,20 +33,20 @@
       }
 
       input[type="search"] {
-        width: 100%;
         position: relative;
+        width: 100%;
         height: 2.5rem;
         padding: var(--spacing-medium) var(--spacing-medium)
           var(--spacing-medium) 2.5em;
-        border-radius: 0.5rem;
         border: none;
+        border-radius: 0.5rem;
+        outline-color: transparent;
         background-color: var(--background-color-primary);
         color: var(--font-display);
         transition:
           background-color 250ms var(--ease-fluid),
           color 250ms var(--ease-fluid),
           outline 250ms var(--ease-fluid);
-        outline-color: transparent;
 
         &::placeholder {
           color: var(--color-body);
@@ -55,9 +55,9 @@
         &:hover,
         &:focus,
         &:focus-visible {
-          outline-width: 0.125rem;
-          outline-style: solid;
           outline-color: var(--background-color-tertiary);
+          outline-style: solid;
+          outline-width: 0.125rem;
         }
       }
 
@@ -70,31 +70,35 @@
     }
 
     .filter-group {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
       gap: var(--spacing-small);
 
       .label {
         display: block;
         width: 100%;
-        font-weight: 600;
         margin: 0.375rem 0 0.375rem 0.5rem;
         color: var(--color-display);
+        font-weight: 600;
       }
 
       .item {
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: center;
-        position: relative;
         width: fit-content;
-        background-color: var(--background-color-primary);
         padding: 0.5rem 0.875rem;
-        border-radius: var(--action-border-radius);
-        font-weight: 600;
-        transition: width 250ms var(--ease-elastic);
+        overflow: clip;
         gap: 0.5em;
+        transform-origin: left;
+        border-radius: var(--action-border-radius);
+        background-color: var(--background-color-primary);
+        font-weight: 600;
+        transition:
+          width 250ms var(--ease-elastic),
+          padding 250ms var(--ease-fluid);
 
         input[type="radio"] {
           display: none;
@@ -122,67 +126,91 @@
         &:hover,
         &:focus,
         &:focus-visible {
-          outline-width: 0.125rem;
-          outline-style: solid;
           outline-color: var(--background-color-tertiary);
+          outline-style: solid;
+          outline-width: 0.125rem;
         }
 
         &:has(input[type="radio"]:checked) {
-          width: auto;
-          transform-origin: left;
-          overflow: clip;
+          padding-right: 1.125rem;
         }
       }
     }
   }
 
   ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    gap: 1.5em;
+    list-style-type: none;
 
     li {
-      width: 16rem;
-      height: 8rem;
       display: flex;
       flex-direction: column;
+      width: 15rem;
+      height: fit-content;
       gap: var(--spacing-large);
-      background-color: var(--background-color-secondary);
       border-radius: 0.75rem;
       outline-color: transparent;
+      background-color: var(--background-color-secondary);
       box-shadow: var(--box-shadow-secondary);
+      animation: itemsFadeIn var(--ease-elastic) both;
       transition:
-        opacity 250ms var(--ease-fluid),
-        transform 360ms var(--ease-fluid),
         background-color 250ms var(--ease-fluid),
         outline 250ms var(--ease-fluid);
+      animation-timeline: view();
+      animation-range: entry 0 cover 25%;
 
       a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         padding: var(--spacing-large);
+        gap: var(--spacing-large);
 
-        h3 {
-          font-size: 1em;
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30%;
+          height: 100%;
+
+          img,
+          svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .content {
+          color: var(--color-caption);
+          font-weight: 600;
+          font-size: var(--font-size-caption);
+          line-height: 1.8;
+
+          h3 {
+            color: var(--color-display);
+            font-size: 0.9375rem;
+          }
         }
       }
 
       &:hover,
       &:focus,
       &:focus-visible {
-        background-color: var(--background-color-primary);
-        outline-width: 0.125rem;
-        outline-style: solid;
         outline-color: var(--background-color-tertiary);
-      }
-
-      @starting-style {
-        opacity: 0;
-        transform: translateY(1em);
+        outline-style: solid;
+        outline-width: 0.125rem;
+        background-color: var(--background-color-primary);
       }
     }
   }
@@ -191,5 +219,16 @@
 @keyframes drawTick {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes itemsFadeIn {
+  from {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

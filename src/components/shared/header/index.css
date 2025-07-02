@@ -10,9 +10,10 @@ header {
     justify-content: space-between;
 
     .logo {
-      font-size: 0.875rem;
       color: var(--color-display);
       font-weight: 600;
+      font-size: 0.875rem;
+      font-family: var(--font-display);
     }
 
     nav {

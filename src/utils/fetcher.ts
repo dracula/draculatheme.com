@@ -2,8 +2,8 @@ import { getBasePath } from "@/lib/environment";
 
 export const fetcher = async (
   url: string,
-  props?: RequestInit,
-  method = "GET"
+  method = "GET",
+  props?: RequestInit
 ) => {
   try {
     const response = await fetch(getBasePath() + url, {

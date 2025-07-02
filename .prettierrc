@@ -9,5 +9,8 @@
         "printWidth": 500
       }
     }
-  ]
+  ],
+  "plugins": ["prettier-plugin-css-order"],
+  "cssDeclarationSorterKeepOverrides": true,
+  "cssDeclarationSorterOrder": "smacss"
 }

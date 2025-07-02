@@ -1,4 +1,6 @@
-export const paths = [
+import type { Path } from "./types";
+
+export const paths: Path[] = [
   { repo: "abap", title: "ABAP", icon: "used/pack-10/046-rum.svg", categories: ["service"], legacyViews: 3868 },
   { repo: "ableton-live", title: "Ableton Live", icon: "used/pack-5/039-flask.svg", platform: ["macos", "windows"], categories: ["other"], legacyViews: 4871 },
   { repo: "abricotine", title: "Abricotine", icon: "used/pack-9/013-poison.svg", categories: ["editor"], legacyViews: 983 },

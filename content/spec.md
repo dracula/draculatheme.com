@@ -244,13 +244,13 @@ body {
 
 /* Green - White */
 #dracula {
-  /* Cyan - Pink - Purple - White */
-  opacity: 0;
   display: none;
   visibility: hidden;
+  height: calc(var(--deathDate) - var(--birthDate));
   /* Cyan - Pink - Yellow - White */
   font-family: "Transylvania";
-  height: calc(var(--deathDate) - var(--birthDate));
+  /* Cyan - Pink - Purple - White */
+  opacity: 0;
 }
 ```
 
