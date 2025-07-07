@@ -29,6 +29,9 @@
   --red: hsl(10, 92%, 66%);
   --yellow: hsl(60, 92%, 66%);
 
+  --code-foreground: hsl(60, 26%, 96%);
+  --code-comment: hsl(249, 25%, 55%);
+
   --color: hsl(var(--main-hue), 92%, 66%);
 
   --color-caption: hsl(var(--hue), 12%, 72%);
@@ -102,7 +105,7 @@ body {
   color: var(--color-body);
   font-size: var(--font-size-body);
   line-height: 1.5;
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
 }
 
 header,
@@ -133,10 +136,9 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: var(--font-size-heading);
+  color: var(--color-heading);
   font-weight: 600;
   font-size: var(--font-size-heading);
-  font-family: var(--font-display);
   text-wrap: balance;
 }
 
@@ -183,10 +185,16 @@ hr {
   background-color: var(--background-color-secondary);
 }
 
+code,
+kbd {
+  font-family: var(--font-mono);
+}
+
 .action {
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: center;
   width: fit-content;
   height: var(--action-height);
   padding: var(--action-padding);
@@ -235,15 +243,44 @@ hr {
 .prose {
   line-height: 1.8;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-end: 1em;
+    color: var(--color-display);
+
+    a {
+      font-weight: inherit;
+    }
+  }
+
   a {
-    color: var(--color-heading);
+    color: var(--color);
     font-weight: 500;
     text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--color);
+    text-underline-offset: 0.1875rem;
     transition: color 250ms var(--ease-fluid);
 
     &:focus,
     &:hover {
       color: var(--color-display);
+    }
+  }
+
+  p {
+    margin-block-end: 1em;
+  }
+
+  p,
+  li {
+    code,
+    kbd {
+      color: var(--code-foreground);
     }
   }
 

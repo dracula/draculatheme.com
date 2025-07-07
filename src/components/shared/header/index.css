@@ -13,7 +13,6 @@ header {
       color: var(--color-display);
       font-weight: 600;
       font-size: 0.875rem;
-      font-family: var(--font-display);
     }
 
     nav {

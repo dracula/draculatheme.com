@@ -42,7 +42,6 @@
         border-radius: 0.5rem;
         outline-color: transparent;
         background-color: var(--background-color-primary);
-        color: var(--font-display);
         transition:
           background-color 250ms var(--ease-fluid),
           color 250ms var(--ease-fluid),

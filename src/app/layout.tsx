@@ -1,22 +1,23 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { DM_Sans, Inter } from "next/font/google";
+import { DM_Mono, DM_Sans } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-sans",
   fallback: ["sans-serif", "system-ui"]
 });
 
-const dmSans = DM_Sans({
+const dmMono = DM_Mono({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-display",
-  fallback: ["sans-serif", "system-ui"]
+  variable: "--font-mono",
+  fallback: ["monospace", "system-ui"]
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning={true}>
-    <body className={`${inter.variable} ${dmSans.variable}`}>
+    <body className={`${dmSans.variable} ${dmMono.variable}`}>
       <NuqsAdapter>
         <Header />
         <main>{children}</main>

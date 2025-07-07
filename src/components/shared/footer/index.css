@@ -23,7 +23,6 @@ footer {
         color: var(--color-display);
         font-weight: 600;
         font-size: 0.875rem;
-        font-family: var(--font-display);
       }
 
       h3 {
@@ -63,7 +62,6 @@ footer {
         a {
           color: var(--color-heading);
           font-weight: 600;
-          font-family: var(--font-display);
           transition: color 250ms var(--ease-fluid);
 
           &:focus,
@@ -117,7 +115,6 @@ footer {
           border-radius: 0.5rem;
           outline-color: transparent;
           background-color: var(--background-color-secondary);
-          color: var(--font-display);
           transition:
             background-color 250ms var(--ease-fluid),
             color 250ms var(--ease-fluid),

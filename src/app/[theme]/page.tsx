@@ -1,3 +1,5 @@
+import "./page.css";
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
@@ -36,71 +38,75 @@ const ThemePage = async (props: Props) => {
   return (
     <>
       <Hero />
-      <section className="container">
-        <div>
-          <Image
-            src={`https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`}
-            alt={`${theme.repo} - Theme Preview`}
-            quality={100}
-            width={800}
-            height={800}
-          />
+      <section className="container theme">
+        <div className="wrapper">
+          <div className="instructions prose">
+            <div className="screenshot">
+              <Image
+                src={`https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`}
+                alt={`${theme.repo} - Theme Preview`}
+                quality={100}
+                width={800}
+                height={800}
+              />
+            </div>
+            <CustomMDX {...serializedMdx} />
+          </div>
+          <aside className="sidebar">
+            <a
+              href={`https://github.com/dracula/${theme.repo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View source code
+            </a>
+            <a
+              href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download ZIP file
+            </a>
+            <a
+              href={`https://github.com/dracula/${theme.repo}/issues/new`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Report an issue
+            </a>
+            <a
+              href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit this page
+            </a>
+            <p>Contributors</p>
+            <ul>
+              {contributors.map((contributor) => (
+                <li key={contributor.login}>
+                  <a
+                    href={`https://github.com/${contributor.login}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div>
+                      {contributor.avatar_url && (
+                        <Image
+                          src={contributor.avatar_url}
+                          width={24}
+                          height={24}
+                          alt={contributor.login}
+                        />
+                      )}
+                    </div>
+                    <span>{contributor.login}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
-        <CustomMDX {...serializedMdx} />
-        <aside>
-          <a
-            href={`https://github.com/dracula/${theme.repo}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View source code
-          </a>
-          <a
-            href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download ZIP file
-          </a>
-          <a
-            href={`https://github.com/dracula/${theme.repo}/issues/new`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Report an issue
-          </a>
-          <a
-            href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Edit this page
-          </a>
-          <p>Contributors</p>
-          <ul>
-            {contributors.map((contributor) => (
-              <li key={contributor.login}>
-                <a
-                  href={`https://github.com/${contributor.login}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div>
-                    {contributor.avatar_url && (
-                      <Image
-                        src={contributor.avatar_url}
-                        width={24}
-                        height={24}
-                        alt={contributor.login}
-                      />
-                    )}
-                  </div>
-                  <span>{contributor.login}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </aside>
       </section>
     </>
   );

@@ -1,6 +1,7 @@
 import "./index.css";
 
 import Link from "next/link";
+
 import { Newsletter } from "./newsletter";
 
 const sections = [

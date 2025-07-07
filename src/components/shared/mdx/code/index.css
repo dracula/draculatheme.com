@@ -1,0 +1,38 @@
+.sh-block {
+  --sh-class: var(--purple);
+  --sh-comment: var(--code-comment);
+  --sh-entity: var(--green);
+  --sh-identifier: var(--code-foreground);
+  --sh-jsxliterals: var(--purple);
+  --sh-keyword: var(--pink);
+  --sh-property: var(--cyan);
+  --sh-sign: var(--code-foreground);
+  --sh-string: var(--yellow);
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-block: 1em;
+  padding: 1rem;
+  border-radius: var(--action-border-radius);
+  background-color: var(--background-color-primary);
+  line-height: 1.6;
+  font-family: var(--font-mono);
+
+  pre {
+    min-width: 100%;
+    margin: 0;
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    aspect-ratio: 1/1;
+    height: fit-content;
+    padding: 0.5em;
+    border-radius: 0.5rem;
+  }
+}

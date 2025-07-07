@@ -1,7 +1,8 @@
 "use client";
 
-import { fetcher } from "@/utils/fetcher";
 import { useState } from "react";
+
+import { fetcher } from "@/utils/fetcher";
 
 export const Newsletter = () => {
   const [email, setEmail] = useState("");

@@ -19,7 +19,6 @@
       border-bottom: 0.0625rem solid var(--background-color-tertiary);
       color: var(--color-display);
       font-weight: 600;
-      font-family: var(--font-display);
     }
 
     .content {
@@ -31,7 +30,6 @@
       em {
         color: var(--color-display);
         font-weight: 600;
-        font-family: var(--font-display);
       }
     }
 

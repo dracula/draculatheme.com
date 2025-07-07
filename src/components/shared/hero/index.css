@@ -63,7 +63,6 @@
 
     .header {
       width: fit-content;
-      font-family: var(--font-display);
       text-align: center;
 
       h1 {
