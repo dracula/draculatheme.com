@@ -9,7 +9,7 @@ export const TickIcon = ({ size = 12, className = "" }) => (
     className={`icon ${className}`}
     aria-hidden="true"
   >
-    <title>Tick Icon</title>
+    <title className="sr-only">Tick Icon</title>
     <path
       d="M5 14C5 14 7 14.5 8.5 17.5C8.5 17.5 14.0588 8.33333 19 6.5"
       stroke="currentColor"

@@ -6,6 +6,8 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import Hero from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
+import { DownloadIcon } from "@/icons/download";
+import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
 import type { Props } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
@@ -53,42 +55,56 @@ const ThemePage = async (props: Props) => {
             <CustomMDX {...serializedMdx} />
           </div>
           <aside className="sidebar">
-            <a
-              href={`https://github.com/dracula/${theme.repo}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View source code
-            </a>
-            <a
-              href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download ZIP file
-            </a>
-            <a
-              href={`https://github.com/dracula/${theme.repo}/issues/new`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Report an issue
-            </a>
-            <a
-              href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Edit this page
-            </a>
-            <p>Contributors</p>
+            <h4>Details</h4>
             <ul>
+              <li>
+                <a
+                  href={`https://github.com/dracula/${theme.repo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubIcon /> <span>View source code</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <DownloadIcon /> <span>Download ZIP file</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://github.com/dracula/${theme.repo}/issues/new`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Report an issue
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edit this page
+                </a>
+              </li>
+            </ul>
+            <h4>
+              Contributors<span className="count">{contributors.length}</span>
+            </h4>
+            <ul className="contributors">
               {contributors.map((contributor) => (
                 <li key={contributor.login}>
                   <a
                     href={`https://github.com/${contributor.login}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="contributor"
                   >
                     <div>
                       {contributor.avatar_url && (
@@ -100,7 +116,7 @@ const ThemePage = async (props: Props) => {
                         />
                       )}
                     </div>
-                    <span>{contributor.login}</span>
+                    <span>@{contributor.login}</span>
                   </a>
                 </li>
               ))}

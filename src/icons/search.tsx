@@ -9,7 +9,7 @@ export const SearchIcon = ({ size = 12, className = "" }) => (
     className={`icon ${className}`}
     aria-hidden="true"
   >
-    <title>Search Icon</title>
+    <title className="sr-only">Search Icon</title>
     <path
       d="M17 17L21 21"
       stroke="currentColor"
