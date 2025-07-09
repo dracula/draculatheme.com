@@ -80,20 +80,11 @@
 
   blockquote {
     margin: 0;
-    padding: 1em 1em 1em 3.5em;
+    padding: 1em;
     position: relative;
     border-radius: var(--radius-01);
     color: var(--neutral-01);
     background-color: var(--neutral-05);
-
-    &:before {
-      content: "✨";
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 1.5em;
-      font-size: var(--text-03);
-    }
   }
 
   pre {
