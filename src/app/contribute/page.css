@@ -1,0 +1,118 @@
+.contribute {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  .our-project {
+    width: 90%;
+    padding: 5.25rem 3.75rem 5.625rem 48%;
+    border: 0.25rem dashed var(--background-color-primary);
+    border-radius: 1.125rem;
+    background: var(--background-color-secondary);
+    background-image: url("/images/contribute/our-project.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.8;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 90%;
+    gap: 1.5rem;
+    text-align: center;
+
+    .row {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      gap: var(--spacing-large);
+
+      .item {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        flex-direction: column;
+        gap: var(--spacing-large);
+      }
+
+      .box {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 10rem;
+        padding: 2.25rem;
+        gap: var(--spacing-large);
+        border: 0.25rem dashed var(--background-color-primary);
+        border-radius: 1.125rem;
+        background: var(--background-color-secondary);
+
+        .index {
+          z-index: 1;
+          position: absolute;
+          top: 54%;
+          left: 12%;
+          transform: translate(-50%, -50%);
+          color: var(--background-color-primary);
+          font-weight: 900;
+          font-size: 20rem;
+          line-height: 1;
+          opacity: 0.3;
+          pointer-events: none;
+        }
+
+        .description {
+          z-index: 2;
+          position: relative;
+          line-height: 1.8;
+          text-align: center;
+
+          a {
+            color: var(--color);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-color: var(--color);
+            text-underline-offset: 0.1875rem;
+            transition: color 250ms var(--ease-fluid);
+
+            &:focus,
+            &:hover {
+              color: var(--color-display);
+            }
+          }
+        }
+
+        svg {
+          z-index: 2;
+          position: relative;
+          transition: stroke 800ms var(--ease-fluid);
+        }
+
+        &.step {
+          min-height: 18rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 64rem) {
+    .our-project {
+      padding: 1.875rem 1.5rem;
+      background-position: left center;
+    }
+  }
+}

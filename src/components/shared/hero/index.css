@@ -78,4 +78,9 @@
       }
     }
   }
+
+  &.contribute {
+    background-image: none;
+    background-color: var(--background-color-secondary);
+  }
 }

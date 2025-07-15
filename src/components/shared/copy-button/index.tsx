@@ -1,6 +1,10 @@
 "use client";
 
+import "./index.css";
+
 import { useState } from "react";
+
+import { TickIcon } from "@/icons/tick";
 
 export const CopyButton = ({ text }: { text: string }) => {
   const [copied, setCopied] = useState(false);
@@ -20,19 +24,10 @@ export const CopyButton = ({ text }: { text: string }) => {
       type="button"
       onClick={handleCopy}
       aria-label="Copy to clipboard"
-      className="action copy-button"
+      className={`action copy-button${copied ? " copied" : ""}`}
     >
       {copied ? (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <title className="sr-only">Copied!</title>
-          <path
-            d="M20 6L9 17L4 12"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <TickIcon className="tick" />
       ) : (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
           <title className="sr-only">Copy to clipboard</title>

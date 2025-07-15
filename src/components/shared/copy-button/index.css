@@ -1,0 +1,33 @@
+.copy-button {
+  aspect-ratio: 1/1;
+  height: fit-content;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+
+  .tick {
+    display: none;
+    transition: display 250ms var(--ease-elastic);
+
+    path {
+      stroke-dasharray: 24;
+      stroke-dashoffset: 24;
+    }
+  }
+
+  &.copied {
+    .tick {
+      display: block;
+      color: var(--green);
+
+      path {
+        animation: drawTick 500ms var(--ease-fluid) forwards;
+      }
+    }
+  }
+}
+
+@keyframes drawTick {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

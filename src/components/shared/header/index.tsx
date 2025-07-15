@@ -12,6 +12,16 @@ const navItems = [
   { href: "/pro", label: "Dracula Pro", className: "primary" }
 ];
 
+const formatNumber = (num: number): string => {
+  if (num >= 1000000) {
+    return `${(num / 1000000).toFixed(1).replace(/\.0$/, "")}M`;
+  }
+  if (num >= 1000) {
+    return `${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  }
+  return num.toString();
+};
+
 export const Header = ({ stars = 0 }: { stars?: string | number }) => {
   const starCount =
     typeof stars === "string" ? Number.parseInt(stars.replace(",", "")) : stars;
@@ -35,12 +45,13 @@ export const Header = ({ stars = 0 }: { stars?: string | number }) => {
               </li>
             ))}
             <li>
-              <Link href="/" className="action stars">
+              <Link
+                href="https://github.com/dracula/dracula-theme"
+                className="action stars"
+              >
                 <GithubIcon />{" "}
                 {starCount > 0 && (
-                  <span className="star-count">
-                    {starCount.toLocaleString()}
-                  </span>
+                  <span className="star-count">+{formatNumber(starCount)}</span>
                 )}
               </Link>
             </li>

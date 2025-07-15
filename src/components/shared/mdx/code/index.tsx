@@ -2,7 +2,7 @@ import "./index.css";
 
 import { highlight } from "sugar-high";
 
-import { CopyButton } from "./copy-button";
+import { CopyButton } from "../../copy-button";
 
 interface CodeProps {
   children: string;

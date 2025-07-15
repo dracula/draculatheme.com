@@ -60,7 +60,7 @@ export const FilterSidebar = ({
             checked={selectedCategory === opt.name}
             onChange={() => onCategoryChange(opt.name)}
           />
-          <TickIcon className="icon" />
+          <TickIcon />
           <span>{opt.label}</span>
         </label>
       ))}

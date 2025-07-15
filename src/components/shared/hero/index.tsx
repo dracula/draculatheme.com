@@ -113,7 +113,7 @@ const Hero = () => {
   }, [setColor]);
 
   return (
-    <section className="hero">
+    <section className={`hero ${pathKey.slice(1)}`}>
       <Particles className="starry-sky" />
       <div className="castle" />
       <div className="container">

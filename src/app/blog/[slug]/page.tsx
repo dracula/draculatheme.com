@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CustomMDX } from "@/components/shared/mdx";
+import { ReturnArrow } from "@/icons/return-arrow";
 import { type Author, authors } from "@/lib/authors";
 import type { Post } from "@/lib/markdown";
 import type { Props } from "@/lib/types";
@@ -24,6 +25,10 @@ const BlogPostPage = async (props: Props) => {
 
   return (
     <section className="container prose post">
+      <Link href="/blog" className="back-link">
+        <ReturnArrow />
+        <span>Blog</span>
+      </Link>
       <div className="meta">
         <time dateTime={post.date.createdAt}>
           {new Date(post.date.createdAt).toLocaleDateString("en-US", {
