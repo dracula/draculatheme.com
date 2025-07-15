@@ -38,12 +38,16 @@ const staticPages: PageConfig = {
     color: "180"
   },
   "/blog": {
+    title: "Blog",
+    subtitle:
+      "“Truly there is no such thing as finality.” - Bram Stoker, Dracula",
     color: "10"
   },
   "/contribute": {
     icon: "/images/hero/contribute.svg",
     title: "Contribute to Dracula",
-    subtitle: '"We learn big things from small experiences" - Bram Stoker',
+    subtitle:
+      "“We learn big things from small experiences” - Bram Stoker, Dracula",
     color: "35"
   },
   "/shop": {

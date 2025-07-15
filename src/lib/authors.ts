@@ -15,9 +15,9 @@ export const authors: Author[] = [
     avatar: "https://github.com/zenorocha.png?size=100",
     name: "Zeno Rocha",
     location: "San Francisco, CA",
-    github: "zenorocha",
-    x: "zenorocha",
-    website: "zenorocha.com",
+    github: "https://github.com/zenorocha",
+    x: "https://x.com/zenorocha",
+    website: "https://zenorocha.com",
     timezone: "America/Los_Angeles"
   },
   {
@@ -25,9 +25,9 @@ export const authors: Author[] = [
     avatar: "https://github.com/luxonauta.png?size=100",
     name: "Lucas de França",
     location: "Londrina, PR",
-    github: "luxonauta",
-    x: "luxonauta",
-    website: "luxonauta.com",
+    github: "https://github.com/luxonauta",
+    x: "https://x.com/luxonauta",
+    website: "https://luxonauta.com",
     timezone: "America/Brasilia"
   }
 ];

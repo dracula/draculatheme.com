@@ -1,7 +1,7 @@
 footer {
   display: flex;
   flex-direction: column;
-  padding-bottom: 2em;
+  padding: 4em 0;
   gap: 3.5em;
   border-top: 0.0625rem solid var(--background-color-tertiary);
 
@@ -12,7 +12,7 @@ footer {
 
   .container {
     display: flex;
-    padding: 4em var(--page-padding-horizontal) 0;
+    padding: 2em var(--page-padding-horizontal) 0;
     gap: 2rem;
 
     div {

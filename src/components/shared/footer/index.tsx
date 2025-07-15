@@ -56,6 +56,8 @@ const sections = [
 
 export const Footer = () => (
   <footer>
+    <Newsletter />
+    <hr />
     <div className="container">
       <div>
         <Link href="/" className="logo">
@@ -100,7 +102,5 @@ export const Footer = () => (
         </div>
       ))}
     </div>
-    <hr />
-    <Newsletter />
   </footer>
 );

@@ -6,7 +6,9 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import Hero from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
+import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";
+import { EditIcon } from "@/icons/edit";
 import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
 import type { Props } from "@/lib/types";
@@ -72,7 +74,10 @@ const ThemePage = async (props: Props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <DownloadIcon /> <span>Download ZIP file</span>
+                  <DownloadIcon />{" "}
+                  <span>
+                    Download <code>ZIP</code> file
+                  </span>
                 </a>
               </li>
               <li>
@@ -81,7 +86,7 @@ const ThemePage = async (props: Props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Report an issue
+                  <BugIcon /> <span>Report an issue</span>
                 </a>
               </li>
               <li>
@@ -90,7 +95,7 @@ const ThemePage = async (props: Props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Edit this page
+                  <EditIcon /> <span>Edit this page</span>
                 </a>
               </li>
             </ul>

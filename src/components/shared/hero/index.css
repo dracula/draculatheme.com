@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 40vh;
+  min-height: 25rem;
   background-image: linear-gradient(
     to bottom,
     var(--hero-background-color-primary),

@@ -62,14 +62,14 @@
           top: 50%;
           right: 0;
           align-items: center;
-          aspect-ratio: 1 / 1;
-          margin-left: auto;
-          padding: 0.25rem;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
           transform: translateY(-50%);
           border-radius: 100%;
           background-color: var(--background-color-tertiary);
           font-weight: 700;
-          font-size: 0.75rem;
+          font-size: 0.625rem;
           line-height: 1;
           font-variant-numeric: slashed-zero;
         }
@@ -134,6 +134,7 @@
         }
 
         &.contributors {
+          max-height: 60vh;
           overflow-y: auto;
           gap: 0.25rem;
         }

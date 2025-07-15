@@ -1,8 +1,8 @@
 :root {
-  --page-max-width: 80rem;
-  --page-padding-horizontal: 2em;
-  --page-padding-vertical: 1.5em;
-  --page-sections-spacing: 4em;
+  --page-max-width: 75rem;
+  --page-padding-horizontal: 2rem;
+  --page-padding-vertical: 1.5rem;
+  --page-sections-spacing: 4rem;
 
   --font-size-caption: 0.75rem;
   --font-size-body: 0.8125rem;
@@ -233,8 +233,8 @@ kbd {
 .sr-only {
   clip: rect(0 0 0 0);
   position: absolute;
-  width: 0.0625em;
-  height: 0.0625em;
+  width: 0.0625rem;
+  height: 0.0625rem;
   overflow: hidden;
   white-space: nowrap;
   clip-path: inset(50%);
@@ -286,6 +286,7 @@ kbd {
 
   figure {
     width: 100%;
+    margin: 2em 0;
 
     img {
       width: 100%;

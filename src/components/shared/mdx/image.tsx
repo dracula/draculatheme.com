@@ -11,7 +11,7 @@ export const Image: React.FC<CustomImageProps> = ({
   ...props
 }) => (
   <figure>
-    <NextImage {...props} width={1200} height={800} alt={props.alt} />
+    <NextImage {...props} width={1200} height={678} alt={props.alt} />
     {showCaption && props.alt && <figcaption>{props.alt}</figcaption>}
   </figure>
 );

@@ -1,6 +1,7 @@
+import "./page.css";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
 
 import { CustomMDX } from "@/components/shared/mdx";
 import { type Author, authors } from "@/lib/authors";
@@ -22,38 +23,48 @@ const BlogPostPage = async (props: Props) => {
   const post = (await getMdxFromFile("content/blog", slug)) as Post;
 
   return (
-    <section className="container">
-      <Link href="/blog">Blog</Link>
-      <time dateTime={post.date.createdAt}>
-        {new Date(post.date.createdAt).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        })}
-      </time>
-      <h1>{post.title}</h1>
-      <div>
-        {post.authors.map((humanId) => {
-          const author = authors.find(
-            (author: Author) => author.id === humanId
-          );
-          if (!author) return null;
+    <section className="container prose post">
+      <div className="meta">
+        <time dateTime={post.date.createdAt}>
+          {new Date(post.date.createdAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          })}
+        </time>
+        <span>/</span>
+        <span>By</span>
+        <div className="authors">
+          {post.authors.map((humanId) => {
+            const author = authors.find(
+              (author: Author) => author.id === humanId
+            );
 
-          return (
-            <Fragment key={humanId}>
-              <div>
-                <Image
-                  src={author?.avatar}
-                  width={40}
-                  height={40}
-                  alt={author?.name}
-                />
-              </div>
-              <p>{author?.name}</p>
-            </Fragment>
-          );
-        })}
+            if (!author) return null;
+
+            return (
+              <Link
+                key={humanId}
+                href={author.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="author"
+              >
+                <div className="avatar">
+                  <Image
+                    src={author?.avatar}
+                    width={40}
+                    height={40}
+                    alt={author?.name}
+                  />
+                </div>
+                <p>{author?.name}</p>
+              </Link>
+            );
+          })}
+        </div>
       </div>
+      <h1>{post.title}</h1>
       <CustomMDX {...post.content} />
     </section>
   );
