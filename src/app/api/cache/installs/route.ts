@@ -42,13 +42,11 @@ const fetchAndOrganize = async (
 
     return value;
   } catch (error: unknown) {
-    return {
-      status: "error",
-      message:
-        error instanceof Error
-          ? `Failed to fetch content for repo ${key}: ${error.message}`
-          : String(error)
-    };
+    console.error(
+      `Failed to fetch content for repo ${key}:`,
+      error instanceof Error ? error.message : String(error)
+    );
+    return null;
   }
 };
 
@@ -62,9 +60,12 @@ export const GET = async () => {
 
     return NextResponse.json({ installs }, { status: 200 });
   } catch (error: unknown) {
-    return {
-      status: "error",
-      message: error instanceof Error ? error.message : String(error)
-    };
+    return NextResponse.json(
+      {
+        status: "error",
+        message: error instanceof Error ? error.message : String(error)
+      },
+      { status: 500 }
+    );
   }
 };
