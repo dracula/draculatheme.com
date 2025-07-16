@@ -2,7 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { NuqsAdapter } from "nuqs/adapters/react";
 
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";

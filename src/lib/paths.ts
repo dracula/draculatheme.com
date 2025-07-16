@@ -25,7 +25,7 @@ export const paths: Path[] = [
   { repo: "atom", title: "Atom", icon: "used/pack-1/005-potion.svg", categories: ["editor"], legacyViews: 81218 },
   { repo: "audacity", title: "Audacity", icon: "used/pack-3/020-magic-ball.svg", platform: ["windows"], categories: ["other"], legacyViews: 0 },
   { repo: "auto-ao3-app", title: "AutoAO3App", icon: "used/pack-5/028-magic hat.svg", categories: ["other"], legacyViews: 102 },
-  { repo: "b4x", title: "B4X", icon: "used/pack-7/038-broom.svg", categories: ["editor", "ide"], legacyViews: 1151 },
+  // { repo: "b4x", title: "B4X", icon: "used/pack-7/038-broom.svg", categories: ["editor", "ide"], legacyViews: 1151 },
   { repo: "bandcamp", title: "Bandcamp", icon: "used/pack-4/002-grapes.svg", categories: ["service"], legacyViews: 0 },
   { repo: "base16-dracula-scheme", title: "Base16", icon: "used/pack-6/030-graveyard.svg", categories: ["other"], legacyViews: 9431 },
   { repo: "bashtop", title: "Bashtop", icon: "used/pack-7/044-monster.svg", platform: ["linux", "macos"], categories: ["other"], legacyViews: 3631 },
