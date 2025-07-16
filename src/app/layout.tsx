@@ -6,7 +6,6 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
-import { fetcher } from "@/utils/fetcher";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -28,20 +27,16 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({
   children
-}: Readonly<{ children: React.ReactNode }>) => {
-  const githubStars = await fetcher("/api/github-stars");
-
-  return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${dmSans.variable} ${dmMono.variable}`}>
-        <NuqsAdapter>
-          <Header stars={githubStars.total} />
-          <main>{children}</main>
-          <Footer />
-        </NuqsAdapter>
-      </body>
-    </html>
-  );
-};
+}: Readonly<{ children: React.ReactNode }>) => (
+  <html lang="en" suppressHydrationWarning>
+    <body className={`${dmSans.variable} ${dmMono.variable}`}>
+      <NuqsAdapter>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </NuqsAdapter>
+    </body>
+  </html>
+);
 
 export default RootLayout;

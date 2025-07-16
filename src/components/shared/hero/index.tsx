@@ -4,7 +4,7 @@ import "./index.css";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 
 import { paths } from "@/lib/paths";
 
@@ -95,12 +95,15 @@ const getPageColor = (pageData: PageData): string => {
   return pageData?.color || colors[Math.floor(Math.random() * colors.length)];
 };
 
-const Hero = () => {
+export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
-  const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
-  const pageData: PageData = allPages[pathKey] || {};
+  const pageData = useMemo(() => {
+    const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
+    return allPages[pathKey] || {};
+  }, [pathKey]);
+
   const { icon, title, subtitle, cta, anchor, type = "static" } = pageData;
 
   const setColor = useCallback(() => {
@@ -140,5 +143,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

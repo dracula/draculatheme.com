@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
 
-import Hero from "@/components/shared/hero";
+import { Hero } from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
 import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";

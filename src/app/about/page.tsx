@@ -2,7 +2,7 @@ import "./page.css";
 
 import Image from "next/image";
 
-import Hero from "@/components/shared/hero";
+import { Hero } from "@/components/shared/hero";
 
 const AboutPage = () => (
   <>

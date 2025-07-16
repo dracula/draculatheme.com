@@ -12,9 +12,7 @@ export const GET = async () => {
       repo: "dracula-theme"
     });
 
-    const total = new Intl.NumberFormat().format(
-      githubRes.data.stargazers_count
-    );
+    const total = githubRes.data.stargazers_count;
 
     return NextResponse.json({ total }, { status: 200 });
   } catch (error) {

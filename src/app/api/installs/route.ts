@@ -11,7 +11,7 @@ export const GET = async (request: NextRequest) => {
       const install = value || "";
 
       return NextResponse.json({ install }, { status: 200 });
-    } catch (_error) {
+    } catch {
       return NextResponse.json({ install: "" }, { status: 400 });
     }
   }

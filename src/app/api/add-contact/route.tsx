@@ -38,7 +38,7 @@ export const POST = async (request: NextRequest) => {
     }
 
     return NextResponse.json({ message: "💜 Email added successfully." });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Internal server error." },
       { status: 500 }

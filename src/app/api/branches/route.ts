@@ -11,7 +11,7 @@ export const GET = async (request: NextRequest) => {
       const branches = value || {};
 
       return NextResponse.json({ branches }, { status: 200 });
-    } catch (_error) {
+    } catch {
       return NextResponse.json({ branches: {} }, { status: 400 });
     }
   }

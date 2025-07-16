@@ -11,7 +11,7 @@ export const GET = async (request: NextRequest) => {
       const contributors = value || [];
 
       return NextResponse.json({ contributors }, { status: 200 });
-    } catch (_error) {
+    } catch {
       return NextResponse.json({ contributors: [] }, { status: 400 });
     }
   }

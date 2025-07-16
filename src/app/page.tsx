@@ -1,7 +1,7 @@
 import "./page.css";
 
 import ContentWrapper from "@/components/home/content-wrapper";
-import Hero from "@/components/shared/hero";
+import { Hero } from "@/components/shared/hero";
 import { isProd } from "@/lib/environment";
 import { paths } from "@/lib/paths";
 import { fetcher } from "@/utils/fetcher";

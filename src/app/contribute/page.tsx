@@ -2,7 +2,7 @@ import "./page.css";
 
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
-import Hero from "@/components/shared/hero";
+import { Hero } from "@/components/shared/hero";
 import { fetcher } from "@/utils/fetcher";
 
 const ContributePage = async () => {
