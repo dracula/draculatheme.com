@@ -8,10 +8,7 @@ import { ReturnArrow } from "@/icons/return-arrow";
 import { type Author, authors } from "@/lib/authors";
 import type { Post } from "@/lib/markdown";
 import type { Props } from "@/lib/types";
-import {
-  getMdxDataFromDirectory,
-  getMdxFromFile
-} from "@/utils/mdx/get-mdx-data-from-directory";
+import { getMdxDataFromDirectory, getMdxFromFile } from "@/utils/mdx";
 
 export const generateStaticParams = async () => {
   const posts = getMdxDataFromDirectory<Post>("content/blog");
@@ -21,10 +18,10 @@ export const generateStaticParams = async () => {
 const BlogPostPage = async (props: Props) => {
   const params = await props.params;
   const { slug } = params;
-  const post = (await getMdxFromFile("content/blog", slug)) as Post;
+  const post = getMdxFromFile("content/blog", slug) as Post;
 
   return (
-    <section className="container prose post">
+    <section className="container post">
       <Link href="/blog" className="back-link">
         <ReturnArrow />
         <span>Blog</span>
@@ -69,8 +66,10 @@ const BlogPostPage = async (props: Props) => {
           })}
         </div>
       </div>
-      <h1>{post.title}</h1>
-      <CustomMDX {...post.content} />
+      <article className="prose">
+        <h1>{post.title}</h1>
+        <CustomMDX source={post.content} />
+      </article>
     </section>
   );
 };

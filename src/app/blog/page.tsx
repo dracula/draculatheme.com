@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
 import type { Post } from "@/lib/markdown";
-import { getMdxDataFromDirectory } from "@/utils/mdx/get-mdx-data-from-directory";
+import { getMdxDataFromDirectory } from "@/utils/mdx";
 
 interface PostCardProps {
   post: Post;

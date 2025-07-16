@@ -1,5 +1,3 @@
-import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-
 import type { Author } from "./authors";
 
 export interface BaseContent {
@@ -7,7 +5,7 @@ export interface BaseContent {
   title: string;
   excerpt: string;
   date: { createdAt: string; updatedAt: string };
-  content: MDXRemoteSerializeResult;
+  content: string;
 }
 
 export interface Post extends BaseContent {

@@ -2,20 +2,53 @@ import fs from "node:fs";
 import path from "node:path";
 
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import rehypeUnwrapImages from "rehype-unwrap-images";
+import readingDuration from "reading-duration";
 
 import { orderBy } from "../order-by";
-import { readMdxFile } from "./read-mdx-file";
+
+const countWords = (text: string) => {
+  return text.trim().split(/\s+/).length;
+};
+
+export const formatReadingTime = (durationText: string) => {
+  if (!durationText) return "1min";
+  const match = durationText.match(/(\d+)\smin/);
+  return match ? `${match[1]}min` : "1min";
+};
 
 const getMdxFiles = (dir: string) => {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 };
 
-const getMdxData = (dir = "") => {
+const readMdxFile = (filePath: string, includeReadingTime = false) => {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}.`);
+  }
+
+  try {
+    const rawContent = fs.readFileSync(filePath, "utf8");
+    const { content, data } = matter(rawContent);
+    const wordCount = countWords(content);
+
+    return {
+      metadata: {
+        ...data,
+        ...(includeReadingTime && {
+          reading_time: readingDuration(rawContent, { emoji: false })
+        }),
+        words: wordCount
+      },
+      content
+    };
+  } catch (error) {
+    console.error(`Error reading MDX file: ${filePath}.\n`);
+    throw error;
+  }
+};
+
+const getMdxData = (dir: string) => {
   const mdxFiles = getMdxFiles(dir).map((file) => {
     const fileData = readMdxFile(path.join(dir, file));
-
     const { metadata, content } = fileData;
     const slug = path.basename(file, path.extname(file));
 
@@ -38,7 +71,7 @@ export const getMdxDataFromDirectory = <T>(directoryName: string): T[] => {
   return data as T[];
 };
 
-export const getMdxFromFile = async (directory: string, slug: string) => {
+export const getMdxFromFile = (directory: string, slug: string) => {
   const postsDirectory = path.join(process.cwd(), directory);
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
 
@@ -47,18 +80,10 @@ export const getMdxFromFile = async (directory: string, slug: string) => {
   }
 
   const fileContents = fs.readFileSync(filePath, "utf8");
-
   const { content, data } = matter(fileContents);
-
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      rehypePlugins: [rehypeUnwrapImages],
-      format: "mdx"
-    }
-  });
 
   return {
     ...data,
-    content: mdxSource
+    content
   };
 };

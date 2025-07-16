@@ -2,7 +2,6 @@ import "./page.css";
 
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { serialize } from "next-mdx-remote/serialize";
 
 import { Hero } from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
@@ -37,14 +36,13 @@ const ThemePage = async (props: Props) => {
   const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
   const decodedBuffer = Buffer.from(installsResponse.install, "base64");
   const installsContent = decodedBuffer.toString("utf8");
-  const serializedMdx = await serialize(installsContent);
 
   return (
     <>
       <Hero />
       <section className="container theme">
         <div className="wrapper">
-          <div className="instructions prose">
+          <div className="instructions">
             <div className="screenshot">
               <Image
                 src={`https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`}
@@ -54,7 +52,9 @@ const ThemePage = async (props: Props) => {
                 height={800}
               />
             </div>
-            <CustomMDX {...serializedMdx} />
+            <article className="prose">
+              <CustomMDX source={installsContent} format="md" />
+            </article>
           </div>
           <aside className="sidebar">
             <h4>Details</h4>

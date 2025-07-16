@@ -1,6 +1,5 @@
-"use client";
-
-import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeUnwrapImages from "rehype-unwrap-images";
 
 import { Code } from "./code";
 import { Image } from "./image";
@@ -11,6 +10,25 @@ const mdxComponents = {
   pre: ({ children }: { children: React.ReactNode }) => <>{children}</>
 };
 
-export const CustomMDX = (mdxSource: MDXRemoteSerializeResult) => (
-  <MDXRemote {...mdxSource} components={mdxComponents} lazy />
+const mdxOptions = (format: "md" | "mdx") => {
+  return {
+    mdxOptions: {
+      rehypePlugins: [rehypeUnwrapImages],
+      format: format
+    }
+  };
+};
+
+export const CustomMDX = ({
+  source,
+  format = "mdx"
+}: {
+  source: string;
+  format?: "md" | "mdx";
+}) => (
+  <MDXRemote
+    source={source}
+    components={mdxComponents}
+    options={mdxOptions(format)}
+  />
 );
