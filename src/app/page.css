@@ -143,7 +143,7 @@
     flex-shrink: 1;
     flex-basis: 0;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
     height: fit-content;
     margin: 0;
@@ -154,7 +154,7 @@
     li {
       a {
         width: 15rem;
-        height: fit-content;
+        height: 100%;
         gap: var(--spacing-large);
         border-radius: 0.75rem;
         outline-color: transparent;
