@@ -61,7 +61,7 @@ const getMdxData = (dir: string) => {
 
   return orderBy(
     mdxFiles.filter((file) => file !== null),
-    ["created_at"]
+    ["date.createdAt"]
   );
 };
 

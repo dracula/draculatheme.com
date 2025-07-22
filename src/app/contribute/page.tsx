@@ -26,11 +26,13 @@ const ContributePage = async () => {
             community. Most apps that support the theme are contributions from
             our community.
           </p>
+          <br />
           <p>
             As much as the team is responsible for the core theme and wants to
             support all available applications, we simply don&apos;t have the
             capacity to do it all ourselves.
           </p>
+          <br />
           <p>
             That&apos;s why the community is essential for this project to keep
             evolving. Below are some guidelines, tips, and specifications for

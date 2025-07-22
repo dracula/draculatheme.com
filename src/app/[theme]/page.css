@@ -10,8 +10,7 @@
     .instructions {
       display: flex;
       flex-direction: column;
-      width: fit-content;
-      max-width: 72%;
+      width: 72%;
       gap: 1.5rem;
 
       .screenshot {

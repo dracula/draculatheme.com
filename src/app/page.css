@@ -208,6 +208,16 @@
           background-color: var(--background-color-primary);
         }
       }
+
+      &.empty {
+        margin-top: 1.125rem;
+        line-height: 1.8;
+
+        h3 {
+          color: var(--color-display);
+          font-size: 0.9375rem;
+        }
+      }
     }
   }
 }

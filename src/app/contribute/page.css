@@ -16,6 +16,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     line-height: 1.8;
+
+    h2 {
+      margin-bottom: 1em;
+    }
   }
 
   .steps {
