@@ -76,11 +76,70 @@
         font-weight: 600;
         font-size: 0.875rem;
       }
+
+      .cta {
+        margin-top: 2.625rem;
+        background-color: var(--color);
+        color: var(--background-color-primary);
+
+        &:hover {
+          background-color: var(--background-color-tertiary);
+          box-shadow: var(--box-shadow-primary);
+          color: var(--color-display);
+        }
+      }
+    }
+
+    .video {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--box-shadow-primary);
+
+      div {
+        display: flex;
+        position: relative;
+        height: 18.75rem;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        backdrop-filter: blur(0.125rem);
+
+        iframe {
+          aspect-ratio: 16 / 9;
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+      }
     }
   }
 
   &.contribute {
     background-image: none;
     background-color: var(--background-color-secondary);
+  }
+
+  &.shop {
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2.25rem;
+
+      .header {
+        max-width: 20rem;
+        text-align: left;
+
+        h1 {
+          line-height: 1.2;
+        }
+
+        p {
+          margin-top: 0.75rem;
+          line-height: 1.8;
+          text-wrap: balance;
+        }
+      }
+    }
   }
 }

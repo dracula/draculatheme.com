@@ -53,7 +53,7 @@ const staticPages: PageConfig = {
   "/shop": {
     title: "Premium merch for modern vampires",
     subtitle:
-      "A collection of exclusive apparel and limited-run accessories designed for our community.",
+      "Commit to comfort. Crafted for those who value the elegance of text-based creativity.",
     cta: "Browse Products",
     anchor: "#products",
     color: "330"
@@ -120,24 +120,38 @@ export const Hero = () => {
       <Particles className="starry-sky" />
       <div className="castle" />
       <div className="container">
-        <div className={`icon ${type}`}>
-          <Image
-            src={icon || "/images/hero/default.svg"}
-            width={192}
-            height={192}
-            alt="Dracula Icon"
-            quality={100}
-            priority
-          />
-        </div>
+        {pathKey !== "/shop" && (
+          <div className={`icon ${type}`}>
+            <Image
+              src={icon || "/images/hero/default.svg"}
+              width={192}
+              height={192}
+              alt="Dracula Icon"
+              quality={100}
+              priority
+            />
+          </div>
+        )}
         <div className="header">
           <h1>{title}</h1>
           <p>{subtitle}</p>
+          {cta && anchor && (
+            <a href={anchor} className="action cta">
+              {cta}
+            </a>
+          )}
         </div>
-        {cta && anchor && (
-          <a href={anchor} className="cta">
-            {cta}
-          </a>
+        {pathKey === "/shop" && (
+          <div className="video">
+            <div>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/RiuWwkwmmfI"
+                title="Video showing the manufacture of products from the Dracula collection"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
         )}
       </div>
     </section>
