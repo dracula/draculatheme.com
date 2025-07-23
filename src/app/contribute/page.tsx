@@ -1,5 +1,7 @@
 import "./page.css";
 
+import Image from "next/image";
+
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
@@ -41,10 +43,41 @@ const ContributePage = async () => {
         </div>
         <Steps />
         <ColorPalette />
-        {contributors.length > 0 &&
-          contributors.map((contributor) => (
-            <p key={contributor.login}>{contributor.login}</p>
-          ))}
+        <div className="contributors">
+          <h3>
+            Join over <em>{contributors.length}</em> contributors
+          </h3>
+          <p>
+            Whether you&apos;re maintaining a port, contributing via a pull
+            request, or reporting an issue, the community is the heart and soul
+            of the Dracula Theme.
+          </p>
+          <ul>
+            {contributors.length > 0 &&
+              contributors.map((contributor) => (
+                <li key={contributor.login}>
+                  <a
+                    href={`https://github.com/${contributor.login}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="item"
+                  >
+                    <div>
+                      {contributor.avatar_url && (
+                        <Image
+                          src={contributor.avatar_url}
+                          width={24}
+                          height={24}
+                          alt={contributor.login}
+                        />
+                      )}
+                    </div>
+                    <span className="sr-only">@{contributor.login}</span>
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </div>
       </section>
     </>
   );

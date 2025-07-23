@@ -18,7 +18,7 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 | Token            | Hex       | RGB           | HSL             | Usage                        |
 | ---------------- | --------- | ------------- | --------------- | ---------------------------- |
 | **Background**   | `#282A36` | 40, 42, 54    | 231°, 15%, 18%  | Main background              |
-| **Current Line** | `#44475A` | 68, 71, 90    | 232°, 14%, 31%  | Line highlight               |
+| **Current Line** | `#6272A4` | 98, 114, 164  | 225°, 27%, 51%  | Comments, disabled code      |
 | **Selection**    | `#44475A` | 68, 71, 90    | 232°, 14%, 31%  | Text selection               |
 | **Foreground**   | `#F8F8F2` | 248, 248, 242 | 60°, 30%, 96%   | Default text                 |
 | **Comment**      | `#6272A4` | 98, 114, 164  | 225°, 27%, 51%  | Comments, disabled code      |

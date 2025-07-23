@@ -11,7 +11,7 @@ type ColorFormat = (typeof formats)[number];
 type ThemeName = "Dracula" | "Alucard";
 
 type Color = {
-  name: string;
+  token: string;
   hex: string;
   RGB: string;
   HSL: string;
@@ -21,9 +21,11 @@ type Color = {
 
 const formats = ["Hex", "RGB", "HSL", "Ansi16", "Ansi256"];
 
+const themes: ThemeName[] = ["Dracula", "Alucard"];
+
 const draculaColors = [
   {
-    name: "Background",
+    token: "Background",
     hex: "#282A36",
     RGB: "RGB(40, 42, 54)",
     HSL: "HSL(231, 15, 18)",
@@ -31,31 +33,7 @@ const draculaColors = [
     Ansi256: "59"
   },
   {
-    name: "Current Line",
-    hex: "#44475A",
-    RGB: "RGB(68, 71, 90)",
-    HSL: "HSL(232, 14, 31)",
-    Ansi16: "30",
-    Ansi256: "60"
-  },
-  {
-    name: "Selection",
-    hex: "#44475A",
-    RGB: "RGB(68, 71, 90)",
-    HSL: "HSL(232, 14, 31)",
-    Ansi16: "30",
-    Ansi256: "60"
-  },
-  {
-    name: "Foreground",
-    hex: "#F8F8F2",
-    RGB: "RGB(248, 248, 242)",
-    HSL: "HSL(60, 30, 96)",
-    Ansi16: "97",
-    Ansi256: "231"
-  },
-  {
-    name: "Comment",
+    token: "Current Line",
     hex: "#6272A4",
     RGB: "RGB(98, 114, 164)",
     HSL: "HSL(225, 27, 51)",
@@ -63,7 +41,31 @@ const draculaColors = [
     Ansi256: "103"
   },
   {
-    name: "Red",
+    token: "Selection",
+    hex: "#44475A",
+    RGB: "RGB(68, 71, 90)",
+    HSL: "HSL(232, 14, 31)",
+    Ansi16: "30",
+    Ansi256: "60"
+  },
+  {
+    token: "Foreground",
+    hex: "#F8F8F2",
+    RGB: "RGB(248, 248, 242)",
+    HSL: "HSL(60, 30, 96)",
+    Ansi16: "97",
+    Ansi256: "231"
+  },
+  {
+    token: "Comment",
+    hex: "#6272A4",
+    RGB: "RGB(98, 114, 164)",
+    HSL: "HSL(225, 27, 51)",
+    Ansi16: "34",
+    Ansi256: "103"
+  },
+  {
+    token: "Red",
     hex: "#FF5555",
     RGB: "RGB(255, 85, 85)",
     HSL: "HSL(0, 100, 67)",
@@ -71,7 +73,7 @@ const draculaColors = [
     Ansi256: "210"
   },
   {
-    name: "Orange",
+    token: "Orange",
     hex: "#FFB86C",
     RGB: "RGB(255, 184, 108)",
     HSL: "HSL(31, 100, 71)",
@@ -79,7 +81,7 @@ const draculaColors = [
     Ansi256: "222"
   },
   {
-    name: "Yellow",
+    token: "Yellow",
     hex: "#F1FA8C",
     RGB: "RGB(241, 250, 140)",
     HSL: "HSL(65, 92, 76)",
@@ -87,7 +89,7 @@ const draculaColors = [
     Ansi256: "229"
   },
   {
-    name: "Green",
+    token: "Green",
     hex: "#50FA7B",
     RGB: "RGB(80, 250, 123)",
     HSL: "HSL(135, 94, 65)",
@@ -95,7 +97,7 @@ const draculaColors = [
     Ansi256: "120"
   },
   {
-    name: "Cyan",
+    token: "Cyan",
     hex: "#8BE9FD",
     RGB: "RGB(139, 233, 253)",
     HSL: "HSL(191, 97, 77)",
@@ -103,7 +105,7 @@ const draculaColors = [
     Ansi256: "159"
   },
   {
-    name: "Purple",
+    token: "Purple",
     hex: "#BD93F9",
     RGB: "RGB(189, 147, 249)",
     HSL: "HSL(265, 89, 78)",
@@ -111,7 +113,7 @@ const draculaColors = [
     Ansi256: "183"
   },
   {
-    name: "Pink",
+    token: "Pink",
     hex: "#FF79C6",
     RGB: "RGB(255, 121, 198)",
     HSL: "HSL(326, 100, 74)",
@@ -122,7 +124,7 @@ const draculaColors = [
 
 const alucardColors = [
   {
-    name: "Background",
+    token: "Background",
     hex: "#FFFBEB",
     RGB: "RGB(255, 251, 235)",
     HSL: "HSL(48, 100, 96)",
@@ -130,7 +132,7 @@ const alucardColors = [
     Ansi256: "231"
   },
   {
-    name: "Current Line",
+    token: "Current Line",
     hex: "#6C664B",
     RGB: "RGB(108, 102, 75)",
     HSL: "HSL(49, 18, 36)",
@@ -138,7 +140,7 @@ const alucardColors = [
     Ansi256: "100"
   },
   {
-    name: "Selection",
+    token: "Selection",
     hex: "#CFCFDE",
     RGB: "RGB(207, 207, 222)",
     HSL: "HSL(240, 18, 84)",
@@ -146,7 +148,7 @@ const alucardColors = [
     Ansi256: "253"
   },
   {
-    name: "Foreground",
+    token: "Foreground",
     hex: "#1F1F1F",
     RGB: "RGB(31, 31, 31)",
     HSL: "HSL(0, 0, 12)",
@@ -154,7 +156,7 @@ const alucardColors = [
     Ansi256: "16"
   },
   {
-    name: "Comment",
+    token: "Comment",
     hex: "#6C664B",
     RGB: "RGB(108, 102, 75)",
     HSL: "HSL(49, 18, 36)",
@@ -162,7 +164,7 @@ const alucardColors = [
     Ansi256: "100"
   },
   {
-    name: "Red",
+    token: "Red",
     hex: "#CB3A2A",
     RGB: "RGB(203, 58, 42)",
     HSL: "HSL(6, 66, 48)",
@@ -170,7 +172,7 @@ const alucardColors = [
     Ansi256: "160"
   },
   {
-    name: "Orange",
+    token: "Orange",
     hex: "#A34D14",
     RGB: "RGB(163, 77, 20)",
     HSL: "HSL(24, 78, 36)",
@@ -178,7 +180,7 @@ const alucardColors = [
     Ansi256: "130"
   },
   {
-    name: "Yellow",
+    token: "Yellow",
     hex: "#846E15",
     RGB: "RGB(132, 110, 21)",
     HSL: "HSL(48, 73, 30)",
@@ -186,7 +188,7 @@ const alucardColors = [
     Ansi256: "100"
   },
   {
-    name: "Green",
+    token: "Green",
     hex: "#14710A",
     RGB: "RGB(20, 113, 10)",
     HSL: "HSL(114, 84, 24)",
@@ -194,7 +196,7 @@ const alucardColors = [
     Ansi256: "22"
   },
   {
-    name: "Cyan",
+    token: "Cyan",
     hex: "#036A96",
     RGB: "RGB(3, 106, 150)",
     HSL: "HSL(198, 96, 30)",
@@ -202,7 +204,7 @@ const alucardColors = [
     Ansi256: "25"
   },
   {
-    name: "Purple",
+    token: "Purple",
     hex: "#644AC9",
     RGB: "RGB(100, 74, 201)",
     HSL: "HSL(252, 54, 54)",
@@ -210,7 +212,7 @@ const alucardColors = [
     Ansi256: "99"
   },
   {
-    name: "Pink",
+    token: "Pink",
     hex: "#A3144D",
     RGB: "RGB(163, 20, 77)",
     HSL: "HSL(336, 78, 36)",
@@ -244,82 +246,80 @@ export const ColorPalette = () => {
     selectedTheme === "Dracula" ? draculaColors : alucardColors;
 
   return (
-    <div id="color-palette" className="color-palette">
+    <div className="color-palette">
       <h2>Color Palette</h2>
-      <div className="theme-toggle">
-        <button
-          type="button"
-          onClick={() => setSelectedTheme("Dracula")}
-          className={selectedTheme === "Dracula" ? "active-theme" : ""}
-        >
-          Dracula
-        </button>
-        <button
-          type="button"
-          onClick={() => setSelectedTheme("Alucard")}
-          className={selectedTheme === "Alucard" ? "active-theme" : ""}
-        >
-          Alucard
-        </button>
+      <div className="toggle-group">
+        {themes.map((theme) => (
+          <div key={theme} className="item">
+            <button
+              type="button"
+              onClick={() => setSelectedTheme(theme)}
+              className={`action ${selectedTheme === theme && " active"}`}
+            >
+              {theme}
+            </button>
+            {selectedTheme === theme && (
+              <motion.span
+                layoutId="theme-bubble"
+                className="highlighter"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+          </div>
+        ))}
       </div>
-      <ul className="format-options">
+      <div className="toggle-group">
         {formats.map((format) => (
-          <li key={format}>
+          <div key={format} className="item">
             <button
               type="button"
               onClick={() => setSelectedFormat(format)}
-              className={selectedFormat === format ? "active-format" : ""}
+              className={`action ${selectedFormat === format && " active"}`}
             >
               {format}
             </button>
             {selectedFormat === format && (
               <motion.span
-                layoutId="bubble"
+                layoutId="format-bubble"
                 className="highlighter"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <div className="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>
-                <span>Palette</span>
-              </th>
-              <th>
-                <div className="wrapper">
-                  <span>Copy</span>
-                </div>
-              </th>
-              <th>
-                <span>Color</span>
-              </th>
+              <th>Token</th>
+              <th>Copy</th>
+              <th>Color</th>
             </tr>
           </thead>
           <tbody>
             {currentColors.map((color) => (
               <tr
-                key={color.name}
+                key={color.token}
                 style={
                   {
                     "--color": getColorByFormat(color, selectedFormat)
                   } as React.CSSProperties
                 }
               >
+                <td>{color.token}</td>
                 <td>
-                  <span>{color.name}</span>
-                </td>
-                <td>
-                  <CopyButton text={getColorByFormat(color, selectedFormat)} />
+                  <div className="wrapper">
+                    <CopyButton
+                      text={getColorByFormat(color, selectedFormat)}
+                    />
+                    <code>{getColorByFormat(color, selectedFormat)}</code>
+                  </div>
                 </td>
                 <td
                   style={{
                     backgroundColor: getColorByFormat(color, selectedFormat)
                   }}
-                  className="color"
                 />
               </tr>
             ))}
@@ -328,15 +328,9 @@ export const ColorPalette = () => {
       </div>
       <p>
         For more details about how to apply these different colors to represent
+        <br />
         different code symbols, please see the{" "}
-        <Link
-          href="https://spec.draculatheme.com"
-          target="blank"
-          className="inline"
-        >
-          Dracula Specification
-        </Link>
-        .
+        <Link href="/spec">Dracula Specification</Link>.
       </p>
     </div>
   );
