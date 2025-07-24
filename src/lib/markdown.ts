@@ -6,6 +6,7 @@ export interface BaseContent {
   excerpt: string;
   date: { createdAt: string; updatedAt: string };
   content: string;
+  readingTime: string;
 }
 
 export interface Post extends BaseContent {

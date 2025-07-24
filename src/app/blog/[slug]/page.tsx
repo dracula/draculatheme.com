@@ -26,7 +26,8 @@ const BlogPostPage = async (props: Props) => {
         <ReturnArrow />
         <span>Blog</span>
       </Link>
-      <div className="meta">
+      <p className="time">
+        <span>Published in </span>
         <time dateTime={post.date.createdAt}>
           {new Date(post.date.createdAt).toLocaleDateString("en-US", {
             year: "numeric",
@@ -34,37 +35,36 @@ const BlogPostPage = async (props: Props) => {
             day: "numeric"
           })}
         </time>
-        <span>/</span>
+      </p>
+      <div className="authors">
         <span>By</span>
-        <div className="authors">
-          {post.authors.map((humanId) => {
-            const author = authors.find(
-              (author: Author) => author.id === humanId
-            );
+        {post.authors.map((humanId) => {
+          const author = authors.find(
+            (author: Author) => author.id === humanId
+          );
 
-            if (!author) return null;
+          if (!author) return null;
 
-            return (
-              <Link
-                key={humanId}
-                href={author.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="author"
-              >
-                <div className="avatar">
-                  <Image
-                    src={author?.avatar}
-                    width={40}
-                    height={40}
-                    alt={author?.name}
-                  />
-                </div>
-                <p>{author?.name}</p>
-              </Link>
-            );
-          })}
-        </div>
+          return (
+            <Link
+              key={humanId}
+              href={author.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="author"
+            >
+              <div className="avatar">
+                <Image
+                  src={author?.avatar}
+                  width={40}
+                  height={40}
+                  alt={author?.name}
+                />
+              </div>
+              <span>{author?.name}</span>
+            </Link>
+          );
+        })}
       </div>
       <article className="prose">
         <h1>{post.title}</h1>

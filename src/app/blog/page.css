@@ -50,7 +50,9 @@
         width: 100%;
         line-height: 1.8;
 
-        time {
+        .meta {
+          margin-top: 1em;
+          color: var(--color-caption);
           font-size: var(--font-size-caption);
         }
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
-import { products } from "@/lib/products";
+import { products } from "@/lib/shop/products";
 import { fetcher } from "@/utils/fetcher";
 
 interface ProductParams {
@@ -54,11 +54,11 @@ const ShopPage = async () => {
     <>
       <Hero />
       <section className="container shop">
-        <ul>
+        <ul id="products">
           {productsList.map((product) => (
             <li key={product.id}>
               <Link href={`/shop/${product.custom_permalink}`} className="item">
-                <div>
+                <div className="thumb">
                   <Image
                     src={`/images/shop/${product.custom_permalink}-1.png`}
                     alt={product.name}

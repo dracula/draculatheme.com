@@ -257,7 +257,6 @@ body {
 ### Special Rules
 
 1. **Braces and Parentheses**: Should match the foreground color of the currently scoped position:
-
    - `Purple` for headings;
    - `Foreground` for regular text.
 
@@ -381,13 +380,11 @@ That's why the community is essential for this project to keep evolving.
    ```
 
 2. **Follow the specification**
-
    - Use exact color values from this specification;
    - Implement syntax highlighting rules consistently;
    - Test with provided code samples.
 
 3. **Submit for review**
-
    - The repository must contain the following files, as in the template:
      - [`README.md`](https://github.com/dracula/template/blob/main/README.md): introduction and guide for GitHub users;
      - [`screenshot.png`](https://github.com/dracula/template/blob/main/screenshot.png): displays your Dracula-themed theme on the website;
@@ -396,7 +393,6 @@ That's why the community is essential for this project to keep evolving.
    - [Submit an issue](https://github.com/dracula/dracula-theme/issues/new) with repository link.
 
 4. **Organization transfer**
-
    - Accepted repositories move under Dracula organization;
    - Maintain consistency with other official implementations.
 

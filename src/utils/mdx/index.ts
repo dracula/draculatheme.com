@@ -11,9 +11,9 @@ const countWords = (text: string) => {
 };
 
 export const formatReadingTime = (durationText: string) => {
-  if (!durationText) return "1min";
+  if (!durationText) return "1 min.";
   const match = durationText.match(/(\d+)\smin/);
-  return match ? `${match[1]}min` : "1min";
+  return match ? `${match[1]} min.` : "1 min.";
 };
 
 const getMdxFiles = (dir: string) => {
@@ -34,7 +34,9 @@ const readMdxFile = (filePath: string, includeReadingTime = false) => {
       metadata: {
         ...data,
         ...(includeReadingTime && {
-          reading_time: readingDuration(rawContent, { emoji: false })
+          readingTime: formatReadingTime(
+            readingDuration(rawContent, { emoji: false })
+          )
         }),
         words: wordCount
       },
@@ -48,7 +50,7 @@ const readMdxFile = (filePath: string, includeReadingTime = false) => {
 
 const getMdxData = (dir: string) => {
   const mdxFiles = getMdxFiles(dir).map((file) => {
-    const fileData = readMdxFile(path.join(dir, file));
+    const fileData = readMdxFile(path.join(dir, file), true);
     const { metadata, content } = fileData;
     const slug = path.basename(file, path.extname(file));
 
@@ -79,11 +81,14 @@ export const getMdxFromFile = (directory: string, slug: string) => {
     return null;
   }
 
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const { content, data } = matter(fileContents);
+  const rawContent = fs.readFileSync(filePath, "utf8");
+  const { content, data } = matter(rawContent);
 
   return {
     ...data,
-    content
+    content,
+    readingTime: formatReadingTime(
+      readingDuration(rawContent, { emoji: false })
+    )
   };
 };

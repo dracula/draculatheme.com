@@ -26,15 +26,18 @@ const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
         />
       </div>
       <div className="content">
-        <time dateTime={post.date.createdAt}>
-          {new Date(post.date.createdAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          })}
-        </time>
         <h4>{post.title}</h4>
         <p>{post.excerpt}</p>
+        <p className="meta">
+          <span>{post.readingTime} read / Published in </span>
+          <time dateTime={post.date.createdAt}>
+            {new Date(post.date.createdAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            })}
+          </time>
+        </p>
       </div>
     </Link>
   </li>

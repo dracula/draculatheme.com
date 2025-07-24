@@ -1,11 +1,11 @@
-.shop {
+.product {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
   gap: 5rem;
 
-  #products {
+  .related-products {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -91,6 +91,16 @@
           }
         }
       }
+    }
+  }
+
+  .faqs {
+    width: 60%;
+    max-width: 35rem;
+
+    h3 {
+      margin-bottom: 1.875rem;
+      text-align: center;
     }
   }
 }
