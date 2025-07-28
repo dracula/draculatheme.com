@@ -1,33 +1,36 @@
 export const faqs = [
   {
     question: "Do you ship worldwide?",
-    answer: "Yes, we ship internationally."
+    answer: "Yes, we offer international shipping to most countries worldwide."
   },
   {
-    question: "When will I get my order?",
-    answer: `Your order will ship within 2-7 business days. You'll get an e-mail with the tracking info to follow it along the way. Shipping timelines will vary based on location.`
+    question: "When will I receive my order?",
+    answer:
+      "Orders typically ship within 2-7 business days. You will receive an email with tracking information once your order has been dispatched. Delivery times vary depending on your location."
   },
   {
-    question: "Do you offer PPP or any discounts?",
-    answer: `Purchasing Parity Power (PPP) is only available to digital products like Dracula PRO and Dracula UI. Unfortunately, I can't offer discounts for physical products since they have fixed production costs and extremely low margins.`
+    question: "Do you offer purchasing power parity (PPP) or discounts?",
+    answer:
+      "Purchasing Power Parity (PPP) pricing is available exclusively for digital products such as Dracula Pro and Dracula UI. Unfortunately, discounts cannot be applied to physical products due to fixed production costs and minimal profit margins."
   },
   {
     question: "Can I edit or cancel my order?",
     answer:
-      "You cannot edit your order once placed, but if you would like to cancel your order before it has been fulfilled and shipped, please send me an email: support@draculatheme.com."
+      "Orders cannot be modified once placed. However, if you need to cancel your order before it has been fulfilled and shipped, please contact our support team at support@draculatheme.com."
   },
   {
-    question: "What about customs fees?",
+    question: "What about customs and import fees?",
     answer:
-      "Our shipping cost does not include import or customs taxes. This is a common thing for international orders, and unfortunately, we have no control over them."
+      "Shipping costs do not include customs duties, import taxes, or other fees that may be imposed by your country. These charges are determined by local customs authorities and are the responsibility of the customer."
   },
   {
     question: "What is your return policy?",
     answer:
-      "We currently do not accept returns. If you get the wrong item or defective product, please email me: support@draculatheme.com."
+      "We currently do not accept returns on our products. If you receive an incorrect or defective item, please contact our support team at support@draculatheme.com and we will resolve the issue."
   },
   {
-    question: "How do I contact support?",
-    answer: "You can contact me by e-mailing support@draculatheme.com."
+    question: "How do I contact customer support?",
+    answer:
+      "You can reach our customer support team by emailing support@draculatheme.com. We aim to respond to all inquiries promptly."
   }
 ];

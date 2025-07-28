@@ -3,91 +3,273 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 5.625rem;
 
-  .related-products {
+  .overview {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: stretch;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-    gap: 1.5rem;
-    list-style: none;
+    width: 100%;
+    max-width: 62rem;
+    gap: 1.875rem;
 
-    .item {
+    .gallery {
       display: flex;
-      position: relative;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 20rem;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 1.125rem;
-      background-color: var(--background-color-secondary);
+      gap: 1.5rem;
 
-      .thumb {
-        display: flex;
+      .main {
         position: relative;
-        flex: 1;
         width: 100%;
-        min-height: 14rem;
         overflow: hidden;
+        border: 0.0625rem solid var(--background-color-secondary);
+        border-radius: 0.5rem;
         background-image: radial-gradient(
           circle,
           var(--background-color-secondary) 0%,
           var(--background-color-secondary) 42%,
           var(--background-color-primary) 100%
         );
-        transition: opacity 300ms var(--ease-fluid);
 
         img {
           width: 100%;
           height: 100%;
           object-fit: contain;
           object-position: center;
-          transition: transform 150ms var(--ease-fluid);
-          will-change: transform;
         }
       }
 
-      .content {
+      .thumbs {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1.5rem;
+
+        button {
+          position: relative;
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+          max-width: 10rem;
+          max-height: 10rem;
+          padding: 0;
+          overflow: hidden;
+          border: 0.0625rem solid var(--background-color-secondary);
+          border-radius: 0.375rem;
+          background-image: radial-gradient(
+            circle,
+            var(--background-color-secondary) 0%,
+            var(--background-color-secondary) 42%,
+            var(--background-color-primary) 100%
+          );
+          transition: border-color 250ms var(--ease-fluid);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+
+          &.active {
+            border-color: var(--color);
+          }
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      position: sticky;
+      top: 6rem;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      flex-direction: column;
+      height: fit-content;
+      gap: 0.75rem;
+
+      h1 {
+        color: var(--color-display);
+        font-size: var(--font-size-display);
+      }
+
+      hr {
+        margin: 0.75rem 0;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 0.75rem;
+        gap: 1.5rem;
+
+        .quantity,
+        .size {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+
+          input,
+          select {
+            position: relative;
+            width: 100%;
+            height: 2.5rem;
+            border: 0.0625rem solid var(--background-color-secondary);
+            border-radius: 0.5rem;
+            outline-color: transparent;
+            background-color: var(--background-color-primary);
+            transition:
+              border-color 250ms var(--ease-fluid),
+              background-color 250ms var(--ease-fluid),
+              color 250ms var(--ease-fluid),
+              outline 250ms var(--ease-fluid);
+
+            &::placeholder {
+              color: var(--color-body);
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+              border-color: transparent;
+              outline-color: var(--background-color-tertiary);
+              outline-style: solid;
+              outline-width: 0.125rem;
+            }
+          }
+        }
+
+        .quantity {
+          width: 30%;
+
+          input {
+            padding: var(--spacing-medium);
+          }
+        }
+
+        .size {
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+
+          select {
+            padding-right: var(--spacing-medium);
+            padding-left: var(--spacing-medium);
+            user-select: none;
+          }
+        }
+      }
+
+      .action {
+        width: 100%;
+        margin-top: 1.125rem;
+      }
+    }
+  }
+
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.875rem;
+
+    h3 {
+      color: var(--color-display);
+    }
+
+    #products {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+      list-style: none;
+
+      .item {
         display: flex;
         position: relative;
         flex-direction: column;
-        width: 100%;
-        padding: 0.75rem 1.125rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 20rem;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 1.125rem;
+        background-color: var(--background-color-secondary);
 
-        .item-ribbon {
-          position: absolute;
-          top: 0;
-          right: 1.125rem;
-          padding: 0.375rem;
-          transform: translateY(-50%);
-          border-radius: 0.375rem;
-          background-color: var(--orange);
-          color: var(--background-color-primary);
-          font-weight: 700;
-          font-size: 0.625rem;
-          line-height: 1;
-          text-transform: uppercase;
-        }
-
-        h2 {
-          color: var(--color-display);
-        }
-
-        .price {
-          font-family: var(--font-mono);
-        }
-      }
-
-      &:focus-within,
-      &:hover {
         .thumb {
+          display: flex;
+          position: relative;
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+          width: 100%;
+          min-height: 14rem;
+          overflow: hidden;
+          background-image: radial-gradient(
+            circle,
+            var(--background-color-secondary) 0%,
+            var(--background-color-secondary) 42%,
+            var(--background-color-primary) 100%
+          );
+          transition: opacity 300ms var(--ease-fluid);
+
           img {
-            transform: scale(1.06) rotate(-0.6deg);
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 150ms var(--ease-fluid);
+            will-change: transform;
+          }
+        }
+
+        .content {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          width: 100%;
+          padding: 0.75rem 1.125rem;
+
+          .item-ribbon {
+            position: absolute;
+            top: 0;
+            right: 1.125rem;
+            padding: 0.375rem;
+            transform: translateY(-50%);
+            border-radius: 0.375rem;
+            background-color: var(--orange);
+            color: var(--background-color-primary);
+            font-weight: 700;
+            font-size: 0.625rem;
+            line-height: 1;
+            text-transform: uppercase;
+          }
+
+          h3 {
+            color: var(--color-display);
+          }
+
+          .price {
+            font-family: var(--font-mono);
+          }
+        }
+
+        &:focus-within,
+        &:hover {
+          .thumb {
+            img {
+              transform: scale(1.06) rotate(-0.6deg);
+            }
           }
         }
       }
@@ -95,12 +277,25 @@
   }
 
   .faqs {
-    width: 60%;
-    max-width: 35rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 62rem;
+    gap: 1.5rem;
 
     h3 {
-      margin-bottom: 1.875rem;
-      text-align: center;
+      width: fit-content;
+      min-width: 42%;
+      color: var(--color-display);
+    }
+
+    ul {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
   }
 }

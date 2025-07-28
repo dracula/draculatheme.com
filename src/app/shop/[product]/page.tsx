@@ -1,22 +1,15 @@
 import "./page.css";
 
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 import { Disclosure } from "@/components/shared/disclosure";
+import { ProductDetails } from "@/components/shop/product-details";
+import { ProductGallery } from "@/components/shop/product-gallery";
+import { ProductList } from "@/components/shop/product-list";
 import { faqs } from "@/lib/shop/faqs";
 import { products } from "@/lib/shop/products";
+import type { Product } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
-
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  custom_permalink: string;
-  published: boolean;
-  formatted_price: string;
-}
 
 interface ProductParams {
   slug: string;
@@ -88,10 +81,11 @@ const sanitizeDescription = (htmlString: string): string => {
 export async function generateMetadata({
   params
 }: {
-  params: PageParams;
+  params: Promise<PageParams>;
 }): Promise<Metadata | undefined> {
+  const resolvedParams = await params;
   const productConfig = products.find(
-    (product) => product.params.slug === params.product
+    (product) => product.params.slug === resolvedParams.product
   );
 
   if (!productConfig) {
@@ -113,9 +107,10 @@ export async function generateMetadata({
   };
 }
 
-const ProductPage = async ({ params }: { params: PageParams }) => {
+const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
+  const resolvedParams = await params;
   const productConfig = products.find(
-    (product) => product.params.slug === params.product
+    (product) => product.params.slug === resolvedParams.product
   );
 
   if (!productConfig) {
@@ -126,44 +121,37 @@ const ProductPage = async ({ params }: { params: PageParams }) => {
   const product = await fetchProduct(query.gumroadId);
   const relatedProducts = await fetchRelatedProducts(products, query);
 
+  const options =
+    product?.variants?.[0]?.options?.map((option) => ({
+      value: option.name.toUpperCase(),
+      label: option.name
+    })) || [];
+
+  const defaultVariant = query.defaultVariant || 0;
+
   return (
     <section className="container product">
+      <div className="overview">
+        <ProductGallery product={product} images={query.images} />
+        <ProductDetails
+          product={product}
+          options={options}
+          defaultVariant={defaultVariant}
+        />
+      </div>
       <div className="related-products">
-        <h2>You might also like:</h2>
-        <ul className="related-products">
-          {relatedProducts.slice(0, 3).map((product: Product) => (
-            <li key={product.id}>
-              <Link href={`/shop/${product.custom_permalink}`} className="item">
-                <div className="thumb">
-                  <Image
-                    src={`/images/shop/${product.custom_permalink}-1.png`}
-                    alt={product.name}
-                    width={576}
-                    height={528}
-                    quality={100}
-                  />
-                </div>
-                <div className="content">
-                  {!product.published && (
-                    <span className="item-ribbon sold-out">sold out</span>
-                  )}
-                  <h2>{product.name}</h2>
-                  <span className="price">{product.formatted_price}</span>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <h3>Customers also purchased</h3>
+        <ProductList products={relatedProducts.slice(0, 3)} />
       </div>
       <div className="faqs">
         <h3>Frequently Asked Questions</h3>
-        {faqs.map((faq) => (
-          <Disclosure
-            key={faq.question}
-            question={faq.question}
-            answer={faq.answer}
-          />
-        ))}
+        <ul>
+          {faqs.map((faq) => (
+            <li key={faq.question}>
+              <Disclosure question={faq.question} answer={faq.answer} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
