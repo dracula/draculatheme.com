@@ -182,7 +182,7 @@
         tr {
           th,
           td {
-            min-width: 12rem;
+            min-width: 13rem;
             padding: 0.75rem 1.125rem;
             border: none;
 
@@ -192,6 +192,10 @@
               gap: 0.5rem;
               font-size: var(--font-size-caption);
               line-height: 1;
+            }
+
+            &:first-child {
+              min-width: 9rem;
             }
           }
         }

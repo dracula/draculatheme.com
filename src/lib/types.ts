@@ -2,6 +2,12 @@ import type { paths } from "./paths";
 
 export type Props<T = Record<string, string>> = { params: Promise<T> };
 
+export type Heading = {
+  id: string;
+  text: string;
+  level: number;
+};
+
 export type Path = {
   repo: string;
   title: string;

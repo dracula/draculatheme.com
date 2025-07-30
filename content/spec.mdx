@@ -8,12 +8,12 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 
 **Available Variants:**
 
-- **Classic:** Original dark theme;
-- **Alucard:** Complementary light theme.
+- **Dracula Classic:** Original dark theme (_Dracula Theme_);
+- **Alucard Classic:** Complementary light theme.
 
 ## Color Palette
 
-### Classic (Dark Theme)
+**Dracula Classic:**
 
 | Token            | Hex       | RGB           | HSL             | Usage                        |
 | ---------------- | --------- | ------------- | --------------- | ---------------------------- |
@@ -30,7 +30,7 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 | **Purple**       | `#BD93F9` | 189, 147, 249 | 265°, 89%, 78%  | Classes, types, variables    |
 | **Pink**         | `#FF79C6` | 255, 121, 198 | 326°, 100%, 74% | Keywords, storage types      |
 
-### Alucard (Light Theme)
+**Alucard Classic:**
 
 | Token            | Hex       | RGB           | HSL            | Usage                        |
 | ---------------- | --------- | ------------- | -------------- | ---------------------------- |
@@ -51,7 +51,7 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 
 For terminal applications, Dracula also defines ANSI colors.
 
-**Classic:**
+**Dracula Classic:**
 
 | ANSI Token            | Hex Code  | RGB           |
 | --------------------- | --------- | ------------- |
@@ -72,7 +72,7 @@ For terminal applications, Dracula also defines ANSI colors.
 | **AnsiBrightCyan**    | `#A4FFFF` | 164, 255, 255 |
 | **AnsiBrightWhite**   | `#FFFFFF` | 255, 255, 255 |
 
-**Alucard:**
+**Alucard Classic:**
 
 | ANSI Token            | Hex Code  | RGB           |
 | --------------------- | --------- | ------------- |
@@ -95,7 +95,7 @@ For terminal applications, Dracula also defines ANSI colors.
 
 ## UI Color Palette
 
-### Classic (Dark Theme)
+**Dracula Classic:**
 
 | Context                           | Hex       | RGB        | HSL            |
 | --------------------------------- | --------- | ---------- | -------------- |
@@ -105,7 +105,7 @@ For terminal applications, Dracula also defines ANSI colors.
 | **Background Dark**               | `#21222C` | 33, 34, 44 | 235°, 14%, 15% |
 | **Background Darker**             | `#191A21` | 25, 26, 33 | 232°, 14%, 11% |
 
-### Alucard (Light Theme)
+**Alucard Classic:**
 
 | Context                           | Hex       | RGB           | HSL           |
 | --------------------------------- | --------- | ------------- | ------------- |
@@ -137,81 +137,63 @@ Following _TextMate_ scoping conventions for consistent highlighting across edit
 
 **Keywords & Storage** → `Pink`
 
-```
-language keywords: if, else, return, function, class
-storage modifiers: static, public, private, const, let, var
-control flow: try, catch, throw, break, continue
-```
+- Language Keywords: `if`, `else`, `return`, `function`, `class`;
+- Storage Modifiers: `static`, `public`, `private`, `const`, `let`, `var`;
+- Control Flow: `try`, `catch`, `throw`, `break`, `continue`.
 
 **Functions & Methods** → `Yellow`
 
-```
-function declarations and calls
-method invocations
-built-in functions
-```
+- Function Declarations and Calls;
+- Method Invocations;
+- Built-in Functions.
 
 **Classes & Types** → `Purple`
 
-```
-class names and constructors
-type annotations: int, string, boolean
-interfaces and enums
-generic type parameters
-```
+- Class Names and Constructors;
+- Type Annotations: `int`, `string`, `boolean`;
+- Interfaces and Enums;
+- Generic Type Parameters.
 
 **Strings & Text** → `Green`
 
-```
-string literals: "text", 'text', `template`
-markup text content
-attribute values in HTML/XML
-escape sequences
-```
+- String Literals: `"Dracula"`, `'Dracula'`, `template`;
+- Markup Text Content;
+- Attribute Values in HTML/XML;
+- Escape Sequences.
 
 **Numbers & Constants** → `Orange`
 
-```
-numeric literals: 42, 3.14, 0xFF, 1e5
-boolean values: true, false
-language constants: null, undefined, NaN
-```
+- Numeric Literals: `42`, `3.14`, `0xFF`, `1e5`;
+- Boolean Values: `true`, `false`;
+- Language Constants: `null`, `undefined`, `NaN`.
 
 **Comments** → `Comment`
 
-```
-single-line: //, #, --
-multi-line: /* */, <!-- -->
-documentation blocks
-annotations and decorators
-```
+- Single-Line: `//`, `#`, `--`;
+- Multi-Line: `/* */, <!-- -->`;
+- Documentation Blocks;
+- Annotations and Decorators.
 
 **Support & Built-ins** → `Cyan`
 
-```
-built-in classes and functions
-regular expressions
-CSS properties and units
-HTML/XML tag and attribute names
-library functions
-```
+- Built-in Classes and Functions;
+- Regular Expressions;
+- CSS Properties and Units;
+- HTML/XML Tag and Attribute Names;
+- Library Functions.
 
 **Variables & Identifiers** → `Foreground`
 
-```
-variable names and parameters
-object properties
-default text content
-```
+- Variable Names and Parameters;
+- Object Properties;
+- Default Text Content.
 
 **Errors & Warnings** → `Red`
 
-```
-syntax errors
-deprecated code
-invalid tokens
-diff deletions
-```
+- Syntax Errors;
+- Deprecated Code;
+- Invalid Tokens;
+- Diff Deletions.
 
 ### Styling Modifiers
 
@@ -238,7 +220,7 @@ diff deletions
 ```css
 /* Pink - White */
 body {
-  /* Cyan - Pink - Purple - White */
+  /* Cyan - Pink - Purple */
   background: #000;
 }
 
@@ -247,9 +229,9 @@ body {
   display: none;
   visibility: hidden;
   height: calc(var(--deathDate) - var(--birthDate));
-  /* Cyan - Pink - Yellow - White */
+  /* Cyan - Pink - Yellow */
   font-family: "Transylvania";
-  /* Cyan - Pink - Purple - White */
+  /* Cyan - Pink - Purple */
   opacity: 0;
 }
 ```
@@ -350,8 +332,8 @@ Apply colors based on functional importance and user interaction patterns:
 
 **Core Team:**
 
-- **Zeno Rocha** (Creator);
-- **Lucas de França** (Maintainer).
+- [Zeno Rocha](https://zenorocha.com) (Creator);
+- [Lucas de França](https://luxonauta.com) (Maintainer).
 
 > Special thanks to [Derek Sifford](https://github.com/dsifford), creator of the first version of this specification on May 28, 2017.
 
@@ -408,4 +390,4 @@ That's why the community is essential for this project to keep evolving.
 
 _This specification is the authoritative reference for Dracula Theme implementations. For updates and community resources, visit [draculatheme.com](https://draculatheme.com)._
 
-> See something that could be improved in this documentation? Contribute by [editing this page on GitHub.](https://github.com/dracula/draculatheme.com/blob/main/content/spec.md) 🎈
+> See something that could be improved in this documentation? Contribute by [editing this page on GitHub.](https://github.com/dracula/draculatheme.com/blob/main/content/spec.md)

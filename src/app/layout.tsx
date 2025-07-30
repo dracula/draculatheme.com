@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/react";
 
 import { Footer } from "@/components/shared/footer";
@@ -28,13 +29,25 @@ export const metadata: Metadata = {
 const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (
-  <html lang="en" suppressHydrationWarning>
-    <body className={`${dmSans.variable} ${dmMono.variable}`}>
+  <html lang="en">
+    <body
+      className={`${dmSans.variable} ${dmMono.variable}`}
+      suppressHydrationWarning
+    >
       <NuqsAdapter>
         <Header />
         <main>{children}</main>
         <Footer />
       </NuqsAdapter>
+      <Script
+        src="https://store.draculatheme.com/js/gumroad.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://plausible.io/js/script.js"
+        data-domain="draculatheme.com"
+        strategy="afterInteractive"
+      />
     </body>
   </html>
 );

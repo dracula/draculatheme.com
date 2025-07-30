@@ -98,6 +98,10 @@
         font-size: var(--font-size-display);
       }
 
+      h2 {
+        font-family: var(--font-mono);
+      }
+
       hr {
         margin: 0.75rem 0;
       }
