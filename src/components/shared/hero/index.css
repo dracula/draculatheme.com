@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100%;
   min-height: 25rem;
+  overflow: hidden;
   background-image: linear-gradient(
     to bottom,
     var(--hero-background-color-primary),
@@ -12,9 +13,15 @@
   );
   background-color: var(--hero-background-color-primary);
 
-  .starry-sky {
+  .starry-sky,
+  .matrix-rain {
     position: absolute;
     inset: 0;
+  }
+
+  .matrix-rain {
+    mix-blend-mode: hard-light;
+    opacity: 0.06;
   }
 
   .castle {
@@ -62,6 +69,9 @@
     }
 
     .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: fit-content;
       text-align: center;
 
@@ -78,15 +88,7 @@
       }
 
       .cta {
-        margin-top: 2.625rem;
-        background-color: var(--color);
-        color: var(--background-color-primary);
-
-        &:hover {
-          background-color: var(--background-color-tertiary);
-          box-shadow: var(--box-shadow-primary);
-          color: var(--color-display);
-        }
+        margin-top: 1.125rem;
       }
     }
 
@@ -127,6 +129,7 @@
       gap: 2.25rem;
 
       .header {
+        align-items: flex-start;
         max-width: 20rem;
         text-align: left;
 
@@ -139,7 +142,15 @@
           line-height: 1.8;
           text-wrap: balance;
         }
+
+        .cta {
+          margin-top: 2.625rem;
+        }
       }
     }
+  }
+
+  &.pro {
+    min-height: 30rem;
   }
 }

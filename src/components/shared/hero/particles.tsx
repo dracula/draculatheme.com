@@ -238,7 +238,11 @@ export const Particles = ({
   }, [initCanvas]);
 
   return (
-    <div className={className} ref={canvasContainerRef} aria-hidden="true">
+    <div
+      className={`starry-sky${className ? ` ${className}` : ""}`}
+      ref={canvasContainerRef}
+      aria-hidden="true"
+    >
       <canvas ref={canvasRef} />
     </div>
   );

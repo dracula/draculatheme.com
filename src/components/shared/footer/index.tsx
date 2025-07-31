@@ -28,6 +28,7 @@ const sections = [
     links: [
       { label: "Support", href: "/pro#faq" },
       { label: "Changelog", href: "/pro/changelog" },
+      { label: "Journey", href: "/pro/journey" },
       { label: "Request Access", href: "/pro/request-access" }
     ]
   },

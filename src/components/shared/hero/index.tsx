@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo } from "react";
 
 import { paths } from "@/lib/paths";
 
+import { MatrixRain } from "./matrix-rain";
 import { Particles } from "./particles";
 
 interface PageData {
@@ -59,16 +60,15 @@ const staticPages: PageConfig = {
     color: "330"
   },
   "/pro": {
-    title: "Dracula PRO 2.0",
+    title: "Dracula PRO",
     subtitle: "Be more productive.",
     cta: "Get it now",
     anchor: "#pricing",
-    color: "180"
+    color: "250"
   },
   "/pro/changelog": {
     title: "Changelog",
-    subtitle: "Discover the latest updates and improvements for Dracula Pro.",
-    color: "115"
+    subtitle: "Discover the latest updates and improvements for Dracula Pro."
   },
   "/open": {
     title: "Open Dashboard",
@@ -117,7 +117,7 @@ export const Hero = () => {
 
   return (
     <section className={`hero ${pathKey.slice(1)}`}>
-      <Particles className="starry-sky" />
+      {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
       <div className="castle" />
       <div className="container">
         {pathKey !== "/shop" && (
@@ -136,7 +136,7 @@ export const Hero = () => {
           <h1>{title}</h1>
           <p>{subtitle}</p>
           {cta && anchor && (
-            <a href={anchor} className="action cta">
+            <a href={anchor} className="action primary cta">
               {cta}
             </a>
           )}

@@ -9,7 +9,7 @@
   --font-size-heading: 1.125rem;
   --font-size-display: 1.875rem;
 
-  --action-height: 2.25rem;
+  --action-min-height: 2.25rem;
   --action-padding: 0 1rem;
   --action-icon-size: 1em;
   --action-border-radius: 0.75rem;
@@ -197,9 +197,9 @@ kbd {
   align-items: center;
   justify-content: center;
   width: fit-content;
-  height: var(--action-height);
+  min-height: var(--action-min-height);
   padding: var(--action-padding);
-  gap: var(--spacing-medium);
+  gap: 0.5em;
   border: none;
   border-radius: var(--action-border-radius);
   background-color: transparent;
@@ -214,9 +214,7 @@ kbd {
     color 250ms var(--ease-fluid);
 
   &.primary {
-    background-color: var(--color-display);
-    box-shadow: var(--box-shadow-primary);
-    color: var(--background-color-primary);
+    background-color: var(--background-color-secondary);
   }
 
   &:hover {

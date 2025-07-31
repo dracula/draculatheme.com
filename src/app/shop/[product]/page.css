@@ -173,6 +173,67 @@
       .action {
         width: 100%;
         margin-top: 1.125rem;
+
+        .icon {
+          position: relative;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin: 0 -0.25rem -0.0625rem 0;
+          will-change: transform;
+
+          svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translate3d(0, 0, 0);
+
+            path {
+              stroke: currentColor;
+              stroke-width: 0.125rem;
+
+              &:last-child {
+                transform: rotateX(180deg);
+                transform-origin: 1rem 0.5rem;
+                transition: all 300ms var(--ease-fluid);
+              }
+            }
+          }
+
+          .count {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 900;
+            font-size: 0.5rem;
+            line-height: 1;
+            opacity: 0;
+            transition: opacity 250ms var(--ease-fluid);
+          }
+        }
+
+        .logo-full {
+          display: none;
+        }
+
+        &:hover,
+        &:focus {
+          .icon {
+            transform: scale(0.9);
+
+            svg {
+              path {
+                &:last-child {
+                  transform: rotateX(0deg);
+                }
+              }
+            }
+
+            .count {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }
