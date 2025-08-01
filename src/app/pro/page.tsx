@@ -1,12 +1,23 @@
-import { Hero } from "@/components/shared/hero";
+import "./page.css";
 
-const ProPage = () => {
+import { PPPBanner } from "@/components/pro/ppp";
+import { Hero } from "@/components/shared/hero";
+import { fetcher } from "@/utils/fetcher";
+
+const ProPage = async () => {
+  const ppp = await fetcher("https://ppp.dracula.workers.dev", "GET", {}, "");
+
   return (
     <>
+      {ppp.discount && (
+        <PPPBanner country={ppp.country} discount={ppp.discount} />
+      )}
       <Hero />
       <section className="container pro">
-        <h1>Dracula Pro</h1>
-        <p>Unlock the full potential of Dracula with our Pro features.</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non,
+          quibusdam.
+        </p>
       </section>
     </>
   );

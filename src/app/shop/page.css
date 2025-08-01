@@ -1,94 +1,96 @@
-.shop {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  gap: 5rem;
-
-  #products {
+.container {
+  &.shop {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    gap: 1.5rem;
-    list-style: none;
-    scroll-margin-block: 7rem;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 
-    .item {
+    #products {
       display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 20rem;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 1.125rem;
-      background-color: var(--background-color-secondary);
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+      list-style: none;
+      scroll-margin-block: 7rem;
 
-      .thumb {
-        display: flex;
-        position: relative;
-        flex: 1;
-        width: 100%;
-        min-height: 14rem;
-        overflow: hidden;
-        background-image: radial-gradient(
-          circle,
-          var(--background-color-secondary) 0%,
-          var(--background-color-secondary) 42%,
-          var(--background-color-primary) 100%
-        );
-        transition: opacity 300ms var(--ease-fluid);
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          object-position: center;
-          transition: transform 150ms var(--ease-fluid);
-          will-change: transform;
-        }
-      }
-
-      .content {
+      .item {
         display: flex;
         position: relative;
         flex-direction: column;
-        width: 100%;
-        padding: 0.75rem 1.125rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 20rem;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 1.125rem;
+        background-color: var(--background-color-secondary);
 
-        .item-ribbon {
-          position: absolute;
-          top: 0;
-          right: 1.125rem;
-          padding: 0.375rem;
-          transform: translateY(-50%);
-          border-radius: 0.375rem;
-          background-color: var(--orange);
-          color: var(--background-color-primary);
-          font-weight: 700;
-          font-size: 0.625rem;
-          line-height: 1;
-          text-transform: uppercase;
-        }
-
-        h2 {
-          color: var(--color-display);
-        }
-
-        .price {
-          font-family: var(--font-mono);
-        }
-      }
-
-      &:focus-within,
-      &:hover {
         .thumb {
+          display: flex;
+          position: relative;
+          flex: 1;
+          width: 100%;
+          min-height: 14rem;
+          overflow: hidden;
+          background-image: radial-gradient(
+            circle,
+            var(--background-color-secondary) 0%,
+            var(--background-color-secondary) 42%,
+            var(--background-color-primary) 100%
+          );
+          transition: opacity 300ms var(--ease-fluid);
+
           img {
-            transform: scale(1.06) rotate(-0.6deg);
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 150ms var(--ease-fluid);
+            will-change: transform;
+          }
+        }
+
+        .content {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          width: 100%;
+          padding: 0.75rem 1.125rem;
+
+          .item-ribbon {
+            position: absolute;
+            top: 0;
+            right: 1.125rem;
+            padding: 0.375rem;
+            transform: translateY(-50%);
+            border-radius: 0.375rem;
+            background-color: var(--orange);
+            color: var(--background-color-primary);
+            font-weight: 700;
+            font-size: 0.625rem;
+            line-height: 1;
+            text-transform: uppercase;
+          }
+
+          h2 {
+            color: var(--color-display);
+          }
+
+          .price {
+            font-family: var(--font-mono);
+          }
+        }
+
+        &:focus-within,
+        &:hover {
+          .thumb {
+            img {
+              transform: scale(1.06) rotate(-0.6deg);
+            }
           }
         }
       }

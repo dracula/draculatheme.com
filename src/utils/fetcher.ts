@@ -3,10 +3,12 @@ import { getBasePath } from "@/lib/environment";
 export const fetcher = async (
   url: string,
   method = "GET",
-  props?: RequestInit
+  props?: RequestInit,
+  basePath?: string
 ) => {
   try {
-    const response = await fetch(getBasePath() + url, {
+    const baseUrl = basePath !== undefined ? basePath : getBasePath();
+    const response = await fetch(baseUrl + url, {
       method: method,
       ...props
     });
@@ -22,6 +24,7 @@ export const fetcher = async (
     return { ...data, status: response.status };
   } catch (error: unknown) {
     console.error(`Failed to fetch data from ${url}:`, error);
+
     return {
       status: "error",
       message: error instanceof Error ? error.message : String(error)

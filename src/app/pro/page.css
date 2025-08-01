@@ -1,0 +1,7 @@
+.ppp-banner {
+  z-index: 4;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color-primary);
+}

@@ -2,6 +2,7 @@ header {
   z-index: 5;
   position: sticky;
   top: 0;
+  border-bottom: 0.0313rem solid var(--background-color-tertiary);
   background-color: var(--background-color-primary);
 
   .container {
