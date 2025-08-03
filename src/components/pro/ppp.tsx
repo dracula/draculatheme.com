@@ -21,28 +21,20 @@ export const PPPBanner = ({ country, discount }: PPPBannerProps) => {
             height={100}
           />
         </div>
-        <p>
-          Hey! 👋🏻 You&apos;re coming from{" "}
-          <span className="highlight">{countryName}</span>, where this could be
-          too expensive.
-        </p>
-        {country === "BR" ? (
+        <div className="content">
           <p>
-            I&apos;m Brazilian, too, so I know how hard it is to buy things
-            online.
+            Hey! You&apos;re coming from <em>{countryName}</em>, where this
+            could be too expensive.
           </p>
-        ) : (
           <p>
-            I believe in{" "}
-            <span className="highlight">Purchasing Parity Power</span>, and I
-            want to make this affordable.
+            We believe in <em>Purchasing Parity Power</em>, and want to make
+            this affordable.
           </p>
-        )}
-        <p>
-          ✅ If you need it, use the code{" "}
-          <span className="highlight">{country}PRO</span> for an extra{" "}
-          <span className="highlight">{discount}% off</span> the regular price.
-        </p>
+          <p>
+            If you need it, use the code <code>{country}PRO</code> for an extra{" "}
+            <code>{discount}%</code> off the regular price.
+          </p>
+        </div>
       </div>
     </aside>
   );

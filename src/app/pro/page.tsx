@@ -14,10 +14,23 @@ const ProPage = async () => {
       )}
       <Hero />
       <section className="container pro">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non,
-          quibusdam.
-        </p>
+        <div className="description">
+          <p>
+            Dracula PRO is a color scheme and UI theme{" "}
+            <em>tailored for programming.</em>
+          </p>
+          <p>
+            Made for terminal emulators, <em>code editors,</em> and syntax
+            highlighters.
+          </p>
+          <p>
+            Designed to be aesthetically pleasing while{" "}
+            <em>keeping you focused.</em>
+          </p>
+        </div>
+        <div className="used-by">
+          <h2>Used by software engineers from:</h2>
+        </div>
       </section>
     </>
   );
