@@ -5,6 +5,7 @@
   top: 5rem;
   justify-content: center;
   width: 100%;
+  border-bottom: 0.0313rem solid var(--background-color-tertiary);
   background-color: var(--background-color-primary);
 
   .container {
@@ -85,6 +86,209 @@
       &::before {
         left: 0;
         content: "“";
+      }
+    }
+
+    .used-by {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 2.625rem;
+
+      .logos-cloud {
+        --columns: 7;
+
+        display: grid;
+        grid: auto / repeat(var(--columns), minmax(0, 1fr));
+        place-items: center;
+        width: 100%;
+        max-width: 80%;
+        margin: 0;
+        gap: 2.625rem;
+        list-style: none;
+
+        a {
+          opacity: 0.66;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .variants-showcase {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 80%;
+      padding: 3.75rem 1.875rem;
+      overflow: hidden;
+      gap: 1.5rem;
+      border-radius: 1.5rem;
+      background-color: var(--background-color-secondary);
+
+      .header,
+      .controls,
+      .preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .header {
+        gap: 0.5rem;
+
+        h3 {
+          color: var(--color-display);
+        }
+      }
+
+      .controls {
+        gap: 2.25rem;
+
+        select {
+          position: relative;
+          width: 100%;
+          max-width: 20rem;
+          height: 2.5rem;
+          padding-right: var(--spacing-medium);
+          padding-left: var(--spacing-medium);
+          border: 0.0625rem solid var(--background-color-secondary);
+          border-radius: 0.5rem;
+          outline-color: transparent;
+          background-color: var(--background-color-primary);
+          transition:
+            border-color 250ms var(--ease-fluid),
+            background-color 250ms var(--ease-fluid),
+            color 250ms var(--ease-fluid),
+            outline 250ms var(--ease-fluid);
+          user-select: none;
+
+          &::placeholder {
+            color: var(--color-body);
+          }
+
+          &:hover,
+          &:focus,
+          &:focus-visible {
+            border-color: transparent;
+            outline-color: var(--background-color-tertiary);
+            outline-style: solid;
+            outline-width: 0.125rem;
+          }
+        }
+
+        .variants {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          width: 100%;
+          gap: 1.5rem;
+
+          label {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 4.5rem;
+            height: 100%;
+            gap: 0.75rem;
+            font-weight: 500;
+
+            input {
+              display: none;
+            }
+
+            .color {
+              position: relative;
+              width: 2.625rem;
+              height: 2.625rem;
+              border-radius: 100%;
+              background-color: var(--color);
+              box-shadow: var(--box-shadow-primary);
+              transition: transform 240ms var(--ease-elastic);
+
+              &::before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                transform: translate(-50%, -50%);
+                border-radius: 100%;
+                background-color: transparent;
+                content: "";
+                pointer-events: none;
+                transition:
+                  width 240ms var(--ease-elastic),
+                  height 240ms var(--ease-elastic),
+                  background-color 240ms var(--ease-fluid);
+              }
+            }
+
+            span {
+              transition: color 240ms var(--ease-fluid);
+            }
+
+            &:has(input:checked) {
+              .color {
+                &::before {
+                  width: 0.5rem;
+                  height: 0.5rem;
+                  background-color: hsla(0, 0%, 0%, 0.5);
+                }
+              }
+            }
+
+            &:hover,
+            &:focus-within {
+              .color {
+                transform: scale(0.9);
+              }
+
+              span {
+                color: var(--color-display);
+              }
+            }
+          }
+        }
+      }
+
+      .preview {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      .illustration {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        img {
+          width: auto;
+          height: 100%;
+          object-fit: contain;
+          object-position: bottom;
+        }
       }
     }
   }

@@ -1,8 +1,11 @@
+import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import "./page.css";
 
 import { PPPBanner } from "@/components/pro/ppp";
 import { Hero } from "@/components/shared/hero";
+import { companies } from "@/lib/pro/companies";
 import { fetcher } from "@/utils/fetcher";
+import Image from "next/image";
 
 const ProPage = async () => {
   const ppp = await fetcher("https://ppp.dracula.workers.dev", "GET", {}, "");
@@ -30,7 +33,27 @@ const ProPage = async () => {
         </div>
         <div className="used-by">
           <h2>Used by software engineers from:</h2>
+          <ul className="logos-cloud">
+            {companies.map((company) => (
+              <li key={company.id}>
+                <a
+                  href={company.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={company.src}
+                    width={100}
+                    height={100}
+                    alt={company.alt}
+                  />
+                  <span className="sr-only">{company.alt}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
+        <VariantsShowcase />
       </section>
     </>
   );
