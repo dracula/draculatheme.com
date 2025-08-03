@@ -53,7 +53,7 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: 6rem;
 
     .description {
       position: relative;
@@ -197,6 +197,7 @@
           align-items: stretch;
           justify-content: center;
           width: 100%;
+          overflow: auto hidden;
           gap: 1.5rem;
 
           label {

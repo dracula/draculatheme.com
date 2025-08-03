@@ -1,19 +1,30 @@
 "use client";
 
-import { apps } from "@/lib/pro/apps";
-import { type SetStateAction, useState } from "react";
 import Image from "next/image";
+import { type SetStateAction, useState } from "react";
 import useSound from "use-sound";
 
+import { apps } from "@/lib/pro/apps";
+
 const variants = [
-  { name: "Pro", value: "var(--purple)" },
-  { name: "Blade", value: "var(--green)" },
-  { name: "Buffy", value: "var(--pink)" },
-  { name: "Lincoln", value: "var(--yellow)" },
-  { name: "Morbius", value: "var(--red)" },
-  { name: "Van Helsing", value: "var(--cyan)" },
-  { name: "Alucard", value: "var(--color-display)" }
+  { name: "Pro", value: "var(--purple)", sound: "/sounds/pro/dracula.mp3" },
+  { name: "Blade", value: "var(--green)", sound: "/sounds/pro/blade.mp3" },
+  { name: "Buffy", value: "var(--pink)", sound: "/sounds/pro/buffy.mp3" },
+  { name: "Lincoln", value: "var(--yellow)", sound: "/sounds/pro/lincoln.mp3" },
+  { name: "Morbius", value: "var(--red)", sound: "/sounds/pro/morbius.mp3" },
+  {
+    name: "Van Helsing",
+    value: "var(--cyan)",
+    sound: "/sounds/pro/van-helsing.mp3"
+  },
+  {
+    name: "Alucard",
+    value: "var(--color-display)",
+    sound: "/sounds/pro/alucard.mp3"
+  }
 ];
+
+const soundConfig = { volume: 0.24 };
 
 export const VariantsShowcase = () => {
   const [selectedAppIndex, setSelectedAppIndex] = useState(
@@ -24,26 +35,12 @@ export const VariantsShowcase = () => {
   const selectedApp = apps[selectedAppIndex];
   const selectedVariant = variants[selectedVariantIndex];
 
-  const [playProSound] = useSound("/sounds/pro/dracula.mp3");
-  const [playBladeSound] = useSound("/sounds/pro/blade.mp3");
-  const [playBuffySound] = useSound("/sounds/pro/buffy.mp3");
-  const [playLincolnSound] = useSound("/sounds/pro/lincoln.mp3");
-  const [playMorbiusSound] = useSound("/sounds/pro/morbius.mp3");
-  const [playVanHelsingSound] = useSound("/sounds/pro/van-helsing.mp3");
-  const [playAlucardSound] = useSound("/sounds/pro/alucard.mp3");
-
-  const soundMap = {
-    0: playProSound,
-    1: playBladeSound,
-    2: playBuffySound,
-    3: playLincolnSound,
-    4: playMorbiusSound,
-    5: playVanHelsingSound,
-    6: playAlucardSound
-  };
+  const sounds = variants.map(
+    (variant) => useSound(variant.sound, soundConfig)[0]
+  );
 
   const getVariantSlug = (name: string) => {
-    return name.toLowerCase().replace(/\s+/g, "-");
+    return name.replace(/\s+/g, "-").toLowerCase();
   };
 
   const handleAppChange = (e: {
@@ -56,18 +53,14 @@ export const VariantsShowcase = () => {
     const newIndex =
       typeof index === "function" ? index(selectedVariantIndex) : index;
     setSelectedVariantIndex(newIndex);
-
-    const playSound = soundMap[newIndex as keyof typeof soundMap];
-    if (playSound) {
-      playSound();
-    }
+    sounds[newIndex]?.();
   };
 
   return (
     <div className="variants-showcase">
       <div className="header">
         <h3>Available Everywhere</h3>
-        <p>Dracula PRO is built for your favorite apps.</p>
+        <p>Dracula Pro is built for your favorite apps.</p>
       </div>
       <div className="controls">
         <select
@@ -85,7 +78,7 @@ export const VariantsShowcase = () => {
           {variants.map((variant, index) => (
             <label
               key={variant.name}
-              className={`variant ${variant.name.toLowerCase()}`}
+              className={`variant ${getVariantSlug(variant.name)}`}
             >
               <input
                 type="radio"

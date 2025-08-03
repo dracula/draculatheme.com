@@ -1,11 +1,12 @@
-import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import "./page.css";
 
+import Image from "next/image";
+
 import { PPPBanner } from "@/components/pro/ppp";
+import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { Hero } from "@/components/shared/hero";
 import { companies } from "@/lib/pro/companies";
 import { fetcher } from "@/utils/fetcher";
-import Image from "next/image";
 
 const ProPage = async () => {
   const ppp = await fetcher("https://ppp.dracula.workers.dev", "GET", {}, "");
