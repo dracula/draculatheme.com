@@ -24,7 +24,7 @@ const variants = [
   }
 ];
 
-const soundConfig = { volume: 0.24 };
+const soundConfig = { volume: 0.12 };
 
 export const VariantsShowcase = () => {
   const [selectedAppIndex, setSelectedAppIndex] = useState(

@@ -46,7 +46,7 @@
   --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
 
   --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
-  --hero-background-color-secondary: hsl(var(--main-hue), 24%, 42%);
+  --hero-background-color-secondary: hsl(var(--main-hue), 30%, 42%);
 
   --box-shadow-primary: 0 0.0625rem 0.125rem 0 hsla(var(--hue), 6%, 0%, 0.06);
   --box-shadow-secondary:

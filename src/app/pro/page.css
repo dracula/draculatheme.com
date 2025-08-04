@@ -106,6 +106,7 @@
         width: 100%;
         max-width: 80%;
         margin: 0;
+        padding: 0;
         gap: 2.625rem;
         list-style: none;
 
@@ -289,6 +290,97 @@
           height: 100%;
           object-fit: contain;
           object-position: bottom;
+        }
+      }
+    }
+
+    .why-pro {
+      display: flex;
+      position: relative;
+      width: 100%;
+      max-width: 80%;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background-color: var(--background-color-secondary);
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        padding: 2.625rem;
+        gap: 0.75rem;
+        line-height: 1.8;
+
+        h3 {
+          margin-bottom: 0.75rem;
+          color: var(--color-display);
+        }
+      }
+
+      .photo {
+        display: flex;
+        position: relative;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    .light-variant {
+      display: flex;
+      position: relative;
+      width: 100%;
+      max-width: 80%;
+      min-height: 20rem;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background-image: linear-gradient(
+        -45deg,
+        var(--hero-background-color-secondary),
+        hsl(0, 0%, 100%)
+      );
+      background-color: hsl(0, 0%, 100%);
+      color: var(--background-color-primary);
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        padding: 2.625rem;
+        gap: 0.75rem;
+        line-height: 1.8;
+
+        h3 {
+          margin-bottom: 0.75rem;
+          color: var(--background-color-primary);
+        }
+      }
+
+      .preview {
+        display: flex;
+        position: relative;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 0;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 90%;
+          left: 72%;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          transform: skew(1turn, 10deg) scale(1.2) translate(-50%, -50%);
+          border-radius: 0.1875rem;
         }
       }
     }
