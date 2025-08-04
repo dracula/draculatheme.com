@@ -1,4 +1,8 @@
+import { EasyOnTheEyes } from "./easy-on-the-eyes";
+import { HandPickedTypography } from "./hand-picked-typography";
+import { LessContextSwitch } from "./less-context-switch";
 import { Palette } from "./palette";
+import { PreciseContrast } from "./precise-contrast";
 
 export const Bento = () => (
   <div className="bento">
@@ -10,5 +14,9 @@ export const Bento = () => (
       </p>
     </div>
     <Palette />
+    <EasyOnTheEyes />
+    <LessContextSwitch />
+    <PreciseContrast />
+    <HandPickedTypography />
   </div>
 );

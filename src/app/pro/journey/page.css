@@ -91,7 +91,6 @@
       border-radius: 0.75rem;
       background-color: var(--background-color-secondary);
       box-shadow: var(--box-shadow-primary);
-      font-size: var(--font-caption);
       line-height: 1.8;
       transition:
         transform 240ms var(--ease-elastic),

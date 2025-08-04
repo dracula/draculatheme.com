@@ -1,7 +1,5 @@
-import Image from "next/image";
-
 export const Palette = () => (
-  <div className="palette">
+  <div className="card palette">
     <div className="content">
       <h3>Geometric Color Palette</h3>
       <p>
@@ -22,26 +20,8 @@ export const Palette = () => (
       </p>
     </div>
     <div className="illustration">
-      <div className="wheel normal">
-        <div className="indicator">
-          <Image
-            src="/images/pro/classic-schema-indicators.svg"
-            alt="Classic Schema Indicators"
-            width={112}
-            height={112}
-          />
-        </div>
-      </div>
-      <div className="wheel pro">
-        <div className="indicator">
-          <Image
-            src="/images/pro/pro-schema-indicators.svg"
-            alt="Classic Schema Indicators"
-            width={112}
-            height={112}
-          />
-        </div>
-      </div>
+      <div className="wheel normal" />
+      <div className="wheel pro" />
     </div>
   </div>
 );

@@ -189,6 +189,10 @@ hr {
 code,
 kbd {
   font-family: var(--font-mono);
+  font-variant-ligatures: normal;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
 }
 
 .action {
@@ -209,6 +213,7 @@ kbd {
   font-size: inherit;
   text-decoration: none;
   transition:
+    transform 250ms var(--ease-elastic),
     background-color 250ms var(--ease-fluid),
     box-shadow 250ms var(--ease-fluid),
     color 250ms var(--ease-fluid);
@@ -221,6 +226,10 @@ kbd {
     background-color: var(--background-color-tertiary);
     box-shadow: var(--box-shadow-primary);
     color: var(--color-display);
+  }
+
+  &:active {
+    transform: scale(0.98) translateY(0.0625rem);
   }
 }
 
