@@ -35,9 +35,23 @@ export const VariantsShowcase = () => {
   const selectedApp = apps[selectedAppIndex];
   const selectedVariant = variants[selectedVariantIndex];
 
-  const sounds = variants.map(
-    (variant) => useSound(variant.sound, soundConfig)[0]
-  );
+  const [playDracula] = useSound(variants[0].sound, soundConfig);
+  const [playBlade] = useSound(variants[1].sound, soundConfig);
+  const [playBuffy] = useSound(variants[2].sound, soundConfig);
+  const [playLincoln] = useSound(variants[3].sound, soundConfig);
+  const [playMorbius] = useSound(variants[4].sound, soundConfig);
+  const [playVanHelsing] = useSound(variants[5].sound, soundConfig);
+  const [playAlucard] = useSound(variants[6].sound, soundConfig);
+
+  const sounds = [
+    playDracula,
+    playBlade,
+    playBuffy,
+    playLincoln,
+    playMorbius,
+    playVanHelsing,
+    playAlucard
+  ];
 
   const getVariantSlug = (name: string) => {
     return name.replace(/\s+/g, "-").toLowerCase();
