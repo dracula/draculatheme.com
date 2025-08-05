@@ -4,14 +4,7 @@ import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
 import { useState } from "react";
 
-interface Review {
-  id: string;
-  name: string;
-  body: string;
-  country: string;
-  github: string;
-  date: string;
-}
+import type { Review } from "@/lib/types";
 
 interface TestimonialsProps {
   reviews: Review[] | Record<string, Review>;

@@ -1,26 +1,151 @@
 import "./page.css";
 
+import { countries } from "countries-list";
+
 import { Bento } from "@/components/pro/bento";
 import { Book } from "@/components/pro/book";
 import { Description } from "@/components/pro/description";
 import { LightVariant } from "@/components/pro/light-variant";
 import { PPPBanner } from "@/components/pro/ppp";
+import { PricingCard } from "@/components/pro/pricing-card";
 import { Testimonials } from "@/components/pro/testimonials";
 import { UsedBy } from "@/components/pro/used-by";
 import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { WhyPro } from "@/components/pro/why-pro";
 import { Hero } from "@/components/shared/hero";
+import type { Review } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 
+interface PurchasingPowerParityData {
+  country?: string;
+  discount?: number;
+}
+
+interface SalesData {
+  count?: number;
+}
+
+interface Promotion {
+  name: string;
+  originalPrice: number;
+  finalPrice: number;
+  purchaseUrl: string;
+  discountPercentage: number;
+}
+
+const pricingConfiguration = {
+  standardPrice: 99,
+  currentPromotionalPrice: 79,
+  gumroadBaseUrl: "https://draculatheme.gumroad.com/l/dracula-pro"
+} as const;
+
+const calculateDiscountedPrice = (
+  originalPrice: number,
+  discountPercentage: number
+): number => {
+  return Number((originalPrice * (1 - discountPercentage / 100)).toFixed(2));
+};
+
+const calculateDiscountPercentage = (
+  originalPrice: number,
+  finalPrice: number
+): number => {
+  return ((originalPrice - finalPrice) / originalPrice) * 100;
+};
+
+const createStandardPromotion = (): Promotion => ({
+  name: `${new Date().toLocaleString("default", { month: "long" })} Promotion`,
+  originalPrice: pricingConfiguration.standardPrice,
+  finalPrice: pricingConfiguration.currentPromotionalPrice,
+  purchaseUrl: `${pricingConfiguration.gumroadBaseUrl}?wanted=true`,
+  discountPercentage: calculateDiscountPercentage(
+    pricingConfiguration.standardPrice,
+    pricingConfiguration.currentPromotionalPrice
+  )
+});
+
+const createPurchasingPowerParityPromotion = (
+  purchasingPowerParityData: PurchasingPowerParityData
+): Promotion | null => {
+  if (
+    !purchasingPowerParityData.country ||
+    !purchasingPowerParityData.discount
+  ) {
+    return null;
+  }
+
+  const countryName =
+    countries[purchasingPowerParityData.country as keyof typeof countries]
+      ?.name;
+  if (!countryName) {
+    return null;
+  }
+
+  const finalPrice = calculateDiscountedPrice(
+    pricingConfiguration.currentPromotionalPrice,
+    purchasingPowerParityData.discount
+  );
+
+  return {
+    name: `${countryName} Promo`,
+    originalPrice: pricingConfiguration.currentPromotionalPrice,
+    finalPrice: finalPrice,
+    purchaseUrl: `${pricingConfiguration.gumroadBaseUrl}/${purchasingPowerParityData.country}PRO?wanted=true`,
+    discountPercentage: purchasingPowerParityData.discount
+  };
+};
+
+const selectBestPromotion = (promotions: Promotion[]): Promotion => {
+  return promotions.reduce((bestPromotion, currentPromotion) => {
+    const currentEffectiveDiscount = calculateDiscountPercentage(
+      currentPromotion.originalPrice,
+      currentPromotion.finalPrice
+    );
+    const bestEffectiveDiscount = calculateDiscountPercentage(
+      bestPromotion.originalPrice,
+      bestPromotion.finalPrice
+    );
+
+    return currentEffectiveDiscount > bestEffectiveDiscount
+      ? currentPromotion
+      : bestPromotion;
+  });
+};
+
 const ProPage = async () => {
-  const ppp = await fetcher("https://ppp.dracula.workers.dev", "GET", {}, "");
-  const reviews = await fetcher("/api/reviews");
+  const [purchasingPowerParityData, salesData, reviewsData] = await Promise.all(
+    [
+      fetcher(
+        "https://ppp.dracula.workers.dev",
+        "GET",
+        {},
+        ""
+      ) as Promise<PurchasingPowerParityData>,
+      fetcher("/api/sales?product=tPfIDt") as Promise<SalesData>,
+      fetcher("/api/reviews") as Promise<Review[] | Record<string, Review>>
+    ]
+  );
+
+  const availablePromotions = [createStandardPromotion()];
+  const purchasingPowerParityPromotion = createPurchasingPowerParityPromotion(
+    purchasingPowerParityData
+  );
+
+  if (purchasingPowerParityPromotion) {
+    availablePromotions.push(purchasingPowerParityPromotion);
+  }
+
+  const bestAvailablePromotion = selectBestPromotion(availablePromotions);
 
   return (
     <>
-      {ppp.discount && (
-        <PPPBanner country={ppp.country} discount={ppp.discount} />
-      )}
+      {purchasingPowerParityData.discount &&
+        purchasingPowerParityData.country && (
+          <PPPBanner
+            country={purchasingPowerParityData.country}
+            discount={purchasingPowerParityData.discount}
+          />
+        )}
       <Hero />
       <section className="container pro">
         <Description />
@@ -30,7 +155,11 @@ const ProPage = async () => {
         <LightVariant />
         <Bento />
         <Book />
-        <Testimonials reviews={reviews} />
+        <Testimonials reviews={reviewsData} />
+        <PricingCard
+          activePromotion={bestAvailablePromotion}
+          salesData={salesData}
+        />
       </section>
     </>
   );

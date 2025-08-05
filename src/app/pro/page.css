@@ -877,6 +877,39 @@
       }
     }
   }
+
+  #pricing {
+    .wrapper {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 40%;
+      padding: 4.5rem 3.75rem 3.75rem 3.75rem;
+      overflow: hidden;
+      gap: 1.875rem;
+      border: 0.125rem solid var(--green);
+      border-radius: 0.75rem;
+      background-color: var(--background-color-secondary);
+      box-shadow: 0 1rem 2rem 0 hsla(115, 100%, 75%, 0.24);
+
+      .features {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 0.75rem;
+        list-style: none;
+
+        li {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+      }
+    }
+  }
 }
 
 @keyframes up-down {

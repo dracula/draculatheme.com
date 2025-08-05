@@ -106,6 +106,7 @@ body {
   font-size: var(--font-size-body);
   line-height: 1.5;
   font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
 }
 
 header,

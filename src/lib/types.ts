@@ -65,3 +65,12 @@ export type Product = {
   url?: string;
   variants: ProductVariant[];
 };
+
+export type Review = {
+  id: string;
+  name: string;
+  body: string;
+  country: string;
+  github: string;
+  date: string;
+};
