@@ -13,13 +13,16 @@ export const fetcher = async (
       ...props
     });
 
-    if (!response.ok) {
-      throw new Error(
-        `Server responded with ${response.status}: ${response.statusText}`
-      );
-    }
-
     const data = await response.json();
+
+    if (!response.ok) {
+      return {
+        status: "error",
+        message:
+          data.message ||
+          `Server responded with ${response.status}: ${response.statusText}`
+      };
+    }
 
     return { ...data, status: response.status };
   } catch (error: unknown) {
