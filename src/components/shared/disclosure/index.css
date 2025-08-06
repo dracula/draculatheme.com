@@ -12,6 +12,7 @@ details {
   .summary {
     justify-content: flex-start;
     width: 100%;
+    transform: none !important;
     border-radius: 0;
     color: var(--color-heading);
     user-select: none;
@@ -26,7 +27,7 @@ details {
         transform-origin: center;
         transition:
           opacity 180ms var(--ease-fluid),
-          transform 200ms var(--ease-sharp);
+          transform 300ms var(--ease-sharp);
       }
     }
   }

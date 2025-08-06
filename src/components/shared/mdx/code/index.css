@@ -16,7 +16,7 @@
   width: 100%;
   margin-block: 1em;
   padding: 1rem;
-  border-radius: var(--action-border-radius);
+  border-radius: 0.75rem;
   background-color: var(--background-color-primary);
   line-height: 1.6;
   font-family: var(--font-mono);

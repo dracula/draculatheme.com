@@ -6,7 +6,7 @@
     justify-content: center;
     padding-top: 4rem;
     gap: 3.75rem;
-    transition: opacity 250ms var(--ease-fluid);
+    transition: opacity 300ms var(--ease-fluid);
 
     .prose {
       max-width: 42rem;

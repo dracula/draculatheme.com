@@ -14,7 +14,7 @@
     opacity: 0;
     transition:
       opacity 420ms var(--ease-fluid),
-      color 250ms var(--ease-fluid);
+      color 300ms var(--ease-fluid);
   }
 
   &:target,

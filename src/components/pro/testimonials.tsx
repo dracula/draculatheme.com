@@ -10,8 +10,8 @@ interface TestimonialsProps {
   reviews: Review[] | Record<string, Review>;
 }
 
-const initialVisibleCount = 9;
-const loadMoreCount = 9;
+const initialVisibleCount = 3;
+const loadMoreCount = 3;
 
 const getAvatarUrl = (github: string) =>
   `https://github.com/${github.replace("@", "")}.png?size=140`;
@@ -32,20 +32,6 @@ const sortReviewsByDate = (reviews: Review[]): Review[] =>
   reviews.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
-
-const distributeIntoColumns = (
-  reviews: Review[],
-  columnCount = 3
-): Review[][] => {
-  const columns: Review[][] = Array.from({ length: columnCount }, () => []);
-
-  reviews.forEach((review, index) => {
-    const columnIndex = index % columnCount;
-    columns[columnIndex].push(review);
-  });
-
-  return columns;
-};
 
 const formatDate = (date: string) => {
   const dateObject = new Date(date);
@@ -108,7 +94,7 @@ const TestimonialCard = ({ review }: { review: Review }) => (
       <div className="info">
         <span className="name">{review.name}</span>
         <span className="meta">
-          {review.country} • {formatDate(review.date)}
+          From {review.country}, {formatDate(review.date)}.
         </span>
       </div>
     </div>
@@ -120,10 +106,7 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
 
   const normalizedReviews = normalizeReviews(reviews);
   const sortedReviews = sortReviewsByDate(normalizedReviews);
-  const displayedReviews = sortedReviews.slice(0, visibleCount);
   const hasMoreReviews = visibleCount < sortedReviews.length;
-
-  const columns = distributeIntoColumns(displayedReviews);
 
   const handleReadMore = () => {
     setVisibleCount((prev) =>
@@ -141,15 +124,8 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
         </p>
       </div>
       <div className="grid">
-        {columns.map((column, columnIndex) => (
-          <div
-            key={`column-${columnIndex}-${column.length > 0 ? column[0].id : "empty"}`}
-            className="column"
-          >
-            {column.map((review) => (
-              <TestimonialCard key={review.id} review={review} />
-            ))}
-          </div>
+        {sortedReviews.slice(0, visibleCount).map((review) => (
+          <TestimonialCard key={review.id} review={review} />
         ))}
       </div>
       {hasMoreReviews && (
@@ -158,7 +134,7 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
           className="action primary read-more"
           onClick={handleReadMore}
         >
-          Read more testimonials ↓
+          Read more testimonials <small>↓</small>
         </button>
       )}
     </div>

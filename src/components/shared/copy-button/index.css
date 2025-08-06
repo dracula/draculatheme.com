@@ -6,7 +6,7 @@
 
   .tick {
     display: none;
-    transition: display 250ms var(--ease-elastic);
+    transition: display 300ms var(--ease-elastic);
 
     path {
       stroke-dasharray: 24;

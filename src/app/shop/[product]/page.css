@@ -67,7 +67,7 @@
               var(--background-color-secondary) 42%,
               var(--background-color-primary) 100%
             );
-            transition: border-color 250ms var(--ease-fluid);
+            transition: border-color 300ms var(--ease-fluid);
 
             img {
               width: 100%;
@@ -130,10 +130,10 @@
               outline-color: transparent;
               background-color: var(--background-color-primary);
               transition:
-                border-color 250ms var(--ease-fluid),
-                background-color 250ms var(--ease-fluid),
-                color 250ms var(--ease-fluid),
-                outline 250ms var(--ease-fluid);
+                border-color 300ms var(--ease-fluid),
+                background-color 300ms var(--ease-fluid),
+                color 300ms var(--ease-fluid),
+                outline 300ms var(--ease-fluid);
 
               &::placeholder {
                 color: var(--color-body);
@@ -154,7 +154,7 @@
             width: 30%;
 
             input {
-              padding: var(--spacing-medium);
+              padding: 0.75rem;
             }
           }
 
@@ -164,8 +164,8 @@
             flex-basis: 0;
 
             select {
-              padding-right: var(--spacing-medium);
-              padding-left: var(--spacing-medium);
+              padding-right: 0.75rem;
+              padding-left: 0.75rem;
               user-select: none;
             }
           }
@@ -209,7 +209,7 @@
               font-size: 0.5rem;
               line-height: 1;
               opacity: 0;
-              transition: opacity 250ms var(--ease-fluid);
+              transition: opacity 300ms var(--ease-fluid);
             }
           }
 
@@ -294,7 +294,7 @@
               height: 100%;
               object-fit: contain;
               object-position: center;
-              transition: transform 150ms var(--ease-fluid);
+              transition: transform 180ms var(--ease-fluid);
               will-change: transform;
             }
           }

@@ -89,7 +89,7 @@
               align-items: center;
               width: 100%;
               gap: 0.75rem;
-              transition: color 200ms var(--ease-fluid);
+              transition: color 300ms var(--ease-fluid);
 
               &:focus,
               &:hover {
@@ -106,8 +106,8 @@
             gap: 0.75rem;
             border-radius: 1rem;
             transition:
-              background-color 200ms var(--ease-sharp),
-              color 200ms var(--ease-fluid);
+              background-color 300ms var(--ease-sharp),
+              color 300ms var(--ease-fluid);
 
             div {
               position: relative;

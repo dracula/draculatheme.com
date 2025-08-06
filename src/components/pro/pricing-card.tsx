@@ -63,7 +63,7 @@ export const PricingCard = ({
           {formatPriceDisplay(activePromotion.finalPrice)}
         </h3>
       </div>
-      <span className="info">One-time payment</span>
+      <span className="one-time">One-time payment!</span>
       <ul className="features">
         {productFeatures.map((feature) => (
           <li key={feature}>

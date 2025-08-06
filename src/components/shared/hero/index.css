@@ -97,7 +97,6 @@
       position: relative;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--box-shadow-primary);
 
       div {
         display: flex;

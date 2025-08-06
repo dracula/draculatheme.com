@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { GithubIcon } from "@/icons/github";
 
+import { CommandBar } from "./command-bar";
+
 const navItems = [
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
@@ -18,6 +20,7 @@ export const Header = () => (
       <Link href="/" className="logo">
         Dracula Theme
       </Link>
+      <CommandBar />
       <nav>
         <ul>
           {navItems.map(({ href, label, className }) => (
