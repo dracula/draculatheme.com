@@ -49,8 +49,8 @@ export const PricingCard = ({
     <div className="header">
       <h3>Become a Vampire</h3>
       <p>
-        Join <code>{formatSalesCount(salesData?.count)} developers</code> using
-        Dracula PRO every day.
+        Join {formatSalesCount(salesData?.count)} developers using Dracula PRO
+        every day.
       </p>
     </div>
     <div className="wrapper">

@@ -1,4 +1,4 @@
-export const GithubIcon = ({ size = 12, className = "" }) => (
+export const GithubIcon = ({ size = 13, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

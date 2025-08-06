@@ -3,7 +3,20 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { BookIcon } from "@/icons/book";
+import { BugIcon } from "@/icons/bug";
+import { ChatIcon } from "@/icons/chat";
+import { EditIcon } from "@/icons/edit";
+import { FileIcon } from "@/icons/file";
+import { GithubIcon } from "@/icons/github";
+import { HeartIcon } from "@/icons/heart";
+import { HomeIcon } from "@/icons/home";
+import { NewsIcon } from "@/icons/news";
+import { OpenSourceIcon } from "@/icons/open-source";
+import { RocketIcon } from "@/icons/rocket";
 import { SearchIcon } from "@/icons/search";
+import { ShopIcon } from "@/icons/shop";
+import { ZapIcon } from "@/icons/zap";
 import { paths } from "@/lib/paths";
 import type { PathItem } from "@/lib/types";
 
@@ -11,28 +24,32 @@ const pages = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Contribute", href: "/contribute" },
-      { label: "Open Dashboard", href: "/open" }
+      { label: "About", href: "/about", icon: <BookIcon /> },
+      { label: "Blog", href: "/blog", icon: <NewsIcon /> },
+      { label: "Contribute", href: "/contribute", icon: <HeartIcon /> },
+      { label: "Open Dashboard", href: "/open", icon: <OpenSourceIcon /> }
     ]
   },
   {
     title: "Projects",
     links: [
-      { label: "Dracula Theme", href: "/" },
-      { label: "Specification", href: "/spec" },
-      { label: "Dracula PRO", href: "/pro" },
-      { label: "Dracula Shop", href: "/shop" }
+      { label: "Dracula Theme", href: "/", icon: <HomeIcon /> },
+      { label: "Specification", href: "/spec", icon: <FileIcon /> },
+      { label: "Dracula PRO", href: "/pro", icon: <ZapIcon /> },
+      { label: "Dracula Shop", href: "/shop", icon: <ShopIcon /> }
     ]
   },
   {
     title: "Dracula PRO",
     links: [
-      { label: "Support", href: "/pro#faq" },
-      { label: "Changelog", href: "/pro/changelog" },
-      { label: "Journey", href: "/pro/journey" },
-      { label: "Request Access", href: "/pro/request-access" }
+      { label: "Support", href: "/pro#faq", icon: <BugIcon /> },
+      { label: "Changelog", href: "/pro/changelog", icon: <EditIcon /> },
+      { label: "Journey", href: "/pro/journey", icon: <RocketIcon /> },
+      {
+        label: "Request Access",
+        href: "/pro/request-access",
+        icon: <HeartIcon />
+      }
     ]
   },
   {
@@ -41,17 +58,20 @@ const pages = [
       {
         label: "X (formerly Twitter)",
         href: "https://x.com/draculatheme",
+        icon: <ChatIcon />,
         external: true
       },
       {
         label: "GitHub",
         href: "https://github.com/dracula/dracula-theme",
+        icon: <GithubIcon />,
         external: true
       },
-      { label: "Discord", href: "/discord-invite" },
+      { label: "Discord", href: "/discord-invite", icon: <ChatIcon /> },
       {
         label: "Wikipedia",
         href: "https://en.wikipedia.org/wiki/Dracula_(color_scheme)",
+        icon: <FileIcon />,
         external: true
       }
     ]
@@ -212,10 +232,12 @@ export const CommandBar = () => {
                   <li key={link.href}>
                     {link.external ? (
                       <a href={link.href} onClick={() => closeDialog()}>
+                        {link.icon}
                         {link.label}
                       </a>
                     ) : (
                       <Link href={link.href} onClick={() => closeDialog()}>
+                        {link.icon}
                         {link.label}
                       </Link>
                     )}
