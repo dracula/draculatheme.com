@@ -21,7 +21,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "airtable": "^0.12.2",
-    "cmdk": "^1.1.1",
     "countries-list": "^3.1.1",
     "date-fns": "^4.1.0",
     "eslint": "^9",

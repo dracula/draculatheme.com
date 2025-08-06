@@ -34,7 +34,7 @@
   --background-color-secondary: hsl(var(--hue), 12%, 12%);
   --background-color-tertiary: hsl(var(--hue), 12%, 18%);
 
-  --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
+  --background-color-overlay: hsla(var(--hue), 12%, 6%, 90%);
 
   --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
   --hero-background-color-secondary: hsl(var(--main-hue), 30%, 42%);
@@ -90,6 +90,10 @@ body {
   line-height: 1.5;
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
+
+  &.block-overflow {
+    overflow: hidden;
+  }
 }
 
 header,
