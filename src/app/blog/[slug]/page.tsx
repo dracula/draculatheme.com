@@ -1,5 +1,6 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,6 +17,46 @@ import { extractHeadings } from "@/utils/mdx/extract-headings";
 export const generateStaticParams = async () => {
   const posts = getMdxDataFromDirectory<Post>("content/blog");
   return posts.map((post) => ({ slug: post.slug }));
+};
+
+export const generateMetadata = async (
+  props: Props
+): Promise<Metadata | undefined> => {
+  const params = await props.params;
+  const { slug } = params;
+  const post = getMdxFromFile("content/blog", slug) as Post;
+
+  if (!post) {
+    notFound();
+  }
+
+  const title = post.title;
+  const description = post.excerpt;
+  const ogImage = post.cover;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://draculatheme.com/blog/${params.slug}`,
+      images: [
+        {
+          url: ogImage
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage]
+    },
+    alternates: {
+      canonical: `/blog/${params.slug}`
+    }
+  };
 };
 
 const BlogPostPage = async (props: Props) => {

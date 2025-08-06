@@ -1,5 +1,6 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
@@ -100,6 +101,15 @@ const MetricCard = ({ metric }: { metric: Metric }) => {
   }
 
   return <div className="metric-card">{content}</div>;
+};
+
+export const metadata: Metadata = {
+  title: "Open Dashboard",
+  description:
+    "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.",
+  alternates: {
+    canonical: "/open"
+  }
 };
 
 const OpenPage = async () => {

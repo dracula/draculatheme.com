@@ -78,11 +78,11 @@ const sanitizeDescription = (htmlString: string): string => {
     : sanitized;
 };
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params
 }: {
   params: Promise<PageParams>;
-}): Promise<Metadata | undefined> {
+}): Promise<Metadata | undefined> => {
   const resolvedParams = await params;
   const productConfig = products.find(
     (product) => product.params.slug === resolvedParams.product
@@ -105,7 +105,7 @@ export async function generateMetadata({
       canonical: `/shop/${query.slug}`
     }
   };
-}
+};
 
 const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
   const resolvedParams = await params;

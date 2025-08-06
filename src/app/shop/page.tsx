@@ -1,5 +1,7 @@
 import "./page.css";
 
+import type { Metadata } from "next";
+
 import { Hero } from "@/components/shared/hero";
 import { ProductList } from "@/components/shop/product-list";
 import { products } from "@/lib/shop/products";
@@ -36,6 +38,15 @@ const fetchProducts = async (
   });
 
   return productsList;
+};
+
+export const metadata: Metadata = {
+  title: "Shop",
+  description:
+    "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
+  alternates: {
+    canonical: "/shop"
+  }
 };
 
 const ShopPage = async () => {

@@ -1,11 +1,21 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
 import { fetcher } from "@/utils/fetcher";
+
+export const metadata: Metadata = {
+  title: "Contribute",
+  description:
+    "Check this guide to understand how to contribute to Dracula, including the most commonly asked questions and the color palette.",
+  alternates: {
+    canonical: "/contribute"
+  }
+};
 
 const ContributePage = async () => {
   const contributorsData = await fetcher("/api/cache/contributors");

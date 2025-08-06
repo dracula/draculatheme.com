@@ -1,5 +1,6 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,6 +43,15 @@ const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
     </Link>
   </li>
 );
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "The journey of building the most universal dark theme ever made.",
+  alternates: {
+    canonical: "/blog"
+  }
+};
 
 const BlogPage = async () => {
   const posts = getMdxDataFromDirectory<Post>("content/blog");

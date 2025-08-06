@@ -1,10 +1,18 @@
 import "./page.css";
 
+import type { Metadata } from "next";
+
 import ContentWrapper from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
 import { isProd } from "@/lib/environment";
 import { paths } from "@/lib/paths";
 import { fetcher } from "@/utils/fetcher";
+
+export const metadata: Metadata = {
+  title: "Dracula Theme for 400+ apps!",
+  description:
+    "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more."
+};
 
 const HomePage = async () => {
   if (isProd()) {

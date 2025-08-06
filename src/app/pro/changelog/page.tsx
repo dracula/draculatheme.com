@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pro Changelog",
+  description: "Discover the latest updates and improvements for Dracula Pro.",
+  alternates: {
+    canonical: "/pro/changelog"
+  }
+};
+
 const ChangelogPage = () => {
   return (
     <section className="container changelog">

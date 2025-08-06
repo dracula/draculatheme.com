@@ -1,6 +1,7 @@
 import "./page.css";
 
 import { countries } from "countries-list";
+import type { Metadata } from "next";
 
 import { Bento } from "@/components/pro/bento";
 import { Book } from "@/components/pro/book";
@@ -112,6 +113,15 @@ const selectBestPromotion = (promotions: Promotion[]): Promotion => {
       ? currentPromotion
       : bestPromotion;
   });
+};
+
+export const metadata: Metadata = {
+  title: "Be more productive with Dracula Pro",
+  description:
+    "Dracula Pro is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
+  alternates: {
+    canonical: "/pro"
+  }
 };
 
 const ProPage = async () => {

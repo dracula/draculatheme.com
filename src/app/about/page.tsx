@@ -1,8 +1,18 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Hero } from "@/components/shared/hero";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "The origin story - Because every story opens the door to a new one.",
+  alternates: {
+    canonical: "/about"
+  }
+};
 
 const AboutPage = () => (
   <>

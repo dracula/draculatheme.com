@@ -1,6 +1,17 @@
 import "./page.css";
 
+import type { Metadata } from "next";
+
 import { Form } from "@/components/request-access/form";
+
+export const metadata: Metadata = {
+  title: "Request GitHub Access",
+  description:
+    "Request access to Dracula Pro on GitHub and help shape the project!",
+  alternates: {
+    canonical: "/pro/request-access"
+  }
+};
 
 const RequestAccessPage = () => (
   <section className="container request-access">

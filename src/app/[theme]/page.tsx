@@ -1,5 +1,6 @@
 import "./page.css";
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -17,6 +18,45 @@ export const generateStaticParams = async () => {
   return paths.map((item) => ({
     theme: item.repo
   }));
+};
+
+export const generateMetadata = async (
+  props: Props
+): Promise<Metadata | undefined> => {
+  const params = await props.params;
+  const theme = paths.find((item) => item.repo === params.theme);
+
+  if (!theme) {
+    notFound();
+  }
+
+  const title = theme.title;
+  const description = `The most famous theme for ${theme.title}, and an ever-growing selection of apps!`;
+  const ogImage = "https://draculatheme.com/images/og.png";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://draculatheme.com/${theme.repo}`,
+      images: [
+        {
+          url: ogImage
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage]
+    },
+    alternates: {
+      canonical: `/${theme.repo}`
+    }
+  };
 };
 
 const ThemePage = async (props: Props) => {

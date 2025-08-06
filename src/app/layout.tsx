@@ -22,8 +22,38 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dracula Theme",
-  description: "One theme. All platforms."
+  metadataBase: new URL("https://draculatheme.com"),
+  title: {
+    default: "Dracula Theme",
+    template: "%s • Dracula Theme"
+  },
+  authors: {
+    name: "Dracula Team",
+    url: "https://draculatheme.com/about"
+  },
+  description:
+    "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
+  openGraph: {
+    title: "Dracula Theme",
+    description:
+      "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
+    url: "https://draculatheme.com",
+    siteName: "Dracula Theme",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://draculatheme.com/images/og.png"
+      }
+    ]
+  },
+  twitter: {
+    title: "Dracula Theme",
+    card: "summary_large_image"
+  },
+  alternates: {
+    canonical: "/"
+  }
 };
 
 const RootLayout = async ({
