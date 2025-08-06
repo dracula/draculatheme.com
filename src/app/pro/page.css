@@ -972,6 +972,29 @@
       }
     }
   }
+
+  .faqs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 48%;
+    gap: 2.625rem;
+    scroll-margin-top: 14rem;
+
+    h3 {
+      width: 100%;
+      color: var(--color-display);
+      text-align: center;
+    }
+
+    ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
 }
 
 @keyframes up-down {

@@ -26,7 +26,7 @@ const sections = [
   {
     title: "Dracula PRO",
     links: [
-      { label: "Support", href: "/pro#faq" },
+      { label: "Support", href: "/pro#faqs" },
       { label: "Changelog", href: "/pro/changelog" },
       { label: "Journey", href: "/pro/journey" },
       { label: "Request Access", href: "/pro/request-access" }

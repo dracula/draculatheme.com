@@ -12,7 +12,9 @@ import { Testimonials } from "@/components/pro/testimonials";
 import { UsedBy } from "@/components/pro/used-by";
 import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { WhyPro } from "@/components/pro/why-pro";
+import { Disclosure } from "@/components/shared/disclosure";
 import { Hero } from "@/components/shared/hero";
+import { faqs } from "@/lib/pro/faqs";
 import type { Review } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 
@@ -160,6 +162,16 @@ const ProPage = async () => {
           activePromotion={bestAvailablePromotion}
           salesData={salesData}
         />
+        <div id="faqs" className="faqs">
+          <h3>Frequently Asked Questions</h3>
+          <ul>
+            {faqs.map((faq) => (
+              <li key={faq.question}>
+                <Disclosure question={faq.question} answer={faq.answer} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </>
   );
