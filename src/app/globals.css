@@ -2,7 +2,7 @@
   --page-max-width: 75rem;
   --page-padding-horizontal: 2.25rem;
   --page-padding-vertical: 1.5rem;
-  --page-sections-spacing: 4rem;
+  --page-sections-spacing: 4.125rem;
 
   --font-size-caption: 0.75rem;
   --font-size-body: 0.8125rem;
@@ -43,6 +43,15 @@
   --ease-sharp: cubic-bezier(0.6, 0.12, 0.34, 0.96);
   --ease-elastic: cubic-bezier(0.42, 0, 0.58, 1.8);
   --ease-impact: cubic-bezier(0.24, 0.9, 0.32, 1.4);
+}
+
+@media (max-width: 60rem) {
+  :root {
+    --page-max-width: 100%;
+    --page-padding-horizontal: 1.875rem;
+    --page-padding-vertical: 1.125rem;
+    --page-sections-spacing: 3rem;
+  }
 }
 
 @supports (interpolate-size: allow-keywords) {

@@ -17,10 +17,39 @@ const navItems = [
 export const Header = () => (
   <header>
     <div className="container">
-      <Link href="/" className="logo">
-        Dracula Theme
-      </Link>
-      <CommandBar />
+      <div className="wrapper">
+        <Link href="/" className="logo">
+          Dracula Theme
+        </Link>
+        <CommandBar />
+        <button type="button" className="action primary mb-trigger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="13"
+            height="13"
+            color="currentColor"
+            fill="none"
+          >
+            <title className="sr-only">Menu Icon</title>
+            <path
+              d="M4 9L20 9"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M4 15L14 15"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span className="sr-only">Open Menu</span>
+        </button>
+      </div>
       <nav>
         <ul>
           {navItems.map(({ href, label, className }) => (
