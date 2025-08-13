@@ -3,12 +3,12 @@
 import { parseAsString, useQueryStates } from "nuqs";
 
 import { matchesCategory, matchesPlatform, matchesSearch } from "@/lib/filter";
-import { paths } from "@/lib/paths";
+import type { Path } from "@/lib/types";
 
 import { FilterSidebar } from "./filter-sidebar";
 import { ItemList } from "./item-list";
 
-const ContentWrapper = () => {
+const ContentWrapper = ({ paths }: { paths: Path[] }) => {
   const [
     { searchQuery, platforms: selectedPlatform, categories: selectedCategory },
     setQueryStates

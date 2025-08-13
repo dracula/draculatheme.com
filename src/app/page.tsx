@@ -33,7 +33,7 @@ const HomePage = async () => {
     <>
       <Hero />
       <section className="container home">
-        <ContentWrapper />
+        <ContentWrapper paths={paths} />
       </section>
     </>
   );
