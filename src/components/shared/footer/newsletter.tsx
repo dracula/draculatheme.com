@@ -23,7 +23,7 @@ export const Newsletter = () => {
   };
 
   return (
-    <div className="newsletter">
+    <div id="newsletter" className="newsletter">
       <div>
         <h3>Subscribe to our newsletter.</h3>
         <p>
