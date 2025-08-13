@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Dracula Theme - Blog]]></title>
-        <description><![CDATA[The journey of building the most universal dark theme ever made.]]></description>
+        <title><![CDATA[Blog • Dracula Theme]]></title>
+        <description><![CDATA[“Truly there is no such thing as finality.” - Bram Stoker, Dracula]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 25 Nov 2024 19:07:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Jul 2025 22:10:07 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[400 apps, Ghostty & four new themes]]></title>
+            <description><![CDATA[We are celebrating 400 supported apps! 🎉]]></description>
+            <link>https://draculatheme.com/blog/400-apps-ghostty-and-four-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/400-apps-ghostty-and-four-new-themes</guid>
+            <pubDate>Fri, 28 Feb 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dracula Theme turns 11 with 10 new themes]]></title>
+            <description><![CDATA[This year, Dracula turns 11, and it has become the most used theme out there!]]></description>
+            <link>https://draculatheme.com/blog/dracula-theme-turns-11-with-10-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/dracula-theme-turns-11-with-10-new-themes</guid>
+            <pubDate>Fri, 13 Dec 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fundraising campaign for St. Jude]]></title>
+            <description><![CDATA[Let's help St. Jude Children's Research Hospital.]]></description>
+            <link>https://draculatheme.com/blog/fundraising-campaign-for-st-jude</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/fundraising-campaign-for-st-jude</guid>
+            <pubDate>Wed, 04 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Dracula PRO 2.0 - Our First Light Theme!]]></title>
             <description><![CDATA[We're excited to announce the launch of Alucard, the official Dracula light theme & Dracula PRO 2.0]]></description>
@@ -57,7 +78,7 @@
         </item>
         <item>
             <title><![CDATA[13 new themes, email updates, and PRO news]]></title>
-            <description><![CDATA[It's been a while since I don't send these Dracula updates, right? The main reason is that I've been building a new email platform - Resend].]]></description>
+            <description><![CDATA[It's been a while since I don't send these Dracula updates, right? The main reason is that I've been building a new email platform - Resend.]]></description>
             <link>https://draculatheme.com/blog/13-new-themes-email-updates-and-pro-news</link>
             <guid isPermaLink="true">https://draculatheme.com/blog/13-new-themes-email-updates-and-pro-news</guid>
             <pubDate>Wed, 27 Sep 2023 00:00:00 GMT</pubDate>
@@ -261,8 +282,8 @@
         <item>
             <title><![CDATA[How I Made $101,578.04 Selling Colors Online]]></title>
             <description><![CDATA[Today is a special day. Dracula PRO has hit 100K in sales, which is absolutely insane. When I started this thing I never thought this would happen.]]></description>
-            <link>https://draculatheme.com/blog/how-i-made-$101,578.04-selling-colors-online</link>
-            <guid isPermaLink="true">https://draculatheme.com/blog/how-i-made-$101,578.04-selling-colors-online</guid>
+            <link>https://draculatheme.com/blog/how-i-made-10157804-selling-colors-online</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/how-i-made-10157804-selling-colors-online</guid>
             <pubDate>Thu, 25 Feb 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -316,7 +337,7 @@
         </item>
         <item>
             <title><![CDATA[Dracula UI - Week 3]]></title>
-            <description><![CDATA[It's been almost two weeks since we last shared an update with you. We have missed you and your feedback.]]></description>
+            <description><![CDATA[Our team has been hard at work building what we believe will be the best dark-first collection of UI components and patterns.]]></description>
             <link>https://draculatheme.com/blog/dracula-ui-week-3</link>
             <guid isPermaLink="true">https://draculatheme.com/blog/dracula-ui-week-3</guid>
             <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
@@ -351,7 +372,7 @@
         </item>
         <item>
             <title><![CDATA[3 New Themes And Better Code Screenshots]]></title>
-            <description><![CDATA[Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached]]></description>
+            <description><![CDATA[Last time we saw each other I was telling you all about this new book I wrote. The launch was amazing, it reached #1 Best-Seller on Amazon, and I couldn't be happier with the reception.]]></description>
             <link>https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</link>
             <guid isPermaLink="true">https://draculatheme.com/blog/3-new-themes-and-better-code-screenshots</guid>
             <pubDate>Wed, 05 Aug 2020 00:00:00 GMT</pubDate>

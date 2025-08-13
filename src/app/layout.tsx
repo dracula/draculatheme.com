@@ -1,91 +1,24 @@
-/* eslint-disable @next/next/no-before-interactive-script-outside-document */
+import "./globals.css";
 
-import "luxacss";
-import "../styles/globals.scss";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
-import Footer from "src/components/footer";
-import Header from "src/components/header";
-import Hero from "src/components/hero";
-import Newsletter from "src/components/newsletter";
-import PageTransition from "src/components/pageTransition";
-import Providers from "src/components/providers";
-import { getBasePath } from "src/lib/environment";
-import fetchData from "src/lib/fetchData";
+import { NuqsAdapter } from "nuqs/adapters/react";
 
-const inter = localFont({
-  adjustFontFallback: false,
-  display: "swap",
-  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
-  preload: true,
-  src: [
-    {
-      path: "../../public/fonts/inter.woff2",
-      style: "normal"
-    },
-    {
-      path: "../../public/fonts/inter.woff2",
-      style: "italic"
-    }
-  ],
-  variable: "--font-inter",
-  weight: "400 900"
+import { Footer } from "@/components/shared/footer";
+import { Header } from "@/components/shared/header";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  fallback: ["sans-serif", "system-ui"]
 });
 
-const satoshi = localFont({
-  adjustFontFallback: false,
-  display: "swap",
-  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
-  preload: true,
-  src: [
-    {
-      path: "../../public/fonts/satoshi.woff2",
-      style: "normal"
-    },
-    {
-      path: "../../public/fonts/satoshi.woff2",
-      style: "italic"
-    }
-  ],
-  variable: "--font-satoshi",
-  weight: "400 900"
-});
-
-const jetbrainsMono = localFont({
-  adjustFontFallback: false,
-  display: "swap",
-  fallback: ["ui-monospace", "monospace"],
-  src: [
-    {
-      path: "../../public/fonts/jetbrains-mono.woff2",
-      style: "normal"
-    },
-    {
-      path: "../../public/fonts/jetbrains-mono.woff2",
-      style: "italic"
-    }
-  ],
-  variable: "--font-jetbrains-mono",
-  weight: "400 700"
-});
-
-const caveat = localFont({
-  adjustFontFallback: false,
-  display: "swap",
-  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
-  src: [
-    {
-      path: "../../public/fonts/caveat.woff2",
-      style: "normal"
-    },
-    {
-      path: "../../public/fonts/caveat.woff2",
-      style: "italic"
-    }
-  ],
-  variable: "--font-caveat",
-  weight: "400 700"
+const dmMono = DM_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-mono",
+  fallback: ["monospace", "system-ui"]
 });
 
 export const metadata: Metadata = {
@@ -123,38 +56,30 @@ export const metadata: Metadata = {
   }
 };
 
-const RootLayout = async ({ children }) => {
-  const githubStars = await fetchData(`${getBasePath()}/api/githubStars`);
-
-  return (
-    <html lang="en">
-      <head>
-        <meta name="theme-color" content="#7359F8" />
-      </head>
-      <body
-        className={`${inter.variable} ${satoshi.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
-      >
-        <Providers>
-          <Header stars={githubStars} />
-          <Hero />
-          <PageTransition>
-            {children}
-            <Newsletter />
-          </PageTransition>
-          <Footer />
-        </Providers>
-        <Script
-          src="https://store.draculatheme.com/js/gumroad.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          defer
-          data-domain="draculatheme.com"
-          src="https://plausible.io/js/script.js"
-        />
-      </body>
-    </html>
-  );
-};
+const RootLayout = async ({
+  children
+}: Readonly<{ children: React.ReactNode }>) => (
+  <html lang="en">
+    <body
+      className={`${dmSans.variable} ${dmMono.variable}`}
+      suppressHydrationWarning
+    >
+      <NuqsAdapter>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </NuqsAdapter>
+      <Script
+        src="https://store.draculatheme.com/js/gumroad.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://plausible.io/js/script.js"
+        data-domain="draculatheme.com"
+        strategy="afterInteractive"
+      />
+    </body>
+  </html>
+);
 
 export default RootLayout;

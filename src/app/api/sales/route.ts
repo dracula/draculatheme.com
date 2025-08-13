@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export const GET = async (request: NextRequest) => {
   const product = request.nextUrl.searchParams.get("product");
 
   if (product) {
@@ -17,10 +17,10 @@ export async function GET(request: NextRequest) {
       }).format(gumroadRes.product.sales_usd_cents / 100);
 
       return NextResponse.json({ count, total }, { status: 200 });
-    } catch (e) {
+    } catch {
       return NextResponse.json({ count: 0, total: 0 }, { status: 400 });
     }
   }
 
   return NextResponse.json({ count: 0, total: 0 }, { status: 400 });
-}
+};

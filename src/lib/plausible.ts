@@ -13,12 +13,12 @@ class APIError extends Error {
   }
 }
 
-function buildURL(id) {
+const buildURL = (id: string) => {
   const today = format(endOfDay(new Date()), "yyyy-MM-dd");
   return `${API_BASE_URL}?site_id=draculatheme.com&filters=event:page==/${id}&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
-}
+};
 
-export async function getData(id) {
+export const getData = async (id: string) => {
   if (!API_KEY) {
     throw new Error("API key is missing");
   }
@@ -48,4 +48,4 @@ export async function getData(id) {
     console.error("Error fetching data:", error);
     throw error;
   }
-}
+};

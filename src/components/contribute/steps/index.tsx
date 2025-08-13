@@ -1,17 +1,23 @@
 "use client";
 
-import "./index.scss";
 import Link from "next/link";
 import { useState } from "react";
 import useSound from "use-sound";
-import IconCopyTemplate from "./icons/copyTemplate";
-import IconSubmitTheme from "./icons/submitTheme";
-import IconUseColors from "./icons/useColors";
+
+import { copyTemplateIcon } from "./icons/copy-template";
+import { submitThemeIcon } from "./icons/submit-theme";
+import { useColorsIcon } from "./icons/use-colors";
+
+type IconState = {
+  copyTemplate: boolean;
+  useColors: boolean;
+  submitTheme: boolean;
+};
 
 const items = [
   {
-    name: "copyTemplate",
-    desc: (
+    name: "copy-template" as keyof IconState,
+    description: (
       <p>
         Create a new repository based on
         <br />
@@ -24,17 +30,17 @@ const items = [
         </Link>
       </p>
     ),
-    descDetailed: (
+    detailedDescription: (
       <>
         You can do it by cloning the repository or just clicking on &quot;Use
         this template.&quot;
       </>
     ),
-    Icon: IconCopyTemplate
+    Icon: copyTemplateIcon
   },
   {
-    name: "useColors",
-    desc: (
+    name: "use-colors" as keyof IconState,
+    description: (
       <p>
         Build the theme using the
         <br />
@@ -44,13 +50,13 @@ const items = [
         below.
       </p>
     ),
-    descDetailed:
+    detailedDescription:
       "Edit the template info and upload the file with the theme configs to the repository.",
-    Icon: IconUseColors
+    Icon: useColorsIcon
   },
   {
-    name: "submitTheme",
-    desc: (
+    name: "submit-theme" as keyof IconState,
+    description: (
       <p>
         Finally,{" "}
         <Link
@@ -64,14 +70,14 @@ const items = [
         with a link to your repository.
       </p>
     ),
-    descDetailed:
+    detailedDescription:
       "We will move the repo under the Dracula org and give you permissions to maintain it.",
-    Icon: IconSubmitTheme
+    Icon: submitThemeIcon
   }
 ];
 
-const Steps = () => {
-  const [iconHovered, setIconHovered] = useState({
+export const Steps = () => {
+  const [iconHovered, setIconHovered] = useState<IconState>({
     copyTemplate: false,
     useColors: false,
     submitTheme: false
@@ -80,35 +86,37 @@ const Steps = () => {
   const soundUrl = "/sounds/light-switch.mp3";
   const [play, { stop }] = useSound(soundUrl, { volume: 0.3 });
 
-  const handleMouseOver = (icon) => {
-    setIconHovered((prevState) => ({ ...prevState, [icon]: true }));
+  const handleMouseOver = (icon: string) => {
+    setIconHovered((previousState) => ({ ...previousState, [icon]: true }));
     play();
   };
 
-  const handleMouseOut = (icon) => {
-    setIconHovered((prevState) => ({ ...prevState, [icon]: false }));
+  const handleMouseOut = (icon: string) => {
+    setIconHovered((previousState) => ({ ...previousState, [icon]: false }));
     stop();
   };
 
   return (
     <div className="steps">
-      <h2>How do I submit a new theme?</h2>
+      <h3>How do I submit a new theme?</h3>
       <div className="row">
         {items.map((step, index) => (
           <div
-            key={index}
+            key={step.name}
             aria-label={`Step 0${index + 1}`}
             onMouseOver={() => handleMouseOver(step.name)}
             onMouseOut={() => handleMouseOut(step.name)}
-            className="col"
+            onFocus={() => handleMouseOver(step.name)}
+            onBlur={() => handleMouseOut(step.name)}
+            className="item"
           >
-            <div className="card step">
+            <div className="box step">
               <span className="index">{index + 1}</span>
-              <div className="desc">{step.desc}</div>
+              <div className="description">{step.description}</div>
               <step.Icon isHovered={iconHovered[step.name]} />
             </div>
-            <div key={index} className="card">
-              <span>{step.descDetailed}</span>
+            <div key={`${step.name}-card`} className="box">
+              <p className="description">{step.detailedDescription}</p>
             </div>
           </div>
         ))}
@@ -116,5 +124,3 @@ const Steps = () => {
     </div>
   );
 };
-
-export default Steps;

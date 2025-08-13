@@ -1,23 +1,60 @@
-import { allPosts } from "contentlayer/generated";
-import paths from "src/lib/paths";
+import fs from "node:fs/promises";
+import path from "node:path";
 
-export default async function sitemap() {
-  const blogs = allPosts.map((post) => ({
-    url: `https://draculatheme.com/blog/${post.url.replace("/posts", "")}`,
-    lastModified: post.date.updatedAt
-  }));
+import { paths } from "@/lib/paths";
 
-  const themes = paths.map((path) => ({
-    url: `https://draculatheme.com/${path.params.theme}`,
-    lastModified: new Date().toISOString().split("T")[0]
-  }));
+const BASE_URL = "https://www.draculatheme.com";
+const CONTENT_DIRECTORY = path.join(process.cwd(), "./content/blog");
 
-  const routes = ["", "/about", "/blog", "/contribute", "/shop", "/pro"].map(
-    (route) => ({
-      url: `https://draculatheme.com${route}`,
-      lastModified: new Date().toISOString().split("T")[0]
-    })
+const getCurrentDate = () => new Date().toISOString().split("T")[0];
+
+const createUrlEntry = (
+  url: string,
+  lastModified: string = getCurrentDate()
+) => ({
+  url,
+  lastModified
+});
+
+const getStaticRoutes = () => {
+  const routes = [
+    "",
+    "/about",
+    "/blog",
+    "/newsletter",
+    "/contribute",
+    "/spec",
+    "/shop",
+    "/pro",
+    "/pro/journey",
+    "/pro/changelog",
+    "/pro/request-access",
+    "/support"
+  ];
+
+  return routes.map((route) => createUrlEntry(`${BASE_URL}${route}`));
+};
+
+const getBlogPosts = async () => {
+  const files = await fs.readdir(CONTENT_DIRECTORY);
+
+  return files.map((file) =>
+    createUrlEntry(`${BASE_URL}/blog/${file.replace(".mdx", "")}`)
   );
+};
 
-  return [...routes, ...themes, ...blogs];
-}
+const getThemes = () => {
+  return paths.map((path) => createUrlEntry(`${BASE_URL}/${path.repo}`));
+};
+
+const Sitemap = async () => {
+  const [routes, themes, posts] = await Promise.all([
+    getStaticRoutes(),
+    getThemes(),
+    getBlogPosts()
+  ]);
+
+  return [...routes, ...themes, ...posts];
+};
+
+export default Sitemap;

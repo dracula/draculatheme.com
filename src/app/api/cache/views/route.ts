@@ -1,32 +1,43 @@
 import { NextResponse } from "next/server";
 import pLimit from "p-limit";
-import paths from "src/lib/paths";
-import { getData } from "src/lib/plausible";
-import redis from "src/lib/redis";
+
+import { paths } from "@/lib/paths";
+import { getData } from "@/lib/plausible";
+import { redis } from "@/lib/redis";
 
 const limit = pLimit(8);
 
-const fetchAndOrganize = async (views, path) => {
-  const key = path.params.theme;
+const fetchAndOrganize = async (
+  views: Record<string, number>,
+  item: { repo: string; legacyViews?: number }
+) => {
+  const key = item.repo;
   const value = await getData(key);
 
-  const legacyViews = path.params.legacyViews ? path.params.legacyViews : 0;
+  const legacyViews = item.legacyViews ? item.legacyViews : 0;
 
-  return (views[key] = value.results.pageviews.value + legacyViews);
+  views[key] = value.results.pageviews.value + legacyViews;
+  return views[key];
 };
 
-export async function GET() {
+export const GET = async () => {
   try {
-    let views = {};
+    const views = {};
 
     await Promise.all(
-      paths.map((path) => limit(() => fetchAndOrganize(views, path)))
+      paths.map((item) => limit(() => fetchAndOrganize(views, item)))
     );
 
     await redis.hmset("views", views);
 
     return NextResponse.json({ views }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 400 });
+  } catch (error: unknown) {
+    return NextResponse.json(
+      {
+        status: "error",
+        message: error instanceof Error ? error.message : String(error)
+      },
+      { status: 500 }
+    );
   }
-}
+};

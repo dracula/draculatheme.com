@@ -1,18 +1,36 @@
-import "./page.scss";
-import { Metadata } from "next";
-import Grid from "src/components/shop/grid";
-import { getBasePath } from "src/lib/environment";
-import fetchData from "src/lib/fetchData";
-import products from "src/lib/shop";
+import "./page.css";
 
-const fetchProducts = async (productsArray) => {
-  const productPromises = productsArray.map((product) => {
-    return fetchData(
-      `${getBasePath()}/api/products?id=${product.params.gumroadId}`
-    );
+import type { Metadata } from "next";
+
+import { Hero } from "@/components/shared/hero";
+import { ProductList } from "@/components/shop/product-list";
+import { products } from "@/lib/shop/products";
+import type { Product } from "@/lib/types";
+import { fetcher } from "@/utils/fetcher";
+
+interface ProductParams {
+  slug: string;
+  gumroadId: string;
+  images: string[];
+  category: string;
+  color: string;
+  size?: string;
+  defaultVariant?: number;
+  variants?: string[];
+}
+
+interface ProductConfig {
+  params: ProductParams;
+}
+
+const fetchProducts = async (
+  productsArray: ProductConfig[]
+): Promise<Product[]> => {
+  const productPromises = productsArray.map((product: ProductConfig) => {
+    return fetcher(`/api/products?id=${product.params.gumroadId}`);
   });
 
-  const productsList = await Promise.all(productPromises);
+  const productsList: Product[] = await Promise.all(productPromises);
 
   productsList.sort((a, b) => {
     if (a.published === b.published) return a.name.localeCompare(b.name);
@@ -31,16 +49,17 @@ export const metadata: Metadata = {
   }
 };
 
-const Shop = async () => {
+const ShopPage = async () => {
   const productsList = await fetchProducts(products);
 
   return (
-    <section className="shop">
-      <div className="container">
-        <Grid products={productsList} />
-      </div>
-    </section>
+    <>
+      <Hero />
+      <section className="container shop">
+        <ProductList products={productsList} />
+      </section>
+    </>
   );
 };
 
-export default Shop;
+export default ShopPage;

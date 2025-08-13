@@ -1,14 +1,18 @@
 import { Octokit } from "@octokit/rest";
 import { NextResponse } from "next/server";
-import paths from "src/lib/paths";
-import redis from "src/lib/redis";
+
+import { paths } from "@/lib/paths";
+import { redis } from "@/lib/redis";
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
 });
 
-const fetchAndOrganize = async (installs, path) => {
-  const key = path.params.repo;
+const fetchAndOrganize = async (
+  installs: Record<string, string>,
+  item: { repo: string }
+) => {
+  const key = item.repo;
 
   try {
     const response = await octokit.rest.repos.getContent({
@@ -37,23 +41,31 @@ const fetchAndOrganize = async (installs, path) => {
     installs[key] = value;
 
     return value;
-  } catch (error) {
-    throw new Error(
-      `Failed to fetch content for repo ${key}: ${error.message}`
+  } catch (error: unknown) {
+    console.error(
+      `Failed to fetch content for repo ${key}:`,
+      error instanceof Error ? error.message : String(error)
     );
+    return null;
   }
 };
 
-export async function GET() {
+export const GET = async () => {
   try {
     const installs = {};
 
-    await Promise.all(paths.map((path) => fetchAndOrganize(installs, path)));
+    await Promise.all(paths.map((item) => fetchAndOrganize(installs, item)));
 
     await redis.hmset("installs", installs);
 
     return NextResponse.json({ installs }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 400 });
+  } catch (error: unknown) {
+    return NextResponse.json(
+      {
+        status: "error",
+        message: error instanceof Error ? error.message : String(error)
+      },
+      { status: 500 }
+    );
   }
-}
+};

@@ -1,23 +1,49 @@
-import "./page.scss";
-import { Metadata } from "next";
-import FAQ from "src/components/shop/faq";
-import Product from "src/components/shop/product";
-import RelatedProducts from "src/components/shop/relatedProducts";
-import { getBasePath } from "src/lib/environment";
-import fetchData from "src/lib/fetchData";
-import products from "src/lib/shop";
+import "./page.css";
 
-export async function generateStaticParams() {
+import type { Metadata } from "next";
+
+import { Disclosure } from "@/components/shared/disclosure";
+import { ProductDetails } from "@/components/shop/product-details";
+import { ProductGallery } from "@/components/shop/product-gallery";
+import { ProductList } from "@/components/shop/product-list";
+import { faqs } from "@/lib/shop/faqs";
+import { products } from "@/lib/shop/products";
+import type { Product } from "@/lib/types";
+import { fetcher } from "@/utils/fetcher";
+
+interface ProductParams {
+  slug: string;
+  gumroadId: string;
+  images: string[];
+  category: string;
+  color: string;
+  size?: string;
+  defaultVariant?: number;
+  variants?: string[];
+}
+
+interface ProductConfig {
+  params: ProductParams;
+}
+
+interface PageParams {
+  product: string;
+}
+
+export const generateStaticParams = async () => {
   return products.map((product) => ({
     product: product.params.slug
   }));
-}
-
-const fetchProduct = async (id) => {
-  return fetchData(`${getBasePath()}/api/products?id=${id}`);
 };
 
-const fetchRelatedProducts = async (productsArray, query) => {
+const fetchProduct = async (id: string): Promise<Product> => {
+  return fetcher(`/api/products?id=${id}`);
+};
+
+const fetchRelatedProducts = async (
+  productsArray: ProductConfig[],
+  query: ProductParams
+): Promise<Product[]> => {
   const relatedProductsPromise = productsArray
     .filter(
       (product) =>
@@ -25,18 +51,16 @@ const fetchRelatedProducts = async (productsArray, query) => {
         product.params.category === query.category
     )
     .map((product) => {
-      return fetchData(
-        `${getBasePath()}/api/products?id=${product.params.gumroadId}`
-      );
+      return fetcher(`/api/products?id=${product.params.gumroadId}`);
     });
 
   return await Promise.all(relatedProductsPromise);
 };
 
-const sanitizeDescription = (htmlString) => {
+const sanitizeDescription = (htmlString: string): string => {
   let isFirstLi = true;
   let sanitized = htmlString
-    .replace(/<li>/g, (match) => {
+    .replace(/<li>/g, () => {
       if (isFirstLi) {
         isFirstLi = false;
         return "";
@@ -54,13 +78,21 @@ const sanitizeDescription = (htmlString) => {
     : sanitized;
 };
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params
-}): Promise<Metadata | undefined> {
-  const query = products.find(
-    (product) => product.params.slug === params.product
-  ).params;
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata | undefined> => {
+  const resolvedParams = await params;
+  const productConfig = products.find(
+    (product) => product.params.slug === resolvedParams.product
+  );
 
+  if (!productConfig) {
+    return undefined;
+  }
+
+  const query = productConfig.params;
   const product = await fetchProduct(query.gumroadId);
 
   const title = product.name;
@@ -73,23 +105,53 @@ export async function generateMetadata({
       canonical: `/shop/${query.slug}`
     }
   };
-}
+};
 
-const ProductPage = async ({ params }) => {
-  const query = products.find(
-    (product) => product.params.slug === params.product
-  ).params;
+const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
+  const resolvedParams = await params;
+  const productConfig = products.find(
+    (product) => product.params.slug === resolvedParams.product
+  );
 
+  if (!productConfig) {
+    return <div>Product not found</div>;
+  }
+
+  const query = productConfig.params;
   const product = await fetchProduct(query.gumroadId);
-
   const relatedProducts = await fetchRelatedProducts(products, query);
 
+  const options =
+    product?.variants?.[0]?.options?.map((option) => ({
+      value: option.name.toUpperCase(),
+      label: option.name
+    })) || [];
+
+  const defaultVariant = query.defaultVariant || 0;
+
   return (
-    <section className="product">
-      <div className="container">
-        <Product product={{ ...query, ...product }} />
-        <RelatedProducts products={relatedProducts} />
-        <FAQ />
+    <section className="container product">
+      <div className="overview">
+        <ProductGallery product={product} images={query.images} />
+        <ProductDetails
+          product={product}
+          options={options}
+          defaultVariant={defaultVariant}
+        />
+      </div>
+      <div className="related-products">
+        <h3>Customers also purchased</h3>
+        <ProductList products={relatedProducts.slice(0, 3)} />
+      </div>
+      <div className="faqs">
+        <h3>Frequently Asked Questions</h3>
+        <ul>
+          {faqs.map((faq) => (
+            <li key={faq.question}>
+              <Disclosure question={faq.question} answer={faq.answer} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

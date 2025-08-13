@@ -1,26 +1,23 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: `🥲 Not found`
+  title: "🥲 Not found"
 };
 
-const NotFound = () => {
-  return (
-    <section id="not-found" className="not-found">
-      <div className="row flow-column-wrap">
-        <h1 className="title p">This page does not exist.</h1>
-        <p>Please check the URL and try again.</p>
-        <div className="row">
-          <Link href="/" className="primary">
-            <span>Theme</span>
-          </Link>
-          <Link href="/pro" className="primary pro">
-            <span>PRO</span>
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-};
+const NotFoundPage = () => (
+  <section className="container not-found">
+    <h1>Oops!</h1>
+    <p>The crimson moon reveals danger...</p>
+    <br />
+    <p>
+      Our nocturnal creature has strayed into the forbidden territories of
+      eternal darkness.
+    </p>
+    <br />
+    <Link href="/" className="action primary">
+      Return to Castle
+    </Link>
+  </section>
+);
 
-export default NotFound;
+export default NotFoundPage;

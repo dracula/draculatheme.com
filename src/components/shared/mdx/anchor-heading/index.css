@@ -1,0 +1,27 @@
+.anchor-heading {
+  position: relative;
+  scroll-margin: 6rem;
+
+  .anchor-link {
+    position: absolute;
+    top: calc(50% - 0.0625rem);
+    right: calc(100% + 0.375rem);
+    transform: translateY(-50%);
+    font-size: var(--font-size-caption);
+    line-height: 1;
+    font-family: var(--font-mono);
+    text-decoration: none;
+    opacity: 0;
+    transition:
+      opacity 420ms var(--ease-fluid),
+      color 300ms var(--ease-fluid);
+  }
+
+  &:target,
+  &:hover,
+  &:focus-within {
+    a {
+      opacity: 1;
+    }
+  }
+}

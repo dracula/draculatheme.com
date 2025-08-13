@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export const GET = async (request: NextRequest) => {
   const id = request.nextUrl.searchParams.get("id");
 
   if (id) {
@@ -17,10 +17,10 @@ export async function GET(request: NextRequest) {
       }
 
       return NextResponse.json(response.product, { status: 200 });
-    } catch (e) {
+    } catch {
       return NextResponse.json(false, { status: 400 });
     }
   }
 
   return NextResponse.json(false, { status: 400 });
-}
+};
