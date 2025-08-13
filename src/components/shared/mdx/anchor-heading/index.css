@@ -2,7 +2,7 @@
   position: relative;
   scroll-margin: 6rem;
 
-  a {
+  .anchor-link {
     position: absolute;
     top: calc(50% - 0.0625rem);
     right: calc(100% + 0.375rem);
