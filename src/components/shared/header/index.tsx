@@ -95,7 +95,7 @@ export const Header = () => {
                 href="https://github.com/dracula/dracula-theme"
                 className="action stars"
               >
-                <GithubIcon /> <span className="star-count">+21k</span>
+                <GithubIcon /> <span className="star-count">+24k</span>
               </Link>
             </li>
           </ul>
