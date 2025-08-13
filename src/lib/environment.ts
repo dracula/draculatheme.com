@@ -1,7 +1,7 @@
-export const isProd = () => {
+export function isProd() {
   return process.env.NODE_ENV === "production";
-};
+}
 
-export const getBasePath = () => {
+export function getBasePath() {
   return isProd() ? "https://draculatheme.com" : "http://localhost:3000";
-};
+}
