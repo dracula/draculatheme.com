@@ -24,11 +24,8 @@ export const PPPBanner = ({ country, discount }: PPPBannerProps) => {
         <div className="content">
           <p>
             Hey! You&apos;re coming from <em>{countryName}</em>, where this
-            could be too expensive.
-          </p>
-          <p>
-            We believe in <em>Purchasing Parity Power</em>, and want to make
-            this affordable.
+            could be too expensive. We believe in{" "}
+            <em>Purchasing Parity Power</em>, and want to make this affordable.
           </p>
           <p>
             If you need it, use the code <code>{country}PRO</code> for an extra{" "}

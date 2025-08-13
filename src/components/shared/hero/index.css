@@ -72,7 +72,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: fit-content;
+      width: 100%;
       text-align: center;
 
       h1 {
@@ -81,6 +81,7 @@
       }
 
       p {
+        max-width: 80%;
         margin-top: 0.25rem;
         color: var(--color-heading);
         font-weight: 600;
@@ -137,6 +138,7 @@
         }
 
         p {
+          max-width: 100%;
           margin-top: 0.75rem;
           line-height: 1.8;
           text-wrap: balance;
@@ -152,5 +154,32 @@
   &.pro {
     min-height: 30rem;
     margin-top: calc(-1 * var(--page-sections-spacing));
+  }
+
+  @media (max-width: 60rem) {
+    .castle {
+      left: -234%;
+      width: 402%;
+    }
+
+    &.shop {
+      .container {
+        flex-direction: column;
+        padding: 2.25rem 1.875rem;
+
+        .header {
+          max-width: 100%;
+        }
+
+        .video {
+          width: 100%;
+
+          div {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
   }
 }

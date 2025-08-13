@@ -62,6 +62,7 @@ export const Form = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="vlad@transylvania.com"
+          autoComplete="email"
           required
         />
         <button type="submit" disabled={loading} className="action primary">

@@ -4,7 +4,7 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: 5.25rem;
 
     .our-project {
       width: 90%;
@@ -246,6 +246,7 @@
       p {
         line-height: 1.8;
         text-align: center;
+        text-wrap: balance;
 
         a {
           color: var(--color);
@@ -397,10 +398,23 @@
       }
     }
 
-    @media screen and (max-width: 64rem) {
+    @media (max-width: 60rem) {
+      gap: 4.125rem;
+
       .our-project {
+        width: 100%;
         padding: 1.875rem 1.5rem;
         background-position: left center;
+      }
+
+      .steps {
+        .row {
+          flex-direction: column;
+        }
+      }
+
+      .color-palette {
+        max-width: 100%;
       }
     }
   }

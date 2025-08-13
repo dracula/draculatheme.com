@@ -1,6 +1,6 @@
 export const faqs = [
   {
-    question: "Do you offer discounts for students or other groups?",
+    question: "Do you offer student discounts?",
     answer:
       "We don't offer specific group discounts, but we provide Purchase Parity Power for 160+ countries with exclusive pricing based on local currency and economic conditions."
   },

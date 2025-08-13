@@ -95,5 +95,15 @@
         }
       }
     }
+
+    @media (max-width: 60rem) {
+      #products {
+        flex-direction: column;
+
+        .item {
+          width: 100%;
+        }
+      }
+    }
   }
 }

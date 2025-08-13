@@ -26,15 +26,16 @@
         display: flex;
         flex-direction: column;
         padding: 0 2em;
-        gap: 1.5em;
 
         em {
           color: var(--color-display);
           font-weight: 600;
         }
 
-        figure {
-          margin: 0;
+        p {
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
 

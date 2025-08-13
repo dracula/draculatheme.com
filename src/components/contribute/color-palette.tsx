@@ -328,7 +328,7 @@ export const ColorPalette = () => {
       </div>
       <p>
         For more details about how to apply these different colors to represent
-        <br />
+        <br className="hide-on-mb" />
         different code symbols, please see the{" "}
         <Link href="/spec">Dracula Specification</Link>.
       </p>

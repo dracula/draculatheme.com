@@ -364,5 +364,29 @@
         list-style: none;
       }
     }
+
+    @media (max-width: 60rem) {
+      .overview {
+        flex-direction: column;
+      }
+
+      .related-products {
+        #products {
+          flex-direction: column;
+
+          .item {
+            width: 100%;
+          }
+        }
+      }
+
+      .faqs {
+        flex-direction: column;
+
+        h3 {
+          width: 100%;
+        }
+      }
+    }
   }
 }

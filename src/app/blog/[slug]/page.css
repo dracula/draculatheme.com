@@ -115,5 +115,12 @@
     @starting-style {
       opacity: 0;
     }
+
+    @media (max-width: 60rem) {
+      .on-this-page {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 }

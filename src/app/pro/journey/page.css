@@ -134,5 +134,29 @@
         }
       }
     }
+
+    @media (max-width: 60rem) {
+      padding-top: 4.125rem;
+      gap: 4.125rem;
+
+      .hero {
+        h1 {
+          flex-direction: column;
+
+          .counter {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      ul {
+        height: auto;
+
+        .item {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
   }
 }
