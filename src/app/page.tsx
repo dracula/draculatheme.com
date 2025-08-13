@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 };
 
 const HomePage = async () => {
-  if (isProd()) {
+  const environment = isProd();
+
+  if (environment) {
     for (const item of paths) {
       const data = await fetcher(`/api/views?id=${item.repo}`);
 
