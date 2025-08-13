@@ -1,5 +1,5 @@
 export const isProd = () => {
-  return process.env.ENVIRONMENT === "production";
+  return process.env.NODE_ENV === "production";
 };
 
 export const getBasePath = () => {
