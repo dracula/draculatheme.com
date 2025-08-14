@@ -1,6 +1,8 @@
 import "./page.css";
 
 import type { Metadata } from "next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 
 import ContentWrapper from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
@@ -30,12 +32,14 @@ const HomePage = async () => {
   }
 
   return (
-    <>
-      <Hero />
-      <section className="container home">
-        <ContentWrapper paths={paths} />
-      </section>
-    </>
+    <Suspense>
+      <NuqsAdapter>
+        <Hero />
+        <section className="container home">
+          <ContentWrapper paths={paths} />
+        </section>
+      </NuqsAdapter>
+    </Suspense>
   );
 };
 
