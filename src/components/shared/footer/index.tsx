@@ -4,7 +4,18 @@ import Link from "next/link";
 
 import { Newsletter } from "./newsletter";
 
-const sections = [
+interface LinkItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface Section {
+  title: string;
+  links: LinkItem[];
+}
+
+const sections: Section[] = [
   {
     title: "Company",
     links: [
@@ -27,7 +38,6 @@ const sections = [
     title: "Dracula PRO",
     links: [
       { label: "Support", href: "/pro#faqs" },
-      // { label: "Changelog", href: "/pro/changelog" },
       { label: "Journey", href: "/pro/journey" },
       { label: "Request Access", href: "/pro/request-access" }
     ]
@@ -45,7 +55,11 @@ const sections = [
         href: "https://github.com/dracula/dracula-theme",
         external: true
       },
-      { label: "Discord", href: "/discord-invite" },
+      {
+        label: "Discord",
+        href: "https://discord.gg/yDcFsrYuq9",
+        external: true
+      },
       {
         label: "Wikipedia",
         href: "https://en.wikipedia.org/wiki/Dracula_(color_scheme)",

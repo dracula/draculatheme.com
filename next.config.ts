@@ -35,8 +35,7 @@ const nextConfig: NextConfig = {
       {
         source: "/shop/dracula-sticker-pack",
         destination: "https://draculatheme.com/shop/dracula-sticker-pack-n1",
-        permanent: true,
-        basePath: false
+        permanent: true
       }
     ];
   },
@@ -48,6 +47,10 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "no-store, no-cache, must-revalidate"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex"
           }
         ]
       }
