@@ -64,7 +64,7 @@ const staticPages: PageConfig = {
     subtitle: "Be more productive.",
     cta: "Get it now",
     anchor: "#pricing",
-    color: "250"
+    color: "115"
   },
   "/pro/changelog": {
     title: "Changelog",

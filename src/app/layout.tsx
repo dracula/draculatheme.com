@@ -67,10 +67,6 @@ const RootLayout = async ({
       <main>{children}</main>
       <Footer />
       <Script
-        src="https://store.draculatheme.com/js/gumroad.js"
-        strategy="beforeInteractive"
-      />
-      <Script
         src="https://plausible.io/js/script.js"
         data-domain="draculatheme.com"
         strategy="afterInteractive"

@@ -3,6 +3,7 @@
 import "./index.css";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { BookIcon } from "@/icons/book";
@@ -28,10 +29,25 @@ const navItems = [
 ];
 
 export const Header = () => {
+  const pathname = usePathname();
+  const pathKey = pathname === "/" ? "" : pathname;
+
   const [isNavActive, setIsNavActive] = useState(false);
 
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
+  };
+
+  const buildClassName = (href: string, className?: string) => {
+    const classes = ["action"];
+
+    if (className) classes.push(className);
+
+    classes.push(href.slice(1));
+
+    if (pathKey === href) classes.push("active");
+
+    return classes.join(" ");
   };
 
   return (
@@ -83,7 +99,7 @@ export const Header = () => {
                   onClick={() => {
                     setIsNavActive(false);
                   }}
-                  className={`action${className ? ` ${className}` : ""}`}
+                  className={buildClassName(href, className)}
                 >
                   {icon}
                   {label}
