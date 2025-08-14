@@ -73,7 +73,8 @@ const staticPages: PageConfig = {
   "/open": {
     title: "Open Dashboard",
     subtitle:
-      "Dracula operates fully transparent and shares its metrics with the community."
+      "Dracula operates fully transparent and shares its metrics with the community.",
+    color: "115"
   }
 };
 
