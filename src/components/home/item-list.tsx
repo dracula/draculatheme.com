@@ -23,7 +23,9 @@ export const ItemList = ({ items }: ItemListProps) => (
             </div>
             <div className="content">
               <h3>{item.title}</h3>
-              <p>{new Intl.NumberFormat().format(item.views || 0)} views</p>
+              {(item.views ?? 0) > 0 && (
+                <p>{new Intl.NumberFormat().format(item.views ?? 0)} views</p>
+              )}
             </div>
           </Link>
         </li>

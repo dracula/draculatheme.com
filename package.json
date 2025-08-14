@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "rss": "node ./src/utils/blog-rss.mjs",
+    "rss": "node ./src/utils/blog-rss.mjs && node ./src/utils/changelog-rss.mjs",
     "lint": "next lint --fix && prettier --write ."
   },
   "dependencies": {

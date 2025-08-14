@@ -126,9 +126,9 @@ export const Hero = () => {
               src={icon || "/images/hero/default.svg"}
               width={192}
               height={192}
-              alt="Dracula Icon"
               quality={100}
-              priority
+              priority={true}
+              alt="Dracula Icon"
             />
           </div>
         )}
@@ -148,7 +148,7 @@ export const Hero = () => {
                 src="https://www.youtube-nocookie.com/embed/RiuWwkwmmfI"
                 title="Video showing the manufacture of products from the Dracula collection"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                allowFullScreen={true}
               />
             </div>
           </div>

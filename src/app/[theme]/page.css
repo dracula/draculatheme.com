@@ -77,7 +77,7 @@
         ul {
           display: flex;
           flex-direction: column;
-          margin: 0 0 0.75rem 0;
+          margin: 0;
           padding: 0;
           gap: 0.5rem;
           line-height: 1.8;
@@ -137,6 +137,10 @@
             overflow-y: auto;
             gap: 0.25rem;
           }
+
+          &:not(.contributors) {
+            margin-bottom: 0.75rem;
+          }
         }
       }
     }
@@ -144,7 +148,7 @@
     @media (max-width: 60rem) {
       .wrapper {
         flex-direction: column;
-        padding: 1.5rem;
+        padding: 1.125rem;
 
         .instructions {
           flex: none;

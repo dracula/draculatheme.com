@@ -48,9 +48,9 @@
 @media (max-width: 60rem) {
   :root {
     --page-max-width: 100%;
-    --page-padding-horizontal: 1.875rem;
-    --page-padding-vertical: 1.125rem;
-    --page-sections-spacing: 3rem;
+    --page-padding-horizontal: 1.5rem;
+    --page-padding-vertical: 0.75rem;
+    --page-sections-spacing: 2.625rem;
   }
 }
 
@@ -189,11 +189,9 @@ hr {
 
 code,
 kbd {
+  display: inline-block;
   font-family: var(--font-mono);
   font-variant-ligatures: normal;
-  font-feature-settings:
-    "liga" 1,
-    "calt" 1;
 }
 
 .action {
