@@ -1,45 +1,52 @@
-# draculatheme.com
+# Dracula Theme Website
 
-> This repo contains the source code for [draculatheme.com](https://draculatheme.com).
+> The official source code for [draculatheme.com](https://draculatheme.com) - the home of the Dracula color scheme.
 
-![Preview](./preview.gif)
+![Website Preview](./preview.png)
 
-## Getting Started
+## Quick Start
 
-1. Install [NodeJS](http://nodejs.org/download/), if you don't have it yet.
+**Prerequisites:** [Node.js](https://nodejs.org/download) (v16 or higher recommended)
 
-2. Now clone this repository:
+```bash
+git clone https://github.com/dracula/draculatheme.com.git
+cd draculatheme.com
+npm install
+npm run dev
+```
 
-   ```sh
-   $ git clone https://github.com/dracula/draculatheme.com.git
-   ```
+The website will be available at `http://localhost:3000`
 
-3. Then go to the project's folder:
+## Available Scripts
 
-   ```sh
-   $ cd draculatheme.com
-   ```
+| Command         | Description                               |
+| --------------- | ----------------------------------------- |
+| `npm run dev`   | Start development server with Turbopack   |
+| `npm run build` | Build for production                      |
+| `npm run start` | Start production server                   |
+| `npm run rss`   | Generate RSS feeds for blog and changelog |
+| `npm run lint`  | Run ESLint and Prettier                   |
 
-4. Install all dependencies:
+## Contributing
 
-   ```sh
-   $ npm install
-   ```
-
-5. And finally run:
-
-   ```sh
-   $ npm run dev
-   ```
-
-Now you should see the website running in `localhost:3000` 😁
+1. Fork the repository;
+2. Create your feature branch (`git checkout -b feat/amazing-feature`);
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`);
+4. Push to the branch (`git push origin feat/amazing-feature`);
+5. Open a Pull Request! 💜
 
 ## Community
 
-- [Twitter](https://twitter.com/draculatheme) - Best for getting updates about themes and new stuff.
-- [GitHub](https://github.com/dracula/dracula-theme/discussions) - Best for asking questions and discussing issues.
-- [Discord](https://draculatheme.com/discord-invite) - Best for hanging out with the community.
+Join the Dracula community:
+
+- **[Twitter](https://twitter.com/draculatheme)** - Latest updates and announcements;
+- **[GitHub Discussions](https://github.com/dracula/dracula-theme/discussions)** - Questions and technical discussions;
+- **[Discord](https://draculatheme.com/discord-invite)** - Real-time chat with the community.
+
+## Dracula Pro
+
+[![Dracula Pro](./.github/dracula-pro.png)](https://draculatheme.com/pro)
 
 ## License
 
-[MIT License](./LICENSE) © Dracula Theme
+This project is licensed under the [MIT License](./LICENSE). Made with 💜 by [Zeno](https://zenorocha.com) and [Luxonauta](https://luxonauta.com).
