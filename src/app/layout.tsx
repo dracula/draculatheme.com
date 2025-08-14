@@ -10,16 +10,14 @@ import { Header } from "@/components/shared/header";
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  fallback: ["sans-serif", "system-ui"],
-  display: "swap"
+  fallback: ["sans-serif", "system-ui"]
 });
 
 const dmMono = DM_Mono({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-mono",
-  fallback: ["monospace", "system-ui"],
-  display: "swap"
+  fallback: ["monospace", "system-ui"]
 });
 
 export const metadata: Metadata = {
@@ -69,13 +67,13 @@ const RootLayout = async ({
       <main>{children}</main>
       <Footer />
       <Script
+        src="https://store.draculatheme.com/js/gumroad.js"
+        strategy="beforeInteractive"
+      />
+      <Script
         src="https://plausible.io/js/script.js"
         data-domain="draculatheme.com"
         strategy="afterInteractive"
-      />
-      <Script
-        src="https://store.draculatheme.com/js/gumroad.js"
-        strategy="lazyOnload"
       />
     </body>
   </html>

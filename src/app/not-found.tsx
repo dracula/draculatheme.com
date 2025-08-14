@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "🥲 Not found"
+  title: "🥲 Not found",
+  description: "The page you are looking for does not exist."
 };
 
 const NotFoundPage = () => (
