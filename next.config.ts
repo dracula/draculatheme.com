@@ -23,17 +23,33 @@ const nextConfig: NextConfig = {
       {
         source: "/discord-invite",
         destination: "https://discord.gg/yDcFsrYuq9",
-        permanent: true
+        permanent: true,
+        basePath: false
       },
       {
         source: "/ui",
         destination: "https://ui.draculatheme.com",
-        permanent: true
+        permanent: true,
+        basePath: false
       },
       {
         source: "/shop/dracula-sticker-pack",
         destination: "https://draculatheme.com/shop/dracula-sticker-pack-n1",
-        permanent: true
+        permanent: true,
+        basePath: false
+      }
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/discord-invite",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-store, no-cache, must-revalidate"
+          }
+        ]
       }
     ];
   }
