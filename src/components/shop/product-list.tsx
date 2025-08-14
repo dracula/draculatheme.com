@@ -20,8 +20,8 @@ export const ProductList = ({
             <Image
               src={`/images/shop/${product.custom_permalink}-1.png`}
               alt={product.name}
-              width={576}
-              height={528}
+              width={320}
+              height={320}
               quality={100}
             />
           </div>

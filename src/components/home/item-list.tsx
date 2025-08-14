@@ -18,7 +18,7 @@ export const ItemList = ({ items }: ItemListProps) => (
                 src={`/icons/${item.icon}`}
                 width={200}
                 height={200}
-                alt={item.title}
+                alt={`${item.title} Icon`}
               />
             </div>
             <div className="content">

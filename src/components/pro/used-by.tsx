@@ -13,7 +13,7 @@ export const UsedBy = () => (
               src={company.src}
               width={100}
               height={100}
-              alt={company.alt}
+              alt={`${company.alt} Logo`}
             />
             <span className="sr-only">{company.alt}</span>
           </a>
