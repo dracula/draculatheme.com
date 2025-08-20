@@ -40,6 +40,7 @@
     "remark-gfm": "^4.0.1",
     "rss": "^1.2.2",
     "sugar-high": "^0.9.3",
+    "swr": "^2.3.6",
     "typescript": "^5.8.3",
     "use-sound": "^5.0.0"
   }
