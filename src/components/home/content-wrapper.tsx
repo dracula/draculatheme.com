@@ -30,7 +30,7 @@ const ContentWrapper = ({ paths }: { paths: Path[] }) => {
 
   return (
     <>
-      <aside>
+      <nav aria-label="Theme Filters">
         <FilterSidebar
           searchQuery={searchQuery}
           selectedPlatform={selectedPlatform}
@@ -39,7 +39,7 @@ const ContentWrapper = ({ paths }: { paths: Path[] }) => {
           onPlatformChange={(v) => setQueryStates({ platforms: v })}
           onCategoryChange={(v) => setQueryStates({ categories: v })}
         />
-      </aside>
+      </nav>
       <ItemList items={filtered} />
     </>
   );

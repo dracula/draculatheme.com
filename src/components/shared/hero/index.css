@@ -80,7 +80,7 @@
         font-size: var(--font-size-display);
       }
 
-      p {
+      h2 {
         max-width: 80%;
         margin-top: 0.25rem;
         color: var(--color-heading);
@@ -137,7 +137,7 @@
           line-height: 1.2;
         }
 
-        p {
+        h2 {
           max-width: 100%;
           margin-top: 0.75rem;
           line-height: 1.8;

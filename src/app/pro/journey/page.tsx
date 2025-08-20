@@ -20,7 +20,7 @@ const JourneyPage = async () => {
 
   return (
     <section className="container journey">
-      <div className="hero">
+      <div className="journey-hero">
         <h1>
           Our Journey to <Counter value={salesValue} />
           <span className="sr-only">{sales.total}</span>
@@ -33,7 +33,7 @@ const JourneyPage = async () => {
       <ul>
         {lessons.map((lesson) => (
           <li key={lesson.title} className="item">
-            <h3>{lesson.title}</h3>
+            <h2>{lesson.title}</h2>
             <p>{lesson.content}</p>
           </li>
         ))}

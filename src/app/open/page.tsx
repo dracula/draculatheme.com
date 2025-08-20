@@ -71,7 +71,7 @@ const createMetrics = (data: {
     value: formatNumber(data.plausible)
   },
   {
-    label: "Dracula PRO Sales",
+    label: "Dracula Pro Sales",
     value: data.proSales,
     link: constants.links.proSales
   }

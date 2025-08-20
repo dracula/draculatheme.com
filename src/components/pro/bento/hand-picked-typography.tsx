@@ -4,7 +4,7 @@ export const HandPickedTypography = () => (
       <h3>Hand-picked Typography</h3>
       <p>
         We have carefully <em>selected four monospaced programming fonts</em>{" "}
-        that fit perfectly into Dracula PRO.
+        that fit perfectly into Dracula Pro.
       </p>
       <p>
         These fonts have <em>built-in ligature support</em> that improves

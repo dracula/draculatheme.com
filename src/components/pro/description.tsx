@@ -1,7 +1,7 @@
 export const Description = () => (
   <div className="description">
     <p>
-      Dracula PRO is a color scheme and UI theme{" "}
+      Dracula Pro is a color scheme and UI theme{" "}
       <em>tailored for programming.</em>
     </p>
     <p>

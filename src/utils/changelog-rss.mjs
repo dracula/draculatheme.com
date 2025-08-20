@@ -17,7 +17,7 @@ const generate = async () => {
   );
 
   const feed = new RSS({
-    title: "Changelog • Dracula PRO",
+    title: "Changelog • Dracula Pro",
     description:
       "Discover the latest updates and improvements for Dracula Pro.",
     site_url: "https://draculatheme.com/pro/changelog",

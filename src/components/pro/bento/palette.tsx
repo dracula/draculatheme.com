@@ -14,7 +14,7 @@ export const Palette = () => (
       </p>
       <p>
         Dracula&apos;s original colors, created in 2013, were based on personal
-        taste. This new PRO version brings a more refined and{" "}
+        taste. This new Pro version brings a more refined and{" "}
         <em>mathematical approach</em> that normalizes luminosity and
         saturation.
       </p>

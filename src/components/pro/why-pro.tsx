@@ -4,7 +4,7 @@ import Link from "next/link";
 export const WhyPro = () => (
   <div className="why-pro">
     <div className="content">
-      <h3>Why Dracula PRO?</h3>
+      <h3>Why Dracula Pro?</h3>
       <p>
         In 2013, <Link href="/about">Zeno Rocha&apos;s laptop was stolen,</Link>{" "}
         forcing him to reconfigure everything from scratch. There were already
@@ -14,7 +14,7 @@ export const WhyPro = () => (
       <p>
         Fast forward to 2020, Dracula became one of the most popular themes in
         the world. Still, for Zeno, something was missing. Something{" "}
-        <em>beyond just a theme,</em> so he created Dracula PRO.
+        <em>beyond just a theme,</em> so he created Dracula Pro.
       </p>
       <p>
         This package was designed for developers who want to{" "}

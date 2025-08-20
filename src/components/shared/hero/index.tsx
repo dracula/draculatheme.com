@@ -60,7 +60,7 @@ const staticPages: PageConfig = {
     color: "330"
   },
   "/pro": {
-    title: "Dracula PRO",
+    title: "Dracula Pro",
     subtitle: "Be more productive.",
     cta: "Get it now",
     anchor: "#pricing",
@@ -135,7 +135,7 @@ export const Hero = () => {
         )}
         <div className="header">
           <h1>{title}</h1>
-          <p>{subtitle}</p>
+          <h2>{subtitle}</h2>
           {cta && anchor && (
             <a href={anchor} className="action primary cta">
               {cta}

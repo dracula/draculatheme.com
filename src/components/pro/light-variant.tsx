@@ -11,7 +11,7 @@ export const LightVariant = () => (
       </p>
       <p>
         That&apos;s why we created Alucard, a light variant that seamlessly
-        integrates with Dracula PRO. It meets <code>WCAG AA</code> contrast
+        integrates with Dracula Pro. It meets <code>WCAG AA</code> contrast
         standards, ensuring legibility and inclusivity.
       </p>
     </div>

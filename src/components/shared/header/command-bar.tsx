@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import { BookIcon } from "@/icons/book";
 import { BugIcon } from "@/icons/bug";
@@ -35,12 +36,12 @@ const pages = [
     links: [
       { label: "Dracula Theme", href: "/", icon: <HomeIcon /> },
       { label: "Specification", href: "/spec", icon: <FileIcon /> },
-      { label: "Dracula PRO", href: "/pro", icon: <ZapIcon /> },
+      { label: "Dracula Pro", href: "/pro", icon: <ZapIcon /> },
       { label: "Dracula Shop", href: "/shop", icon: <ShopIcon /> }
     ]
   },
   {
-    title: "Dracula PRO",
+    title: "Dracula Pro",
     links: [
       { label: "Support", href: "/pro#faqs", icon: <BugIcon /> },
       { label: "Changelog", href: "/pro/changelog", icon: <EditIcon /> },
@@ -95,6 +96,7 @@ export const matchesSearch = (
 export const CommandBar = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -140,6 +142,10 @@ export const CommandBar = () => {
   );
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
@@ -168,6 +174,74 @@ export const CommandBar = () => {
 
   const hasSearchResults = searchQuery && filteredResults.length > 0;
 
+  const dialogContent = (
+    <dialog
+      ref={dialogRef}
+      onClose={closeDialog}
+      className="command-bar-dialog"
+    >
+      <div className="search">
+        <input
+          ref={inputRef}
+          type="search"
+          name="search"
+          placeholder={`Search over ${paths.length} themes`}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <SearchIcon />
+      </div>
+      {searchQuery &&
+        (hasSearchResults ? (
+          <ul>
+            <li>
+              <h3>Search Results</h3>
+              <ul>
+                {filteredResults.map((item) => (
+                  <li key={item.title}>
+                    <Link href={`/${item.repo}`} onClick={() => closeDialog()}>
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li className="empty">
+              <h3>Oops! No match!</h3>
+              <p>Try loosening up those search criteria!</p>
+            </li>
+          </ul>
+        ))}
+      <ul>
+        {pages.map((page) => (
+          <li key={page.title}>
+            <span className="title">{page.title}</span>
+            <ul>
+              {page.links.map((link) => (
+                <li key={link.href}>
+                  {link.external ? (
+                    <a href={link.href} onClick={() => closeDialog()}>
+                      {link.icon}
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} onClick={() => closeDialog()}>
+                      {link.icon}
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </dialog>
+  );
+
   return (
     <>
       <button type="button" className="command-bar" onClick={openDialog}>
@@ -180,74 +254,7 @@ export const CommandBar = () => {
           </span>
         </div>
       </button>
-      <dialog
-        ref={dialogRef}
-        onClose={closeDialog}
-        className="command-bar-dialog"
-      >
-        <div className="search">
-          <input
-            ref={inputRef}
-            type="search"
-            name="search"
-            placeholder={`Search over ${paths.length} themes`}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <SearchIcon />
-        </div>
-        {searchQuery &&
-          (hasSearchResults ? (
-            <ul>
-              <li>
-                <h3>Search Results</h3>
-                <ul>
-                  {filteredResults.map((item) => (
-                    <li key={item.title}>
-                      <Link
-                        href={`/${item.repo}`}
-                        onClick={() => closeDialog()}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            </ul>
-          ) : (
-            <ul>
-              <li className="empty">
-                <h3>Oops! No match!</h3>
-                <p>Try loosening up those search criteria!</p>
-              </li>
-            </ul>
-          ))}
-        <ul>
-          {pages.map((page) => (
-            <li key={page.title}>
-              <h3>{page.title}</h3>
-              <ul>
-                {page.links.map((link) => (
-                  <li key={link.href}>
-                    {link.external ? (
-                      <a href={link.href} onClick={() => closeDialog()}>
-                        {link.icon}
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link href={link.href} onClick={() => closeDialog()}>
-                        {link.icon}
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </dialog>
+      {mounted && createPortal(dialogContent, document.body)}
     </>
   );
 };

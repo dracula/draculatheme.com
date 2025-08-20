@@ -7,7 +7,7 @@
     padding-top: 5.25rem;
     gap: 5.25rem;
 
-    .hero {
+    .journey-hero {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -139,7 +139,7 @@
       padding-top: 4.125rem;
       gap: 4.125rem;
 
-      .hero {
+      .journey-hero {
         h1 {
           flex-direction: column;
 

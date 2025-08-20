@@ -311,8 +311,9 @@ header {
         gap: 0.75rem;
       }
 
-      h3 {
+      .title {
         padding: 0 0.375rem 0.5em;
+        color: var(--color-display);
         font-size: var(--font-size-body);
       }
 

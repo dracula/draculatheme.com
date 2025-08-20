@@ -53,8 +53,8 @@ export const Newsletter = () => {
         </div>
         {responseMessage && <span className="response">{responseMessage}</span>}
         <span className="disclaimer">
-          By submitting your email address, you agree to receive Dracula’s
-          newsletter. You can always withdraw your consent.
+          By submitting your email address, you agree to receive Dracula&apos;s
+          newsletter. You can always unsubscribe.
         </span>
       </div>
     </div>

@@ -5,7 +5,7 @@
     min-height: 100vh;
     gap: 3em;
 
-    aside {
+    nav {
       display: flex;
       position: sticky;
       top: 8em;
@@ -162,7 +162,7 @@
             background-color 300ms var(--ease-fluid),
             outline 300ms var(--ease-fluid);
           animation-timeline: view();
-          animation-range: entry 0 cover 25%;
+          animation-range: entry 0 cover 30%;
           display: flex;
           align-items: center;
           justify-content: flex-start;
@@ -221,7 +221,7 @@
     @media (max-width: 60rem) {
       flex-direction: column;
 
-      aside {
+      nav {
         position: relative;
         top: unset;
         width: 100%;
@@ -265,7 +265,7 @@
 @keyframes items-fade-in {
   from {
     transform: translateY(1em);
-    opacity: 0;
+    opacity: 0.6;
   }
   to {
     transform: translateY(0);

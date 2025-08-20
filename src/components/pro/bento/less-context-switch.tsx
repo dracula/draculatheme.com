@@ -5,7 +5,7 @@ export const LessContextSwitch = () => (
       <p>
         Having the same color scheme across multiple apps{" "}
         <em>reduces the time</em> it takes to switch contexts between tasks.
-        That&apos;s why Dracula PRO is available on as many platforms as
+        That&apos;s why Dracula Pro is available on as many platforms as
         possible.
       </p>
     </div>

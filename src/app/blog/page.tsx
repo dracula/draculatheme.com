@@ -27,7 +27,7 @@ const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
         />
       </div>
       <div className="content">
-        <h4>{post.title}</h4>
+        <h3>{post.title}</h3>
         <p>{post.excerpt}</p>
         <p className="meta">
           <span>{post.readingTime} read / Published in </span>
@@ -54,8 +54,9 @@ export const metadata: Metadata = {
 };
 
 const BlogPage = async () => {
-  const posts = getMdxDataFromDirectory<Post>("content/blog");
-  const featured = posts.filter((post: Post) => post.featured).slice(0, 2);
+  const allPosts = getMdxDataFromDirectory<Post>("content/blog");
+  const featured = allPosts.filter((post: Post) => post.featured).slice(0, 2);
+  const posts = allPosts.filter((post: Post) => !featured.includes(post));
 
   return (
     <>

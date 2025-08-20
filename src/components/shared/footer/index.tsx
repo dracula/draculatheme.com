@@ -30,12 +30,12 @@ const sections: Section[] = [
     links: [
       { label: "Dracula Theme", href: "/" },
       { label: "Specification", href: "/spec" },
-      { label: "Dracula PRO", href: "/pro" },
+      { label: "Dracula Pro", href: "/pro" },
       { label: "Dracula Shop", href: "/shop" }
     ]
   },
   {
-    title: "Dracula PRO",
+    title: "Dracula Pro",
     links: [
       { label: "Support", href: "/pro#faqs" },
       { label: "Journey", href: "/pro/journey" },

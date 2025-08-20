@@ -44,7 +44,7 @@ const RequestAccessPage = () => (
           </li>
         </ul>
       </div>
-      <span className="tip">BETA</span>
+      <h2 className="tip">BETA</h2>
     </div>
   </section>
 );

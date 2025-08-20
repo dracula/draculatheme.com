@@ -49,7 +49,7 @@ export const PricingCard = ({
     <div className="header">
       <h3>Become a Vampire</h3>
       <p>
-        Join {formatSalesCount(salesData?.count)} developers using Dracula PRO
+        Join {formatSalesCount(salesData?.count)} developers using Dracula Pro
         every day.
       </p>
     </div>
@@ -73,7 +73,7 @@ export const PricingCard = ({
         ))}
       </ul>
       <a href={activePromotion.purchaseUrl} className="action primary">
-        Buy Dracula PRO
+        Buy Dracula Pro
       </a>
     </div>
     <div className="info">

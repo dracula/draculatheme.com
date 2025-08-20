@@ -77,7 +77,11 @@ export const VariantsShowcase = () => {
         <p>Dracula Pro is built for your favorite apps.</p>
       </div>
       <div className="controls">
+        <label htmlFor="app" className="sr-only">
+          Select an app
+        </label>
         <select
+          id="app"
           name="app"
           value={selectedApp?.value || ""}
           onChange={handleAppChange}

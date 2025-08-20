@@ -80,6 +80,7 @@
         transform: translate(0, 0.75rem) rotate(-3deg);
         color: var(--orange);
         font-weight: 700;
+        font-size: var(--font-size-body);
         letter-spacing: 0.125rem;
         text-transform: uppercase;
       }
