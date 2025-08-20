@@ -4,9 +4,10 @@ import Image from "next/image";
 interface PPPBannerProps {
   country: string;
   discount: number;
+  pppCode: string;
 }
 
-export const PPPBanner = ({ country, discount }: PPPBannerProps) => {
+export const PPPBanner = ({ country, discount, pppCode }: PPPBannerProps) => {
   const countryCode = country as keyof typeof countries;
   const countryName = countries[countryCode]?.name || "Unknown";
 
@@ -18,7 +19,7 @@ export const PPPBanner = ({ country, discount }: PPPBannerProps) => {
         to make this affordable.
       </p>
       <p>
-        If you need it, use the code <code>{country}PRO</code> for an extra{" "}
+        If you need it, use the code <code>{pppCode}</code> for an extra{" "}
         <code>{discount}%</code> off the regular price.
       </p>
       <div className="flag">

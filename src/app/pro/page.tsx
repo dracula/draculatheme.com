@@ -67,6 +67,11 @@ const createStandardPromotion = (): Promotion => ({
   )
 });
 
+const generatePppCode = (country: string, discount: number): string => {
+  const currentYear = String(new Date().getFullYear()).slice(-2);
+  return `PPP${currentYear}${country}${discount}`;
+};
+
 const createPurchasingPowerParityPromotion = (
   purchasingPowerParityData: PurchasingPowerParityData
 ): Promotion | null => {
@@ -89,11 +94,16 @@ const createPurchasingPowerParityPromotion = (
     purchasingPowerParityData.discount
   );
 
+  const pppCode = generatePppCode(
+    purchasingPowerParityData.country,
+    purchasingPowerParityData.discount
+  );
+
   return {
     name: `${countryName} Promo`,
     originalPrice: pricingConfiguration.currentPromotionalPrice,
     finalPrice: finalPrice,
-    purchaseUrl: `${pricingConfiguration.gumroadBaseUrl}/${purchasingPowerParityData.country}PRO?wanted=true`,
+    purchaseUrl: `${pricingConfiguration.gumroadBaseUrl}?discount=${pppCode}&wanted=true`,
     discountPercentage: purchasingPowerParityData.discount
   };
 };
@@ -166,6 +176,10 @@ const ProPage = async () => {
             <PPPBanner
               country={purchasingPowerParityData.country}
               discount={purchasingPowerParityData.discount}
+              pppCode={generatePppCode(
+                purchasingPowerParityData.country,
+                purchasingPowerParityData.discount
+              )}
             />
           )}
         <PricingCard
