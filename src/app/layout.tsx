@@ -55,6 +55,10 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport = {
+  themeColor: "#0E0D11"
+};
+
 const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (

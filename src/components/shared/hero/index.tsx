@@ -45,7 +45,6 @@ const staticPages: PageConfig = {
     color: "10"
   },
   "/contribute": {
-    icon: "/images/hero/contribute.svg",
     title: "Contribute to Dracula",
     subtitle:
       "“We learn big things from small experiences” - Bram Stoker, Dracula",
@@ -62,8 +61,6 @@ const staticPages: PageConfig = {
   "/pro": {
     title: "Dracula Pro",
     subtitle: "Be more productive.",
-    cta: "Get it now",
-    anchor: "#pricing",
     color: "115"
   },
   "/pro/changelog": {

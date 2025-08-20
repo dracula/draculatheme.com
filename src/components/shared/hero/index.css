@@ -151,11 +151,6 @@
     }
   }
 
-  &.pro {
-    min-height: 30rem;
-    margin-top: calc(-1 * var(--page-sections-spacing));
-  }
-
   @media (max-width: 60rem) {
     .castle {
       left: -234%;

@@ -151,13 +151,6 @@ const ProPage = async () => {
 
   return (
     <>
-      {purchasingPowerParityData.discount &&
-        purchasingPowerParityData.country && (
-          <PPPBanner
-            country={purchasingPowerParityData.country}
-            discount={purchasingPowerParityData.discount}
-          />
-        )}
       <Hero />
       <section className="container pro">
         <Description />
@@ -168,6 +161,13 @@ const ProPage = async () => {
         <Bento />
         <Book />
         <Testimonials reviews={reviewsData} />
+        {purchasingPowerParityData.discount &&
+          purchasingPowerParityData.country && (
+            <PPPBanner
+              country={purchasingPowerParityData.country}
+              discount={purchasingPowerParityData.discount}
+            />
+          )}
         <PricingCard
           activePromotion={bestAvailablePromotion}
           salesData={salesData}

@@ -34,7 +34,7 @@
   --background-color-secondary: hsl(var(--hue), 12%, 12%);
   --background-color-tertiary: hsl(var(--hue), 12%, 18%);
 
-  --background-color-overlay: hsla(var(--hue), 12%, 6%, 90%);
+  --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
 
   --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
   --hero-background-color-secondary: hsl(var(--main-hue), 30%, 42%);
@@ -54,9 +54,11 @@
   }
 }
 
-@supports (interpolate-size: allow-keywords) {
-  :root {
-    interpolate-size: allow-keywords;
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
   }
 }
 
@@ -116,6 +118,7 @@ footer {
 
 main {
   flex-direction: column;
+  min-height: 100vh;
   padding-bottom: var(--page-sections-spacing);
   gap: var(--page-sections-spacing);
 }
@@ -189,7 +192,6 @@ hr {
 
 code,
 kbd {
-  display: inline-block;
   font-family: var(--font-mono);
   font-variant-ligatures: normal;
 }
@@ -351,6 +353,14 @@ kbd {
       font-weight: 500;
       font-size: var(--font-size-caption);
       text-align: center;
+    }
+  }
+
+  &:not(pre) {
+    code,
+    kbd {
+      display: inline-block;
+      word-break: break-all;
     }
   }
 }
