@@ -25,11 +25,13 @@ export const Newsletter = () => {
   return (
     <div id="newsletter" className="newsletter">
       <div>
-        <h3>Subscribe to our newsletter.</h3>
-        <p>
-          Get product updates and news <br />
-          in your inbox. No spam.
-        </p>
+        <div>
+          <h3>Subscribe to our newsletter.</h3>
+          <p>
+            Get product updates and news <br className="hide-on-mb" />
+            in your inbox. No spam.
+          </p>
+        </div>
       </div>
       <div>
         <div className="form">

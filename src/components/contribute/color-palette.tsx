@@ -254,7 +254,7 @@ export const ColorPalette = () => {
             <button
               type="button"
               onClick={() => setSelectedTheme(theme)}
-              className={`action ${selectedTheme === theme && " active"}`}
+              className={`action${selectedTheme === theme ? " active" : ""}`}
             >
               {theme}
             </button>

@@ -21,7 +21,13 @@ footer {
 
     & > div {
       &:first-child {
-        width: fit-content;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 0;
+
+        div {
+          width: fit-content;
+        }
       }
 
       &:last-child {
@@ -165,7 +171,12 @@ footer {
       & > div {
         &:first-child,
         &:last-child {
+          flex: none;
           width: 100%;
+
+          div {
+            width: 100%;
+          }
         }
       }
 
