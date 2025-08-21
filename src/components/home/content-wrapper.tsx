@@ -2,8 +2,12 @@
 
 import { parseAsString, useQueryStates } from "nuqs";
 
-import { matchesCategory, matchesPlatform, matchesSearch } from "@/lib/filter";
 import type { Path } from "@/lib/types";
+import {
+  matchesCategory,
+  matchesPlatform,
+  matchesSearch
+} from "@/utils/home/filter";
 
 import { FilterSidebar } from "./filter-sidebar";
 import { ItemList } from "./item-list";

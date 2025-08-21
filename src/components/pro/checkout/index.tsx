@@ -2,9 +2,9 @@
 
 import useSWR from "swr";
 
-import type { PurchasingPowerParityData } from "@/lib/pro/pricing";
-import { resolveCheckout } from "@/lib/pro/pricing";
 import { fetcher } from "@/utils/fetcher";
+import type { PurchasingPowerParityData } from "@/utils/pro/pricing";
+import { resolveCheckout } from "@/utils/pro/pricing";
 
 import { PPPBanner } from "./ppp";
 import { PricingCard } from "./pricing-card";

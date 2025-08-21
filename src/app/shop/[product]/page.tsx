@@ -10,6 +10,7 @@ import { faqs } from "@/lib/shop/faqs";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
+import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
 interface ProductParams {
   slug: string;
@@ -55,27 +56,6 @@ const fetchRelatedProducts = async (
     });
 
   return await Promise.all(relatedProductsPromise);
-};
-
-const sanitizeDescription = (htmlString: string): string => {
-  let isFirstLi = true;
-  let sanitized = htmlString
-    .replace(/<li>/g, () => {
-      if (isFirstLi) {
-        isFirstLi = false;
-        return "";
-      }
-      return ", ";
-    })
-    .replace(/<br\s*\/?>/gi, " ")
-    .replace(/<\/p>|<p>/g, " ")
-    .replace(/<\/?[^>]+(>|$)/g, "");
-
-  sanitized = sanitized.replace(/\s\s+/g, " ").trim();
-
-  return sanitized.length > 160
-    ? `${sanitized.substring(0, 157)}...`
-    : sanitized;
 };
 
 export const generateMetadata = async ({
@@ -129,31 +109,139 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
 
   const defaultVariant = query.defaultVariant || 0;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: sanitizeDescription(product.description),
+    url: `https://draculatheme.com/shop/${query.slug}`,
+    image: query.images.map(
+      (image) => `https://draculatheme.com/images/shop/${image}`
+    ),
+    brand: {
+      "@type": "Brand",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://draculatheme.com/images/hero/default.svg"
+      }
+    },
+    category: query.category,
+    sku: query.gumroadId,
+    gtin: query.gumroadId,
+    productID: query.slug,
+    color: query.color,
+    material: query.category === "shirts" ? "Cotton" : undefined,
+    size: query.variants ? query.variants : undefined,
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: "USD",
+      availability: product.published
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      seller: {
+        "@type": "Organization",
+        name: "Dracula Theme",
+        url: "https://draculatheme.com"
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory:
+          "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn"
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "USD"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 3,
+            maxValue: 7,
+            unitCode: "DAY"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 5,
+            maxValue: 14,
+            unitCode: "DAY"
+          }
+        }
+      }
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: ["Developers", "Designers", "Tech Enthusiasts"]
+    },
+    isRelatedTo: relatedProducts.slice(0, 3).map((relatedProduct) => {
+      const relatedConfig = products.find(
+        (p) => p.params.gumroadId === relatedProduct.id
+      );
+      return {
+        "@type": "Product",
+        name: relatedProduct.name,
+        url: `https://draculatheme.com/shop/${relatedConfig?.params.slug}`
+      };
+    }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://draculatheme.com/shop/${query.slug}`
+    },
+    potentialAction: [
+      {
+        "@type": "BuyAction",
+        name: `Buy ${product.name}`,
+        target: `https://draculatheme.com/shop/${query.slug}`
+      },
+      {
+        "@type": "ViewAction",
+        name: "View Product Details",
+        target: `https://draculatheme.com/shop/${query.slug}`
+      }
+    ]
+  };
+
   return (
-    <section className="container product">
-      <div className="overview">
-        <ProductGallery product={product} images={query.images} />
-        <ProductDetails
-          product={product}
-          options={options}
-          defaultVariant={defaultVariant}
-        />
-      </div>
-      <div className="related-products">
-        <h3>Customers also purchased</h3>
-        <ProductList products={relatedProducts.slice(0, 3)} />
-      </div>
-      <div className="faqs">
-        <h3>Frequently Asked Questions</h3>
-        <ul>
-          {faqs.map((faq) => (
-            <li key={faq.question}>
-              <Disclosure question={faq.question} answer={faq.answer} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <>
+      <section className="container product">
+        <div className="overview">
+          <ProductGallery product={product} images={query.images} />
+          <ProductDetails
+            product={product}
+            options={options}
+            defaultVariant={defaultVariant}
+          />
+        </div>
+        <div className="related-products">
+          <h3>Customers also purchased</h3>
+          <ProductList products={relatedProducts.slice(0, 3)} />
+        </div>
+        <div className="faqs">
+          <h3>Frequently Asked Questions</h3>
+          <ul>
+            {faqs.map((faq) => (
+              <li key={faq.question}>
+                <Disclosure question={faq.question} answer={faq.answer} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
   );
 };
 

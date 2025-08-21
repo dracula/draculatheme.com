@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Hero } from "@/components/shared/hero";
+import { jsonLd } from "@/lib/json-ld/about";
 
 export const metadata: Metadata = {
   title: "About",
@@ -120,6 +121,10 @@ const AboutPage = () => (
         </div>
       </article>
     </section>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
   </>
 );
 

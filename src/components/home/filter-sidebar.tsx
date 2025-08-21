@@ -3,8 +3,8 @@ import useSound from "use-sound";
 
 import { SearchIcon } from "@/icons/search";
 import { TickIcon } from "@/icons/tick";
-import { categories, platforms } from "@/lib/filter";
 import { paths } from "@/lib/paths";
+import { categories, platforms } from "@/utils/home/filter";
 
 interface FilterOption {
   name: string;

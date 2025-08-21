@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
+import { jsonLd } from "@/lib/json-ld/spec";
 import { getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
 
@@ -24,12 +25,18 @@ const SpecPage = () => {
   }
 
   return (
-    <section className="container spec">
-      <div className="prose">
-        <CustomMDX source={spec.content} />
-      </div>
-      <OnThisPage headings={extractHeadings(spec.content)} />
-    </section>
+    <>
+      <section className="container spec">
+        <div className="prose">
+          <CustomMDX source={spec.content} />
+        </div>
+        <OnThisPage headings={extractHeadings(spec.content)} />
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
   );
 };
 

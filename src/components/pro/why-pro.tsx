@@ -25,8 +25,8 @@ export const WhyPro = () => (
       <Image
         src="/images/pro/why-dracula.jpg"
         alt="Zeno Rocha"
-        width={400}
-        height={400}
+        width={462}
+        height={408}
       />
     </div>
   </div>

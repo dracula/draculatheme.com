@@ -6,8 +6,9 @@ import { Suspense } from "react";
 
 import ContentWrapper from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
-import { isProd } from "@/lib/environment";
+import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
+import { isProd } from "@/utils/environment";
 import { fetcher } from "@/utils/fetcher";
 
 export const metadata: Metadata = {
@@ -32,14 +33,22 @@ const HomePage = async () => {
   }
 
   return (
-    <Suspense>
-      <NuqsAdapter>
-        <Hero />
-        <section className="container home">
-          <ContentWrapper paths={paths} />
-        </section>
-      </NuqsAdapter>
-    </Suspense>
+    <>
+      <Suspense>
+        <NuqsAdapter>
+          <Hero />
+          <section className="container home">
+            <ContentWrapper paths={paths} />
+          </section>
+        </NuqsAdapter>
+      </Suspense>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+        }}
+      />
+    </>
   );
 };
 

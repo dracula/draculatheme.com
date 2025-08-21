@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import pLimit from "p-limit";
 
 import { paths } from "@/lib/paths";
-import { getData } from "@/lib/plausible";
 import { redis } from "@/lib/redis";
+import { getData } from "@/utils/plausible";
 
 const limit = pLimit(8);
 

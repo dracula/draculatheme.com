@@ -77,6 +77,80 @@ const ThemePage = async (props: Props) => {
   const decodedBuffer = Buffer.from(installsResponse.install, "base64");
   const installsContent = decodedBuffer.toString("utf8");
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: `Dracula Theme for ${theme.title}`,
+    alternateName: `Dracula for ${theme.title}`,
+    description: `The most famous theme for ${theme.title}, and an ever-growing selection of apps!`,
+    url: `https://draculatheme.com/${theme.repo}`,
+    applicationCategory: "DeveloperApplication",
+    applicationSubCategory: "Code Editor Theme",
+    screenshot: `https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`,
+    downloadUrl: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`,
+    installUrl: `https://draculatheme.com/${theme.repo}`,
+    license: "https://github.com/dracula/dracula-theme/blob/main/LICENSE",
+    keywords: [
+      "dracula theme",
+      theme.title.toLowerCase(),
+      "color scheme",
+      "syntax highlighting",
+      "developer tools"
+    ],
+    author: contributors.map((contributor) => ({
+      "@type": "Person",
+      name: contributor.login,
+      url: `https://github.com/${contributor.login}`,
+      image: contributor.avatar_url
+    })),
+    publisher: {
+      "@type": "Organization",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://draculatheme.com/images/hero/default.svg"
+      },
+      sameAs: [
+        "https://github.com/dracula",
+        "https://twitter.com/draculatheme",
+        "https://discord.gg/yDcFsrB"
+      ]
+    },
+    isPartOf: {
+      "@type": "SoftwareApplication",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com"
+    },
+    offers: {
+      "@type": "Offer",
+      name: `Dracula Theme for ${theme.title}`,
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      description: `Dracula Theme for ${theme.title}`
+    },
+    potentialAction: [
+      {
+        "@type": "DownloadAction",
+        target: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`,
+        name: "Download Theme"
+      },
+      {
+        "@type": "ViewAction",
+        target: `https://github.com/dracula/${theme.repo}`,
+        name: "View Source Code"
+      }
+    ],
+    maintainer: {
+      "@type": "Organization",
+      name: "Dracula Theme Community",
+      url: "https://github.com/dracula"
+    },
+    datePublished: "2013-10-27",
+    dateModified: new Date().toISOString().split("T")[0]
+  };
+
   return (
     <>
       <Hero />
@@ -169,6 +243,10 @@ const ThemePage = async (props: Props) => {
           </aside>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 };

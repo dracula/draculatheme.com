@@ -68,60 +68,129 @@ const BlogPostPage = async (props: Props) => {
     notFound();
   }
 
+  const postAuthors = post.authors
+    .map((humanId) => authors.find((author: Author) => author.id === humanId))
+    .filter((author): author is Author => author !== undefined);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.cover,
+    url: `https://draculatheme.com/blog/${slug}`,
+    datePublished: post.date.createdAt,
+    dateModified: post.date.updatedAt || post.date.createdAt,
+    author: postAuthors.map((author) => ({
+      "@type": "Person",
+      name: author.name,
+      url: author.github,
+      image: author.avatar
+    })),
+    publisher: {
+      "@type": "Organization",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://draculatheme.com/images/hero/default.svg"
+      },
+      sameAs: [
+        "https://github.com/dracula",
+        "https://twitter.com/draculatheme",
+        "https://discord.gg/yDcFsrB"
+      ]
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://draculatheme.com/blog/${slug}`
+    },
+    about: {
+      "@type": "SoftwareApplication",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com"
+    },
+    isPartOf: {
+      "@type": "Blog",
+      name: "Dracula Theme Blog",
+      url: "https://draculatheme.com/blog"
+    },
+    inLanguage: "en",
+    keywords: [
+      "dracula theme",
+      "development",
+      "design",
+      "programming",
+      "color scheme"
+    ],
+    wordCount: post.content.split(/\s+/).length,
+    timeRequired: post.readingTime,
+    potentialAction: {
+      "@type": "ReadAction",
+      target: `https://draculatheme.com/blog/${slug}`
+    }
+  };
+
   return (
-    <section className="container post">
-      <div className="content">
-        <Link href="/blog" className="back-link">
-          <ReturnArrow />
-          <span>Blog</span>
-        </Link>
-        <p className="time">
-          <span>Published in </span>
-          <time dateTime={post.date.createdAt}>
-            {new Date(post.date.createdAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric"
+    <>
+      <section className="container post">
+        <div className="content">
+          <Link href="/blog" className="back-link">
+            <ReturnArrow />
+            <span>Blog</span>
+          </Link>
+          <p className="time">
+            <span>Published in </span>
+            <time dateTime={post.date.createdAt}>
+              {new Date(post.date.createdAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+              })}
+            </time>
+          </p>
+          <div className="authors">
+            <span>By</span>
+            {post.authors.map((humanId) => {
+              const author = authors.find(
+                (author: Author) => author.id === humanId
+              );
+
+              if (!author) return null;
+
+              return (
+                <Link
+                  key={humanId}
+                  href={author.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author"
+                >
+                  <div className="avatar">
+                    <Image
+                      src={author?.avatar}
+                      width={40}
+                      height={40}
+                      alt={`${author?.name}'s Avatar`}
+                    />
+                  </div>
+                  <span>{author?.name}</span>
+                </Link>
+              );
             })}
-          </time>
-        </p>
-        <div className="authors">
-          <span>By</span>
-          {post.authors.map((humanId) => {
-            const author = authors.find(
-              (author: Author) => author.id === humanId
-            );
-
-            if (!author) return null;
-
-            return (
-              <Link
-                key={humanId}
-                href={author.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="author"
-              >
-                <div className="avatar">
-                  <Image
-                    src={author?.avatar}
-                    width={40}
-                    height={40}
-                    alt={author?.name}
-                  />
-                </div>
-                <span>{author?.name}</span>
-              </Link>
-            );
-          })}
+          </div>
+          <article className="prose">
+            <h1>{post.title}</h1>
+            <CustomMDX source={post.content} />
+          </article>
         </div>
-        <article className="prose">
-          <h1>{post.title}</h1>
-          <CustomMDX source={post.content} />
-        </article>
-      </div>
-      <OnThisPage headings={extractHeadings(post.content)} />
-    </section>
+        <OnThisPage headings={extractHeadings(post.content)} />
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
+import { jsonLd } from "@/lib/json-ld/contribute";
 import { fetcher } from "@/utils/fetcher";
 
 export const metadata: Metadata = {
@@ -88,6 +89,10 @@ const ContributePage = async () => {
           </ul>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 };

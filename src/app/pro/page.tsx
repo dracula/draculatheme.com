@@ -29,6 +29,99 @@ const ProPage = async () => {
     | Review[]
     | Record<string, Review>;
 
+  const normalizedReviews = Array.isArray(reviewsData)
+    ? reviewsData
+    : Object.values(reviewsData);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Dracula Pro",
+    alternateName: "Dracula Pro",
+    description:
+      "Dracula Pro is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
+    url: "https://draculatheme.com/pro",
+    image: [
+      "https://draculatheme.com/images/pro/vscode/1.png",
+      "https://draculatheme.com/images/pro/zed/1.png",
+      "https://draculatheme.com/images/pro/hyper/1.png"
+    ],
+    brand: {
+      "@type": "Brand",
+      name: "Dracula Theme",
+      url: "https://draculatheme.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://draculatheme.com/images/hero/default.svg"
+      }
+    },
+    category: "Developer Tools",
+    offers: {
+      "@type": "Offer",
+      name: "Dracula Pro License",
+      price: "70",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2025-12-31",
+      seller: {
+        "@type": "Organization",
+        name: "Dracula Theme",
+        url: "https://draculatheme.com"
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory:
+          "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn"
+      }
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: [
+        "Software Engineers",
+        "Developers",
+        "Designers",
+        "Programmers"
+      ]
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: normalizedReviews.length,
+      bestRating: "5",
+      worstRating: "1"
+    },
+    review: normalizedReviews.slice(0, 10).map((review) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.name
+      },
+      reviewBody: review.body,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5"
+      },
+      datePublished: review.date
+    })),
+    potentialAction: [
+      {
+        "@type": "BuyAction",
+        name: "Purchase Dracula Pro",
+        target: "https://draculatheme.com/pro#pricing"
+      },
+      {
+        "@type": "ViewAction",
+        name: "Preview Themes",
+        target: "https://draculatheme.com/pro"
+      }
+    ]
+  };
+
   return (
     <>
       <Hero />
@@ -53,6 +146,10 @@ const ProPage = async () => {
           </ul>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 };
