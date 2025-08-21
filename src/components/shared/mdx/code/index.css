@@ -1,4 +1,12 @@
 .sh-block {
+  --cyan: hsl(170, 100%, 75%);
+  --green: hsl(115, 100%, 75%);
+  --orange: hsl(35, 100%, 75%);
+  --pink: hsl(330, 100%, 75%);
+  --purple: hsl(250, 100%, 75%);
+  --red: hsl(10, 100%, 75%);
+  --yellow: hsl(60, 100%, 75%);
+
   --sh-class: var(--purple);
   --sh-comment: var(--code-comment);
   --sh-entity: var(--green);
@@ -17,7 +25,7 @@
   margin-block: 1em;
   overflow: hidden;
   border-radius: 0.375rem;
-  background-color: var(--background-color-primary);
+  background-color: var(--code-background);
   line-height: 1.6;
   font-family: var(--font-mono);
 
@@ -30,6 +38,86 @@
     code {
       display: block;
       width: 100%;
+
+      &.language-css {
+        .sh__line {
+          > .sh__token--identifier:first-child {
+            --sh-identifier: var(--pink);
+          }
+
+          .sh__token--keyword + .sh__token--sign {
+            --sh-keyword: var(--pink);
+            --sh-sign: var(--pink);
+          }
+
+          .sh__token--keyword
+            + .sh__token--sign
+            + .sh__token--sign
+            + .sh__token--sign
+            + .sh__token--identifier
+            + .sh__token--sign {
+            --sh-sign: var(--pink);
+          }
+
+          &:has(> .sh__token--sign:first-child + .sh__token--identifier) {
+            > .sh__token--sign:first-child {
+              --sh-sign: var(--green);
+            }
+
+            > .sh__token--identifier {
+              --sh-identifier: var(--green);
+            }
+          }
+
+          &:has(> .sh__token--space:first-child) {
+            > .sh__token--identifier:nth-child(2),
+            > .sh__token--identifier:nth-child(2) + .sh__token--sign,
+            > .sh__token--identifier:nth-child(2)
+              + .sh__token--sign
+              + .sh__token--identifier {
+              --sh-identifier: var(--cyan);
+              --sh-sign: var(--cyan);
+            }
+
+            > .sh__token--identifier:nth-child(2)
+              + .sh__token--sign:has(+ .sh__token--space) {
+              --sh-sign: var(--pink);
+            }
+          }
+
+          &:has(.sh__token--space + .sh__token--sign + .sh__token--class) {
+            .sh__token--sign {
+              &:not(:nth-last-of-type(2)) {
+                --sh-sign: var(--purple);
+              }
+            }
+          }
+
+          &:not(:has(> .sh__token--space:first-child)):not(
+              :has(> .sh__token--sign:first-child)
+            ) {
+            > .sh__token--identifier:first-child {
+              --sh-identifier: var(--pink);
+            }
+          }
+        }
+      }
+
+      &.language-bash {
+        .sh__line {
+          .sh__token--identifier:first-child {
+            --sh-identifier: var(--green);
+          }
+
+          .sh__token--identifier:has(+ .sh__token--sign + .sh__token--comment) {
+            --sh-identifier: var(--sh-comment);
+          }
+
+          .sh__token--sign:has(+ .sh__token--comment) {
+            --sh-sign: var(--sh-comment);
+          }
+        }
+      }
     }
   }
 
