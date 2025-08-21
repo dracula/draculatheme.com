@@ -1,4 +1,4 @@
-import type { PathItem } from "./types";
+import type { PathItem } from "../../lib/types";
 
 export const platforms = [
   { name: "all", label: "All Platforms" },

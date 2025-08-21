@@ -4,7 +4,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingDuration from "reading-duration";
 
-import { orderBy } from "../order-by";
+import { orderBy } from "./order-by";
 
 const countWords = (text: string) => {
   return text.trim().split(/\s+/).length;

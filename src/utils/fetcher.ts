@@ -1,4 +1,4 @@
-import { getBasePath } from "@/lib/environment";
+import { getBasePath } from "@/utils/environment";
 
 export const fetcher = async (
   url: string,
