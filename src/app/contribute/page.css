@@ -92,7 +92,7 @@
               text-decoration-style: solid;
               text-decoration-color: var(--color);
               text-underline-offset: 0.1875rem;
-              transition: color 300ms var(--ease-fluid);
+              transition: color 240ms var(--ease-fluid);
 
               &:focus,
               &:hover {
@@ -211,7 +211,7 @@
           tbody {
             tr {
               background-color: var(--background-color-primary);
-              transition: background-color 300ms var(--ease-fluid);
+              transition: background-color 240ms var(--ease-fluid);
 
               &:first-child {
                 td {
@@ -258,7 +258,7 @@
           text-decoration-style: solid;
           text-decoration-color: var(--color);
           text-underline-offset: 0.1875rem;
-          transition: color 300ms var(--ease-fluid);
+          transition: color 240ms var(--ease-fluid);
 
           &:focus,
           &:hover {
@@ -305,7 +305,7 @@
           padding: 0.125rem;
           gap: 0.75rem;
           border-radius: 100%;
-          transition: background-color 300ms var(--ease-sharp);
+          transition: background-color 240ms var(--ease-sharp);
 
           .avatar {
             position: relative;
@@ -321,7 +321,7 @@
               height: 100%;
               object-fit: cover;
               object-position: center;
-              transition: filter 300ms var(--ease-fluid);
+              transition: filter 240ms var(--ease-fluid);
             }
           }
 

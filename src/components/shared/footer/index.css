@@ -55,9 +55,9 @@ footer {
         outline-color: transparent;
         background-color: var(--background-color-secondary);
         transition:
-          background-color 300ms var(--ease-fluid),
-          color 300ms var(--ease-fluid),
-          outline 300ms var(--ease-fluid);
+          background-color 240ms var(--ease-fluid),
+          color 240ms var(--ease-fluid),
+          outline 240ms var(--ease-fluid);
 
         &::placeholder {
           color: var(--color-body);
@@ -121,7 +121,7 @@ footer {
             display: block;
             min-height: 1.875rem;
             color: var(--color-caption);
-            transition: color 300ms var(--ease-fluid);
+            transition: color 240ms var(--ease-fluid);
 
             &:focus,
             &:hover {
@@ -141,7 +141,7 @@ footer {
         a {
           color: var(--color-heading);
           font-weight: 600;
-          transition: color 300ms var(--ease-fluid);
+          transition: color 240ms var(--ease-fluid);
 
           &:focus,
           &:hover {

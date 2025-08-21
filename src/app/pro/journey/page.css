@@ -94,8 +94,8 @@
         background-color: var(--background-color-secondary);
         line-height: 1.8;
         transition:
-          transform 300ms var(--ease-elastic),
-          background-color 300ms var(--ease-fluid);
+          transform 240ms var(--ease-elastic),
+          background-color 240ms var(--ease-fluid);
 
         h3 {
           font-size: var(--font-size-body);

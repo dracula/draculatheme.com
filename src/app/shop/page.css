@@ -42,7 +42,7 @@
             var(--background-color-secondary) 42%,
             var(--background-color-primary) 100%
           );
-          transition: opacity 300ms var(--ease-fluid);
+          transition: opacity 240ms var(--ease-fluid);
 
           img {
             width: 100%;

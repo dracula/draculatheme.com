@@ -24,8 +24,8 @@
         background-color: var(--background-color-secondary);
         animation: items-fade-in var(--ease-elastic) both;
         transition:
-          background-color 300ms var(--ease-fluid),
-          outline 300ms var(--ease-fluid);
+          background-color 240ms var(--ease-fluid),
+          outline 240ms var(--ease-fluid);
         animation-timeline: view();
         animation-range: entry 0 cover 25%;
 

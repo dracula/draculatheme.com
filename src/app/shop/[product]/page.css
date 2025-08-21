@@ -67,7 +67,7 @@
               var(--background-color-secondary) 42%,
               var(--background-color-primary) 100%
             );
-            transition: border-color 300ms var(--ease-fluid);
+            transition: border-color 240ms var(--ease-fluid);
 
             img {
               width: 100%;
@@ -130,10 +130,10 @@
               outline-color: transparent;
               background-color: var(--background-color-primary);
               transition:
-                border-color 300ms var(--ease-fluid),
-                background-color 300ms var(--ease-fluid),
-                color 300ms var(--ease-fluid),
-                outline 300ms var(--ease-fluid);
+                border-color 240ms var(--ease-fluid),
+                background-color 240ms var(--ease-fluid),
+                color 240ms var(--ease-fluid),
+                outline 240ms var(--ease-fluid);
 
               &::placeholder {
                 color: var(--color-body);
@@ -195,7 +195,7 @@
                 &:last-child {
                   transform: rotateX(180deg);
                   transform-origin: 1rem 0.5rem;
-                  transition: all 300ms var(--ease-fluid);
+                  transition: all 240ms var(--ease-fluid);
                 }
               }
             }
@@ -209,7 +209,7 @@
               font-size: 0.5rem;
               line-height: 1;
               opacity: 0;
-              transition: opacity 300ms var(--ease-fluid);
+              transition: opacity 240ms var(--ease-fluid);
             }
           }
 
@@ -287,7 +287,7 @@
               var(--background-color-secondary) 42%,
               var(--background-color-primary) 100%
             );
-            transition: opacity 300ms var(--ease-fluid);
+            transition: opacity 240ms var(--ease-fluid);
 
             img {
               width: 100%;

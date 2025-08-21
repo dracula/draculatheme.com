@@ -28,7 +28,7 @@ details {
         transform-origin: center;
         transition:
           opacity 180ms var(--ease-fluid),
-          transform 300ms var(--ease-sharp);
+          transform 240ms var(--ease-sharp);
       }
     }
   }

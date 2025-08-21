@@ -29,8 +29,8 @@
           transform: translateY(-50%);
           transform-origin: center;
           transition:
-            transform 300ms var(--ease-elastic),
-            color 300ms var(--ease-fluid);
+            transform 240ms var(--ease-elastic),
+            color 240ms var(--ease-fluid);
         }
 
         input[type="search"] {
@@ -43,9 +43,9 @@
           outline-color: transparent;
           background-color: var(--background-color-primary);
           transition:
-            background-color 300ms var(--ease-fluid),
-            color 300ms var(--ease-fluid),
-            outline 300ms var(--ease-fluid);
+            background-color 240ms var(--ease-fluid),
+            color 240ms var(--ease-fluid),
+            outline 240ms var(--ease-fluid);
 
           &::placeholder {
             color: var(--color-body);
@@ -94,8 +94,8 @@
           background-color: var(--background-color-primary);
           font-weight: 600;
           transition:
-            width 300ms var(--ease-elastic),
-            padding 300ms var(--ease-fluid);
+            width 240ms var(--ease-elastic),
+            padding 240ms var(--ease-fluid);
 
           input[type="radio"] {
             display: none;
@@ -112,7 +112,7 @@
 
           .icon {
             display: none;
-            transition: display 300ms var(--ease-elastic);
+            transition: display 240ms var(--ease-elastic);
 
             path {
               stroke-dasharray: 24;
@@ -159,8 +159,8 @@
           background-color: var(--background-color-secondary);
           animation: items-fade-in var(--ease-elastic) both;
           transition:
-            background-color 300ms var(--ease-fluid),
-            outline 300ms var(--ease-fluid);
+            background-color 240ms var(--ease-fluid),
+            outline 240ms var(--ease-fluid);
           animation-timeline: view();
           animation-range: entry 0 cover 30%;
           display: flex;
