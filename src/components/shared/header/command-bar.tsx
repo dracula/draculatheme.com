@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -200,7 +201,14 @@ export const CommandBar = () => {
                 {filteredResults.map((item) => (
                   <li key={item.title}>
                     <Link href={`/${item.repo}`} onClick={() => closeDialog()}>
-                      {item.title}
+                      <Image
+                        src={`/icons/${item.icon}`}
+                        width={100}
+                        height={100}
+                        alt={`${item.title} Icon`}
+                        className="icon"
+                      />
+                      <span>{item.title}</span>
                     </Link>
                   </li>
                 ))}
