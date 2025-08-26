@@ -91,44 +91,8 @@
       }
     }
 
-    .on-this-page {
-      display: flex;
-      position: sticky;
-      top: 7rem;
-      flex-direction: column;
-      max-width: 12rem;
-      height: fit-content;
-      gap: 0.375rem;
-      font-size: var(--font-size-caption);
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      h3 {
-        font-size: var(--font-size-body);
-      }
-
-      a {
-        display: block;
-        padding: 0.375rem 0;
-      }
-    }
-
     @starting-style {
       opacity: 0;
-    }
-
-    @media (max-width: 60rem) {
-      .on-this-page {
-        display: none;
-        visibility: hidden;
-      }
     }
   }
 }
