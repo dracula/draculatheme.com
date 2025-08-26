@@ -259,11 +259,15 @@ kbd {
   h4,
   h5,
   h6 {
-    margin: 0 0 1em;
+    margin: 0 0 0.5em;
     color: var(--color-display);
 
     a {
       font-weight: inherit;
+    }
+
+    &:not(:first-child) {
+      margin-top: 1em;
     }
   }
 
@@ -345,14 +349,16 @@ kbd {
   }
 
   figure {
+    position: relative;
     width: 100%;
     margin: 2em 0;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: auto;
       object-fit: contain;
-      border-radius: 0.75rem;
+      border-radius: 0.1875rem;
     }
 
     figcaption {

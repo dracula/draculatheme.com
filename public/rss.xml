@@ -4,8 +4,22 @@
         <description><![CDATA[“Truly there is no such thing as finality.” - Bram Stoker, Dracula]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 21 Aug 2025 11:42:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Aug 2025 15:16:48 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[New Light theme coming to all platforms]]></title>
+            <description><![CDATA[We're introducing a new light theme to Dracula.]]></description>
+            <link>https://draculatheme.com/blog/new-light-theme-coming-to-all-platforms</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/new-light-theme-coming-to-all-platforms</guid>
+            <pubDate>Wed, 09 Jul 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Cursor theme, five new additions & more]]></title>
+            <description><![CDATA[We've crafted a custom-made Dracula theme just for Cursor.]]></description>
+            <link>https://draculatheme.com/blog/cursor-theme-five-new-additions-and-more</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/cursor-theme-five-new-additions-and-more</guid>
+            <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[400 apps, Ghostty & four new themes]]></title>
             <description><![CDATA[We are celebrating 400 supported apps! 🎉]]></description>
