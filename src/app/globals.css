@@ -9,7 +9,7 @@
   --font-size-heading: 1.125rem;
   --font-size-display: 1.875rem;
 
-  --hue: 254;
+  --hue: 250;
   --main-hue: 250;
 
   --cyan: hsl(170, 88%, 66%);
@@ -52,6 +52,41 @@
     --page-padding-horizontal: 1.5rem;
     --page-padding-vertical: 0.75rem;
     --page-sections-spacing: 2.625rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --hue: 48;
+    --main-hue: 252;
+
+    --cyan: hsl(198, 96%, 30%);
+    --green: hsl(114, 84%, 24%);
+    --orange: hsl(24, 78%, 36%);
+    --pink: hsl(336, 78%, 36%);
+    --purple: hsl(252, 54%, 54%);
+    --red: hsl(6, 66%, 48%);
+    --yellow: hsl(48, 73%, 30%);
+
+    --code-background: hsl(0, 0%, 96%);
+    --code-foreground: hsl(0, 0%, 12%);
+    --code-comment: hsl(246, 24%, 48%);
+
+    --color: hsl(var(--main-hue), 54%, 24%);
+
+    --color-caption: hsl(var(--hue), 12%, 12%);
+    --color-body: hsl(var(--hue), 12%, 18%);
+    --color-heading: hsl(var(--hue), 18%, 24%);
+    --color-display: hsl(var(--hue), 24%, 30%);
+
+    --background-color-primary: hsl(var(--hue), 12%, 90%);
+    --background-color-secondary: hsl(var(--hue), 12%, 96%);
+    --background-color-tertiary: hsl(var(--hue), 12%, 84%);
+
+    --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
+
+    --hero-background-color-primary: hsl(var(--main-hue), 24%, 96%);
+    --hero-background-color-secondary: hsl(var(--main-hue), 30%, 78%);
   }
 }
 
