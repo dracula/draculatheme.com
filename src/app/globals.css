@@ -1,4 +1,14 @@
-:root {
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
   --page-max-width: 75rem;
   --page-padding-horizontal: 2.25rem;
   --page-padding-vertical: 1.5rem;
@@ -9,54 +19,18 @@
   --font-size-heading: 1.125rem;
   --font-size-display: 1.875rem;
 
-  --hue: 250;
-  --main-hue: 250;
-
-  --cyan: hsl(170, 88%, 66%);
-  --green: hsl(115, 92%, 66%);
-  --orange: hsl(35, 92%, 66%);
-  --pink: hsl(330, 92%, 66%);
-  --purple: hsl(250, 92%, 66%);
-  --red: hsl(10, 92%, 66%);
-  --yellow: hsl(60, 92%, 66%);
-
-  --code-background: hsl(245, 14%, 15%);
-  --code-foreground: hsl(60, 30%, 96%);
-  --code-comment: hsl(249, 25%, 55%);
-
-  --color: hsl(var(--main-hue), 92%, 72%);
-
-  --color-caption: hsl(var(--hue), 12%, 72%);
-  --color-body: hsl(var(--hue), 12%, 78%);
-  --color-heading: hsl(var(--hue), 12%, 84%);
-  --color-display: hsl(var(--hue), 12%, 90%);
-
-  --background-color-primary: hsl(var(--hue), 12%, 6%);
-  --background-color-secondary: hsl(var(--hue), 12%, 12%);
-  --background-color-tertiary: hsl(var(--hue), 12%, 18%);
-
-  --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
-
-  --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
-  --hero-background-color-secondary: hsl(var(--main-hue), 30%, 42%);
-
   --ease-fluid: cubic-bezier(0.36, 0.66, 0.6, 1);
   --ease-sharp: cubic-bezier(0.6, 0.12, 0.34, 0.96);
   --ease-elastic: cubic-bezier(0.42, 0, 0.58, 1.8);
   --ease-impact: cubic-bezier(0.24, 0.9, 0.32, 1.4);
-}
 
-@media (max-width: 60rem) {
-  :root {
-    --page-max-width: 100%;
-    --page-padding-horizontal: 1.5rem;
-    --page-padding-vertical: 0.75rem;
-    --page-sections-spacing: 2.625rem;
-  }
-}
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-@media (prefers-color-scheme: light) {
-  :root {
+  &.light {
+    color-scheme: light;
+
     --hue: 48;
     --main-hue: 252;
 
@@ -88,30 +62,41 @@
     --hero-background-color-primary: hsl(var(--main-hue), 24%, 96%);
     --hero-background-color-secondary: hsl(var(--main-hue), 30%, 78%);
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  @supports (interpolate-size: allow-keywords) {
-    :root {
-      interpolate-size: allow-keywords;
-    }
+  &.dark {
+    color-scheme: dark;
+
+    --hue: 250;
+    --main-hue: 250;
+
+    --cyan: hsl(170, 88%, 66%);
+    --green: hsl(115, 92%, 66%);
+    --orange: hsl(35, 92%, 66%);
+    --pink: hsl(330, 92%, 66%);
+    --purple: hsl(250, 92%, 66%);
+    --red: hsl(10, 92%, 66%);
+    --yellow: hsl(60, 92%, 66%);
+
+    --code-background: hsl(245, 14%, 15%);
+    --code-foreground: hsl(60, 30%, 96%);
+    --code-comment: hsl(249, 25%, 55%);
+
+    --color: hsl(var(--main-hue), 92%, 72%);
+
+    --color-caption: hsl(var(--hue), 12%, 72%);
+    --color-body: hsl(var(--hue), 12%, 78%);
+    --color-heading: hsl(var(--hue), 12%, 84%);
+    --color-display: hsl(var(--hue), 12%, 90%);
+
+    --background-color-primary: hsl(var(--hue), 12%, 6%);
+    --background-color-secondary: hsl(var(--hue), 12%, 12%);
+    --background-color-tertiary: hsl(var(--hue), 12%, 18%);
+
+    --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
+
+    --hero-background-color-primary: hsl(var(--main-hue), 24%, 12%);
+    --hero-background-color-secondary: hsl(var(--main-hue), 30%, 42%);
   }
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
-html {
-  font-size: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   &::selection {
     background-color: var(--purple);
@@ -121,6 +106,19 @@ html {
 
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
+  }
+
+  @media (max-width: 60rem) {
+    --page-max-width: 100%;
+    --page-padding-horizontal: 1.5rem;
+    --page-padding-vertical: 0.75rem;
+    --page-sections-spacing: 2.625rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (interpolate-size: allow-keywords) {
+      interpolate-size: allow-keywords;
+    }
   }
 }
 

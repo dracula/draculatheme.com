@@ -6,6 +6,7 @@ import Script from "next/script";
 
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
+import { themeScript } from "@/lib/theme-script";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -64,9 +65,12 @@ const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en">
+    <head>
+      <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+    </head>
     <body
       className={`${dmSans.variable} ${dmMono.variable}`}
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
     >
       <Header />
       <main>{children}</main>
