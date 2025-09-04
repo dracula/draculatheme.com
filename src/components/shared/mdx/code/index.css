@@ -1,12 +1,4 @@
 .sh-block {
-  --cyan: hsl(170, 100%, 75%);
-  --green: hsl(115, 100%, 75%);
-  --orange: hsl(35, 100%, 75%);
-  --pink: hsl(330, 100%, 75%);
-  --purple: hsl(250, 100%, 75%);
-  --red: hsl(10, 100%, 75%);
-  --yellow: hsl(60, 100%, 75%);
-
   --sh-class: var(--purple);
   --sh-comment: var(--code-comment);
   --sh-entity: var(--green);
