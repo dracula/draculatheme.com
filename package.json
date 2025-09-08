@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "rss": "node ./src/utils/rss/blog.mjs && node ./src/utils/rss/changelog.mjs",
-    "lint": "next lint --fix && prettier --write ."
+    "lint": "eslint --fix . && prettier --write ."
   },
   "dependencies": {
     "next": "^15.3.3",
