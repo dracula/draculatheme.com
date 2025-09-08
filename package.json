@@ -10,7 +10,7 @@
     "lint": "next lint --fix && prettier --write ."
   },
   "dependencies": {
-    "next": "15.3.3",
+    "next": "^15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -24,7 +24,7 @@
     "countries-list": "^3.1.1",
     "date-fns": "^4.1.0",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "^15.3.3",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globby": "^14.1.0",
