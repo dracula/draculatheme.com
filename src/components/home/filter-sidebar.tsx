@@ -1,3 +1,4 @@
+import useVibration, { VibrationPatterns } from "@luxonauta/use-vibration";
 import React from "react";
 import useSound from "use-sound";
 
@@ -21,44 +22,44 @@ interface FilterSidebarProps {
 }
 
 interface FilterGroupProps {
-  label: string;
-  options: FilterOption[];
-  name: string;
-  selectedValue: string;
-  onChange: (value: string) => void;
-  onSoundPlay: () => void;
+  title: string;
+  filterOptions: FilterOption[];
+  inputName: string;
+  currentValue: string;
+  onValueChange: (value: string) => void;
+  onInteraction: () => void;
 }
 
 const FilterGroup = ({
-  label,
-  options,
-  name,
-  selectedValue,
-  onChange,
-  onSoundPlay
+  title,
+  filterOptions,
+  inputName,
+  currentValue,
+  onValueChange,
+  onInteraction
 }: FilterGroupProps) => (
   <div className="filter-group">
-    <span className="label">{label}</span>
-    {options.map((opt) => (
+    <span className="label">{title}</span>
+    {filterOptions.map((option) => (
       <label
-        key={opt.name}
+        key={option.name}
         className="item"
-        onClick={() => onSoundPlay()}
+        onClick={() => onInteraction()}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
-            onSoundPlay();
+            onInteraction();
           }
         }}
       >
         <input
           type="radio"
-          name={name}
-          value={opt.name}
-          checked={selectedValue === opt.name}
-          onChange={() => onChange(opt.name)}
+          name={inputName}
+          value={option.name}
+          checked={currentValue === option.name}
+          onChange={() => onValueChange(option.name)}
         />
         <TickIcon />
-        <span>{opt.label}</span>
+        <span>{option.label}</span>
       </label>
     ))}
   </div>
@@ -72,8 +73,15 @@ export const FilterSidebar = ({
   onPlatformChange,
   onCategoryChange
 }: FilterSidebarProps) => {
-  const soundUrl = "/sounds/click.mp3";
-  const [play] = useSound(soundUrl);
+  const [{ isSupported }, { vibrate }] = useVibration();
+  const [play] = useSound("/sounds/click.mp3");
+
+  const handleInteraction = () => {
+    if (isSupported) {
+      vibrate(VibrationPatterns.tap);
+    }
+    play();
+  };
 
   return (
     <>
@@ -88,20 +96,20 @@ export const FilterSidebar = ({
         />
       </div>
       <FilterGroup
-        label="Platforms"
-        options={platforms}
-        name="platforms"
-        selectedValue={selectedPlatform}
-        onChange={onPlatformChange}
-        onSoundPlay={play}
+        title="Platforms"
+        filterOptions={platforms}
+        inputName="platforms"
+        currentValue={selectedPlatform}
+        onValueChange={onPlatformChange}
+        onInteraction={handleInteraction}
       />
       <FilterGroup
-        label="Categories"
-        options={categories}
-        name="categories"
-        selectedValue={selectedCategory}
-        onChange={onCategoryChange}
-        onSoundPlay={play}
+        title="Categories"
+        filterOptions={categories}
+        inputName="categories"
+        currentValue={selectedCategory}
+        onValueChange={onCategoryChange}
+        onInteraction={handleInteraction}
       />
     </>
   );
