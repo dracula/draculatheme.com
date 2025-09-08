@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { BookIcon } from "@/icons/book";
@@ -94,12 +94,46 @@ export const matchesSearch = (
   );
 };
 
+type PageLink = {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+  external?: boolean;
+};
+
+const matchesPageLink = (link: PageLink, searchedTerm: string): boolean => {
+  const term = searchedTerm.toLowerCase();
+  return (
+    link.label.toLowerCase().includes(term) ||
+    link.href.toLowerCase().includes(term)
+  );
+};
+
+type SearchEntry =
+  | {
+      key: string;
+      label: string;
+      href: string;
+      external?: boolean;
+      icon: React.ReactNode;
+      kind: "theme";
+    }
+  | {
+      key: string;
+      label: string;
+      href: string;
+      external?: boolean;
+      icon: React.ReactNode;
+      kind: "page";
+    };
+
 export const CommandBar = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [mounted, setMounted] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const openDialog = useCallback(() => {
     setIsDialogOpen(true);
@@ -117,6 +151,7 @@ export const CommandBar = () => {
         event.preventDefault();
         openDialog();
       }
+
       if (event.key === "Escape" && isDialogOpen) {
         closeDialog();
       }
@@ -169,11 +204,61 @@ export const CommandBar = () => {
     };
   }, [isDialogOpen, handleClickOutside]);
 
-  const filteredResults = searchQuery
-    ? paths.filter((item) => matchesSearch(item, searchQuery))
-    : [];
+  const flatPageLinks: PageLink[] = useMemo(
+    () =>
+      pages.flatMap((group) =>
+        group.links.map((l) => ({
+          label: l.label,
+          href: l.href,
+          icon: l.icon,
+          external: l.external
+        }))
+      ),
+    []
+  );
 
-  const hasSearchResults = searchQuery && filteredResults.length > 0;
+  const filteredThemes = useMemo(() => {
+    if (!searchQuery) return [];
+    return paths.filter((item) => matchesSearch(item, searchQuery));
+  }, [searchQuery]);
+
+  const filteredPageLinks = useMemo(() => {
+    if (!searchQuery) return [];
+    return flatPageLinks.filter((link) => matchesPageLink(link, searchQuery));
+  }, [searchQuery, flatPageLinks]);
+
+  const combinedResults: SearchEntry[] = useMemo(() => {
+    if (!searchQuery) return [];
+
+    const themes: SearchEntry[] = filteredThemes.map((item) => ({
+      key: `theme:${item.repo}`,
+      label: item.title,
+      href: `/${item.repo}`,
+      kind: "theme",
+      icon: (
+        <Image
+          src={`/icons/${item.icon}`}
+          width={100}
+          height={100}
+          alt={`${item.title} Icon`}
+          className="icon app"
+        />
+      )
+    }));
+
+    const pageItems: SearchEntry[] = filteredPageLinks.map((link) => ({
+      key: `page:${link.href}`,
+      label: link.label,
+      href: link.href,
+      icon: link.icon,
+      external: link.external,
+      kind: "page"
+    }));
+
+    return [...themes, ...pageItems];
+  }, [searchQuery, filteredThemes, filteredPageLinks]);
+
+  const hasSearchResults = searchQuery.length > 0 && combinedResults.length > 0;
 
   const dialogContent = (
     <dialog
@@ -189,6 +274,7 @@ export const CommandBar = () => {
           placeholder={`Search over ${paths.length} themes`}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          aria-label="Search"
         />
         <SearchIcon />
       </div>
@@ -196,20 +282,33 @@ export const CommandBar = () => {
         (hasSearchResults ? (
           <ul>
             <li>
-              <h3>Search Results</h3>
+              <h3 className="sr-only">Search Results</h3>
               <ul>
-                {filteredResults.map((item) => (
-                  <li key={item.title}>
-                    <Link href={`/${item.repo}`} onClick={() => closeDialog()}>
-                      <Image
-                        src={`/icons/${item.icon}`}
-                        width={100}
-                        height={100}
-                        alt={`${item.title} Icon`}
-                        className="icon"
-                      />
-                      <span>{item.title}</span>
-                    </Link>
+                {combinedResults.map((entry, index) => (
+                  <li key={entry.key}>
+                    {entry.external ? (
+                      <a
+                        href={entry.href}
+                        onClick={() => closeDialog()}
+                        ref={(el) => {
+                          itemRefs.current[index] = el;
+                        }}
+                      >
+                        {entry.icon}
+                        <span>{entry.label}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={entry.href}
+                        onClick={() => closeDialog()}
+                        ref={(el) => {
+                          itemRefs.current[index] = el;
+                        }}
+                      >
+                        {entry.icon}
+                        <span>{entry.label}</span>
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
