@@ -41,11 +41,15 @@ export const Header = () => {
   const buildClassName = (href: string, className?: string) => {
     const classes = ["action"];
 
-    if (className) classes.push(className);
+    if (className) {
+      classes.push(className);
+    }
 
     classes.push(href.slice(1));
 
-    if (pathKey === href) classes.push("active");
+    if (pathKey === href) {
+      classes.push("active");
+    }
 
     return classes.join(" ");
   };

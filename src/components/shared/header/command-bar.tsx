@@ -161,7 +161,9 @@ export const CommandBar = () => {
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
-      if (!dialogRef.current) return;
+      if (!dialogRef.current) {
+        return;
+      }
 
       const rect = dialogRef.current.getBoundingClientRect();
 
@@ -218,17 +220,23 @@ export const CommandBar = () => {
   );
 
   const filteredThemes = useMemo(() => {
-    if (!searchQuery) return [];
+    if (!searchQuery) {
+      return [];
+    }
     return paths.filter((item) => matchesSearch(item, searchQuery));
   }, [searchQuery]);
 
   const filteredPageLinks = useMemo(() => {
-    if (!searchQuery) return [];
+    if (!searchQuery) {
+      return [];
+    }
     return flatPageLinks.filter((link) => matchesPageLink(link, searchQuery));
   }, [searchQuery, flatPageLinks]);
 
   const combinedResults: SearchEntry[] = useMemo(() => {
-    if (!searchQuery) return [];
+    if (!searchQuery) {
+      return [];
+    }
 
     const themes: SearchEntry[] = filteredThemes.map((item) => ({
       key: `theme:${item.repo}`,

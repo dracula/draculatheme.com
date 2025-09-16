@@ -156,7 +156,9 @@ const BlogPostPage = async (props: Props) => {
                 (author: Author) => author.id === humanId
               );
 
-              if (!author) return null;
+              if (!author) {
+                return null;
+              }
 
               return (
                 <Link

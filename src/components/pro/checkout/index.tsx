@@ -35,7 +35,9 @@ export const Checkout = () => {
     swrConfig
   );
 
-  if (!salesData) return null;
+  if (!salesData) {
+    return null;
+  }
 
   const { activePromotion, pppBanner } = resolveCheckout(pppData || {});
 

@@ -35,7 +35,10 @@ const sortReviewsByDate = (reviews: Review[]): Review[] =>
 
 const formatDate = (date: string) => {
   const dateObject = new Date(date);
-  if (Number.isNaN(dateObject.getTime())) return null;
+
+  if (Number.isNaN(dateObject.getTime())) {
+    return null;
+  }
 
   return (
     <time className="date">

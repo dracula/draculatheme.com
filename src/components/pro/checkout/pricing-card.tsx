@@ -37,7 +37,10 @@ const formatPriceDisplay = (price: number): string => {
 };
 
 const formatSalesCount = (count?: number): string => {
-  if (!count) return "6,000";
+  if (!count) {
+    return "6,000";
+  }
+
   return count >= 1000 ? `${(count / 1000).toFixed(1)}k` : count.toString();
 };
 

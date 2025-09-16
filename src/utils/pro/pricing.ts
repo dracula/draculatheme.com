@@ -56,7 +56,9 @@ const pppPromotion = (ppp: PurchasingPowerParityData): Promotion | null => {
   const country = ppp?.country;
   const discount = typeof ppp?.discount === "number" ? ppp.discount : undefined;
 
-  if (!country || !discount || discount <= 0) return null;
+  if (!country || !discount || discount <= 0) {
+    return null;
+  }
 
   const price = discountedPrice(pricing.promoPrice, discount);
   const code = buildPppCode(country, discount);
