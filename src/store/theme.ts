@@ -18,13 +18,17 @@ type ThemeActions = {
 };
 
 const applyThemeClass = (theme: ThemeMode) => {
-  if (typeof document === "undefined") return;
+  if (typeof document === "undefined") {
+    return;
+  }
   document.documentElement.classList.remove("light", "dark");
   document.documentElement.classList.add(theme);
 };
 
 const detectSystemTheme = (): ThemeMode => {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") {
+    return "light";
+  }
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
