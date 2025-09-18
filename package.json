@@ -42,6 +42,7 @@
     "sugar-high": "^0.9.3",
     "swr": "^2.3.6",
     "typescript": "^5.8.3",
-    "use-sound": "^5.0.0"
+    "use-sound": "^5.0.0",
+    "zustand": "^5.0.8"
   }
 }
