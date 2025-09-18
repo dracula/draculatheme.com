@@ -123,24 +123,25 @@
           border: 0.0625rem solid var(--background-color-secondary);
           border-radius: 0.5rem;
           outline-color: transparent;
+          outline-style: solid;
+          outline-width: 0;
           background-color: var(--background-color-primary);
           transition:
             border-color 240ms var(--ease-fluid),
-            background-color 240ms var(--ease-fluid),
+            outline-color 240ms var(--ease-fluid),
+            outline-width 180ms var(--ease-fluid),
             color 240ms var(--ease-fluid),
-            outline 240ms var(--ease-fluid);
+            background-color 240ms var(--ease-fluid);
           user-select: none;
 
           &::placeholder {
             color: var(--color-body);
           }
 
-          &:hover,
-          &:focus,
-          &:focus-visible {
+          &:focus-visible,
+          &:hover {
             border-color: transparent;
             outline-color: var(--background-color-tertiary);
-            outline-style: solid;
             outline-width: 0.125rem;
           }
         }
@@ -208,8 +209,8 @@
               }
             }
 
-            &:hover,
-            &:focus-within {
+            &:focus-within,
+            &:hover {
               .color {
                 transform: scale(0.9);
               }
@@ -778,8 +779,8 @@
             }
           }
 
-          &:hover,
-          &:focus-within {
+          &:focus-within,
+          &:hover {
             transform: translateY(-0.125rem);
           }
         }

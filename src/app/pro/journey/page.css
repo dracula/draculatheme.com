@@ -104,8 +104,8 @@
         &:nth-child(3n + 1) {
           order: 1;
 
-          &:hover,
-          &:focus-within {
+          &:focus-within,
+          &:hover {
             transform: rotate(1deg);
           }
         }
@@ -113,8 +113,8 @@
         &:nth-child(3n + 2) {
           order: 2;
 
-          &:hover,
-          &:focus-within {
+          &:focus-within,
+          &:hover {
             transform: translateY(-0.125rem);
           }
         }
@@ -122,14 +122,14 @@
         &:nth-child(3n) {
           order: 3;
 
-          &:hover,
-          &:focus-within {
+          &:focus-within,
+          &:hover {
             transform: rotate(-1deg);
           }
         }
 
-        &:hover,
-        &:focus-within {
+        &:focus-within,
+        &:hover {
           background-color: var(--background-color-tertiary);
         }
       }

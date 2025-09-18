@@ -72,8 +72,8 @@
             }
           }
 
-          &:hover,
-          &:focus {
+          &:focus,
+          &:hover {
             color: var(--color);
 
             .avatar {

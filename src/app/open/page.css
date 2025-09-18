@@ -61,8 +61,8 @@
           font-family: var(--font-mono);
         }
 
-        &:hover,
-        &:focus-within {
+        &:focus-within,
+        &:hover {
           border-color: var(--background-color-tertiary);
         }
       }
