@@ -17,28 +17,76 @@ type ThemeActions = {
   initializeTheme: () => void;
 };
 
+declare global {
+  interface Window {
+    __themeInit?: boolean;
+    __themeMql?: MediaQueryList;
+    __themeListener?: (e: MediaQueryListEvent) => void;
+  }
+}
+
+const storageKey = "theme-store";
+
 const applyThemeClass = (theme: ThemeMode) => {
   if (typeof document === "undefined") {
     return;
   }
+
   document.documentElement.classList.remove("light", "dark");
   document.documentElement.classList.add(theme);
 };
 
 const detectSystemTheme = (): ThemeMode => {
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
+
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 };
 
+const readPersisted = (): { theme: ThemeMode | null; pinned: boolean } => {
+  if (typeof window === "undefined") {
+    return { theme: null, pinned: false };
+  }
+
+  const raw = localStorage.getItem(storageKey);
+
+  if (!raw) {
+    return { theme: null, pinned: false };
+  }
+
+  try {
+    const parsed = JSON.parse(raw);
+    const state = parsed?.state ?? {};
+    const theme = state.currentTheme as ThemeMode | undefined;
+    const pinned = Boolean(state.isUserPinned);
+
+    return { theme: theme ?? null, pinned };
+  } catch {
+    return { theme: null, pinned: false };
+  }
+};
+
+const boot = () => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const { theme } = readPersisted();
+  const base = theme ?? detectSystemTheme();
+
+  applyThemeClass(base);
+};
+
+boot();
+
 export const useThemeStore = create<ThemeState & ThemeActions>()(
   persist(
     (set, get) => ({
-      currentTheme: "light",
-      isUserPinned: false,
+      currentTheme: readPersisted().theme ?? detectSystemTheme(),
+      isUserPinned: readPersisted().pinned,
       setTheme: (theme) => {
         set({ currentTheme: theme, isUserPinned: true });
         applyThemeClass(theme);
@@ -54,38 +102,49 @@ export const useThemeStore = create<ThemeState & ThemeActions>()(
         applyThemeClass(systemTheme);
       },
       initializeTheme: () => {
-        const savedTheme = get().currentTheme;
-        const isPinned = get().isUserPinned;
-        const initialTheme = isPinned ? savedTheme : detectSystemTheme();
+        if (typeof window === "undefined") {
+          return;
+        }
 
-        set({ currentTheme: initialTheme });
-        applyThemeClass(initialTheme);
+        if (window.__themeInit) {
+          return;
+        }
 
-        if (typeof window !== "undefined") {
-          const mediaQueryList = window.matchMedia(
-            "(prefers-color-scheme: dark)"
-          );
-          const handleSystemThemeChange = (event: MediaQueryListEvent) => {
+        window.__themeInit = true;
+
+        const { theme, pinned } = readPersisted();
+        const base = pinned
+          ? (theme ?? detectSystemTheme())
+          : detectSystemTheme();
+
+        set({ currentTheme: base, isUserPinned: Boolean(pinned) });
+        applyThemeClass(base);
+
+        if (!window.__themeMql) {
+          window.__themeMql = window.matchMedia("(prefers-color-scheme: dark)");
+        }
+
+        if (!window.__themeListener) {
+          window.__themeListener = (e: MediaQueryListEvent) => {
             if (!get().isUserPinned) {
-              const newTheme: ThemeMode = event.matches ? "dark" : "light";
-              set({ currentTheme: newTheme });
-              applyThemeClass(newTheme);
+              const t: ThemeMode = e.matches ? "dark" : "light";
+              set({ currentTheme: t });
+              applyThemeClass(t);
             }
           };
 
-          mediaQueryList.addEventListener("change", handleSystemThemeChange);
+          window.__themeMql.addEventListener("change", window.__themeListener);
         }
       }
     }),
     {
-      name: "theme-store",
+      name: storageKey,
       storage: createJSONStorage(() => localStorage),
       skipHydration: true
     }
   )
 );
 
-if (typeof window !== "undefined") {
-  const { initializeTheme } = useThemeStore.getState();
-  initializeTheme();
+if (typeof window !== "undefined" && !window.__themeInit) {
+  useThemeStore.getState().initializeTheme();
 }

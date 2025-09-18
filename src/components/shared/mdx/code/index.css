@@ -1,4 +1,5 @@
 html {
+  &:not(.light):not(.dark),
   &.dark {
     .sh-block {
       --cyan: hsl(170, 100%, 75%);

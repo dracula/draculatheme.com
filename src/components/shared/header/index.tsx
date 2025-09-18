@@ -119,7 +119,9 @@ export const Header = () => {
                 <GithubIcon /> <span className="star-count">+24k</span>
               </Link>
             </li>
-            <ThemeToggle />
+            <li>
+              <ThemeToggle />
+            </li>
           </ul>
         </nav>
       </div>

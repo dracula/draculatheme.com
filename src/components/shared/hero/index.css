@@ -1,4 +1,5 @@
 html {
+  &:not(.light):not(.dark),
   &.dark {
     .hero {
       --castle-url: url("/images/hero/castle.svg");
