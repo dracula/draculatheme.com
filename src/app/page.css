@@ -207,7 +207,6 @@
             }
           }
 
-          &:focus,
           &:focus-visible,
           &:hover {
             outline-color: var(--background-color-tertiary);

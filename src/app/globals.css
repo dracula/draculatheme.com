@@ -91,7 +91,7 @@ html {
 
     --background-color-primary: hsl(var(--hue), 12%, 6%);
     --background-color-secondary: hsl(var(--hue), 12%, 12%);
-    --background-color-tertiary: hsl(var(--hue), 12%, 30%);
+    --background-color-tertiary: hsl(var(--hue), 12%, 24%);
 
     --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
 
@@ -263,7 +263,10 @@ kbd {
     background-color: var(--background-color-secondary);
   }
 
-  &:focus,
+  &:focus:not(.active) {
+    color: var(--color-display);
+  }
+
   &:focus-visible,
   &:hover {
     outline-color: var(--background-color-tertiary);
@@ -328,9 +331,12 @@ kbd {
 
   p,
   ul,
-  ol,
-  hr {
+  ol {
     margin: 0 0 1em;
+  }
+
+  hr {
+    margin: 1em 0;
   }
 
   blockquote {

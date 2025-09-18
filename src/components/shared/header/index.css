@@ -89,7 +89,6 @@ header {
         }
       }
 
-      &:focus,
       &:focus-visible,
       &:hover {
         outline-color: var(--background-color-tertiary);
@@ -142,9 +141,7 @@ header {
           }
 
           &.pro {
-            box-shadow:
-              inset 0 0.0625rem 0 hsla(var(--main-hue), 0%, 100%, 0.1),
-              0 0.125rem 0.5rem hsla(var(--main-hue), 0%, 0%, 0.1);
+            box-shadow: inset 0 0.0625rem 0 hsla(var(--main-hue), 0%, 100%, 0.1);
 
             &::before {
               position: absolute;
@@ -228,6 +225,30 @@ header {
         &.active {
           transform: translateY(0);
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+html.light {
+  header {
+    .container {
+      nav {
+        ul {
+          a.pro {
+            box-shadow: inset 0 -0.0625rem 0 hsla(var(--main-hue), 0%, 0%, 0.1);
+
+            &::before {
+              background: linear-gradient(
+                114deg,
+                hsla(var(--main-hue), 0%, 0%, 0),
+                hsla(var(--main-hue), 0%, 0%, 0.1) 42%,
+                hsla(var(--main-hue), 0%, 0%, 0.1) 60%,
+                hsla(var(--main-hue), 0%, 0%, 0)
+              );
+            }
+          }
         }
       }
     }
@@ -335,7 +356,7 @@ header {
           background-color 240ms var(--ease-fluid),
           color 240ms var(--ease-fluid);
 
-        &:focus,
+        &:focus-visible,
         &:hover {
           background-color: var(--background-color-secondary);
           color: var(--color-display);

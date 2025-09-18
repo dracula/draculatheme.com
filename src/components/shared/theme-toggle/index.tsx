@@ -1,5 +1,7 @@
 "use client";
 
+import "./index.css";
+
 import { useThemeStore } from "@/store/theme";
 
 export const ThemeToggle = () => {
@@ -10,8 +12,9 @@ export const ThemeToggle = () => {
     <button
       type="button"
       onClick={toggleTheme}
-      className="action"
+      className="action theme-toggle"
       aria-label="Toggle Theme"
+      title="Toggle Theme"
     >
       <span className="sr-only">
         {currentTheme === "dark" ? "Switch to light" : "Switch to dark"}
