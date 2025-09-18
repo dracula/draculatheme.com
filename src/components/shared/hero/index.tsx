@@ -6,8 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo } from "react";
 
-import { useTheme } from "@/hooks/use-theme";
 import { paths } from "@/lib/paths";
+import { useThemeStore } from "@/store/theme";
 
 import { MatrixRain } from "./matrix-rain";
 import { Particles } from "./particles";
@@ -97,7 +97,7 @@ export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
-  const { currentTheme: colorScheme } = useTheme();
+  const currentTheme = useThemeStore((s) => s.currentTheme);
 
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
@@ -126,7 +126,7 @@ export const Hero = () => {
               src={
                 icon
                   ? icon
-                  : colorScheme === "dark"
+                  : currentTheme === "dark"
                     ? "/images/hero/default.svg"
                     : "/images/hero/default-light.svg"
               }
@@ -140,7 +140,7 @@ export const Hero = () => {
         )}
         <div className="header">
           <h1>
-            {title ? title : colorScheme === "dark" ? "Dracula" : "Alucard"}
+            {title ? title : currentTheme === "dark" ? "Dracula" : "Alucard"}
           </h1>
           <h2>{subtitle}</h2>
           {cta && anchor && (
