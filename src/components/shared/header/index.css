@@ -41,7 +41,6 @@ header {
       outline-color: transparent;
       background-color: var(--background-color-secondary);
       transition:
-        background-color 240ms var(--ease-fluid),
         color 240ms var(--ease-fluid),
         outline 240ms var(--ease-fluid);
 

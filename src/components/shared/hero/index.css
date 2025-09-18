@@ -1,10 +1,19 @@
 html {
   &.dark {
-    --castle-url: url("/images/hero/castle.svg");
+    .hero {
+      --castle-url: url("/images/hero/castle.svg");
+
+      &.contribute {
+        background-image: none;
+        background-color: var(--background-color-secondary);
+      }
+    }
   }
 
   &.light {
-    --castle-url: url("/images/hero/castle-light.svg");
+    .hero {
+      --castle-url: url("/images/hero/castle-light.svg");
+    }
   }
 }
 
@@ -126,11 +135,6 @@ html {
         }
       }
     }
-  }
-
-  &.contribute {
-    background-image: none;
-    background-color: var(--background-color-secondary);
   }
 
   &.shop {
