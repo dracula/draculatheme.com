@@ -33,11 +33,17 @@ export const matchesSearch = (
 };
 
 export const matchesPlatform = (item: PathItem, selected: string): boolean => {
-  if (selected === "all" || !item.platform) return true;
+  if (selected === "all" || !item.platform) {
+    return true;
+  }
+
   return item.platform.includes(selected);
 };
 
 export const matchesCategory = (item: PathItem, selected: string): boolean => {
-  if (selected === "all") return true;
+  if (selected === "all") {
+    return true;
+  }
+
   return item.categories.includes(selected);
 };

@@ -19,7 +19,9 @@ export const Newsletter = () => {
 
     setResponseMessage(response.message);
 
-    if (response.status === 200) setIsSubscribed(true);
+    if (response.status === 200) {
+      setIsSubscribed(true);
+    }
   };
 
   return (

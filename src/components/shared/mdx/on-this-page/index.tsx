@@ -33,17 +33,23 @@ export const OnThisPage = ({ headings }: OnThisPageProps) => {
       .filter(Boolean);
 
     for (const element of headingElements) {
-      if (element) observer.observe(element);
+      if (element) {
+        observer.observe(element);
+      }
     }
 
     return () => {
       for (const element of headingElements) {
-        if (element) observer.unobserve(element);
+        if (element) {
+          observer.unobserve(element);
+        }
       }
     };
   }, [headings]);
 
-  if (headings.length === 0) return null;
+  if (headings.length === 0) {
+    return null;
+  }
 
   return (
     <nav className="on-this-page">

@@ -7,10 +7,14 @@ export const MatrixRain = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      return;
+    }
 
     const context = canvas.getContext("2d");
-    if (!context) return;
+    if (!context) {
+      return;
+    }
 
     const characters: string[] =
       "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑ॐ".split(

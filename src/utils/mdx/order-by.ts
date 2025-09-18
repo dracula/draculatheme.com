@@ -17,13 +17,23 @@ export const orderBy = <T extends Record<string, unknown>>(
       const valueB = getValue(b, key);
 
       if (typeof valueA === "string" && typeof valueB === "string") {
-        if (valueA < valueB) return 1;
-        if (valueA > valueB) return -1;
+        if (valueA < valueB) {
+          return 1;
+        }
+
+        if (valueA > valueB) {
+          return -1;
+        }
       }
 
       if (typeof valueA === "number" && typeof valueB === "number") {
-        if (valueA < valueB) return 1;
-        if (valueA > valueB) return -1;
+        if (valueA < valueB) {
+          return 1;
+        }
+
+        if (valueA > valueB) {
+          return -1;
+        }
       }
     }
 

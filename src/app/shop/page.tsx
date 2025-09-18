@@ -34,7 +34,10 @@ const fetchProducts = async (
   const productsList: Product[] = await Promise.all(productPromises);
 
   productsList.sort((a, b) => {
-    if (a.published === b.published) return a.name.localeCompare(b.name);
+    if (a.published === b.published) {
+      return a.name.localeCompare(b.name);
+    }
+
     return a.published ? -1 : 1;
   });
 
