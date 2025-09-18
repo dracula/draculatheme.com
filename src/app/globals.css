@@ -59,8 +59,8 @@ html {
 
     --background-color-overlay: hsla(var(--hue), 12%, 6%, 84%);
 
-    --hero-background-color-primary: hsl(var(--main-hue), 24%, 96%);
-    --hero-background-color-secondary: hsl(var(--main-hue), 30%, 78%);
+    --hero-background-color-primary: hsl(var(--main-hue), 24%, 90%);
+    --hero-background-color-secondary: hsl(var(--main-hue), 30%, 66%);
   }
 
   &.dark {
