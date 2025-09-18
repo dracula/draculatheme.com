@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo } from "react";
 
+import { useTheme } from "@/hooks/use-theme";
 import { paths } from "@/lib/paths";
 
 import { MatrixRain } from "./matrix-rain";
@@ -29,7 +30,6 @@ const colors = ["180", "115", "35", "330", "250", "10", "60"];
 
 const staticPages: PageConfig = {
   "": {
-    title: "Dracula",
     subtitle: "One theme. All platforms.",
     color: "250"
   },
@@ -97,6 +97,8 @@ export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
+  const { currentTheme: colorScheme } = useTheme();
+
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
     return allPages[pathKey] || {};
@@ -121,7 +123,13 @@ export const Hero = () => {
         {pathKey !== "/shop" && (
           <div className={`icon ${type}`}>
             <Image
-              src={icon || "/images/hero/default.svg"}
+              src={
+                icon
+                  ? icon
+                  : colorScheme === "dark"
+                    ? "/images/hero/default.svg"
+                    : "/images/hero/default-light.svg"
+              }
               width={192}
               height={192}
               quality={100}
@@ -131,7 +139,9 @@ export const Hero = () => {
           </div>
         )}
         <div className="header">
-          <h1>{title}</h1>
+          <h1>
+            {title ? title : colorScheme === "dark" ? "Dracula" : "Alucard"}
+          </h1>
           <h2>{subtitle}</h2>
           {cta && anchor && (
             <a href={anchor} className="action primary cta">

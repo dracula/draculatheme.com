@@ -13,7 +13,7 @@ import { NewsIcon } from "@/icons/news";
 import { ShopIcon } from "@/icons/shop";
 import { ZapIcon } from "@/icons/zap";
 
-import ThemeToggle from "../theme-toggle";
+import { ThemeToggle } from "../theme-toggle";
 import { CommandBar } from "./command-bar";
 
 const navItems = [

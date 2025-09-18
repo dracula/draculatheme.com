@@ -2,8 +2,8 @@
 
 import { useTheme } from "@/hooks/use-theme";
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+export const ThemeToggle = () => {
+  const { currentTheme, toggleTheme } = useTheme();
 
   return (
     <button
@@ -12,10 +12,8 @@ const ThemeToggle = () => {
       className="action"
       aria-label="Toggle Theme"
     >
-      <span className="icon">{theme === "dark" ? "☀️" : "🌙"}</span>
-      {theme}
+      <span className="sr-only">{currentTheme}</span>
+      <span className="icon">{currentTheme === "dark" ? "☀️" : "🌙"}</span>
     </button>
   );
 };
-
-export default ThemeToggle;
