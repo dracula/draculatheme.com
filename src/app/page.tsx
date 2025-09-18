@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 
-import ContentWrapper from "@/components/home/content-wrapper";
+import { ContentWrapper } from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
 import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
