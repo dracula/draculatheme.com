@@ -250,6 +250,7 @@ kbd {
   color: var(--color-body);
   font-weight: 600;
   font-size: inherit;
+  line-height: 1;
   text-decoration: none;
   transition:
     transform 240ms var(--ease-elastic),
