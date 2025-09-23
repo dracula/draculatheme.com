@@ -97,7 +97,7 @@ export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
@@ -105,6 +105,30 @@ export const Hero = () => {
   }, [pathKey]);
 
   const { icon, title, subtitle, cta, anchor, type = "static" } = pageData;
+
+  const getImageSrc = () => {
+    if (icon) {
+      return icon;
+    }
+
+    if (resolvedTheme === "light") {
+      return "/images/hero/default-light.svg";
+    }
+
+    return "/images/hero/default.svg";
+  };
+
+  const getTitle = () => {
+    if (title) {
+      return title;
+    }
+
+    if (resolvedTheme === "light") {
+      return "Alucard";
+    }
+
+    return "Dracula";
+  };
 
   const setColor = useCallback(() => {
     const color = getPageColor(pageData);
@@ -123,23 +147,17 @@ export const Hero = () => {
         {pathKey !== "/shop" && (
           <div className={`icon ${type}`}>
             <Image
-              src={
-                icon
-                  ? icon
-                  : theme === "dark"
-                    ? "/images/hero/default.svg"
-                    : "/images/hero/default-light.svg"
-              }
+              src={getImageSrc()}
               width={192}
               height={192}
-              quality={100}
+              unoptimized={true}
               priority={true}
               alt="Dracula Icon"
             />
           </div>
         )}
         <div className="header">
-          <h1>{title ? title : theme === "dark" ? "Dracula" : "Alucard"}</h1>
+          <h1>{getTitle()}</h1>
           <h2>{subtitle}</h2>
           {cta && anchor && (
             <a href={anchor} className="action primary cta">

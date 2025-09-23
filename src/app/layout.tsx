@@ -66,7 +66,7 @@ const RootLayout = async ({
 }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning={true}>
     <body className={`${dmSans.variable} ${dmMono.variable}`}>
-      <ThemeProvider>
+      <ThemeProvider defaultTheme="dark" enableSystem={false}>
         <Header />
         <main>{children}</main>
         <Footer />
