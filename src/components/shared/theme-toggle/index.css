@@ -1,3 +1,70 @@
+html {
+  &[data-theme="light"] {
+    .theme-toggle {
+      svg {
+        width: 1.375rem;
+        height: 1.375rem;
+
+        path {
+          &.sun {
+            transform: scale(1) rotate(0);
+            fill: var(--yellow);
+            stroke: var(--yellow);
+            opacity: 1;
+          }
+
+          &.moon {
+            transform: scale(0.42) rotate(-60deg);
+          }
+        }
+      }
+    }
+  }
+
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
+    .theme-toggle {
+      svg {
+        path {
+          &.sun {
+            transform: scale(0.42) rotate(60deg);
+          }
+
+          &.moon {
+            fill: var(--yellow);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 .theme-toggle {
   aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 0;
+
+  svg {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: transform 120ms var(--ease-fluid);
+
+    path {
+      transform: translate3d(0, 0, 0);
+      transform-origin: center;
+      backface-visibility: hidden;
+      fill: transparent;
+      stroke: transparent;
+      opacity: 0;
+      transition:
+        transform 300ms var(--ease-fluid),
+        opacity 240ms var(--ease-fluid);
+    }
+  }
+
+  @media (max-width: 60rem) {
+    aspect-ratio: unset;
+  }
 }

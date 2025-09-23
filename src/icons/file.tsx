@@ -6,7 +6,7 @@ export const FileIcon = ({ size = 13, className = "" }) => (
     height={size}
     color="currentColor"
     fill="none"
-    className={`icon ${className}`}
+    className={`icon${className && ` ${className}`}`}
     aria-hidden="true"
   >
     <title className="sr-only">File Icon</title>

@@ -45,7 +45,7 @@ const staticPages: PageConfig = {
     color: "10"
   },
   "/contribute": {
-    title: "Contribute to Dracula",
+    title: "Contribute",
     subtitle:
       "“We learn big things from small experiences” - Bram Stoker, Dracula",
     color: "35"

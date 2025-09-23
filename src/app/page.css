@@ -160,25 +160,25 @@
 
       li {
         a {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
           width: 15rem;
           height: 100%;
+          padding: 1.125rem;
+          gap: 1.125rem;
           gap: 1.125rem;
           border-radius: 0.75rem;
           outline-color: transparent;
           outline-style: solid;
           outline-width: 0;
           background-color: var(--background-color-secondary);
+          animation-timeline: view();
           animation: items-fade-in var(--ease-elastic) both;
+          animation-range: entry 0 cover 30%;
           transition:
             outline-color 240ms var(--ease-fluid),
             outline-width 180ms var(--ease-fluid);
-          animation-timeline: view();
-          animation-range: entry 0 cover 30%;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          padding: 1.125rem;
-          gap: 1.125rem;
 
           .icon {
             display: flex;
