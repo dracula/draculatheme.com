@@ -1,5 +1,5 @@
 html {
-  &.light {
+  &[data-theme="light"] {
     .container {
       &.pro {
         .used-by {

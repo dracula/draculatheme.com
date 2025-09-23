@@ -1,7 +1,9 @@
-html.light {
-  .container.contribute {
-    .our-project {
-      background-image: url("/images/contribute/our-project-light.svg");
+html {
+  &[data-theme="light"] {
+    .container.contribute {
+      .our-project {
+        background-image: url("/images/contribute/our-project-light.svg");
+      }
     }
   }
 }

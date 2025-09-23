@@ -57,12 +57,13 @@ export const Form = () => {
       <label htmlFor="email">Email used for purchase:</label>
       <div className="input-wrapper">
         <input
-          id="email"
           type="email"
+          autoComplete="email"
+          id="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="vlad@transylvania.com"
-          autoComplete="email"
           required
         />
         <button type="submit" disabled={loading} className="action primary">

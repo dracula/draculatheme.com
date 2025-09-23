@@ -2,15 +2,16 @@
 
 import "./index.css";
 
+import { useTheme } from "next-themes";
 import { useSound } from "use-sound";
 
-import { useThemeStore } from "@/store/theme";
-
 export const ThemeToggle = () => {
-  const currentTheme = useThemeStore((s) => s.currentTheme);
+  const { theme, setTheme } = useTheme();
   const [play] = useSound("/sounds/toggle.mp3");
 
-  const toggleTheme = useThemeStore((s) => s.toggleTheme);
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <button
@@ -24,9 +25,9 @@ export const ThemeToggle = () => {
       title="Toggle Theme"
     >
       <span className="sr-only">
-        {currentTheme === "dark" ? "Switch to light" : "Switch to dark"}
+        {theme === "dark" ? "Switch to light" : "Switch to dark"}
       </span>
-      <span className="icon">{currentTheme === "dark" ? "☀️" : "🌙"}</span>
+      <span className="icon">{theme === "dark" ? "☀️" : "🌙"}</span>
     </button>
   );
 };

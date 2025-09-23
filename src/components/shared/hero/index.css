@@ -1,6 +1,6 @@
 html {
-  &:not(.light):not(.dark),
-  &.dark {
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
     .hero {
       --castle-url: url("/images/hero/castle.svg");
 
@@ -11,7 +11,7 @@ html {
     }
   }
 
-  &.light {
+  &[data-theme="light"] {
     .hero {
       --castle-url: url("/images/hero/castle-light.svg");
     }

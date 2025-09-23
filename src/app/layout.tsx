@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
@@ -65,9 +66,11 @@ const RootLayout = async ({
 }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning={true}>
     <body className={`${dmSans.variable} ${dmMono.variable}`}>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <ThemeProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </ThemeProvider>
       <Script
         src="https://plausible.io/js/script.js"
         data-domain="draculatheme.com"

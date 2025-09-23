@@ -278,9 +278,10 @@ export const CommandBar = () => {
         <input
           ref={inputRef}
           type="search"
+          autoComplete="off"
           name="search"
-          placeholder={`Search over ${paths.length} themes`}
           value={searchQuery}
+          placeholder={`Search over ${paths.length} themes`}
           onChange={(e) => setSearchQuery(e.target.value)}
           aria-label="Search"
         />

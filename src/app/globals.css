@@ -28,7 +28,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  &.light {
+  overscroll-behavior: contain;
+  touch-action: manipulation;
+
+  &[data-theme="light"] {
     color-scheme: light;
 
     --hue: 48;
@@ -63,8 +66,8 @@ html {
     --hero-background-color-secondary: hsl(var(--main-hue), 30%, 60%);
   }
 
-  &:not(.light):not(.dark),
-  &.dark {
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
     color-scheme: dark;
 
     --hue: 250;
@@ -203,6 +206,14 @@ textarea,
 select {
   color: inherit;
   font: inherit;
+}
+
+input {
+  font-size: 1rem;
+
+  &::placeholder {
+    font-size: var(--font-size-body);
+  }
 }
 
 figure,

@@ -231,22 +231,25 @@ header {
   }
 }
 
-html.light {
-  header {
-    .container {
-      nav {
-        ul {
-          a.pro {
-            box-shadow: inset 0 -0.0625rem 0 hsla(var(--main-hue), 0%, 0%, 0.1);
+html {
+  &[data-theme="light"] {
+    header {
+      .container {
+        nav {
+          ul {
+            a.pro {
+              box-shadow: inset 0 -0.0625rem 0
+                hsla(var(--main-hue), 0%, 0%, 0.1);
 
-            &::before {
-              background: linear-gradient(
-                114deg,
-                hsla(var(--main-hue), 0%, 0%, 0),
-                hsla(var(--main-hue), 0%, 0%, 0.1) 42%,
-                hsla(var(--main-hue), 0%, 0%, 0.1) 60%,
-                hsla(var(--main-hue), 0%, 0%, 0)
-              );
+              &::before {
+                background: linear-gradient(
+                  114deg,
+                  hsla(var(--main-hue), 0%, 0%, 0),
+                  hsla(var(--main-hue), 0%, 0%, 0.1) 42%,
+                  hsla(var(--main-hue), 0%, 0%, 0.1) 60%,
+                  hsla(var(--main-hue), 0%, 0%, 0)
+                );
+              }
             }
           }
         }

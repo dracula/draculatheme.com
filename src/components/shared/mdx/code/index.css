@@ -1,6 +1,6 @@
 html {
-  &:not(.light):not(.dark),
-  &.dark {
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
     .sh-block {
       --cyan: hsl(170, 100%, 75%);
       --green: hsl(115, 100%, 75%);
