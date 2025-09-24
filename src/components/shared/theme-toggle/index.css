@@ -65,6 +65,9 @@ html {
   }
 
   @media (max-width: 60rem) {
+    justify-content: start;
     aspect-ratio: unset;
+    padding: 0 0.75rem;
+    border: 0.0313rem solid var(--background-color-tertiary);
   }
 }

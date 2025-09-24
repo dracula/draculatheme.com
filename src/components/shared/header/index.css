@@ -238,8 +238,8 @@ header {
         background-color: var(--background-color-primary);
         opacity: 0;
         transition:
-          transform 240ms var(--ease-fluid),
-          opacity 420ms var(--ease-fluid);
+          transform 420ms var(--ease-fluid),
+          opacity 300ms var(--ease-fluid);
 
         ul {
           flex-direction: column;
@@ -249,7 +249,7 @@ header {
             width: 100%;
 
             a {
-              justify-content: left;
+              justify-content: start;
               width: 100%;
               border: 0.0313rem solid var(--background-color-tertiary);
             }

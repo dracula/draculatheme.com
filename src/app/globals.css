@@ -114,7 +114,7 @@ html {
 
   @media (max-width: 60rem) {
     --page-max-width: 100%;
-    --page-padding-horizontal: 1.5rem;
+    --page-padding-horizontal: 1.125rem;
     --page-padding-vertical: 0.75rem;
     --page-sections-spacing: 2.625rem;
   }
@@ -439,13 +439,13 @@ kbd {
 }
 
 .hide,
-.hide-on-desk {
+.hide-on-desktop {
   display: none;
   visibility: hidden;
 }
 
 @media (max-width: 60rem) {
-  .hide-on-desk {
+  .hide-on-desktop {
     display: block;
     visibility: visible;
   }

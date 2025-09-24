@@ -120,7 +120,7 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <ThemeToggle />
+              <ThemeToggle action={() => setIsNavActive(false)} />
             </li>
           </ul>
         </nav>

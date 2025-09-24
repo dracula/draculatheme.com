@@ -5,12 +5,16 @@ import "./index.css";
 import { useTheme } from "next-themes";
 import { useSound } from "use-sound";
 
-export const ThemeToggle = () => {
+interface ThemeToggleProps {
+  action?: () => void;
+}
+
+export const ThemeToggle = ({ action }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
   const [play] = useSound("/sounds/toggle.mp3", { volume: 0.12 });
 
   const isDark = theme === "dark";
-  const themeLabel = isDark ? "Switch to light theme" : "Switch to dark theme";
+  const themeLabel = isDark ? "Enter the sunlight" : "Embrace the darkness";
 
   const toggleTheme = () => {
     play();
@@ -20,12 +24,17 @@ export const ThemeToggle = () => {
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={() => {
+        if (action) {
+          action();
+        }
+
+        toggleTheme();
+      }}
       className="action theme-toggle"
       aria-label={themeLabel}
       title={themeLabel}
     >
-      <span className="sr-only">{themeLabel}</span>
       <svg
         width="18"
         height="18"
@@ -47,6 +56,7 @@ export const ThemeToggle = () => {
           className="moon"
         />
       </svg>
+      <span className="hide-on-desktop">{themeLabel}</span>
     </button>
   );
 };
