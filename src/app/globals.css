@@ -330,7 +330,7 @@ kbd {
     color: var(--color);
     font-weight: 500;
     text-decoration: underline;
-    text-decoration-style: solid;
+    text-decoration-style: wavy;
     text-decoration-color: var(--color);
     text-underline-offset: 0.1875rem;
     transition: color 240ms var(--ease-fluid);

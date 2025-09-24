@@ -46,11 +46,11 @@ details {
     height: auto;
     overflow: clip;
     border-width: 0.0625rem;
-    border-color: var(--background-color-secondary);
+    border-color: var(--background-color-tertiary);
 
     .summary {
       background-color: transparent;
-      background-color: var(--background-color-secondary);
+      background-color: var(--background-color-tertiary);
       color: var(--color-display);
 
       .icon {

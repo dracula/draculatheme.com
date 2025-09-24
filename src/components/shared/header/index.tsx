@@ -60,7 +60,7 @@ export const Header = () => {
       <div className="container">
         <div className="wrapper">
           <Link href="/" className="logo">
-            Dracula Theme
+            Dracula <span>Theme</span>
           </Link>
           <CommandBar />
           <button
