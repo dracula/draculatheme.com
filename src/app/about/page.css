@@ -50,5 +50,19 @@
         border-radius: 0 0 1.125rem 1.125rem;
       }
     }
+
+    @media (max-width: 60rem) {
+      padding: var(--page-padding-vertical) 0;
+
+      article {
+        time {
+          margin-bottom: 1.5em;
+        }
+
+        .content {
+          padding: 0 var(--page-padding-horizontal);
+        }
+      }
+    }
   }
 }

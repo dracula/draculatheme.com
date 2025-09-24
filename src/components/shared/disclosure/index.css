@@ -5,7 +5,7 @@ details {
   margin: 0 0 1.875em;
   padding: 0;
   overflow: hidden;
-  border: 0.0625rem solid var(--background-color-secondary);
+  border: 0.0625rem solid var(--background-color-tertiary);
   border-radius: 0.375rem;
   transition: height 420ms var(--ease-fluid);
 
@@ -46,11 +46,10 @@ details {
     height: auto;
     overflow: clip;
     border-width: 0.0625rem;
-    border-color: var(--background-color-secondary);
+    border-color: var(--background-color-tertiary);
 
     .summary {
-      background-color: transparent;
-      background-color: var(--background-color-secondary);
+      background-color: var(--background-color-tertiary);
       color: var(--color-display);
 
       .icon {

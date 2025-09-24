@@ -53,6 +53,7 @@ const FilterGroup = ({
       >
         <input
           type="radio"
+          autoComplete="off"
           name={inputName}
           value={option.name}
           checked={currentValue === option.name}
@@ -89,6 +90,7 @@ export const FilterSidebar = ({
         <SearchIcon />
         <input
           type="search"
+          autoComplete="off"
           name="search"
           value={searchQuery}
           placeholder={`Search over ${paths.length} themes`}

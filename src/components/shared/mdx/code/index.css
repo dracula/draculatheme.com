@@ -1,12 +1,19 @@
-.sh-block {
-  --cyan: hsl(170, 100%, 75%);
-  --green: hsl(115, 100%, 75%);
-  --orange: hsl(35, 100%, 75%);
-  --pink: hsl(330, 100%, 75%);
-  --purple: hsl(250, 100%, 75%);
-  --red: hsl(10, 100%, 75%);
-  --yellow: hsl(60, 100%, 75%);
+html {
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
+    .sh-block {
+      --cyan: hsl(170, 100%, 75%);
+      --green: hsl(115, 100%, 75%);
+      --orange: hsl(35, 100%, 75%);
+      --pink: hsl(330, 100%, 75%);
+      --purple: hsl(250, 100%, 75%);
+      --red: hsl(10, 100%, 75%);
+      --yellow: hsl(60, 100%, 75%);
+    }
+  }
+}
 
+.sh-block {
   --sh-class: var(--purple);
   --sh-comment: var(--code-comment);
   --sh-entity: var(--green);
@@ -24,6 +31,7 @@
   width: 100%;
   margin-block: 1em;
   overflow: hidden;
+  border: 0.0625rem solid var(--background-color-tertiary);
   border-radius: 0.375rem;
   background-color: var(--code-background);
   line-height: 1.6;

@@ -91,7 +91,7 @@
               gap: 0.75rem;
               transition: color 240ms var(--ease-fluid);
 
-              &:focus,
+              &:focus-visible,
               &:hover {
                 color: var(--color);
               }
@@ -125,7 +125,7 @@
               }
             }
 
-            &:focus,
+            &:focus-visible,
             &:hover {
               background-color: var(--background-color-secondary);
               color: var(--color);
@@ -146,6 +146,8 @@
     }
 
     @media (max-width: 60rem) {
+      padding: var(--page-padding-vertical) 0;
+
       .wrapper {
         flex-direction: column;
         padding: 1.125rem;
@@ -158,6 +160,7 @@
         .sidebar {
           position: relative;
           top: unset;
+          padding: 1.5rem 1.125rem;
 
           ul {
             &.contributors {

@@ -21,13 +21,15 @@
         gap: 1.125rem;
         border-radius: 0.75rem;
         outline-color: transparent;
+        outline-style: solid;
+        outline-width: 0;
         background-color: var(--background-color-secondary);
-        animation: items-fade-in var(--ease-elastic) both;
-        transition:
-          background-color 240ms var(--ease-fluid),
-          outline 240ms var(--ease-fluid);
         animation-timeline: view();
+        animation: items-fade-in var(--ease-elastic) both;
         animation-range: entry 0 cover 25%;
+        transition:
+          outline-color 240ms var(--ease-fluid),
+          outline-width 180ms var(--ease-fluid);
 
         .cover {
           position: relative;
@@ -75,13 +77,10 @@
           }
         }
 
-        &:hover,
-        &:focus,
-        &:focus-visible {
+        &:focus-visible,
+        &:hover {
           outline-color: var(--background-color-tertiary);
-          outline-style: solid;
           outline-width: 0.125rem;
-          background-color: var(--background-color-primary);
         }
       }
 

@@ -48,6 +48,7 @@ export const ProductDetails = ({
           <label htmlFor="quantity">Quantity:</label>
           <input
             type="number"
+            autoComplete="off"
             id="quantity"
             name="quantity"
             min="1"

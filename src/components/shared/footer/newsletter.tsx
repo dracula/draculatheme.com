@@ -39,12 +39,12 @@ export const Newsletter = () => {
         <div className="form">
           <input
             type="email"
+            autoComplete="email"
             name="email"
+            disabled={isSubscribed}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="vlad@transylvania.com"
             required
-            autoComplete="email"
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={isSubscribed}
           />
           <button
             type="submit"

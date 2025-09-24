@@ -13,6 +13,7 @@ import { NewsIcon } from "@/icons/news";
 import { ShopIcon } from "@/icons/shop";
 import { ZapIcon } from "@/icons/zap";
 
+import { ThemeToggle } from "../theme-toggle";
 import { CommandBar } from "./command-bar";
 
 const navItems = [
@@ -59,7 +60,7 @@ export const Header = () => {
       <div className="container">
         <div className="wrapper">
           <Link href="/" className="logo">
-            Dracula Theme
+            Dracula <span>Theme</span>
           </Link>
           <CommandBar />
           <button
@@ -117,6 +118,9 @@ export const Header = () => {
               >
                 <GithubIcon /> <span className="star-count">+24k</span>
               </Link>
+            </li>
+            <li>
+              <ThemeToggle action={() => setIsNavActive(false)} />
             </li>
           </ul>
         </nav>

@@ -1,3 +1,23 @@
+html {
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
+    .hero {
+      --castle-url: url("/images/hero/castle.svg");
+
+      &.contribute {
+        background-image: none;
+        background-color: var(--background-color-secondary);
+      }
+    }
+  }
+
+  &[data-theme="light"] {
+    .hero {
+      --castle-url: url("/images/hero/castle-light.svg");
+    }
+  }
+}
+
 .hero {
   display: flex;
   position: relative;
@@ -30,7 +50,7 @@
     bottom: -0.5rem;
     width: 100%;
     height: 100%;
-    background-image: url("/images/hero/castle.svg");
+    background-image: var(--castle-url, url("/images/hero/castle.svg"));
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -116,11 +136,6 @@
         }
       }
     }
-  }
-
-  &.contribute {
-    background-image: none;
-    background-color: var(--background-color-secondary);
   }
 
   &.shop {

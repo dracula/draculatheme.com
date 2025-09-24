@@ -12,7 +12,7 @@ import {
 import { FilterSidebar } from "./filter-sidebar";
 import { ItemList } from "./item-list";
 
-const ContentWrapper = ({ paths }: { paths: Path[] }) => {
+export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
   const [
     { searchQuery, platforms: selectedPlatform, categories: selectedCategory },
     setQueryStates
@@ -48,5 +48,3 @@ const ContentWrapper = ({ paths }: { paths: Path[] }) => {
     </>
   );
 };
-
-export default ContentWrapper;

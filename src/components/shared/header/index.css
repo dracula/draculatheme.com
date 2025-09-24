@@ -1,3 +1,30 @@
+html {
+  &[data-theme="light"] {
+    header {
+      .container {
+        nav {
+          ul {
+            a.pro {
+              box-shadow: inset 0 -0.0625rem 0
+                hsla(var(--main-hue), 0%, 0%, 0.1);
+
+              &::before {
+                background: linear-gradient(
+                  114deg,
+                  hsla(var(--main-hue), 0%, 0%, 0),
+                  hsla(var(--main-hue), 0%, 0%, 0.1) 42%,
+                  hsla(var(--main-hue), 0%, 0%, 0.1) 60%,
+                  hsla(var(--main-hue), 0%, 0%, 0)
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 header {
   z-index: 5;
   position: sticky;
@@ -25,8 +52,27 @@ header {
 
     .logo {
       color: var(--color-display);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.875rem;
+
+      span {
+        margin-left: 0.1875rem;
+        padding: 0.1875rem 0.375rem;
+        border-radius: 0.1875rem;
+        background-image: linear-gradient(
+          -45deg,
+          var(--cyan),
+          var(--green),
+          var(--orange),
+          var(--pink),
+          var(--purple),
+          var(--red),
+          var(--yellow)
+        );
+        background-size: 400% 400%;
+        color: var(--background-color-primary);
+        animation: gradient-shift 6000ms var(--ease-fluid) infinite;
+      }
     }
 
     .command-bar {
@@ -39,11 +85,13 @@ header {
       border: none;
       border-radius: 0.375rem;
       outline-color: transparent;
+      outline-style: solid;
+      outline-width: 0;
       background-color: var(--background-color-secondary);
       transition:
-        background-color 240ms var(--ease-fluid),
-        color 240ms var(--ease-fluid),
-        outline 240ms var(--ease-fluid);
+        outline-color 240ms var(--ease-fluid),
+        outline-width 180ms var(--ease-fluid),
+        color 240ms var(--ease-fluid);
 
       .search {
         display: flex;
@@ -87,11 +135,9 @@ header {
         }
       }
 
-      &:hover,
-      &:focus,
-      &:focus-visible {
+      &:focus-visible,
+      &:hover {
         outline-color: var(--background-color-tertiary);
-        outline-style: solid;
         outline-width: 0.125rem;
 
         .icon {
@@ -132,18 +178,23 @@ header {
           &.active {
             color: var(--color);
 
-            &.contribute,
-            &.pro {
+            .icon {
+              fill: currentColor;
+            }
+
+            &.blog {
               .icon {
-                fill: currentColor;
+                path {
+                  &:nth-of-type(2) {
+                    stroke: var(--background-color-secondary);
+                  }
+                }
               }
             }
           }
 
           &.pro {
-            box-shadow:
-              inset 0 0.0625rem 0 hsla(var(--main-hue), 0%, 100%, 0.1),
-              0 0.125rem 0.5rem hsla(var(--main-hue), 0%, 0%, 0.1);
+            box-shadow: inset 0 0.0625rem 0 hsla(var(--main-hue), 0%, 100%, 0.1);
 
             &::before {
               position: absolute;
@@ -206,8 +257,8 @@ header {
         background-color: var(--background-color-primary);
         opacity: 0;
         transition:
-          transform 240ms var(--ease-fluid),
-          opacity 420ms var(--ease-fluid);
+          transform 420ms var(--ease-fluid),
+          opacity 300ms var(--ease-fluid);
 
         ul {
           flex-direction: column;
@@ -217,7 +268,7 @@ header {
             width: 100%;
 
             a {
-              justify-content: left;
+              justify-content: start;
               width: 100%;
               border: 0.0313rem solid var(--background-color-tertiary);
             }
@@ -228,6 +279,18 @@ header {
           transform: translateY(0);
           opacity: 1;
         }
+      }
+    }
+  }
+}
+
+html {
+  &[data-theme="light"] {
+    .command-bar-dialog {
+      border: 0.0313rem solid var(--background-color-tertiary);
+
+      a {
+        background-color: var(--background-color-primary);
       }
     }
   }
@@ -259,18 +322,19 @@ header {
       border: none;
       border-radius: 0.5rem;
       outline-color: transparent;
+      outline-style: solid;
+      outline-width: 0;
       background-color: var(--background-color-primary);
       line-height: 1;
       transition:
-        background-color 240ms var(--ease-fluid),
+        outline-color 240ms var(--ease-fluid),
+        outline-width 180ms var(--ease-fluid),
         color 240ms var(--ease-fluid),
-        outline 240ms var(--ease-fluid);
+        background-color 240ms var(--ease-fluid);
 
-      &:hover,
-      &:focus,
-      &:focus-visible {
+      &:focus-visible,
+      &:hover {
         outline-color: var(--background-color-tertiary);
-        outline-style: solid;
         outline-width: 0.125rem;
 
         ~ .icon {
@@ -333,7 +397,7 @@ header {
           background-color 240ms var(--ease-fluid),
           color 240ms var(--ease-fluid);
 
-        &:focus,
+        &:focus-visible,
         &:hover {
           background-color: var(--background-color-secondary);
           color: var(--color-display);
@@ -373,6 +437,18 @@ header {
   &::backdrop {
     display: flex;
     animation: show 500ms var(--ease-fluid);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

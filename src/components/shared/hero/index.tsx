@@ -4,6 +4,7 @@ import "./index.css";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { useCallback, useEffect, useMemo } from "react";
 
 import { paths } from "@/lib/paths";
@@ -29,7 +30,6 @@ const colors = ["180", "115", "35", "330", "250", "10", "60"];
 
 const staticPages: PageConfig = {
   "": {
-    title: "Dracula",
     subtitle: "One theme. All platforms.",
     color: "250"
   },
@@ -45,7 +45,7 @@ const staticPages: PageConfig = {
     color: "10"
   },
   "/contribute": {
-    title: "Contribute to Dracula",
+    title: "Contribute",
     subtitle:
       "“We learn big things from small experiences” - Bram Stoker, Dracula",
     color: "35"
@@ -97,12 +97,38 @@ export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
+  const { resolvedTheme } = useTheme();
+
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
     return allPages[pathKey] || {};
   }, [pathKey]);
 
   const { icon, title, subtitle, cta, anchor, type = "static" } = pageData;
+
+  const getImageSrc = () => {
+    if (icon) {
+      return icon;
+    }
+
+    if (resolvedTheme === "light") {
+      return "/images/hero/default-light.svg";
+    }
+
+    return "/images/hero/default.svg";
+  };
+
+  const getTitle = () => {
+    if (title) {
+      return title;
+    }
+
+    if (resolvedTheme === "light") {
+      return "Alucard";
+    }
+
+    return "Dracula";
+  };
 
   const setColor = useCallback(() => {
     const color = getPageColor(pageData);
@@ -121,17 +147,17 @@ export const Hero = () => {
         {pathKey !== "/shop" && (
           <div className={`icon ${type}`}>
             <Image
-              src={icon || "/images/hero/default.svg"}
+              src={getImageSrc()}
               width={192}
               height={192}
-              quality={100}
+              unoptimized={true}
               priority={true}
               alt="Dracula Icon"
             />
           </div>
         )}
         <div className="header">
-          <h1>{title}</h1>
+          <h1>{getTitle()}</h1>
           <h2>{subtitle}</h2>
           {cta && anchor && (
             <a href={anchor} className="action primary cta">
