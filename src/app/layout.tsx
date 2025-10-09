@@ -5,6 +5,7 @@ import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 
+import { DraculaRadio } from "@/components/shared/dracula-radio";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
@@ -69,6 +70,7 @@ const RootLayout = async ({
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
         <Header />
         <main>{children}</main>
+        <DraculaRadio />
         <Footer />
       </ThemeProvider>
       <Script
