@@ -20,7 +20,7 @@
       color: var(--green);
 
       path {
-        animation: draw-tick 500ms var(--ease-fluid) forwards;
+        animation: draw-tick 504ms var(--ease-fluid) forwards;
       }
     }
   }

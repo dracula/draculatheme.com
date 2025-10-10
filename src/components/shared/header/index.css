@@ -211,7 +211,7 @@ header {
                 hsla(var(--main-hue), 0%, 100%, 0)
               );
               content: "";
-              animation: shine 6000ms var(--ease-fluid) infinite 500ms;
+              animation: shine 6000ms var(--ease-fluid) infinite 504ms;
               filter: blur(0.375rem);
               pointer-events: none;
             }
@@ -436,7 +436,7 @@ html {
   &[open],
   &::backdrop {
     display: flex;
-    animation: show 500ms var(--ease-fluid);
+    animation: show 504ms var(--ease-fluid);
   }
 }
 

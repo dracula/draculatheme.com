@@ -132,6 +132,7 @@ html {
 
         a {
           opacity: 0.66;
+          transition: opacity 240ms var(--ease-fluid);
 
           img {
             width: 100%;
@@ -523,6 +524,9 @@ html {
                 hsl(0, 100%, 67%)
               );
             animation: up-down var(--speed) alternate infinite;
+            transition:
+              transform 240ms var(--ease-fluid),
+              animation-play-state 240ms var(--ease-fluid);
             will-change: transform;
 
             &::before {
@@ -541,7 +545,7 @@ html {
             &.pro {
               --y: -0.75rem;
               --x: 1.5rem;
-              --speed: 4s;
+              --speed: 4002ms;
 
               width: 12rem;
               height: 12rem;
@@ -729,6 +733,9 @@ html {
           margin-top: 1.5rem;
           background-color: var(--color);
           color: var(--background-color-primary);
+          transition:
+            background-color 240ms var(--ease-fluid),
+            color 240ms var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);
@@ -1017,6 +1024,9 @@ html {
           color: var(--background-color-primary);
           font-weight: 700;
           line-height: 1.8;
+          transition:
+            background-color 240ms var(--ease-fluid),
+            color 240ms var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);

@@ -143,6 +143,10 @@
             border-color: var(--color);
             background-color: var(--color);
             color: var(--background-color-primary);
+            transition:
+              border-color 240ms var(--ease-fluid),
+              background-color 240ms var(--ease-fluid),
+              color 240ms var(--ease-fluid);
 
             &:hover {
               border-color: var(--color);
