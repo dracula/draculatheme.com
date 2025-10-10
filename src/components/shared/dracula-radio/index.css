@@ -13,33 +13,9 @@
   border-radius: 0.75rem;
   border-color: var(--background-color-tertiary);
   background: var(--background-color-secondary);
-  transition: width 162ms var(--ease-fluid);
-
-  &.playing {
-    border-color: var(--color);
-    transition: border-color 162ms var(--ease-fluid);
-
-    .metadata {
-      .primary-controls {
-        .visualizer-wrapper {
-          .visualizer {
-            span {
-              animation: bounce 2202ms ease infinite alternate;
-              opacity: 1;
-
-              &:nth-of-type(2) {
-                animation-delay: -2202ms;
-              }
-
-              &:nth-of-type(3) {
-                animation-delay: -3702ms;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  transition:
+    width 162ms var(--ease-fluid),
+    border-color 162ms var(--ease-fluid);
 
   &.alucard,
   &.dracula {
@@ -143,11 +119,17 @@
     padding: 0.5rem;
     border: 0.0625rem solid var(--background-color-tertiary);
     border-radius: 0.5rem;
+    outline: none;
     background: none;
     color: var(--color-display);
     transition:
       transform 138ms var(--ease-sharp),
+      border-color 138ms var(--ease-sharp),
       color 138ms var(--ease-sharp);
+
+    &:focus-visible {
+      border-color: var(--color);
+    }
 
     &:hover {
       transform: scale(1.06);
@@ -196,7 +178,9 @@
     border: 0.0625rem solid var(--background-color-tertiary);
     border-radius: 0.5rem;
     color: var(--color-display);
-    transition: color 138ms var(--ease-sharp);
+    transition:
+      border-color 138ms var(--ease-sharp),
+      color 138ms var(--ease-sharp);
 
     .slider {
       appearance: none;
@@ -235,8 +219,37 @@
       }
     }
 
+    &:focus-within,
     &:hover {
+      border-color: var(--color);
       color: var(--color);
+    }
+  }
+
+  &:hover {
+    border-color: var(--color);
+  }
+
+  &.playing {
+    .metadata {
+      .primary-controls {
+        .visualizer-wrapper {
+          .visualizer {
+            span {
+              animation: bounce 2202ms ease infinite alternate;
+              opacity: 1;
+
+              &:nth-of-type(2) {
+                animation-delay: -2202ms;
+              }
+
+              &:nth-of-type(3) {
+                animation-delay: -3702ms;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
