@@ -264,7 +264,7 @@ export const DraculaRadio = ({
       />
       <div
         id="radio"
-        className={`${track.character.id} ${visible ? "visible" : ""}${isPlaying ? " playing" : ""}`}
+        className={`${track.character.id}${visible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
         role="region"
         aria-label="Dracula Radio"
       >
