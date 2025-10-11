@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-  pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async redirects() {
     return [
       {
@@ -24,13 +24,18 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: "/ui",
-        destination: "https://ui.draculatheme.com",
+        source: "/journey",
+        destination: "/pro/journey",
         permanent: true
       },
       {
         source: "/shop/dracula-sticker-pack",
         destination: "https://draculatheme.com/shop/dracula-sticker-pack-n1",
+        permanent: true
+      },
+      {
+        source: "/ui",
+        destination: "https://ui.draculatheme.com",
         permanent: true
       }
     ];
