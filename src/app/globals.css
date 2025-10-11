@@ -455,9 +455,3 @@ kbd {
     visibility: hidden;
   }
 }
-
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-}

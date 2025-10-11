@@ -8,18 +8,16 @@
     article {
       max-width: 42rem;
       padding-bottom: 2em;
-      border-style: solid;
-      border-color: var(--background-color-tertiary);
+      border: 0.0625rem solid var(--background-color-tertiary);
       background-color: var(--background-color-secondary);
 
       &:first-child {
-        border-width: 0.0625rem 0.0625rem 0 0.0625rem;
         border-bottom: 0.0625rem solid var(--background-color-tertiary);
         border-radius: 1.125rem 1.125rem 0 0;
       }
 
       &:last-child {
-        border-width: 0 0.0625rem 0.0625rem 0.0625rem;
+        border-top: 0;
         border-radius: 0 0 1.125rem 1.125rem;
       }
 

@@ -4,8 +4,8 @@
   position: fixed;
   inset: 0;
   background-color: var(--background-color-overlay);
-  animation: show 504ms var(--ease-fluid);
   opacity: 0;
+  transition: opacity 162ms var(--ease-fluid);
 
   &.visible {
     visibility: visible;
@@ -180,6 +180,35 @@
           transform: scale(1.08);
         }
       }
+    }
+  }
+}
+
+@media (max-width: 70rem) {
+  #radio-overlay,
+  #radio-overlay.visible {
+    display: none;
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  #radio,
+  #radio.visible {
+    visibility: visible;
+    position: relative;
+    top: unset;
+    left: unset;
+    width: 100%;
+    transform: none;
+    border-top: none;
+    border-radius: 0 0 0.375rem 0.375rem;
+    opacity: 1;
+    pointer-events: auto;
+
+    .metadata {
+      justify-content: center;
+      text-align: center;
     }
   }
 }

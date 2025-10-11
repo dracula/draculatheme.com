@@ -22,6 +22,14 @@ html {
         }
       }
     }
+
+    .command-bar-dialog {
+      border: 0.0313rem solid var(--background-color-tertiary);
+
+      a {
+        background-color: var(--background-color-primary);
+      }
+    }
   }
 }
 
@@ -307,10 +315,18 @@ header {
           li {
             width: 100%;
 
-            a {
+            a,
+            button {
               justify-content: start;
               width: 100%;
               border: 0.0313rem solid var(--background-color-tertiary);
+
+              &.radio {
+                transform: none;
+                border-width: 0.0625rem;
+                border-radius: 0.375rem 0.375rem 0 0;
+                outline: none;
+              }
             }
           }
         }
@@ -319,19 +335,8 @@ header {
   }
 }
 
-html {
-  &[data-theme="light"] {
-    .command-bar-dialog {
-      border: 0.0313rem solid var(--background-color-tertiary);
-
-      a {
-        background-color: var(--background-color-primary);
-      }
-    }
-  }
-}
-
 .command-bar-dialog {
+  visibility: hidden;
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
@@ -339,19 +344,30 @@ html {
   padding: 1.5rem;
   overflow-y: scroll;
   gap: 1.5rem;
+  transform: translateY(0.75rem);
   border: 0.0313rem solid var(--background-color-tertiary);
   border-radius: 0.75rem;
   background-color: var(--background-color-secondary);
   color: inherit;
+  opacity: 0;
+  transition:
+    transform 162ms var(--ease-fluid),
+    opacity 162ms var(--ease-fluid);
 
   &::backdrop {
+    visibility: hidden;
     background-color: var(--background-color-overlay);
+    opacity: 0;
+    transition: opacity 162ms var(--ease-fluid);
   }
 
   &[open],
   &::backdrop {
     display: flex;
-    animation: show 504ms var(--ease-fluid);
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .search {
