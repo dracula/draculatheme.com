@@ -21,18 +21,6 @@
         position: relative;
         width: 100%;
 
-        .icon {
-          z-index: 2;
-          position: absolute;
-          top: 50%;
-          left: 1em;
-          transform: translateY(-50%);
-          transform-origin: center;
-          transition:
-            transform 240ms var(--ease-elastic),
-            color 240ms var(--ease-fluid);
-        }
-
         input[type="search"] {
           position: relative;
           width: 100%;
@@ -65,6 +53,18 @@
             transform: rotate(-6deg) translateY(-50%);
             color: var(--color-display);
           }
+        }
+
+        .icon {
+          z-index: 2;
+          position: absolute;
+          top: 50%;
+          left: 1em;
+          transform: translateY(-50%);
+          transform-origin: center;
+          transition:
+            transform 240ms var(--ease-elastic),
+            color 240ms var(--ease-fluid);
         }
       }
 
@@ -106,6 +106,18 @@
             outline-width 180ms var(--ease-fluid),
             color 240ms var(--ease-fluid);
 
+          &:focus-visible,
+          &:hover {
+            outline-color: var(--background-color-tertiary);
+            outline-width: 0.125rem;
+            color: var(--color);
+          }
+
+          &:has(input[type="radio"]:checked) {
+            padding-right: 0.875rem;
+            color: var(--color);
+          }
+
           input[type="radio"] {
             display: none;
 
@@ -127,18 +139,6 @@
               stroke-dasharray: 24;
               stroke-dashoffset: 24;
             }
-          }
-
-          &:focus-visible,
-          &:hover {
-            outline-color: var(--background-color-tertiary);
-            outline-width: 0.125rem;
-            color: var(--color);
-          }
-
-          &:has(input[type="radio"]:checked) {
-            padding-right: 0.875rem;
-            color: var(--color);
           }
         }
       }
@@ -179,6 +179,12 @@
             outline-color 240ms var(--ease-fluid),
             outline-width 180ms var(--ease-fluid);
 
+          &:focus-visible,
+          &:hover {
+            outline-color: var(--background-color-tertiary);
+            outline-width: 0.125rem;
+          }
+
           .icon {
             display: flex;
             align-items: center;
@@ -204,12 +210,6 @@
               color: var(--color-display);
               font-size: 0.9375rem;
             }
-          }
-
-          &:focus-visible,
-          &:hover {
-            outline-color: var(--background-color-tertiary);
-            outline-width: 0.125rem;
           }
         }
 

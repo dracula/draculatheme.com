@@ -10,12 +10,12 @@
     gap: 3.75rem;
     transition: opacity 240ms var(--ease-fluid);
 
-    .prose {
-      max-width: 42rem;
-    }
-
     @starting-style {
       opacity: 0;
+    }
+
+    .prose {
+      max-width: 42rem;
     }
 
     @media (max-width: 60rem) {

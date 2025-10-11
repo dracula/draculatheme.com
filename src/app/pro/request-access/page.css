@@ -22,6 +22,28 @@
       border-radius: 1.125rem;
       background-color: var(--background-color-secondary);
 
+      h1 {
+        width: 100%;
+        padding: 0 0.375rem;
+        border-top: 0.0625rem dashed hsl(0, 0%, 16%);
+        border-bottom: 0.0625rem dashed hsl(0, 0%, 16%);
+        text-align: center;
+      }
+
+      .tip {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 80%;
+        width: fit-content;
+        transform: translate(0, 0.75rem) rotate(-3deg);
+        color: var(--orange);
+        font-weight: 700;
+        font-size: var(--font-size-body);
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+      }
+
       .borders {
         display: flex;
         position: absolute;
@@ -63,28 +85,6 @@
         }
       }
 
-      h1 {
-        width: 100%;
-        padding: 0 0.375rem;
-        border-top: 0.0625rem dashed hsl(0, 0%, 16%);
-        border-bottom: 0.0625rem dashed hsl(0, 0%, 16%);
-        text-align: center;
-      }
-
-      .tip {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        left: 80%;
-        width: fit-content;
-        transform: translate(0, 0.75rem) rotate(-3deg);
-        color: var(--orange);
-        font-weight: 700;
-        font-size: var(--font-size-body);
-        letter-spacing: 0.125rem;
-        text-transform: uppercase;
-      }
-
       .form {
         display: flex;
         flex-direction: column;
@@ -124,7 +124,6 @@
             border-style: solid;
             border-radius: 0.375rem 0 0 0.375rem;
             border-color: var(--color);
-            outline: none;
             background-color: var(--background-color-secondary);
             color: var(--color-display);
             font-size: inherit;

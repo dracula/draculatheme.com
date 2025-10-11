@@ -8,10 +8,21 @@
     gap: 3.75rem;
     transition: opacity 240ms var(--ease-fluid);
 
+    @starting-style {
+      opacity: 0;
+    }
+
     .content {
       display: flex;
       flex-direction: column;
       max-width: 42rem;
+
+      h1 {
+        width: 100%;
+        margin-bottom: 0.75rem;
+        font-size: var(--font-size-display);
+        text-align: left;
+      }
 
       .back-link {
         display: flex;
@@ -56,6 +67,15 @@
           line-height: 1;
           text-decoration: none;
 
+          &:focus,
+          &:hover {
+            color: var(--color);
+
+            .avatar {
+              border-color: var(--color);
+            }
+          }
+
           .avatar {
             position: relative;
             width: 1.125rem;
@@ -71,28 +91,8 @@
               object-position: center;
             }
           }
-
-          &:focus,
-          &:hover {
-            color: var(--color);
-
-            .avatar {
-              border-color: var(--color);
-            }
-          }
         }
       }
-
-      h1 {
-        width: 100%;
-        margin-bottom: 0.75rem;
-        font-size: var(--font-size-display);
-        text-align: left;
-      }
-    }
-
-    @starting-style {
-      opacity: 0;
     }
   }
 }

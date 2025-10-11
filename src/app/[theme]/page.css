@@ -37,7 +37,6 @@
       }
 
       .sidebar {
-        display: block;
         display: flex;
         position: sticky;
         top: 8em;
@@ -83,6 +82,16 @@
           line-height: 1.8;
           list-style: none;
 
+          &:not(.contributors) {
+            margin-bottom: 0.75rem;
+          }
+
+          &.contributors {
+            max-height: 60vh;
+            overflow-y: auto;
+            gap: 0.25rem;
+          }
+
           a {
             &:not(.contributor) {
               display: flex;
@@ -109,6 +118,12 @@
               background-color 240ms var(--ease-sharp),
               color 240ms var(--ease-fluid);
 
+            &:focus-visible,
+            &:hover {
+              background-color: var(--background-color-secondary);
+              color: var(--color);
+            }
+
             div {
               position: relative;
               width: 1.5rem;
@@ -124,22 +139,6 @@
                 object-position: center;
               }
             }
-
-            &:focus-visible,
-            &:hover {
-              background-color: var(--background-color-secondary);
-              color: var(--color);
-            }
-          }
-
-          &.contributors {
-            max-height: 60vh;
-            overflow-y: auto;
-            gap: 0.25rem;
-          }
-
-          &:not(.contributors) {
-            margin-bottom: 0.75rem;
           }
         }
       }

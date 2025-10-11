@@ -29,6 +29,15 @@
         border-radius: 1.125rem;
         background-color: var(--background-color-secondary);
 
+        &:focus-within,
+        &:hover {
+          .thumb {
+            img {
+              transform: scale(1.06) rotate(-0.6deg);
+            }
+          }
+        }
+
         .thumb {
           display: flex;
           position: relative;
@@ -61,6 +70,14 @@
           width: 100%;
           padding: 0.75rem 1.125rem;
 
+          h2 {
+            color: var(--color-display);
+          }
+
+          .price {
+            font-family: var(--font-mono);
+          }
+
           .item-ribbon {
             position: absolute;
             top: 0;
@@ -74,23 +91,6 @@
             font-size: 0.625rem;
             line-height: 1;
             text-transform: uppercase;
-          }
-
-          h2 {
-            color: var(--color-display);
-          }
-
-          .price {
-            font-family: var(--font-mono);
-          }
-        }
-
-        &:focus-within,
-        &:hover {
-          .thumb {
-            img {
-              transform: scale(1.06) rotate(-0.6deg);
-            }
           }
         }
       }

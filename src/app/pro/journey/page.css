@@ -97,8 +97,9 @@
           transform 240ms var(--ease-elastic),
           background-color 240ms var(--ease-fluid);
 
-        h3 {
-          font-size: var(--font-size-body);
+        &:focus-within,
+        &:hover {
+          background-color: var(--background-color-tertiary);
         }
 
         &:nth-child(3n + 1) {
@@ -128,9 +129,8 @@
           }
         }
 
-        &:focus-within,
-        &:hover {
-          background-color: var(--background-color-tertiary);
+        h3 {
+          font-size: var(--font-size-body);
         }
       }
     }

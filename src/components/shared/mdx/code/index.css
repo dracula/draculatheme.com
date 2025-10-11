@@ -37,6 +37,12 @@ html {
   line-height: 1.6;
   font-family: var(--font-mono);
 
+  .copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
   pre {
     width: 100%;
     margin: 0;
@@ -127,11 +133,5 @@ html {
         }
       }
     }
-  }
-
-  .copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
   }
 }

@@ -9,6 +9,15 @@ nav {
     gap: 0.375rem;
     font-size: var(--font-size-caption);
 
+    @media (max-width: 60rem) {
+      display: none;
+      visibility: hidden;
+    }
+
+    h3 {
+      font-size: var(--font-size-body);
+    }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -18,22 +27,10 @@ nav {
       list-style: none;
     }
 
-    h3 {
-      font-size: var(--font-size-body);
-    }
-
     a {
       display: block;
       position: relative;
       padding: 0.375rem 0;
-
-      span {
-        display: block;
-        transition:
-          transform 240ms var(--ease-fluid),
-          color 240ms var(--ease-fluid),
-          font-weight 240ms var(--ease-fluid);
-      }
 
       &:before {
         position: absolute;
@@ -65,11 +62,14 @@ nav {
           opacity: 1;
         }
       }
-    }
 
-    @media (max-width: 60rem) {
-      display: none;
-      visibility: hidden;
+      span {
+        display: block;
+        transition:
+          transform 240ms var(--ease-fluid),
+          color 240ms var(--ease-fluid),
+          font-weight 240ms var(--ease-fluid);
+      }
     }
   }
 }
