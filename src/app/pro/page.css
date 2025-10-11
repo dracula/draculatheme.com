@@ -98,14 +98,14 @@ html {
         pointer-events: none;
       }
 
-      &::after {
-        right: 0;
-        content: "”";
-      }
-
       &::before {
         left: 0;
         content: "“";
+      }
+
+      &::after {
+        right: 0;
+        content: "”";
       }
     }
 
@@ -132,16 +132,17 @@ html {
 
         a {
           opacity: 0.66;
+          transition: opacity 240ms var(--ease-fluid);
+
+          &:hover {
+            opacity: 1;
+          }
 
           img {
             width: 100%;
             height: auto;
             object-fit: contain;
             object-position: center;
-          }
-
-          &:hover {
-            opacity: 1;
           }
         }
       }
@@ -230,6 +231,27 @@ html {
             gap: 0.75rem;
             font-weight: 500;
 
+            &:focus-within,
+            &:hover {
+              .color {
+                transform: scale(0.9);
+              }
+
+              span {
+                color: var(--color-display);
+              }
+            }
+
+            &:has(input:checked) {
+              .color {
+                &::before {
+                  width: 0.5rem;
+                  height: 0.5rem;
+                  background-color: hsla(0, 0%, 0%, 0.5);
+                }
+              }
+            }
+
             input {
               display: none;
             }
@@ -262,27 +284,6 @@ html {
 
             span {
               transition: color 240ms var(--ease-fluid);
-            }
-
-            &:has(input:checked) {
-              .color {
-                &::before {
-                  width: 0.5rem;
-                  height: 0.5rem;
-                  background-color: hsla(0, 0%, 0%, 0.5);
-                }
-              }
-            }
-
-            &:focus-within,
-            &:hover {
-              .color {
-                transform: scale(0.9);
-              }
-
-              span {
-                color: var(--color-display);
-              }
             }
           }
         }
@@ -523,7 +524,16 @@ html {
                 hsl(0, 100%, 67%)
               );
             animation: up-down var(--speed) alternate infinite;
+            transition:
+              transform 240ms var(--ease-fluid),
+              animation-play-state 240ms var(--ease-fluid);
             will-change: transform;
+
+            &:focus,
+            &:hover {
+              transform: scale(2);
+              animation-play-state: paused;
+            }
 
             &::before {
               z-index: 2;
@@ -541,7 +551,7 @@ html {
             &.pro {
               --y: -0.75rem;
               --x: 1.5rem;
-              --speed: 4s;
+              --speed: 4002ms;
 
               width: 12rem;
               height: 12rem;
@@ -563,12 +573,6 @@ html {
                 content: "PRO";
                 color: hsl(var(--hue), 12%, 6%);
               }
-            }
-
-            &:focus,
-            &:hover {
-              transform: scale(2);
-              animation-play-state: paused;
             }
           }
         }
@@ -639,6 +643,10 @@ html {
           animation: 1002ms ease 0ms 1 book-animation;
           transition: 1002ms ease;
 
+          &:hover {
+            transform: rotateY(0deg);
+          }
+
           img {
             position: absolute;
             width: var(--width);
@@ -697,10 +705,6 @@ html {
             background-color: hsl(219, 88%, 3%);
             box-shadow: -0.625rem 0 3.375rem 0.625rem hsl(0, 0%, 20%);
           }
-
-          &:hover {
-            transform: rotateY(0deg);
-          }
         }
       }
 
@@ -729,6 +733,9 @@ html {
           margin-top: 1.5rem;
           background-color: var(--color);
           color: var(--background-color-primary);
+          transition:
+            background-color 240ms var(--ease-fluid),
+            color 240ms var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);
@@ -777,6 +784,11 @@ html {
           transition:
             transform 240ms var(--ease-elastic),
             background-color 240ms var(--ease-fluid);
+
+          &:focus-within,
+          &:hover {
+            transform: translateY(-0.125rem);
+          }
 
           .content,
           .author {
@@ -842,11 +854,6 @@ html {
                 font-size: var(--font-size-caption);
               }
             }
-          }
-
-          &:focus-within,
-          &:hover {
-            transform: translateY(-0.125rem);
           }
         }
       }
@@ -962,6 +969,9 @@ html {
           color: var(--background-color-primary);
           font-weight: 700;
           line-height: 1.8;
+          transition:
+            background-color 240ms var(--ease-fluid),
+            color 240ms var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);
@@ -1135,14 +1145,14 @@ html {
           flex-direction: column;
           width: 100%;
 
+          &:not(.palette, .hand-picked-typography) {
+            padding: 1.875rem 1.5rem;
+          }
+
           .content {
             p {
               text-wrap: pretty;
             }
-          }
-
-          &:not(.palette, .hand-picked-typography) {
-            padding: 1.875rem 1.5rem;
           }
         }
 

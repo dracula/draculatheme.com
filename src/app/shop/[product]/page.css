@@ -69,15 +69,15 @@
             );
             transition: border-color 240ms var(--ease-fluid);
 
+            &.active {
+              border-color: var(--color);
+            }
+
             img {
               width: 100%;
               height: 100%;
               object-fit: contain;
               object-position: center;
-            }
-
-            &.active {
-              border-color: var(--color);
             }
           }
         }
@@ -175,6 +175,25 @@
           width: 100%;
           margin-top: 1.125rem;
 
+          &:focus,
+          &:hover {
+            .icon {
+              transform: scale(0.9);
+
+              .count {
+                opacity: 1;
+              }
+
+              svg {
+                path {
+                  &:last-child {
+                    transform: rotateX(0deg);
+                  }
+                }
+              }
+            }
+          }
+
           .icon {
             position: relative;
             width: 1.5rem;
@@ -216,25 +235,6 @@
           .logo-full {
             display: none;
           }
-
-          &:focus,
-          &:hover {
-            .icon {
-              transform: scale(0.9);
-
-              svg {
-                path {
-                  &:last-child {
-                    transform: rotateX(0deg);
-                  }
-                }
-              }
-
-              .count {
-                opacity: 1;
-              }
-            }
-          }
         }
       }
     }
@@ -272,6 +272,15 @@
           border-radius: 1.125rem;
           background-color: var(--background-color-secondary);
 
+          &:focus-within,
+          &:hover {
+            .thumb {
+              img {
+                transform: scale(1.06) rotate(-0.6deg);
+              }
+            }
+          }
+
           .thumb {
             display: flex;
             position: relative;
@@ -306,6 +315,14 @@
             width: 100%;
             padding: 0.75rem 1.125rem;
 
+            h3 {
+              color: var(--color-display);
+            }
+
+            .price {
+              font-family: var(--font-mono);
+            }
+
             .item-ribbon {
               position: absolute;
               top: 0;
@@ -319,23 +336,6 @@
               font-size: 0.625rem;
               line-height: 1;
               text-transform: uppercase;
-            }
-
-            h3 {
-              color: var(--color-display);
-            }
-
-            .price {
-              font-family: var(--font-mono);
-            }
-          }
-
-          &:focus-within,
-          &:hover {
-            .thumb {
-              img {
-                transform: scale(1.06) rotate(-0.6deg);
-              }
             }
           }
         }

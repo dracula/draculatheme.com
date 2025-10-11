@@ -21,11 +21,11 @@ html {
       padding: 5.25rem 3.75rem 5.625rem 48%;
       border: 0.25rem dashed var(--background-color-primary);
       border-radius: 1.125rem;
-      background: var(--background-color-secondary);
       background-image: url("/images/contribute/our-project.svg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      background-color: var(--background-color-secondary);
       line-height: 1.8;
 
       h2 {
@@ -73,7 +73,11 @@ html {
           gap: 1.125rem;
           border: 0.25rem dashed var(--background-color-primary);
           border-radius: 1.125rem;
-          background: var(--background-color-secondary);
+          background-color: var(--background-color-secondary);
+
+          &.step {
+            min-height: 18rem;
+          }
 
           .index {
             z-index: 1;
@@ -116,10 +120,6 @@ html {
             position: relative;
             transition: stroke 840ms var(--ease-fluid);
           }
-
-          &.step {
-            min-height: 18rem;
-          }
         }
       }
     }
@@ -153,6 +153,10 @@ html {
             position: relative;
             border-radius: 0.375rem;
             background-color: transparent;
+            transition:
+              transform 240ms var(--ease-fluid),
+              background-color 240ms var(--ease-fluid),
+              color 240ms var(--ease-fluid);
 
             &:focus,
             &:hover,
@@ -193,12 +197,20 @@ html {
           color: inherit;
           text-align: left;
 
+          th {
+            color: var(--color-display);
+          }
+
           tr {
             th,
             td {
               min-width: 13rem;
               padding: 0.75rem 1.125rem;
               border: none;
+
+              &:first-child {
+                min-width: 9rem;
+              }
 
               .wrapper {
                 display: inline-flex;
@@ -207,21 +219,18 @@ html {
                 font-size: var(--font-size-caption);
                 line-height: 1;
               }
-
-              &:first-child {
-                min-width: 9rem;
-              }
             }
-          }
-
-          th {
-            color: var(--color-display);
           }
 
           tbody {
             tr {
               background-color: var(--background-color-primary);
               transition: background-color 240ms var(--ease-fluid);
+
+              &:focus,
+              &:hover {
+                background-color: var(--background-color-secondary);
+              }
 
               &:first-child {
                 td {
@@ -245,11 +254,6 @@ html {
                     border-bottom-right-radius: 0.375rem;
                   }
                 }
-              }
-
-              &:focus,
-              &:hover {
-                background-color: var(--background-color-secondary);
               }
             }
           }
@@ -317,6 +321,17 @@ html {
           border-radius: 100%;
           transition: background-color 240ms var(--ease-sharp);
 
+          &:focus,
+          &:hover {
+            background-color: var(--background-color-tertiary);
+
+            .avatar {
+              img {
+                filter: grayscale(100%);
+              }
+            }
+          }
+
           .avatar {
             position: relative;
             width: 1.875rem;
@@ -332,17 +347,6 @@ html {
               object-fit: cover;
               object-position: center;
               transition: filter 240ms var(--ease-fluid);
-            }
-          }
-
-          &:focus,
-          &:hover {
-            background-color: var(--background-color-tertiary);
-
-            .avatar {
-              img {
-                filter: grayscale(100%);
-              }
             }
           }
         }

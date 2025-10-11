@@ -1,4 +1,10 @@
 html {
+  &[data-theme="light"] {
+    .hero {
+      --castle-url: url("/images/hero/castle-light.svg");
+    }
+  }
+
   &:not([data-theme="light"]):not([data-theme="dark"]),
   &[data-theme="dark"] {
     .hero {
@@ -8,12 +14,6 @@ html {
         background-image: none;
         background-color: var(--background-color-secondary);
       }
-    }
-  }
-
-  &[data-theme="light"] {
-    .hero {
-      --castle-url: url("/images/hero/castle-light.svg");
     }
   }
 }

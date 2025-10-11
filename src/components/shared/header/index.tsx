@@ -10,9 +10,12 @@ import { BookIcon } from "@/icons/book";
 import { GithubIcon } from "@/icons/github";
 import { HeartIcon } from "@/icons/heart";
 import { NewsIcon } from "@/icons/news";
+import { RadioIcon } from "@/icons/radio";
 import { ShopIcon } from "@/icons/shop";
+import { VisualizerIcon } from "@/icons/visualizer";
 import { ZapIcon } from "@/icons/zap";
 
+import { DraculaRadio } from "../dracula-radio";
 import { ThemeToggle } from "../theme-toggle";
 import { CommandBar } from "./command-bar";
 
@@ -34,9 +37,15 @@ export const Header = () => {
   const pathKey = pathname === "/" ? "" : pathname;
 
   const [isNavActive, setIsNavActive] = useState(false);
+  const [isRadioVisible, setIsRadioVisible] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
+  };
+
+  const handleToggleRadio = () => {
+    setIsRadioVisible(!isRadioVisible);
   };
 
   const buildClassName = (href: string, className?: string) => {
@@ -56,75 +65,106 @@ export const Header = () => {
   };
 
   return (
-    <header>
-      <div className="container">
-        <div className="wrapper">
-          <Link href="/" className="logo">
-            Dracula <span>Theme</span>
-          </Link>
-          <CommandBar />
-          <button
-            type="button"
-            onClick={handleToggleNav}
-            className="action primary mb-trigger"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="13"
-              height="13"
-              color="currentColor"
-              fill="none"
+    <>
+      <header>
+        <div className="container">
+          <div className="wrapper">
+            <Link href="/" className="logo">
+              Dracula <span>Theme</span>
+            </Link>
+            <CommandBar />
+            <button
+              type="button"
+              onClick={handleToggleNav}
+              className="action primary mb-trigger"
             >
-              <title className="sr-only">Menu Icon</title>
-              <path
-                d="M4 9L20 9"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M4 15L14 15"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="sr-only">Open Menu</span>
-          </button>
-        </div>
-        <nav className={isNavActive ? "active" : ""}>
-          <ul>
-            {navItems.map(({ href, label, icon, className }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  onClick={() => {
-                    setIsNavActive(false);
-                  }}
-                  className={buildClassName(href, className)}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="13"
+                height="13"
+                color="currentColor"
+                fill="none"
+              >
+                <title className="sr-only">Menu Icon</title>
+                <path
+                  d="M4 9L20 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M4 15L14 15"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="sr-only">Open Menu</span>
+            </button>
+          </div>
+          <nav className={isNavActive ? "active" : ""}>
+            <ul>
+              {navItems.slice(0, 3).map(({ href, label, icon, className }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    onClick={() => {
+                      setIsNavActive(false);
+                    }}
+                    className={buildClassName(href, className)}
+                  >
+                    {icon}
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={handleToggleRadio}
+                  className="action radio"
                 >
-                  {icon}
-                  {label}
+                  {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
+                  <span>Radio</span>
+                </button>
+                <DraculaRadio
+                  onPlayingChange={setIsPlaying}
+                  onVisibilityChange={setIsRadioVisible}
+                  visible={isRadioVisible}
+                />
+              </li>
+              {navItems.slice(3).map(({ href, label, icon, className }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    onClick={() => {
+                      setIsNavActive(false);
+                    }}
+                    className={buildClassName(href, className)}
+                  >
+                    {icon}
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="https://github.com/dracula/dracula-theme"
+                  className="action stars"
+                >
+                  <GithubIcon /> <span className="star-count">+24k</span>
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link
-                href="https://github.com/dracula/dracula-theme"
-                className="action stars"
-              >
-                <GithubIcon /> <span className="star-count">+24k</span>
-              </Link>
-            </li>
-            <li>
-              <ThemeToggle action={() => setIsNavActive(false)} />
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+              <li>
+                <ThemeToggle action={() => setIsNavActive(false)} />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </>
   );
 };

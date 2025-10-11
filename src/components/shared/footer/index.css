@@ -10,6 +10,10 @@ footer {
     font-size: var(--font-size-body);
   }
 
+  hr {
+    max-width: var(--page-max-width);
+  }
+
   .newsletter {
     display: flex;
     justify-content: space-between;
@@ -86,10 +90,6 @@ footer {
     }
   }
 
-  hr {
-    max-width: var(--page-max-width);
-  }
-
   .container {
     display: flex;
     padding: 2em var(--page-padding-horizontal) 0;
@@ -98,6 +98,33 @@ footer {
     & > div {
       width: fit-content;
       min-width: 14%;
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        gap: 1em;
+        line-height: 1.8;
+
+        a {
+          color: var(--color-heading);
+          font-weight: 600;
+          transition: color 240ms var(--ease-fluid);
+
+          &:focus,
+          &:hover {
+            color: var(--color-display);
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 1.5rem;
+      }
+
+      &:not(:first-child) {
+        padding-left: 1.5rem;
+      }
 
       .logo {
         color: var(--color-display);
@@ -130,33 +157,6 @@ footer {
             }
           }
         }
-      }
-
-      &:first-child {
-        display: flex;
-        flex-direction: column;
-        margin-right: auto;
-        gap: 1em;
-        line-height: 1.8;
-
-        a {
-          color: var(--color-heading);
-          font-weight: 600;
-          transition: color 240ms var(--ease-fluid);
-
-          &:focus,
-          &:hover {
-            color: var(--color-display);
-          }
-        }
-      }
-
-      &:last-child {
-        margin-right: 1.5rem;
-      }
-
-      &:not(:first-child) {
-        padding-left: 1.5rem;
       }
     }
   }
