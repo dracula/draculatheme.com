@@ -3,15 +3,18 @@ import { countries } from "countries-list";
 export type PurchasingPowerParityData = {
   country?: string;
   discount?: number;
+  couponCode?: string;
 };
 
 export type Promotion = {
   name: string;
+  displayName: string;
   originalPrice: number;
   finalPrice: number;
   purchaseUrl: string;
   discountPercentage: number;
-  code?: string;
+  couponCode?: string;
+  country?: string;
 };
 
 export const pricing = {
@@ -22,12 +25,6 @@ export const pricing = {
 
 const discountedPrice = (price: number, percent: number) =>
   Number((price * (1 - percent / 100)).toFixed(2));
-
-export const buildPppCode = (
-  country: string,
-  discount: number,
-  now = new Date()
-) => `PPP${String(now.getFullYear()).slice(-2)}${country}${discount}`;
 
 const countryNameFromCode = (code: string) => {
   const key = code.toUpperCase() as keyof typeof countries;
@@ -45,6 +42,7 @@ const standardPromotion = (): Promotion => {
 
   return {
     name: `${month} Promo`,
+    displayName: `${discountPercentage}% off with ${month} Promo!`,
     originalPrice: pricing.listPrice,
     finalPrice: pricing.promoPrice,
     purchaseUrl: `${pricing.gumroadBaseUrl}&wanted=true`,
@@ -55,41 +53,33 @@ const standardPromotion = (): Promotion => {
 const pppPromotion = (ppp: PurchasingPowerParityData): Promotion | null => {
   const country = ppp?.country;
   const discount = typeof ppp?.discount === "number" ? ppp.discount : undefined;
+  const couponCode = ppp?.couponCode;
 
-  if (!country || !discount || discount <= 0) {
+  if (!country || !discount || discount <= 0 || !couponCode) {
     return null;
   }
 
   const price = discountedPrice(pricing.promoPrice, discount);
-  const code = buildPppCode(country, discount);
+  const countryDisplayName = countryNameFromCode(country);
 
   return {
-    name: `${countryNameFromCode(country)} Promo`,
+    name: `${countryDisplayName} Promo`,
+    displayName: `${discount}% off with Regional Pricing!`,
     originalPrice: pricing.promoPrice,
     finalPrice: price,
-    purchaseUrl: `${pricing.gumroadBaseUrl}&code=${code}`,
+    purchaseUrl: `${pricing.gumroadBaseUrl}&code=${couponCode}`,
     discountPercentage: discount,
-    code
+    couponCode,
+    country
   };
 };
-
-const bestPromotion = (promos: Promotion[]) =>
-  promos.reduce((a, b) => (b.finalPrice < a.finalPrice ? b : a));
 
 export const resolveCheckout = (ppp: PurchasingPowerParityData) => {
   const base = standardPromotion();
   const pppPromo = pppPromotion(ppp);
-  const options = pppPromo ? [base, pppPromo] : [base];
-  const activePromotion = bestPromotion(options);
 
-  const pppBanner =
-    pppPromo && pppPromo.discountPercentage > 0 && pppPromo.code
-      ? {
-          country: ppp?.country as string,
-          discount: pppPromo.discountPercentage,
-          code: pppPromo.code
-        }
-      : null;
-
-  return { activePromotion, pppBanner };
+  return {
+    standardPromotion: base,
+    pppPromotion: pppPromo
+  };
 };

@@ -21,15 +21,13 @@ const getStaticRoutes = () => {
     "",
     "/about",
     "/blog",
-    "/newsletter",
     "/contribute",
     "/spec",
     "/shop",
     "/pro",
     "/pro/journey",
     "/pro/changelog",
-    "/pro/request-access",
-    "/support"
+    "/pro/request-access"
   ];
 
   return routes.map((route) => createUrlEntry(`${BASE_URL}${route}`));
