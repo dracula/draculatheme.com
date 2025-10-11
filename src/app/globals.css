@@ -104,8 +104,7 @@ html {
 
   &::selection {
     background-color: var(--purple);
-    color: var(--color-display);
-    text-shadow: 0.0625rem 0.0625rem 0.125rem hsla(var(--hue), 0%, 0%, 0.6);
+    color: hsl(var(--hue), 12%, 100%);
   }
 
   @media (prefers-reduced-motion: no-preference) {

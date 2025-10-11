@@ -12,20 +12,6 @@ import { PreviousIcon } from "@/icons/previous";
 import { VolumeIcon } from "@/icons/volume";
 import { playlist, Track } from "@/lib/playlist";
 
-interface PlayFunction {
-  (): void;
-}
-
-interface StopFunction {
-  (): void;
-}
-
-interface Sound {
-  unload: () => void;
-  fade?: (from: number, to: number, duration: number) => void;
-  volume?: (val?: number) => number | void;
-}
-
 interface DraculaRadioProps {
   onPlayingChange?: (isPlaying: boolean) => void;
   onVisibilityChange?: (visible: boolean) => void;
@@ -34,6 +20,7 @@ interface DraculaRadioProps {
 
 const fadeInMs = 240;
 const fadeOutMs = 120;
+const volumeFadeMs = 180;
 
 const getNextIndex = (index: number) => (index + 1) % playlist.length;
 const getPrevIndex = (index: number) =>
@@ -44,14 +31,38 @@ export const DraculaRadio = ({
   onVisibilityChange,
   visible
 }: DraculaRadioProps) => {
-  const [currentTrack, setCurrentTrack] = useState<number>(0);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [volume, setVolume] = useState<number>(0.5);
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.5);
 
-  const isFadingRef = useRef<boolean>(false);
-  const shouldAutoplayRef = useRef<boolean>(false);
+  const isFadingRef = useRef(false);
+  const shouldAutoplayRef = useRef(false);
+  const timeoutsRef = useRef<Record<string, NodeJS.Timeout>>({});
 
   const track: Track = playlist[currentTrack];
+
+  const clearAllTimeouts = useCallback(() => {
+    Object.values(timeoutsRef.current).forEach(clearTimeout);
+    timeoutsRef.current = {};
+  }, []);
+
+  const setNamedTimeout = useCallback(
+    (name: string, callback: () => void, delay: number) => {
+      if (timeoutsRef.current[name]) {
+        clearTimeout(timeoutsRef.current[name]);
+      }
+      timeoutsRef.current[name] = setTimeout(callback, delay);
+    },
+    []
+  );
+
+  const getCurrentVolume = useCallback(
+    (soundInstance: { volume: unknown }) =>
+      typeof soundInstance.volume === "function"
+        ? ((soundInstance.volume() as number) ?? volume)
+        : volume,
+    [volume]
+  );
 
   const [play, { stop, sound }] = useSound(track.songUrl, {
     volume: 0,
@@ -60,46 +71,71 @@ export const DraculaRadio = ({
       shouldAutoplayRef.current = true;
       setCurrentTrack((prev) => getNextIndex(prev));
     }
-  }) as unknown as [PlayFunction, { stop: StopFunction; sound: Sound | null }];
+  });
 
   const fadeIn = useCallback(() => {
-    if (sound?.fade && sound.volume) {
-      isFadingRef.current = true;
-      sound.volume(0);
-
-      setTimeout(() => {
-        sound.fade?.(0, volume, fadeInMs);
-
-        setTimeout(() => {
-          isFadingRef.current = false;
-        }, fadeInMs);
-      }, 10);
+    if (!sound?.fade || !sound.volume) {
+      return;
     }
-  }, [sound, volume]);
+
+    isFadingRef.current = true;
+    sound.volume(0);
+
+    setNamedTimeout(
+      "fadeIn",
+      () => {
+        sound.fade?.(0, volume, fadeInMs);
+        setNamedTimeout(
+          "endFade",
+          () => (isFadingRef.current = false),
+          fadeInMs
+        );
+      },
+      10
+    );
+  }, [sound, volume, setNamedTimeout]);
 
   const fadeOut = useCallback(
     (callback: () => void) => {
       if (sound?.fade && !isFadingRef.current) {
-        const from =
-          typeof sound.volume === "function"
-            ? ((sound.volume() as number) ?? volume)
-            : volume;
         isFadingRef.current = true;
-        sound.fade(from, 0, fadeOutMs);
-
-        setTimeout(() => {
-          isFadingRef.current = false;
-          callback();
-        }, fadeOutMs);
+        sound.fade(getCurrentVolume(sound), 0, fadeOutMs);
+        setNamedTimeout(
+          "fadeOut",
+          () => {
+            isFadingRef.current = false;
+            callback();
+          },
+          fadeOutMs
+        );
       } else {
         callback();
       }
     },
-    [sound, volume]
+    [sound, getCurrentVolume, setNamedTimeout]
+  );
+
+  const changeTrack = useCallback(
+    (direction: "next" | "prev") => {
+      onVisibilityChange?.(false);
+      const updateFn = direction === "next" ? getNextIndex : getPrevIndex;
+
+      if (isPlaying) {
+        shouldAutoplayRef.current = true;
+        fadeOut(() => {
+          stop();
+          setCurrentTrack((prev) => updateFn(prev));
+        });
+      } else {
+        setCurrentTrack((prev) => updateFn(prev));
+      }
+    },
+    [onVisibilityChange, isPlaying, fadeOut, stop]
   );
 
   const togglePlay = useCallback(() => {
     onVisibilityChange?.(false);
+
     if (isPlaying) {
       shouldAutoplayRef.current = false;
       fadeOut(() => {
@@ -109,37 +145,17 @@ export const DraculaRadio = ({
     } else {
       play();
       setIsPlaying(true);
-      setTimeout(() => {
-        fadeIn();
-      }, 50);
+      setNamedTimeout("togglePlay", fadeIn, 50);
     }
-  }, [isPlaying, fadeOut, stop, play, fadeIn, onVisibilityChange]);
-
-  const handleNext = useCallback(() => {
-    onVisibilityChange?.(false);
-    if (isPlaying) {
-      shouldAutoplayRef.current = true;
-      fadeOut(() => {
-        stop();
-        setCurrentTrack((prev) => getNextIndex(prev));
-      });
-    } else {
-      setCurrentTrack((prev) => getNextIndex(prev));
-    }
-  }, [onVisibilityChange, isPlaying, fadeOut, stop]);
-
-  const handlePrevious = useCallback(() => {
-    onVisibilityChange?.(false);
-    if (isPlaying) {
-      shouldAutoplayRef.current = true;
-      fadeOut(() => {
-        stop();
-        setCurrentTrack((prev) => getPrevIndex(prev));
-      });
-    } else {
-      setCurrentTrack((prev) => getPrevIndex(prev));
-    }
-  }, [onVisibilityChange, isPlaying, fadeOut, stop]);
+  }, [
+    isPlaying,
+    fadeOut,
+    stop,
+    play,
+    fadeIn,
+    onVisibilityChange,
+    setNamedTimeout
+  ]);
 
   const handleVolumeChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -148,22 +164,14 @@ export const DraculaRadio = ({
 
       if (sound && !isFadingRef.current) {
         if (sound.fade) {
-          const from =
-            typeof sound.volume === "function"
-              ? ((sound.volume() as number) ?? newVolume)
-              : newVolume;
-          sound.fade(from, newVolume, 180);
+          sound.fade(getCurrentVolume(sound), newVolume, volumeFadeMs);
         } else {
           sound.volume?.(newVolume);
         }
       }
     },
-    [sound]
+    [sound, getCurrentVolume]
   );
-
-  const handleVolumeEnd = useCallback(() => {
-    onVisibilityChange?.(false);
-  }, [onVisibilityChange]);
 
   useEffect(() => {
     onPlayingChange?.(isPlaying);
@@ -172,101 +180,91 @@ export const DraculaRadio = ({
   useEffect(() => {
     return () => {
       sound?.unload();
+      clearAllTimeouts();
     };
-  }, [sound]);
+  }, [sound, clearAllTimeouts]);
 
   useEffect(() => {
     if (shouldAutoplayRef.current && sound) {
       play();
       setIsPlaying(true);
-      setTimeout(() => {
-        fadeIn();
-      }, 50);
+      setNamedTimeout("autoplay", fadeIn, 50);
       shouldAutoplayRef.current = false;
     }
-  }, [sound, play, fadeIn]);
+  }, [sound, play, fadeIn, setNamedTimeout]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (!visible) {
+      if (
+        !visible ||
+        e.target instanceof HTMLInputElement ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.altKey ||
+        e.shiftKey
+      ) {
         return;
       }
 
-      if (e.target instanceof HTMLInputElement) {
-        return;
-      }
-
-      if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) {
-        return;
-      }
-
-      switch (e.key.toLowerCase()) {
-        case " ":
-        case "k":
-          e.preventDefault();
-          togglePlay();
-          break;
-        case "arrowright":
-        case "n":
-          e.preventDefault();
-          handleNext();
-          break;
-        case "arrowleft":
-        case "p":
-          e.preventDefault();
-          handlePrevious();
-          break;
-        case "arrowup":
-          e.preventDefault();
+      const key = e.key.toLowerCase();
+      const actions: Record<string, () => void> = {
+        " ": togglePlay,
+        k: togglePlay,
+        arrowright: () => changeTrack("next"),
+        n: () => changeTrack("next"),
+        arrowleft: () => changeTrack("prev"),
+        p: () => changeTrack("prev"),
+        arrowup: () => {
           setVolume((v) => Math.min(1, v + 0.1));
           onVisibilityChange?.(false);
-          break;
-        case "arrowdown":
-          e.preventDefault();
+        },
+        arrowdown: () => {
           setVolume((v) => Math.max(0, v - 0.1));
           onVisibilityChange?.(false);
-          break;
+        }
+      };
+
+      if (actions[key]) {
+        e.preventDefault();
+        actions[key]();
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [visible, togglePlay, handleNext, handlePrevious, onVisibilityChange]);
+  }, [visible, togglePlay, changeTrack, onVisibilityChange]);
 
   useEffect(() => {
-    if (sound?.volume && !isFadingRef.current && isPlaying) {
-      const timeoutId = setTimeout(() => {
-        if (!sound?.volume) {
-          return;
-        }
-
-        if (sound.fade) {
-          const currentVol =
-            typeof sound.volume === "function"
-              ? ((sound.volume() as number) ?? volume)
-              : volume;
-          sound.fade(currentVol, volume, 180);
-        } else if (typeof sound.volume === "function") {
-          sound.volume(volume);
-        }
-      }, 100);
-      return () => clearTimeout(timeoutId);
+    if (!sound?.volume || isFadingRef.current || !isPlaying) {
+      return;
     }
-  }, [volume, sound, isPlaying]);
 
-  const characterClassName = track.character.id;
-  const visibilityClass = visible ? "visible" : "";
+    const timeoutId = setTimeout(() => {
+      if (sound.fade) {
+        sound.fade(getCurrentVolume(sound), volume, volumeFadeMs);
+      } else if (typeof sound.volume === "function") {
+        sound.volume(volume);
+      }
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [volume, sound, isPlaying, getCurrentVolume]);
+
+  const hideOverlay = useCallback(
+    () => onVisibilityChange?.(false),
+    [onVisibilityChange]
+  );
 
   return (
     <>
       <div
         id="radio-overlay"
-        className={visibilityClass}
-        onClick={() => onVisibilityChange?.(false)}
+        className={visible ? "visible" : ""}
+        onClick={hideOverlay}
       />
       <div
         id="radio"
-        className={`${characterClassName} ${visibilityClass}${isPlaying ? " playing" : ""}`}
+        className={`${track.character.id} ${visible ? "visible" : ""}${isPlaying ? " playing" : ""}`}
         role="region"
         aria-label="Dracula Radio"
       >
@@ -278,7 +276,7 @@ export const DraculaRadio = ({
           <div className="navigation">
             <button
               className="button"
-              onClick={handlePrevious}
+              onClick={() => changeTrack("prev")}
               aria-label="Previous track"
             >
               <PreviousIcon />
@@ -292,7 +290,7 @@ export const DraculaRadio = ({
             </button>
             <button
               className="button"
-              onClick={handleNext}
+              onClick={() => changeTrack("next")}
               aria-label="Next track"
             >
               <NextIcon />
@@ -307,8 +305,8 @@ export const DraculaRadio = ({
               step="0.01"
               value={volume}
               onChange={handleVolumeChange}
-              onMouseUp={handleVolumeEnd}
-              onTouchEnd={handleVolumeEnd}
+              onMouseUp={hideOverlay}
+              onTouchEnd={hideOverlay}
               className="slider"
               style={{
                 background: `linear-gradient(90deg, var(--color) 0%, var(--color) ${volume * 100}%, hsla(var(--hue), 12%, 72%, 0.3) ${volume * 100}%)`

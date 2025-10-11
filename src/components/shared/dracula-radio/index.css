@@ -94,35 +94,6 @@
       &:active {
         transform: scale(0.95);
       }
-
-      &.menu-toggle {
-        &:hover {
-          svg {
-            animation: rotate-center 3798ms var(--ease-fluid) infinite both;
-          }
-        }
-
-        &.active {
-          color: var(--color);
-
-          svg {
-            path {
-              transition:
-                fill 138ms var(--ease-sharp),
-                stroke 138ms var(--ease-sharp);
-
-              &:first-of-type {
-                fill: var(--color);
-              }
-
-              &:last-of-type {
-                fill: var(--background-color-secondary);
-                stroke: var(--background-color-secondary);
-              }
-            }
-          }
-        }
-      }
     }
 
     .volume-control {

@@ -34,7 +34,8 @@
         display: block;
         position: absolute;
         top: 1.5rem;
-        left: 80%;
+        right: clamp(1rem, 5vw, 2.5rem);
+        left: auto;
         width: fit-content;
         transform: translate(0, 0.75rem) rotate(-3deg);
         color: var(--orange);
