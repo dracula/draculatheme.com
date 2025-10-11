@@ -16,12 +16,15 @@
         border-radius: 1.125rem 1.125rem 0 0;
       }
 
+      &:not(:first-child) {
+        border-top: 0;
+      }
+
       &:last-child {
         border-radius: 0 0 1.125rem 1.125rem;
       }
 
       &:last-child:not(:first-child) {
-        border-top: 0;
       }
 
       time {
