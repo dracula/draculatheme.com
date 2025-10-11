@@ -1179,6 +1179,8 @@ html {
       }
 
       #pricing {
+        max-width: 100%;
+
         .wrapper {
           width: 100%;
         }
