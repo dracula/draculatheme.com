@@ -138,6 +138,8 @@ body {
   line-height: 1.5;
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
+  ascent-override: 102%;
+  descent-override: 35%;
 
   &.block-overflow {
     overflow: hidden;
@@ -290,6 +292,7 @@ kbd {
 }
 
 .icon {
+  height: 1lh;
   pointer-events: none;
   user-select: none;
 }
