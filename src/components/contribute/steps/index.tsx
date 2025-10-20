@@ -101,7 +101,8 @@ export const Steps = () => {
       <h3>How do I submit a new theme?</h3>
       <div className="row">
         {items.map((step, index) => (
-          <div
+          <button
+            type="button"
             key={step.name}
             aria-label={`Step 0${index + 1}`}
             onMouseOver={() => handleMouseOver(step.name)}
@@ -118,7 +119,7 @@ export const Steps = () => {
             <div key={`${step.name}-card`} className="box">
               <p className="description">{step.detailedDescription}</p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

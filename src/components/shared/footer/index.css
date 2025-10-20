@@ -61,8 +61,6 @@ footer {
         outline-width: 0;
         background-color: var(--background-color-secondary);
         transition:
-          outline-color 240ms var(--ease-fluid),
-          outline-width 180ms var(--ease-fluid),
           color 240ms var(--ease-fluid),
           background-color 240ms var(--ease-fluid);
 
@@ -70,10 +68,22 @@ footer {
           color: var(--color-body);
         }
 
-        &:focus-visible,
-        &:hover {
+        &:focus-visible {
           outline-color: var(--background-color-tertiary);
           outline-width: 0.125rem;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          transition:
+            outline-color 240ms var(--ease-fluid),
+            outline-width 180ms var(--ease-fluid),
+            color 240ms var(--ease-fluid),
+            background-color 240ms var(--ease-fluid);
+
+          &:hover {
+            outline-color: var(--background-color-tertiary);
+            outline-width: 0.125rem;
+          }
         }
       }
 
@@ -111,9 +121,14 @@ footer {
           font-weight: 600;
           transition: color 240ms var(--ease-fluid);
 
-          &:focus,
-          &:hover {
+          &:focus {
             color: var(--color-display);
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+            &:hover {
+              color: var(--color-display);
+            }
           }
         }
       }
@@ -151,9 +166,14 @@ footer {
             color: var(--color-caption);
             transition: color 240ms var(--ease-fluid);
 
-            &:focus,
-            &:hover {
+            &:focus {
               color: var(--color-display);
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+              &:hover {
+                color: var(--color-display);
+              }
             }
           }
         }

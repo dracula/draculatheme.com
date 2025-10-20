@@ -46,6 +46,7 @@
         transition:
           outline-color 240ms var(--ease-fluid),
           outline-width 180ms var(--ease-fluid);
+        will-change: transform, opacity;
 
         &:focus-visible,
         &:hover {

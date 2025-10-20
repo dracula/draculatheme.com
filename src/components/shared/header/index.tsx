@@ -65,106 +65,104 @@ export const Header = () => {
   };
 
   return (
-    <>
-      <header>
-        <div className="container">
-          <div className="wrapper">
-            <Link href="/" className="logo">
-              Dracula <span>Theme</span>
-            </Link>
-            <CommandBar />
-            <button
-              type="button"
-              onClick={handleToggleNav}
-              className="action primary mb-trigger"
+    <header>
+      <div className="container">
+        <div className="wrapper">
+          <Link href="/" className="logo">
+            Dracula <span>Theme</span>
+          </Link>
+          <CommandBar />
+          <button
+            type="button"
+            onClick={handleToggleNav}
+            className="action primary mb-trigger"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="13"
+              height="13"
+              color="currentColor"
+              fill="none"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="13"
-                height="13"
-                color="currentColor"
-                fill="none"
-              >
-                <title className="sr-only">Menu Icon</title>
-                <path
-                  d="M4 9L20 9"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M4 15L14 15"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="sr-only">Open Menu</span>
-            </button>
-          </div>
-          <nav className={isNavActive ? "active" : ""}>
-            <ul>
-              {navItems.slice(0, 3).map(({ href, label, icon, className }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    onClick={() => {
-                      setIsNavActive(false);
-                    }}
-                    className={buildClassName(href, className)}
-                  >
-                    {icon}
-                    {label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <button
-                  type="button"
-                  onClick={handleToggleRadio}
-                  className="action radio"
-                >
-                  {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
-                  <span>Radio</span>
-                </button>
-                <DraculaRadio
-                  onPlayingChange={setIsPlaying}
-                  onVisibilityChange={setIsRadioVisible}
-                  visible={isRadioVisible}
-                />
-              </li>
-              {navItems.slice(3).map(({ href, label, icon, className }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    onClick={() => {
-                      setIsNavActive(false);
-                    }}
-                    className={buildClassName(href, className)}
-                  >
-                    {icon}
-                    {label}
-                  </Link>
-                </li>
-              ))}
-              <li>
+              <title className="sr-only">Menu Icon</title>
+              <path
+                d="M4 9L20 9"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M4 15L14 15"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="sr-only">Open Menu</span>
+          </button>
+        </div>
+        <nav className={isNavActive ? "active" : ""}>
+          <ul>
+            {navItems.slice(0, 3).map(({ href, label, icon, className }) => (
+              <li key={href}>
                 <Link
-                  href="https://github.com/dracula/dracula-theme"
-                  className="action stars"
+                  href={href}
+                  onClick={() => {
+                    setIsNavActive(false);
+                  }}
+                  className={buildClassName(href, className)}
                 >
-                  <GithubIcon /> <span className="star-count">+24k</span>
+                  {icon}
+                  {label}
                 </Link>
               </li>
-              <li>
-                <ThemeToggle action={() => setIsNavActive(false)} />
+            ))}
+            <li>
+              <button
+                type="button"
+                onClick={handleToggleRadio}
+                className="action radio"
+              >
+                {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
+                <span>Radio</span>
+              </button>
+              <DraculaRadio
+                onPlayingChange={setIsPlaying}
+                onVisibilityChange={setIsRadioVisible}
+                visible={isRadioVisible}
+              />
+            </li>
+            {navItems.slice(3).map(({ href, label, icon, className }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => {
+                    setIsNavActive(false);
+                  }}
+                  className={buildClassName(href, className)}
+                >
+                  {icon}
+                  {label}
+                </Link>
               </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </>
+            ))}
+            <li>
+              <Link
+                href="https://github.com/dracula/dracula-theme"
+                className="action stars"
+              >
+                <GithubIcon /> <span className="star-count">+24k</span>
+              </Link>
+            </li>
+            <li>
+              <ThemeToggle action={() => setIsNavActive(false)} />
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 };

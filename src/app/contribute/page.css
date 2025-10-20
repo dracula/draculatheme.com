@@ -347,6 +347,7 @@ html {
               object-fit: cover;
               object-position: center;
               transition: filter 240ms var(--ease-fluid);
+              will-change: filter;
             }
           }
         }

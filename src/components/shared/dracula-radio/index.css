@@ -33,6 +33,7 @@
   transition:
     transform 162ms var(--ease-fluid),
     opacity 162ms var(--ease-fluid);
+  will-change: transform, opacity;
 
   &.visible {
     visibility: visible;
@@ -76,19 +77,24 @@
       border-radius: 0.75rem;
       background-color: transparent;
       color: var(--color-display);
-      transition:
-        transform 138ms var(--ease-sharp),
-        border-color 138ms var(--ease-sharp),
-        color 138ms var(--ease-sharp);
+      transition: transform 138ms var(--ease-sharp);
+      will-change: transform;
 
       &:focus-visible {
         border-color: var(--color);
       }
 
-      &:hover {
-        transform: scale(1.06);
-        border-color: var(--color);
-        color: var(--color);
+      @media (hover: hover) and (pointer: fine) {
+        transition:
+          transform 138ms var(--ease-sharp),
+          border-color 138ms var(--ease-sharp),
+          color 138ms var(--ease-sharp);
+
+        &:hover {
+          transform: scale(1.06);
+          border-color: var(--color);
+          color: var(--color);
+        }
       }
 
       &:active {
@@ -106,14 +112,20 @@
       border: 0.0625rem solid var(--background-color-tertiary);
       border-radius: 0.75rem;
       color: var(--color-display);
-      transition:
-        border-color 138ms var(--ease-sharp),
-        color 138ms var(--ease-sharp);
-
-      &:focus-within,
-      &:hover {
+      &:focus-within {
         border-color: var(--color);
         color: var(--color);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        transition:
+          border-color 138ms var(--ease-sharp),
+          color 138ms var(--ease-sharp);
+
+        &:hover {
+          border-color: var(--color);
+          color: var(--color);
+        }
       }
 
       .slider {
@@ -133,6 +145,7 @@
           box-shadow: 0 0 0 0.125rem hsla(var(--hue), 12%, 6%, 0.24);
           cursor: pointer;
           transition: transform 120ms var(--ease-sharp);
+          will-change: transform;
         }
 
         &::-moz-range-thumb {
@@ -144,6 +157,7 @@
           box-shadow: 0 0 0 0.125rem hsla(var(--hue), 12%, 6%, 0.24);
           cursor: pointer;
           transition: transform 120ms var(--ease-sharp);
+          will-change: transform;
         }
 
         &:active::-webkit-slider-thumb,

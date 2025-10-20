@@ -32,19 +32,27 @@
           outline-style: solid;
           outline-width: 0;
           background-color: var(--background-color-primary);
-          transition:
-            outline-color 240ms var(--ease-fluid),
-            outline-width 180ms var(--ease-fluid),
-            color 240ms var(--ease-fluid);
+          transition: color 240ms var(--ease-fluid);
 
           &::placeholder {
             color: var(--color-body);
           }
 
-          &:focus-visible,
-          &:hover {
+          &:focus-visible {
             outline-color: var(--background-color-tertiary);
             outline-width: 0.125rem;
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+            transition:
+              outline-color 240ms var(--ease-fluid),
+              outline-width 180ms var(--ease-fluid),
+              color 240ms var(--ease-fluid);
+
+            &:hover {
+              outline-color: var(--background-color-tertiary);
+              outline-width: 0.125rem;
+            }
           }
         }
 
@@ -65,6 +73,7 @@
           transition:
             transform 240ms var(--ease-elastic),
             color 240ms var(--ease-fluid);
+          will-change: transform;
         }
       }
 
@@ -102,15 +111,27 @@
           transition:
             width 240ms var(--ease-elastic),
             padding 180ms var(--ease-fluid),
-            outline-color 240ms var(--ease-fluid),
-            outline-width 180ms var(--ease-fluid),
             color 240ms var(--ease-fluid);
 
-          &:focus-visible,
-          &:hover {
+          &:focus-visible {
             outline-color: var(--background-color-tertiary);
             outline-width: 0.125rem;
             color: var(--color);
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+            transition:
+              width 240ms var(--ease-elastic),
+              padding 180ms var(--ease-fluid),
+              outline-color 240ms var(--ease-fluid),
+              outline-width 180ms var(--ease-fluid),
+              color 240ms var(--ease-fluid);
+
+            &:hover {
+              outline-color: var(--background-color-tertiary);
+              outline-width: 0.125rem;
+              color: var(--color);
+            }
           }
 
           &:has(input[type="radio"]:checked) {
@@ -175,14 +196,21 @@
           animation-timeline: view();
           animation: items-fade-in var(--ease-elastic) both;
           animation-range: entry 0 cover 30%;
-          transition:
-            outline-color 240ms var(--ease-fluid),
-            outline-width 180ms var(--ease-fluid);
-
-          &:focus-visible,
-          &:hover {
+          will-change: transform, opacity;
+          &:focus-visible {
             outline-color: var(--background-color-tertiary);
             outline-width: 0.125rem;
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+            transition:
+              outline-color 240ms var(--ease-fluid),
+              outline-width 180ms var(--ease-fluid);
+
+            &:hover {
+              outline-color: var(--background-color-tertiary);
+              outline-width: 0.125rem;
+            }
           }
 
           .icon {

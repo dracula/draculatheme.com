@@ -50,6 +50,7 @@ html {
     stroke-linejoin: round;
     pointer-events: none;
     transition: transform 120ms var(--ease-fluid);
+    will-change: transform;
 
     path {
       transform: translate3d(0, 0, 0);
@@ -61,6 +62,7 @@ html {
       transition:
         transform 300ms var(--ease-fluid),
         opacity 240ms var(--ease-fluid);
+      will-change: transform, opacity;
     }
   }
 

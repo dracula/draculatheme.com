@@ -3,10 +3,17 @@
   scroll-margin: 6rem;
 
   &:target,
-  &:hover,
   &:focus-within {
     a {
       opacity: 1;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      a {
+        opacity: 1;
+      }
     }
   }
 

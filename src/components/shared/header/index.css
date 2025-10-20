@@ -96,19 +96,32 @@ header {
       outline-style: solid;
       outline-width: 0;
       background-color: var(--background-color-secondary);
-      transition:
-        outline-color 240ms var(--ease-fluid),
-        outline-width 180ms var(--ease-fluid),
-        color 240ms var(--ease-fluid);
+      transition: color 240ms var(--ease-fluid);
 
-      &:focus-visible,
-      &:hover {
+      &:focus-visible {
         outline-color: var(--background-color-tertiary);
         outline-width: 0.125rem;
 
         .icon {
           transform: rotate(-6deg) translateY(-50%);
           color: var(--color-display);
+        }
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        transition:
+          outline-color 240ms var(--ease-fluid),
+          outline-width 180ms var(--ease-fluid),
+          color 240ms var(--ease-fluid);
+
+        &:hover {
+          outline-color: var(--background-color-tertiary);
+          outline-width: 0.125rem;
+
+          .icon {
+            transform: rotate(-6deg) translateY(-50%);
+            color: var(--color-display);
+          }
         }
       }
 
@@ -131,6 +144,7 @@ header {
           transition:
             transform 240ms var(--ease-elastic),
             color 240ms var(--ease-fluid);
+          will-change: transform;
         }
 
         .shortcut {
@@ -224,6 +238,7 @@ header {
                 animation: bounce 2202ms ease infinite alternate;
                 opacity: 1;
                 transition: opacity 162ms var(--ease-fluid);
+                will-change: transform;
 
                 &:nth-of-type(2) {
                   animation-delay: -2202ms;
@@ -257,6 +272,7 @@ header {
               animation: shine 6000ms var(--ease-fluid) infinite 504ms;
               filter: blur(0.375rem);
               pointer-events: none;
+              will-change: transform, filter;
             }
           }
         }
@@ -302,6 +318,7 @@ header {
         transition:
           transform 420ms var(--ease-fluid),
           opacity 300ms var(--ease-fluid);
+        will-change: transform, opacity;
 
         &.active {
           transform: translateY(0);
@@ -353,6 +370,7 @@ header {
   transition:
     transform 162ms var(--ease-fluid),
     opacity 162ms var(--ease-fluid);
+  will-change: transform, opacity;
 
   &::backdrop {
     visibility: hidden;
@@ -388,19 +406,34 @@ header {
       background-color: var(--background-color-primary);
       line-height: 1;
       transition:
-        outline-color 240ms var(--ease-fluid),
-        outline-width 180ms var(--ease-fluid),
         color 240ms var(--ease-fluid),
         background-color 240ms var(--ease-fluid);
 
-      &:focus-visible,
-      &:hover {
+      &:focus-visible {
         outline-color: var(--background-color-tertiary);
         outline-width: 0.125rem;
 
         ~ .icon {
           transform: rotate(-6deg) translateY(-50%);
           color: var(--color-display);
+        }
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        transition:
+          outline-color 240ms var(--ease-fluid),
+          outline-width 180ms var(--ease-fluid),
+          color 240ms var(--ease-fluid),
+          background-color 240ms var(--ease-fluid);
+
+        &:hover {
+          outline-color: var(--background-color-tertiary);
+          outline-width: 0.125rem;
+
+          ~ .icon {
+            transform: rotate(-6deg) translateY(-50%);
+            color: var(--color-display);
+          }
         }
       }
     }
@@ -415,6 +448,7 @@ header {
       transition:
         transform 240ms var(--ease-elastic),
         color 240ms var(--ease-fluid);
+      will-change: transform;
     }
   }
 
@@ -458,10 +492,16 @@ header {
           background-color 240ms var(--ease-fluid),
           color 240ms var(--ease-fluid);
 
-        &:focus-visible,
-        &:hover {
+        &:focus-visible {
           background-color: var(--background-color-secondary);
           color: var(--color-display);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            background-color: var(--background-color-secondary);
+            color: var(--color-display);
+          }
         }
       }
 

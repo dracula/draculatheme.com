@@ -5,7 +5,7 @@ import "./index.css";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { paths } from "@/lib/paths";
 
@@ -93,11 +93,62 @@ const getPageColor = (pageData: PageData): string => {
   return pageData?.color || colors[Math.floor(Math.random() * colors.length)];
 };
 
+const getImageSrc = (
+  icon: string | undefined,
+  resolvedTheme: string | undefined,
+  mounted: boolean
+) => {
+  if (icon) {
+    return icon;
+  }
+
+  if (!mounted) {
+    return "/images/hero/default.svg";
+  }
+
+  return resolvedTheme === "light"
+    ? "/images/hero/default-light.svg"
+    : "/images/hero/default.svg";
+};
+
+const getTitle = (
+  title: string | undefined,
+  resolvedTheme: string | undefined,
+  mounted: boolean
+) => {
+  if (title) {
+    return title;
+  }
+
+  if (!mounted) {
+    return "Dracula";
+  }
+
+  return resolvedTheme === "light" ? "Alucard" : "Dracula";
+};
+
+const HeroPlaceholder = ({ type }: { type: string }) => (
+  <>
+    <div className={`icon ${type}`}>
+      <div className="placeholder" />
+    </div>
+    <div className="header">
+      <div className="placeholder title" />
+      <div className="placeholder subtitle" />
+    </div>
+  </>
+);
+
 export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
@@ -105,30 +156,6 @@ export const Hero = () => {
   }, [pathKey]);
 
   const { icon, title, subtitle, cta, anchor, type = "static" } = pageData;
-
-  const getImageSrc = () => {
-    if (icon) {
-      return icon;
-    }
-
-    if (resolvedTheme === "light") {
-      return "/images/hero/default-light.svg";
-    }
-
-    return "/images/hero/default.svg";
-  };
-
-  const getTitle = () => {
-    if (title) {
-      return title;
-    }
-
-    if (resolvedTheme === "light") {
-      return "Alucard";
-    }
-
-    return "Dracula";
-  };
 
   const setColor = useCallback(() => {
     const color = getPageColor(pageData);
@@ -139,6 +166,18 @@ export const Hero = () => {
     setColor();
   }, [setColor]);
 
+  if (!mounted) {
+    return (
+      <section className={`hero ${pathKey.slice(1)}`}>
+        {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
+        <div className="castle" />
+        <div className="container">
+          {pathKey !== "/shop" && <HeroPlaceholder type={type} />}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className={`hero ${pathKey.slice(1)}`}>
       {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
@@ -147,7 +186,7 @@ export const Hero = () => {
         {pathKey !== "/shop" && (
           <div className={`icon ${type}`}>
             <Image
-              src={getImageSrc()}
+              src={getImageSrc(icon, resolvedTheme, mounted)}
               width={192}
               height={192}
               unoptimized={true}
@@ -157,7 +196,7 @@ export const Hero = () => {
           </div>
         )}
         <div className="header">
-          <h1>{getTitle()}</h1>
+          <h1>{getTitle(title, resolvedTheme, mounted)}</h1>
           <h2>{subtitle}</h2>
           {cta && anchor && (
             <a href={anchor} className="action primary cta">

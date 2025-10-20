@@ -10,7 +10,7 @@ import { PauseIcon } from "@/icons/pause";
 import { PlayIcon } from "@/icons/play";
 import { PreviousIcon } from "@/icons/previous";
 import { VolumeIcon } from "@/icons/volume";
-import { playlist, Track } from "@/lib/playlist";
+import { playlist, type Track } from "@/lib/playlist";
 
 interface DraculaRadioProps {
   onPlayingChange?: (isPlaying: boolean) => void;
@@ -87,11 +87,13 @@ export const DraculaRadio = ({
         sound.fade?.(0, volume, fadeInMs);
         setNamedTimeout(
           "endFade",
-          () => (isFadingRef.current = false),
+          () => {
+            isFadingRef.current = false;
+          },
           fadeInMs
         );
       },
-      10
+      12
     );
   }, [sound, volume, setNamedTimeout]);
 
@@ -145,7 +147,7 @@ export const DraculaRadio = ({
     } else {
       play();
       setIsPlaying(true);
-      setNamedTimeout("togglePlay", fadeIn, 50);
+      setNamedTimeout("togglePlay", fadeIn, 48);
     }
   }, [
     isPlaying,
@@ -188,7 +190,7 @@ export const DraculaRadio = ({
     if (shouldAutoplayRef.current && sound) {
       play();
       setIsPlaying(true);
-      setNamedTimeout("autoplay", fadeIn, 50);
+      setNamedTimeout("autoplay", fadeIn, 48);
       shouldAutoplayRef.current = false;
     }
   }, [sound, play, fadeIn, setNamedTimeout]);
@@ -245,7 +247,7 @@ export const DraculaRadio = ({
       } else if (typeof sound.volume === "function") {
         sound.volume(volume);
       }
-    }, 100);
+    }, 102);
 
     return () => clearTimeout(timeoutId);
   }, [volume, sound, isPlaying, getCurrentVolume]);
@@ -257,15 +259,23 @@ export const DraculaRadio = ({
 
   return (
     <>
-      <div
+      <button
         id="radio-overlay"
+        type="button"
         className={visible ? "visible" : ""}
         onClick={hideOverlay}
+        tabIndex={0}
+        aria-label="Close radio overlay"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            hideOverlay();
+          }
+        }}
       />
-      <div
+      <section
         id="radio"
         className={`${track.character.id}${visible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
-        role="region"
         aria-label="Dracula Radio"
       >
         <div className="metadata">
@@ -275,6 +285,7 @@ export const DraculaRadio = ({
         <div className="controls">
           <div className="navigation">
             <button
+              type="button"
               className="button"
               onClick={() => changeTrack("prev")}
               aria-label="Previous track"
@@ -282,6 +293,7 @@ export const DraculaRadio = ({
               <PreviousIcon />
             </button>
             <button
+              type="button"
               className="button"
               onClick={togglePlay}
               aria-label={isPlaying ? "Pause" : "Play"}
@@ -289,6 +301,7 @@ export const DraculaRadio = ({
               {isPlaying ? <PauseIcon /> : <PlayIcon />}
             </button>
             <button
+              type="button"
               className="button"
               onClick={() => changeTrack("next")}
               aria-label="Next track"
@@ -315,7 +328,7 @@ export const DraculaRadio = ({
             />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

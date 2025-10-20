@@ -205,6 +205,9 @@ input,
 button,
 textarea,
 select {
+  border: none;
+  outline: none;
+  background-color: transparent;
   color: inherit;
   font: inherit;
 }
@@ -264,11 +267,8 @@ kbd {
   font-size: inherit;
   line-height: 1;
   text-decoration: none;
-  transition:
-    transform 240ms var(--ease-elastic),
-    outline-color 240ms var(--ease-fluid),
-    outline-width 180ms var(--ease-fluid),
-    color 240ms var(--ease-fluid);
+  transition: transform 240ms var(--ease-elastic);
+  will-change: transform;
   user-select: none;
 
   &.primary,
@@ -280,10 +280,22 @@ kbd {
     color: var(--color-display);
   }
 
-  &:focus-visible,
-  &:hover {
+  &:focus-visible {
     outline-color: var(--background-color-tertiary);
     outline-width: 0.125rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    transition:
+      transform 240ms var(--ease-elastic),
+      outline-color 240ms var(--ease-fluid),
+      outline-width 180ms var(--ease-fluid),
+      color 240ms var(--ease-fluid);
+
+    &:hover {
+      outline-color: var(--background-color-tertiary);
+      outline-width: 0.125rem;
+    }
   }
 
   &:active {
@@ -337,9 +349,14 @@ kbd {
     text-underline-offset: 0.1875rem;
     transition: color 240ms var(--ease-fluid);
 
-    &:focus,
-    &:hover {
+    &:focus {
       color: var(--color-display);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--color-display);
+      }
     }
   }
 

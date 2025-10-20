@@ -263,6 +263,7 @@ html {
               border-radius: 100%;
               background-color: var(--color);
               transition: transform 240ms var(--ease-elastic);
+              will-change: transform;
 
               &::before {
                 position: absolute;
@@ -642,6 +643,7 @@ html {
           transform-style: preserve-3d;
           animation: 1002ms ease 0ms 1 book-animation;
           transition: 1002ms ease;
+          will-change: transform;
 
           &:hover {
             transform: rotateY(0deg);
@@ -784,6 +786,7 @@ html {
           transition:
             transform 240ms var(--ease-elastic),
             background-color 240ms var(--ease-fluid);
+          will-change: transform;
 
           &:focus-within,
           &:hover {

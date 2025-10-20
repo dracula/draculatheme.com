@@ -29,11 +29,20 @@
         border-radius: 1.125rem;
         background-color: var(--background-color-secondary);
 
-        &:focus-within,
-        &:hover {
+        &:focus-within {
           .thumb {
             img {
               transform: scale(1.06) rotate(-0.6deg);
+            }
+          }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            .thumb {
+              img {
+                transform: scale(1.06) rotate(-0.6deg);
+              }
             }
           }
         }
