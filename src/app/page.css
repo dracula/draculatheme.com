@@ -1,3 +1,26 @@
+html {
+  &[data-theme="light"] {
+    .container {
+      &.home {
+        nav {
+          --main-hue: 114;
+        }
+      }
+    }
+  }
+
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
+    .container {
+      &.home {
+        nav {
+          --main-hue: 115;
+        }
+      }
+    }
+  }
+}
+
 .container {
   &.home {
     display: flex;
@@ -6,6 +29,8 @@
     gap: 3em;
 
     nav {
+      --color: var(--green);
+
       display: flex;
       position: sticky;
       top: 8em;

@@ -9,6 +9,7 @@ import {
   matchesSearch
 } from "@/utils/home/filter";
 
+import { ProBanner } from "../shared/pro-banner";
 import { FilterSidebar } from "./filter-sidebar";
 import { ItemList } from "./item-list";
 
@@ -43,6 +44,7 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
           onPlatformChange={(v) => setQueryStates({ platforms: v })}
           onCategoryChange={(v) => setQueryStates({ categories: v })}
         />
+        <ProBanner />
       </nav>
       <ItemList items={filtered} />
     </>

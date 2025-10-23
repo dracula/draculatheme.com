@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { fetcher } from "@/utils/fetcher";
 
+import { TextRevealAnimation } from "../text-reveal-animation";
+
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
@@ -31,11 +33,14 @@ export const Newsletter = () => {
           <h3>Subscribe to our newsletter.</h3>
           <p>
             Get product updates and news <br className="hide-on-mb" />
-            in your inbox. No spam.
+            in your inbox. <b>No spam, ever.</b>
           </p>
         </div>
       </div>
       <div>
+        <TextRevealAnimation>
+          <em>11,460</em> people enjoy it!
+        </TextRevealAnimation>
         <div className="form">
           <input
             type="email"

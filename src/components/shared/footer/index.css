@@ -24,6 +24,8 @@ footer {
     line-height: 1.8;
 
     & > div {
+      position: relative;
+
       &:first-child {
         flex-grow: 1;
         flex-shrink: 0;
@@ -97,6 +99,16 @@ footer {
       display: inline-flex;
       padding: 0 0.25rem;
       font-size: var(--font-size-caption);
+
+      &.tip {
+        margin-bottom: 0.5em;
+
+        em {
+          font-style: normal;
+          font-weight: 700;
+          font-family: var(--font-mono);
+        }
+      }
     }
   }
 

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import { Hero } from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
+import { ProBanner } from "@/components/shared/pro-banner";
 import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";
 import { EditIcon } from "@/icons/edit";
@@ -240,6 +241,7 @@ const ThemePage = async (props: Props) => {
                 </li>
               ))}
             </ul>
+            <ProBanner />
           </aside>
         </div>
       </section>
