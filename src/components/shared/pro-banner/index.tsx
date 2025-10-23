@@ -2,39 +2,18 @@ import "./index.css";
 
 import Link from "next/link";
 
+import { ArrowUpRight } from "@/icons/arrow-up-right";
+import { CheckmarkBadge } from "@/icons/checkmark-badge";
+
 export const ProBanner = () => (
   <Link href="/pro" className="pro-banner">
-    <div className="cube-wrapper" aria-hidden="true">
-      <div className="cube">
-        <div className="face"></div>
-        <div className="face"></div>
-        <div className="face"></div>
-        <div className="face"></div>
-        <div className="face"></div>
-      </div>
-    </div>
-    <svg
-      className="texture"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <title className="sr-only">Texture</title>
-      <filter id="noise">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency=".8"
-          numOctaves="4"
-          stitchTiles="stitch"
-        />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#noise)" />
-    </svg>
-    <span>Put the Pro in Productivity.</span>
-    <h3>Dracula Pro</h3>
+    <ArrowUpRight size={14} className="arrow" />
+    <span>Invest in Your Productivity.</span>
+    <h3>
+      <CheckmarkBadge size={18} className="checkmark" /> Dracula Pro
+    </h3>
     <p>
-      Be more productive <em>today</em> and <em>everyday.</em> More than just a
-      theme.
+      More than a theme. <em>A productivity package</em> for developers.
     </p>
   </Link>
 );
