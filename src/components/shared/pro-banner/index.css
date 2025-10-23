@@ -23,12 +23,6 @@
     font-size: var(--font-size-caption);
   }
 
-  h3 {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3em;
-  }
-
   p {
     margin-top: 0.5em;
 
