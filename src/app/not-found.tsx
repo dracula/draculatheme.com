@@ -7,14 +7,14 @@ export const metadata = {
 
 const NotFoundPage = () => (
   <section className="container not-found">
-    <h1>Oops!</h1>
+    <h1>
+      <code>0</code>ops!
+    </h1>
     <p>The crimson moon reveals danger...</p>
-    <br />
     <p>
-      Our nocturnal creature has strayed into the forbidden territories of
-      eternal darkness.
+      Our nocturnal creature has strayed into <br />
+      the forbidden territories of eternal darkness.
     </p>
-    <br />
     <Link href="/" className="action primary">
       Return to Castle
     </Link>

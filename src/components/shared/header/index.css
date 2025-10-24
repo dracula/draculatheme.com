@@ -171,7 +171,6 @@ header {
 
     .mb-trigger {
       display: none;
-      visibility: hidden;
     }
 
     nav {
@@ -295,13 +294,11 @@ header {
       .command-bar,
       .command-bar-dialog {
         display: none;
-        visibility: hidden;
         pointer-events: none;
       }
 
       .mb-trigger {
         display: flex;
-        visibility: visible;
       }
 
       nav {
@@ -353,7 +350,7 @@ header {
 }
 
 .command-bar-dialog {
-  visibility: hidden;
+  display: none;
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
@@ -373,19 +370,20 @@ header {
   will-change: transform, opacity;
 
   &::backdrop {
-    visibility: hidden;
     background-color: var(--background-color-overlay);
     opacity: 0;
     transition: opacity 162ms var(--ease-fluid);
   }
 
-  &[open],
-  &::backdrop {
+  &[open] {
     display: flex;
-    visibility: visible;
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  &[open]::backdrop {
+    opacity: 1;
   }
 
   .search {

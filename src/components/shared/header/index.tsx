@@ -116,7 +116,7 @@ export const Header = () => {
                   className={buildClassName(href, className)}
                 >
                   {icon}
-                  {label}
+                  <span>{label}</span>
                 </Link>
               </li>
             ))}
@@ -145,7 +145,7 @@ export const Header = () => {
                   className={buildClassName(href, className)}
                 >
                   {icon}
-                  {label}
+                  <span>{label}</span>
                 </Link>
               </li>
             ))}

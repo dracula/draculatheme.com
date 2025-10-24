@@ -1,5 +1,5 @@
 #radio-overlay {
-  visibility: hidden;
+  display: none;
   z-index: 2;
   position: fixed;
   inset: 0;
@@ -8,15 +8,14 @@
   transition: opacity 162ms var(--ease-fluid);
 
   &.visible {
-    visibility: visible;
+    display: block;
     opacity: 1;
     pointer-events: auto;
   }
 }
 
 #radio {
-  display: grid;
-  visibility: hidden;
+  display: none;
   z-index: 3;
   position: absolute;
   top: 4.875rem;
@@ -36,7 +35,7 @@
   will-change: transform, opacity;
 
   &.visible {
-    visibility: visible;
+    display: grid;
     transform: translateX(-50%) translateY(0);
     opacity: 1;
     pointer-events: auto;
@@ -173,14 +172,13 @@
   #radio-overlay,
   #radio-overlay.visible {
     display: none;
-    visibility: hidden;
     z-index: -1;
     pointer-events: none;
   }
 
   #radio,
   #radio.visible {
-    visibility: visible;
+    display: grid;
     position: relative;
     top: unset;
     left: unset;

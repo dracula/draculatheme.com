@@ -24,9 +24,6 @@
         border-radius: 0 0 1.125rem 1.125rem;
       }
 
-      &:last-child:not(:first-child) {
-      }
-
       time {
         display: block;
         width: 100%;

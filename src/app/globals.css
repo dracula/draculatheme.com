@@ -109,6 +109,10 @@ html {
 
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
+
+    @supports (interpolate-size: allow-keywords) {
+      interpolate-size: allow-keywords;
+    }
   }
 
   @media (max-width: 60rem) {
@@ -116,12 +120,6 @@ html {
     --page-padding-horizontal: 1.125rem;
     --page-padding-vertical: 0.75rem;
     --page-sections-spacing: 2.625rem;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    @supports (interpolate-size: allow-keywords) {
-      interpolate-size: allow-keywords;
-    }
   }
 }
 
@@ -166,6 +164,18 @@ main {
   width: 100%;
   max-width: var(--page-max-width);
   padding: var(--page-padding-vertical) var(--page-padding-horizontal);
+
+  &.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+
+    .action {
+      margin-top: 1em;
+    }
+  }
 
   @media (max-width: 60rem) {
     max-width: 100%;
@@ -460,17 +470,14 @@ kbd {
 .hide,
 .hide-on-desktop {
   display: none;
-  visibility: hidden;
 }
 
 @media (max-width: 60rem) {
   .hide-on-desktop {
     display: block;
-    visibility: visible;
   }
 
   .hide-on-mb {
     display: none;
-    visibility: hidden;
   }
 }
