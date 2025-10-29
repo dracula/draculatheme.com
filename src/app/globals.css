@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scroll-margin-top: 7.5rem;
 }
 
 #root,
@@ -136,8 +137,6 @@ body {
   line-height: 1.5;
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
-  ascent-override: 102%;
-  descent-override: 35%;
 
   &.block-overflow {
     overflow: hidden;
@@ -293,7 +292,7 @@ kbd {
 
   &:focus-visible {
     outline-color: var(--background-color-tertiary);
-    outline-width: 0.125rem;
+    outline-width: 0.0625rem;
   }
 
   @media (hover: hover) and (pointer: fine) {

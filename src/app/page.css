@@ -68,7 +68,7 @@
         .icon {
           z-index: 2;
           position: absolute;
-          top: 50%;
+          top: 51%;
           left: 1em;
           transform: translateY(-50%);
           transform-origin: center;
@@ -197,9 +197,13 @@
           outline-width: 0;
           background-color: var(--background-color-secondary);
           animation-timeline: view();
-          animation: items-fade-in var(--ease-elastic) both;
+          animation-duration: 300ms;
+          animation-timing-function: var(--ease-elastic);
+          animation-fill-mode: both;
+          animation-name: items-fade-in;
           animation-range: entry 0 cover 30%;
           will-change: transform, opacity;
+
           &:focus-visible {
             outline-color: var(--background-color-tertiary);
             outline-width: 0.125rem;
