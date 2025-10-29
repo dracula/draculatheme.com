@@ -144,7 +144,14 @@ export const Hero = () => {
   const pathKey = pathname === "/" ? "" : pathname;
 
   const { resolvedTheme } = useTheme();
-  const [mounted] = useState(() => typeof window !== "undefined");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
+    // between server and client renders
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   const pageData = useMemo(() => {
     const allPages: PageConfig = { ...staticPages, ...createDynamicPages() };
