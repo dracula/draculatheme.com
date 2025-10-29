@@ -51,7 +51,7 @@
         &:focus-visible,
         &:hover {
           outline-color: var(--background-color-tertiary);
-          outline-width: 0.125rem;
+          outline-width: 0.0625rem;
         }
 
         .cover {

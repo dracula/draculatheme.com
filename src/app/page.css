@@ -42,7 +42,7 @@
 
           &:focus-visible {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.125rem;
+            outline-width: 0.0625rem;
           }
 
           @media (hover: hover) and (pointer: fine) {
@@ -53,7 +53,7 @@
 
             &:hover {
               outline-color: var(--background-color-tertiary);
-              outline-width: 0.125rem;
+              outline-width: 0.0625rem;
             }
           }
         }
@@ -118,7 +118,7 @@
 
           &:focus-visible {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.125rem;
+            outline-width: 0.0625rem;
             color: var(--color);
           }
 
@@ -132,7 +132,7 @@
 
             &:hover {
               outline-color: var(--background-color-tertiary);
-              outline-width: 0.125rem;
+              outline-width: 0.0625rem;
               color: var(--color);
             }
           }
@@ -206,7 +206,7 @@
 
           &:focus-visible {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.125rem;
+            outline-width: 0.0625rem;
           }
 
           @media (hover: hover) and (pointer: fine) {
@@ -216,7 +216,7 @@
 
             &:hover {
               outline-color: var(--background-color-tertiary);
-              outline-width: 0.125rem;
+              outline-width: 0.0625rem;
             }
           }
 

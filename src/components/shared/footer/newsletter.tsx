@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import { fetcher } from "@/utils/fetcher";
@@ -35,6 +36,7 @@ export const Newsletter = () => {
             Get product updates and news <br className="hide-on-mb" />
             in your inbox. <b>No spam, ever.</b>
           </p>
+          <Link href="/newsletter">Learn more →</Link>
         </div>
       </div>
       <div>

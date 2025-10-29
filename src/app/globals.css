@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  outline-color: var(--color);
   scroll-margin-top: 7.5rem;
 }
 
@@ -304,7 +305,7 @@ kbd {
 
     &:hover {
       outline-color: var(--background-color-tertiary);
-      outline-width: 0.125rem;
+      outline-width: 0.0625rem;
     }
   }
 
