@@ -1,5 +1,4 @@
 import useVibration, { VibrationPatterns } from "@luxonauta/use-vibration";
-import React from "react";
 import useSound from "use-sound";
 
 import { SearchIcon } from "@/icons/search";

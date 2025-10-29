@@ -14,36 +14,51 @@ export const OnThisPage = ({ headings }: OnThisPageProps) => {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
+    const getActiveHeading = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = 150;
+
+      if (scrollPosition < 100) {
+        setActiveId(headings.length > 0 ? headings[0].id : "");
+        return;
+      }
+
+      const headingElements = headings
+        .map((heading) => ({
+          id: heading.id,
+          element: document.getElementById(heading.id)
+        }))
+        .filter((item) => item.element !== null) as Array<{
+        id: string;
+        element: HTMLElement;
+      }>;
+
+      let activeId = "";
+      let lastPassedId = "";
+
+      for (const item of headingElements) {
+        const rect = item.element.getBoundingClientRect();
+        const elementTop = rect.top;
+
+        if (elementTop <= threshold) {
+          lastPassedId = item.id;
         }
-      },
-      {
-        rootMargin: "-5rem 0px -80%",
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      }
-    );
 
-    const headingElements = headings
-      .map((heading) => document.getElementById(heading.id))
-      .filter(Boolean);
-
-    for (const element of headingElements) {
-      if (element) {
-        observer.observe(element);
+        if (elementTop > 0 && elementTop <= threshold) {
+          activeId = item.id;
+          break;
+        }
       }
-    }
+
+      setActiveId(activeId || lastPassedId);
+    };
+
+    getActiveHeading();
+
+    window.addEventListener("scroll", getActiveHeading, { passive: true });
 
     return () => {
-      for (const element of headingElements) {
-        if (element) {
-          observer.unobserve(element);
-        }
-      }
+      window.removeEventListener("scroll", getActiveHeading);
     };
   }, [headings]);
 

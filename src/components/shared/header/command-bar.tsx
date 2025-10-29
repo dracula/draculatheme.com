@@ -135,6 +135,13 @@ export const CommandBar = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
+  useEffect(() => {
+    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
+    // between server and client renders
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
   const openDialog = useCallback(() => {
     setIsDialogOpen(true);
     setSearchQuery("");
@@ -178,10 +185,6 @@ export const CommandBar = () => {
     },
     [closeDialog]
   );
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
@@ -268,96 +271,6 @@ export const CommandBar = () => {
 
   const hasSearchResults = searchQuery.length > 0 && combinedResults.length > 0;
 
-  const dialogContent = (
-    <dialog
-      ref={dialogRef}
-      onClose={closeDialog}
-      className="command-bar-dialog"
-    >
-      <div className="search">
-        <input
-          ref={inputRef}
-          type="search"
-          autoComplete="off"
-          name="search"
-          value={searchQuery}
-          placeholder={`Search over ${paths.length} themes`}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          aria-label="Search"
-        />
-        <SearchIcon />
-      </div>
-      {searchQuery &&
-        (hasSearchResults ? (
-          <ul>
-            <li>
-              <h3 className="sr-only">Search Results</h3>
-              <ul>
-                {combinedResults.map((entry, index) => (
-                  <li key={entry.key}>
-                    {entry.external ? (
-                      <a
-                        href={entry.href}
-                        onClick={() => closeDialog()}
-                        ref={(el) => {
-                          itemRefs.current[index] = el;
-                        }}
-                      >
-                        {entry.icon}
-                        <span>{entry.label}</span>
-                      </a>
-                    ) : (
-                      <Link
-                        href={entry.href}
-                        onClick={() => closeDialog()}
-                        ref={(el) => {
-                          itemRefs.current[index] = el;
-                        }}
-                      >
-                        {entry.icon}
-                        <span>{entry.label}</span>
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          </ul>
-        ) : (
-          <ul>
-            <li className="empty">
-              <h3>Oops! No match!</h3>
-              <p>Try loosening up those search criteria!</p>
-            </li>
-          </ul>
-        ))}
-      <ul>
-        {pages.map((page) => (
-          <li key={page.title}>
-            <span className="title">{page.title}</span>
-            <ul>
-              {page.links.map((link) => (
-                <li key={link.href}>
-                  {link.external ? (
-                    <a href={link.href} onClick={() => closeDialog()}>
-                      {link.icon}
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link href={link.href} onClick={() => closeDialog()}>
-                      {link.icon}
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </dialog>
-  );
-
   return (
     <>
       <button type="button" className="command-bar" onClick={openDialog}>
@@ -370,7 +283,97 @@ export const CommandBar = () => {
           </span>
         </div>
       </button>
-      {mounted && createPortal(dialogContent, document.body)}
+      {mounted &&
+        createPortal(
+          <dialog
+            ref={dialogRef}
+            onClose={closeDialog}
+            className="command-bar-dialog"
+          >
+            <div className="search">
+              <input
+                ref={inputRef}
+                type="search"
+                autoComplete="off"
+                name="search"
+                value={searchQuery}
+                placeholder={`Search over ${paths.length} themes`}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search"
+              />
+              <SearchIcon />
+            </div>
+            {searchQuery &&
+              (hasSearchResults ? (
+                <ul>
+                  <li>
+                    <h3 className="sr-only">Search Results</h3>
+                    <ul>
+                      {combinedResults.map((entry, index) => (
+                        <li key={entry.key}>
+                          {entry.external ? (
+                            <a
+                              href={entry.href}
+                              onClick={() => closeDialog()}
+                              ref={(el) => {
+                                itemRefs.current[index] = el;
+                              }}
+                            >
+                              {entry.icon}
+                              <span>{entry.label}</span>
+                            </a>
+                          ) : (
+                            <Link
+                              href={entry.href}
+                              onClick={() => closeDialog()}
+                              ref={(el) => {
+                                itemRefs.current[index] = el;
+                              }}
+                            >
+                              {entry.icon}
+                              <span>{entry.label}</span>
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                </ul>
+              ) : (
+                <ul>
+                  <li className="empty">
+                    <h3>Oops! No match!</h3>
+                    <p>Try loosening up those search criteria!</p>
+                  </li>
+                </ul>
+              ))}
+            <ul>
+              {pages.map((page) => (
+                <li key={page.title}>
+                  <span className="title">{page.title}</span>
+                  <ul>
+                    {page.links.map((link) => (
+                      <li key={link.href}>
+                        {link.external ? (
+                          <a href={link.href} onClick={() => closeDialog()}>
+                            {link.icon}
+                            {link.label}
+                          </a>
+                        ) : (
+                          <Link href={link.href} onClick={() => closeDialog()}>
+                            {link.icon}
+                            {link.label}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </dialog>,
+          document.body
+        )}
     </>
   );
 };

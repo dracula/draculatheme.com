@@ -21,10 +21,19 @@ const HomePage = async () => {
   const environment = isProd();
 
   if (environment) {
-    for (const item of paths) {
-      const data = await fetcher(`/api/views?id=${item.repo}`);
+    const viewsPromises = paths.map(async (item) => {
+      try {
+        const data = await fetcher(`/api/views?id=${item.repo}`);
+        return { item, views: Number.parseInt(data.views, 10) || 0 };
+      } catch {
+        return { item, views: 0 };
+      }
+    });
 
-      item.views = Number.parseInt(data.views) || 0;
+    const results = await Promise.all(viewsPromises);
+
+    for (const { item, views } of results) {
+      item.views = views;
     }
 
     paths.sort((a, b) => {

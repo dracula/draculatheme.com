@@ -1,4 +1,4 @@
-#radio-overlay {
+.radio-overlay {
   display: none;
   z-index: 2;
   position: fixed;
@@ -14,7 +14,7 @@
   }
 }
 
-#radio {
+.radio-container {
   display: none;
   z-index: 3;
   position: absolute;
@@ -169,15 +169,15 @@
 }
 
 @media (max-width: 70rem) {
-  #radio-overlay,
-  #radio-overlay.visible {
+  .radio-overlay,
+  .radio-overlay.visible {
     display: none;
     z-index: -1;
     pointer-events: none;
   }
 
-  #radio,
-  #radio.visible {
+  .radio-container,
+  .radio-container.visible {
     display: grid;
     position: relative;
     top: unset;

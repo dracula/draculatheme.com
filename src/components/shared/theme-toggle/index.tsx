@@ -40,6 +40,9 @@ export const ThemeToggle = ({ action }: ThemeToggleProps) => {
   const [play] = useSound("/sounds/toggle.mp3", { volume: 0.12 });
 
   useEffect(() => {
+    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
+    // between server and client renders
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

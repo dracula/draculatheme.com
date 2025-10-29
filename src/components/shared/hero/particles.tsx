@@ -48,6 +48,7 @@ export const Particles = ({
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const gyroscope = useRef<GyroscopeSensor | null>(null);
+  const animateRef = useRef<(() => void) | undefined>(undefined);
 
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
   const mousePosition = useMousePosition();
@@ -247,8 +248,18 @@ export const Particles = ({
       }
     });
 
-    window.requestAnimationFrame(animate);
+    if (animateRef.current) {
+      window.requestAnimationFrame(animateRef.current);
+    }
   }, [clearContext, circleParams, drawCircle, ease, staticity, remapValue]);
+
+  useEffect(() => {
+    animateRef.current = animate;
+
+    if (context.current && animateRef.current) {
+      animateRef.current();
+    }
+  }, [animate]);
 
   useEffect(() => {
     if (
@@ -299,8 +310,6 @@ export const Particles = ({
       };
 
       checkGyroscope();
-    } else {
-      setGyroscopeSupported(false);
     }
   }, [isMobileDevice]);
 
@@ -367,14 +376,13 @@ export const Particles = ({
     }
 
     initCanvas();
-    animate();
 
     window.addEventListener("resize", initCanvas);
 
     return () => {
       window.removeEventListener("resize", initCanvas);
     };
-  }, [initCanvas, animate]);
+  }, [initCanvas]);
 
   useEffect(() => {
     onMouseMove();

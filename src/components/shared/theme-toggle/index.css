@@ -1,3 +1,37 @@
+.theme-toggle {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 0;
+
+  svg {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: transform 120ms var(--ease-fluid);
+    will-change: transform;
+
+    path {
+      transform: translate3d(0, 0, 0);
+      transform-origin: center;
+      backface-visibility: hidden;
+      fill: transparent;
+      stroke: transparent;
+      opacity: 0;
+      transition:
+        transform 300ms var(--ease-fluid),
+        opacity 240ms var(--ease-fluid);
+      will-change: transform, opacity;
+    }
+  }
+
+  @media (max-width: 60rem) {
+    justify-content: start;
+    aspect-ratio: unset;
+    padding: 0 0.75rem;
+    border: 0.0313rem solid var(--background-color-tertiary);
+  }
+}
+
 html {
   &[data-theme="light"] {
     .theme-toggle {
@@ -37,39 +71,5 @@ html {
         }
       }
     }
-  }
-}
-
-.theme-toggle {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  padding: 0;
-
-  svg {
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    pointer-events: none;
-    transition: transform 120ms var(--ease-fluid);
-    will-change: transform;
-
-    path {
-      transform: translate3d(0, 0, 0);
-      transform-origin: center;
-      backface-visibility: hidden;
-      fill: transparent;
-      stroke: transparent;
-      opacity: 0;
-      transition:
-        transform 300ms var(--ease-fluid),
-        opacity 240ms var(--ease-fluid);
-      will-change: transform, opacity;
-    }
-  }
-
-  @media (max-width: 60rem) {
-    justify-content: start;
-    aspect-ratio: unset;
-    padding: 0 0.75rem;
-    border: 0.0313rem solid var(--background-color-tertiary);
   }
 }

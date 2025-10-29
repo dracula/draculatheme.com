@@ -189,9 +189,14 @@ export const DraculaRadio = ({
   useEffect(() => {
     if (shouldAutoplayRef.current && sound) {
       play();
-      setIsPlaying(true);
       setNamedTimeout("autoplay", fadeIn, 48);
       shouldAutoplayRef.current = false;
+
+      const timeoutId = setTimeout(() => {
+        setIsPlaying(true);
+      }, 0);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [sound, play, fadeIn, setNamedTimeout]);
 
@@ -260,9 +265,8 @@ export const DraculaRadio = ({
   return (
     <>
       <button
-        id="radio-overlay"
         type="button"
-        className={visible ? "visible" : ""}
+        className={`radio-overlay${visible ? " visible" : ""}`}
         onClick={hideOverlay}
         tabIndex={0}
         aria-label="Close radio overlay"
@@ -274,8 +278,7 @@ export const DraculaRadio = ({
         }}
       />
       <section
-        id="radio"
-        className={`${track.character.id}${visible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
+        className={`radio-container ${track.character.id}${visible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
         aria-label="Dracula Radio"
       >
         <div className="metadata">
