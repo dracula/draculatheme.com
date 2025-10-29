@@ -203,6 +203,7 @@ p {
 strong,
 b,
 em {
+  color: var(--color-heading);
   font-weight: 500;
 }
 

@@ -23,8 +23,8 @@ export const OnThisPage = ({ headings }: OnThisPageProps) => {
         }
       },
       {
-        rootMargin: "-102px 0px -66%",
-        threshold: 0
+        rootMargin: "-5rem 0px -80%",
+        threshold: [0, 0.25, 0.5, 0.75, 1]
       }
     );
 

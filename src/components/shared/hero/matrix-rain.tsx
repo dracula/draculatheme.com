@@ -22,6 +22,7 @@ export const MatrixRain = () => {
       );
 
     const fontSize = 14;
+
     let animationId: number;
     let columns: number;
     let drops: number[];
@@ -38,8 +39,9 @@ export const MatrixRain = () => {
       context.fillStyle = "rgba(0, 0, 0, 0.024)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
+      const fontSizeInRem = fontSize / 16;
       context.fillStyle = "#ffffff";
-      context.font = `${fontSize}px "DM Mono", monospace, system-ui`;
+      context.font = `${fontSizeInRem}rem "DM Mono", monospace, system-ui`;
 
       for (let columnIndex = 0; columnIndex < drops.length; columnIndex++) {
         const randomCharacter =
