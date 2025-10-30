@@ -60,7 +60,8 @@ const staticPages: PageConfig = {
   },
   "/pro": {
     title: "Dracula Pro",
-    subtitle: "Be more productive.",
+    subtitle:
+      "Refined colors, crafted for focus. Everything you need in one complete package.",
     color: "115"
   },
   "/pro/changelog": {

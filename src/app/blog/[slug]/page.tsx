@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
+import { ProBanner } from "@/components/shared/pro-banner";
 import { ReturnArrow } from "@/icons/return-arrow";
 import { type Author, authors } from "@/lib/authors";
 import type { Post } from "@/lib/markdown";
@@ -185,6 +186,9 @@ const BlogPostPage = async (props: Props) => {
             <h1>{post.title}</h1>
             <CustomMDX source={post.content} />
           </article>
+          <div className="pro-cta">
+            <ProBanner />
+          </div>
         </div>
         <OnThisPage headings={extractHeadings(post.content)} />
       </section>

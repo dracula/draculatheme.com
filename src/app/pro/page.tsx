@@ -20,7 +20,7 @@ import { fetcher } from "@/utils/fetcher";
 export const metadata: Metadata = {
   title: "Be more productive with Dracula Pro",
   description:
-    "Dracula Pro is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
+    "Dracula Pro is a color scheme and UI theme designed for your workflow. Created to be aesthetically pleasing while keeping you focused.",
   alternates: { canonical: "/pro" }
 };
 
@@ -39,7 +39,7 @@ const ProPage = async () => {
     name: "Dracula Pro",
     alternateName: "Dracula Pro",
     description:
-      "Dracula Pro is a color scheme and UI theme tailored for programming. Designed to be aesthetically pleasing while keeping you focused.",
+      "Dracula Pro is a color scheme and UI theme designed for your workflow. Created to be aesthetically pleasing while keeping you focused.",
     url: "https://draculatheme.com/pro",
     image: [
       "https://draculatheme.com/images/pro/vscode/1.png",

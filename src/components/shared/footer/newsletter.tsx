@@ -33,7 +33,8 @@ export const Newsletter = () => {
         <div>
           <h3>Subscribe to our newsletter.</h3>
           <p>
-            Get product updates and news <br className="hide-on-mb" />
+            Get product updates and Dracula Pro news{" "}
+            <br className="hide-on-mb" />
             in your inbox. <b>No spam, ever.</b>
           </p>
           <Link href="/newsletter">Learn more →</Link>

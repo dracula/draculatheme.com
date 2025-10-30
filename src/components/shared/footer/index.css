@@ -153,6 +153,13 @@ footer {
           font-weight: 600;
           transition: color var(--duration-standard) var(--ease-fluid);
 
+          &:not(.logo) {
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--color-caption);
+            text-underline-offset: 0.1875rem;
+          }
+
           &:focus {
             color: var(--color-display);
           }

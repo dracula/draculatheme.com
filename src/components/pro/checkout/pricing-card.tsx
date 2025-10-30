@@ -72,7 +72,7 @@ export const PricingCard = ({
       <div className="header">
         <h3>Become a Vampire</h3>
         <p>
-          Join {formatSalesCount(salesData?.count)} developers using Dracula Pro
+          Join {formatSalesCount(salesData?.count)} creators using Dracula Pro
           every day.
         </p>
       </div>
@@ -86,7 +86,7 @@ export const PricingCard = ({
             {formatPriceDisplay(activePromotion.finalPrice)}
           </h3>
         </div>
-        <span className="one-time">One-time payment!</span>
+        <span className="one-time">One-time payment! 🎉</span>
         <ul className="features">
           {productFeatures.map((feature) => (
             <li key={feature}>
@@ -96,7 +96,7 @@ export const PricingCard = ({
           ))}
         </ul>
         <a href={activePromotion.purchaseUrl} className="action primary">
-          Buy Dracula Pro
+          Buy Dracula Pro Now
         </a>
         {pppPromotion && (
           <div className="ppp-banner">

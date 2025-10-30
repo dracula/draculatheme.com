@@ -138,6 +138,10 @@
             }
           }
         }
+
+        .pro-banner {
+          margin: 0 -1.125rem -1.125rem;
+        }
       }
     }
 
@@ -163,6 +167,10 @@
               max-height: 100%;
               overflow: hidden;
             }
+          }
+
+          .pro-banner {
+            margin: 0 -1.125rem -1.5rem;
           }
         }
       }

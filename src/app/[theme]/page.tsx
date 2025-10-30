@@ -12,6 +12,7 @@ import { DownloadIcon } from "@/icons/download";
 import { EditIcon } from "@/icons/edit";
 import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
+import { apps } from "@/lib/pro/apps";
 import type { Props } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 
@@ -67,6 +68,8 @@ const ThemePage = async (props: Props) => {
   if (!theme) {
     notFound();
   }
+
+  const isProApp = apps.some((app) => app.value === theme.repo);
 
   const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
   const branch = branchData.branches || "main";
@@ -241,7 +244,7 @@ const ThemePage = async (props: Props) => {
                 </li>
               ))}
             </ul>
-            <ProBanner />
+            <ProBanner isProApp={isProApp} appName={theme.title} />
           </aside>
         </div>
       </section>

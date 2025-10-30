@@ -32,7 +32,25 @@ const countryNameFromCode = (code: string) => {
 };
 
 const standardPromotion = (): Promotion => {
-  const month = new Date().toLocaleString("default", { month: "long" });
+  const now = new Date();
+  const monthName = now.toLocaleString("default", { month: "long" });
+
+  // Halloween 2025
+  if (now.getFullYear() === 2025 && now.getMonth() === 9) {
+    const discountPercentage = 40;
+    const finalPrice = discountedPrice(pricing.listPrice, discountPercentage);
+
+    return {
+      name: "Dracula-o-ween Promo",
+      displayName: `It's Dracula-o-ween! ${discountPercentage}% off!`,
+      originalPrice: pricing.listPrice,
+      finalPrice,
+      purchaseUrl:
+        "https://draculatheme.gumroad.com/l/dracula-pro/DRACULAOWEEN2025",
+      discountPercentage
+    };
+  }
+
   const discountPercentage = Number(
     (
       ((pricing.listPrice - pricing.promoPrice) / pricing.listPrice) *
@@ -41,8 +59,8 @@ const standardPromotion = (): Promotion => {
   );
 
   return {
-    name: `${month} Promo`,
-    displayName: `${discountPercentage}% off with ${month} Promo!`,
+    name: `${monthName} Promo`,
+    displayName: `${discountPercentage}% off with ${monthName} Promo!`,
     originalPrice: pricing.listPrice,
     finalPrice: pricing.promoPrice,
     purchaseUrl: `${pricing.gumroadBaseUrl}&wanted=true`,

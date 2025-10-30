@@ -123,7 +123,7 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
         <h3>The reviews are in!</h3>
         <p>
           Dracula Pro has received tons of positive reviews from{" "}
-          <em>developers who ship.</em>
+          <em>creators who ship.</em>
         </p>
       </div>
       <div className="grid">

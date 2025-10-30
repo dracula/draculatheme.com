@@ -4,7 +4,7 @@ import { companies } from "@/lib/pro/companies";
 
 export const UsedBy = () => (
   <div className="used-by">
-    <h2>Used by software engineers from:</h2>
+    <h2>Trusted by creators from:</h2>
     <ul className="logos-cloud">
       {companies.map((company) => (
         <li key={company.id}>

@@ -4,13 +4,28 @@ import Link from "next/link";
 
 import { ArrowUpRight } from "@/icons/arrow-up-right";
 
-export const ProBanner = () => (
+interface ProBannerProps {
+  isProApp?: boolean;
+  appName?: string;
+}
+
+export const ProBanner = ({ isProApp, appName }: ProBannerProps = {}) => (
   <Link href="/pro" className="pro-banner">
     <ArrowUpRight size={14} className="arrow" />
-    <span>Invest in Your Productivity.</span>
-    <h3>Dracula Pro</h3>
+    {isProApp ? (
+      <>
+        <span>Upgrade to Pro</span>
+        <h3>Dracula Pro for {appName}</h3>
+      </>
+    ) : (
+      <>
+        <span>Join 6,000+ creators</span>
+        <h3>Dracula Pro</h3>
+      </>
+    )}
     <p>
-      More than a theme. <em>A productivity package</em> for developers.
+      Refined colors, <em>crafted for focus.</em>
+      <br /> Everything you need in one complete package.
     </p>
   </Link>
 );
