@@ -38,12 +38,12 @@ const standardPromotion = (): Promotion => {
   // Halloween 2025
   if (now.getFullYear() === 2025 && now.getMonth() === 9) {
     const discountPercentage = 40;
-    const finalPrice = discountedPrice(pricing.listPrice, discountPercentage);
+    const finalPrice = discountedPrice(pricing.promoPrice, discountPercentage);
 
     return {
       name: "Dracula-o-ween Promo",
       displayName: `It's Dracula-o-ween! ${discountPercentage}% off!`,
-      originalPrice: pricing.listPrice,
+      originalPrice: pricing.promoPrice,
       finalPrice,
       purchaseUrl:
         "https://draculatheme.gumroad.com/l/dracula-pro/DRACULAOWEEN2025",
