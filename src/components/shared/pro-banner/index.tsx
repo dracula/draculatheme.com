@@ -19,7 +19,7 @@ export const ProBanner = ({ isProApp, appName }: ProBannerProps = {}) => (
       </>
     ) : (
       <>
-        <span>Join 6,000+ creators</span>
+        <span>Join 7,000+ creators</span>
         <h3>Dracula Pro</h3>
       </>
     )}

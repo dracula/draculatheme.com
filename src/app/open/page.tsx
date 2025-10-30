@@ -14,12 +14,12 @@ interface Metric {
 }
 
 const constants = {
-  subscribers: 7399,
+  subscribers: 11460,
   legacyViews: 10166543,
   proProductId: "tPfIDt",
   links: {
     github: "https://github.com/dracula/dracula-theme",
-    subscribers: "https://draculatheme.com/pro/journey#updates",
+    subscribers: "https://draculatheme.com/pro/journey",
     proSales: "https://draculatheme.com/pro"
   }
 };
