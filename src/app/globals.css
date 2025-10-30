@@ -178,10 +178,28 @@ main {
 
   &.not-found {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     gap: 1em;
     text-align: center;
+
+    > .action {
+      position: relative;
+    }
+
+    .colored-squircle-flow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     .action {
       margin-top: 1em;

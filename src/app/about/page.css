@@ -6,6 +6,7 @@
     align-items: center;
 
     article {
+      position: relative;
       max-width: 42rem;
       padding-bottom: 2em;
       border: 0.0625rem solid var(--background-color-tertiary);
@@ -17,7 +18,7 @@
       }
 
       &:not(:first-child) {
-        border-top: 0;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       }
 
       &:last-child {
