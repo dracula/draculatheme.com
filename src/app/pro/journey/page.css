@@ -57,7 +57,7 @@
         padding: 1.5rem;
         gap: 1em;
         border: 0.0313rem solid var(--background-color-tertiary);
-        border-radius: 0.75rem;
+        border-radius: var(--radius-lg);
         background-color: var(--background-color-secondary);
         line-height: 1.8;
         transition:

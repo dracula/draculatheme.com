@@ -35,13 +35,13 @@
         height: 100%;
         padding: 1.125rem;
         gap: 1.125rem;
-        border-radius: 0.75rem;
+        border-radius: var(--radius-lg);
         outline-color: transparent;
         outline-style: solid;
         outline-width: 0;
         background-color: var(--background-color-secondary);
         animation-timeline: view();
-        animation-duration: 300ms;
+        animation-duration: var(--duration-slow);
         animation-timing-function: var(--ease-elastic);
         animation-fill-mode: both;
         animation-name: items-fade-in;
@@ -58,7 +58,7 @@
           position: relative;
           flex: 1;
           overflow: hidden;
-          border-radius: 0.375rem;
+          border-radius: var(--radius-sm);
           background-color: var(--background-color-tertiary);
 
           img {

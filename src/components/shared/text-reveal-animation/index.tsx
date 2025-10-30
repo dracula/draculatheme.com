@@ -37,13 +37,11 @@ export const TextRevealAnimation = ({
 }: TextRevealAnimationProps) => {
   const control = useAnimation();
   const tipRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(tipRef);
+  const inView = useInView(tipRef, { once: true });
 
   useEffect(() => {
     if (inView) {
       control.start("visible");
-    } else {
-      control.start("hidden");
     }
   }, [control, inView]);
 

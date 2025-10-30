@@ -24,11 +24,16 @@
 
 ## Animations: Defaults and Limits
 
-- Default to `ease-out` for most animations.
-- Do not use built-in CSS easings unless it is `ease` or `linear`. Do not use other built-ins.
-- Animation durations must never exceed `600ms` unless the animation is clearly illustrative.
-- Most UI animations should be around `180ms` to `300ms`.
-- Always define animation durations in `ms`.
+- Default to `var(--ease-fluid)` for most animations.
+- Always use easing variables: `var(--ease-fluid)`, `var(--ease-sharp)`, `var(--ease-elastic)`, or `var(--ease-impact)`.
+- Never use built-in CSS easings (`ease`, `ease-in`, `ease-out`, `ease-in-out`).
+- For CSS `transition` durations:
+  - Always use duration variables: `var(--duration-fast)`, `var(--duration-standard)`, or `var(--duration-slow)`.
+- For CSS `animation` durations:
+  - May use `linear` easing if needed.
+  - May use specific duration values in `ms`.
+  - Duration must never exceed `600ms` unless the animation is clearly illustrative or decorative.
+- Always define durations in `ms`, never in `s`.
 
 ## Motion, Triggers, and Reduced Motion
 
@@ -51,6 +56,6 @@
 
 ## Motion Libraries
 
-- When using `framer-motion`/`motion/react`, use `transform` instead of `x` or `y` when hardware acceleration is required.
+- When using [`framer-motion`/`motion/react`](https://motion.dev/docs/react), use `transform` instead of `x` or `y` when hardware acceleration is required.
 - Default to spring animations when using `framer-motion`/`motion/react`.
 - Avoid bouncy spring animations unless working with drag gestures.

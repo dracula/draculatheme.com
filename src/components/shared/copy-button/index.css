@@ -2,7 +2,7 @@
   aspect-ratio: 1/1;
   min-height: fit-content;
   padding: 0.5em;
-  border-radius: 0.1875rem;
+  border-radius: var(--radius-sm);
 
   &.copied {
     .tick {
@@ -17,7 +17,7 @@
 
   .tick {
     display: none;
-    transition: display 240ms var(--ease-elastic);
+    transition: display var(--duration-standard) var(--ease-elastic);
 
     path {
       stroke-dasharray: 24;

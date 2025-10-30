@@ -7,7 +7,7 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     pointer-events: none;
-    transition: transform 120ms var(--ease-fluid);
+    transition: transform var(--duration-fast) var(--ease-fluid);
     will-change: transform;
 
     path {

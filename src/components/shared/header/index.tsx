@@ -4,7 +4,7 @@ import "./index.css";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BookIcon } from "@/icons/book";
 import { GithubIcon } from "@/icons/github";
@@ -43,6 +43,21 @@ export const Header = () => {
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
   };
+
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const { body } = document;
+    if (isNavActive) {
+      body.classList.add("block-overflow");
+    } else {
+      body.classList.remove("block-overflow");
+    }
+    return () => {
+      body.classList.remove("block-overflow");
+    };
+  }, [isNavActive]);
 
   const handleToggleRadio = () => {
     setIsRadioVisible(!isRadioVisible);
@@ -158,10 +173,21 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <ThemeToggle action={() => setIsNavActive(false)} />
+              <ThemeToggle
+                action={() => {
+                  setIsNavActive(false);
+                }}
+              />
             </li>
           </ul>
         </nav>
+        {/* Mobile overlay */}
+        <button
+          type="button"
+          aria-label="Close navigation overlay"
+          onClick={handleToggleNav}
+          className={`mb-overlay${isNavActive ? " visible" : ""}`}
+        />
       </div>
     </header>
   );

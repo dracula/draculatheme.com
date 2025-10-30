@@ -254,14 +254,6 @@ export const Particles = ({
   }, [clearContext, circleParams, drawCircle, ease, staticity, remapValue]);
 
   useEffect(() => {
-    animateRef.current = animate;
-
-    if (context.current && animateRef.current) {
-      animateRef.current();
-    }
-  }, [animate]);
-
-  useEffect(() => {
     if (
       typeof window !== "undefined" &&
       "Gyroscope" in window &&
@@ -377,12 +369,17 @@ export const Particles = ({
 
     initCanvas();
 
+    animateRef.current = animate;
+    if (context.current && animateRef.current) {
+      animateRef.current();
+    }
+
     window.addEventListener("resize", initCanvas);
 
     return () => {
       window.removeEventListener("resize", initCanvas);
     };
-  }, [initCanvas]);
+  }, [initCanvas, animate]);
 
   useEffect(() => {
     onMouseMove();
