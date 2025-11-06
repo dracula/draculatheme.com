@@ -5,7 +5,7 @@ import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 
-import { AnnouncementBar } from "@/components/shared/announcement-bar";
+// import { AnnouncementBar } from "@/components/shared/announcement-bar";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
@@ -68,7 +68,7 @@ const RootLayout = async ({
   <html lang="en" suppressHydrationWarning={true}>
     <body className={`${dmSans.variable} ${dmMono.variable}`}>
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
-        <AnnouncementBar />
+        {/* <AnnouncementBar /> */}
         <Header />
         <main>{children}</main>
         <Footer />
