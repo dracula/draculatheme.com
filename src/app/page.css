@@ -165,6 +165,10 @@
             }
           }
         }
+
+        &:last-of-type {
+          margin-bottom: 0.375rem;
+        }
       }
     }
 
@@ -239,11 +243,14 @@
             color: var(--color-caption);
             font-weight: 600;
             font-size: var(--font-size-caption);
-            line-height: 1.8;
 
             h3 {
               color: var(--color-display);
               font-size: 0.9375rem;
+            }
+
+            p {
+              line-height: 1.8;
             }
           }
         }

@@ -28,11 +28,13 @@ export const ColoredSquircleFlow = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = canvasContainerRef.current;
+
     if (!canvas || !container) {
       return;
     }
 
     const ctx = canvas.getContext("2d");
+
     if (!ctx) {
       return;
     }
@@ -107,9 +109,11 @@ export const ColoredSquircleFlow = () => {
 
     const animate = () => {
       const ctx2 = contextRef.current;
+
       if (!ctx2) {
         return;
       }
+
       const width = canvasSizeRef.current.w;
       const height = canvasSizeRef.current.h;
       ctx2.clearRect(0, 0, width, height);
@@ -180,10 +184,11 @@ export const ColoredSquircleFlow = () => {
         ctx2.fillStyle = "hsl(0 0% 100%)";
         ctx2.textAlign = "left";
         ctx2.textBaseline = "middle";
-        ctx2.fillText(`H: ${squircle.hue}`, endX + 12 * scale, endY);
+        ctx2.fillText(`HUE: ${squircle.hue}`, endX + 12 * scale, endY);
       });
 
       const gradX = contextRef.current?.createLinearGradient(0, 0, width, 0);
+
       if (gradX && contextRef.current) {
         gradX.addColorStop(0, "hsla(0 0% 0% / 0)");
         gradX.addColorStop(0.1, "hsla(0 0% 0% / 1)");
@@ -196,6 +201,7 @@ export const ColoredSquircleFlow = () => {
       }
 
       const gradY = contextRef.current?.createLinearGradient(0, 0, 0, height);
+
       if (gradY && contextRef.current) {
         gradY.addColorStop(0, "hsla(0 0% 0% / 0)");
         gradY.addColorStop(0.1, "hsla(0 0% 0% / 1)");
@@ -206,6 +212,7 @@ export const ColoredSquircleFlow = () => {
         contextRef.current.fillRect(0, 0, width, height);
         contextRef.current.globalCompositeOperation = "source-over";
       }
+
       animationRef.current = requestAnimationFrame(
         animateFnRef.current as () => void
       );

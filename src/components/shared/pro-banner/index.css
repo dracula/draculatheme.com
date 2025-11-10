@@ -12,9 +12,7 @@
     var(--background-color-primary),
     var(--background-color-secondary)
   );
-  transition:
-    transform var(--duration-fast) var(--ease-fluid),
-    border-color var(--duration-fast) var(--ease-fluid);
+  transition: transform var(--duration-fast) var(--ease-fluid);
 
   .arrow {
     position: absolute;
@@ -45,25 +43,37 @@
     }
   }
 
-  &::before {
+  &::before,
+  &::after {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, transparent 6%, var(--color));
     content: "";
     opacity: 0.08;
     pointer-events: none;
+  }
+
+  &::before {
+    background: radial-gradient(
+        var(--color) 0.0625rem,
+        var(--background-color-primary) 0.0625rem
+      )
+      0 0 / 0.75rem 0.75rem;
+    mask-image: linear-gradient(to top right, transparent 12%, var(--color));
+  }
+
+  &::after {
+    background: linear-gradient(to bottom right, transparent 6%, var(--color));
     transition: opacity var(--duration-fast) var(--ease-fluid);
   }
 
   &:hover {
     transform: translateY(-0.125rem);
-    border-color: var(--color-display);
 
     .arrow {
       transform: translate(0.125rem, -0.125rem);
     }
 
-    &::before {
+    &::after {
       opacity: 0.12;
     }
   }
