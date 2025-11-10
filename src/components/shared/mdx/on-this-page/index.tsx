@@ -2,7 +2,7 @@
 
 import "./index.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import type { Heading } from "@/lib/types";
 
@@ -11,70 +11,121 @@ interface OnThisPageProps {
 }
 
 export const OnThisPage = ({ headings }: OnThisPageProps) => {
-  const [activeId, setActiveId] = useState<string>("");
+  const [activeId, setActiveId] = useState<string>(() => {
+    if (typeof window === "undefined") {
+      return headings.length > 0 ? headings[0].id : "";
+    }
+
+    const hashId = window.location.hash.slice(1);
+    const matchingHeading = headings.find((heading) => heading.id === hashId);
+
+    if (matchingHeading) {
+      return matchingHeading.id;
+    }
+
+    return headings.length > 0 ? headings[0].id : "";
+  });
+  const isClickScrollRef = useRef(false);
 
   useEffect(() => {
-    const getActiveHeading = () => {
-      const scrollPosition = window.scrollY;
-      const threshold = 150;
+    if (headings.length === 0) {
+      return;
+    }
 
-      if (scrollPosition < 100) {
-        setActiveId(headings.length > 0 ? headings[0].id : "");
+    const markerOffset = 160;
+
+    const resolveActiveId = () => {
+      if (isClickScrollRef.current) {
+        const targetElement = document.getElementById(activeId);
+
+        if (targetElement) {
+          const { top, bottom } = targetElement.getBoundingClientRect();
+
+          if (top > markerOffset && bottom > markerOffset) {
+            return;
+          }
+        }
+
+        isClickScrollRef.current = false;
+      }
+
+      let nextId = headings.length > 0 ? headings[0].id : "";
+
+      for (const heading of headings) {
+        const element = document.getElementById(heading.id);
+
+        if (!element) {
+          continue;
+        }
+
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementBottom = rect.bottom;
+
+        if (elementTop <= markerOffset && elementBottom > markerOffset) {
+          nextId = heading.id;
+          break;
+        }
+
+        if (elementTop <= markerOffset) {
+          nextId = heading.id;
+          continue;
+        }
+
+        break;
+      }
+
+      setActiveId((previousId) =>
+        previousId === nextId ? previousId : nextId
+      );
+    };
+
+    const handleHashChange = () => {
+      const hashId = window.location.hash.slice(1);
+
+      if (hashId.length === 0) {
+        window.requestAnimationFrame(resolveActiveId);
         return;
       }
 
-      const headingElements = headings
-        .map((heading) => ({
-          id: heading.id,
-          element: document.getElementById(heading.id)
-        }))
-        .filter((item) => item.element !== null) as Array<{
-        id: string;
-        element: HTMLElement;
-      }>;
+      const element = document.getElementById(hashId);
 
-      let activeId = "";
-      let lastPassedId = "";
-
-      for (const item of headingElements) {
-        const rect = item.element.getBoundingClientRect();
-        const elementTop = rect.top;
-
-        if (elementTop <= threshold) {
-          lastPassedId = item.id;
-        }
-
-        if (elementTop > 0 && elementTop <= threshold) {
-          activeId = item.id;
-          break;
-        }
+      if (element) {
+        setActiveId(hashId);
+        isClickScrollRef.current = true;
       }
-
-      setActiveId(activeId || lastPassedId);
     };
 
-    getActiveHeading();
+    const handleScroll = () => {
+      window.requestAnimationFrame(resolveActiveId);
+    };
 
-    window.addEventListener("scroll", getActiveHeading, { passive: true });
+    window.requestAnimationFrame(resolveActiveId);
+    handleHashChange();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener("scroll", getActiveHeading);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [headings]);
+  }, [headings, activeId]);
 
   if (headings.length === 0) {
     return null;
   }
 
   return (
-    <nav className="on-this-page">
+    <nav className="on-this-page" aria-label="On this page navigation">
       <h3>On this page</h3>
       <ul>
         {headings.map((heading) => (
           <li key={heading.id}>
             <a
               href={`#${heading.id}`}
-              className={activeId === heading.id ? "active" : ""}
+              data-state={activeId === heading.id ? "active" : "inactive"}
+              aria-current={activeId === heading.id ? "location" : undefined}
             >
               <span>{heading.text}</span>
             </a>
