@@ -1,15 +1,17 @@
-export const ReturnArrow = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const ReturnArrow = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon${className && ` ${className}`}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">Return Icon</title>
+    <title>Return Icon</title>
     <path
       d="M20 21V18.9231C20 16.9221 20 15.9217 19.8547 15.0846C19.0547 10.4765 15.0934 6.86243 10.0426 6.13259C9.12509 6 7.19318 6 5 6"
       stroke="currentColor"

@@ -1,15 +1,17 @@
-export const ArrowUpRight = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const ArrowUpRight = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon${className && ` ${className}`}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">Arrow Up Right Icon</title>
+    <title>Arrow Up Right Icon</title>
     <path
       d="M17 7L6 18"
       stroke="currentColor"

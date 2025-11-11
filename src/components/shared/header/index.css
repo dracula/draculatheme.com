@@ -110,9 +110,9 @@ header {
 
       @media (hover: hover) and (pointer: fine) {
         transition:
-          outline-color 240ms var(--ease-fluid),
-          outline-width 180ms var(--ease-fluid),
-          color 240ms var(--ease-fluid);
+          outline-color var(--duration-standard) var(--ease-fluid),
+          outline-width var(--duration-fast) var(--ease-fluid),
+          color var(--duration-standard) var(--ease-fluid);
 
         &:hover {
           outline-color: var(--background-color-tertiary);
@@ -142,8 +142,8 @@ header {
           transform: translateY(-50%);
           transform-origin: center;
           transition:
-            transform 240ms var(--ease-elastic),
-            color 240ms var(--ease-fluid);
+            transform var(--duration-standard) var(--ease-elastic),
+            color var(--duration-standard) var(--ease-fluid);
           will-change: transform;
         }
 
@@ -234,7 +234,7 @@ header {
                 border-radius: var(--radius-sm);
                 background-color: var(--color);
                 content: "";
-                animation: bounce 2202ms ease infinite alternate;
+                animation: bounce 2202ms var(--ease-fluid) infinite alternate;
                 opacity: 1;
                 transition: opacity var(--duration-fast) var(--ease-fluid);
                 will-change: transform;

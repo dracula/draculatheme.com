@@ -1,15 +1,17 @@
-export const ShopIcon = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const ShopIcon = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon${className && ` ${className}`}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">Shop Icon</title>
+    <title>Shop Icon</title>
     <path
       d="M5.94724 9.003C5.94724 9.003 3.68265 11.252 3.01654 10.9766C2.07687 10.5882 1.67051 6.8204 2.30951 6.24512L4.76679 4.03287C5.90144 3.01137 5.93084 3 7.43853 3H8.95703C9.1835 4.3592 10.4956 5.99207 12 5.99207C13.5044 5.99207 14.8165 4.3592 15.043 3H16.5615C18.0692 3 18.0986 3.01136 19.2332 4.03287L21.6905 6.24512C22.3295 6.8204 21.9231 10.5882 20.9835 10.9766C20.3173 11.252 18.0489 9.003 18.0489 9.003"
       stroke="currentColor"

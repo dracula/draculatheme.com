@@ -6,7 +6,7 @@ export const submitThemeIcon = ({ isHovered }: { isHovered: boolean }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title className="sr-only">Submit Theme Icon</title>
+    <title>Submit Theme Icon</title>
     <path
       d="M196.124 14.995L196.441 4.99998"
       stroke={isHovered ? "var(--color)" : "var(--background-color-primary)"}

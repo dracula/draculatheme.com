@@ -6,7 +6,7 @@ export const useColorsIcon = ({ isHovered }: { isHovered: boolean }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title className="sr-only">Use Colors Icon</title>
+    <title>Use Colors Icon</title>
     <rect
       y="19"
       width="140"

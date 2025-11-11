@@ -1,15 +1,17 @@
-export const RadioIcon = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const RadioIcon = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon${className && ` ${className}`}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">Radio Icon</title>
+    <title>Radio Icon</title>
     <circle
       cx="14.5"
       cy="13.5"

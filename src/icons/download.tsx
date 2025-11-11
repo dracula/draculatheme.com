@@ -1,15 +1,17 @@
-export const DownloadIcon = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const DownloadIcon = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon${className && ` ${className}`}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">Download Icon</title>
+    <title>Download Icon</title>
     <path
       d="M12 14.5L12 4.5M12 14.5C11.2998 14.5 9.99153 12.5057 9.5 12M12 14.5C12.7002 14.5 14.0085 12.5057 14.5 12"
       stroke="currentColor"

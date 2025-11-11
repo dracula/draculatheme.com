@@ -6,7 +6,7 @@ export const copyTemplateIcon = ({ isHovered }: { isHovered: boolean }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title className="sr-only">Copy Template Icon</title>
+    <title>Copy Template Icon</title>
     <path
       d="M196.124 14.995L196.441 4.99998"
       stroke={isHovered ? "var(--color)" : "var(--background-color-primary)"}

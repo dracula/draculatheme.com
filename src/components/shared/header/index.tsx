@@ -100,7 +100,7 @@ export const Header = () => {
               color="currentColor"
               fill="none"
             >
-              <title className="sr-only">Menu Icon</title>
+              <title>Menu Icon</title>
               <path
                 d="M4 9L20 9"
                 stroke="currentColor"

@@ -193,11 +193,11 @@ html {
           outline-width: 0;
           background-color: var(--background-color-primary);
           transition:
-            border-color 240ms var(--ease-fluid),
-            outline-color 240ms var(--ease-fluid),
-            outline-width 180ms var(--ease-fluid),
-            color 240ms var(--ease-fluid),
-            background-color 240ms var(--ease-fluid);
+            border-color var(--duration-standard) var(--ease-fluid),
+            outline-color var(--duration-standard) var(--ease-fluid),
+            outline-width var(--duration-fast) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid),
+            background-color var(--duration-standard) var(--ease-fluid);
           user-select: none;
 
           &::placeholder {
@@ -277,9 +277,9 @@ html {
                 content: "";
                 pointer-events: none;
                 transition:
-                  width 240ms var(--ease-elastic),
-                  height 240ms var(--ease-elastic),
-                  background-color 240ms var(--ease-fluid);
+                  width var(--duration-standard) var(--ease-elastic),
+                  height var(--duration-standard) var(--ease-elastic),
+                  background-color var(--duration-standard) var(--ease-fluid);
               }
             }
 
@@ -509,7 +509,7 @@ html {
           .wheel {
             --y: -1.5rem;
             --x: -0.75rem;
-            --speed: 5400ms;
+            --speed: 600ms;
 
             z-index: 2;
             width: 8rem;
@@ -526,7 +526,7 @@ html {
               );
             animation: up-down var(--speed) alternate infinite;
             transition:
-              transform 240ms var(--ease-fluid),
+              transform var(--duration-standard) var(--ease-fluid),
               animation-play-state var(--duration-standard) var(--ease-fluid);
             will-change: transform;
 
@@ -552,7 +552,7 @@ html {
             &.pro {
               --y: -0.75rem;
               --x: 1.5rem;
-              --speed: 4002ms;
+              --speed: 540ms;
 
               width: 12rem;
               height: 12rem;
@@ -641,8 +641,8 @@ html {
           height: var(--height);
           transform: rotateY(-30deg);
           transform-style: preserve-3d;
-          animation: 1002ms ease 0ms 1 book-animation;
-          transition: 1002ms ease;
+          animation: var(--duration-slow) var(--ease-fluid) 0ms 1 book-animation;
+          transition: transform var(--duration-slow) var(--ease-fluid);
           will-change: transform;
 
           &:hover {
@@ -736,8 +736,8 @@ html {
           background-color: var(--color);
           color: var(--background-color-primary);
           transition:
-            background-color 240ms var(--ease-fluid),
-            color 240ms var(--ease-fluid);
+            background-color var(--duration-standard) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);
@@ -784,8 +784,11 @@ html {
           color: var(--color-heading);
           line-height: 1.8;
           transition:
-            transform 240ms var(--ease-elastic),
-            background-color 240ms var(--ease-fluid);
+            transform var(--duration-standard) var(--ease-elastic),
+            background-color var(--duration-standard) var(--ease-fluid);
+          transition:
+            transform var(--duration-standard) var(--ease-elastic),
+            background-color var(--duration-standard) var(--ease-fluid);
           will-change: transform;
 
           &:focus-within,
@@ -973,8 +976,8 @@ html {
           font-weight: 700;
           line-height: 1.8;
           transition:
-            background-color 240ms var(--ease-fluid),
-            color 240ms var(--ease-fluid);
+            background-color var(--duration-standard) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid);
 
           &:hover {
             background-color: var(--background-color-primary);

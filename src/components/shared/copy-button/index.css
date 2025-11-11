@@ -17,7 +17,6 @@
 
   .tick {
     display: none;
-    transition: display var(--duration-standard) var(--ease-elastic);
 
     path {
       stroke-dasharray: 24;

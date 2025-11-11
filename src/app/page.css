@@ -47,9 +47,9 @@
 
           @media (hover: hover) and (pointer: fine) {
             transition:
-              outline-color 240ms var(--ease-fluid),
-              outline-width 180ms var(--ease-fluid),
-              color 240ms var(--ease-fluid);
+              outline-color var(--duration-standard) var(--ease-fluid),
+              outline-width var(--duration-fast) var(--ease-fluid),
+              color var(--duration-standard) var(--ease-fluid);
 
             &:hover {
               outline-color: var(--background-color-tertiary);
@@ -73,8 +73,8 @@
           transform: translateY(-50%);
           transform-origin: center;
           transition:
-            transform 240ms var(--ease-elastic),
-            color 240ms var(--ease-fluid);
+            transform var(--duration-standard) var(--ease-elastic),
+            color var(--duration-standard) var(--ease-fluid);
           will-change: transform;
         }
       }
@@ -111,10 +111,7 @@
           outline-width: 0;
           background-color: var(--background-color-primary);
           font-weight: 600;
-          transition:
-            width 240ms var(--ease-elastic),
-            padding 180ms var(--ease-fluid),
-            color 240ms var(--ease-fluid);
+          transition: color var(--duration-standard) var(--ease-fluid);
 
           &:focus-visible {
             outline-color: var(--background-color-tertiary);
@@ -124,11 +121,9 @@
 
           @media (hover: hover) and (pointer: fine) {
             transition:
-              width 240ms var(--ease-elastic),
-              padding 180ms var(--ease-fluid),
-              outline-color 240ms var(--ease-fluid),
-              outline-width 180ms var(--ease-fluid),
-              color 240ms var(--ease-fluid);
+              outline-color var(--duration-standard) var(--ease-fluid),
+              outline-width var(--duration-fast) var(--ease-fluid),
+              color var(--duration-standard) var(--ease-fluid);
 
             &:hover {
               outline-color: var(--background-color-tertiary);
@@ -157,7 +152,6 @@
 
           .icon {
             display: none;
-            transition: display var(--duration-standard) var(--ease-elastic);
 
             path {
               stroke-dasharray: 24;
@@ -215,8 +209,8 @@
 
           @media (hover: hover) and (pointer: fine) {
             transition:
-              outline-color 240ms var(--ease-fluid),
-              outline-width 180ms var(--ease-fluid);
+              outline-color var(--duration-standard) var(--ease-fluid),
+              outline-width var(--duration-fast) var(--ease-fluid);
 
             &:hover {
               outline-color: var(--background-color-tertiary);
