@@ -342,7 +342,7 @@
       }
     }
 
-    .faqs {
+    .frequently-asked-questions {
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -380,7 +380,7 @@
         }
       }
 
-      .faqs {
+      .frequently-asked-questions {
         flex-direction: column;
 
         h3 {

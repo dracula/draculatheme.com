@@ -1,4 +1,8 @@
-export const faqs = [
+import Link from "next/link";
+
+import type { FrequentlyAskedQuestion } from "@/lib/types";
+
+export const frequentlyAskedQuestions: FrequentlyAskedQuestion[] = [
   {
     question: "Do you offer student discounts?",
     answer:
@@ -32,6 +36,6 @@ export const faqs = [
   {
     question: "Need more help?",
     answer:
-      "Reach out to support@draculatheme.com for any additional questions or support needs."
+      "You can reach our customer support team by emailing support@draculatheme.com. We aim to respond to all inquiries promptly."
   }
 ];

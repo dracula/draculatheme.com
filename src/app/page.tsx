@@ -6,6 +6,10 @@ import { Suspense } from "react";
 
 import { ContentWrapper } from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
 import { isProd } from "@/utils/environment";
@@ -16,6 +20,12 @@ export const metadata: Metadata = {
   description:
     "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more."
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "home",
+  "structured",
+  "data"
+);
 
 const HomePage = async () => {
   const environment = isProd();
@@ -51,12 +61,7 @@ const HomePage = async () => {
           </section>
         </NuqsAdapter>
       </Suspense>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
-        }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

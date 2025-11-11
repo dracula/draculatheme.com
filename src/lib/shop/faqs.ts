@@ -1,4 +1,6 @@
-export const faqs = [
+import type { FrequentlyAskedQuestion } from "@/lib/types";
+
+export const frequentlyAskedQuestions: FrequentlyAskedQuestion[] = [
   {
     question: "Do you ship worldwide?",
     answer: "Yes, we offer international shipping to most countries worldwide."

@@ -5,6 +5,10 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { ProBanner } from "@/components/shared/pro-banner";
 import { BugIcon } from "@/icons/bug";
@@ -69,6 +73,12 @@ const ThemePage = async (props: Props) => {
     notFound();
   }
 
+  const structuredDataScriptId = createStructuredDataScriptId(
+    "theme",
+    theme.repo,
+    "structured",
+    "data"
+  );
   const isProApp = apps.some((app) => app.value === theme.repo);
 
   const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
@@ -248,10 +258,7 @@ const ThemePage = async (props: Props) => {
           </aside>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

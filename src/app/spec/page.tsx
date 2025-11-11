@@ -3,6 +3,10 @@ import "./page.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
 import { jsonLd } from "@/lib/json-ld/spec";
@@ -18,6 +22,11 @@ export const metadata: Metadata = {
 };
 
 const SpecPage = () => {
+  const structuredDataScriptId = createStructuredDataScriptId(
+    "spec",
+    "structured",
+    "data"
+  );
   const spec = getMdxFromFile("content", "spec");
 
   if (!spec) {
@@ -32,10 +41,7 @@ const SpecPage = () => {
         </div>
         <OnThisPage headings={extractHeadings(spec.content)} />
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

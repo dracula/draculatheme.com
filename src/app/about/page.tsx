@@ -2,8 +2,13 @@ import "./page.css";
 
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { jsonLd } from "@/lib/json-ld/about";
 
 export const metadata: Metadata = {
@@ -14,6 +19,12 @@ export const metadata: Metadata = {
     canonical: "/about"
   }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "about",
+  "structured",
+  "data"
+);
 
 const AboutPage = () => (
   <>
@@ -120,11 +131,54 @@ const AboutPage = () => (
           <p>Thanks Dracula, for distracting me when I needed the most.</p>
         </div>
       </article>
+      <article className="prose">
+        <time dateTime="2022-04-13">April 13th, 2022</time>
+        <div className="content">
+          <p>
+            <a
+              href="https://luxonauta.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lucas de França
+            </a>{" "}
+            became Dracula&apos;s first dedicated contributor, bringing design,
+            front-end expertise, and illustration to the core team—a journey we
+            first shared in the{" "}
+            <Link href="/blog/interview-with-lucas">welcome interview</Link>.
+          </p>
+          <p>
+            He introduced many patterns you see on this site and helped define
+            our collaborative workflow. His work on a community-friendly light
+            mode led to{" "}
+            <Link href="/blog/dracula-pro-2.0-our-first-light-theme">
+              Dracula Pro&apos;s Alucard release
+            </Link>{" "}
+            and the{" "}
+            <Link href="/blog/new-light-theme-coming-to-all-platforms">
+              open-source Alucard launch
+            </Link>
+            .
+          </p>
+          <p>
+            Now Dracula works beautifully in daylight without losing its
+            identity.
+          </p>
+        </div>
+      </article>
     </section>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <section className="container about-highlights">
+      <div className="header">
+        <p>
+          <i>having a good time I don&apos;t wanna stop at all 🎸</i>
+        </p>
+        <h2>
+          We&apos;re community-driven, passionately maintained, forever
+          evolving.
+        </h2>
+      </div>
+    </section>
+    <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
   </>
 );
 

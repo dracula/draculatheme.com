@@ -1044,7 +1044,7 @@ html {
       }
     }
 
-    .faqs {
+    .frequently-asked-questions {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1199,7 +1199,7 @@ html {
         }
       }
 
-      .faqs {
+      .frequently-asked-questions {
         max-width: 100%;
       }
     }

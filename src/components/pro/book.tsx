@@ -34,7 +34,7 @@ export const Book = () => (
       <a
         href="https://14habits.com"
         target="_blank"
-        className="action primary cta"
+        className="action primary call-to-action"
         rel="noreferrer"
       >
         <span>Get a Free Chapter</span>

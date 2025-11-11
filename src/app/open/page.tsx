@@ -4,6 +4,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { ArrowUpRight } from "@/icons/arrow-up-right";
 import { fetcher } from "@/utils/fetcher";
 
@@ -111,6 +115,12 @@ export const metadata: Metadata = {
     canonical: "/open"
   }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "open",
+  "structured",
+  "data"
+);
 
 const OpenPage = async () => {
   const metricData = await fetchMetricData();
@@ -293,10 +303,7 @@ const OpenPage = async () => {
           ))}
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

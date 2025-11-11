@@ -13,7 +13,11 @@ import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { WhyPro } from "@/components/pro/why-pro";
 import { Disclosure } from "@/components/shared/disclosure";
 import { Hero } from "@/components/shared/hero";
-import { faqs } from "@/lib/pro/faqs";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
+import { frequentlyAskedQuestions } from "@/lib/pro/faqs";
 import type { Review } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 
@@ -23,6 +27,12 @@ export const metadata: Metadata = {
     "Dracula Pro is a color scheme and UI theme designed for your workflow. Created to be aesthetically pleasing while keeping you focused.",
   alternates: { canonical: "/pro" }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "pro",
+  "structured",
+  "data"
+);
 
 const ProPage = async () => {
   const reviewsData = (await fetcher("/api/reviews")) as
@@ -135,21 +145,24 @@ const ProPage = async () => {
         <Book />
         <Testimonials reviews={reviewsData} />
         <Checkout />
-        <div id="faqs" className="faqs">
+        <div
+          id="frequently-asked-questions"
+          className="frequently-asked-questions"
+        >
           <h3>Frequently Asked Questions</h3>
           <ul>
-            {faqs.map((faq) => (
-              <li key={faq.question}>
-                <Disclosure question={faq.question} answer={faq.answer} />
+            {frequentlyAskedQuestions.map((questionItem) => (
+              <li key={questionItem.question}>
+                <Disclosure
+                  question={questionItem.question}
+                  answer={questionItem.answer}
+                />
               </li>
             ))}
           </ul>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

@@ -32,7 +32,7 @@ if (!GUMROAD_ACCESS_TOKEN || !GITHUB_PERSONAL_ACCESS_TOKEN) {
 
 const octokit = new Octokit({ auth: GITHUB_PERSONAL_ACCESS_TOKEN });
 
-export async function POST(request: NextRequest) {
+export const POST = async (request: NextRequest) => {
   try {
     const { email } = await request.json();
     if (!email) {
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
+};
 
 const verifyGumroadPurchase = async (email: string): Promise<boolean> => {
   const response = await fetch(

@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
 import { ProBanner } from "@/components/shared/pro-banner";
@@ -72,6 +76,12 @@ const BlogPostPage = async (props: Props) => {
   const postAuthors = post.authors
     .map((humanId) => authors.find((author: Author) => author.id === humanId))
     .filter((author): author is Author => author !== undefined);
+  const structuredDataScriptId = createStructuredDataScriptId(
+    "blog",
+    slug,
+    "structured",
+    "data"
+  );
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -186,16 +196,13 @@ const BlogPostPage = async (props: Props) => {
             <h1>{post.title}</h1>
             <CustomMDX source={post.content} />
           </article>
-          <div className="pro-cta">
+          <div className="pro-call-to-action">
             <ProBanner />
           </div>
         </div>
         <OnThisPage headings={extractHeadings(post.content)} />
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

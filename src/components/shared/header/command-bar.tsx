@@ -44,7 +44,11 @@ const pages = [
   {
     title: "Dracula Pro",
     links: [
-      { label: "Support", href: "/pro#faqs", icon: <BugIcon /> },
+      {
+        label: "Support",
+        href: "/pro#frequently-asked-questions",
+        icon: <BugIcon />
+      },
       { label: "Changelog", href: "/pro/changelog", icon: <EditIcon /> },
       { label: "Journey", href: "/pro/journey", icon: <RocketIcon /> },
       {

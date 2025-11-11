@@ -6,6 +6,10 @@ import Image from "next/image";
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { jsonLd } from "@/lib/json-ld/contribute";
 import { fetcher } from "@/utils/fetcher";
 
@@ -17,6 +21,12 @@ export const metadata: Metadata = {
     canonical: "/contribute"
   }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "contribute",
+  "structured",
+  "data"
+);
 
 const ContributePage = async () => {
   const contributorsData = await fetcher("/api/cache/contributors");
@@ -89,10 +99,7 @@ const ContributePage = async () => {
           </ul>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

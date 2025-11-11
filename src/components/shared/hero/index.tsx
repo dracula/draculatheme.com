@@ -16,7 +16,7 @@ interface PageData {
   icon?: string;
   title?: string;
   subtitle?: string;
-  cta?: string;
+  callToAction?: string;
   anchor?: string;
   color?: string;
   type?: "static" | "dynamic";
@@ -54,7 +54,7 @@ const staticPages: PageConfig = {
     title: "Premium merch for modern vampires",
     subtitle:
       "Commit to comfort. Crafted for those who value the elegance of text-based creativity.",
-    cta: "Browse Products",
+    callToAction: "Browse Products",
     anchor: "#products",
     color: "330"
   },
@@ -159,7 +159,14 @@ export const Hero = () => {
     return allPages[pathKey] || {};
   }, [pathKey]);
 
-  const { icon, title, subtitle, cta, anchor, type = "static" } = pageData;
+  const {
+    icon,
+    title,
+    subtitle,
+    callToAction,
+    anchor,
+    type = "static"
+  } = pageData;
 
   const setColor = useCallback(() => {
     const color = getPageColor(pageData);
@@ -202,9 +209,9 @@ export const Hero = () => {
         <div className="header">
           <h1>{getTitle(title, resolvedTheme, mounted)}</h1>
           <h2>{subtitle}</h2>
-          {cta && anchor && (
-            <a href={anchor} className="action primary cta">
-              {cta}
+          {callToAction && anchor && (
+            <a href={anchor} className="action primary call-to-action">
+              {callToAction}
             </a>
           )}
         </div>

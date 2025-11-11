@@ -3,10 +3,14 @@ import "./page.css";
 import type { Metadata } from "next";
 
 import { Disclosure } from "@/components/shared/disclosure";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { ProductDetails } from "@/components/shop/product-details";
 import { ProductGallery } from "@/components/shop/product-gallery";
 import { ProductList } from "@/components/shop/product-list";
-import { faqs } from "@/lib/shop/faqs";
+import { frequentlyAskedQuestions } from "@/lib/shop/faqs";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
@@ -226,20 +230,28 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
           <h3>Customers also purchased</h3>
           <ProductList products={relatedProducts.slice(0, 3)} />
         </div>
-        <div className="faqs">
+        <div className="frequently-asked-questions">
           <h3>Frequently Asked Questions</h3>
           <ul>
-            {faqs.map((faq) => (
-              <li key={faq.question}>
-                <Disclosure question={faq.question} answer={faq.answer} />
+            {frequentlyAskedQuestions.map((questionItem) => (
+              <li key={questionItem.question}>
+                <Disclosure
+                  question={questionItem.question}
+                  answer={questionItem.answer}
+                />
               </li>
             ))}
           </ul>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLdScript
+        id={createStructuredDataScriptId(
+          "shop",
+          query.slug,
+          "structured",
+          "data"
+        )}
+        jsonLd={jsonLd}
       />
     </>
   );
