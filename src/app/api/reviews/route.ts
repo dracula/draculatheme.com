@@ -1,7 +1,7 @@
 import Airtable from "airtable";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export const GET = async () => {
   try {
     const base = new Airtable({
       apiKey: process.env.AIRTABLE_API_TOKEN
@@ -30,4 +30,4 @@ export async function GET() {
     console.error("Error fetching from Airtable:", error);
     return NextResponse.json([], { status: 400 });
   }
-}
+};

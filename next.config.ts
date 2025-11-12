@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  outputFileTracingExcludes: {
+    "/*": [
+      "public/icons/unused/**",
+      "public/images/**/*.png",
+      "public/images/**/*.jpg",
+      "public/images/**/*.jpeg",
+      "public/images/**/*.gif",
+      "public/images/**/*.webp"
+    ]
+  },
   images: {
     qualities: [20, 30, 40, 50, 60, 70, 80, 90, 100],
     remotePatterns: [
@@ -15,7 +26,6 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-  pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
   async redirects() {
     return [
       {
@@ -24,13 +34,18 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: "/ui",
-        destination: "https://ui.draculatheme.com",
+        source: "/journey",
+        destination: "/pro/journey",
         permanent: true
       },
       {
         source: "/shop/dracula-sticker-pack",
         destination: "https://draculatheme.com/shop/dracula-sticker-pack-n1",
+        permanent: true
+      },
+      {
+        source: "/ui",
+        destination: "https://ui.draculatheme.com",
         permanent: true
       }
     ];

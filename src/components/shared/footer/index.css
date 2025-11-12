@@ -10,6 +10,10 @@ footer {
     font-size: var(--font-size-body);
   }
 
+  hr {
+    max-width: var(--page-max-width);
+  }
+
   .newsletter {
     display: flex;
     justify-content: space-between;
@@ -20,6 +24,8 @@ footer {
     line-height: 1.8;
 
     & > div {
+      position: relative;
+
       &:first-child {
         flex-grow: 1;
         flex-shrink: 0;
@@ -39,6 +45,28 @@ footer {
       margin-bottom: 1rem;
     }
 
+    a {
+      display: block;
+      margin-top: 0.375rem;
+      color: var(--color-body);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: var(--color-caption);
+      text-underline-offset: 0.1875rem;
+      transition: color var(--duration-standard) var(--ease-fluid);
+
+      &:focus {
+        color: var(--color-display);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--color-display);
+        }
+      }
+    }
+
     .form {
       display: flex;
       margin-bottom: 0.75rem;
@@ -51,30 +79,40 @@ footer {
         height: 2.625rem;
         padding: 0.75rem;
         border: none;
-        border-radius: 0.375rem;
+        border-radius: var(--radius-sm);
         outline-color: transparent;
+        outline-style: solid;
+        outline-width: 0;
         background-color: var(--background-color-secondary);
         transition:
-          background-color 240ms var(--ease-fluid),
           color 240ms var(--ease-fluid),
-          outline 240ms var(--ease-fluid);
+          background-color 240ms var(--ease-fluid);
 
         &::placeholder {
           color: var(--color-body);
         }
 
-        &:hover,
-        &:focus,
         &:focus-visible {
           outline-color: var(--background-color-tertiary);
-          outline-style: solid;
-          outline-width: 0.125rem;
+          outline-width: 0.0625rem;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          transition:
+            outline-color 240ms var(--ease-fluid),
+            outline-width 180ms var(--ease-fluid),
+            color 240ms var(--ease-fluid),
+            background-color 240ms var(--ease-fluid);
+
+          &:hover {
+            outline-color: var(--background-color-tertiary);
+            outline-width: 0.0625rem;
+          }
         }
       }
 
       .action {
         height: 2.5rem;
-        border-radius: 0.5rem;
       }
     }
 
@@ -82,11 +120,16 @@ footer {
       display: inline-flex;
       padding: 0 0.25rem;
       font-size: var(--font-size-caption);
-    }
-  }
 
-  hr {
-    max-width: var(--page-max-width);
+      &.tip {
+        margin-bottom: 0.5em;
+
+        em {
+          font-style: normal;
+          font-weight: 700;
+        }
+      }
+    }
   }
 
   .container {
@@ -97,6 +140,45 @@ footer {
     & > div {
       width: fit-content;
       min-width: 14%;
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        gap: 1em;
+        line-height: 1.8;
+
+        a {
+          color: var(--color-heading);
+          font-weight: 600;
+          transition: color var(--duration-standard) var(--ease-fluid);
+
+          &:not(.logo) {
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--color-caption);
+            text-underline-offset: 0.1875rem;
+          }
+
+          &:focus {
+            color: var(--color-display);
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+            &:hover {
+              color: var(--color-display);
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 1.5rem;
+      }
+
+      &:not(:first-child) {
+        padding-left: 1.5rem;
+      }
 
       .logo {
         color: var(--color-display);
@@ -121,41 +203,19 @@ footer {
             display: block;
             min-height: 1.875rem;
             color: var(--color-caption);
-            transition: color 240ms var(--ease-fluid);
+            transition: color var(--duration-standard) var(--ease-fluid);
 
-            &:focus,
-            &:hover {
+            &:focus {
               color: var(--color-display);
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+              &:hover {
+                color: var(--color-display);
+              }
             }
           }
         }
-      }
-
-      &:first-child {
-        display: flex;
-        flex-direction: column;
-        margin-right: auto;
-        gap: 1em;
-        line-height: 1.8;
-
-        a {
-          color: var(--color-heading);
-          font-weight: 600;
-          transition: color 240ms var(--ease-fluid);
-
-          &:focus,
-          &:hover {
-            color: var(--color-display);
-          }
-        }
-      }
-
-      &:last-child {
-        margin-right: 1.5rem;
-      }
-
-      &:not(:first-child) {
-        padding-left: 1.5rem;
       }
     }
   }

@@ -1,26 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 
-import { fetcher } from "@/utils/fetcher";
+import { useNewsletterSubscription } from "@/hooks/use-newsletter-subscription";
+
+import { TextRevealAnimation } from "../text-reveal-animation";
 
 export const Newsletter = () => {
-  const [email, setEmail] = useState("");
-  const [responseMessage, setResponseMessage] = useState<string | null>(null);
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = async () => {
-    const response = await fetcher(`/api/add-contact?email=${email}`, "POST");
-
-    if (response.status === "error") {
-      setResponseMessage("😔 Subscription failed, please try again later.");
-      return;
-    }
-
-    setResponseMessage(response.message);
-
-    if (response.status === 200) setIsSubscribed(true);
-  };
+  const {
+    email,
+    handleEmailChange,
+    handleSubmit,
+    isSubscribed,
+    isSubmitting,
+    responseMessage
+  } = useNewsletterSubscription();
 
   return (
     <div id="newsletter" className="newsletter">
@@ -28,31 +22,38 @@ export const Newsletter = () => {
         <div>
           <h3>Subscribe to our newsletter.</h3>
           <p>
-            Get product updates and news <br className="hide-on-mb" />
-            in your inbox. No spam.
+            Get product updates and Dracula Pro news{" "}
+            <br className="hide-on-mb" />
+            in your inbox. <b>No spam, ever.</b>
           </p>
+          <Link href="/newsletter">Learn more →</Link>
         </div>
       </div>
       <div>
-        <div className="form">
+        <TextRevealAnimation>
+          <em>11,460</em> people enjoy it!
+        </TextRevealAnimation>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="email"
+            autoComplete="email"
             name="email"
+            value={email}
+            disabled={isSubscribed || isSubmitting}
+            onChange={(event) => handleEmailChange(event.target.value)}
             placeholder="vlad@transylvania.com"
             required
-            autoComplete="email"
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={isSubscribed}
           />
           <button
             type="submit"
-            onClick={handleSubscribe}
-            disabled={isSubscribed}
+            disabled={isSubscribed || isSubmitting}
             className="action primary"
           >
-            Subscribe{isSubscribed && "d!"}
+            {isSubmitting
+              ? "Subscribing..."
+              : `Subscribe${isSubscribed ? "d!" : ""}`}
           </button>
-        </div>
+        </form>
         {responseMessage && <span className="response">{responseMessage}</span>}
         <span className="disclaimer">
           By submitting your email address, you agree to receive Dracula&apos;s

@@ -1,0 +1,13 @@
+.announcement-bar {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--orange);
+  color: var(--background-color-primary);
+  font-weight: 600;
+  text-align: center;
+
+  strong {
+    color: inherit;
+    font-weight: 700;
+  }
+}

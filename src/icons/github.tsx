@@ -1,15 +1,17 @@
-export const GithubIcon = ({ size = 13, className = "" }) => (
+import type { IconProperties } from "@/icons/types";
+
+export const GithubIcon = ({ size = 13, className = "" }: IconProperties) => (
   <svg
+    className={`icon${className ? ` ${className}` : ""}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    color="currentColor"
     fill="none"
-    className={`icon ${className}`}
+    color="currentColor"
     aria-hidden="true"
   >
-    <title className="sr-only">GitHub Icon</title>
+    <title>GitHub Icon</title>
     <path
       d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17"
       stroke="currentColor"

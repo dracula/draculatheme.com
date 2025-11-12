@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useMemo, useState } from "react";
 
 import type { Product } from "@/lib/types";
 
@@ -15,10 +15,29 @@ export const ProductDetails = ({
   options,
   defaultVariant
 }: ProductDetailsProps) => {
+  const quantityInputId = useId();
+  const sizeSelectId = useId();
   const [quantity, setQuantity] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(
-    options[defaultVariant] || { value: "", label: "" }
-  );
+  const [selectedOptionsByProduct, setSelectedOptionsByProduct] = useState<
+    Record<string, string>
+  >({});
+
+  const userSelectedOptionValue = selectedOptionsByProduct[product.id];
+
+  const defaultOptionValue = useMemo(() => {
+    return options[defaultVariant]?.value ?? "";
+  }, [options, defaultVariant]);
+
+  const selectedOptionValue = useMemo(() => {
+    if (
+      userSelectedOptionValue &&
+      options.some((option) => option.value === userSelectedOptionValue)
+    ) {
+      return userSelectedOptionValue;
+    }
+
+    return defaultOptionValue;
+  }, [userSelectedOptionValue, options, defaultOptionValue]);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number.parseInt(e.target.value, 10);
@@ -29,10 +48,25 @@ export const ProductDetails = ({
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = e.target.value;
-    const option = options.find((opt) => opt.value === selectedValue);
-    if (option) {
-      setSelectedOption(option);
+
+    if (options.some((option) => option.value === selectedValue)) {
+      setSelectedOptionsByProduct((previous) => ({
+        ...previous,
+        [product.id]: selectedValue
+      }));
+      return;
     }
+
+    setSelectedOptionsByProduct((previous) => {
+      if (previous[product.id] === undefined) {
+        return previous;
+      }
+
+      const updated = { ...previous };
+      delete updated[product.id];
+
+      return updated;
+    });
   };
 
   return (
@@ -45,11 +79,12 @@ export const ProductDetails = ({
       <div dangerouslySetInnerHTML={{ __html: product.description }} />
       <div className="options">
         <div className="quantity">
-          <label htmlFor="quantity">Quantity:</label>
+          <label htmlFor={quantityInputId}>Quantity:</label>
           <input
             type="number"
-            id="quantity"
-            name="quantity"
+            autoComplete="off"
+            id={quantityInputId}
+            name={quantityInputId}
             min="1"
             value={quantity}
             onChange={handleQuantityChange}
@@ -57,11 +92,11 @@ export const ProductDetails = ({
         </div>
         {options.length > 0 && (
           <div className="size">
-            <label htmlFor="size">Size:</label>
+            <label htmlFor={sizeSelectId}>Size:</label>
             <select
-              id="size"
-              name="size"
-              value={selectedOption.value}
+              id={sizeSelectId}
+              name={sizeSelectId}
+              value={selectedOptionValue}
               onChange={handleOptionChange}
             >
               {options.map((option) => (
@@ -74,7 +109,7 @@ export const ProductDetails = ({
         )}
       </div>
       <a
-        href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true&variant=${selectedOption.value}&quantity=${quantity}`}
+        href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true&variant=${selectedOptionValue}&quantity=${quantity}`}
         className="action primary add-to-cart"
       >
         <div className="icon">
@@ -87,7 +122,7 @@ export const ProductDetails = ({
             fill="none"
             aria-hidden="true"
           >
-            <title className="sr-only">Shopping Bag Icon</title>
+            <title>Shopping Bag Icon</title>
             <path d="M7.96973 8.96877C7.9866 8.42891 8.42911 8 8.96924 8H23.0308C23.5709 8 24.0134 8.4289 24.0303 8.96877L24.4033 20.9063C24.4562 22.599 23.0984 24 21.4048 24H10.5952C8.90164 24 7.54378 22.599 7.59668 20.9063L7.96973 8.96877Z" />
             <path d="M12.5 5V4.5C12.5 2.567 14.067 1 16 1V1C17.933 1 19.5 2.567 19.5 4.5V5" />
           </svg>

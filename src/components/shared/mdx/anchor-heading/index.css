@@ -2,6 +2,21 @@
   position: relative;
   scroll-margin: 6rem;
 
+  &:target,
+  &:focus-within {
+    a {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
   .anchor-link {
     position: absolute;
     top: calc(50% - 0.0625rem);
@@ -15,13 +30,5 @@
     transition:
       opacity 420ms var(--ease-fluid),
       color 240ms var(--ease-fluid);
-  }
-
-  &:target,
-  &:hover,
-  &:focus-within {
-    a {
-      opacity: 1;
-    }
   }
 }

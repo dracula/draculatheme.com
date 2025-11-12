@@ -2,17 +2,7 @@
   aspect-ratio: 1/1;
   min-height: fit-content;
   padding: 0.5em;
-  border-radius: 0.1875rem;
-
-  .tick {
-    display: none;
-    transition: display 240ms var(--ease-elastic);
-
-    path {
-      stroke-dasharray: 24;
-      stroke-dashoffset: 24;
-    }
-  }
+  border-radius: var(--radius-sm);
 
   &.copied {
     .tick {
@@ -20,8 +10,17 @@
       color: var(--green);
 
       path {
-        animation: draw-tick 500ms var(--ease-fluid) forwards;
+        animation: draw-tick 504ms var(--ease-fluid) forwards;
       }
+    }
+  }
+
+  .tick {
+    display: none;
+
+    path {
+      stroke-dasharray: 24;
+      stroke-dashoffset: 24;
     }
   }
 }

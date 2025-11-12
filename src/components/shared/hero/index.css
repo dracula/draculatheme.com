@@ -1,3 +1,23 @@
+html {
+  &[data-theme="light"] {
+    .hero {
+      --castle-url: url("/images/hero/castle-light.svg");
+    }
+  }
+
+  &:not([data-theme="light"]):not([data-theme="dark"]),
+  &[data-theme="dark"] {
+    .hero {
+      --castle-url: url("/images/hero/castle.svg");
+
+      &.contribute {
+        background-image: none;
+        background-color: var(--background-color-secondary);
+      }
+    }
+  }
+}
+
 .hero {
   display: flex;
   position: relative;
@@ -30,7 +50,7 @@
     bottom: -0.5rem;
     width: 100%;
     height: 100%;
-    background-image: url("/images/hero/castle.svg");
+    background-image: var(--castle-url, url("/images/hero/castle.svg"));
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -66,6 +86,21 @@
           height: 80%;
         }
       }
+
+      .placeholder {
+        width: 82%;
+        height: 82%;
+        border-radius: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--background-color-tertiary) 25%,
+          var(--background-color-primary) 50%,
+          var(--background-color-tertiary) 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1998ms infinite;
+        opacity: 0.06;
+      }
     }
 
     .header {
@@ -88,8 +123,42 @@
         font-size: 0.875rem;
       }
 
-      .cta {
+      .call-to-action {
         margin-top: 1.125rem;
+      }
+
+      .placeholder {
+        opacity: 0.06;
+
+        &.title {
+          width: 8rem;
+          height: 2.625rem;
+          margin: 0 auto;
+          border-radius: var(--radius-md);
+          background: linear-gradient(
+            90deg,
+            var(--background-color-tertiary) 25%,
+            var(--background-color-primary) 50%,
+            var(--background-color-tertiary) 75%
+          );
+          background-size: 200% 100%;
+          animation: shimmer 1998ms infinite;
+        }
+
+        &.subtitle {
+          width: 12rem;
+          height: 1.5rem;
+          margin: 0.25rem auto 0;
+          border-radius: var(--radius-sm);
+          background: linear-gradient(
+            90deg,
+            var(--background-color-tertiary) 25%,
+            var(--background-color-primary) 50%,
+            var(--background-color-tertiary) 75%
+          );
+          background-size: 200% 100%;
+          animation: shimmer 1998ms infinite;
+        }
       }
     }
 
@@ -104,7 +173,7 @@
         position: relative;
         height: 18.75rem;
         overflow: hidden;
-        border-radius: 0.75rem;
+        border-radius: var(--radius-lg);
         backdrop-filter: blur(0.125rem);
 
         iframe {
@@ -116,11 +185,6 @@
         }
       }
     }
-  }
-
-  &.contribute {
-    background-image: none;
-    background-color: var(--background-color-secondary);
   }
 
   &.shop {
@@ -145,7 +209,7 @@
           text-wrap: balance;
         }
 
-        .cta {
+        .call-to-action {
           margin-top: 2.625rem;
         }
       }
@@ -177,5 +241,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }

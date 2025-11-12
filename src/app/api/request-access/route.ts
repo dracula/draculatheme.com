@@ -32,14 +32,15 @@ if (!GUMROAD_ACCESS_TOKEN || !GITHUB_PERSONAL_ACCESS_TOKEN) {
 
 const octokit = new Octokit({ auth: GITHUB_PERSONAL_ACCESS_TOKEN });
 
-export async function POST(request: NextRequest) {
+export const POST = async (request: NextRequest) => {
   try {
     const { email } = await request.json();
-    if (!email)
+    if (!email) {
       return NextResponse.json(
         { message: "⚠️ Email is required." },
         { status: 400 }
       );
+    }
 
     if (!(await verifyGumroadPurchase(email))) {
       return NextResponse.json(
@@ -74,15 +75,16 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
+};
 
 const verifyGumroadPurchase = async (email: string): Promise<boolean> => {
   const response = await fetch(
     `https://api.gumroad.com/v2/sales?access_token=${GUMROAD_ACCESS_TOKEN}&email=${email}`
   );
 
-  if (!response.ok)
+  if (!response.ok) {
     throw new Error(`🚨 Gumroad API error: ${response.status}.`);
+  }
 
   const data: GumroadResponse = await response.json();
   return (

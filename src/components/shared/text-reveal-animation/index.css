@@ -1,0 +1,7 @@
+.text-reveal-animation {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  font-weight: 500;
+  white-space: pre-wrap;
+}

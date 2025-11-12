@@ -19,12 +19,13 @@ export const Book = () => (
       <h3>More than a Theme</h3>
       <p>
         You can have the best theme, font, and tooling in the world, but it will
-        take a lot of work to <em>become a top developer</em> if you cultivate
-        bad habits.
+        take a lot of work to <em>reach the next level</em> if you cultivate bad
+        habits.
       </p>
       <p>
-        Because of that, Zeno Rocha decided to reach out to the best developers
-        I know and ask them for tips on <em>being more productive</em>.
+        That&apos;s why Zeno Rocha reached out to the best professionals he
+        knows and asked them for their most valuable tips on{" "}
+        <em>being more productive</em>.
       </p>
       <p>
         This book is a collection of valuable learnings from senior
@@ -33,7 +34,7 @@ export const Book = () => (
       <a
         href="https://14habits.com"
         target="_blank"
-        className="action primary cta"
+        className="action primary call-to-action"
         rel="noreferrer"
       >
         <span>Get a Free Chapter</span>

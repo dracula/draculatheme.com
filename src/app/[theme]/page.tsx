@@ -5,12 +5,18 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
+import { ProBanner } from "@/components/shared/pro-banner";
 import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";
 import { EditIcon } from "@/icons/edit";
 import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
+import { apps } from "@/lib/pro/apps";
 import type { Props } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 
@@ -66,6 +72,14 @@ const ThemePage = async (props: Props) => {
   if (!theme) {
     notFound();
   }
+
+  const structuredDataScriptId = createStructuredDataScriptId(
+    "theme",
+    theme.repo,
+    "structured",
+    "data"
+  );
+  const isProApp = apps.some((app) => app.value === theme.repo);
 
   const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
   const branch = branchData.branches || "main";
@@ -167,7 +181,11 @@ const ThemePage = async (props: Props) => {
               />
             </div>
             <article className="prose">
-              <CustomMDX source={installsContent} format="md" />
+              <CustomMDX
+                source={installsContent}
+                format="md"
+                repositoryContext={{ repo: theme.repo, branch }}
+              />
             </article>
           </div>
           <aside className="sidebar">
@@ -240,13 +258,11 @@ const ThemePage = async (props: Props) => {
                 </li>
               ))}
             </ul>
+            <ProBanner isProApp={isProApp} appName={theme.title} />
           </aside>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

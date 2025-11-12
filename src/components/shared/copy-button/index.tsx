@@ -13,7 +13,7 @@ export const CopyButton = ({ text }: { text: string }) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 1998);
     } catch (error) {
       console.error("Failed to copy text: ", error);
     }
@@ -30,7 +30,7 @@ export const CopyButton = ({ text }: { text: string }) => {
         <TickIcon className="tick" size={14} />
       ) : (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <title className="sr-only">Copy to clipboard</title>
+          <title>Copy to clipboard</title>
           <rect
             x="9"
             y="9"

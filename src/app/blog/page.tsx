@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import type { Post } from "@/lib/markdown";
 import { getMdxDataFromDirectory } from "@/utils/mdx";
 
@@ -52,6 +56,12 @@ export const metadata: Metadata = {
     canonical: "/blog"
   }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "blog",
+  "structured",
+  "data"
+);
 
 const BlogPage = async () => {
   const allPosts = getMdxDataFromDirectory<Post>("content/blog");
@@ -175,10 +185,7 @@ const BlogPage = async () => {
           ))}
         </ul>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

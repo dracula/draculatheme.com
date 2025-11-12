@@ -9,10 +9,11 @@ import {
   matchesSearch
 } from "@/utils/home/filter";
 
+import { ProBanner } from "../shared/pro-banner";
 import { FilterSidebar } from "./filter-sidebar";
 import { ItemList } from "./item-list";
 
-const ContentWrapper = ({ paths }: { paths: Path[] }) => {
+export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
   const [
     { searchQuery, platforms: selectedPlatform, categories: selectedCategory },
     setQueryStates
@@ -43,10 +44,9 @@ const ContentWrapper = ({ paths }: { paths: Path[] }) => {
           onPlatformChange={(v) => setQueryStates({ platforms: v })}
           onCategoryChange={(v) => setQueryStates({ categories: v })}
         />
+        <ProBanner />
       </nav>
       <ItemList items={filtered} />
     </>
   );
 };
-
-export default ContentWrapper;

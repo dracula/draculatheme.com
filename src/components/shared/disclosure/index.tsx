@@ -1,12 +1,13 @@
 import "./index.css";
 
-export const Disclosure = ({
-  question,
-  answer
-}: {
+import type { ReactNode } from "react";
+
+type DisclosureProps = {
   question: string;
-  answer: string;
-}) => (
+  answer: ReactNode;
+};
+
+export const Disclosure = ({ question, answer }: DisclosureProps) => (
   <details>
     <summary className="action summary">
       <span>{question}</span>
@@ -28,7 +29,7 @@ export const Disclosure = ({
       </svg>
     </summary>
     <div className="answer">
-      <p>{answer}</p>
+      {typeof answer === "string" ? <p>{answer}</p> : answer}
     </div>
   </details>
 );

@@ -6,7 +6,6 @@ import { fetcher } from "@/utils/fetcher";
 import type { PurchasingPowerParityData } from "@/utils/pro/pricing";
 import { resolveCheckout } from "@/utils/pro/pricing";
 
-import { PPPBanner } from "./ppp";
 import { PricingCard } from "./pricing-card";
 
 interface SalesData {
@@ -35,21 +34,20 @@ export const Checkout = () => {
     swrConfig
   );
 
-  if (!salesData) return null;
+  if (!salesData) {
+    return null;
+  }
 
-  const { activePromotion, pppBanner } = resolveCheckout(pppData || {});
+  const { standardPromotion, pppPromotion } = resolveCheckout(pppData || {});
 
   return (
     <>
-      {pppBanner && (
-        <PPPBanner
-          country={pppBanner.country}
-          discount={pppBanner.discount}
-          pppCode={pppBanner.code}
+      {standardPromotion && (
+        <PricingCard
+          standardPromotion={standardPromotion}
+          pppPromotion={pppPromotion}
+          salesData={salesData}
         />
-      )}
-      {activePromotion && (
-        <PricingCard activePromotion={activePromotion} salesData={salesData} />
       )}
     </>
   );

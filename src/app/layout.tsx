@@ -3,21 +3,26 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 
+// import { AnnouncementBar } from "@/components/shared/announcement-bar";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
-  fallback: ["sans-serif", "system-ui"]
+  fallback: ["sans-serif", "system-ui"],
+  preload: false
 });
 
 const dmMono = DM_Mono({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-mono",
-  fallback: ["monospace", "system-ui"]
+  fallback: ["monospace", "system-ui"],
+  preload: false
 });
 
 export const metadata: Metadata = {
@@ -63,14 +68,14 @@ export const viewport = {
 const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (
-  <html lang="en">
-    <body
-      className={`${dmSans.variable} ${dmMono.variable}`}
-      suppressHydrationWarning
-    >
-      <Header />
-      <main>{children}</main>
-      <Footer />
+  <html lang="en" suppressHydrationWarning={true}>
+    <body className={`${dmSans.variable} ${dmMono.variable}`}>
+      <ThemeProvider defaultTheme="dark" enableSystem={false}>
+        {/* <AnnouncementBar /> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </ThemeProvider>
       <Script
         src="https://plausible.io/js/script.js"
         data-domain="draculatheme.com"

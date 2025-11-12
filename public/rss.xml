@@ -4,8 +4,15 @@
         <description><![CDATA[“Truly there is no such thing as finality.” - Bram Stoker, Dracula]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 08 Sep 2025 12:18:30 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Nov 2025 16:33:32 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[New Spec, Omarchy, and 7 more themes]]></title>
+            <description><![CDATA[We have a lot of cool stuff to show you today, so sit back, grab a glass of blood, and enjoy!]]></description>
+            <link>https://draculatheme.com/blog/new-spec-omarchy-and-7-more-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/new-spec-omarchy-and-7-more-themes</guid>
+            <pubDate>Thu, 28 Aug 2025 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[New Light theme coming to all platforms]]></title>
             <description><![CDATA[We're introducing a new light theme to Dracula.]]></description>

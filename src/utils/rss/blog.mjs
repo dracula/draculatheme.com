@@ -26,7 +26,7 @@ const generate = async () => {
     feed_url: "https://draculatheme.com/rss.xml"
   });
 
-  postsData.map((post) => {
+  postsData.forEach((post) => {
     const { data } = post;
     const slug = post.post
       .replace("./content/blog", "/blog")

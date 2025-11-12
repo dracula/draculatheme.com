@@ -17,7 +17,7 @@ export const WhyPro = () => (
         <em>beyond just a theme,</em> so he created Dracula Pro.
       </p>
       <p>
-        This package was designed for developers who want to{" "}
+        This package was designed for creators who want to{" "}
         <em>invest in their productivity.</em>
       </p>
     </div>

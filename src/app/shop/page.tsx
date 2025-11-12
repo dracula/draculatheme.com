@@ -3,6 +3,10 @@ import "./page.css";
 import type { Metadata } from "next";
 
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { ProductList } from "@/components/shop/product-list";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
@@ -34,7 +38,10 @@ const fetchProducts = async (
   const productsList: Product[] = await Promise.all(productPromises);
 
   productsList.sort((a, b) => {
-    if (a.published === b.published) return a.name.localeCompare(b.name);
+    if (a.published === b.published) {
+      return a.name.localeCompare(b.name);
+    }
+
     return a.published ? -1 : 1;
   });
 
@@ -49,6 +56,12 @@ export const metadata: Metadata = {
     canonical: "/shop"
   }
 };
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "shop",
+  "structured",
+  "data"
+);
 
 const ShopPage = async () => {
   const productsList = await fetchProducts(products);
@@ -138,10 +151,7 @@ const ShopPage = async () => {
       <section className="container shop">
         <ProductList products={productsList} />
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

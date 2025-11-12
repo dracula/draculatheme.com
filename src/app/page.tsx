@@ -4,8 +4,12 @@ import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 
-import ContentWrapper from "@/components/home/content-wrapper";
+import { ContentWrapper } from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/components/shared/json-ld-script";
 import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
 import { isProd } from "@/utils/environment";
@@ -17,14 +21,29 @@ export const metadata: Metadata = {
     "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more."
 };
 
+const structuredDataScriptId = createStructuredDataScriptId(
+  "home",
+  "structured",
+  "data"
+);
+
 const HomePage = async () => {
   const environment = isProd();
 
   if (environment) {
-    for (const item of paths) {
-      const data = await fetcher(`/api/views?id=${item.repo}`);
+    const viewsPromises = paths.map(async (item) => {
+      try {
+        const data = await fetcher(`/api/views?id=${item.repo}`);
+        return { item, views: Number.parseInt(data.views, 10) || 0 };
+      } catch {
+        return { item, views: 0 };
+      }
+    });
 
-      item.views = Number.parseInt(data.views) || 0;
+    const results = await Promise.all(viewsPromises);
+
+    for (const { item, views } of results) {
+      item.views = views;
     }
 
     paths.sort((a, b) => {
@@ -42,12 +61,7 @@ const HomePage = async () => {
           </section>
         </NuqsAdapter>
       </Suspense>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
-        }}
-      />
+      <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );
 };

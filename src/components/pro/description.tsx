@@ -2,11 +2,10 @@ export const Description = () => (
   <div className="description">
     <p>
       Dracula Pro is a color scheme and UI theme{" "}
-      <em>tailored for programming.</em>
+      <em>designed for your workflow.</em>
     </p>
     <p>
-      Made for terminal emulators, <em>code editors,</em> and syntax
-      highlighters.
+      Made for terminals, <em>code editors,</em> and all your favorite tools.
     </p>
     <p>
       Designed to be aesthetically pleasing while <em>keeping you focused.</em>

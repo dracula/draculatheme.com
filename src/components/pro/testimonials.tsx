@@ -35,7 +35,10 @@ const sortReviewsByDate = (reviews: Review[]): Review[] =>
 
 const formatDate = (date: string) => {
   const dateObject = new Date(date);
-  if (Number.isNaN(dateObject.getTime())) return null;
+
+  if (Number.isNaN(dateObject.getTime())) {
+    return null;
+  }
 
   return (
     <time className="date">
@@ -120,7 +123,7 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
         <h3>The reviews are in!</h3>
         <p>
           Dracula Pro has received tons of positive reviews from{" "}
-          <em>developers who ship.</em>
+          <em>creators who ship.</em>
         </p>
       </div>
       <div className="grid">

@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import type { paths } from "./paths";
 
 export type Props<T = Record<string, string>> = { params: Promise<T> };
@@ -73,4 +75,9 @@ export type Review = {
   country: string;
   github: string;
   date: string;
+};
+
+export type FrequentlyAskedQuestion = {
+  question: string;
+  answer: ReactNode;
 };

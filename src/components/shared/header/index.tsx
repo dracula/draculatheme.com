@@ -4,15 +4,19 @@ import "./index.css";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BookIcon } from "@/icons/book";
 import { GithubIcon } from "@/icons/github";
 import { HeartIcon } from "@/icons/heart";
 import { NewsIcon } from "@/icons/news";
+import { RadioIcon } from "@/icons/radio";
 import { ShopIcon } from "@/icons/shop";
+import { VisualizerIcon } from "@/icons/visualizer";
 import { ZapIcon } from "@/icons/zap";
 
+import { DraculaRadio } from "../dracula-radio";
+import { ThemeToggle } from "../theme-toggle";
 import { CommandBar } from "./command-bar";
 
 const navItems = [
@@ -33,19 +37,44 @@ export const Header = () => {
   const pathKey = pathname === "/" ? "" : pathname;
 
   const [isNavActive, setIsNavActive] = useState(false);
+  const [isRadioVisible, setIsRadioVisible] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
   };
 
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const { body } = document;
+    if (isNavActive) {
+      body.classList.add("block-overflow");
+    } else {
+      body.classList.remove("block-overflow");
+    }
+    return () => {
+      body.classList.remove("block-overflow");
+    };
+  }, [isNavActive]);
+
+  const handleToggleRadio = () => {
+    setIsRadioVisible(!isRadioVisible);
+  };
+
   const buildClassName = (href: string, className?: string) => {
     const classes = ["action"];
 
-    if (className) classes.push(className);
+    if (className) {
+      classes.push(className);
+    }
 
     classes.push(href.slice(1));
 
-    if (pathKey === href) classes.push("active");
+    if (pathKey === href) {
+      classes.push("active");
+    }
 
     return classes.join(" ");
   };
@@ -55,7 +84,7 @@ export const Header = () => {
       <div className="container">
         <div className="wrapper">
           <Link href="/" className="logo">
-            Dracula Theme
+            Dracula <span>Theme</span>
           </Link>
           <CommandBar />
           <button
@@ -71,7 +100,7 @@ export const Header = () => {
               color="currentColor"
               fill="none"
             >
-              <title className="sr-only">Menu Icon</title>
+              <title>Menu Icon</title>
               <path
                 d="M4 9L20 9"
                 stroke="currentColor"
@@ -92,7 +121,7 @@ export const Header = () => {
         </div>
         <nav className={isNavActive ? "active" : ""}>
           <ul>
-            {navItems.map(({ href, label, icon, className }) => (
+            {navItems.slice(0, 3).map(({ href, label, icon, className }) => (
               <li key={href}>
                 <Link
                   href={href}
@@ -102,7 +131,36 @@ export const Header = () => {
                   className={buildClassName(href, className)}
                 >
                   {icon}
-                  {label}
+                  <span>{label}</span>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <button
+                type="button"
+                onClick={handleToggleRadio}
+                className="action radio"
+              >
+                {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
+                <span>Radio</span>
+              </button>
+              <DraculaRadio
+                onPlayingChange={setIsPlaying}
+                onVisibilityChange={setIsRadioVisible}
+                visible={isRadioVisible}
+              />
+            </li>
+            {navItems.slice(3).map(({ href, label, icon, className }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => {
+                    setIsNavActive(false);
+                  }}
+                  className={buildClassName(href, className)}
+                >
+                  {icon}
+                  <span>{label}</span>
                 </Link>
               </li>
             ))}
@@ -111,11 +169,25 @@ export const Header = () => {
                 href="https://github.com/dracula/dracula-theme"
                 className="action stars"
               >
-                <GithubIcon /> <span className="star-count">+24k</span>
+                <GithubIcon /> <span className="star-count">+23k</span>
               </Link>
+            </li>
+            <li>
+              <ThemeToggle
+                action={() => {
+                  setIsNavActive(false);
+                }}
+              />
             </li>
           </ul>
         </nav>
+        {/* Mobile overlay */}
+        <button
+          type="button"
+          aria-label="Close navigation overlay"
+          onClick={handleToggleNav}
+          className={`mb-overlay${isNavActive ? " visible" : ""}`}
+        />
       </div>
     </header>
   );
