@@ -96,7 +96,7 @@ html {
 
     --code-background: hsl(245, 14%, 15%);
     --code-foreground: hsl(60, 30%, 96%);
-    --code-comment: hsl(249, 25%, 55%);
+    --code-comment: hsl(248, 36%, 64%);
 
     --color: hsl(var(--main-hue), 92%, 72%);
 
