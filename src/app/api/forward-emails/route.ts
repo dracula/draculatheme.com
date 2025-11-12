@@ -1,6 +1,27 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+type InboundEmailPayload = {
+  type: string;
+  data?: {
+    id?: string;
+    to?: string;
+    subject?: string;
+    html?: string;
+  };
+};
+
+const forwardingRules: Record<string, string> = {
+  "hi@draculatheme.com": "zno.rocha@gmail.com",
+  "zeno@draculatheme.com": "hello-1@22301188.hubspot-inbox.com",
+  "support@draculatheme.com": "hello-1@22301188.hubspot-inbox.com",
+  "admin@draculatheme.com": "zno.rocha@gmail.com",
+  "lucas@draculatheme.com": "luxon4uta@gmail.com",
+  "dmarcreports@draculatheme.com": "dmarcreports@resend.com"
+};
+
+const defaultForwardAddress = "hello-1@22301188.hubspot-inbox.com";
+
 const getResend = () => {
   const apiKey = process.env.RESEND_API_KEY;
 
@@ -11,71 +32,93 @@ const getResend = () => {
   return new Resend(apiKey);
 };
 
-export const POST = async (request: NextRequest) => {
-  const payload = await request.json();
+const isInboundEmailPayload = (
+  payload: InboundEmailPayload
+): payload is Required<InboundEmailPayload> & {
+  data: Required<NonNullable<InboundEmailPayload["data"]>>;
+} => {
+  return (
+    payload.type === "email.received" &&
+    typeof payload.data?.to === "string" &&
+    typeof payload.data.subject === "string" &&
+    typeof payload.data.html === "string"
+  );
+};
 
+const buildLogContext = (payload: InboundEmailPayload) => {
+  return {
+    messageId: payload.data?.id ?? "unknown",
+    recipient: payload.data?.to ?? "unknown",
+    subject: payload.data?.subject ?? "missing subject"
+  };
+};
+
+export const POST = async (request: NextRequest) => {
   if (!process.env.RESEND_API_KEY) {
+    console.error(
+      "forward-emails: missing RESEND_API_KEY environment variable"
+    );
+
     return NextResponse.json(
       { error: "Missing RESEND_API_KEY environment variable" },
       { status: 500 }
     );
   }
 
-  if (payload.type === "email.received") {
-    switch (payload.data.to) {
-      case "hi@draculatheme.com":
-        await forwardEmail(
-          "zno.rocha@gmail.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      case "zeno@draculatheme.com":
-        await forwardEmail(
-          "hello-1@22301188.hubspot-inbox.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      case "support@draculatheme.com":
-        await forwardEmail(
-          "hello-1@22301188.hubspot-inbox.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      case "admin@draculatheme.com":
-        await forwardEmail(
-          "zno.rocha@gmail.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      case "lucas@draculatheme.com":
-        await forwardEmail(
-          "luxon4uta@gmail.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      case "dmarcreports@draculatheme.com":
-        await forwardEmail(
-          "dmarcreports@resend.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-      default:
-        await forwardEmail(
-          "hello-1@22301188.hubspot-inbox.com",
-          payload.data.subject,
-          payload.data.html
-        );
-        break;
-    }
-  }
+  try {
+    const payload = (await request.json()) as InboundEmailPayload;
+    const logContext = buildLogContext(payload);
 
-  return NextResponse.json({ payload });
+    if (!isInboundEmailPayload(payload)) {
+      console.warn("forward-emails: received invalid payload", logContext);
+
+      return NextResponse.json(
+        { error: "Invalid inbound email payload" },
+        { status: 400 }
+      );
+    }
+
+    const forwardAddress =
+      forwardingRules[payload.data.to] ?? defaultForwardAddress;
+    const htmlLength = payload.data.html.length;
+
+    console.info("forward-emails: forwarding email", {
+      ...logContext,
+      to: payload.data.to,
+      forwardAddress,
+      htmlLength
+    });
+
+    const sendResult = await forwardEmail(
+      forwardAddress,
+      payload.data.subject,
+      payload.data.html
+    );
+
+    console.info("forward-emails: email forwarded successfully", {
+      ...logContext,
+      forwardAddress,
+      resendId: sendResult?.id ?? "unknown"
+    });
+
+    return NextResponse.json({
+      message: "Email forwarded",
+      forwardAddress,
+      resendId: sendResult?.id ?? null
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error encountered";
+
+    console.error("forward-emails: failed to forward email", {
+      message
+    });
+
+    return NextResponse.json(
+      { error: "Failed to forward email" },
+      { status: 500 }
+    );
+  }
 };
 
 async function forwardEmail(to: string, subject: string, html: string) {
