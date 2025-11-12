@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import { jsonLd } from "@/lib/json-ld/about";
 import {
   createStructuredDataScriptId,
   JsonLdScript
-} from "@/components/shared/json-ld-script";
-import { jsonLd } from "@/lib/json-ld/about";
+} from "@/utils/json-ld-script";
 
 export const metadata: Metadata = {
   title: "About",

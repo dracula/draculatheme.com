@@ -261,6 +261,10 @@
       }
     }
 
+    &.noscript {
+      flex-direction: column;
+    }
+
     @media (max-width: 60rem) {
       flex-direction: column;
 

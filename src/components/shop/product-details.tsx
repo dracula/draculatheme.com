@@ -3,6 +3,7 @@
 import { useId, useMemo, useState } from "react";
 
 import type { Product } from "@/lib/types";
+import { normalizeStoreLinks } from "@/utils/shop/normalize-store-links";
 
 interface ProductDetailsProps {
   product: Product;
@@ -46,6 +47,10 @@ export const ProductDetails = ({
     }
   };
 
+  const normalizedDescription = useMemo(() => {
+    return normalizeStoreLinks(product.description);
+  }, [product.description]);
+
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = e.target.value;
 
@@ -69,6 +74,28 @@ export const ProductDetails = ({
     });
   };
 
+  const checkoutUrl = useMemo(() => {
+    const baseUrl = `https://store.draculatheme.com/l/${product.custom_permalink}`;
+    const searchParams = new URLSearchParams();
+
+    searchParams.set("wanted", "true");
+    searchParams.set("quantity", quantity.toString());
+
+    if (selectedOptionValue !== "") {
+      searchParams.set("variant", selectedOptionValue);
+    } else {
+      searchParams.delete("variant");
+    }
+
+    const queryString = searchParams.toString();
+
+    if (queryString === "") {
+      return baseUrl;
+    }
+
+    return `${baseUrl}?${queryString}`;
+  }, [product.custom_permalink, quantity, selectedOptionValue]);
+
   return (
     <div className="details">
       <h1>{product.name}</h1>
@@ -76,7 +103,7 @@ export const ProductDetails = ({
         {product.formatted_price} {product.currency.toUpperCase()}
       </h2>
       <hr />
-      <div dangerouslySetInnerHTML={{ __html: product.description }} />
+      <div dangerouslySetInnerHTML={{ __html: normalizedDescription }} />
       <div className="options">
         <div className="quantity">
           <label htmlFor={quantityInputId}>Quantity:</label>
@@ -109,7 +136,7 @@ export const ProductDetails = ({
         )}
       </div>
       <a
-        href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true&variant=${selectedOptionValue}&quantity=${quantity}`}
+        href={checkoutUrl}
         className="action primary add-to-cart"
       >
         <div className="icon">

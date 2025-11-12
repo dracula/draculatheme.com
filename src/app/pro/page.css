@@ -509,7 +509,7 @@ html {
           .wheel {
             --y: -1.5rem;
             --x: -0.75rem;
-            --speed: 600ms;
+            --speed: 5400ms;
 
             z-index: 2;
             width: 8rem;
@@ -552,7 +552,7 @@ html {
             &.pro {
               --y: -0.75rem;
               --x: 1.5rem;
-              --speed: 540ms;
+              --speed: 4200ms;
 
               width: 12rem;
               height: 12rem;
@@ -782,10 +782,6 @@ html {
           border-radius: var(--radius-lg);
           background-color: var(--background-color-secondary);
           color: var(--color-heading);
-          line-height: 1.8;
-          transition:
-            transform var(--duration-standard) var(--ease-elastic),
-            background-color var(--duration-standard) var(--ease-fluid);
           transition:
             transform var(--duration-standard) var(--ease-elastic),
             background-color var(--duration-standard) var(--ease-fluid);

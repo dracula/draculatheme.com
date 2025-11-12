@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import { ArrowUpRight } from "@/icons/arrow-up-right";
+import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
-} from "@/components/shared/json-ld-script";
-import { ArrowUpRight } from "@/icons/arrow-up-right";
-import { fetcher } from "@/utils/fetcher";
+} from "@/utils/json-ld-script";
 
 interface Metric {
   label: string;

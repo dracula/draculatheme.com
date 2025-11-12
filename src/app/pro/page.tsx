@@ -13,13 +13,13 @@ import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { WhyPro } from "@/components/pro/why-pro";
 import { Disclosure } from "@/components/shared/disclosure";
 import { Hero } from "@/components/shared/hero";
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { frequentlyAskedQuestions } from "@/lib/pro/faqs";
 import type { Review } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 
 export const metadata: Metadata = {
   title: "Be more productive with Dracula Pro",

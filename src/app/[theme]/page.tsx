@@ -5,10 +5,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Hero } from "@/components/shared/hero";
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { ProBanner } from "@/components/shared/pro-banner";
 import { BugIcon } from "@/icons/bug";
@@ -19,6 +15,10 @@ import { paths } from "@/lib/paths";
 import { apps } from "@/lib/pro/apps";
 import type { Props } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 
 export const generateStaticParams = async () => {
   return paths.map((item) => ({
@@ -82,7 +82,12 @@ const ThemePage = async (props: Props) => {
   const isProApp = apps.some((app) => app.value === theme.repo);
 
   const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
-  const branch = branchData.branches || "main";
+  const branchValue =
+    branchData.status === 200 ? branchData.branches : undefined;
+  const branch =
+    typeof branchValue === "string" && branchValue.trim().length > 0
+      ? branchValue
+      : "main";
 
   const contributorsData = await fetcher(`/api/contributors?id=${theme.repo}`);
   const contributors = [...JSON.parse(contributorsData.contributors)];
@@ -90,6 +95,8 @@ const ThemePage = async (props: Props) => {
   const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
   const decodedBuffer = Buffer.from(installsResponse.install, "base64");
   const installsContent = decodedBuffer.toString("utf8");
+
+  const screenshotUrl = `https://raw.githubusercontent.com/dracula/${theme.repo}/${branch}/screenshot.png`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -100,7 +107,7 @@ const ThemePage = async (props: Props) => {
     url: `https://draculatheme.com/${theme.repo}`,
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "Code Editor Theme",
-    screenshot: `https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`,
+    screenshot: screenshotUrl,
     downloadUrl: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`,
     installUrl: `https://draculatheme.com/${theme.repo}`,
     license: "https://github.com/dracula/dracula-theme/blob/main/LICENSE",
@@ -173,11 +180,12 @@ const ThemePage = async (props: Props) => {
           <div className="instructions">
             <div className="screenshot">
               <Image
-                src={`https://raw.githubusercontent.com/dracula/${theme.repo}/master/screenshot.png`}
+                src={screenshotUrl}
                 alt={`${theme.repo} - Theme Preview`}
-                quality={100}
+                quality={70}
                 width={800}
                 height={800}
+                sizes="(max-width: 48rem) 100vw, 50rem"
               />
             </div>
             <article className="prose">

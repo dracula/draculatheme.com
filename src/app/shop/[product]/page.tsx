@@ -3,10 +3,6 @@ import "./page.css";
 import type { Metadata } from "next";
 
 import { Disclosure } from "@/components/shared/disclosure";
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { ProductDetails } from "@/components/shop/product-details";
 import { ProductGallery } from "@/components/shop/product-gallery";
 import { ProductList } from "@/components/shop/product-list";
@@ -14,6 +10,10 @@ import { frequentlyAskedQuestions } from "@/lib/shop/faqs";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
 interface ProductParams {

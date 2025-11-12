@@ -3,14 +3,14 @@ import "./page.css";
 import type { Metadata } from "next";
 
 import { Hero } from "@/components/shared/hero";
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { ProductList } from "@/components/shop/product-list";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
 interface ProductParams {

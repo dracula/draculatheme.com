@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
+import type { Post } from "@/lib/markdown";
 import {
   createStructuredDataScriptId,
   JsonLdScript
-} from "@/components/shared/json-ld-script";
-import type { Post } from "@/lib/markdown";
+} from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory } from "@/utils/mdx";
 
 interface PostCardProps {

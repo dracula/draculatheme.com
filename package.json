@@ -10,7 +10,7 @@
     "lint": "echo \"\" && echo \"› eslint\" && eslint --fix . && echo \"› prettier\" && prettier --write --log-level warn . && echo \"✔ clean\" && echo \"\""
   },
   "dependencies": {
-    "next": "^16.0.1",
+    "next": "^16.0.2",
     "react-dom": "^19.2.0",
     "react": "^19.2.0"
   },
@@ -24,7 +24,7 @@
     "airtable": "^0.12.2",
     "countries-list": "^3.2.0",
     "date-fns": "^4.1.0",
-    "eslint-config-next": "^16.0.1",
+    "eslint-config-next": "^16.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint": "^9",

@@ -1,6 +1,8 @@
+import { normalizeStoreLinks } from "./normalize-store-links";
+
 export const sanitizeDescription = (htmlString: string): string => {
   let isFirstLi = true;
-  let sanitized = htmlString
+  let sanitized = normalizeStoreLinks(htmlString)
     .replace(/<li>/g, () => {
       if (isFirstLi) {
         isFirstLi = false;

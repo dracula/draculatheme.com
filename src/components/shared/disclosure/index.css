@@ -39,8 +39,8 @@ details {
 
     .icon {
       position: absolute;
-      top: 50%;
-      right: 1.125rem;
+      top: 48%;
+      right: 1rem;
       transform: translateY(-50%);
 
       .vertical-line {

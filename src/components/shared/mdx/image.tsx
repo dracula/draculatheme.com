@@ -20,6 +20,35 @@ const normalizePath = (value: string) =>
 const buildRawGithubUrl = (path: string, context: RepositoryContext) =>
   `https://raw.githubusercontent.com/dracula/${context.repo}/${context.branch}/${normalizePath(path)}`;
 
+const toRawGithubUrl = (value: string): string => {
+  try {
+    const url = new URL(value);
+
+    if (url.hostname !== "github.com") {
+      return value;
+    }
+
+    const segments = url.pathname.split("/").filter(Boolean);
+    const blobIndex = segments.indexOf("blob");
+
+    if (blobIndex === -1 || blobIndex < 2) {
+      return value;
+    }
+
+    const owner = segments[0];
+    const repo = segments[1];
+    const branchAndPath = segments.slice(blobIndex + 1).join("/");
+
+    if (!owner || !repo || branchAndPath.length === 0) {
+      return value;
+    }
+
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${branchAndPath}`;
+  } catch {
+    return value;
+  }
+};
+
 const resolveImageSrc = (
   src: string | undefined,
   context?: RepositoryContext
@@ -28,19 +57,24 @@ const resolveImageSrc = (
     return src;
   }
 
+  const normalizedSrc =
+    src.startsWith("https://github.com/") || src.startsWith("http://github.com/")
+      ? toRawGithubUrl(src)
+      : src;
+
   if (!context) {
-    return src;
+    return normalizedSrc;
   }
 
   if (
-    isExternalUrl(src) ||
-    src.startsWith("data:") ||
-    src.startsWith("blob:")
+    isExternalUrl(normalizedSrc) ||
+    normalizedSrc.startsWith("data:") ||
+    normalizedSrc.startsWith("blob:")
   ) {
-    return src;
+    return normalizedSrc;
   }
 
-  return buildRawGithubUrl(src, context);
+  return buildRawGithubUrl(normalizedSrc, context);
 };
 
 interface CreateImageComponentOptions {

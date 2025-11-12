@@ -5,10 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
 import { ProBanner } from "@/components/shared/pro-banner";
@@ -16,6 +12,10 @@ import { ReturnArrow } from "@/icons/return-arrow";
 import { type Author, authors } from "@/lib/authors";
 import type { Post } from "@/lib/markdown";
 import type { Props } from "@/lib/types";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory, getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
 

@@ -6,12 +6,12 @@ import Image from "next/image";
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
+import { jsonLd } from "@/lib/json-ld/contribute";
+import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
-} from "@/components/shared/json-ld-script";
-import { jsonLd } from "@/lib/json-ld/contribute";
-import { fetcher } from "@/utils/fetcher";
+} from "@/utils/json-ld-script";
 
 export const metadata: Metadata = {
   title: "Contribute",

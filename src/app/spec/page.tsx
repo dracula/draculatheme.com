@@ -3,13 +3,13 @@ import "./page.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import {
-  createStructuredDataScriptId,
-  JsonLdScript
-} from "@/components/shared/json-ld-script";
 import { CustomMDX } from "@/components/shared/mdx";
 import { OnThisPage } from "@/components/shared/mdx/on-this-page";
 import { jsonLd } from "@/lib/json-ld/spec";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 import { getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
 
