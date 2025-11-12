@@ -181,7 +181,11 @@ const ThemePage = async (props: Props) => {
               />
             </div>
             <article className="prose">
-              <CustomMDX source={installsContent} format="md" />
+              <CustomMDX
+                source={installsContent}
+                format="md"
+                repositoryContext={{ repo: theme.repo, branch }}
+              />
             </article>
           </div>
           <aside className="sidebar">

@@ -6,8 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "rss": "node ./src/utils/rss/blog.mjs && node ./src/utils/rss/changelog.mjs",
-    "lint": "eslint --fix . && prettier --write ."
+    "rss": "echo \"\" && echo \"› rss blog\" && node ./src/utils/rss/blog.mjs && echo \"› rss changelog\" && node ./src/utils/rss/changelog.mjs && echo \"✔ rss\" && echo \"\"",
+    "lint": "echo \"\" && echo \"› eslint\" && eslint --fix . && echo \"› prettier\" && prettier --write --log-level warn . && echo \"✔ clean\" && echo \"\""
   },
   "dependencies": {
     "next": "^16.0.1",

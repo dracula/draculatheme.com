@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { paths } from "@/lib/paths";
 
-const BASE_URL = "https://www.draculatheme.com";
+const BASE_URL = "https://draculatheme.com";
 const CONTENT_DIRECTORY = path.join(process.cwd(), "./content/blog");
 
 const getCurrentDate = () => new Date().toISOString().split("T")[0];
