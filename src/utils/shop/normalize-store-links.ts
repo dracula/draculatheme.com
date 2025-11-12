@@ -6,4 +6,3 @@ export const normalizeStoreLinks = (content: string): string => {
     "https://store.draculatheme.com"
   );
 };
-

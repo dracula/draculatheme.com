@@ -135,10 +135,7 @@ export const ProductDetails = ({
           </div>
         )}
       </div>
-      <a
-        href={checkoutUrl}
-        className="action primary add-to-cart"
-      >
+      <a href={checkoutUrl} className="action primary add-to-cart">
         <div className="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"

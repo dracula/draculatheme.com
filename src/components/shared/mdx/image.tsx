@@ -58,7 +58,8 @@ const resolveImageSrc = (
   }
 
   const normalizedSrc =
-    src.startsWith("https://github.com/") || src.startsWith("http://github.com/")
+    src.startsWith("https://github.com/") ||
+    src.startsWith("http://github.com/")
       ? toRawGithubUrl(src)
       : src;
 
