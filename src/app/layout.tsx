@@ -11,15 +11,18 @@ import { Header } from "@/components/shared/header";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
-  fallback: ["sans-serif", "system-ui"]
+  fallback: ["sans-serif", "system-ui"],
+  preload: false
 });
 
 const dmMono = DM_Mono({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-mono",
-  fallback: ["monospace", "system-ui"]
+  fallback: ["monospace", "system-ui"],
+  preload: false
 });
 
 export const metadata: Metadata = {

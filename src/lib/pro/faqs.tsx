@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import type { FrequentlyAskedQuestion } from "@/lib/types";
 
 export const frequentlyAskedQuestions: FrequentlyAskedQuestion[] = [

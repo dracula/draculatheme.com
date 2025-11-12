@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { type SetStateAction, useState } from "react";
+import { type SetStateAction, useEffect, useId, useRef, useState } from "react";
 import useSound from "use-sound";
 
 import { apps } from "@/lib/pro/apps";
@@ -24,34 +24,39 @@ const variants = [
   }
 ];
 
-const soundConfig = { volume: 0.12 };
+const soundConfig = { volume: 0.12, preload: false };
 
 export const VariantsShowcase = () => {
   const [selectedAppIndex, setSelectedAppIndex] = useState(
     Math.max(0, apps.length - 4)
   );
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+  const hasMountedRef = useRef(false);
+  const appSelectId = useId();
 
   const selectedApp = apps[selectedAppIndex];
   const selectedVariant = variants[selectedVariantIndex];
 
-  const [playDracula] = useSound(variants[0].sound, soundConfig);
-  const [playBlade] = useSound(variants[1].sound, soundConfig);
-  const [playBuffy] = useSound(variants[2].sound, soundConfig);
-  const [playLincoln] = useSound(variants[3].sound, soundConfig);
-  const [playMorbius] = useSound(variants[4].sound, soundConfig);
-  const [playVanHelsing] = useSound(variants[5].sound, soundConfig);
-  const [playAlucard] = useSound(variants[6].sound, soundConfig);
+  const [playVariantSound, { sound: activeSound }] = useSound(
+    selectedVariant.sound,
+    soundConfig
+  );
 
-  const sounds = [
-    playDracula,
-    playBlade,
-    playBuffy,
-    playLincoln,
-    playMorbius,
-    playVanHelsing,
-    playAlucard
-  ];
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    playVariantSound();
+  }, [playVariantSound]);
+
+  useEffect(
+    () => () => {
+      activeSound?.unload();
+    },
+    [activeSound]
+  );
 
   const getVariantSlug = (name: string) => {
     return name.replace(/\s+/g, "-").toLowerCase();
@@ -67,7 +72,6 @@ export const VariantsShowcase = () => {
     const newIndex =
       typeof index === "function" ? index(selectedVariantIndex) : index;
     setSelectedVariantIndex(newIndex);
-    sounds[newIndex]?.();
   };
 
   return (
@@ -77,11 +81,11 @@ export const VariantsShowcase = () => {
         <p>Dracula Pro is built for your favorite apps.</p>
       </div>
       <div className="controls">
-        <label htmlFor="app" className="sr-only">
+        <label htmlFor={appSelectId} className="sr-only">
           Select an app
         </label>
         <select
-          id="app"
+          id={appSelectId}
           name="app"
           value={selectedApp?.value || ""}
           onChange={handleAppChange}

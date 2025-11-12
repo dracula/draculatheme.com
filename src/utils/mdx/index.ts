@@ -4,10 +4,30 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingDuration from "reading-duration";
 
-import { orderBy } from "./order-by";
-
 const countWords = (text: string) => {
   return text.trim().split(/\s+/).length;
+};
+
+type DateFrontmatter = {
+  createdAt?: string;
+};
+
+type FrontmatterWithDate = Record<string, unknown> & {
+  date?: DateFrontmatter;
+};
+
+interface ParsedMdxFile {
+  frontmatter: FrontmatterWithDate;
+  content: string;
+  readingTime: string;
+  wordCount: number;
+}
+
+type MdxDataEntry = FrontmatterWithDate & {
+  slug: string;
+  content: string;
+  readingTime: string;
+  words: number;
 };
 
 export const formatReadingTime = (durationText: string) => {
@@ -23,7 +43,7 @@ const getMdxFiles = (dir: string) => {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 };
 
-const readMdxFile = (filePath: string, includeReadingTime = false) => {
+const parseMdxFile = (filePath: string): ParsedMdxFile => {
   if (!fs.existsSync(filePath)) {
     throw new Error(`File not found: ${filePath}.`);
   }
@@ -31,19 +51,14 @@ const readMdxFile = (filePath: string, includeReadingTime = false) => {
   try {
     const rawContent = fs.readFileSync(filePath, "utf8");
     const { content, data } = matter(rawContent);
-    const wordCount = countWords(content);
 
     return {
-      metadata: {
-        ...data,
-        ...(includeReadingTime && {
-          readingTime: formatReadingTime(
-            readingDuration(rawContent, { emoji: false })
-          )
-        }),
-        words: wordCount
-      },
-      content
+      frontmatter: data as FrontmatterWithDate,
+      content,
+      readingTime: formatReadingTime(
+        readingDuration(rawContent, { emoji: false })
+      ),
+      wordCount: countWords(content)
     };
   } catch (error) {
     console.error(`Error reading MDX file: ${filePath}.\n`);
@@ -53,21 +68,25 @@ const readMdxFile = (filePath: string, includeReadingTime = false) => {
 
 const getMdxData = (dir: string) => {
   const mdxFiles = getMdxFiles(dir).map((file) => {
-    const fileData = readMdxFile(path.join(dir, file), true);
-    const { metadata, content } = fileData;
+    const filePath = path.join(dir, file);
+    const { frontmatter, content, readingTime, wordCount } =
+      parseMdxFile(filePath);
     const slug = path.basename(file, path.extname(file));
 
     return {
-      ...metadata,
+      ...frontmatter,
       slug,
-      content
-    };
+      content,
+      readingTime,
+      words: wordCount
+    } as MdxDataEntry;
   });
 
-  return orderBy(
-    mdxFiles.filter((file) => file !== null),
-    ["date.createdAt"]
-  );
+  return mdxFiles.sort((firstFile, secondFile) => {
+    const firstCreatedAt = firstFile.date?.createdAt ?? "";
+    const secondCreatedAt = secondFile.date?.createdAt ?? "";
+    return secondCreatedAt.localeCompare(firstCreatedAt);
+  });
 };
 
 export const getMdxDataFromDirectory = <T>(directoryName: string): T[] => {
@@ -84,14 +103,11 @@ export const getMdxFromFile = (directory: string, slug: string) => {
     return null;
   }
 
-  const rawContent = fs.readFileSync(filePath, "utf8");
-  const { content, data } = matter(rawContent);
+  const { frontmatter, content, readingTime } = parseMdxFile(filePath);
 
   return {
-    ...data,
+    ...frontmatter,
     content,
-    readingTime: formatReadingTime(
-      readingDuration(rawContent, { emoji: false })
-    )
+    readingTime
   };
 };

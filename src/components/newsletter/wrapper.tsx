@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-import { fetcher } from "@/utils/fetcher";
+import { useNewsletterSubscription } from "@/hooks/use-newsletter-subscription";
 
 import { TextRevealAnimation } from "../shared/text-reveal-animation";
 
@@ -35,24 +33,14 @@ const testimonials = [
 ];
 
 export const NewsletterWrapper = () => {
-  const [email, setEmail] = useState("");
-  const [responseMessage, setResponseMessage] = useState<string | null>(null);
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = async () => {
-    const response = await fetcher(`/api/add-contact?email=${email}`, "POST");
-
-    if (response.status === "error") {
-      setResponseMessage("😔 Subscription failed, please try again later.");
-      return;
-    }
-
-    setResponseMessage(response.message);
-
-    if (response.status === 200) {
-      setIsSubscribed(true);
-    }
-  };
+  const {
+    email,
+    handleEmailChange,
+    handleSubmit,
+    isSubscribed,
+    isSubmitting,
+    responseMessage
+  } = useNewsletterSubscription();
 
   return (
     <section className="container newsletter">
@@ -73,27 +61,29 @@ export const NewsletterWrapper = () => {
           <TextRevealAnimation>
             <em>11,460</em> people enjoy it!
           </TextRevealAnimation>
-          <div className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <input
                 type="email"
                 autoComplete="email"
                 name="email"
-                disabled={isSubscribed}
-                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                disabled={isSubscribed || isSubmitting}
+                onChange={(event) => handleEmailChange(event.target.value)}
                 placeholder="vlad@transylvania.com"
                 required
               />
               <button
                 type="submit"
-                onClick={handleSubscribe}
-                disabled={isSubscribed}
+                disabled={isSubscribed || isSubmitting}
                 className="action primary"
               >
-                Subscribe{isSubscribed && "d!"}
+                {isSubmitting
+                  ? "Subscribing..."
+                  : `Subscribe${isSubscribed ? "d!" : ""}`}
               </button>
             </div>
-          </div>
+          </form>
           {responseMessage && (
             <span className="response">{responseMessage}</span>
           )}

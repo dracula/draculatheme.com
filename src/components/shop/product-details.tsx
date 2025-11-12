@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useMemo, useState } from "react";
 
 import type { Product } from "@/lib/types";
 
@@ -15,10 +15,29 @@ export const ProductDetails = ({
   options,
   defaultVariant
 }: ProductDetailsProps) => {
+  const quantityInputId = useId();
+  const sizeSelectId = useId();
   const [quantity, setQuantity] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(
-    options[defaultVariant] || { value: "", label: "" }
-  );
+  const [selectedOptionsByProduct, setSelectedOptionsByProduct] = useState<
+    Record<string, string>
+  >({});
+
+  const userSelectedOptionValue = selectedOptionsByProduct[product.id];
+
+  const defaultOptionValue = useMemo(() => {
+    return options[defaultVariant]?.value ?? "";
+  }, [options, defaultVariant]);
+
+  const selectedOptionValue = useMemo(() => {
+    if (
+      userSelectedOptionValue &&
+      options.some((option) => option.value === userSelectedOptionValue)
+    ) {
+      return userSelectedOptionValue;
+    }
+
+    return defaultOptionValue;
+  }, [userSelectedOptionValue, options, defaultOptionValue]);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number.parseInt(e.target.value, 10);
@@ -29,10 +48,25 @@ export const ProductDetails = ({
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = e.target.value;
-    const option = options.find((opt) => opt.value === selectedValue);
-    if (option) {
-      setSelectedOption(option);
+
+    if (options.some((option) => option.value === selectedValue)) {
+      setSelectedOptionsByProduct((previous) => ({
+        ...previous,
+        [product.id]: selectedValue
+      }));
+      return;
     }
+
+    setSelectedOptionsByProduct((previous) => {
+      if (previous[product.id] === undefined) {
+        return previous;
+      }
+
+      const updated = { ...previous };
+      delete updated[product.id];
+
+      return updated;
+    });
   };
 
   return (
@@ -45,12 +79,12 @@ export const ProductDetails = ({
       <div dangerouslySetInnerHTML={{ __html: product.description }} />
       <div className="options">
         <div className="quantity">
-          <label htmlFor="quantity">Quantity:</label>
+          <label htmlFor={quantityInputId}>Quantity:</label>
           <input
             type="number"
             autoComplete="off"
-            id="quantity"
-            name="quantity"
+            id={quantityInputId}
+            name={quantityInputId}
             min="1"
             value={quantity}
             onChange={handleQuantityChange}
@@ -58,11 +92,11 @@ export const ProductDetails = ({
         </div>
         {options.length > 0 && (
           <div className="size">
-            <label htmlFor="size">Size:</label>
+            <label htmlFor={sizeSelectId}>Size:</label>
             <select
-              id="size"
-              name="size"
-              value={selectedOption.value}
+              id={sizeSelectId}
+              name={sizeSelectId}
+              value={selectedOptionValue}
               onChange={handleOptionChange}
             >
               {options.map((option) => (
@@ -75,7 +109,7 @@ export const ProductDetails = ({
         )}
       </div>
       <a
-        href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true&variant=${selectedOption.value}&quantity=${quantity}`}
+        href={`https://store.draculatheme.com/l/${product.custom_permalink}?wanted=true&variant=${selectedOptionValue}&quantity=${quantity}`}
         className="action primary add-to-cart"
       >
         <div className="icon">
