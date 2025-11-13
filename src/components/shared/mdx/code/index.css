@@ -32,6 +32,7 @@ html {
   margin-block: 1em;
   overflow: hidden;
   border: 0.0625rem solid var(--background-color-tertiary);
+  corner-shape: squircle;
   border-radius: var(--radius-sm);
   background-color: var(--code-background);
   line-height: 1.6;

@@ -16,6 +16,7 @@
       height: fit-content;
       padding: 1.125rem;
       gap: 1.125rem;
+      corner-shape: squircle;
       border-radius: var(--radius-lg);
       background-color: var(--background-color-secondary);
 
@@ -29,6 +30,7 @@
           min-height: 2.25rem;
           padding: 0.75rem 0.75rem 0.75rem 2.5em;
           border: none;
+          corner-shape: squircle;
           border-radius: var(--radius-sm);
           outline-color: transparent;
           outline-style: solid;
@@ -105,6 +107,7 @@
           padding: 0.5rem 0.75rem;
           gap: 0.5em;
           border: none;
+          corner-shape: squircle;
           border-radius: var(--radius-sm);
           outline-color: transparent;
           outline-style: solid;
@@ -189,6 +192,7 @@
           height: 100%;
           padding: 1.125rem;
           gap: 1.125rem;
+          corner-shape: squircle;
           border-radius: var(--radius-lg);
           outline-color: transparent;
           outline-style: solid;

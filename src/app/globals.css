@@ -166,7 +166,6 @@ footer {
 
 main {
   flex-direction: column;
-  min-height: 100vh;
   padding-bottom: var(--page-sections-spacing);
   gap: var(--page-sections-spacing);
 }
@@ -297,6 +296,7 @@ kbd {
   overflow: hidden;
   gap: 0.5em;
   border: none;
+  corner-shape: squircle;
   border-radius: var(--radius-sm);
   outline-color: transparent;
   outline-style: solid;
@@ -417,6 +417,7 @@ kbd {
     padding: 1.125rem 1.5rem;
     gap: 1em;
     border: 0.0625rem solid var(--background-color-tertiary);
+    corner-shape: squircle;
     border-radius: var(--radius-sm);
 
     * {
@@ -429,12 +430,14 @@ kbd {
     margin: 2em 0;
     overflow: auto hidden;
     border: 0.0625rem solid var(--background-color-tertiary);
+    corner-shape: squircle;
     border-radius: var(--radius-sm);
 
     table {
       width: max-content;
       min-width: 100%;
       border: none;
+      corner-shape: squircle;
       border-radius: var(--radius-sm);
       border-spacing: 0;
       font-size: var(--font-size-caption);
@@ -475,6 +478,7 @@ kbd {
       width: 100%;
       height: auto;
       object-fit: contain;
+      corner-shape: squircle;
       border-radius: var(--radius-sm);
     }
 
