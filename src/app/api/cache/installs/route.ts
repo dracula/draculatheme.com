@@ -14,32 +14,57 @@ const fetchAndOrganize = async (
 ) => {
   const key = item.repo;
 
+  const tryFetchFile = async (path: string) => {
+    try {
+      const response = await octokit.rest.repos.getContent({
+        path,
+        owner: "dracula",
+        repo: key
+      });
+
+      if (Array.isArray(response.data)) {
+        throw new Error(
+          `Expected file content but got directory listing for repo: ${key}`
+        );
+      }
+
+      if (response.data.type !== "file") {
+        throw new Error(
+          `Expected file content but got ${response.data.type} for repo: ${key}`
+        );
+      }
+
+      if (!response.data.content) {
+        throw new Error(`Content not found for repo: ${key}`);
+      }
+
+      return response.data.content;
+    } catch (error: unknown) {
+      if (
+        error &&
+        typeof error === "object" &&
+        "status" in error &&
+        error.status === 404
+      ) {
+        return null;
+      }
+      throw error;
+    }
+  };
+
   try {
-    const response = await octokit.rest.repos.getContent({
-      path: "INSTALL.md",
-      owner: "dracula",
-      repo: key
-    });
+    let value = await tryFetchFile("INSTALL.md");
 
-    if (Array.isArray(response.data)) {
-      throw new Error(
-        `Expected file content but got directory listing for repo: ${key}`
-      );
+    if (!value) {
+      value = await tryFetchFile("install.md");
     }
 
-    if (response.data.type !== "file") {
-      throw new Error(
-        `Expected file content but got ${response.data.type} for repo: ${key}`
-      );
+    if (!value) {
+      console.error(`INSTALL.md or install.md not found for repo: ${key}`);
+      return null;
     }
 
-    if (!response.data.content) {
-      throw new Error(`Content not found for repo: ${key}`);
-    }
-
-    const value = response.data.content;
     installs[key] = value;
-
     return value;
   } catch (error: unknown) {
     console.error(

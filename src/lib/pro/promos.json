@@ -1,0 +1,28 @@
+{
+  "promos": [
+    {
+      "name": "Dracula-o-ween 2025",
+      "displayName": "It's Dracula-o-ween! 40% off!",
+      "announcementText": "It's Dracula-o-ween! Dracula Pro with <strong>40% OFF</strong> until <strong>Oct 31 →</strong>",
+      "discountPercentage": 40,
+      "couponCode": "DRACULAOWEEN2025",
+      "basePrice": "promoPrice",
+      "startDate": "2025-10-01T00:00:00Z",
+      "endDate": "2025-10-31T23:59:59Z"
+    },
+    {
+      "name": "Black Friday 2025",
+      "displayName": "Black Friday! 20% off!",
+      "announcementText": "Black Friday Sale! Dracula Pro with <strong>20% OFF</strong> until <strong>Nov 28 →</strong>",
+      "discountPercentage": 20,
+      "couponCode": "BLACKFRIDAY2025",
+      "basePrice": "promoPrice",
+      "startDate": "2025-11-17T00:00:00Z",
+      "endDate": "2025-11-28T23:59:59Z"
+    }
+  ],
+  "defaultPromo": {
+    "discountPercentage": 20,
+    "basePrice": "listPrice"
+  }
+}
