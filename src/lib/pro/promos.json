@@ -13,7 +13,7 @@
     {
       "name": "Black Friday 2025",
       "displayName": "Black Friday! 20% off!",
-      "announcementText": "Black Friday Sale! Dracula Pro with <strong>20% OFF</strong> until <strong>Nov 28 →</strong>",
+      "announcementText": "Black Friday Sale! <strong>20% OFF</strong> until <strong>Nov 28 →</strong>",
       "discountPercentage": 20,
       "couponCode": "BLACKFRIDAY2025",
       "basePrice": "promoPrice",
