@@ -19,6 +19,7 @@ export type Path = {
   categories: string[];
   legacyViews?: number;
   views?: number;
+  teamPick?: boolean;
 };
 
 export type PathItem = (typeof paths)[number];

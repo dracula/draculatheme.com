@@ -26,12 +26,24 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
     { history: "replace" }
   );
 
-  const filtered = paths.filter(
-    (item) =>
-      matchesSearch(item, searchQuery) &&
-      matchesPlatform(item, selectedPlatform) &&
-      matchesCategory(item, selectedCategory)
-  );
+  const filtered = paths
+    .filter(
+      (item) =>
+        matchesSearch(item, searchQuery) &&
+        matchesPlatform(item, selectedPlatform) &&
+        matchesCategory(item, selectedCategory)
+    )
+    .sort((a, b) => {
+      // Team picks first
+      if (a.teamPick && !b.teamPick) {
+        return -1;
+      }
+      if (!a.teamPick && b.teamPick) {
+        return 1;
+      }
+      // Then sort by views
+      return (b.views ?? 0) - (a.views ?? 0);
+    });
 
   return (
     <>

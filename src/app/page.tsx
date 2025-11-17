@@ -49,6 +49,14 @@ const HomePage = async () => {
     }
 
     paths.sort((a, b) => {
+      // Team picks first
+      if (a.teamPick && !b.teamPick) {
+        return -1;
+      }
+      if (!a.teamPick && b.teamPick) {
+        return 1;
+      }
+      // Then sort by views
       return (b.views ?? 0) - (a.views ?? 0);
     });
   }
@@ -85,7 +93,12 @@ const HomePage = async () => {
                     />
                   </div>
                   <div className="content">
-                    <h3>{item.title}</h3>
+                    <div className="title-row">
+                      <h3>{item.title}</h3>
+                      {item.teamPick && (
+                        <span className="team-pick-badge">Team Pick</span>
+                      )}
+                    </div>
                     {(item.views ?? 0) > 0 && (
                       <p>
                         {new Intl.NumberFormat().format(item.views ?? 0)} views

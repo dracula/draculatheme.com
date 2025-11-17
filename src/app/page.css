@@ -186,6 +186,7 @@
       li {
         a {
           display: flex;
+          position: relative;
           align-items: center;
           justify-content: flex-start;
           width: 15rem;
@@ -222,6 +223,28 @@
             }
           }
 
+          .team-pick-badge {
+            display: inline-flex;
+            position: absolute;
+            top: 0.375rem;
+            right: 0.375rem;
+            align-items: center;
+            width: fit-content;
+            height: fit-content;
+            padding: 0.1875rem 0.5rem;
+            transform: translateY(-50%);
+            border: 0.0625rem solid var(--color);
+            corner-shape: squircle;
+            border-radius: var(--radius-md);
+            background-color: var(--hero-background-color-secondary);
+            color: var(--color-display);
+            font-weight: 600;
+            font-size: 0.625rem;
+            line-height: 1;
+            text-transform: uppercase;
+            pointer-events: none;
+          }
+
           .icon {
             display: flex;
             align-items: center;
@@ -241,6 +264,13 @@
             color: var(--color-caption);
             font-weight: 600;
             font-size: var(--font-size-caption);
+
+            .title-row {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 0.5rem;
+            }
 
             h3 {
               color: var(--color-display);

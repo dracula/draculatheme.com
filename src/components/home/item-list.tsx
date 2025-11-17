@@ -16,6 +16,9 @@ export const ItemList = ({ items }: ItemListProps) => (
         return (
           <li key={item.repo}>
             <Link href={`/${item.repo}`}>
+              {item.teamPick && (
+                <span className="team-pick-badge">Team Pick</span>
+              )}
               <div className="icon">
                 <Image
                   src={`/icons/${item.icon}`}
