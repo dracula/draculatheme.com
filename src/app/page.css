@@ -226,7 +226,7 @@
           .team-pick-badge {
             display: inline-flex;
             position: absolute;
-            top: 0.375rem;
+            top: 0.0625rem;
             right: 0.375rem;
             align-items: center;
             width: fit-content;
@@ -235,9 +235,9 @@
             transform: translateY(-50%);
             border: 0.0625rem solid var(--color);
             corner-shape: squircle;
-            border-radius: var(--radius-md);
-            background-color: var(--hero-background-color-secondary);
-            color: var(--color-display);
+            border-radius: var(--radius-lg);
+            background-color: var(--hero-background-color-primary);
+            color: var(--color);
             font-weight: 600;
             font-size: 0.625rem;
             line-height: 1;
