@@ -10,12 +10,9 @@ import { BookIcon } from "@/icons/book";
 import { GithubIcon } from "@/icons/github";
 import { HeartIcon } from "@/icons/heart";
 import { NewsIcon } from "@/icons/news";
-import { RadioIcon } from "@/icons/radio";
 import { ShopIcon } from "@/icons/shop";
-import { VisualizerIcon } from "@/icons/visualizer";
 import { ZapIcon } from "@/icons/zap";
 
-import { DraculaRadio } from "../dracula-radio";
 import { ThemeToggle } from "../theme-toggle";
 import { CommandBar } from "./command-bar";
 
@@ -37,8 +34,6 @@ export const Header = () => {
   const pathKey = pathname === "/" ? "" : pathname;
 
   const [isNavActive, setIsNavActive] = useState(false);
-  const [isRadioVisible, setIsRadioVisible] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
@@ -58,10 +53,6 @@ export const Header = () => {
       body.classList.remove("block-overflow");
     };
   }, [isNavActive]);
-
-  const handleToggleRadio = () => {
-    setIsRadioVisible(!isRadioVisible);
-  };
 
   const buildClassName = (href: string, className?: string) => {
     const classes = ["action"];
@@ -135,21 +126,6 @@ export const Header = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              <button
-                type="button"
-                onClick={handleToggleRadio}
-                className="action radio"
-              >
-                {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
-                <span>Radio</span>
-              </button>
-              <DraculaRadio
-                onPlayingChange={setIsPlaying}
-                onVisibilityChange={setIsRadioVisible}
-                visible={isRadioVisible}
-              />
-            </li>
             {navItems.slice(3).map(({ href, label, icon, className }) => (
               <li key={href}>
                 <Link

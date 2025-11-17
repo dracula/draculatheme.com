@@ -47,7 +47,7 @@
         padding: 1.125rem;
         gap: 1.125rem;
         border: 0.125rem solid transparent;
-        corner-shape: squircle;
+        corner-shape: superellipse(1.2);
         border-radius: var(--radius-lg);
         background-color: var(--background-color-secondary);
         &:focus-within {

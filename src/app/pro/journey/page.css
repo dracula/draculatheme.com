@@ -57,7 +57,7 @@
         padding: 1.5rem;
         gap: 1em;
         border: 0.0313rem solid var(--background-color-tertiary);
-        corner-shape: squircle;
+        corner-shape: superellipse(1.2);
         border-radius: var(--radius-lg);
         background-color: var(--background-color-secondary);
         line-height: 1.8;

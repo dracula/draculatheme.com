@@ -21,7 +21,7 @@ html {
       padding: 5.25rem 3.75rem 5.625rem 48%;
       overflow: hidden;
       border: 0.25rem dashed var(--background-color-primary);
-      corner-shape: squircle;
+      corner-shape: superellipse(1.2);
       border-radius: var(--radius-lg);
       background-image: url("/images/contribute/our-project.svg");
       background-position: center;
@@ -74,7 +74,7 @@ html {
           padding: 2.25rem;
           gap: 1.125rem;
           border: 0.25rem dashed var(--background-color-primary);
-          corner-shape: squircle;
+          corner-shape: superellipse(1.2);
           border-radius: var(--radius-lg);
           background-color: var(--background-color-secondary);
 
@@ -145,7 +145,7 @@ html {
         padding: 0.375rem;
         overflow: auto hidden;
         gap: 0.5em;
-        corner-shape: squircle;
+        corner-shape: superellipse(1.2);
         border-radius: var(--radius-sm);
         background-color: var(--background-color-secondary);
 
@@ -155,7 +155,7 @@ html {
           button {
             z-index: 2;
             position: relative;
-            corner-shape: squircle;
+            corner-shape: superellipse(1.2);
             border-radius: var(--radius-sm);
             background-color: transparent;
             transition:
@@ -176,7 +176,7 @@ html {
             z-index: 1;
             position: absolute;
             inset: 0;
-            corner-shape: squircle;
+            corner-shape: superellipse(1.2);
             border-radius: var(--radius-sm);
             background-color: var(--background-color-primary);
           }
@@ -191,7 +191,7 @@ html {
         padding: 0;
         overflow: auto hidden;
         border: 0.375rem solid var(--background-color-secondary);
-        corner-shape: squircle;
+        corner-shape: superellipse(1.2);
         border-radius: var(--radius-sm);
 
         table {

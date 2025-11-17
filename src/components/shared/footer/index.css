@@ -79,7 +79,7 @@ footer {
         height: 2.625rem;
         padding: 0.75rem;
         border: none;
-        corner-shape: squircle;
+        corner-shape: superellipse(1.2);
         border-radius: var(--radius-sm);
         outline-color: transparent;
         outline-style: solid;

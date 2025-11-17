@@ -9,13 +9,14 @@ import { NextIcon } from "@/icons/next";
 import { PauseIcon } from "@/icons/pause";
 import { PlayIcon } from "@/icons/play";
 import { PreviousIcon } from "@/icons/previous";
+import { RadioIcon } from "@/icons/radio";
+import { VisualizerIcon } from "@/icons/visualizer";
 import { VolumeIcon } from "@/icons/volume";
 import { playlist, type Track } from "@/lib/playlist";
 
 interface DraculaRadioProps {
   onPlayingChange?: (isPlaying: boolean) => void;
   onVisibilityChange?: (visible: boolean) => void;
-  visible: boolean;
 }
 
 const fadeInMs = 240;
@@ -28,12 +29,12 @@ const getPrevIndex = (index: number) =>
 
 export const DraculaRadio = ({
   onPlayingChange,
-  onVisibilityChange,
-  visible
+  onVisibilityChange
 }: DraculaRadioProps) => {
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
+  const [isVisible, setIsVisible] = useState(false);
 
   const isFadingRef = useRef(false);
   const shouldAutoplayRef = useRef(false);
@@ -119,6 +120,7 @@ export const DraculaRadio = ({
 
   const changeTrack = useCallback(
     (direction: "next" | "prev") => {
+      setIsVisible(false);
       onVisibilityChange?.(false);
       const updateFn = direction === "next" ? getNextIndex : getPrevIndex;
 
@@ -136,6 +138,7 @@ export const DraculaRadio = ({
   );
 
   const togglePlay = useCallback(() => {
+    setIsVisible(false);
     onVisibilityChange?.(false);
 
     if (isPlaying) {
@@ -203,7 +206,7 @@ export const DraculaRadio = ({
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (
-        !visible ||
+        !isVisible ||
         e.target instanceof HTMLInputElement ||
         e.metaKey ||
         e.ctrlKey ||
@@ -223,10 +226,12 @@ export const DraculaRadio = ({
         p: () => changeTrack("prev"),
         arrowup: () => {
           setVolume((v) => Math.min(1, v + 0.1));
+          setIsVisible(false);
           onVisibilityChange?.(false);
         },
         arrowdown: () => {
           setVolume((v) => Math.max(0, v - 0.1));
+          setIsVisible(false);
           onVisibilityChange?.(false);
         }
       };
@@ -239,7 +244,7 @@ export const DraculaRadio = ({
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [visible, togglePlay, changeTrack, onVisibilityChange]);
+  }, [isVisible, togglePlay, changeTrack, onVisibilityChange]);
 
   useEffect(() => {
     if (!sound?.volume || isFadingRef.current || !isPlaying) {
@@ -257,16 +262,36 @@ export const DraculaRadio = ({
     return () => clearTimeout(timeoutId);
   }, [volume, sound, isPlaying, getCurrentVolume]);
 
-  const hideOverlay = useCallback(
-    () => onVisibilityChange?.(false),
-    [onVisibilityChange]
-  );
+  const handleToggleVisibility = useCallback(() => {
+    setIsVisible((prev) => {
+      const newValue = !prev;
+      onVisibilityChange?.(newValue);
+      return newValue;
+    });
+  }, [onVisibilityChange]);
+
+  const hideOverlay = useCallback(() => {
+    setIsVisible(false);
+    onVisibilityChange?.(false);
+  }, [onVisibilityChange]);
+
+  useEffect(() => {
+    onVisibilityChange?.(isVisible);
+  }, [isVisible, onVisibilityChange]);
 
   return (
     <>
       <button
         type="button"
-        className={`radio-overlay${visible ? " visible" : ""}`}
+        onClick={handleToggleVisibility}
+        className="floating-radio-button"
+        aria-label={isPlaying ? "Pause radio" : "Play radio"}
+      >
+        {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
+      </button>
+      <button
+        type="button"
+        className={`radio-overlay${isVisible ? " visible" : ""}`}
         onClick={hideOverlay}
         tabIndex={0}
         aria-label="Close radio overlay"
@@ -278,7 +303,7 @@ export const DraculaRadio = ({
         }}
       />
       <section
-        className={`radio-container ${track.character.id}${visible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
+        className={`radio-container ${track.character.id}${isVisible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
         aria-label="Dracula Radio"
       >
         <div className="metadata">

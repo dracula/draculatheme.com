@@ -6,6 +6,7 @@ import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 
 import { AnnouncementBar } from "@/components/shared/announcement-bar";
+import { DraculaRadio } from "@/components/shared/dracula-radio";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
@@ -75,6 +76,7 @@ const RootLayout = async ({
         <Header />
         <main>{children}</main>
         <Footer />
+        <DraculaRadio />
       </ThemeProvider>
       <Script
         src="https://plausible.io/js/script.js"
