@@ -23,6 +23,7 @@ export const ColoredSquircleFlow = () => {
   const animationRef = useRef<number | null>(null);
   const animateFnRef = useRef<(() => void) | null>(null);
   const canvasSizeRef = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+  const bodyColorRef = useRef<string>("hsl(0 0% 100%)");
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
 
   useEffect(() => {
@@ -39,6 +40,15 @@ export const ColoredSquircleFlow = () => {
       return;
     }
     contextRef.current = ctx;
+
+    const updateBodyColor = () => {
+      const computedStyle = getComputedStyle(container);
+      bodyColorRef.current =
+        computedStyle.getPropertyValue("--color-body").trim() ||
+        "hsl(0 0% 100%)";
+    };
+
+    updateBodyColor();
 
     const resizeCanvas = () => {
       const w = Math.max(1, container.offsetWidth);
@@ -167,9 +177,11 @@ export const ColoredSquircleFlow = () => {
         const endX = drawX + Math.cos(angle) * distance;
         const endY = adjustedY - Math.sin(angle) * distance;
 
+        updateBodyColor();
+
         ctx2.lineCap = "round";
         ctx2.lineWidth = 2 * scale;
-        ctx2.strokeStyle = "hsl(0 0% 100%)";
+        ctx2.strokeStyle = bodyColorRef.current;
         ctx2.beginPath();
         ctx2.moveTo(drawX, adjustedY);
         ctx2.lineTo(endX, endY);
@@ -177,11 +189,11 @@ export const ColoredSquircleFlow = () => {
 
         ctx2.beginPath();
         ctx2.arc(drawX, adjustedY, 5 * scale, 0, Math.PI * 2);
-        ctx2.fillStyle = "hsl(0 0% 100%)";
+        ctx2.fillStyle = bodyColorRef.current;
         ctx2.fill();
 
         ctx2.font = `600 ${16 * scale}px "DM Mono", monospace, system-ui`;
-        ctx2.fillStyle = "hsl(0 0% 100%)";
+        ctx2.fillStyle = bodyColorRef.current;
         ctx2.textAlign = "left";
         ctx2.textBaseline = "middle";
         ctx2.fillText(`HUE: ${squircle.hue}`, endX + 12 * scale, endY);
