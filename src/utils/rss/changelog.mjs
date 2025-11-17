@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import RSS from "rss";
 
 const generate = async () => {
-  const allLogs = await globby(["./content/logs/*.mdx"]);
+  const allLogs = await globby(["./content/changelog/*.mdx"]);
 
   const logsData = allLogs.map((log) => {
     const fileContents = readFileSync(log, "utf8");
@@ -13,7 +13,9 @@ const generate = async () => {
   });
 
   logsData.sort(
-    (a, b) => new Date(b.data.date.createdAt) - new Date(a.data.date.createdAt)
+    (a, b) =>
+      new Date(b.data.date.createdAt).getTime() -
+      new Date(a.data.date.createdAt).getTime()
   );
 
   const feed = new RSS({
@@ -24,12 +26,15 @@ const generate = async () => {
     feed_url: "https://draculatheme.com/changelog-rss.xml"
   });
 
-  logsData.forEach((item, index) => {
+  logsData.forEach((item) => {
     const { data } = item;
+    const slug = item.log
+      .replace("./content/changelog/", "")
+      .replace(".mdx", "");
 
     feed.item({
       title: data.title,
-      url: `https://draculatheme.com/pro/changelog#${logsData.length - index}`,
+      url: `https://draculatheme.com/pro/changelog#${slug}`,
       date: data.date.createdAt,
       description: data.excerpt
     });
