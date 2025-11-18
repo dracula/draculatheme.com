@@ -1,4 +1,5 @@
 .announcement-bar {
+  position: relative;
   width: 100%;
   padding: 0.5rem 1rem;
   background-color: var(--orange);

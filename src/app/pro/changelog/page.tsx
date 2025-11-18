@@ -88,7 +88,7 @@ const ChangelogPage = () => {
                   <time className="date">{formattedDate}</time>
                   <h2 className="title">{entry.title}</h2>
                   {entry.excerpt && <p className="excerpt">{entry.excerpt}</p>}
-                  <CustomMDX source={entry.content} />
+                  <CustomMDX source={entry.content} idPrefix={entry.slug} />
                 </article>
               </li>
             );

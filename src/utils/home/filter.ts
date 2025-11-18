@@ -18,6 +18,24 @@ export const categories = [
   { name: "terminal", label: "Terminals" }
 ];
 
+const categoryImportance: Record<string, number> = {
+  editor: 1,
+  terminal: 2,
+  ide: 3,
+  browser: 4,
+  service: 5,
+  social: 6,
+  other: 7
+};
+
+export const getCategoryImportance = (categories: string[]): number => {
+  if (categories.length === 0) {
+    return 999;
+  }
+
+  return Math.min(...categories.map((cat) => categoryImportance[cat] ?? 999));
+};
+
 export const matchesSearch = (
   item: PathItem,
   searchedTerm: string

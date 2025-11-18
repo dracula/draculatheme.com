@@ -12,6 +12,7 @@ import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
 import { isProd } from "@/utils/environment";
 import { fetcher } from "@/utils/fetcher";
+import { getCategoryImportance } from "@/utils/home/filter";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -49,14 +50,26 @@ const HomePage = async () => {
     }
 
     paths.sort((a, b) => {
-      // Team picks first
       if (a.teamPick && !b.teamPick) {
         return -1;
       }
+
       if (!a.teamPick && b.teamPick) {
         return 1;
       }
-      // Then sort by views
+
+      if (a.teamPick && b.teamPick) {
+        const categoryDiff =
+          getCategoryImportance(a.categories) -
+          getCategoryImportance(b.categories);
+
+        if (categoryDiff !== 0) {
+          return categoryDiff;
+        }
+
+        return (b.views ?? 0) - (a.views ?? 0);
+      }
+
       return (b.views ?? 0) - (a.views ?? 0);
     });
   }

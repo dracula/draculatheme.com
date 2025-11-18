@@ -1,4 +1,3 @@
-import useVibration, { VibrationPatterns } from "@luxonauta/use-vibration";
 import useSound from "use-sound";
 
 import { SearchIcon } from "@/icons/search";
@@ -73,13 +72,9 @@ export const FilterSidebar = ({
   onPlatformChange,
   onCategoryChange
 }: FilterSidebarProps) => {
-  const [{ isSupported }, { vibrate }] = useVibration();
   const [play] = useSound("/sounds/click.mp3");
 
   const handleInteraction = () => {
-    if (isSupported) {
-      vibrate(VibrationPatterns.tap);
-    }
     play();
   };
 

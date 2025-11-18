@@ -9,7 +9,7 @@
       position: relative;
       max-width: 42rem;
       padding-bottom: 2em;
-      corner-shape: superellipse(1.2);
+      corner-shape: squircle;
       border-width: 0 0.0625rem 0.0625rem 0.0625rem;
       border-style: solid;
       border-color: var(--background-color-tertiary);

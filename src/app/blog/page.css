@@ -38,7 +38,7 @@
         border-radius: var(--radius-lg);
         outline-color: transparent;
         outline-style: solid;
-        outline-width: 0;
+        outline-width: 0.0625rem;
         background-color: var(--background-color-secondary);
         animation-timeline: view();
         animation-duration: var(--duration-slow);
@@ -51,7 +51,7 @@
         &:focus-visible,
         &:hover {
           outline-color: var(--background-color-tertiary);
-          outline-width: 0.0625rem;
+          transition: outline-color var(--duration-standard) var(--ease-fluid);
         }
 
         .cover {

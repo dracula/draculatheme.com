@@ -16,7 +16,7 @@
       height: fit-content;
       padding: 1.125rem;
       gap: 1.125rem;
-      corner-shape: superellipse(1.2);
+      corner-shape: squircle;
       border-radius: var(--radius-lg);
       background-color: var(--background-color-secondary);
 
@@ -30,33 +30,23 @@
           min-height: 2.25rem;
           padding: 0.75rem 0.75rem 0.75rem 2.5em;
           border: none;
-          corner-shape: superellipse(1.2);
+          corner-shape: squircle;
           border-radius: var(--radius-sm);
           outline-color: transparent;
           outline-style: solid;
-          outline-width: 0;
+          outline-width: 0.0625rem;
           background-color: var(--background-color-primary);
-          transition: color var(--duration-standard) var(--ease-fluid);
+          transition:
+            outline-color var(--duration-standard) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid);
 
           &::placeholder {
             color: var(--color-body);
           }
 
-          &:focus-visible {
+          &:focus-visible,
+          &:hover {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.0625rem;
-          }
-
-          @media (hover: hover) and (pointer: fine) {
-            transition:
-              outline-color var(--duration-standard) var(--ease-fluid),
-              outline-width var(--duration-fast) var(--ease-fluid),
-              color var(--duration-standard) var(--ease-fluid);
-
-            &:hover {
-              outline-color: var(--background-color-tertiary);
-              outline-width: 0.0625rem;
-            }
           }
         }
 
@@ -107,32 +97,21 @@
           padding: 0.5rem 0.75rem;
           gap: 0.5em;
           border: none;
-          corner-shape: superellipse(1.2);
+          corner-shape: squircle;
           border-radius: var(--radius-sm);
           outline-color: transparent;
           outline-style: solid;
-          outline-width: 0;
+          outline-width: 0.0625rem;
           background-color: var(--background-color-primary);
           font-weight: 600;
-          transition: color var(--duration-standard) var(--ease-fluid);
+          transition:
+            outline-color var(--duration-standard) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid);
 
-          &:focus-visible {
+          &:focus-visible,
+          &:hover {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.0625rem;
             color: var(--color);
-          }
-
-          @media (hover: hover) and (pointer: fine) {
-            transition:
-              outline-color var(--duration-standard) var(--ease-fluid),
-              outline-width var(--duration-fast) var(--ease-fluid),
-              color var(--duration-standard) var(--ease-fluid);
-
-            &:hover {
-              outline-color: var(--background-color-tertiary);
-              outline-width: 0.0625rem;
-              color: var(--color);
-            }
           }
 
           &:has(input[type="radio"]:checked) {
@@ -193,11 +172,11 @@
           height: 100%;
           padding: 1.125rem;
           gap: 1.125rem;
-          corner-shape: superellipse(1.2);
+          corner-shape: squircle;
           border-radius: var(--radius-lg);
           outline-color: transparent;
           outline-style: solid;
-          outline-width: 0;
+          outline-width: 0.0625rem;
           background-color: var(--background-color-secondary);
           animation-timeline: view();
           animation-duration: var(--duration-slow);
@@ -205,22 +184,12 @@
           animation-fill-mode: both;
           animation-name: items-fade-in;
           animation-range: entry 0 cover 30%;
+          transition: outline-color var(--duration-standard) var(--ease-fluid);
           will-change: transform, opacity;
 
-          &:focus-visible {
+          &:focus-visible,
+          &:hover {
             outline-color: var(--background-color-tertiary);
-            outline-width: 0.0625rem;
-          }
-
-          @media (hover: hover) and (pointer: fine) {
-            transition:
-              outline-color var(--duration-standard) var(--ease-fluid),
-              outline-width var(--duration-fast) var(--ease-fluid);
-
-            &:hover {
-              outline-color: var(--background-color-tertiary);
-              outline-width: 0.0625rem;
-            }
           }
 
           .team-pick-badge {
@@ -234,7 +203,7 @@
             padding: 0.1875rem 0.5rem;
             transform: translateY(-50%);
             border: 0.0625rem solid var(--color);
-            corner-shape: superellipse(1.2);
+            corner-shape: squircle;
             border-radius: var(--radius-lg);
             background-color: var(--hero-background-color-primary);
             color: var(--color);

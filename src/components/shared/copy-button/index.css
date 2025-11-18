@@ -2,7 +2,7 @@
   aspect-ratio: 1/1;
   min-height: fit-content;
   padding: 0.5em;
-  corner-shape: superellipse(1.2);
+  corner-shape: squircle;
   border-radius: var(--radius-sm);
 
   &.copied {

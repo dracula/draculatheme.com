@@ -21,14 +21,9 @@
         text-underline-offset: 0.1875rem;
         transition: color var(--duration-standard) var(--ease-fluid);
 
-        &:focus {
+        &:focus,
+        &:hover {
           color: var(--color-display);
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-          &:hover {
-            color: var(--color-display);
-          }
         }
       }
     }
@@ -47,19 +42,14 @@
         padding: 1.125rem;
         gap: 1.125rem;
         border: 0.125rem solid transparent;
-        corner-shape: superellipse(1.2);
+        corner-shape: squircle;
         border-radius: var(--radius-lg);
         background-color: var(--background-color-secondary);
-        &:focus-within {
+        transition: border-color var(--duration-standard) var(--ease-fluid);
+
+        &:focus-within,
+        &:hover {
           border-color: var(--background-color-tertiary);
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-          transition: border-color var(--duration-standard) var(--ease-fluid);
-
-          &:hover {
-            border-color: var(--background-color-tertiary);
-          }
         }
 
         .label-wrapper {

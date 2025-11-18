@@ -6,7 +6,7 @@ details {
   padding: 0;
   overflow: hidden;
   border: 0.0625rem solid var(--background-color-tertiary);
-  corner-shape: superellipse(1.2);
+  corner-shape: squircle;
   border-radius: var(--radius-sm);
   transition: height var(--duration-slow) var(--ease-fluid);
 

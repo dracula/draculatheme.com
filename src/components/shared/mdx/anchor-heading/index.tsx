@@ -6,6 +6,7 @@ import { isValidElement } from "react";
 interface AnchorHeadingProps {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   children: React.ReactNode;
+  idPrefix?: string;
 }
 
 const extractTextContent = (node: React.ReactNode): string => {
@@ -35,10 +36,15 @@ const generateId = (children: React.ReactNode): string => {
     .trim();
 };
 
-export const AnchorHeading = ({ level, children }: AnchorHeadingProps) => {
+export const AnchorHeading = ({
+  level,
+  children,
+  idPrefix
+}: AnchorHeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   const textContent = extractTextContent(children);
-  const id = generateId(children);
+  const baseId = generateId(children);
+  const id = idPrefix ? `${idPrefix}-${baseId}` : baseId;
   const href = `#${id}`;
 
   return (

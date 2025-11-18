@@ -134,7 +134,7 @@ html {
           width: 8rem;
           height: 2.625rem;
           margin: 0 auto;
-          corner-shape: superellipse(1.2);
+          corner-shape: squircle;
           border-radius: var(--radius-md);
           background: linear-gradient(
             90deg,
@@ -150,7 +150,7 @@ html {
           width: 12rem;
           height: 1.5rem;
           margin: 0.25rem auto 0;
-          corner-shape: superellipse(1.2);
+          corner-shape: squircle;
           border-radius: var(--radius-sm);
           background: linear-gradient(
             90deg,
@@ -175,7 +175,7 @@ html {
         position: relative;
         height: 18.75rem;
         overflow: hidden;
-        corner-shape: superellipse(1.2);
+        corner-shape: squircle;
         border-radius: var(--radius-lg);
         backdrop-filter: blur(0.125rem);
 

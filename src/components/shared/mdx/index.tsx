@@ -149,17 +149,32 @@ const mdxOptions = (format: "md" | "mdx") => {
   };
 };
 
-const createMdxComponents = (context?: RepositoryContext) => {
+const createMdxComponents = (
+  context?: RepositoryContext,
+  idPrefix?: string
+) => {
   const Image = createImageComponent({ repositoryContext: context });
   const Link = createLinkComponent(context);
 
   return {
-    h1: (props: HeadingProps) => <AnchorHeading level={1} {...props} />,
-    h2: (props: HeadingProps) => <AnchorHeading level={2} {...props} />,
-    h3: (props: HeadingProps) => <AnchorHeading level={3} {...props} />,
-    h4: (props: HeadingProps) => <AnchorHeading level={4} {...props} />,
-    h5: (props: HeadingProps) => <AnchorHeading level={5} {...props} />,
-    h6: (props: HeadingProps) => <AnchorHeading level={6} {...props} />,
+    h1: (props: HeadingProps) => (
+      <AnchorHeading level={1} idPrefix={idPrefix} {...props} />
+    ),
+    h2: (props: HeadingProps) => (
+      <AnchorHeading level={2} idPrefix={idPrefix} {...props} />
+    ),
+    h3: (props: HeadingProps) => (
+      <AnchorHeading level={3} idPrefix={idPrefix} {...props} />
+    ),
+    h4: (props: HeadingProps) => (
+      <AnchorHeading level={4} idPrefix={idPrefix} {...props} />
+    ),
+    h5: (props: HeadingProps) => (
+      <AnchorHeading level={5} idPrefix={idPrefix} {...props} />
+    ),
+    h6: (props: HeadingProps) => (
+      <AnchorHeading level={6} idPrefix={idPrefix} {...props} />
+    ),
     code: Code,
     pre: ({ children }: { children: React.ReactNode }) => <>{children}</>,
     img: Image,
@@ -171,15 +186,17 @@ const createMdxComponents = (context?: RepositoryContext) => {
 export const CustomMDX = ({
   source,
   format = "mdx",
-  repositoryContext
+  repositoryContext,
+  idPrefix
 }: {
   source: string;
   format?: "md" | "mdx";
   repositoryContext?: RepositoryContext;
+  idPrefix?: string;
 }) => (
   <MDXRemote
     source={source}
-    components={createMdxComponents(repositoryContext)}
+    components={createMdxComponents(repositoryContext, idPrefix)}
     options={mdxOptions(format)}
   />
 );

@@ -26,24 +26,15 @@
         width: 20rem;
         height: 100%;
         overflow: hidden;
-        corner-shape: superellipse(1.2);
+        corner-shape: squircle;
         border-radius: var(--radius-lg);
         background-color: var(--background-color-secondary);
 
-        &:focus-within {
+        &:focus-within,
+        &:hover {
           .thumb {
             img {
               transform: scale(1.06) rotate(-0.6deg);
-            }
-          }
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-          &:hover {
-            .thumb {
-              img {
-                transform: scale(1.06) rotate(-0.6deg);
-              }
             }
           }
         }
@@ -94,7 +85,7 @@
             right: 1.125rem;
             padding: 0.375rem;
             transform: translateY(-50%);
-            corner-shape: superellipse(1.2);
+            corner-shape: squircle;
             border-radius: var(--radius-sm);
             background-color: var(--orange);
             color: var(--background-color-primary);

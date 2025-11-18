@@ -4,6 +4,7 @@ import { parseAsString, useQueryStates } from "nuqs";
 
 import type { Path } from "@/lib/types";
 import {
+  getCategoryImportance,
   matchesCategory,
   matchesPlatform,
   matchesSearch
@@ -34,14 +35,26 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
         matchesCategory(item, selectedCategory)
     )
     .sort((a, b) => {
-      // Team picks first
       if (a.teamPick && !b.teamPick) {
         return -1;
       }
+
       if (!a.teamPick && b.teamPick) {
         return 1;
       }
-      // Then sort by views
+
+      if (a.teamPick && b.teamPick) {
+        const categoryDiff =
+          getCategoryImportance(a.categories) -
+          getCategoryImportance(b.categories);
+
+        if (categoryDiff !== 0) {
+          return categoryDiff;
+        }
+
+        return (b.views ?? 0) - (a.views ?? 0);
+      }
+
       return (b.views ?? 0) - (a.views ?? 0);
     });
 

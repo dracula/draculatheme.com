@@ -3,17 +3,10 @@
   scroll-margin: 6rem;
 
   &:target,
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     a {
       opacity: 1;
-    }
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      a {
-        opacity: 1;
-      }
     }
   }
 
@@ -28,7 +21,7 @@
     text-decoration: none;
     opacity: 0;
     transition:
-      opacity 420ms var(--ease-fluid),
-      color 240ms var(--ease-fluid);
+      opacity var(--duration-slow) var(--ease-fluid),
+      color var(--duration-standard) var(--ease-fluid);
   }
 }
