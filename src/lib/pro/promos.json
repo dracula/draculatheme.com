@@ -19,6 +19,16 @@
       "basePrice": "promoPrice",
       "startDate": "2025-11-17T00:00:00Z",
       "endDate": "2025-11-28T23:59:59Z"
+    },
+    {
+      "name": "Cyber Week",
+      "displayName": "The void calls! Pro with 10% off",
+      "announcementText": "The void calls! Pro with <strong>10% OFF</strong> →",
+      "discountPercentage": 10,
+      "couponCode": "VOID10",
+      "basePrice": "promoPrice",
+      "startDate": "2025-11-30T00:00:00Z",
+      "endDate": "2025-12-08T23:59:59Z"
     }
   ],
   "defaultPromo": {
