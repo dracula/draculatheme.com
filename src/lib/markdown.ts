@@ -11,6 +11,6 @@ export interface BaseContent {
 
 export interface Post extends BaseContent {
   cover: string;
-  featured?: boolean;
+  featured?: string | boolean;
   authors: Author["id"][];
 }

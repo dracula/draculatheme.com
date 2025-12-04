@@ -65,7 +65,9 @@ const structuredDataScriptId = createStructuredDataScriptId(
 
 const BlogPage = async () => {
   const allPosts = getMdxDataFromDirectory<Post>("content/blog");
-  const featured = allPosts.filter((post: Post) => post.featured).slice(0, 2);
+  const featured = allPosts
+    .filter((post: Post) => post.featured === "true" || post.featured === true)
+    .slice(0, 2);
   const posts = allPosts.filter((post: Post) => !featured.includes(post));
 
   const jsonLd = {
