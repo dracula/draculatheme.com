@@ -7,6 +7,7 @@ import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
 import { jsonLd } from "@/lib/json-ld/contribute";
+import { filterBots } from "@/utils/contributors";
 import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
@@ -30,13 +31,14 @@ const structuredDataScriptId = createStructuredDataScriptId(
 
 const ContributePage = async () => {
   const contributorsData = await fetcher("/api/cache/contributors");
-  const contributors = Object.values(contributorsData.contributors)
-    .flatMap((repo) => JSON.parse(repo as string))
-    .filter(
-      (contributor, index, array) =>
-        !contributor.login.includes("[bot]") &&
-        array.findIndex((c) => c.login === contributor.login) === index
-    );
+  const contributors = filterBots(
+    Object.values(contributorsData.contributors).flatMap((repo) =>
+      JSON.parse(repo as string)
+    )
+  ).filter(
+    (contributor, index, array) =>
+      array.findIndex((c) => c.login === contributor.login) === index
+  );
 
   return (
     <>

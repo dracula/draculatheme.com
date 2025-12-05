@@ -14,6 +14,7 @@ import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
 import { apps } from "@/lib/pro/apps";
 import type { Props } from "@/lib/types";
+import { filterBots } from "@/utils/contributors";
 import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
@@ -90,7 +91,7 @@ const ThemePage = async (props: Props) => {
       : "main";
 
   const contributorsData = await fetcher(`/api/contributors?id=${theme.repo}`);
-  const contributors = [...JSON.parse(contributorsData.contributors)];
+  const contributors = filterBots(JSON.parse(contributorsData.contributors));
 
   const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
   const decodedBuffer = Buffer.from(installsResponse.install, "base64");

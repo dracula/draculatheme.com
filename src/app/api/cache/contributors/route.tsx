@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 import { paths } from "@/lib/paths";
 import { redis } from "@/lib/redis";
+import { filterBots } from "@/utils/contributors";
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
@@ -19,12 +20,12 @@ export const GET = async () => {
           repo: item.repo
         });
 
-        const filteredContributors = response.data
-          .filter((contributor) => contributor.login !== "ImgBotApp")
-          .map((contributor) => ({
+        const filteredContributors = filterBots(response.data).map(
+          (contributor) => ({
             login: contributor.login,
             avatar_url: contributor.avatar_url
-          }));
+          })
+        );
 
         contributors[item.repo] = JSON.stringify(filteredContributors);
       })
