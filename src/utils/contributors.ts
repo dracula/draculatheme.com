@@ -1,10 +1,18 @@
 interface Contributor {
-  login: string;
+  login?: string;
   avatar_url?: string;
   type?: string;
 }
 
+interface ContributorWithLogin extends Contributor {
+  login: string;
+}
+
 export const isBot = (contributor: Contributor): boolean => {
+  if (!contributor.login) {
+    return false;
+  }
+
   return (
     contributor.type === "Bot" ||
     contributor.login.includes("[bot]") ||
@@ -13,6 +21,11 @@ export const isBot = (contributor: Contributor): boolean => {
   );
 };
 
-export const filterBots = <T extends Contributor>(contributors: T[]): T[] => {
-  return contributors.filter((contributor) => !isBot(contributor));
+export const filterBots = <T extends Contributor>(
+  contributors: T[]
+): T[] => {
+  return contributors.filter(
+    (contributor): contributor is T & ContributorWithLogin =>
+      !!contributor.login && !isBot(contributor)
+  );
 };

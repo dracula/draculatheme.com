@@ -119,12 +119,17 @@ const ThemePage = async (props: Props) => {
       "syntax highlighting",
       "developer tools"
     ],
-    author: contributors.map((contributor) => ({
-      "@type": "Person",
-      name: contributor.login,
-      url: `https://github.com/${contributor.login}`,
-      image: contributor.avatar_url
-    })),
+    author: contributors
+      .filter(
+        (contributor): contributor is typeof contributor & { login: string } =>
+          !!contributor.login
+      )
+      .map((contributor) => ({
+        "@type": "Person",
+        name: contributor.login,
+        url: `https://github.com/${contributor.login}`,
+        image: contributor.avatar_url
+      })),
     publisher: {
       "@type": "Organization",
       name: "Dracula Theme",
@@ -244,28 +249,34 @@ const ThemePage = async (props: Props) => {
               Contributors<span className="count">{contributors.length}</span>
             </h4>
             <ul className="contributors">
-              {contributors.map((contributor) => (
-                <li key={contributor.login}>
-                  <a
-                    href={`https://github.com/${contributor.login}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contributor"
-                  >
-                    <div>
-                      {contributor.avatar_url && (
-                        <Image
-                          src={contributor.avatar_url}
-                          width={24}
-                          height={24}
-                          alt={contributor.login}
-                        />
-                      )}
-                    </div>
-                    <span>@{contributor.login}</span>
-                  </a>
-                </li>
-              ))}
+              {contributors.map((contributor) => {
+                if (!contributor.login) {
+                  return null;
+                }
+
+                return (
+                  <li key={contributor.login}>
+                    <a
+                      href={`https://github.com/${contributor.login}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contributor"
+                    >
+                      <div>
+                        {contributor.avatar_url && (
+                          <Image
+                            src={contributor.avatar_url}
+                            width={24}
+                            height={24}
+                            alt={contributor.login}
+                          />
+                        )}
+                      </div>
+                      <span>@{contributor.login}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
             <ProBanner isProApp={isProApp} appName={theme.title} />
           </aside>
