@@ -21,9 +21,7 @@ export const isBot = (contributor: Contributor): boolean => {
   );
 };
 
-export const filterBots = <T extends Contributor>(
-  contributors: T[]
-): T[] => {
+export const filterBots = <T extends Contributor>(contributors: T[]): T[] => {
   return contributors.filter(
     (contributor): contributor is T & ContributorWithLogin =>
       !!contributor.login && !isBot(contributor)

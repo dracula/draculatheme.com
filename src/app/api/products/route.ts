@@ -39,7 +39,9 @@ export const GET = async (request: NextRequest) => {
       return NextResponse.json(
         {
           error:
-            error instanceof Error ? error.message : "An error occurred while fetching the product"
+            error instanceof Error
+              ? error.message
+              : "An error occurred while fetching the product"
         },
         { status: 500 }
       );

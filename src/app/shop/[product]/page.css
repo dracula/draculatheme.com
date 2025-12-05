@@ -176,6 +176,12 @@
           width: 100%;
           margin-top: 1.125rem;
 
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            pointer-events: none;
+          }
+
           &:focus,
           &:hover {
             .icon {
@@ -189,6 +195,25 @@
                 path {
                   &:last-child {
                     transform: rotateX(0deg);
+                  }
+                }
+              }
+            }
+          }
+
+          &:disabled:focus,
+          &:disabled:hover {
+            .icon {
+              transform: none;
+
+              .count {
+                opacity: 0;
+              }
+
+              svg {
+                path {
+                  &:last-child {
+                    transform: rotateX(180deg);
                   }
                 }
               }
