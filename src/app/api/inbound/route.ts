@@ -43,57 +43,6 @@ const getForwardAddresses = (toAddress: string): string[] => {
   return forwardAddresses;
 };
 
-const downloadAndEncodeAttachments = async (
-  attachments: Array<{
-    id: string;
-    filename?: string;
-    content_type?: string;
-    download_url: string;
-  }>
-): Promise<
-  Array<{
-    filename: string;
-    content: string;
-    type?: string;
-  }>
-> => {
-  const processedAttachments = [];
-
-  for (const attachment of attachments) {
-    try {
-      if (!attachment.download_url) {
-        console.error("Attachment missing download_url");
-        continue;
-      }
-
-      const response = await fetch(attachment.download_url);
-
-      if (!response.ok) {
-        console.error(
-          `Failed to download attachment ${attachment.filename || "unknown"}: ${response.statusText}`
-        );
-        continue;
-      }
-
-      const buffer = Buffer.from(await response.arrayBuffer());
-      const base64Content = buffer.toString("base64");
-
-      processedAttachments.push({
-        filename: attachment.filename || "attachment",
-        content: base64Content,
-        type: attachment.content_type
-      });
-    } catch (error) {
-      console.error(
-        `Error processing attachment ${attachment.filename || "unknown"}:`,
-        error
-      );
-    }
-  }
-
-  return processedAttachments;
-};
-
 export const POST = async (request: NextRequest) => {
   try {
     const payload = await request.text();
@@ -138,7 +87,12 @@ export const POST = async (request: NextRequest) => {
 
       const attachments =
         attachmentsList.length > 0
-          ? await downloadAndEncodeAttachments(attachmentsList)
+          ? attachmentsList
+              .filter((attachment) => attachment.download_url)
+              .map((attachment) => ({
+                path: attachment.download_url,
+                filename: attachment.filename || "attachment"
+              }))
           : [];
 
       const toAddress = email.to?.[0] || "";
