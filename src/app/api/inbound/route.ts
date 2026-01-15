@@ -12,35 +12,15 @@ const {
 } = process.env;
 
 const getForwardAddresses = (toAddress: string): string[] => {
-  const forwardAddresses: string[] = [];
+  const addressMap: Record<string, (string | undefined)[]> = {
+    "support@draculatheme.com": [HUBSPOT_FORWARD_EMAIL],
+    "zeno@draculatheme.com": [HUBSPOT_FORWARD_EMAIL, ZENO_EMAIL],
+    "lucas@draculatheme.com": [LUCAS_EMAIL]
+  };
 
-  switch (toAddress) {
-    case "support@draculatheme.com":
-      if (HUBSPOT_FORWARD_EMAIL) {
-        forwardAddresses.push(HUBSPOT_FORWARD_EMAIL);
-      }
-      break;
-    case "zeno@draculatheme.com":
-      if (HUBSPOT_FORWARD_EMAIL) {
-        forwardAddresses.push(HUBSPOT_FORWARD_EMAIL);
-      }
-      if (ZENO_EMAIL) {
-        forwardAddresses.push(ZENO_EMAIL);
-      }
-      break;
-    case "lucas@draculatheme.com":
-      if (LUCAS_EMAIL) {
-        forwardAddresses.push(LUCAS_EMAIL);
-      }
-      break;
-    default:
-      if (DEFAULT_FORWARD_EMAIL) {
-        forwardAddresses.push(DEFAULT_FORWARD_EMAIL);
-      }
-      break;
-  }
-
-  return forwardAddresses;
+  return (addressMap[toAddress] || [DEFAULT_FORWARD_EMAIL]).filter(
+    Boolean
+  ) as string[];
 };
 
 export const POST = async (request: NextRequest) => {
@@ -72,28 +52,19 @@ export const POST = async (request: NextRequest) => {
       }
 
       const { data: attachmentsResponse, error: attachmentsError } =
-        await resend.emails.receiving.attachments.list({
-          emailId
-        });
+        await resend.emails.receiving.attachments.list({ emailId });
 
       if (attachmentsError) {
         console.error("Failed to retrieve attachments:", attachmentsError);
       }
 
-      const attachmentsList =
-        attachmentsResponse?.data && attachmentsResponse.data.length > 0
-          ? attachmentsResponse.data
-          : [];
-
       const attachments =
-        attachmentsList.length > 0
-          ? attachmentsList
-              .filter((attachment) => attachment.download_url)
-              .map((attachment) => ({
-                path: attachment.download_url,
-                filename: attachment.filename || "attachment"
-              }))
-          : [];
+        attachmentsResponse?.data
+          ?.filter((attachment) => attachment.download_url)
+          .map((attachment) => ({
+            path: attachment.download_url,
+            filename: attachment.filename
+          })) || [];
 
       const toAddress = email.to?.[0] || "";
       const forwardAddresses = getForwardAddresses(toAddress);
@@ -111,7 +82,7 @@ export const POST = async (request: NextRequest) => {
         subject: event.data.subject || email.subject || "",
         html: email.html || "",
         text: email.text || "",
-        attachments: attachments.length > 0 ? attachments : undefined
+        ...(attachments.length > 0 && { attachments })
       });
 
       if (sendError) {
