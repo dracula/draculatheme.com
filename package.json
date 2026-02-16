@@ -24,7 +24,7 @@
     "airtable": "^0.12.2",
     "countries-list": "^3.2.2",
     "date-fns": "^4.1.0",
-    "eslint": "^10",
+    "eslint": "^9",
     "eslint-config-next": "^16.1.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-simple-import-sort": "^12.1.1",
