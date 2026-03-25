@@ -54,7 +54,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className="form">
-      <label htmlFor="email">Email used for purchase:</label>
+      <label htmlFor="email">Email used to buy Dracula Pro:</label>
       <div className="input-wrapper">
         <input
           type="email"
@@ -67,7 +67,7 @@ export const Form = () => {
           required
         />
         <button type="submit" disabled={loading} className="action primary">
-          {loading ? "Processing" : "Request Access"}
+          {loading ? "Sending…" : "Request access"}
         </button>
       </div>
       {status && (

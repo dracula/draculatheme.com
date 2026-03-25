@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ColoredSquircleFlow } from "@/components/shared/colored-squircle-flow";
 
 export const metadata = {
-  title: "🥲 Not found",
+  title: "Not found",
   description: "The page you are looking for does not exist."
 };
 
@@ -11,7 +11,7 @@ const NotFoundPage = () => (
   <section className="container not-found">
     <ColoredSquircleFlow />
     <h1>
-      <code>0</code>ops!
+      <code>0</code>ops
     </h1>
     <p>The crimson moon reveals danger...</p>
     <p>
@@ -19,7 +19,7 @@ const NotFoundPage = () => (
       the forbidden territories of eternal darkness.
     </p>
     <Link href="/" className="action primary">
-      Return to Castle
+      Return to the castle
     </Link>
   </section>
 );

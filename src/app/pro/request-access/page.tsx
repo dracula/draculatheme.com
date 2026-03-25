@@ -7,7 +7,7 @@ import { Form } from "@/components/request-access/form";
 export const metadata: Metadata = {
   title: "Request GitHub Access",
   description:
-    "Request access to Dracula Pro on GitHub and help shape the project!",
+    "Request access to Dracula Pro on GitHub and help shape the project.",
   alternates: {
     canonical: "/pro/request-access"
   }
@@ -25,9 +25,9 @@ const RequestAccessPage = () => (
       <h1>Request GitHub Access</h1>
       <Form />
       <div className="notes">
-        <p>Notes:</p>
+        <p>Notes</p>
         <ul>
-          <li>Use the same email used to purchase Dracula Pro;</li>
+          <li>Use the same email you used to buy Dracula Pro.</li>
           <li>
             The email must be linked to your GitHub account and{" "}
             <a
@@ -37,14 +37,14 @@ const RequestAccessPage = () => (
             >
               set to primary or public
             </a>
-            ;
+            .
           </li>
           <li>
             After confirmation, you will receive an invitation from GitHub.
           </li>
         </ul>
       </div>
-      <h2 className="tip">BETA</h2>
+      <h2 className="tip">Beta</h2>
     </div>
   </section>
 );

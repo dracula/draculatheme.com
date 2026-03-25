@@ -20,18 +20,18 @@ export const Newsletter = () => {
     <div id="newsletter" className="newsletter">
       <div>
         <div>
-          <h3>Subscribe to our newsletter.</h3>
+          <h3>Get the newsletter</h3>
           <p>
             Get product updates and Dracula Pro news{" "}
             <br className="hide-on-mb" />
-            in your inbox. <b>No spam, ever.</b>
+            in your inbox. <b>No spam.</b>
           </p>
           <Link href="/newsletter">Learn more →</Link>
         </div>
       </div>
       <div>
         <TextRevealAnimation>
-          <em>11,460</em> people enjoy it!
+          <em>11,460</em> people enjoy it.
         </TextRevealAnimation>
         <form className="form" onSubmit={handleSubmit}>
           <input
@@ -50,8 +50,10 @@ export const Newsletter = () => {
             className="action primary"
           >
             {isSubmitting
-              ? "Subscribing..."
-              : `Subscribe${isSubscribed ? "d!" : ""}`}
+              ? "Subscribing…"
+              : isSubscribed
+                ? "Subscribed"
+                : "Subscribe"}
           </button>
         </form>
         {responseMessage && <span className="response">{responseMessage}</span>}

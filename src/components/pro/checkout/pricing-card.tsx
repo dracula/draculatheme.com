@@ -70,7 +70,7 @@ export const PricingCard = ({
   return (
     <div id="pricing">
       <div className="header">
-        <h3>Become a Vampire</h3>
+        <h3>Get Dracula Pro</h3>
         <p>
           Join {formatSalesCount(salesData?.count)} creators using Dracula Pro
           every day.
@@ -86,7 +86,7 @@ export const PricingCard = ({
             {formatPriceDisplay(activePromotion.finalPrice)}
           </h3>
         </div>
-        <span className="one-time">One-time payment! 🎉</span>
+        <span className="one-time">One-time payment.</span>
         <ul className="features">
           {productFeatures.map((feature) => (
             <li key={feature}>
@@ -96,7 +96,7 @@ export const PricingCard = ({
           ))}
         </ul>
         <a href={activePromotion.purchaseUrl} className="action primary">
-          Buy Dracula Pro Now
+          Buy Dracula Pro
         </a>
         {pppPromotion && (
           <div className="ppp-banner">
@@ -129,7 +129,7 @@ export const PricingCard = ({
         )}
       </div>
       <div className="info">
-        <p>30 days refund (no Q/A)</p>
+        <p>30-day refund, no questions asked.</p>
         <p>Support response time: up to 5 business days.</p>
         <p>
           <a href="mailto:support@draculatheme.com">Contact us</a> to get a{" "}

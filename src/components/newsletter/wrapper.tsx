@@ -5,11 +5,11 @@ import { useNewsletterSubscription } from "@/hooks/use-newsletter-subscription";
 import { TextRevealAnimation } from "../shared/text-reveal-animation";
 
 const benefits = [
-  "Exclusive content 1 week before public release.",
-  "Midnight deals that vanish at dawn.",
-  "Early access to experimental features.",
-  "VIP invites to exclusive events and launches.",
-  "Guaranteed protection from sunlight while coding."
+  "Exclusive content before public release.",
+  "Early access to experiments and new drops.",
+  "Product updates and Dracula Pro news.",
+  "Occasional deals worth sinking your teeth into.",
+  "No spam. Unsubscribe anytime."
 ];
 
 const testimonials = [
@@ -45,7 +45,7 @@ export const NewsletterWrapper = () => {
   return (
     <section className="container newsletter">
       <div className="wrapper">
-        <h1>Join the Clan!</h1>
+        <h1>Join the newsletter</h1>
         <h2>
           “Welcome to my house! Enter freely. Go safely, and leave something of
           the happiness you bring.” - Bram Stoker, Dracula
@@ -59,7 +59,7 @@ export const NewsletterWrapper = () => {
         </ul>
         <div className="form-wrapper">
           <TextRevealAnimation>
-            <em>11,460</em> people enjoy it!
+            <em>11,460</em> people enjoy it.
           </TextRevealAnimation>
           <form className="form" onSubmit={handleSubmit}>
             <div className="input-wrapper">
@@ -79,8 +79,10 @@ export const NewsletterWrapper = () => {
                 className="action primary"
               >
                 {isSubmitting
-                  ? "Subscribing..."
-                  : `Subscribe${isSubscribed ? "d!" : ""}`}
+                  ? "Subscribing…"
+                  : isSubscribed
+                    ? "Subscribed"
+                    : "Subscribe"}
               </button>
             </div>
           </form>
@@ -98,9 +100,7 @@ export const NewsletterWrapper = () => {
           <h3>
             <em>Check out these </em>
             <br />
-            Testimonials<span className="disclaimer"> *</span>
-            <br />
-            <span className="disclaimer">...totally not made-up!</span>
+            Testimonials
           </h3>
           <ul className="testimonials">
             {testimonials.map((testimonial) => (

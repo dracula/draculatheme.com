@@ -347,8 +347,8 @@ export const CommandBar = () => {
               ) : (
                 <ul>
                   <li className="empty">
-                    <h3>Oops! No match!</h3>
-                    <p>Try loosening up those search criteria!</p>
+                    <h3>No results</h3>
+                    <p>Try a different keyword or check the spelling.</p>
                   </li>
                 </ul>
               ))}

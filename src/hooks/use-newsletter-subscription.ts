@@ -51,7 +51,7 @@ export const useNewsletterSubscription =
         if (response.status === "error") {
           setSubscriptionState({
             status: "error",
-            message: "😔 Subscription failed, please try again later."
+            message: "Subscription failed. Please try again later."
           });
           return;
         }
@@ -59,7 +59,7 @@ export const useNewsletterSubscription =
         if (response.status === 200) {
           setSubscriptionState({
             status: "success",
-            message: response.message ?? "You are subscribed!"
+            message: response.message ?? "You’re subscribed."
           });
           return;
         }
@@ -67,8 +67,7 @@ export const useNewsletterSubscription =
         setSubscriptionState({
           status: "error",
           message:
-            response.message ??
-            "😔 Subscription failed, please try again later."
+            response.message ?? "Subscription failed. Please try again later."
         });
       },
       [email]

@@ -19,7 +19,7 @@ import {
 } from "@/utils/json-ld-script";
 
 export const metadata: Metadata = {
-  title: "Dracula Theme for 400+ apps!",
+  title: "Dracula Theme for 400+ apps",
   description:
     "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more."
 };
