@@ -145,7 +145,6 @@ export const CommandBar = () => {
   );
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const openDialog = useCallback(() => {
     setIsDialogOpen(true);
@@ -189,6 +188,64 @@ export const CommandBar = () => {
       }
     },
     [closeDialog]
+  );
+
+  const handleDialogNavigation = useCallback(
+    (event: React.KeyboardEvent<HTMLDialogElement>) => {
+      const isForwardTab = event.key === "Tab" && !event.shiftKey;
+      const isBackwardTab = event.key === "Tab" && event.shiftKey;
+      const isForwardArrow =
+        event.key === "ArrowDown" || event.key === "ArrowRight";
+      const isBackwardArrow =
+        event.key === "ArrowUp" || event.key === "ArrowLeft";
+
+      if (
+        !isForwardTab &&
+        !isBackwardTab &&
+        !isForwardArrow &&
+        !isBackwardArrow
+      ) {
+        return;
+      }
+
+      const focusableSelector = [
+        "a[href]",
+        "button:not([disabled])",
+        "input:not([disabled]):not([type='hidden'])",
+        "[tabindex]:not([tabindex='-1'])"
+      ].join(", ");
+      const focusableElements = Array.from(
+        event.currentTarget.querySelectorAll<HTMLElement>(focusableSelector)
+      ).filter((element) => !element.hasAttribute("disabled"));
+
+      if (!focusableElements.length) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const activeElement = document.activeElement as HTMLElement | null;
+      const activeIndex = activeElement
+        ? focusableElements.indexOf(activeElement)
+        : -1;
+      const shouldMoveForward = isForwardTab || isForwardArrow;
+
+      if (activeIndex === -1) {
+        const fallbackIndex = shouldMoveForward
+          ? 0
+          : focusableElements.length - 1;
+        focusableElements[fallbackIndex]?.focus();
+        return;
+      }
+
+      const nextIndex = shouldMoveForward
+        ? (activeIndex + 1) % focusableElements.length
+        : (activeIndex - 1 + focusableElements.length) %
+          focusableElements.length;
+
+      focusableElements[nextIndex]?.focus();
+    },
+    []
   );
 
   const flatPageLinks: PageLink[] = useMemo(
@@ -293,6 +350,7 @@ export const CommandBar = () => {
           <dialog
             ref={dialogRef}
             onClose={closeDialog}
+            onKeyDown={handleDialogNavigation}
             className="command-bar-dialog"
           >
             <div className="search">
@@ -314,16 +372,10 @@ export const CommandBar = () => {
                   <li>
                     <h3 className="sr-only">Search Results</h3>
                     <ul>
-                      {combinedResults.map((entry, index) => (
+                      {combinedResults.map((entry) => (
                         <li key={entry.key}>
                           {entry.external ? (
-                            <a
-                              href={entry.href}
-                              onClick={() => closeDialog()}
-                              ref={(el) => {
-                                itemRefs.current[index] = el;
-                              }}
-                            >
+                            <a href={entry.href} onClick={() => closeDialog()}>
                               {entry.icon}
                               <span>{entry.label}</span>
                             </a>
@@ -331,9 +383,6 @@ export const CommandBar = () => {
                             <Link
                               href={entry.href}
                               onClick={() => closeDialog()}
-                              ref={(el) => {
-                                itemRefs.current[index] = el;
-                              }}
                             >
                               {entry.icon}
                               <span>{entry.label}</span>

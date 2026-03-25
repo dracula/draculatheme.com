@@ -151,7 +151,7 @@ const BlogPostPage = async (props: Props) => {
             <span>Blog</span>
           </Link>
           <p className="time">
-            <span>Published in </span>
+            <span>Published on </span>
             <time dateTime={post.date.createdAt}>
               {new Date(post.date.createdAt).toLocaleDateString("en-US", {
                 year: "numeric",

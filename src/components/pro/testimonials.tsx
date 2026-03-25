@@ -1,8 +1,7 @@
 "use client";
 
-import { formatDistanceToNow } from "date-fns";
 import Image from "next/image";
-import { useState } from "react";
+import { type ReactNode, useMemo, useState } from "react";
 
 import type { Review } from "@/lib/types";
 
@@ -28,23 +27,46 @@ const normalizeReviews = (
   reviews: Review[] | Record<string, Review>
 ): Review[] => (Array.isArray(reviews) ? reviews : Object.values(reviews));
 
-const sortReviewsByDate = (reviews: Review[]): Review[] =>
-  reviews.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+const shuffleReviews = (reviews: Review[]): Review[] => {
+  const shuffledReviews = [...reviews];
 
-const formatDate = (date: string) => {
-  const dateObject = new Date(date);
+  for (let index = shuffledReviews.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    const currentReview = shuffledReviews[index];
 
-  if (Number.isNaN(dateObject.getTime())) {
-    return null;
+    shuffledReviews[index] = shuffledReviews[randomIndex];
+    shuffledReviews[randomIndex] = currentReview;
   }
 
-  return (
-    <time className="date">
-      {formatDistanceToNow(dateObject, { addSuffix: true })}
-    </time>
-  );
+  return shuffledReviews;
+};
+
+const parseInlineEmphasis = (text: string): ReactNode => {
+  const segments: ReactNode[] = [];
+  const emphasisPattern = /<em>([\s\S]*?)<\/em>/gi;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let emphasisIndex = 0;
+
+  while ((match = emphasisPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      segments.push(text.slice(lastIndex, match.index));
+    }
+
+    segments.push(<em key={`emphasis-${emphasisIndex}`}>{match[1]}</em>);
+    emphasisIndex += 1;
+    lastIndex = emphasisPattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    segments.push(text.slice(lastIndex));
+  }
+
+  if (segments.length === 0) {
+    return text;
+  }
+
+  return segments;
 };
 
 const formatReviewContent = (body: string) => {
@@ -55,7 +77,7 @@ const formatReviewContent = (body: string) => {
       sentence === sentences[sentences.length - 1] ? sentence : `${sentence}.`;
     const sentenceKey = `${sentence.trim().toLowerCase().replaceAll(/\s+/g, "-")}-${sentence.length}`;
 
-    return <p key={sentenceKey}>{fullSentence}</p>;
+    return <p key={sentenceKey}>{parseInlineEmphasis(fullSentence)}</p>;
   });
 };
 
@@ -77,39 +99,56 @@ const Avatar = ({ github, name }: { github: string; name: string }) => {
   );
 };
 
-const TestimonialCard = ({ review }: { review: Review }) => (
-  <a
-    key={review.id}
-    href={`https://github.com/${review.github}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="testimonial"
-  >
-    <div className="content">{formatReviewContent(review.body)}</div>
-    <div className="author">
-      <div className="avatar">
-        <Avatar github={review.github} name={review.name} />
-      </div>
-      <div className="info">
-        <span className="name">{review.name}</span>
-        <span className="meta">
-          From {review.country}, {formatDate(review.date)}.
-        </span>
-      </div>
-    </div>
-  </a>
-);
+const TestimonialCard = ({ review }: { review: Review }) => {
+  const trimmedName = review.name.trim();
+  const trimmedCountry = review.country.trim();
+  const hasIdentity = Boolean(trimmedName || trimmedCountry);
+
+  return (
+    <a
+      key={review.id}
+      href={`https://github.com/${review.github}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="testimonial"
+    >
+      <div className="content">{formatReviewContent(review.body)}</div>
+      {hasIdentity ? (
+        <div className="author">
+          <div className="avatar">
+            <Avatar
+              github={review.github}
+              name={trimmedName || review.github}
+            />
+          </div>
+          <div className="info">
+            {trimmedName ? <span className="name">{trimmedName}</span> : null}
+            {trimmedCountry ? (
+              <span className="meta">From {trimmedCountry}</span>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+    </a>
+  );
+};
 
 export const Testimonials = ({ reviews }: TestimonialsProps) => {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
-  const normalizedReviews = normalizeReviews(reviews);
-  const sortedReviews = sortReviewsByDate(normalizedReviews);
-  const hasMoreReviews = visibleCount < sortedReviews.length;
+  const normalizedReviews = useMemo(() => normalizeReviews(reviews), [reviews]);
+  const randomizedReviews = useMemo(() => {
+    const identifiedReviews = normalizedReviews.filter((review) => {
+      return Boolean(review.name.trim() || review.country.trim());
+    });
+
+    return shuffleReviews(identifiedReviews);
+  }, [normalizedReviews]);
+  const hasMoreReviews = visibleCount < randomizedReviews.length;
 
   const handleReadMore = () => {
     setVisibleCount((prev) =>
-      Math.min(prev + loadMoreCount, sortedReviews.length)
+      Math.min(prev + loadMoreCount, randomizedReviews.length)
     );
   };
 
@@ -121,9 +160,12 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
           Dracula Pro has received many positive reviews from{" "}
           <em>creators who ship.</em>
         </p>
+        <p>
+          Trusted by <em>{randomizedReviews.length} verified customers</em>.
+        </p>
       </div>
       <div className="grid">
-        {sortedReviews.slice(0, visibleCount).map((review) => (
+        {randomizedReviews.slice(0, visibleCount).map((review) => (
           <TestimonialCard key={review.id} review={review} />
         ))}
       </div>
