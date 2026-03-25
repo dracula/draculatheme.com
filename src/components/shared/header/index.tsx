@@ -35,6 +35,22 @@ export const Header = () => {
 
   const [isNavActive, setIsNavActive] = useState(false);
 
+  const buildClassName = (href: string, className?: string) => {
+    const classes = ["action"];
+
+    if (className) {
+      classes.push(className);
+    }
+
+    classes.push(href.slice(1));
+
+    if (pathKey === href) {
+      classes.push("active");
+    }
+
+    return classes.join(" ");
+  };
+
   const handleToggleNav = () => {
     setIsNavActive(!isNavActive);
   };
@@ -53,22 +69,6 @@ export const Header = () => {
       body.classList.remove("block-overflow");
     };
   }, [isNavActive]);
-
-  const buildClassName = (href: string, className?: string) => {
-    const classes = ["action"];
-
-    if (className) {
-      classes.push(className);
-    }
-
-    classes.push(href.slice(1));
-
-    if (pathKey === href) {
-      classes.push("active");
-    }
-
-    return classes.join(" ");
-  };
 
   return (
     <header>

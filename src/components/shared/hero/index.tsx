@@ -149,17 +149,29 @@ export const Hero = () => {
     type = "static"
   } = pageData;
 
+  const heroColor = useMemo(() => getPageColor(pageData), [pageData]);
+
   const activeTheme =
     resolvedTheme ||
     (theme === "dark" || theme === "light" ? theme : undefined);
   const showDefaultPlaceholder = !isMounted && !icon;
 
-  const heroColor = getPageColor(pageData);
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+
+    document.documentElement.style.setProperty("--main-hue", heroColor);
+  }, [heroColor]);
 
   return (
     <section
       className={`hero ${pathKey.slice(1)}`}
-      style={{ "--main-hue": heroColor } as CSSProperties}
+      style={
+        {
+          "--main-hue": heroColor
+        } as CSSProperties
+      }
     >
       {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
       <div className="castle" />

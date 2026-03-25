@@ -32,51 +32,6 @@ if (!GUMROAD_ACCESS_TOKEN || !GITHUB_PERSONAL_ACCESS_TOKEN) {
 
 const octokit = new Octokit({ auth: GITHUB_PERSONAL_ACCESS_TOKEN });
 
-export const POST = async (request: NextRequest) => {
-  try {
-    const { email } = await request.json();
-    if (!email) {
-      return NextResponse.json(
-        { message: "⚠️ Email is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!(await verifyGumroadPurchase(email))) {
-      return NextResponse.json(
-        { message: "🚫 No purchases found for this email." },
-        { status: 403 }
-      );
-    }
-
-    const githubUser = await findGithubUser(email);
-    if (!githubUser) {
-      return NextResponse.json(
-        { message: "🔍 No GitHub account found with this email." },
-        { status: 404 }
-      );
-    }
-
-    if (await checkOrganizationMembership(githubUser.login)) {
-      return NextResponse.json(
-        { message: "✅ You already have access to the organization." },
-        { status: 400 }
-      );
-    }
-
-    await addToOrganization(githubUser.id);
-    return NextResponse.json(
-      { message: "🎉 Invitation sent successfully!" },
-      { status: 200 }
-    );
-  } catch {
-    return NextResponse.json(
-      { message: "❗ Error processing request. Please try again." },
-      { status: 500 }
-    );
-  }
-};
-
 const verifyGumroadPurchase = async (email: string): Promise<boolean> => {
   const response = await fetch(
     `https://api.gumroad.com/v2/sales?access_token=${GUMROAD_ACCESS_TOKEN}&email=${email}`
@@ -131,4 +86,49 @@ const addToOrganization = async (userId: number): Promise<void> => {
     invitee_id: userId,
     role: "direct_member"
   });
+};
+
+export const POST = async (request: NextRequest) => {
+  try {
+    const { email } = await request.json();
+    if (!email) {
+      return NextResponse.json(
+        { message: "⚠️ Email is required." },
+        { status: 400 }
+      );
+    }
+
+    if (!(await verifyGumroadPurchase(email))) {
+      return NextResponse.json(
+        { message: "🚫 No purchases found for this email." },
+        { status: 403 }
+      );
+    }
+
+    const githubUser = await findGithubUser(email);
+    if (!githubUser) {
+      return NextResponse.json(
+        { message: "🔍 No GitHub account found with this email." },
+        { status: 404 }
+      );
+    }
+
+    if (await checkOrganizationMembership(githubUser.login)) {
+      return NextResponse.json(
+        { message: "✅ You already have access to the organization." },
+        { status: 400 }
+      );
+    }
+
+    await addToOrganization(githubUser.id);
+    return NextResponse.json(
+      { message: "🎉 Invitation sent successfully!" },
+      { status: 200 }
+    );
+  } catch {
+    return NextResponse.json(
+      { message: "❗ Error processing request. Please try again." },
+      { status: 500 }
+    );
+  }
 };

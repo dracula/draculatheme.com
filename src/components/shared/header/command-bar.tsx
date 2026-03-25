@@ -191,29 +191,6 @@ export const CommandBar = () => {
     [closeDialog]
   );
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
-
-  useEffect(() => {
-    if (isDialogOpen) {
-      document.body.classList.add("block-overflow");
-      dialogRef.current?.showModal();
-      inputRef.current?.focus();
-      document.addEventListener("click", handleClickOutside);
-    } else {
-      document.body.classList.remove("block-overflow");
-      dialogRef.current?.close();
-      document.removeEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      document.body.classList.remove("block-overflow");
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [isDialogOpen, handleClickOutside]);
-
   const flatPageLinks: PageLink[] = useMemo(
     () =>
       pages.flatMap((group) =>
@@ -275,6 +252,29 @@ export const CommandBar = () => {
   }, [searchQuery, filteredThemes, filteredPageLinks]);
 
   const hasSearchResults = searchQuery.length > 0 && combinedResults.length > 0;
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    if (isDialogOpen) {
+      document.body.classList.add("block-overflow");
+      dialogRef.current?.showModal();
+      inputRef.current?.focus();
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.body.classList.remove("block-overflow");
+      dialogRef.current?.close();
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.body.classList.remove("block-overflow");
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isDialogOpen, handleClickOutside]);
 
   return (
     <>

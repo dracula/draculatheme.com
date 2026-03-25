@@ -281,43 +281,6 @@ export const DraculaRadio = ({
     [sound, getCurrentVolume]
   );
 
-  useEffect(() => {
-    onPlayingChange?.(isPlaying);
-  }, [isPlaying, onPlayingChange]);
-
-  useEffect(() => {
-    return () => {
-      sound?.unload();
-      clearAllTimeouts();
-    };
-  }, [sound, clearAllTimeouts]);
-
-  useEffect(() => {
-    if (!shouldAutoplayRef.current || !sound) {
-      return;
-    }
-
-    play();
-    setNamedTimeout("autoplay", fadeIn, 48);
-    shouldAutoplayRef.current = false;
-  }, [sound, play, fadeIn, setNamedTimeout]);
-
-  useEffect(() => {
-    if (!sound?.volume || isFadingRef.current || !isPlaying) {
-      return;
-    }
-
-    const timeoutId = setTimeout(() => {
-      if (sound.fade) {
-        sound.fade(getCurrentVolume(sound), volume, volumeFadeMs);
-      } else if (typeof sound.volume === "function") {
-        sound.volume(volume);
-      }
-    }, 102);
-
-    return () => clearTimeout(timeoutId);
-  }, [volume, sound, isPlaying, getCurrentVolume]);
-
   const handleToggleVisibility = useCallback(() => {
     setIsVisible((prev) => {
       const newValue = !prev;
@@ -379,6 +342,43 @@ export const DraculaRadio = ({
     },
     [isVisible, togglePlay, changeTrack, hideOverlay]
   );
+
+  useEffect(() => {
+    onPlayingChange?.(isPlaying);
+  }, [isPlaying, onPlayingChange]);
+
+  useEffect(() => {
+    return () => {
+      sound?.unload();
+      clearAllTimeouts();
+    };
+  }, [sound, clearAllTimeouts]);
+
+  useEffect(() => {
+    if (!shouldAutoplayRef.current || !sound) {
+      return;
+    }
+
+    play();
+    setNamedTimeout("autoplay", fadeIn, 48);
+    shouldAutoplayRef.current = false;
+  }, [sound, play, fadeIn, setNamedTimeout]);
+
+  useEffect(() => {
+    if (!sound?.volume || isFadingRef.current || !isPlaying) {
+      return;
+    }
+
+    const timeoutId = setTimeout(() => {
+      if (sound.fade) {
+        sound.fade(getCurrentVolume(sound), volume, volumeFadeMs);
+      } else if (typeof sound.volume === "function") {
+        sound.volume(volume);
+      }
+    }, 102);
+
+    return () => clearTimeout(timeoutId);
+  }, [volume, sound, isPlaying, getCurrentVolume]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);

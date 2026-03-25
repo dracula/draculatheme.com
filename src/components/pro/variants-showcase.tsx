@@ -42,22 +42,6 @@ export const VariantsShowcase = () => {
     soundConfig
   );
 
-  useEffect(() => {
-    if (!hasMountedRef.current) {
-      hasMountedRef.current = true;
-      return;
-    }
-
-    playVariantSound();
-  }, [playVariantSound]);
-
-  useEffect(
-    () => () => {
-      activeSound?.unload();
-    },
-    [activeSound]
-  );
-
   const getVariantSlug = (name: string) => {
     return name.replace(/\s+/g, "-").toLowerCase();
   };
@@ -73,6 +57,22 @@ export const VariantsShowcase = () => {
       typeof index === "function" ? index(selectedVariantIndex) : index;
     setSelectedVariantIndex(newIndex);
   };
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    playVariantSound();
+  }, [playVariantSound]);
+
+  useEffect(
+    () => () => {
+      activeSound?.unload();
+    },
+    [activeSound]
+  );
 
   return (
     <div className="variants-showcase">
