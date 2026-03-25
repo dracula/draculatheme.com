@@ -18,13 +18,7 @@ export const HandPickedTypography = () => (
       </p>
     </div>
     <div className="animation">
-      <video
-        autoPlay={true}
-        controls={false}
-        loop={true}
-        muted={true}
-        playsInline={true}
-      >
+      <video autoPlay controls={false} loop muted playsInline>
         <source src="/videos/ligatures.mp4" type="video/mp4" />
       </video>
     </div>

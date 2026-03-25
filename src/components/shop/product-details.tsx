@@ -48,7 +48,8 @@ export const ProductDetails = ({
   };
 
   const normalizedDescription = useMemo(() => {
-    return normalizeStoreLinks(product.description);
+    const textWithLinks = normalizeStoreLinks(product.description);
+    return textWithLinks.replace(/<[^>]*>/g, "");
   }, [product.description]);
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -124,7 +125,7 @@ export const ProductDetails = ({
         {product.formatted_price} {product.currency.toUpperCase()}
       </h2>
       <hr />
-      <div dangerouslySetInnerHTML={{ __html: normalizedDescription }} />
+      <p>{normalizedDescription}</p>
       <div className="options">
         <div className="quantity">
           <label htmlFor={quantityInputId}>Quantity:</label>

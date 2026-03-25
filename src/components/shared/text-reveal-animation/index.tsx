@@ -2,8 +2,7 @@
 
 import "./index.css";
 
-import { motion, useAnimation, useInView, type Variants } from "motion/react";
-import { useEffect, useRef } from "react";
+import { domAnimation, LazyMotion, m, type Variants } from "framer-motion";
 
 interface TextRevealAnimationProps {
   children: React.ReactNode;
@@ -35,27 +34,19 @@ export const TextRevealAnimation = ({
   className = "tip",
   duration = 1.6
 }: TextRevealAnimationProps) => {
-  const control = useAnimation();
-  const tipRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(tipRef, { once: true });
-
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
-
   return (
-    <motion.span
-      ref={tipRef}
-      variants={textStaggerVariants}
-      initial="hidden"
-      animate={control}
-      exit="exit"
-      className={`text-reveal-animation${className ? ` ${className}` : ""}`}
-      transition={{ duration }}
-    >
-      {children}
-    </motion.span>
+    <LazyMotion features={domAnimation}>
+      <m.span
+        variants={textStaggerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        exit="exit"
+        className={`text-reveal-animation${className ? ` ${className}` : ""}`}
+        transition={{ duration }}
+      >
+        {children}
+      </m.span>
+    </LazyMotion>
   );
 };

@@ -14,11 +14,9 @@
   border-radius: var(--radius-lg);
   background-color: var(--background-color-primary);
   color: var(--color-display);
-  cursor: pointer;
   transition:
     transform var(--duration-fast) var(--ease-sharp),
-    border-color var(--duration-fast) var(--ease-sharp),
-    background-color var(--duration-fast) var(--ease-sharp);
+    border-color var(--duration-fast) var(--ease-sharp);
   will-change: transform;
 
   .icon {
@@ -64,7 +62,6 @@
   &:hover {
     transform: scale(1.08);
     border-color: var(--color);
-    background-color: var(--background-color-secondary);
   }
 
   &:active {

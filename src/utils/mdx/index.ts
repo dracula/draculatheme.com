@@ -30,7 +30,7 @@ type MdxDataEntry = FrontmatterWithDate & {
   words: number;
 };
 
-export const formatReadingTime = (durationText: string) => {
+const formatReadingTime = (durationText: string) => {
   if (!durationText) {
     return "1 min.";
   }

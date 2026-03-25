@@ -8,7 +8,7 @@ interface ContributorWithLogin extends Contributor {
   login: string;
 }
 
-export const isBot = (contributor: Contributor): boolean => {
+const isBot = (contributor: Contributor): boolean => {
   if (!contributor.login) {
     return false;
   }

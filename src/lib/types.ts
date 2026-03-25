@@ -24,7 +24,7 @@ export type Path = {
 
 export type PathItem = (typeof paths)[number];
 
-export type ProductVariantOption = {
+type ProductVariantOption = {
   name: string;
   price_difference: number;
   is_pay_what_you_want: boolean;

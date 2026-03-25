@@ -27,7 +27,7 @@ const variants = [
 const soundConfig = { volume: 0.12, preload: false };
 
 export const VariantsShowcase = () => {
-  const [selectedAppIndex, setSelectedAppIndex] = useState(
+  const [selectedAppIndex, setSelectedAppIndex] = useState(() =>
     Math.max(0, apps.length - 4)
   );
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);

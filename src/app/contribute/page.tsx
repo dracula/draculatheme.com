@@ -31,9 +31,27 @@ const structuredDataScriptId = createStructuredDataScriptId(
 
 const ContributePage = async () => {
   const contributorsData = await fetcher("/api/cache/contributors");
+  const contributorsByRepository =
+    "contributors" in contributorsData &&
+    contributorsData.contributors !== null &&
+    typeof contributorsData.contributors === "object"
+      ? contributorsData.contributors
+      : {};
+
   const contributors = filterBots(
-    Object.values(contributorsData.contributors).flatMap((repo) =>
-      JSON.parse(repo as string)
+    Object.values(contributorsByRepository).flatMap(
+      (repositoryContributors) => {
+        if (typeof repositoryContributors !== "string") {
+          return [];
+        }
+
+        try {
+          const parsedContributors = JSON.parse(repositoryContributors);
+          return Array.isArray(parsedContributors) ? parsedContributors : [];
+        } catch {
+          return [];
+        }
+      }
     )
   ).filter(
     (contributor, index, array) =>

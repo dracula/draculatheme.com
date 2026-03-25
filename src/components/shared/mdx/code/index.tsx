@@ -13,15 +13,12 @@ export const Code = ({ children, className }: CodeProps) => {
   const language = className?.replace("language-", "") || "";
 
   if (language) {
-    const highlightedCode = highlight(children);
+    const highlightedCode = highlight(children).replace(/<[^>]*>/g, "");
 
     return (
       <div className="sh-block">
         <pre>
-          <code
-            className={className}
-            dangerouslySetInnerHTML={{ __html: highlightedCode }}
-          />
+          <code className={className}>{highlightedCode}</code>
         </pre>
         <CopyButton text={children} />
       </div>

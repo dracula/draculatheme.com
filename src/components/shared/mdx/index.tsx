@@ -177,6 +177,9 @@ const createMdxComponents = (
     ),
     code: Code,
     pre: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+    script: (props: React.ComponentProps<"template">) => (
+      <template {...props} />
+    ),
     img: Image,
     table: Table,
     a: Link

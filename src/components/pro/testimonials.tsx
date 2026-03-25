@@ -50,16 +50,12 @@ const formatDate = (date: string) => {
 const formatReviewContent = (body: string) => {
   const sentences = body.split(". ").filter((sentence) => sentence.trim());
 
-  return sentences.map((sentence, index) => {
+  return sentences.map((sentence) => {
     const fullSentence =
-      index < sentences.length - 1 ? `${sentence}.` : sentence;
+      sentence === sentences[sentences.length - 1] ? sentence : `${sentence}.`;
+    const sentenceKey = `${sentence.trim().toLowerCase().replaceAll(/\s+/g, "-")}-${sentence.length}`;
 
-    return (
-      <p
-        key={`sentence-${sentence.substring(0, 10)}-${index}`}
-        dangerouslySetInnerHTML={{ __html: fullSentence }}
-      />
-    );
+    return <p key={sentenceKey}>{fullSentence}</p>;
   });
 };
 

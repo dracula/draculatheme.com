@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { domAnimation, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -246,92 +246,95 @@ export const ColorPalette = () => {
     selectedTheme === "Dracula" ? draculaColors : alucardColors;
 
   return (
-    <div className="color-palette">
-      <h2>Color Palette</h2>
-      <div className="toggle-group">
-        {themes.map((theme) => (
-          <div key={theme} className="item">
-            <button
-              type="button"
-              onClick={() => setSelectedTheme(theme)}
-              className={`action${selectedTheme === theme ? " active" : ""}`}
-            >
-              {theme}
-            </button>
-            {selectedTheme === theme && (
-              <motion.span
-                layoutId="theme-bubble"
-                className="highlighter"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="toggle-group">
-        {formats.map((format) => (
-          <div key={format} className="item">
-            <button
-              type="button"
-              onClick={() => setSelectedFormat(format)}
-              className={`action ${selectedFormat === format && " active"}`}
-            >
-              {format}
-            </button>
-            {selectedFormat === format && (
-              <motion.span
-                layoutId="format-bubble"
-                className="highlighter"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Token</th>
-              <th>Copy</th>
-              <th>Color</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentColors.map((color) => (
-              <tr
-                key={color.token}
-                style={
-                  {
-                    "--color": getColorByFormat(color, selectedFormat)
-                  } as React.CSSProperties
-                }
+    <LazyMotion features={domAnimation}>
+      <div className="color-palette">
+        <h2>Color Palette</h2>
+        <div className="toggle-group">
+          {themes.map((theme) => (
+            <div key={theme} className="item">
+              <button
+                type="button"
+                onClick={() => setSelectedTheme(theme)}
+                className={`action${selectedTheme === theme ? " active" : ""}`}
               >
-                <td>{color.token}</td>
-                <td>
-                  <div className="wrapper">
-                    <CopyButton
-                      text={getColorByFormat(color, selectedFormat)}
-                    />
-                    <code>{getColorByFormat(color, selectedFormat)}</code>
-                  </div>
-                </td>
-                <td
-                  style={{
-                    backgroundColor: getColorByFormat(color, selectedFormat)
-                  }}
+                {theme}
+              </button>
+              {selectedTheme === theme && (
+                <m.span
+                  layoutId="theme-bubble"
+                  className="highlighter"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="toggle-group">
+          {formats.map((format) => (
+            <div key={format} className="item">
+              <button
+                type="button"
+                onClick={() => setSelectedFormat(format)}
+                className={`action ${selectedFormat === format ? " active" : ""}`}
+              >
+                {format}
+              </button>
+              {selectedFormat === format && (
+                <m.span
+                  layoutId="format-bubble"
+                  className="highlighter"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Copy</th>
+                <th>Color</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentColors.map((color) => (
+                <tr
+                  key={color.token}
+                  style={
+                    {
+                      "--color": getColorByFormat(color, selectedFormat)
+                    } as React.CSSProperties
+                  }
+                >
+                  <td>{color.token}</td>
+                  <td>
+                    <div className="wrapper">
+                      <CopyButton
+                        text={getColorByFormat(color, selectedFormat)}
+                      />
+                      <code>{getColorByFormat(color, selectedFormat)}</code>
+                    </div>
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: getColorByFormat(color, selectedFormat)
+                    }}
+                  />
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          For more details about how to apply these different colors to
+          represent
+          <br className="hide-on-mb" />
+          different code symbols, please see the{" "}
+          <Link href="/spec">Dracula Specification</Link>.
+        </p>
       </div>
-      <p>
-        For more details about how to apply these different colors to represent
-        <br className="hide-on-mb" />
-        different code symbols, please see the{" "}
-        <Link href="/spec">Dracula Specification</Link>.
-      </p>
-    </div>
+    </LazyMotion>
   );
 };

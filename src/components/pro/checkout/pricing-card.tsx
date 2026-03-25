@@ -119,6 +119,7 @@ export const PricingCard = ({
                 type="checkbox"
                 checked={pppEnabled}
                 onChange={(e) => setPppEnabled(e.target.checked)}
+                aria-label="Apply regional discount"
               />
               <span>
                 <b>Apply discount</b>

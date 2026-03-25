@@ -19,6 +19,22 @@ interface DraculaRadioProps {
   onVisibilityChange?: (visible: boolean) => void;
 }
 
+interface RadioOverlayProps {
+  isVisible: boolean;
+  hideOverlay: () => void;
+}
+
+interface RadioPanelProps {
+  track: Track;
+  isVisible: boolean;
+  isPlaying: boolean;
+  volume: number;
+  hideOverlay: () => void;
+  handleVolumeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  togglePlay: () => void;
+  changeTrack: (direction: "next" | "prev") => void;
+}
+
 const fadeInMs = 240;
 const fadeOutMs = 120;
 const volumeFadeMs = 180;
@@ -26,6 +42,93 @@ const volumeFadeMs = 180;
 const getNextIndex = (index: number) => (index + 1) % playlist.length;
 const getPrevIndex = (index: number) =>
   (index - 1 + playlist.length) % playlist.length;
+
+const RadioOverlay = ({ isVisible, hideOverlay }: RadioOverlayProps) => {
+  return (
+    <button
+      type="button"
+      className={`radio-overlay${isVisible ? " visible" : ""}`}
+      onClick={hideOverlay}
+      tabIndex={0}
+      aria-label="Close radio overlay"
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          hideOverlay();
+        }
+      }}
+    />
+  );
+};
+
+const RadioPanel = ({
+  track,
+  isVisible,
+  isPlaying,
+  volume,
+  hideOverlay,
+  handleVolumeChange,
+  togglePlay,
+  changeTrack
+}: RadioPanelProps) => {
+  return (
+    <section
+      className={`radio-container ${track.character.id}${isVisible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
+      aria-label="Dracula Radio"
+    >
+      <div className="metadata">
+        <h3 className="title">{track.thematicTitle}</h3>
+        <p className="subtitle">{track.character.displayName}</p>
+      </div>
+      <div className="controls">
+        <div className="navigation">
+          <button
+            type="button"
+            className="button"
+            onClick={() => changeTrack("prev")}
+            aria-label="Previous track"
+          >
+            <PreviousIcon />
+          </button>
+          <button
+            type="button"
+            className="button"
+            onClick={togglePlay}
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? <PauseIcon /> : <PlayIcon />}
+          </button>
+          <button
+            type="button"
+            className="button"
+            onClick={() => changeTrack("next")}
+            aria-label="Next track"
+          >
+            <NextIcon />
+          </button>
+        </div>
+        <div className="volume-control">
+          <VolumeIcon aria-hidden="true" />
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={handleVolumeChange}
+            onMouseUp={hideOverlay}
+            onTouchEnd={hideOverlay}
+            className="slider"
+            style={{
+              background: `linear-gradient(90deg, var(--color) 0%, var(--color) ${volume * 100}%, hsla(var(--hue), 12%, 72%, 0.3) ${volume * 100}%)`
+            }}
+            aria-label="Volume"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export const DraculaRadio = ({
   onPlayingChange,
@@ -190,61 +293,14 @@ export const DraculaRadio = ({
   }, [sound, clearAllTimeouts]);
 
   useEffect(() => {
-    if (shouldAutoplayRef.current && sound) {
-      play();
-      setNamedTimeout("autoplay", fadeIn, 48);
-      shouldAutoplayRef.current = false;
-
-      const timeoutId = setTimeout(() => {
-        setIsPlaying(true);
-      }, 0);
-
-      return () => clearTimeout(timeoutId);
+    if (!shouldAutoplayRef.current || !sound) {
+      return;
     }
+
+    play();
+    setNamedTimeout("autoplay", fadeIn, 48);
+    shouldAutoplayRef.current = false;
   }, [sound, play, fadeIn, setNamedTimeout]);
-
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (
-        !isVisible ||
-        e.target instanceof HTMLInputElement ||
-        e.metaKey ||
-        e.ctrlKey ||
-        e.altKey ||
-        e.shiftKey
-      ) {
-        return;
-      }
-
-      const key = e.key.toLowerCase();
-      const actions: Record<string, () => void> = {
-        " ": togglePlay,
-        k: togglePlay,
-        arrowright: () => changeTrack("next"),
-        n: () => changeTrack("next"),
-        arrowleft: () => changeTrack("prev"),
-        p: () => changeTrack("prev"),
-        arrowup: () => {
-          setVolume((v) => Math.min(1, v + 0.1));
-          setIsVisible(false);
-          onVisibilityChange?.(false);
-        },
-        arrowdown: () => {
-          setVolume((v) => Math.max(0, v - 0.1));
-          setIsVisible(false);
-          onVisibilityChange?.(false);
-        }
-      };
-
-      if (actions[key]) {
-        e.preventDefault();
-        actions[key]();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [isVisible, togglePlay, changeTrack, onVisibilityChange]);
 
   useEffect(() => {
     if (!sound?.volume || isFadingRef.current || !isPlaying) {
@@ -275,6 +331,60 @@ export const DraculaRadio = ({
     onVisibilityChange?.(false);
   }, [onVisibilityChange]);
 
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent) => {
+      if (
+        !isVisible ||
+        e.target instanceof HTMLInputElement ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.altKey ||
+        e.shiftKey
+      ) {
+        return;
+      }
+
+      const key = e.key.toLowerCase();
+
+      if (key === " " || key === "k") {
+        e.preventDefault();
+        togglePlay();
+        return;
+      }
+
+      if (key === "arrowright" || key === "n") {
+        e.preventDefault();
+        changeTrack("next");
+        return;
+      }
+
+      if (key === "arrowleft" || key === "p") {
+        e.preventDefault();
+        changeTrack("prev");
+        return;
+      }
+
+      if (key === "arrowup") {
+        e.preventDefault();
+        setVolume((previousVolume) => Math.min(1, previousVolume + 0.1));
+        hideOverlay();
+        return;
+      }
+
+      if (key === "arrowdown") {
+        e.preventDefault();
+        setVolume((previousVolume) => Math.max(0, previousVolume - 0.1));
+        hideOverlay();
+      }
+    },
+    [isVisible, togglePlay, changeTrack, hideOverlay]
+  );
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [handleKeyPress]);
+
   useEffect(() => {
     onVisibilityChange?.(isVisible);
   }, [isVisible, onVisibilityChange]);
@@ -289,74 +399,17 @@ export const DraculaRadio = ({
       >
         {isPlaying ? <VisualizerIcon /> : <RadioIcon />}
       </button>
-      <button
-        type="button"
-        className={`radio-overlay${isVisible ? " visible" : ""}`}
-        onClick={hideOverlay}
-        tabIndex={0}
-        aria-label="Close radio overlay"
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            hideOverlay();
-          }
-        }}
+      <RadioOverlay isVisible={isVisible} hideOverlay={hideOverlay} />
+      <RadioPanel
+        track={track}
+        isVisible={isVisible}
+        isPlaying={isPlaying}
+        volume={volume}
+        hideOverlay={hideOverlay}
+        handleVolumeChange={handleVolumeChange}
+        togglePlay={togglePlay}
+        changeTrack={changeTrack}
       />
-      <section
-        className={`radio-container ${track.character.id}${isVisible ? " visible" : ""}${isPlaying ? " playing" : ""}`}
-        aria-label="Dracula Radio"
-      >
-        <div className="metadata">
-          <h3 className="title">{track.thematicTitle}</h3>
-          <p className="subtitle">{track.character.displayName}</p>
-        </div>
-        <div className="controls">
-          <div className="navigation">
-            <button
-              type="button"
-              className="button"
-              onClick={() => changeTrack("prev")}
-              aria-label="Previous track"
-            >
-              <PreviousIcon />
-            </button>
-            <button
-              type="button"
-              className="button"
-              onClick={togglePlay}
-              aria-label={isPlaying ? "Pause" : "Play"}
-            >
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            </button>
-            <button
-              type="button"
-              className="button"
-              onClick={() => changeTrack("next")}
-              aria-label="Next track"
-            >
-              <NextIcon />
-            </button>
-          </div>
-          <div className="volume-control">
-            <VolumeIcon aria-hidden="true" />
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value={volume}
-              onChange={handleVolumeChange}
-              onMouseUp={hideOverlay}
-              onTouchEnd={hideOverlay}
-              className="slider"
-              style={{
-                background: `linear-gradient(90deg, var(--color) 0%, var(--color) ${volume * 100}%, hsla(var(--hue), 12%, 72%, 0.3) ${volume * 100}%)`
-              }}
-              aria-label="Volume"
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 };

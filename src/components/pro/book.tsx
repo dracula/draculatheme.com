@@ -10,7 +10,7 @@ export const Book = () => (
           width={224}
           height={466}
           quality={100}
-          unoptimized={true}
+          unoptimized
           priority
         />
       </div>

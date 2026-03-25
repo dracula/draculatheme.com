@@ -13,11 +13,6 @@ export type PurchasingPowerParityData = {
   couponCode?: string;
 };
 
-// Re-export for backward compatibility
-export type { Promotion };
-
-export { pricing };
-
 // Get country name from country code
 const getCountryName = (code: string): string | null => {
   const key = code.toUpperCase() as keyof typeof countries;
@@ -25,7 +20,7 @@ const getCountryName = (code: string): string | null => {
 };
 
 // Create PPP (Purchasing Power Parity) promotion
-export const createPppPromotion = (
+const createPppPromotion = (
   ppp: PurchasingPowerParityData
 ): Promotion | null => {
   const { country, discount, couponCode } = ppp;

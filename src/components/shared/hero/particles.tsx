@@ -35,23 +35,14 @@ declare global {
   }
 }
 
-export const Particles = ({
-  className = "",
-  quantity = 54,
-  staticity = 60,
-  ease = 60
-}) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const canvasContainerRef = useRef<HTMLDivElement>(null);
-  const context = useRef<CanvasRenderingContext2D | null>(null);
-  const circles = useRef<Circle[]>([]);
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
-  const gyroscope = useRef<GyroscopeSensor | null>(null);
-  const animateRef = useRef<(() => void) | undefined>(undefined);
+type ParticlesProps = {
+  className?: string;
+  quantity?: number;
+  staticity?: number;
+  ease?: number;
+};
 
-  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
-  const mousePosition = useMousePosition();
+const useGyroscopeSupport = () => {
   const [gyroscopeSupported, setGyroscopeSupported] = useState(false);
 
   const isMobileDevice = useCallback(() => {
@@ -68,6 +59,156 @@ export const Particles = ({
 
     return mobileRegex.test(userAgent) || (hasTouchScreen && isSmallScreen);
   }, []);
+
+  useEffect(() => {
+    if (
+      typeof window === "undefined" ||
+      !("Gyroscope" in window) ||
+      !window.Gyroscope ||
+      !isMobileDevice()
+    ) {
+      return;
+    }
+
+    const checkGyroscope = async () => {
+      const GyroscopeConstructor = window.Gyroscope;
+      if (!GyroscopeConstructor) {
+        return;
+      }
+
+      let supportsGyroscope = false;
+
+      try {
+        const sensor = new GyroscopeConstructor({ frequency: 60 });
+
+        try {
+          const result = await navigator.permissions.query({
+            name: "gyroscope" as PermissionName
+          });
+
+          if (result.state === "granted") {
+            supportsGyroscope = true;
+          } else if (result.state === "denied") {
+            supportsGyroscope = false;
+          } else if (result.state === "prompt") {
+            try {
+              await sensor.start();
+              sensor.stop();
+              supportsGyroscope = true;
+            } catch {
+              supportsGyroscope = false;
+            }
+          }
+        } catch {
+          try {
+            await sensor.start();
+            sensor.stop();
+            supportsGyroscope = true;
+          } catch {
+            supportsGyroscope = false;
+          }
+        }
+      } catch {
+        supportsGyroscope = false;
+      }
+
+      setGyroscopeSupported(supportsGyroscope);
+    };
+
+    checkGyroscope();
+  }, [isMobileDevice]);
+
+  return gyroscopeSupported;
+};
+
+const useGyroscopeMouseControl = (
+  gyroscopeSupported: boolean,
+  mouseRef: React.MutableRefObject<{ x: number; y: number }>
+) => {
+  const gyroscope = useRef<GyroscopeSensor | null>(null);
+
+  useEffect(() => {
+    if (!gyroscopeSupported || !window.Gyroscope) {
+      return;
+    }
+
+    const initializeGyroscope = async () => {
+      const GyroscopeConstructor = window.Gyroscope;
+      if (!GyroscopeConstructor) {
+        return;
+      }
+
+      try {
+        const sensor = new GyroscopeConstructor({ frequency: 60 });
+
+        mouseRef.current.x = 0;
+        mouseRef.current.y = 0;
+
+        sensor.addEventListener("reading", () => {
+          if (sensor.x !== null && sensor.y !== null) {
+            const sensitivity = 50;
+            const targetX = (sensor.y || 0) * sensitivity;
+            const targetY = (sensor.x || 0) * sensitivity;
+
+            mouseRef.current.x += (targetX - mouseRef.current.x) * 0.1;
+            mouseRef.current.y += (targetY - mouseRef.current.y) * 0.1;
+
+            const maxOffset = 200;
+
+            mouseRef.current.x = Math.max(
+              -maxOffset,
+              Math.min(maxOffset, mouseRef.current.x)
+            );
+            mouseRef.current.y = Math.max(
+              -maxOffset,
+              Math.min(maxOffset, mouseRef.current.y)
+            );
+          }
+        });
+
+        await sensor.start();
+        gyroscope.current = sensor;
+      } catch {
+        // If initialization fails we keep pointer input only.
+      }
+    };
+
+    initializeGyroscope();
+
+    return () => {
+      if (!gyroscope.current) {
+        return;
+      }
+
+      try {
+        gyroscope.current.stop();
+      } catch {
+        // noop
+      }
+    };
+  }, [gyroscopeSupported, mouseRef]);
+};
+
+const useParticlesCanvas = ({
+  quantity,
+  staticity,
+  ease,
+  gyroscopeSupported,
+  className
+}: Required<Pick<ParticlesProps, "quantity" | "staticity" | "ease">> & {
+  gyroscopeSupported: boolean;
+  className: string;
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasContainerRef = useRef<HTMLDivElement>(null);
+  const context = useRef<CanvasRenderingContext2D | null>(null);
+  const circles = useRef<Circle[]>([]);
+  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+  const animateRef = useRef<(() => void) | undefined>(undefined);
+
+  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+  const mousePosition = useMousePosition();
 
   const remapValue = useCallback(
     (
@@ -253,114 +394,7 @@ export const Particles = ({
     }
   }, [clearContext, circleParams, drawCircle, ease, staticity, remapValue]);
 
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      "Gyroscope" in window &&
-      window.Gyroscope &&
-      isMobileDevice()
-    ) {
-      const checkGyroscope = async () => {
-        const GyroscopeConstructor = window.Gyroscope;
-        if (!GyroscopeConstructor) {
-          return;
-        }
-
-        try {
-          const sensor = new GyroscopeConstructor({ frequency: 60 });
-
-          try {
-            const result = await navigator.permissions.query({
-              name: "gyroscope" as PermissionName
-            });
-
-            if (result.state === "granted") {
-              setGyroscopeSupported(true);
-            } else if (result.state === "denied") {
-              setGyroscopeSupported(false);
-            } else if (result.state === "prompt") {
-              try {
-                await sensor.start();
-                sensor.stop();
-                setGyroscopeSupported(true);
-              } catch {
-                setGyroscopeSupported(false);
-              }
-            }
-          } catch {
-            try {
-              await sensor.start();
-              sensor.stop();
-              setGyroscopeSupported(true);
-            } catch {
-              setGyroscopeSupported(false);
-            }
-          }
-        } catch {
-          setGyroscopeSupported(false);
-        }
-      };
-
-      checkGyroscope();
-    }
-  }, [isMobileDevice]);
-
-  useEffect(() => {
-    if (!gyroscopeSupported || !window.Gyroscope) {
-      return;
-    }
-
-    const initializeGyroscope = async () => {
-      const GyroscopeConstructor = window.Gyroscope;
-      if (!GyroscopeConstructor) {
-        return;
-      }
-
-      try {
-        const sensor = new GyroscopeConstructor({ frequency: 60 });
-
-        mouse.current.x = 0;
-        mouse.current.y = 0;
-
-        sensor.addEventListener("reading", () => {
-          if (sensor.x !== null && sensor.y !== null) {
-            const sensitivity = 50;
-            const targetX = (sensor.y || 0) * sensitivity;
-            const targetY = (sensor.x || 0) * sensitivity;
-
-            mouse.current.x += (targetX - mouse.current.x) * 0.1;
-            mouse.current.y += (targetY - mouse.current.y) * 0.1;
-
-            const maxOffset = 200;
-
-            mouse.current.x = Math.max(
-              -maxOffset,
-              Math.min(maxOffset, mouse.current.x)
-            );
-            mouse.current.y = Math.max(
-              -maxOffset,
-              Math.min(maxOffset, mouse.current.y)
-            );
-          }
-        });
-
-        await sensor.start();
-        gyroscope.current = sensor;
-      } catch {
-        setGyroscopeSupported(false);
-      }
-    };
-
-    initializeGyroscope();
-
-    return () => {
-      if (gyroscope.current) {
-        try {
-          gyroscope.current.stop();
-        } catch {}
-      }
-    };
-  }, [gyroscopeSupported]);
+  useGyroscopeMouseControl(gyroscopeSupported, mouse);
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -388,6 +422,28 @@ export const Particles = ({
   useEffect(() => {
     initCanvas();
   }, [initCanvas]);
+
+  return {
+    canvasRef,
+    canvasContainerRef,
+    className
+  };
+};
+
+export const Particles = ({
+  className = "",
+  quantity = 54,
+  staticity = 60,
+  ease = 60
+}: ParticlesProps) => {
+  const gyroscopeSupported = useGyroscopeSupport();
+  const { canvasRef, canvasContainerRef } = useParticlesCanvas({
+    quantity,
+    staticity,
+    ease,
+    gyroscopeSupported,
+    className
+  });
 
   return (
     <div

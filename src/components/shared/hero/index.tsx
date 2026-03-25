@@ -5,7 +5,7 @@ import "./index.css";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useEffect, useMemo, useState } from "react";
 
 import { paths } from "@/lib/paths";
 
@@ -96,15 +96,10 @@ const getPageColor = (pageData: PageData): string => {
 
 const getImageSrc = (
   icon: string | undefined,
-  resolvedTheme: string | undefined,
-  mounted: boolean
+  resolvedTheme: string | undefined
 ) => {
   if (icon) {
     return icon;
-  }
-
-  if (!mounted) {
-    return "/images/hero/default.svg";
   }
 
   return resolvedTheme === "light"
@@ -114,44 +109,30 @@ const getImageSrc = (
 
 const getTitle = (
   title: string | undefined,
-  resolvedTheme: string | undefined,
-  mounted: boolean
+  resolvedTheme: string | undefined
 ) => {
   if (title) {
     return title;
   }
 
-  if (!mounted) {
-    return "Dracula";
-  }
-
   return resolvedTheme === "light" ? "Alucard" : "Dracula";
 };
-
-const HeroPlaceholder = ({ type }: { type: string }) => (
-  <>
-    <div className={`icon ${type}`}>
-      <div className="placeholder" />
-    </div>
-    <div className="header">
-      <div className="placeholder title" />
-      <div className="placeholder subtitle" />
-    </div>
-  </>
-);
 
 export const Hero = () => {
   const pathname = usePathname();
   const pathKey = pathname === "/" ? "" : pathname;
 
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
-    // between server and client renders
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
+    const timeoutId = window.setTimeout(() => {
+      setIsMounted(true);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, []);
 
   const pageData = useMemo(() => {
@@ -168,46 +149,44 @@ export const Hero = () => {
     type = "static"
   } = pageData;
 
-  const setColor = useCallback(() => {
-    const color = getPageColor(pageData);
-    document.documentElement.style.setProperty("--main-hue", color);
-  }, [pageData]);
+  const activeTheme =
+    resolvedTheme ||
+    (theme === "dark" || theme === "light" ? theme : undefined);
+  const showDefaultPlaceholder = !isMounted && !icon;
 
-  useEffect(() => {
-    setColor();
-  }, [setColor]);
-
-  if (!mounted) {
-    return (
-      <section className={`hero ${pathKey.slice(1)}`}>
-        {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
-        <div className="castle" />
-        <div className="container">
-          {pathKey !== "/shop" && <HeroPlaceholder type={type} />}
-        </div>
-      </section>
-    );
-  }
+  const heroColor = getPageColor(pageData);
 
   return (
-    <section className={`hero ${pathKey.slice(1)}`}>
+    <section
+      className={`hero ${pathKey.slice(1)}`}
+      style={{ "--main-hue": heroColor } as CSSProperties}
+    >
       {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
       <div className="castle" />
       <div className="container">
         {pathKey !== "/shop" && (
           <div className={`icon ${type}`}>
-            <Image
-              src={getImageSrc(icon, resolvedTheme, mounted)}
-              width={192}
-              height={192}
-              unoptimized={true}
-              priority={true}
-              alt="Dracula Icon"
-            />
+            {showDefaultPlaceholder ? (
+              <div className="placeholder" />
+            ) : (
+              <Image
+                src={getImageSrc(icon, activeTheme)}
+                width={192}
+                height={192}
+                unoptimized
+                priority
+                alt="Dracula Icon"
+                suppressHydrationWarning
+              />
+            )}
           </div>
         )}
         <div className="header">
-          <h1>{getTitle(title, resolvedTheme, mounted)}</h1>
+          {showDefaultPlaceholder && !title ? (
+            <div className="placeholder title" />
+          ) : (
+            <h1 suppressHydrationWarning>{getTitle(title, activeTheme)}</h1>
+          )}
           <h2>{subtitle}</h2>
           {callToAction && anchor && (
             <a href={anchor} className="action primary call-to-action">
@@ -222,7 +201,7 @@ export const Hero = () => {
                 src="https://www.youtube-nocookie.com/embed/RiuWwkwmmfI"
                 title="Video showing the manufacture of products from the Dracula collection"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen={true}
+                allowFullScreen
               />
             </div>
           </div>

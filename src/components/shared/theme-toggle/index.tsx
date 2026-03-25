@@ -3,7 +3,7 @@
 import "./index.css";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useSound } from "use-sound";
 
 interface ThemeToggleProps {
@@ -36,15 +36,12 @@ const ThemeIcon = () => (
 
 export const ThemeToggle = ({ action }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const isClient = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const [play] = useSound("/sounds/toggle.mp3", { volume: 0.12 });
-
-  useEffect(() => {
-    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
-    // between server and client renders
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
 
   const isDark = theme === "dark";
   const themeLabel = isDark ? "Enter the sunlight" : "Embrace the darkness";
@@ -64,15 +61,15 @@ export const ThemeToggle = ({ action }: ThemeToggleProps) => {
   return (
     <button
       type="button"
-      onClick={mounted ? handleClick : undefined}
+      onClick={isClient ? handleClick : undefined}
       className="action theme-toggle"
-      aria-label={mounted ? themeLabel : "Toggle theme"}
-      title={mounted ? themeLabel : "Toggle theme"}
-      disabled={!mounted}
+      aria-label={isClient ? themeLabel : "Toggle theme"}
+      title={isClient ? themeLabel : "Toggle theme"}
+      disabled={!isClient}
     >
       <ThemeIcon />
-      <span className="hide-on-desktop">
-        {mounted ? themeLabel : "Toggle theme"}
+      <span className="hide-on-desktop" suppressHydrationWarning>
+        {isClient ? themeLabel : "Toggle theme"}
       </span>
     </button>
   );

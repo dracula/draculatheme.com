@@ -34,14 +34,30 @@ const structuredDataScriptId = createStructuredDataScriptId(
   "data"
 );
 
-const ProPage = async () => {
-  const reviewsData = (await fetcher("/api/reviews")) as
-    | Review[]
-    | Record<string, Review>;
+const isReview = (value: unknown): value is Review => {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
 
-  const normalizedReviews = Array.isArray(reviewsData)
-    ? reviewsData
-    : Object.values(reviewsData);
+  const review = value as Record<string, unknown>;
+
+  return (
+    typeof review.id === "string" &&
+    typeof review.name === "string" &&
+    typeof review.body === "string" &&
+    typeof review.country === "string" &&
+    typeof review.github === "string" &&
+    typeof review.date === "string"
+  );
+};
+
+const ProPage = async () => {
+  const reviewsResponse = await fetcher("/api/reviews");
+  const normalizedReviews = (
+    Array.isArray(reviewsResponse)
+      ? reviewsResponse
+      : Object.values(reviewsResponse)
+  ).filter(isReview);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -143,7 +159,7 @@ const ProPage = async () => {
         <LightVariant />
         <Bento />
         <Book />
-        <Testimonials reviews={reviewsData} />
+        <Testimonials reviews={normalizedReviews} />
         <Checkout />
         <div
           id="frequently-asked-questions"

@@ -69,8 +69,11 @@ export const viewport = {
 const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (
-  <html lang="en" suppressHydrationWarning={true}>
-    <body className={`${dmSans.variable} ${dmMono.variable}`}>
+  <html lang="en" suppressHydrationWarning>
+    <body
+      className={`${dmSans.variable} ${dmMono.variable}`}
+      suppressHydrationWarning
+    >
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
         <AnnouncementBar />
         <Header />

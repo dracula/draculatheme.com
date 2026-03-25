@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore
+} from "react";
 import { createPortal } from "react-dom";
 
 import { BookIcon } from "@/icons/book";
@@ -84,10 +91,7 @@ const pages = [
   }
 ];
 
-export const matchesSearch = (
-  item: PathItem,
-  searchedTerm: string
-): boolean => {
+const matchesSearch = (item: PathItem, searchedTerm: string): boolean => {
   const term = searchedTerm.toLowerCase();
   return (
     item.title.toLowerCase().includes(term) ||
@@ -134,17 +138,14 @@ type SearchEntry =
 export const CommandBar = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [mounted, setMounted] = useState(false);
+  const isClient = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  useEffect(() => {
-    // Setting mounted state in useEffect is necessary to prevent hydration mismatches
-    // between server and client renders
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
 
   const openDialog = useCallback(() => {
     setIsDialogOpen(true);
@@ -287,7 +288,7 @@ export const CommandBar = () => {
           </span>
         </div>
       </button>
-      {mounted &&
+      {isClient &&
         createPortal(
           <dialog
             ref={dialogRef}

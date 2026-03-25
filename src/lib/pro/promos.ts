@@ -8,7 +8,7 @@ import promosData from "./promos.json";
 // Re-export pricing utilities for convenience
 export { calculateDiscountedPrice, pricing };
 
-export type PromoConfig = {
+type PromoConfig = {
   name: string;
   displayName: string;
   announcementText: string;
@@ -20,7 +20,7 @@ export type PromoConfig = {
   endDate: string;
 };
 
-export type PromosConfig = {
+type PromosConfig = {
   promos: PromoConfig[];
   defaultPromo: {
     discountPercentage: number;
@@ -81,7 +81,7 @@ const createPromotionFromConfig = (config: PromoConfig): Promotion => {
 };
 
 // Get the currently active promo based on date ranges
-export const getActivePromo = (): PromoConfig | null => {
+const getActivePromo = (): PromoConfig | null => {
   return (
     promosConfig.promos.find((promo) =>
       isPromoActive(promo.startDate, promo.endDate)
@@ -90,7 +90,7 @@ export const getActivePromo = (): PromoConfig | null => {
 };
 
 // Get active promotion (converted to Promotion type)
-export const getActivePromotion = (): Promotion | null => {
+const getActivePromotion = (): Promotion | null => {
   const activePromo = getActivePromo();
   return activePromo ? createPromotionFromConfig(activePromo) : null;
 };
@@ -101,12 +101,12 @@ export const getActiveAnnouncement = (): PromoConfig | null => {
 };
 
 // Get default promo configuration
-export const getDefaultPromoConfig = () => {
+const getDefaultPromoConfig = () => {
   return promosConfig.defaultPromo;
 };
 
 // Create default promotion (used when no active promo)
-export const getDefaultPromotion = (): Promotion => {
+const getDefaultPromotion = (): Promotion => {
   const defaultConfig = getDefaultPromoConfig();
   const basePrice = getBasePriceValue(defaultConfig.basePrice);
   const finalPrice = calculateDiscountedPrice(
@@ -133,6 +133,3 @@ export const getStandardPromotion = (): Promotion => {
 };
 
 // Get all configured promos
-export const getAllPromos = () => {
-  return promosConfig.promos;
-};
