@@ -90,13 +90,19 @@ const getMdxData = (dir: string) => {
 };
 
 export const getMdxDataFromDirectory = <T>(directoryName: string): T[] => {
-  const directoryPath = path.join(process.cwd(), directoryName);
+  const directoryPath = path.join(
+    /*turbopackIgnore: true*/ process.cwd(),
+    directoryName
+  );
   const data = getMdxData(directoryPath);
   return data as T[];
 };
 
 export const getMdxFromFile = (directory: string, slug: string) => {
-  const postsDirectory = path.join(process.cwd(), directory);
+  const postsDirectory = path.join(
+    /*turbopackIgnore: true*/ process.cwd(),
+    directory
+  );
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
 
   if (fs.existsSync(filePath) === false) {
