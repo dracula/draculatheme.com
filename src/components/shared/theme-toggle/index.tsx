@@ -2,9 +2,10 @@
 
 import "./index.css";
 
-import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 import { useSound } from "use-sound";
+
+import { useTheme } from "@/components/shared/theme-provider";
 
 interface ThemeToggleProps {
   action?: () => void;

@@ -13,19 +13,16 @@ export type PurchasingPowerParityData = {
   couponCode?: string;
 };
 
-// Get country name from country code
 const getCountryName = (code: string): string | null => {
   const key = code.toUpperCase() as keyof typeof countries;
   return countries[key]?.name || null;
 };
 
-// Create PPP (Purchasing Power Parity) promotion
 const createPppPromotion = (
   ppp: PurchasingPowerParityData
 ): Promotion | null => {
   const { country, discount, couponCode } = ppp;
 
-  // Validate PPP data
   if (!country || !discount || discount <= 0 || !couponCode) {
     return null;
   }
@@ -46,7 +43,7 @@ const createPppPromotion = (
   };
 };
 
-// Resolve checkout promotions (standard + PPP)
+/** Standard Gumroad promotion plus an extra PPP offer when the input is complete. */
 export const resolveCheckout = (ppp: PurchasingPowerParityData) => {
   return {
     standardPromotion: getStandardPromotion(),

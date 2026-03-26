@@ -4,9 +4,9 @@ import "./index.css";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
-import { type CSSProperties, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
+import { useTheme } from "@/components/shared/theme-provider";
 import { paths } from "@/lib/paths";
 
 import { MatrixRain } from "./matrix-rain";
@@ -165,14 +165,7 @@ export const Hero = () => {
   }, [heroColor]);
 
   return (
-    <section
-      className={`hero ${pathKey.slice(1)}`}
-      style={
-        {
-          "--main-hue": heroColor
-        } as CSSProperties
-      }
-    >
+    <section className={`hero ${pathKey.slice(1)}`}>
       {pathKey === "/pro" ? <MatrixRain /> : <Particles />}
       <div className="castle" />
       <div className="container">

@@ -5,7 +5,6 @@ import {
 } from "./pricing";
 import promosData from "./promos.json";
 
-// Re-export pricing utilities for convenience
 export { calculateDiscountedPrice, pricing };
 
 type PromoConfig = {
@@ -14,7 +13,11 @@ type PromoConfig = {
   announcementText: string;
   discountPercentage: number;
   couponCode?: string;
-  purchaseUrl?: string; // Optional - auto-generated from couponCode if not provided
+  /**
+   * When omitted, the Gumroad URL is derived from `couponCode` when present,
+   * otherwise the default checkout URL is used.
+   */
+  purchaseUrl?: string;
   basePrice: "listPrice" | "promoPrice";
   startDate: string;
   endDate: string;
@@ -28,6 +31,7 @@ type PromosConfig = {
   };
 };
 
+/** Offer surfaced by pricing components and passed into checkout links. */
 export type Promotion = {
   name: string;
   displayName: string;
@@ -41,7 +45,6 @@ export type Promotion = {
 
 const promosConfig = promosData as PromosConfig;
 
-// Check if a date is within the promo date range
 const isPromoActive = (startDate: string, endDate: string): boolean => {
   const now = new Date();
   const start = new Date(startDate);
@@ -49,7 +52,6 @@ const isPromoActive = (startDate: string, endDate: string): boolean => {
   return now >= start && now <= end;
 };
 
-// Generate purchase URL from coupon code using the standard pattern
 const generatePurchaseUrl = (couponCode?: string): string => {
   if (couponCode) {
     return `https://draculatheme.gumroad.com/l/dracula-pro/${couponCode}`;
@@ -57,7 +59,6 @@ const generatePurchaseUrl = (couponCode?: string): string => {
   return `${pricing.gumroadBaseUrl}&wanted=true`;
 };
 
-// Convert promo config to promotion object
 const createPromotionFromConfig = (config: PromoConfig): Promotion => {
   const basePrice = getBasePriceValue(config.basePrice);
   const finalPrice = calculateDiscountedPrice(
@@ -65,7 +66,6 @@ const createPromotionFromConfig = (config: PromoConfig): Promotion => {
     config.discountPercentage
   );
 
-  // Use provided purchaseUrl or auto-generate from couponCode
   const purchaseUrl =
     config.purchaseUrl || generatePurchaseUrl(config.couponCode);
 
@@ -80,7 +80,6 @@ const createPromotionFromConfig = (config: PromoConfig): Promotion => {
   };
 };
 
-// Get the currently active promo based on date ranges
 const getActivePromo = (): PromoConfig | null => {
   return (
     promosConfig.promos.find((promo) =>
@@ -89,23 +88,23 @@ const getActivePromo = (): PromoConfig | null => {
   );
 };
 
-// Get active promotion (converted to Promotion type)
 const getActivePromotion = (): Promotion | null => {
   const activePromo = getActivePromo();
   return activePromo ? createPromotionFromConfig(activePromo) : null;
 };
 
-// Get announcement for the announcement bar
+/**
+ * Returns the promo row matching the current date window, or `null` when none apply.
+ * Shapes announcement bar messaging.
+ */
 export const getActiveAnnouncement = (): PromoConfig | null => {
   return getActivePromo();
 };
 
-// Get default promo configuration
 const getDefaultPromoConfig = () => {
   return promosConfig.defaultPromo;
 };
 
-// Create default promotion (used when no active promo)
 const getDefaultPromotion = (): Promotion => {
   const defaultConfig = getDefaultPromoConfig();
   const basePrice = getBasePriceValue(defaultConfig.basePrice);
@@ -127,9 +126,10 @@ const getDefaultPromotion = (): Promotion => {
   };
 };
 
-// Get standard promotion (active promo or default)
+/**
+ * Promotion used for standard checkout: active dated campaign when valid,
+ * otherwise the generated monthly default offer.
+ */
 export const getStandardPromotion = (): Promotion => {
   return getActivePromotion() || getDefaultPromotion();
 };
-
-// Get all configured promos

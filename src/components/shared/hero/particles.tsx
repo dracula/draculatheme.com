@@ -132,6 +132,10 @@ const useGyroscopeMouseControl = (
       return;
     }
 
+    /**
+     * Starts gyroscope-driven parallax when the sensor API works; failures are ignored
+     * so pointer-based motion still applies.
+     */
     const initializeGyroscope = async () => {
       const GyroscopeConstructor = window.Gyroscope;
       if (!GyroscopeConstructor) {
@@ -168,9 +172,7 @@ const useGyroscopeMouseControl = (
 
         await sensor.start();
         gyroscope.current = sensor;
-      } catch {
-        // If initialization fails we keep pointer input only.
-      }
+      } catch {}
     };
 
     initializeGyroscope();
@@ -182,9 +184,7 @@ const useGyroscopeMouseControl = (
 
       try {
         gyroscope.current.stop();
-      } catch {
-        // noop
-      }
+      } catch {}
     };
   }, [gyroscopeSupported, mouseRef]);
 };

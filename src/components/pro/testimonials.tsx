@@ -27,20 +27,6 @@ const normalizeReviews = (
   reviews: Review[] | Record<string, Review>
 ): Review[] => (Array.isArray(reviews) ? reviews : Object.values(reviews));
 
-const shuffleReviews = (reviews: Review[]): Review[] => {
-  const shuffledReviews = [...reviews];
-
-  for (let index = shuffledReviews.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    const currentReview = shuffledReviews[index];
-
-    shuffledReviews[index] = shuffledReviews[randomIndex];
-    shuffledReviews[randomIndex] = currentReview;
-  }
-
-  return shuffledReviews;
-};
-
 const parseInlineEmphasis = (text: string): ReactNode => {
   const segments: ReactNode[] = [];
   const emphasisPattern = /<em>([\s\S]*?)<\/em>/gi;
@@ -136,19 +122,12 @@ const TestimonialCard = ({ review }: { review: Review }) => {
 export const Testimonials = ({ reviews }: TestimonialsProps) => {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
-  const normalizedReviews = useMemo(() => normalizeReviews(reviews), [reviews]);
-  const randomizedReviews = useMemo(() => {
-    const identifiedReviews = normalizedReviews.filter((review) => {
-      return Boolean(review.name.trim() || review.country.trim());
-    });
-
-    return shuffleReviews(identifiedReviews);
-  }, [normalizedReviews]);
-  const hasMoreReviews = visibleCount < randomizedReviews.length;
+  const displayReviews = useMemo(() => normalizeReviews(reviews), [reviews]);
+  const hasMoreReviews = visibleCount < displayReviews.length;
 
   const handleReadMore = () => {
     setVisibleCount((prev) =>
-      Math.min(prev + loadMoreCount, randomizedReviews.length)
+      Math.min(prev + loadMoreCount, displayReviews.length)
     );
   };
 
@@ -161,11 +140,11 @@ export const Testimonials = ({ reviews }: TestimonialsProps) => {
           <em>creators who ship.</em>
         </p>
         <p>
-          Trusted by <em>{randomizedReviews.length} verified customers</em>.
+          Trusted by <em>{displayReviews.length} verified customers</em>.
         </p>
       </div>
       <div className="grid">
-        {randomizedReviews.slice(0, visibleCount).map((review) => (
+        {displayReviews.slice(0, visibleCount).map((review) => (
           <TestimonialCard key={review.id} review={review} />
         ))}
       </div>

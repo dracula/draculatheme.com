@@ -14,6 +14,7 @@ import { WhyPro } from "@/components/pro/why-pro";
 import { Disclosure } from "@/components/shared/disclosure";
 import { Hero } from "@/components/shared/hero";
 import { frequentlyAskedQuestions } from "@/lib/pro/faqs";
+import { shuffleReviews } from "@/lib/pro/shuffle-reviews";
 import type { Review } from "@/lib/types";
 import { fetcher } from "@/utils/fetcher";
 import {
@@ -58,6 +59,11 @@ const ProPage = async () => {
       ? reviewsResponse
       : Object.values(reviewsResponse)
   ).filter(isReview);
+
+  const identifiedReviews = normalizedReviews.filter((review) =>
+    Boolean(review.name.trim() || review.country.trim())
+  );
+  const shuffledDisplayReviews = shuffleReviews(identifiedReviews);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -159,7 +165,7 @@ const ProPage = async () => {
         <LightVariant />
         <Bento />
         <Book />
-        <Testimonials reviews={normalizedReviews} />
+        <Testimonials reviews={shuffledDisplayReviews} />
         <Checkout />
         <div
           id="frequently-asked-questions"

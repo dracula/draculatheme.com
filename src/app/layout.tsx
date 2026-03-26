@@ -3,12 +3,13 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
 import Script from "next/script";
-import { ThemeProvider } from "next-themes";
 
 import { AnnouncementBar } from "@/components/shared/announcement-bar";
 import { DraculaRadio } from "@/components/shared/dracula-radio";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
+import { ThemeProvider } from "@/components/shared/theme-provider";
+import { themeBootstrapScript } from "@/components/shared/theme-provider/theme-bootstrap-script";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -74,7 +75,10 @@ const RootLayout = async ({
       className={`${dmSans.variable} ${dmMono.variable}`}
       suppressHydrationWarning
     >
-      <ThemeProvider defaultTheme="dark" enableSystem={false}>
+      <Script id="theme-bootstrap" strategy="beforeInteractive">
+        {themeBootstrapScript}
+      </Script>
+      <ThemeProvider>
         <AnnouncementBar />
         <Header />
         <main>{children}</main>

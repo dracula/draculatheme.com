@@ -439,6 +439,3 @@ export const paths: Path[] = [
   { repo: "zsh-syntax-highlighting", title: "zsh-syntax-highlighting", icon: "used/pack-10/reaper.svg", synonyms: ["zsh", "plugin"], categories: ["terminal"], legacyViews: 10231 },
   { repo: "zsh", title: "Zsh", icon: "used/pack-1/eye.svg", synonyms: ["shell", "z shell"], categories: ["terminal"], legacyViews: 276962 }
 ];
-
-// { repo: "fb-messenger", title: "Facebook Messenger", icon: "used/pack-3/scroll.svg", synonyms: ["facebook", "messenger"], categories: ["social"], legacyViews: 12280 },
-// { repo: "b4x", title: "B4X", icon: "used/pack-7/broom.svg", categories: ["editor", "ide"], legacyViews: 1151 },

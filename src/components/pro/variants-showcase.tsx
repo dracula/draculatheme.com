@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { type SetStateAction, useEffect, useId, useRef, useState } from "react";
+import { type SetStateAction, useId, useState } from "react";
 import useSound from "use-sound";
 
 import { apps } from "@/lib/pro/apps";
@@ -24,23 +24,35 @@ const variants = [
   }
 ];
 
-const soundConfig = { volume: 0.12, preload: false };
+const soundConfig = { volume: 0.12 };
 
 export const VariantsShowcase = () => {
   const [selectedAppIndex, setSelectedAppIndex] = useState(() =>
     Math.max(0, apps.length - 4)
   );
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-  const hasMountedRef = useRef(false);
   const appSelectId = useId();
 
   const selectedApp = apps[selectedAppIndex];
   const selectedVariant = variants[selectedVariantIndex];
 
-  const [playVariantSound, { sound: activeSound }] = useSound(
-    selectedVariant.sound,
-    soundConfig
-  );
+  const [playProSound] = useSound(variants[0].sound, soundConfig);
+  const [playBladeSound] = useSound(variants[1].sound, soundConfig);
+  const [playBuffySound] = useSound(variants[2].sound, soundConfig);
+  const [playLincolnSound] = useSound(variants[3].sound, soundConfig);
+  const [playMorbiusSound] = useSound(variants[4].sound, soundConfig);
+  const [playVanHelsingSound] = useSound(variants[5].sound, soundConfig);
+  const [playAlucardSound] = useSound(variants[6].sound, soundConfig);
+
+  const sounds = [
+    playProSound,
+    playBladeSound,
+    playBuffySound,
+    playLincolnSound,
+    playMorbiusSound,
+    playVanHelsingSound,
+    playAlucardSound
+  ];
 
   const getVariantSlug = (name: string) => {
     return name.replace(/\s+/g, "-").toLowerCase();
@@ -55,24 +67,11 @@ export const VariantsShowcase = () => {
   const handleVariantChange = (index: SetStateAction<number>) => {
     const newIndex =
       typeof index === "function" ? index(selectedVariantIndex) : index;
+    if (newIndex >= 0 && newIndex < sounds.length) {
+      sounds[newIndex]?.();
+    }
     setSelectedVariantIndex(newIndex);
   };
-
-  useEffect(() => {
-    if (!hasMountedRef.current) {
-      hasMountedRef.current = true;
-      return;
-    }
-
-    playVariantSound();
-  }, [playVariantSound]);
-
-  useEffect(
-    () => () => {
-      activeSound?.unload();
-    },
-    [activeSound]
-  );
 
   return (
     <div className="variants-showcase">
