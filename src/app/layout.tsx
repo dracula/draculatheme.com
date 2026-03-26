@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600"],
   variable: "--font-sans",
   fallback: ["sans-serif", "system-ui"],
-  preload: false
+  adjustFontFallback: true
 });
 
 const dmMono = DM_Mono({
