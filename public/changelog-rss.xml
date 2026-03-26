@@ -4,7 +4,7 @@
         <description><![CDATA[Discover the latest updates and improvements for Dracula Pro.]]></description>
         <link>https://draculatheme.com/pro/changelog</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Dec 2025 14:06:25 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2026 05:13:53 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/changelog-rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Visual Studio Code fixes and Chrome rewrite]]></title>
@@ -29,7 +29,7 @@
         </item>
         <item>
             <title><![CDATA[Dracula Pro 2.0]]></title>
-            <description><![CDATA[Introducing Alucard, numerous fixes and general enhancements!]]></description>
+            <description><![CDATA[Introducing Alucard, plus fixes and improvements across the board.]]></description>
             <link>https://draculatheme.com/pro/changelog#dracula-pro-2.0</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#dracula-pro-2.0</guid>
             <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
@@ -49,7 +49,7 @@
             <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Alacritty Revamp]]></title>
+            <title><![CDATA[Alacritty revamp]]></title>
             <description><![CDATA[Complete overhaul of the Alacritty theme with updates to all variants.]]></description>
             <link>https://draculatheme.com/pro/changelog#alacritty-revamp</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#alacritty-revamp</guid>
@@ -70,7 +70,7 @@
             <pubDate>Thu, 29 Jul 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Free Audiobook and Insomnia]]></title>
+            <title><![CDATA[Free audiobook and Insomnia]]></title>
             <description><![CDATA[I couldn't be more proud to see this community growing.]]></description>
             <link>https://draculatheme.com/pro/changelog#free-audiobook-and-insomnia</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#free-audiobook-and-insomnia</guid>
@@ -84,7 +84,7 @@
             <pubDate>Mon, 14 Dec 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[🎃 It's Halloween!]]></title>
+            <title><![CDATA[It’s Halloween]]></title>
             <description><![CDATA[Celebrating Halloween with community milestones and growth numbers.]]></description>
             <link>https://draculatheme.com/pro/changelog#its-halloween</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#its-halloween</guid>
@@ -98,7 +98,7 @@
             <pubDate>Tue, 29 Sep 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[New Desktop Icons]]></title>
+            <title><![CDATA[New desktop icons]]></title>
             <description><![CDATA[Introduced Dracula Pro Desktop Icons with 20 icons available in 6 variants.]]></description>
             <link>https://draculatheme.com/pro/changelog#new-desktop-icons</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#new-desktop-icons</guid>
@@ -119,7 +119,7 @@
             <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[VIM]]></title>
+            <title><![CDATA[Vim]]></title>
             <description><![CDATA[The #1 most requested Dracula Pro theme is finally available.]]></description>
             <link>https://draculatheme.com/pro/changelog#vim</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#vim</guid>
@@ -147,21 +147,21 @@
             <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Design Files]]></title>
+            <title><![CDATA[Design files]]></title>
             <description><![CDATA[Added design files with color codes for Adobe, Figma, and Sketch.]]></description>
             <link>https://draculatheme.com/pro/changelog#design-files</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#design-files</guid>
             <pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[XCode Major Update]]></title>
+            <title><![CDATA[Xcode major update]]></title>
             <description><![CDATA[Major update to the Xcode theme with improved colors, font weights, and console schemes.]]></description>
             <link>https://draculatheme.com/pro/changelog#xcode-major-update</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#xcode-major-update</guid>
             <pubDate>Wed, 19 Feb 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[JetBrains Revamp]]></title>
+            <title><![CDATA[JetBrains revamp]]></title>
             <description><![CDATA[Complete redesign of the JetBrains theme to better match VSCode and Sublime.]]></description>
             <link>https://draculatheme.com/pro/changelog#jetbrains-revamp</link>
             <guid isPermaLink="true">https://draculatheme.com/pro/changelog#jetbrains-revamp</guid>
