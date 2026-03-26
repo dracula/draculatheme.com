@@ -68,9 +68,9 @@ const ProPage = async () => {
       "Dracula Pro is a color scheme and UI theme designed for your workflow. It looks great and helps you stay focused.",
     url: "https://draculatheme.com/pro",
     image: [
-      "https://draculatheme.com/images/pro/vscode/1.png",
-      "https://draculatheme.com/images/pro/zed/1.png",
-      "https://draculatheme.com/images/pro/hyper/1.png"
+      "https://draculatheme.com/images/pro/vscode/1.webp",
+      "https://draculatheme.com/images/pro/zed/1.webp",
+      "https://draculatheme.com/images/pro/hyper/1.webp"
     ],
     brand: {
       "@type": "Brand",

@@ -37,7 +37,7 @@ html {
         .bento {
           .palette {
             .illustration {
-              background-image: url("/images/pro/palette-light.png");
+              background-image: url("/images/pro/palette-light.webp");
               background-color: var(--background-color-primary);
             }
           }
@@ -498,7 +498,7 @@ html {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background-image: url("/images/pro/palette.png");
+          background-image: url("/images/pro/palette.webp");
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;

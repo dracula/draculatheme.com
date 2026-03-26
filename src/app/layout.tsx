@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://draculatheme.com/images/og.png"
+        url: "https://draculatheme.com/images/og.webp"
       }
     ]
   },

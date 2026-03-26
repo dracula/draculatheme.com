@@ -18,7 +18,7 @@ export const ProductList = ({
         <Link href={`/shop/${product.custom_permalink}`} className="item">
           <div className="thumb">
             <Image
-              src={`/images/shop/${product.custom_permalink}-1.png`}
+              src={`/images/shop/${product.custom_permalink}-1.webp`}
               alt={product.name}
               width={320}
               height={320}

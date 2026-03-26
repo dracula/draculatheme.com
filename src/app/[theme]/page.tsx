@@ -39,7 +39,7 @@ export const generateMetadata = async (
 
   const title = theme.title;
   const description = `The most famous theme for ${theme.title}, plus an ever-growing list of apps.`;
-  const ogImage = "https://draculatheme.com/images/og.png";
+  const ogImage = "https://draculatheme.com/images/og.webp";
 
   return {
     title,

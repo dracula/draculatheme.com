@@ -120,7 +120,7 @@ export const VariantsShowcase = () => {
       </div>
       <div className="preview">
         <Image
-          src={`/images/pro/${selectedApp?.value}/${selectedVariantIndex + 1}.png`}
+          src={`/images/pro/${selectedApp?.value}/${selectedVariantIndex + 1}.webp`}
           alt={`${selectedApp?.label} - ${selectedVariant.name} theme preview`}
           width={912}
           height={552}

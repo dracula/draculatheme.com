@@ -73,7 +73,7 @@ const ShopPage = async () => {
     description:
       "Premium merch for modern vampires. Exclusive apparel and limited-run accessories for our community.",
     url: "https://draculatheme.com/shop",
-    image: "https://draculatheme.com/images/og.png",
+    image: "https://draculatheme.com/images/og.webp",
     brand: {
       "@type": "Brand",
       name: "Dracula Theme",

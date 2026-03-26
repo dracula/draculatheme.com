@@ -3,7 +3,7 @@ export const products = [
     params: {
       slug: "alucard-poster",
       gumroadId: "ahnayk",
-      images: ["alucard-poster-1.png", "alucard-poster-2.png"],
+      images: ["alucard-poster-1.webp", "alucard-poster-2.webp"],
       category: "other",
       color: "purple"
     }
@@ -12,7 +12,7 @@ export const products = [
     params: {
       slug: "ascii-shirt",
       gumroadId: "hjppo",
-      images: ["ascii-shirt-1.png"],
+      images: ["ascii-shirt-1.webp"],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
@@ -25,9 +25,9 @@ export const products = [
       slug: "color-palette-shirt",
       gumroadId: "wbkfo",
       images: [
-        "color-palette-shirt-1.png",
-        "color-palette-shirt-2.png",
-        "color-palette-shirt-3.png"
+        "color-palette-shirt-1.webp",
+        "color-palette-shirt-2.webp",
+        "color-palette-shirt-3.webp"
       ],
       size: "#shirts",
       defaultVariant: 2,
@@ -41,9 +41,9 @@ export const products = [
       slug: "dark-mode-hoodie",
       gumroadId: "vuine",
       images: [
-        "dark-mode-hoodie-1.png",
-        "dark-mode-hoodie-2.png",
-        "dark-mode-hoodie-3.png"
+        "dark-mode-hoodie-1.webp",
+        "dark-mode-hoodie-2.webp",
+        "dark-mode-hoodie-3.webp"
       ],
       size: "#hoodies",
       defaultVariant: 1,
@@ -57,10 +57,10 @@ export const products = [
       slug: "dracula-beanie",
       gumroadId: "tolzmb",
       images: [
-        "dracula-beanie-1.png",
-        "dracula-beanie-2.png",
-        "dracula-beanie-3.png",
-        "dracula-beanie-4.png"
+        "dracula-beanie-1.webp",
+        "dracula-beanie-2.webp",
+        "dracula-beanie-3.webp",
+        "dracula-beanie-4.webp"
       ],
       category: "other",
       color: "orange"
@@ -70,7 +70,7 @@ export const products = [
     params: {
       slug: "dracula-castle-poster",
       gumroadId: "jbtvt",
-      images: ["dracula-castle-poster-1.png", "dracula-castle-poster-2.png"],
+      images: ["dracula-castle-poster-1.webp", "dracula-castle-poster-2.webp"],
       category: "other",
       color: "yellow"
     }
@@ -80,10 +80,10 @@ export const products = [
       slug: "dracula-hoodie",
       gumroadId: "jeaaum",
       images: [
-        "dracula-hoodie-1.png",
-        "dracula-hoodie-2.png",
-        "dracula-hoodie-3.png",
-        "dracula-hoodie-4.png"
+        "dracula-hoodie-1.webp",
+        "dracula-hoodie-2.webp",
+        "dracula-hoodie-3.webp",
+        "dracula-hoodie-4.webp"
       ],
       size: "#hoodies",
       defaultVariant: 1,
@@ -96,7 +96,7 @@ export const products = [
     params: {
       slug: "dracula-jogger",
       gumroadId: "vmywr",
-      images: ["dracula-jogger-1.png"],
+      images: ["dracula-jogger-1.webp"],
       size: "#joggers",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL"],
@@ -108,7 +108,7 @@ export const products = [
     params: {
       slug: "dracula-pin-n1",
       gumroadId: "iyyzn",
-      images: ["dracula-pin-n1-1.png"],
+      images: ["dracula-pin-n1-1.webp"],
       category: "other",
       color: "purple"
     }
@@ -118,9 +118,9 @@ export const products = [
       slug: "dracula-snapback-hat",
       gumroadId: "oihca",
       images: [
-        "dracula-snapback-hat-1.png",
-        "dracula-snapback-hat-2.png",
-        "dracula-snapback-hat-3.png"
+        "dracula-snapback-hat-1.webp",
+        "dracula-snapback-hat-2.webp",
+        "dracula-snapback-hat-3.webp"
       ],
       defaultVariant: 0,
       category: "other",
@@ -132,12 +132,12 @@ export const products = [
       slug: "dracula-sticker-pack-n1",
       gumroadId: "cntzy",
       images: [
-        "dracula-sticker-pack-n1-1.png",
-        "dracula-sticker-pack-n1-2.png",
-        "dracula-sticker-pack-n1-3.png",
-        "dracula-sticker-pack-n1-4.png",
-        "dracula-sticker-pack-n1-5.png",
-        "dracula-sticker-pack-n1-6.png"
+        "dracula-sticker-pack-n1-1.webp",
+        "dracula-sticker-pack-n1-2.webp",
+        "dracula-sticker-pack-n1-3.webp",
+        "dracula-sticker-pack-n1-4.webp",
+        "dracula-sticker-pack-n1-5.webp",
+        "dracula-sticker-pack-n1-6.webp"
       ],
       category: "stickers",
       color: "orange"
@@ -147,7 +147,7 @@ export const products = [
     params: {
       slug: "dracula-stickers",
       gumroadId: "oujmc",
-      images: ["dracula-stickers-1.png"],
+      images: ["dracula-stickers-1.webp"],
       category: "stickers",
       color: "pink"
     }
@@ -156,7 +156,7 @@ export const products = [
     params: {
       slug: "hexadecimal-shirt",
       gumroadId: "qfbzl",
-      images: ["hexadecimal-shirt-1.png"],
+      images: ["hexadecimal-shirt-1.webp"],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
@@ -168,7 +168,7 @@ export const products = [
     params: {
       slug: "little-vampire-onesie",
       gumroadId: "fuoifx",
-      images: ["little-vampire-onesie-1.png", "little-vampire-onesie-2.png"],
+      images: ["little-vampire-onesie-1.webp", "little-vampire-onesie-2.webp"],
       size: "#onesies",
       defaultVariant: 0,
       variants: ["3-6m", "6-12m", "12-18m", "18-24m"],
@@ -180,7 +180,7 @@ export const products = [
     params: {
       slug: "love-wins-shirt",
       gumroadId: "tjqktv",
-      images: ["love-wins-shirt-1.png"],
+      images: ["love-wins-shirt-1.webp"],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
@@ -192,7 +192,7 @@ export const products = [
     params: {
       slug: "minimalist-pullover",
       gumroadId: "syitd",
-      images: ["minimalist-pullover-1.png", "minimalist-pullover-2.png"],
+      images: ["minimalist-pullover-1.webp", "minimalist-pullover-2.webp"],
       size: "#pullovers",
       defaultVariant: 1,
       variants: ["S", "M", "L", "XL", "2XL", "3XL"],
@@ -205,10 +205,10 @@ export const products = [
       slug: "periodic-table-shirt",
       gumroadId: "qyxgtx",
       images: [
-        "periodic-table-shirt-1.png",
-        "periodic-table-shirt-2.png",
-        "periodic-table-shirt-3.png",
-        "periodic-table-shirt-4.png"
+        "periodic-table-shirt-1.webp",
+        "periodic-table-shirt-2.webp",
+        "periodic-table-shirt-3.webp",
+        "periodic-table-shirt-4.webp"
       ],
       size: "#shirts",
       defaultVariant: 2,
@@ -221,7 +221,7 @@ export const products = [
     params: {
       slug: "vampire-slayers-shirt",
       gumroadId: "dphwp",
-      images: ["vampire-slayers-shirt-1.png"],
+      images: ["vampire-slayers-shirt-1.webp"],
       size: "#shirts",
       defaultVariant: 2,
       variants: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],

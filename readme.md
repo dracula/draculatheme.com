@@ -2,7 +2,7 @@
 
 > The official source code for [draculatheme.com](https://draculatheme.com) - the home of the Dracula color scheme.
 
-[![Website Preview](./preview.png)](https://draculatheme.com)
+[![Website Preview](./preview.webp)](https://draculatheme.com)
 
 ## Quick Start
 
@@ -45,7 +45,7 @@ Join the Dracula community:
 
 ## Dracula Pro
 
-[![Dracula Pro](./.github/dracula-pro.png)](https://draculatheme.com/pro)
+[![Dracula Pro](./.github/dracula-pro.webp)](https://draculatheme.com/pro)
 
 ## License
 

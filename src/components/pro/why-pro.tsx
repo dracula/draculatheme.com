@@ -23,7 +23,7 @@ export const WhyPro = () => (
     </div>
     <div className="photo">
       <Image
-        src="/images/pro/why-dracula.jpg"
+        src="/images/pro/why-dracula.webp"
         alt="Zeno Rocha"
         width={462}
         height={408}

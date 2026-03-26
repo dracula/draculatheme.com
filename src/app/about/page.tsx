@@ -68,7 +68,7 @@ const AboutPage = () => (
           </p>
           <figure>
             <Image
-              src="/images/about.jpeg"
+              src="/images/about.webp"
               width={604}
               height={604}
               alt="Me and my friend Iliyan Peychev"

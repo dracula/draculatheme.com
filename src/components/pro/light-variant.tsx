@@ -17,7 +17,7 @@ export const LightVariant = () => (
     </div>
     <div className="preview">
       <Image
-        src="/images/pro/vscode/7.png"
+        src="/images/pro/vscode/7.webp"
         alt="VsCode with Alucard"
         width={1680}
         height={1008}

@@ -41,7 +41,7 @@ export const jsonLd = {
   keywords: ["color scheme", "theme", "developer tools", "syntax highlighting"],
   downloadUrl: "https://draculatheme.com",
   installUrl: "https://draculatheme.com",
-  screenshot: "https://draculatheme.com/images/og.png",
+  screenshot: "https://draculatheme.com/images/og.webp",
   featureList: [
     "Support for 400+ applications",
     "Color Scheme optimized for programming",

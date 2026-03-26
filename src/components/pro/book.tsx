@@ -5,7 +5,7 @@ export const Book = () => (
     <div className="book-wrapper">
       <div className="cover">
         <Image
-          src="/images/pro/ebook.jpg"
+          src="/images/pro/ebook.webp"
           alt="E-Book"
           width={224}
           height={466}
