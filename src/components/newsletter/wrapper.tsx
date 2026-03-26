@@ -14,7 +14,7 @@ const benefits = [
 
 const testimonials = [
   {
-    quote: "It's alive! My code finally looks as beautiful as my creation.",
+    quote: "It’s alive. My code finally looks as beautiful as my creation.",
     author: "Dr. Frankenstein"
   },
   {
@@ -97,16 +97,12 @@ export const NewsletterWrapper = () => {
         </div>
         <hr />
         <div className="testimonials-wrapper">
-          <h3>
-            <em>Check out these </em>
-            <br />
-            Testimonials
-          </h3>
+          <h3>What readers say</h3>
           <ul className="testimonials">
             {testimonials.map((testimonial) => (
               <li key={testimonial.author} className="testimonial">
                 <p className="quote">&quot;{testimonial.quote}&quot;</p>
-                <p className="author">— {testimonial.author}</p>
+                <p className="author">- {testimonial.author}</p>
               </li>
             ))}
           </ul>

@@ -38,7 +38,7 @@ export const generateMetadata = async (
   }
 
   const title = theme.title;
-  const description = `The most famous theme for ${theme.title}, and an ever-growing selection of apps!`;
+  const description = `The most famous theme for ${theme.title}, plus an ever-growing list of apps.`;
   const ogImage = "https://draculatheme.com/images/og.png";
 
   return {
@@ -104,7 +104,7 @@ const ThemePage = async (props: Props) => {
     "@type": "SoftwareApplication",
     name: `Dracula Theme for ${theme.title}`,
     alternateName: `Dracula for ${theme.title}`,
-    description: `The most famous theme for ${theme.title}, and an ever-growing selection of apps!`,
+    description: `The most famous theme for ${theme.title}, plus an ever-growing list of apps.`,
     url: `https://draculatheme.com/${theme.repo}`,
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "Code Editor Theme",
@@ -187,7 +187,7 @@ const ThemePage = async (props: Props) => {
             <div className="screenshot">
               <Image
                 src={screenshotUrl}
-                alt={`${theme.repo} - Theme Preview`}
+                alt={`${theme.repo} - Theme preview`}
                 quality={70}
                 width={800}
                 height={800}

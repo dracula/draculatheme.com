@@ -13,7 +13,7 @@ import { getMdxDataFromDirectory } from "@/utils/mdx";
 
 export const metadata: Metadata = {
   title: "Pro Changelog",
-  description: "Discover the latest updates and improvements for Dracula Pro.",
+  description: "See the latest updates and improvements for Dracula Pro.",
   alternates: {
     canonical: "/pro/changelog"
   }
@@ -37,8 +37,7 @@ const ChangelogPage = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Dracula Pro Changelog",
-    description:
-      "Discover the latest updates and improvements for Dracula Pro.",
+    description: "See the latest updates and improvements for Dracula Pro.",
     url: "https://draculatheme.com/pro/changelog",
     mainEntity: {
       "@type": "ItemList",

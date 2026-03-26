@@ -6,8 +6,8 @@ import { lessons } from "@/lib/pro/lessons";
 import { fetcher } from "@/utils/fetcher";
 
 export const metadata: Metadata = {
-  title: "Our Journey",
-  description: "Follow our journey and learn from our experiences.",
+  title: "Our journey",
+  description: "Follow our journey and learn from our work.",
   alternates: {
     canonical: "/pro/journey"
   }
@@ -24,7 +24,7 @@ const JourneyPage = async () => {
         </h1>
         <p>
           Dracula Pro reached <em>{sales.count}</em> sales to date.
-          <br /> Here are our insights reaching this milestone!
+          <br /> Here are the insights from reaching this milestone.
         </p>
       </div>
       <ul>

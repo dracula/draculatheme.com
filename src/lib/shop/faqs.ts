@@ -11,9 +11,9 @@ export const frequentlyAskedQuestions: FrequentlyAskedQuestion[] = [
       "Orders typically ship within 2-7 business days. You will receive an email with tracking information once your order has been dispatched. Delivery times vary depending on your location."
   },
   {
-    question: "Do you offer PPP or discounts?",
+    question: "Do you offer regional pricing or discounts?",
     answer:
-      "Purchasing Power Parity (PPP) pricing is available exclusively for digital products such as Dracula Pro and Dracula UI. Unfortunately, discounts cannot be applied to physical products due to fixed production costs and minimal profit margins."
+      "Regional pricing (purchasing power parity) is available for digital products such as Dracula Pro and Dracula UI. We can’t apply discounts to physical products because production costs are fixed and margins are slim."
   },
   {
     question: "Can I edit or cancel my order?",

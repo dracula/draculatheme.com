@@ -89,8 +89,8 @@ const HomePage = async () => {
           <div>
             <h2>Exploring the castle off-grid</h2>
             <p>
-              JavaScript is currently resting in its coffin, so enjoy this
-              bite-sized list of themes while the magic sleeps.
+              JavaScript is resting in its coffin. Enjoy this bite-sized list of
+              themes while the magic sleeps.
             </p>
           </div>
           <ul>

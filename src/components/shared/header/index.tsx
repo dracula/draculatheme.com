@@ -91,7 +91,7 @@ export const Header = () => {
               color="currentColor"
               fill="none"
             >
-              <title>Menu Icon</title>
+              <title>Menu icon</title>
               <path
                 d="M4 9L20 9"
                 stroke="currentColor"
@@ -107,7 +107,7 @@ export const Header = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="sr-only">Open Menu</span>
+            <span className="sr-only">Open menu</span>
           </button>
         </div>
         <nav className={isNavActive ? "active" : ""}>
@@ -145,7 +145,7 @@ export const Header = () => {
                 href="https://github.com/dracula/dracula-theme"
                 className="action stars"
               >
-                <GithubIcon /> <span className="star-count">+23k</span>
+                <GithubIcon /> <span className="star-count">+23K</span>
               </Link>
             </li>
             <li>

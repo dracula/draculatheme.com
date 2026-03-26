@@ -60,7 +60,7 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
 
   return (
     <>
-      <nav aria-label="Theme Filters">
+      <nav aria-label="Theme filters">
         <FilterSidebar
           searchQuery={searchQuery}
           selectedPlatform={selectedPlatform}

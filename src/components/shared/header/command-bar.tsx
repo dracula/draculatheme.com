@@ -370,7 +370,7 @@ export const CommandBar = () => {
               (hasSearchResults ? (
                 <ul>
                   <li>
-                    <h3 className="sr-only">Search Results</h3>
+                    <h3 className="sr-only">Search results</h3>
                     <ul>
                       {combinedResults.map((entry) => (
                         <li key={entry.key}>

@@ -2,8 +2,8 @@
   "promos": [
     {
       "name": "Dracula-o-ween 2025",
-      "displayName": "It's Dracula-o-ween! 40% off!",
-      "announcementText": "It's Dracula-o-ween! Dracula Pro with <strong>40% OFF</strong> until <strong>Oct 31 →</strong>",
+      "displayName": "Dracula-o-ween: 40% off",
+      "announcementText": "Dracula-o-ween. Dracula Pro is <strong>40% off</strong> until <strong>Oct 31 →</strong>",
       "discountPercentage": 40,
       "couponCode": "DRACULAOWEEN2025",
       "basePrice": "promoPrice",
@@ -12,8 +12,8 @@
     },
     {
       "name": "Black Friday 2025",
-      "displayName": "Black Friday! 20% off!",
-      "announcementText": "Black Friday Sale! <strong>20% OFF</strong> until <strong>Nov 28 →</strong>",
+      "displayName": "Black Friday: 20% off",
+      "announcementText": "Black Friday sale. Dracula Pro is <strong>20% off</strong> until <strong>Nov 28 →</strong>",
       "discountPercentage": 20,
       "couponCode": "BLACKFRIDAY2025",
       "basePrice": "promoPrice",
@@ -22,8 +22,8 @@
     },
     {
       "name": "Cyber Week",
-      "displayName": "The void calls! Pro with 10% off",
-      "announcementText": "The void calls! Pro with <strong>10% OFF</strong> →",
+      "displayName": "The void calls: 10% off",
+      "announcementText": "The void calls. Dracula Pro is <strong>10% off</strong> →",
       "discountPercentage": 10,
       "couponCode": "VOID10",
       "basePrice": "promoPrice",

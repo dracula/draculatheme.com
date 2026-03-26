@@ -40,7 +40,7 @@ export const Form = () => {
         type: "success",
         message:
           data.message ||
-          "Access granted! Check your email to accept the GitHub invitation."
+          "Access granted. Check your email to accept the GitHub invitation."
       });
     } catch (error) {
       setStatus({

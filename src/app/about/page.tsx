@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The origin story - Because every story opens the door to a new one.",
+    "The origin story. Because every story opens the door to a new one.",
   alternates: {
     canonical: "/about"
   }
@@ -143,8 +143,8 @@ const AboutPage = () => (
               Lucas de França
             </a>{" "}
             became Dracula&apos;s first dedicated contributor, bringing design,
-            front-end expertise, and illustration to the core team—a journey we
-            first shared in the{" "}
+            front-end expertise, and illustration to the core team. It’s a
+            journey we first shared in the{" "}
             <Link href="/blog/interview-with-lucas">welcome interview</Link>.
           </p>
           <p>
@@ -173,8 +173,7 @@ const AboutPage = () => (
           <i>having a good time I don&apos;t wanna stop at all 🎸</i>
         </p>
         <h2>
-          We&apos;re community-driven, passionately maintained, forever
-          evolving.
+          We&apos;re community-driven, lovingly maintained, always evolving.
         </h2>
       </div>
     </section>

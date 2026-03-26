@@ -117,7 +117,7 @@ export const OnThisPage = ({ headings }: OnThisPageProps) => {
   }
 
   return (
-    <nav className="on-this-page" aria-label="On this page navigation">
+    <nav className="on-this-page" aria-label="On this page">
       <h3>On this page</h3>
       <ul>
         {headings.map((heading) => (

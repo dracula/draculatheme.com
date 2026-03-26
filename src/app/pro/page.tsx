@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: "Be more productive with Dracula Pro",
   description:
-    "Dracula Pro is a color scheme and UI theme designed for your workflow. Created to be aesthetically pleasing while keeping you focused.",
+    "Dracula Pro is a color scheme and UI theme designed for your workflow. It looks great and helps you stay focused.",
   alternates: { canonical: "/pro" }
 };
 
@@ -65,7 +65,7 @@ const ProPage = async () => {
     name: "Dracula Pro",
     alternateName: "Dracula Pro",
     description:
-      "Dracula Pro is a color scheme and UI theme designed for your workflow. Created to be aesthetically pleasing while keeping you focused.",
+      "Dracula Pro is a color scheme and UI theme designed for your workflow. It looks great and helps you stay focused.",
     url: "https://draculatheme.com/pro",
     image: [
       "https://draculatheme.com/images/pro/vscode/1.png",
@@ -165,7 +165,7 @@ const ProPage = async () => {
           id="frequently-asked-questions"
           className="frequently-asked-questions"
         >
-          <h3>Frequently Asked Questions</h3>
+          <h3>Frequently asked questions</h3>
           <ul>
             {frequentlyAskedQuestions.map((questionItem) => (
               <li key={questionItem.question}>

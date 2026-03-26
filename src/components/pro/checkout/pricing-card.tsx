@@ -29,16 +29,16 @@ interface PricingCardProps {
 }
 
 const productFeatures = [
-  `${Object.keys(apps).length + 1} Themes`,
-  "6 Variants",
-  "4 Hand-picked Fonts",
-  "1 Productivity E-book",
-  "1 Bonus Screencast",
-  "Design Files",
+  `${Object.keys(apps).length + 1} themes`,
+  "6 variants",
+  "4 hand-picked fonts",
+  "1 productivity ebook",
+  "1 bonus screencast",
+  "Design files",
   "Wallpapers",
   "Constant updates",
   "Support included",
-  "Discord Community",
+  "Discord community",
   "License for 3 computers"
 ] as const;
 
@@ -72,7 +72,7 @@ export const PricingCard = ({
       <div className="header">
         <h3>Get Dracula Pro</h3>
         <p>
-          Join {formatSalesCount(salesData?.count)} creators using Dracula Pro
+          Join {formatSalesCount(salesData?.count)} creators who use Dracula Pro
           every day.
         </p>
       </div>
@@ -119,7 +119,7 @@ export const PricingCard = ({
                 type="checkbox"
                 checked={pppEnabled}
                 onChange={(e) => setPppEnabled(e.target.checked)}
-                aria-label="Apply regional discount"
+                aria-label="Apply regional pricing"
               />
               <span>
                 <b>Apply discount</b>
@@ -129,7 +129,7 @@ export const PricingCard = ({
         )}
       </div>
       <div className="info">
-        <p>30-day refund, no questions asked.</p>
+        <p>30-day refund. No questions asked.</p>
         <p>Support response time: up to 5 business days.</p>
         <p>
           <a href="mailto:support@draculatheme.com">Contact us</a> to get a{" "}

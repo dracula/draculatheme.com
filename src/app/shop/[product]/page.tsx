@@ -231,7 +231,7 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
           <ProductList products={relatedProducts.slice(0, 3)} />
         </div>
         <div className="frequently-asked-questions">
-          <h3>Frequently Asked Questions</h3>
+          <h3>Frequently asked questions</h3>
           <ul>
             {frequentlyAskedQuestions.map((questionItem) => (
               <li key={questionItem.question}>

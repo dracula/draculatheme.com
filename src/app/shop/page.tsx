@@ -51,7 +51,7 @@ const fetchProducts = async (
 export const metadata: Metadata = {
   title: "Shop",
   description:
-    "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
+    "Premium merch for modern vampires. Exclusive apparel and limited-run accessories for our community.",
   alternates: {
     canonical: "/shop"
   }
@@ -71,7 +71,7 @@ const ShopPage = async () => {
     "@type": "Store",
     name: "Dracula Theme Shop",
     description:
-      "Premium merch for modern vampires. A collection of exclusive apparel and limited-run accessories designed for our community.",
+      "Premium merch for modern vampires. Exclusive apparel and limited-run accessories for our community.",
     url: "https://draculatheme.com/shop",
     image: "https://draculatheme.com/images/og.png",
     brand: {

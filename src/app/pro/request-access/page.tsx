@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 import { Form } from "@/components/request-access/form";
 
 export const metadata: Metadata = {
-  title: "Request GitHub Access",
+  title: "Request GitHub access",
   description:
-    "Request access to Dracula Pro on GitHub and help shape the project.",
+    "Request access to Dracula Pro on GitHub and help shape what ships next.",
   alternates: {
     canonical: "/pro/request-access"
   }
@@ -22,10 +22,10 @@ const RequestAccessPage = () => (
         <div className="right" />
         <div className="bottom" />
       </div>
-      <h1>Request GitHub Access</h1>
+      <h1>Request GitHub access</h1>
       <Form />
       <div className="notes">
-        <p>Notes</p>
+        <p>Before you start</p>
         <ul>
           <li>Use the same email you used to buy Dracula Pro.</li>
           <li>

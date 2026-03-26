@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Contribute",
   description:
-    "Check this guide to understand how to contribute to Dracula, including the most commonly asked questions and the color palette.",
+    "Learn how to contribute to Dracula, including FAQs and the color palette.",
   alternates: {
     canonical: "/contribute"
   }
