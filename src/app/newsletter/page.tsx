@@ -3,6 +3,11 @@ import "./page.css";
 import type { Metadata } from "next";
 
 import { NewsletterWrapper } from "@/components/newsletter/wrapper";
+import { jsonLd } from "@/lib/json-ld/newsletter";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 
 export const metadata: Metadata = {
   title: "Newsletter",
@@ -13,6 +18,17 @@ export const metadata: Metadata = {
   }
 };
 
-const NewsletterPage = () => <NewsletterWrapper />;
+const structuredDataScriptId = createStructuredDataScriptId(
+  "newsletter",
+  "structured",
+  "data"
+);
+
+const NewsletterPage = () => (
+  <>
+    <NewsletterWrapper />
+    <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
+  </>
+);
 
 export default NewsletterPage;

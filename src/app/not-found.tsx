@@ -4,7 +4,11 @@ import { ColoredSquircleFlow } from "@/components/shared/colored-squircle-flow";
 
 export const metadata = {
   title: "Not found",
-  description: "The page you are looking for does not exist."
+  description: "The page you are looking for does not exist.",
+  robots: {
+    index: false,
+    follow: false
+  }
 };
 
 const NotFoundPage = () => (

@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { paths } from "@/lib/paths";
+import { products } from "@/lib/shop/products";
 
 const BASE_URL = "https://draculatheme.com";
 const CONTENT_DIRECTORY = path.join(process.cwd(), "./content/blog");
@@ -22,6 +23,8 @@ const getStaticRoutes = () => {
     "/about",
     "/blog",
     "/contribute",
+    "/newsletter",
+    "/open",
     "/spec",
     "/shop",
     "/pro",
@@ -31,6 +34,12 @@ const getStaticRoutes = () => {
   ];
 
   return routes.map((route) => createUrlEntry(`${BASE_URL}${route}`));
+};
+
+const getShopProducts = () => {
+  return products.map((product) =>
+    createUrlEntry(`${BASE_URL}/shop/${product.params.slug}`)
+  );
 };
 
 const getBlogPosts = async () => {
@@ -52,7 +61,9 @@ const Sitemap = async () => {
     getBlogPosts()
   ]);
 
-  return [...routes, ...themes, ...posts];
+  const shopProducts = getShopProducts();
+
+  return [...routes, ...themes, ...posts, ...shopProducts];
 };
 
 export default Sitemap;
