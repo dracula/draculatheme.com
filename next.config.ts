@@ -6,11 +6,16 @@ const nextConfig: NextConfig = {
     "/*": ["public/icons/unused/**"]
   },
   images: {
-    deviceSizes: [360, 480, 600, 720, 840, 960, 1080, 1200, 1440],
-    imageSizes: [24, 36, 48, 72, 96, 144, 192, 240, 288, 360],
+    deviceSizes: [360, 480, 600, 720, 840, 960, 1080, 1200, 1440, 1680],
+    imageSizes: [
+      24, 36, 48, 72, 96, 144, 192, 224, 240, 256, 288, 360, 448, 462, 512, 604,
+      924, 1208
+    ],
     formats: ["image/avif", "image/webp"],
-    qualities: [20, 30, 40, 50, 60, 70, 80, 90, 100],
     localPatterns: [
+      {
+        pathname: "/images/**"
+      },
       {
         pathname: "/api/theme-screenshot"
       }
