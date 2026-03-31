@@ -8,15 +8,17 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Request GitHub access",
-  description:
-    "Request access to Dracula Pro on GitHub and help shape what ships next.",
-  alternates: {
-    canonical: "/pro/request-access"
-  }
-};
+const title = "Request GitHub access";
+const description =
+  "Request access to Dracula Pro on GitHub and help shape what ships next.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/pro/request-access"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "pro",

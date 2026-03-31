@@ -20,6 +20,7 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
 export const generateStaticParams = async () => {
   return paths.map((item) => ({
@@ -39,31 +40,12 @@ export const generateMetadata = async (
 
   const title = theme.title;
   const description = `The most famous theme for ${theme.title}, plus an ever-growing list of apps.`;
-  const ogImage = "https://draculatheme.com/images/og.webp";
 
-  return {
+  return createMetadata({
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      url: `https://draculatheme.com/${theme.repo}`,
-      images: [
-        {
-          url: ogImage
-        }
-      ]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage]
-    },
-    alternates: {
-      canonical: `/${theme.repo}`
-    }
-  };
+    canonicalPath: `/${theme.repo}`
+  });
 };
 
 const ThemePage = async (props: Props) => {
@@ -91,13 +73,22 @@ const ThemePage = async (props: Props) => {
       : "main";
 
   const contributorsData = await fetcher(`/api/contributors?id=${theme.repo}`);
-  const contributors = filterBots(JSON.parse(contributorsData.contributors));
+  const parsedContributors: unknown =
+    typeof contributorsData.contributors === "string"
+      ? JSON.parse(contributorsData.contributors)
+      : contributorsData.contributors;
+
+  const contributors = filterBots(
+    Array.isArray(parsedContributors) ? parsedContributors : []
+  );
 
   const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
   const decodedBuffer = Buffer.from(installsResponse.install, "base64");
   const installsContent = decodedBuffer.toString("utf8");
 
-  const screenshotUrl = `https://raw.githubusercontent.com/dracula/${theme.repo}/${branch}/screenshot.png`;
+  const screenshotUrl = `/api/theme-screenshot?repository=${encodeURIComponent(
+    theme.repo
+  )}&branch=${encodeURIComponent(branch)}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -192,6 +183,7 @@ const ThemePage = async (props: Props) => {
                 width={800}
                 height={800}
                 sizes="(max-width: 48rem) 100vw, 50rem"
+                priority
               />
             </div>
             <article className="prose">

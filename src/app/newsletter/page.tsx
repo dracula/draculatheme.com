@@ -8,15 +8,17 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Newsletter",
-  description:
-    "Subscribe to Dracula’s newsletter for exclusive updates. Join 11,460 subscribers.",
-  alternates: {
-    canonical: "/newsletter"
-  }
-};
+const title = "Newsletter";
+const description =
+  "Subscribe to Dracula’s newsletter for exclusive updates. Join 11,460 subscribers.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/newsletter"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "newsletter",

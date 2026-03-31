@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     title: "Dracula Theme",
     description:
       "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
-    url: "https://draculatheme.com",
     siteName: "Dracula Theme",
     locale: "en_US",
     type: "website",
@@ -55,10 +54,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Dracula Theme",
-    card: "summary_large_image"
-  },
-  alternates: {
-    canonical: "/"
+    description:
+      "Dracula is a color scheme for code editors and terminal emulators such as Vim, Notepad++, iTerm, VSCode, Terminal.app, ZSH, and much more.",
+    card: "summary_large_image",
+    images: ["https://draculatheme.com/images/og.webp"],
+    site: "@draculatheme",
+    creator: "@draculatheme"
   }
 };
 

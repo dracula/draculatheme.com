@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 
 import { getBasePath } from "@/utils/environment";
 
-const callCacheRoute = async (path: string) => {
+const callCacheRoute = async (cacheRouteName: string) => {
   try {
     const baseUrl = getBasePath();
-    const url = `${baseUrl}/api/cache/${path}`;
+    const url = `${baseUrl}/api/cache/${cacheRouteName}`;
     const response = await fetch(url, {
       cache: "no-store"
     });
@@ -13,14 +13,14 @@ const callCacheRoute = async (path: string) => {
     const data = await response.json();
 
     return {
-      path,
+      path: cacheRouteName,
       status: response.status,
       success: response.ok,
       data
     };
   } catch (error: unknown) {
     return {
-      path,
+      path: cacheRouteName,
       status: 500,
       success: false,
       error: error instanceof Error ? error.message : String(error)
@@ -29,7 +29,13 @@ const callCacheRoute = async (path: string) => {
 };
 
 export const GET = async () => {
-  const routes = ["branches", "contributors", "installs", "views"];
+  const routes = [
+    "branches",
+    "contributors",
+    "installs",
+    "screenshots",
+    "views"
+  ];
 
   const results = await Promise.all(
     routes.map((route) => callCacheRoute(route))

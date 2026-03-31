@@ -10,6 +10,7 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
 interface Metric {
   label: string;
@@ -107,14 +108,15 @@ const MetricCard = ({ metric }: { metric: Metric }) => {
   return <div className="metric-card">{content}</div>;
 };
 
-export const metadata: Metadata = {
-  title: "Open Dashboard",
-  description:
-    "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.",
-  alternates: {
-    canonical: "/open"
-  }
-};
+const title = "Open Dashboard";
+const description =
+  "All our metrics and learnings are public. We believe in transparency and want to share our journey with you.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/open"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "open",

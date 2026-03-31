@@ -11,6 +11,7 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
 interface ProductParams {
@@ -48,14 +49,15 @@ const fetchProducts = async (
   return productsList;
 };
 
-export const metadata: Metadata = {
-  title: "Shop",
-  description:
-    "Premium merch for modern vampires. Exclusive apparel and limited-run accessories for our community.",
-  alternates: {
-    canonical: "/shop"
-  }
-};
+const title = "Shop";
+const description =
+  "Premium merch for modern vampires. Exclusive apparel and limited-run accessories for our community.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/shop"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "shop",

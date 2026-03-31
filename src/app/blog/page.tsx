@@ -11,6 +11,7 @@ import {
   JsonLdScript
 } from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory } from "@/utils/mdx";
+import { createMetadata } from "@/utils/metadata";
 
 interface PostCardProps {
   post: Post;
@@ -48,14 +49,15 @@ const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
   </li>
 );
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "“Truly there is no such thing as finality.” - Bram Stoker, Dracula",
-  alternates: {
-    canonical: "/blog"
-  }
-};
+const title = "Blog";
+const description =
+  "“Truly there is no such thing as finality.” - Bram Stoker, Dracula";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/blog"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "blog",

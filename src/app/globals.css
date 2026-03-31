@@ -42,6 +42,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
 
   overscroll-behavior: contain;
+
+  background-color: var(--background-color-primary);
   touch-action: manipulation;
 
   &[data-theme="light"] {

@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
     imageSizes: [24, 36, 48, 72, 96, 144, 192, 240, 288, 360],
     formats: ["image/avif", "image/webp"],
     qualities: [20, 30, 40, 50, 60, 70, 80, 90, 100],
+    localPatterns: [
+      {
+        pathname: "/api/theme-screenshot"
+      }
+    ],
     remotePatterns: [
       {
         hostname: "avatars.githubusercontent.com"

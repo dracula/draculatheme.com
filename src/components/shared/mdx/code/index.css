@@ -20,8 +20,12 @@ html {
   --sh-identifier: var(--code-foreground);
   --sh-jsxliterals: var(--purple);
   --sh-keyword: var(--pink);
+  --sh-null: var(--pink);
+  --sh-number: var(--orange);
+  --sh-break: var(--code-foreground);
   --sh-property: var(--cyan);
   --sh-sign: var(--code-foreground);
+  --sh-space: var(--code-foreground);
   --sh-string: var(--yellow);
 
   display: flex;
@@ -59,6 +63,20 @@ html {
         .sh__line {
           > .sh__token--identifier:first-child {
             --sh-identifier: var(--pink);
+          }
+
+          > .sh__token--space:first-child
+            + .sh__token--identifier
+            + .sh__token--sign {
+            color: var(--pink) !important;
+          }
+
+          > .sh__token--space:first-child
+            + .sh__token--identifier
+            + .sh__token--sign
+            + .sh__token--identifier
+            + .sh__token--sign {
+            color: var(--pink) !important;
           }
 
           .sh__token--keyword + .sh__token--sign {
@@ -119,18 +137,25 @@ html {
         }
       }
 
-      &.language-bash {
+      &.language-bash,
+      &.language-shell {
         .sh__line {
-          .sh__token--identifier:first-child {
+          .sh__token--class {
+            color: var(--code-foreground) !important;
+          }
+
+          .sh__token--string {
+            color: var(--code-foreground) !important;
+          }
+
+          .sh__token--comment {
+            color: var(--code-foreground) !important;
+          }
+
+          .sh__token--identifier:first-child,
+          .sh__token--space:first-child + .sh__token--identifier,
+          .sh__token--comment:first-child + .sh__token--identifier {
             --sh-identifier: var(--green);
-          }
-
-          .sh__token--identifier:has(+ .sh__token--sign + .sh__token--comment) {
-            --sh-identifier: var(--sh-comment);
-          }
-
-          .sh__token--sign:has(+ .sh__token--comment) {
-            --sh-sign: var(--sh-comment);
           }
         }
       }

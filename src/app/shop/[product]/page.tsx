@@ -14,6 +14,7 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
 interface ProductParams {
@@ -82,13 +83,12 @@ export const generateMetadata = async ({
   const title = product.name;
   const description = sanitizeDescription(product.description);
 
-  return {
+  return createMetadata({
     title,
     description,
-    alternates: {
-      canonical: `/shop/${query.slug}`
-    }
-  };
+    canonicalPath: `/shop/${query.slug}`,
+    imageUrl: `https://draculatheme.com/images/shop/${query.images[0]}`
+  });
 };
 
 const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {

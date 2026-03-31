@@ -21,13 +21,17 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Be more productive with Dracula Pro",
-  description:
-    "Dracula Pro is a color scheme and UI theme designed for your workflow. It looks great and helps you stay focused.",
-  alternates: { canonical: "/pro" }
-};
+const title = "Be more productive with Dracula Pro";
+const description =
+  "Dracula Pro is a color scheme and UI theme designed for your workflow. It looks great and helps you stay focused.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/pro"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "pro",

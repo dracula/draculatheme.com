@@ -18,6 +18,7 @@ import {
 } from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory, getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
+import { createMetadata } from "@/utils/metadata";
 
 export const generateStaticParams = async () => {
   const posts = getMdxDataFromDirectory<Post>("content/blog");
@@ -39,29 +40,13 @@ export const generateMetadata = async (
   const description = post.excerpt;
   const ogImage = post.cover;
 
-  return {
+  return createMetadata({
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      url: `https://draculatheme.com/blog/${params.slug}`,
-      images: [
-        {
-          url: ogImage
-        }
-      ]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage]
-    },
-    alternates: {
-      canonical: `/blog/${params.slug}`
-    }
-  };
+    canonicalPath: `/blog/${params.slug}`,
+    imageUrl: ogImage,
+    openGraphType: "article"
+  });
 };
 
 const BlogPostPage = async (props: Props) => {

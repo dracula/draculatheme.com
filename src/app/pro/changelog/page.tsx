@@ -10,14 +10,16 @@ import {
   JsonLdScript
 } from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory } from "@/utils/mdx";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Pro Changelog",
-  description: "See the latest updates and improvements for Dracula Pro.",
-  alternates: {
-    canonical: "/pro/changelog"
-  }
-};
+const title = "Pro Changelog";
+const description = "See the latest updates and improvements for Dracula Pro.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/pro/changelog"
+});
 
 interface ChangelogEntry extends BaseContent {
   authors?: string[];

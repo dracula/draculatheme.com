@@ -11,7 +11,7 @@ const octokit = new Octokit({
 
 export const GET = async () => {
   try {
-    const contributors: { [key: string]: string } = {};
+    const contributors: Record<string, string> = {};
 
     await Promise.all(
       paths.map(async (item) => {

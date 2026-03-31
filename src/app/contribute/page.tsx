@@ -13,15 +13,17 @@ import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Contribute",
-  description:
-    "Learn how to contribute to Dracula, including FAQs and the color palette.",
-  alternates: {
-    canonical: "/contribute"
-  }
-};
+const title = "Contribute";
+const description =
+  "Learn how to contribute to Dracula, including FAQs and the color palette.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/contribute"
+});
 
 const structuredDataScriptId = createStructuredDataScriptId(
   "contribute",

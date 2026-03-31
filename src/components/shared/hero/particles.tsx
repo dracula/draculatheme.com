@@ -42,6 +42,10 @@ type ParticlesProps = {
   ease?: number;
 };
 
+type MutableRef<Value> = {
+  current: Value;
+};
+
 const useGyroscopeSupport = () => {
   const [gyroscopeSupported, setGyroscopeSupported] = useState(false);
 
@@ -123,7 +127,7 @@ const useGyroscopeSupport = () => {
 
 const useGyroscopeMouseControl = (
   gyroscopeSupported: boolean,
-  mouseRef: React.MutableRefObject<{ x: number; y: number }>
+  mouseRef: MutableRef<{ x: number; y: number }>
 ) => {
   const gyroscope = useRef<GyroscopeSensor | null>(null);
 
@@ -432,7 +436,7 @@ const useParticlesCanvas = ({
 
 export const Particles = ({
   className = "",
-  quantity = 54,
+  quantity = 60,
   staticity = 60,
   ease = 60
 }: ParticlesProps) => {

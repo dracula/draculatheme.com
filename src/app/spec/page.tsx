@@ -12,14 +12,16 @@ import {
 } from "@/utils/json-ld-script";
 import { getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Spec",
-  description: "The official specification for the Dracula color scheme.",
-  alternates: {
-    canonical: "/spec"
-  }
-};
+const title = "Spec";
+const description = "The official specification for the Dracula color scheme.";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  canonicalPath: "/spec"
+});
 
 const SpecPage = () => {
   const structuredDataScriptId = createStructuredDataScriptId(

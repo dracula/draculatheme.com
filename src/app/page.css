@@ -268,6 +268,10 @@
       flex-direction: column;
     }
 
+    @media (max-width: 75rem) {
+      gap: 1.5em;
+    }
+
     @media (max-width: 60rem) {
       flex-direction: column;
 

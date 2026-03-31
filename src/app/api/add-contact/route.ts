@@ -37,7 +37,7 @@ export const POST = async (request: NextRequest) => {
       );
     }
 
-    return NextResponse.json({ message: "💜 Email added successfully." });
+    return NextResponse.json({ message: "Email added successfully." });
   } catch {
     return NextResponse.json(
       { error: "Internal server error." },

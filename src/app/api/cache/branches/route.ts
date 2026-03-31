@@ -8,30 +8,34 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
 });
 
-const fetchAndOrganize = async (
-  branches: Record<string, string>,
-  item: { repo: string }
-) => {
-  const key = item.repo;
-
+const fetchDefaultBranchForRepository = async (repository: string) => {
   const response = await octokit.rest.repos.get({
     owner: "dracula",
-    repo: key
+    repo: repository
   });
 
-  branches[key] = response.data.default_branch;
-  return branches[key];
+  return response.data.default_branch;
 };
 
 export const GET = async () => {
   try {
-    const branches = {};
+    const branchesByRepositoryEntries = await Promise.all(
+      paths.map(async (item) => {
+        const defaultBranch = await fetchDefaultBranchForRepository(item.repo);
+        return [item.repo, defaultBranch] as const;
+      })
+    );
 
-    await Promise.all(paths.map((item) => fetchAndOrganize(branches, item)));
+    const branchesByRepository: Record<string, string> = Object.fromEntries(
+      branchesByRepositoryEntries
+    );
 
-    await redis.hmset("branches", branches);
+    await redis.hmset("branches", branchesByRepository);
 
-    return NextResponse.json({ branches }, { status: 200 });
+    return NextResponse.json(
+      { branches: branchesByRepository },
+      { status: 200 }
+    );
   } catch (error: unknown) {
     return NextResponse.json(
       {
