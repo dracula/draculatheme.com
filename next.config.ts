@@ -3,14 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   outputFileTracingExcludes: {
-    "/*": [
-      "public/icons/unused/**",
-      "public/images/**/*.png",
-      "public/images/**/*.jpg",
-      "public/images/**/*.jpeg",
-      "public/images/**/*.gif",
-      "public/images/**/*.webp"
-    ]
+    "/*": ["public/icons/unused/**"]
   },
   images: {
     deviceSizes: [360, 480, 600, 720, 840, 960, 1080, 1200, 1440],
