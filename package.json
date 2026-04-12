@@ -10,7 +10,7 @@
     "lint": "echo \"\" && echo \"› eslint\" && eslint --fix . && echo \"› prettier\" && prettier --write --log-level warn . && echo \"✔ clean\" && echo \"\""
   },
   "dependencies": {
-    "next": "^16.2.1",
+    "next": "^16.2.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "resend": "^6.9.4"
