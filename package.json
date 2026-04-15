@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "next": "^16.2.3",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "resend": "^6.9.4"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "resend": "^6.11.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
@@ -25,24 +25,25 @@
     "countries-list": "^3.3.0",
     "date-fns": "^4.1.0",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.1",
+    "eslint-config-next": "^16.2.3",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globby": "^16.1.1",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "globby": "^16.2.0",
     "gray-matter": "^4.0.3",
     "ioredis": "^5.10.1",
     "motion": "^12.38.0",
     "next-mdx-remote": "^6.0.0",
     "nuqs": "^2.8.9",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "prettier-plugin-css-order": "^2.2.0",
     "reading-duration": "^1.1.2",
     "rehype-unwrap-images": "^1.0.0",
     "remark-gfm": "^4.0.1",
     "rss": "^1.2.2",
-    "sugar-high": "^1.0.0",
+    "sugar-high": "^1.1.0",
     "swr": "^2.4.1",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.2",
     "use-sound": "^5.0.0"
   }
 }
