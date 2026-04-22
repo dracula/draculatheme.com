@@ -18,7 +18,7 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 | Token            | Hex       | RGB           | HSL             | Usage                                 |
 | ---------------- | --------- | ------------- | --------------- | ------------------------------------- |
 | **Background**   | `#282A36` | 40, 42, 54    | 231°, 15%, 18%  | Main background                       |
-| **Current Line** | `#6272A4` | 98, 114, 164  | 225°, 27%, 51%  | Comments, disabled code               |
+| **Current Line** | `#6272A4` | 98, 114, 164  | 225°, 27%, 51%  | Semantic current line highlight token |
 | **Selection**    | `#44475A` | 68, 71, 90    | 232°, 14%, 31%  | Text selection                        |
 | **Foreground**   | `#F8F8F2` | 248, 248, 242 | 60°, 30%, 96%   | Default text                          |
 | **Comment**      | `#6272A4` | 98, 114, 164  | 225°, 27%, 51%  | Comments, disabled code               |
@@ -35,7 +35,7 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 | Token            | Hex       | RGB           | HSL            | Usage                                 |
 | ---------------- | --------- | ------------- | -------------- | ------------------------------------- |
 | **Background**   | `#FFFBEB` | 255, 251, 235 | 48°, 100%, 96% | Main background                       |
-| **Current Line** | `#6C664B` | 108, 102, 75  | 49°, 18%, 36%  | Line highlight                        |
+| **Current Line** | `#6C664B` | 108, 102, 75  | 49°, 18%, 36%  | Semantic current line highlight token |
 | **Selection**    | `#CFCFDE` | 207, 207, 222 | 240°, 18%, 84% | Text selection                        |
 | **Foreground**   | `#1F1F1F` | 31, 31, 31    | 0°, 0%, 12%    | Default text                          |
 | **Comment**      | `#6C664B` | 108, 102, 75  | 49°, 18%, 36%  | Comments, disabled code               |
@@ -46,6 +46,17 @@ Dracula is a comprehensive dark/light color scheme designed for code editors, te
 | **Cyan**         | `#036A96` | 3, 106, 150   | 198°, 96%, 30% | Classes, types, support, regex        |
 | **Purple**       | `#644AC9` | 100, 74, 201  | 252°, 54%, 54% | Instance reserved words, constants    |
 | **Pink**         | `#A3144D` | 163, 20, 77   | 336°, 78%, 36% | Keywords, storage types               |
+
+### Current Line Rendering
+
+`Current Line` and `Comment` intentionally share the same semantic color in both classic variants. In editors that support alpha blending, use the `Current Line` token as a translucent overlay on top of the background.
+
+If the target editor only supports an opaque (solid) line highlight, use these fallback line-highlight colors:
+
+- **Dracula Classic**: `#353747` (same fallback used in [dracula/cursor](https://github.com/dracula/cursor/blob/main/dev/src/classic.yml));
+- **Alucard Classic**: `#E2DECA` (same fallback used in [dracula/cursor](https://github.com/dracula/cursor/blob/main/dev/src/alucard.yml)).
+
+These fallback values are implementation guidance for line highlight rendering only. They do not add new syntax tokens to the official palette.
 
 ## ANSI Color Palette
 
