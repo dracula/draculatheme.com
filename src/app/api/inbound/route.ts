@@ -23,6 +23,91 @@ const getForwardAddresses = (toAddress: string): string[] => {
   ) as string[];
 };
 
+const escapeHtml = (value: string): string =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+
+const extractEmailAddress = (fromHeader: string): string => {
+  const trimmed = fromHeader.trim();
+  const angleMatch = /<([^>]+)>/.exec(trimmed);
+  return angleMatch?.[1]?.trim() ?? trimmed;
+};
+
+type ReceivingEmailFields = {
+  from: string;
+  reply_to: string[] | null;
+  message_id: string;
+  html: string | null;
+  text: string | null;
+};
+
+const buildForwardContent = (
+  email: ReceivingEmailFields,
+  destinationAddress: string
+): { html: string; text: string; replyTo: string } => {
+  const originalFrom = email.from?.trim() || "Unknown sender";
+  const replyToHeader =
+    email.reply_to
+      ?.map((address) => address.trim())
+      .filter(Boolean)
+      .join(", ") || null;
+
+  const lines = [
+    `Original sender: ${originalFrom}`,
+    `Delivered to: ${destinationAddress}`,
+    `Message-ID: ${email.message_id}`
+  ];
+
+  if (replyToHeader && replyToHeader !== originalFrom) {
+    lines.push(`Original reply-to: ${replyToHeader}`);
+  }
+
+  const rule = "-".repeat(60);
+  const textBanner = `${lines.join("\n")}\n${rule}\n\n`;
+  const htmlBanner = `<div>\n${lines
+    .map((line) => `<p>${escapeHtml(line)}</p>`)
+    .join("\n")}\n</div>\n`;
+
+  const trimmedText = email.text?.trim() ?? "";
+  const trimmedHtml = email.html?.trim() ?? "";
+
+  let bodyText: string;
+
+  if (trimmedText) {
+    bodyText = trimmedText;
+  } else if (trimmedHtml) {
+    bodyText = "(This message has no plain-text part; see the HTML version.)";
+  } else {
+    bodyText = "(No message body was available from the receiving gateway.)";
+  }
+
+  let bodyHtml: string;
+
+  if (trimmedHtml) {
+    bodyHtml = trimmedHtml;
+  } else if (trimmedText) {
+    bodyHtml = `<pre>${escapeHtml(trimmedText)}</pre>`;
+  } else {
+    bodyHtml =
+      "<p>No message body was available from the receiving gateway.</p>";
+  }
+
+  const replyCandidate = extractEmailAddress(originalFrom);
+  const replyTo =
+    replyCandidate.includes("@") && !replyCandidate.includes(" ")
+      ? replyCandidate
+      : "";
+
+  return {
+    html: htmlBanner + bodyHtml,
+    text: textBanner + bodyText,
+    replyTo
+  };
+};
+
 export const POST = async (request: NextRequest) => {
   try {
     const payload = await request.text();
@@ -76,12 +161,15 @@ export const POST = async (request: NextRequest) => {
         );
       }
 
+      const { html, text, replyTo } = buildForwardContent(email, toAddress);
+
       const { error: sendError } = await resend.emails.send({
         from: "forward@draculatheme.com",
         to: forwardAddresses,
-        subject: event.data.subject || email.subject || "",
-        html: email.html || "",
-        text: email.text || "",
+        subject: event.data.subject || email.subject || "(no subject)",
+        html,
+        text,
+        ...(replyTo ? { reply_to: replyTo } : {}),
         ...(attachments.length > 0 && { attachments })
       });
 
