@@ -66,10 +66,10 @@ const buildForwardContent = (
   }
 
   const rule = "-".repeat(60);
-  const textBanner = `${lines.join("\n")}\n${rule}\n\n`;
+  const textBanner = `${lines.join("\n\n")}\n\n${rule}\n\n\n`;
   const htmlBanner = `<div>\n${lines
     .map((line) => `<p>${escapeHtml(line)}</p>`)
-    .join("\n")}\n</div>\n`;
+    .join("\n")}\n</div>\n<hr>\n`;
 
   const trimmedText = email.text?.trim() ?? "";
   const trimmedHtml = email.html?.trim() ?? "";
@@ -102,7 +102,7 @@ const buildForwardContent = (
       : "";
 
   return {
-    html: htmlBanner + bodyHtml,
+    html: `${htmlBanner}\n${bodyHtml}`,
     text: textBanner + bodyText,
     replyTo
   };
@@ -169,7 +169,7 @@ export const POST = async (request: NextRequest) => {
         subject: event.data.subject || email.subject || "(no subject)",
         html,
         text,
-        ...(replyTo ? { reply_to: replyTo } : {}),
+        ...(replyTo ? { replyTo } : {}),
         ...(attachments.length > 0 && { attachments })
       });
 
