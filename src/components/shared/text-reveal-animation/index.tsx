@@ -2,7 +2,7 @@
 
 import "./index.css";
 
-import { domAnimation, LazyMotion, m, type Variants } from "framer-motion";
+import { domAnimation, LazyMotion, m, type Variants } from "motion/react";
 
 interface TextRevealAnimationProps {
   children: React.ReactNode;

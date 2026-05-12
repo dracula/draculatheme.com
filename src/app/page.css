@@ -178,11 +178,11 @@
           outline-style: solid;
           outline-width: 0.0625rem;
           background-color: var(--background-color-secondary);
-          animation-timeline: view();
           animation-duration: var(--duration-slow);
           animation-timing-function: var(--ease-elastic);
           animation-fill-mode: both;
           animation-name: items-fade-in;
+          animation-timeline: view();
           animation-range: entry 0 cover 30%;
           transition: outline-color var(--duration-standard) var(--ease-fluid);
           will-change: transform, opacity;

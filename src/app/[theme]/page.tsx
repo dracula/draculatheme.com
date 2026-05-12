@@ -64,31 +64,54 @@ const ThemePage = async (props: Props) => {
   );
   const isProApp = apps.some((app) => app.value === theme.repo);
 
-  const branchData = await fetcher(`/api/branches?id=${theme.repo}`);
-  const branchValue =
-    branchData.status === 200 ? branchData.branches : undefined;
-  const branch =
-    typeof branchValue === "string" && branchValue.trim().length > 0
-      ? branchValue
+  const defaultBranchResponse = await fetcher(`/api/branches?id=${theme.repo}`);
+  const defaultBranchNameFromCache =
+    defaultBranchResponse.status === 200
+      ? defaultBranchResponse.branches
+      : undefined;
+  const repositoryDefaultBranch =
+    typeof defaultBranchNameFromCache === "string" &&
+    defaultBranchNameFromCache.trim().length > 0
+      ? defaultBranchNameFromCache
       : "main";
 
-  const contributorsData = await fetcher(`/api/contributors?id=${theme.repo}`);
-  const parsedContributors: unknown =
-    typeof contributorsData.contributors === "string"
-      ? JSON.parse(contributorsData.contributors)
-      : contributorsData.contributors;
+  const contributorsResponse = await fetcher(
+    `/api/contributors?id=${theme.repo}`
+  );
+  const contributorsPayload: unknown =
+    typeof contributorsResponse.contributors === "string"
+      ? JSON.parse(contributorsResponse.contributors)
+      : contributorsResponse.contributors;
 
   const contributors = filterBots(
-    Array.isArray(parsedContributors) ? parsedContributors : []
+    Array.isArray(contributorsPayload) ? contributorsPayload : []
   );
 
-  const installsResponse = await fetcher(`/api/installs?id=${theme.repo}`);
-  const decodedBuffer = Buffer.from(installsResponse.install, "base64");
-  const installsContent = decodedBuffer.toString("utf8");
+  const installGuideResponse = await fetcher(`/api/installs?id=${theme.repo}`);
+  const installGuideBase64Payload = installGuideResponse.install;
+  const installGuideMarkdown = Buffer.from(
+    installGuideBase64Payload,
+    "base64"
+  ).toString("utf8");
 
-  const screenshotUrl = `/api/theme-screenshot?repository=${encodeURIComponent(
-    theme.repo
-  )}&branch=${encodeURIComponent(branch)}`;
+  const githubThemeScreenshotUrl = `https://raw.githubusercontent.com/dracula/${theme.repo}/${repositoryDefaultBranch}/screenshot.png`;
+  const githubThemeScreenshotHeadResponse = await fetch(
+    githubThemeScreenshotUrl,
+    {
+      method: "HEAD",
+      redirect: "follow",
+      cache: "no-store"
+    }
+  ).catch(() => null);
+  const hasGithubThemeScreenshot =
+    githubThemeScreenshotHeadResponse != null &&
+    githubThemeScreenshotHeadResponse.ok;
+  const themePreviewImageSrc = hasGithubThemeScreenshot
+    ? githubThemeScreenshotUrl
+    : "/images/dracula.webp";
+  const themePreviewImageStructuredDataUrl = hasGithubThemeScreenshot
+    ? githubThemeScreenshotUrl
+    : "https://draculatheme.com/images/dracula.webp";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -99,8 +122,8 @@ const ThemePage = async (props: Props) => {
     url: `https://draculatheme.com/${theme.repo}`,
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "Code Editor Theme",
-    screenshot: screenshotUrl,
-    downloadUrl: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`,
+    screenshot: themePreviewImageStructuredDataUrl,
+    downloadUrl: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${repositoryDefaultBranch}.zip`,
     installUrl: `https://draculatheme.com/${theme.repo}`,
     license: "https://github.com/dracula/dracula-theme/blob/main/LICENSE",
     keywords: [
@@ -151,7 +174,7 @@ const ThemePage = async (props: Props) => {
     potentialAction: [
       {
         "@type": "DownloadAction",
-        target: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`,
+        target: `https://github.com/dracula/${theme.repo}/archive/refs/heads/${repositoryDefaultBranch}.zip`,
         name: "Download Theme"
       },
       {
@@ -177,9 +200,8 @@ const ThemePage = async (props: Props) => {
           <div className="instructions">
             <div className="screenshot">
               <Image
-                src={screenshotUrl}
+                src={themePreviewImageSrc}
                 alt={`${theme.repo} - Theme preview`}
-                quality={70}
                 width={800}
                 height={800}
                 sizes="(max-width: 48rem) 100vw, 50rem"
@@ -188,9 +210,12 @@ const ThemePage = async (props: Props) => {
             </div>
             <article className="prose">
               <CustomMDX
-                source={installsContent}
+                source={installGuideMarkdown}
                 format="md"
-                repositoryContext={{ repo: theme.repo, branch }}
+                repositoryContext={{
+                  repo: theme.repo,
+                  branch: repositoryDefaultBranch
+                }}
               />
             </article>
           </div>
@@ -208,7 +233,7 @@ const ThemePage = async (props: Props) => {
               </li>
               <li>
                 <a
-                  href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${branch}.zip`}
+                  href={`https://github.com/dracula/${theme.repo}/archive/refs/heads/${repositoryDefaultBranch}.zip`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -229,7 +254,7 @@ const ThemePage = async (props: Props) => {
               </li>
               <li>
                 <a
-                  href={`https://github.com/dracula/${theme.repo}/edit/${branch}/README.md`}
+                  href={`https://github.com/dracula/${theme.repo}/edit/${repositoryDefaultBranch}/README.md`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -1,6 +1,6 @@
 "use client";
 
-import { domAnimation, LazyMotion, m } from "framer-motion";
+import { domAnimation, LazyMotion, m } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 

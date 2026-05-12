@@ -29,13 +29,7 @@ const callCacheRoute = async (cacheRouteName: string) => {
 };
 
 export const GET = async () => {
-  const routes = [
-    "branches",
-    "contributors",
-    "installs",
-    "screenshots",
-    "views"
-  ];
+  const routes = ["branches", "contributors", "installs", "views"];
 
   const results = await Promise.all(
     routes.map((route) => callCacheRoute(route))

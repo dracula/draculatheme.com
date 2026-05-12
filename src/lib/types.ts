@@ -32,7 +32,7 @@ type ProductVariantOption = {
   url?: string;
 };
 
-export type ProductVariant = {
+type ProductVariant = {
   title: string;
   options: ProductVariantOption[];
 };

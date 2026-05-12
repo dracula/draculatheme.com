@@ -15,9 +15,6 @@ const nextConfig: NextConfig = {
     localPatterns: [
       {
         pathname: "/images/**"
-      },
-      {
-        pathname: "/api/theme-screenshot"
       }
     ],
     remotePatterns: [

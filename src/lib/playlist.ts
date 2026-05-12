@@ -1,4 +1,4 @@
-export interface Character {
+interface Character {
   id: string;
   displayName: string;
   imageUrl: string;
