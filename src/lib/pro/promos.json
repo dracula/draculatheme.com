@@ -1,6 +1,16 @@
 {
   "promos": [
     {
+      "name": "Dracula Day 2026",
+      "displayName": "Dracula-Day: 26% off",
+      "announcementText": "It's Dracula Day. Dracula Pro is <strong>26% off</strong>, <strong>today only →</strong>",
+      "discountPercentage": 26,
+      "couponCode": "DRACULADAY26",
+      "basePrice": "promoPrice",
+      "startDate": "2026-05-26T00:00:00Z",
+      "endDate": "2026-05-26T23:59:59Z"
+    },
+    {
       "name": "Dracula-o-ween 2025",
       "displayName": "Dracula-o-ween: 40% off",
       "announcementText": "Dracula-o-ween. Dracula Pro is <strong>40% off</strong> until <strong>Oct 31 →</strong>",
