@@ -1,5 +1,17 @@
 import type { Author } from "./authors";
 
+export type PostCategory =
+  | "community"
+  | "guides"
+  | "launches"
+  | "milestones"
+  | "polls"
+  | "promos"
+  | "stories"
+  | "ui"
+  | "updates"
+  | (string & {});
+
 export interface BaseContent {
   slug: string;
   title: string;
@@ -10,6 +22,7 @@ export interface BaseContent {
 }
 
 export interface Post extends BaseContent {
+  category: PostCategory;
   cover: string;
   featured?: string | boolean;
   authors: Author["id"][];

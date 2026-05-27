@@ -1,9 +1,10 @@
 import "./page.css";
 
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 
+import { ContentWrapper } from "@/components/blog/content-wrapper";
 import { Hero } from "@/components/shared/hero";
 import type { Post } from "@/lib/markdown";
 import {
@@ -12,42 +13,6 @@ import {
 } from "@/utils/json-ld-script";
 import { getMdxDataFromDirectory } from "@/utils/mdx";
 import { createMetadata } from "@/utils/metadata";
-
-interface PostCardProps {
-  post: Post;
-  imageWidth: number;
-  imageHeight: number;
-  href: string;
-}
-
-const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
-  <li key={post.slug}>
-    <Link href={href}>
-      <div className="cover">
-        <Image
-          src={post.cover}
-          alt={post.title}
-          width={imageWidth}
-          height={imageHeight}
-        />
-      </div>
-      <div className="content">
-        <h3>{post.title}</h3>
-        <p>{post.excerpt}</p>
-        <p className="meta">
-          <span>{post.readingTime} read / Published in </span>
-          <time dateTime={post.date.createdAt}>
-            {new Date(post.date.createdAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric"
-            })}
-          </time>
-        </p>
-      </div>
-    </Link>
-  </li>
-);
 
 const title = "Blog";
 const description =
@@ -67,10 +32,6 @@ const structuredDataScriptId = createStructuredDataScriptId(
 
 const BlogPage = async () => {
   const allPosts = getMdxDataFromDirectory<Post>("content/blog");
-  const featured = allPosts
-    .filter((post: Post) => post.featured === "true" || post.featured === true)
-    .slice(0, 2);
-  const posts = allPosts.filter((post: Post) => !featured.includes(post));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -163,32 +124,11 @@ const BlogPage = async () => {
   return (
     <>
       <Hero />
-      <section className="container blog">
-        {featured.length > 0 && (
-          <ul>
-            {featured.map((post: Post) => (
-              <PostCard
-                key={post.slug}
-                post={post}
-                imageWidth={1200}
-                imageHeight={678}
-                href={`/blog/${post.slug}`}
-              />
-            ))}
-          </ul>
-        )}
-        <ul>
-          {posts.map((post: Post) => (
-            <PostCard
-              key={post.slug}
-              post={post}
-              imageWidth={1200}
-              imageHeight={678}
-              href={`/blog/${post.slug}`}
-            />
-          ))}
-        </ul>
-      </section>
+      <Suspense>
+        <NuqsAdapter>
+          <ContentWrapper posts={allPosts} />
+        </NuqsAdapter>
+      </Suspense>
       <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
     </>
   );

@@ -1,0 +1,70 @@
+---
+title: "Notepad++, zsh fixes, and 4 new themes"
+excerpt: "A fresh Notepad++ rebuild, Zsh fixes, new community themes & more!"
+category: "updates"
+date:
+  createdAt: "2026-04-30"
+  updatedAt: "2026-05-12"
+cover: "/images/blog/lost.webp"
+authors: ["zeno", "luxa"]
+---
+
+Hey vampires 👋🏻
+
+We have some _behind-the-scenes_ updates on what we have been building across Dracula and Dracula Pro.
+
+## zsh
+
+We fixed several **zsh** bugs, including a tricky one where `$DRACULA_ARROW_ICON` could be interpreted as a CLI flag when its value started with `-`.
+
+This is now handled correctly with `print -P --`.
+
+```zsh
+❯ print -P "--> "
+print: bad option: ->
+❯ print -P -- "--> "
+-->
+```
+
+## Notepad++ (Open Source & Pro)
+
+We rebuilt the [**Notepad++**](/notepad-plus-plus) theme **from scratch**.
+
+Instead of maintaining XML manually, we now use a TypeScript build system that generates it programmatically. Contributors can [edit a theme definition](https://github.com/dracula/notepad-plus-plus/blob/main/themes/theme-types.ts) and simply run `npm run build`.
+
+On top of that, we shipped:
+
+- Full language coverage with **14 previously missing lexers**.
+- Colors aligned with the official Dracula specification.
+- Font settings removed from the XML, so users can configure fonts themselves.
+- Fixes for the **Rust lexer** and the current line color.
+
+## New on Dracula Pro
+
+We are rolling out two betas in our private dedicated organization:
+
+- [**Notepad++**](https://github.com/dracula-pro/notepad-plus-plus)
+- [**JetBrains**](https://github.com/dracula-pro/jetbrains)
+
+Notepad++ documentation is now fully updated, including readmes, installation instructions, and related files.
+
+> Big thanks to Kyle for the JetBrains contribution and for helping us expand Dracula Pro in the right direction.
+
+## New on Dracula
+
+This week, 4 new themes have joined the Dracula clan:
+
+- [**MacDown**](/macdown-css): an open-source **Markdown editor** for macOS. This one is for the rendered Markdown preview.
+- [**Markdown CSS**](/markdown-css): a polished **stylesheet** for Markdown documents.
+- [**Dracula CSS**](/dracula-css): a reusable **CSS theme foundation** for Dracula styling.
+- [**Signal Desktop**](/signal-desktop): a secure **messaging app** for desktop.
+
+> Big thanks to [@jamesfishwick](https://github.com/jamesfishwick) for the three great additions.
+
+[![MacDown CSS theme](/images/blog/notepad-plus-plus-rebuild-zsh-fixes-and-4-new-themes-a.webp)](/macdown-css)
+
+## The end
+
+**Q:** What's a vampire's least favorite song?
+
+**A:** "_You are my sunshine._" 🫡

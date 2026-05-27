@@ -4,8 +4,15 @@
         <description><![CDATA[“Truly there is no such thing as finality.” - Bram Stoker, Dracula]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 12 May 2026 14:54:11 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 27 May 2026 19:22:04 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Notepad++, zsh fixes, and 4 new themes]]></title>
+            <description><![CDATA[A fresh Notepad++ rebuild, Zsh fixes, new community themes & more!]]></description>
+            <link>https://draculatheme.com/blog/notepad-plus-plus-rebuild-zsh-fixes-and-4-new-themes</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/notepad-plus-plus-rebuild-zsh-fixes-and-4-new-themes</guid>
+            <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[From terminal slideshows to network monitoring]]></title>
             <description><![CDATA[4 new additions to the Dracula clan!]]></description>
