@@ -10,23 +10,23 @@
     "lint": "eslint --fix . && prettier --write --log-level warn ."
   },
   "dependencies": {
-    "next": "^16.2.6",
-    "react-dom": "^19.2.6",
-    "react": "^19.2.6",
+    "next": "16.2.6",
+    "react-dom": "19.2.4",
+    "react": "19.2.4",
     "resend": "^6.12.3"
   },
   "devDependencies": {
     "@octokit/rest": "^22.0.1",
-    "@types/node": "^25",
+    "@types/node": "^20",
     "@types/react-dom": "^19",
     "@types/react": "^19",
     "airtable": "^0.12.2",
     "countries-list": "^3.3.0",
     "date-fns": "^4.1.0",
-    "eslint-config-next": "^16.2.6",
+    "eslint-config-next": "16.2.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-simple-import-sort": "^13.0.0",
-    "eslint": "^9.39.4",
+    "eslint": "^9",
     "globby": "^16.2.0",
     "gray-matter": "^4.0.3",
     "ioredis": "^5.10.1",
@@ -42,7 +42,7 @@
     "rss": "^1.2.2",
     "sugar-high": "^1.1.0",
     "swr": "^2.4.1",
-    "typescript": "^6.0.3",
+    "typescript": "^5",
     "use-sound": "^5.0.0"
   }
 }

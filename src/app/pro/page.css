@@ -5,7 +5,13 @@ html {
         .used-by {
           .logos-cloud {
             a {
-              mix-blend-mode: difference;
+              .logo-light-mode {
+                display: block;
+              }
+
+              .logo-dark-mode {
+                display: none;
+              }
             }
           }
         }
@@ -143,6 +149,14 @@ html {
             height: auto;
             object-fit: contain;
             object-position: center;
+          }
+
+          .logo-light-mode {
+            display: none;
+          }
+
+          .logo-dark-mode {
+            display: block;
           }
         }
       }

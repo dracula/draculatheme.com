@@ -70,6 +70,7 @@ html {
       justify-content: center;
       width: 11.25rem;
       height: 11.25rem;
+      transform: translateZ(0);
       border-radius: 100%;
 
       img,

@@ -10,7 +10,15 @@ export const UsedBy = () => (
         <li key={company.id}>
           <a href={company.href} target="_blank" rel="noopener noreferrer">
             <Image
-              src={company.src}
+              src={`/images/pro/companys/black/${company.id}.svg`}
+              className="logo-light-mode"
+              width={100}
+              height={100}
+              alt={`${company.alt} Logo`}
+            />
+            <Image
+              src={`/images/pro/companys/white/${company.id}.svg`}
+              className="logo-dark-mode"
               width={100}
               height={100}
               alt={`${company.alt} Logo`}
