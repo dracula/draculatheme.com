@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "name": "draculatheme.com",
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+  }
+}

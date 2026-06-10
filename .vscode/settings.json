@@ -1,5 +1,10 @@
 {
-  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.configPath": "./.prettierrc"
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "prettier.configPath": ".prettierrc",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
