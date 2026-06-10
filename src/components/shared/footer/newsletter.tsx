@@ -37,6 +37,9 @@ export const Newsletter = () => {
           <input
             type="email"
             autoComplete="email"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
             name="email"
             value={email}
             disabled={isSubscribed || isSubmitting}

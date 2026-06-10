@@ -51,24 +51,6 @@ Don't add values to boolean attributes:
 <input type="text" disabled />
 ```
 
-### Attribute Order
-
-1. `key`
-2. `ref`
-3. `className`
-4. `id`
-5. `data-[name]`
-6. Event handlers (`onClick`, `onChange`, etc.)
-7. Other props (`src`, `type`, `href`, `value`, etc.)
-8. `aria-[name]`, `role`
-
-### ClassName Value Order
-
-1. Layout and positioning classes
-2. Component classes
-3. State classes
-4. Utility classes
-
 ## CSS and Styling
 
 ### Naming

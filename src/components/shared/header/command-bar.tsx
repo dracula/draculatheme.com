@@ -358,6 +358,9 @@ export const CommandBar = () => {
                 ref={inputRef}
                 type="search"
                 autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
                 name="search"
                 value={searchQuery}
                 placeholder={`Search over ${paths.length} themes`}

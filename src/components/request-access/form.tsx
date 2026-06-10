@@ -59,6 +59,9 @@ export const Form = () => {
         <input
           type="email"
           autoComplete="email"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
           id="email"
           name="email"
           value={email}
