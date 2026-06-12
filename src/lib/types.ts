@@ -20,6 +20,7 @@ export type Path = {
   legacyViews?: number;
   views?: number;
   teamPick?: boolean;
+  hasAlucard?: boolean;
 };
 
 export type PathItem = (typeof paths)[number];

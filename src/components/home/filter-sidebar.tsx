@@ -3,7 +3,7 @@ import useSound from "use-sound";
 import { SearchIcon } from "@/icons/search";
 import { TickIcon } from "@/icons/tick";
 import { paths } from "@/lib/paths";
-import { categories, platforms } from "@/utils/home/filter";
+import { categories, platforms, variants } from "@/utils/home/filter";
 
 interface FilterOption {
   name: string;
@@ -14,9 +14,11 @@ interface FilterSidebarProps {
   searchQuery: string;
   selectedPlatform: string;
   selectedCategory: string;
+  selectedVariant: string;
   onSearchChange: (value: string) => void;
   onPlatformChange: (value: string) => void;
   onCategoryChange: (value: string) => void;
+  onVariantChange: (value: string) => void;
 }
 
 interface FilterGroupProps {
@@ -67,9 +69,11 @@ export const FilterSidebar = ({
   searchQuery,
   selectedPlatform,
   selectedCategory,
+  selectedVariant,
   onSearchChange,
   onPlatformChange,
-  onCategoryChange
+  onCategoryChange,
+  onVariantChange
 }: FilterSidebarProps) => {
   const [play] = useSound("/sounds/click.mp3");
 
@@ -107,6 +111,14 @@ export const FilterSidebar = ({
         inputName="categories"
         currentValue={selectedCategory}
         onValueChange={onCategoryChange}
+        onInteraction={handleInteraction}
+      />
+      <FilterGroup
+        title="Variants"
+        filterOptions={variants}
+        inputName="variants"
+        currentValue={selectedVariant}
+        onValueChange={onVariantChange}
         onInteraction={handleInteraction}
       />
     </>

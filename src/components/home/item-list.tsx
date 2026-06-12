@@ -42,7 +42,7 @@ export const ItemList = ({ items }: ItemListProps) => (
     ) : (
       <li className="empty">
         <h3>No themes found</h3>
-        <p>Try a different keyword, platform, or category.</p>
+        <p>Try a different keyword, platform, category, or variant.</p>
       </li>
     )}
   </ul>

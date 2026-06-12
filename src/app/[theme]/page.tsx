@@ -7,12 +7,14 @@ import { notFound } from "next/navigation";
 import { Hero } from "@/components/shared/hero";
 import { CustomMDX } from "@/components/shared/mdx";
 import { ProBanner } from "@/components/shared/pro-banner";
+import { ScreenshotGallery } from "@/components/theme/screenshot-gallery";
 import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";
 import { EditIcon } from "@/icons/edit";
 import { GithubIcon } from "@/icons/github";
 import { paths } from "@/lib/paths";
 import { apps } from "@/lib/pro/apps";
+import { getThemeScreenshots } from "@/lib/theme/screenshots";
 import type { Props } from "@/lib/types";
 import { filterBots } from "@/utils/contributors";
 import { fetcher } from "@/utils/fetcher";
@@ -94,23 +96,14 @@ const ThemePage = async (props: Props) => {
     "base64"
   ).toString("utf8");
 
-  const githubThemeScreenshotUrl = `https://raw.githubusercontent.com/dracula/${theme.repo}/${repositoryDefaultBranch}/screenshot.png`;
-  const githubThemeScreenshotHeadResponse = await fetch(
-    githubThemeScreenshotUrl,
-    {
-      method: "HEAD",
-      redirect: "follow",
-      cache: "no-store"
-    }
-  ).catch(() => null);
-  const hasGithubThemeScreenshot =
-    githubThemeScreenshotHeadResponse != null &&
-    githubThemeScreenshotHeadResponse.ok;
-  const themePreviewImageSrc = hasGithubThemeScreenshot
-    ? githubThemeScreenshotUrl
-    : "/images/dracula.webp";
-  const themePreviewImageStructuredDataUrl = hasGithubThemeScreenshot
-    ? githubThemeScreenshotUrl
+  const themeScreenshots = await getThemeScreenshots(
+    theme.repo,
+    repositoryDefaultBranch
+  );
+  const themePreviewImageStructuredDataUrl = themeScreenshots[0].startsWith(
+    "http"
+  )
+    ? themeScreenshots[0]
     : "https://draculatheme.com/images/dracula.webp";
 
   const jsonLd = {
@@ -199,13 +192,9 @@ const ThemePage = async (props: Props) => {
         <div className="wrapper">
           <div className="instructions">
             <div className="screenshot">
-              <Image
-                src={themePreviewImageSrc}
-                alt={`${theme.repo} - Theme preview`}
-                width={800}
-                height={800}
-                sizes="(max-width: 48rem) 100vw, 50rem"
-                priority
+              <ScreenshotGallery
+                title={theme.title}
+                images={themeScreenshots}
               />
             </div>
             <article className="prose">

@@ -18,6 +18,12 @@ export const categories = [
   { name: "terminal", label: "Terminals" }
 ];
 
+export const variants = [
+  { name: "all", label: "All variants" },
+  { name: "dark", label: "Dark (Dracula)" },
+  { name: "light", label: "Light (Alucard)" }
+];
+
 const categoryImportance: Record<string, number> = {
   editor: 1,
   terminal: 2,
@@ -64,4 +70,16 @@ export const matchesCategory = (item: PathItem, selected: string): boolean => {
   }
 
   return item.categories.includes(selected);
+};
+
+export const matchesVariant = (item: PathItem, selected: string): boolean => {
+  if (selected === "all") {
+    return true;
+  }
+
+  if (selected === "light") {
+    return item.hasAlucard === true;
+  }
+
+  return item.hasAlucard !== true;
 };

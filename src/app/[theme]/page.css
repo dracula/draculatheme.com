@@ -21,20 +21,17 @@
           align-items: center;
           justify-content: center;
           width: 100%;
-          max-height: 54vh;
           padding: 1.5rem;
-          overflow: hidden;
           corner-shape: squircle;
           border-radius: var(--radius-lg);
           background-color: var(--background-color-primary);
 
-          img {
+          .image-gallery {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            corner-shape: squircle;
-            border-radius: var(--radius-sm);
+
+            .main {
+              max-height: 54vh;
+            }
           }
         }
       }

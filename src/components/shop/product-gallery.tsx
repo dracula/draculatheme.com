@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
-
+import {
+  ImageGallery,
+  type ImageGalleryItem
+} from "@/components/shared/image-gallery";
 import type { Product } from "@/lib/types";
 
 interface ProductGalleryProps {
@@ -11,37 +12,16 @@ interface ProductGalleryProps {
 }
 
 export const ProductGallery = ({ product, images }: ProductGalleryProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const galleryImages: ImageGalleryItem[] = images.map((image, index) => ({
+    src: `/images/shop/${image}`,
+    alt: index === 0 ? product.name : `${product.name} - view ${index + 1}`
+  }));
 
   return (
-    <div className="gallery">
-      <div className="main">
-        <Image
-          src={`/images/shop/${images[selectedIndex]}`}
-          alt={product.name}
-          width={576}
-          height={528}
-          quality={100}
-          priority
-        />
-      </div>
-      <div className="thumbs">
-        {images.map((image, index) => (
-          <button
-            key={image}
-            type="button"
-            className={index === selectedIndex ? "active" : ""}
-            onClick={() => setSelectedIndex(index)}
-          >
-            <Image
-              src={`/images/shop/${image}`}
-              alt={`${product.name} - view ${index + 1}`}
-              width={144}
-              height={132}
-            />
-          </button>
-        ))}
-      </div>
-    </div>
+    <ImageGallery
+      images={galleryImages}
+      sizes="(max-width: 48rem) 100vw, 36rem"
+      priority
+    />
   );
 };

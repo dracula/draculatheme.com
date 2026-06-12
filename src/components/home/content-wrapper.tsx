@@ -7,7 +7,8 @@ import {
   getCategoryImportance,
   matchesCategory,
   matchesPlatform,
-  matchesSearch
+  matchesSearch,
+  matchesVariant
 } from "@/utils/home/filter";
 
 import { ProBanner } from "../shared/pro-banner";
@@ -16,13 +17,19 @@ import { ItemList } from "./item-list";
 
 export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
   const [
-    { searchQuery, platforms: selectedPlatform, categories: selectedCategory },
+    {
+      searchQuery,
+      platforms: selectedPlatform,
+      categories: selectedCategory,
+      variants: selectedVariant
+    },
     setQueryStates
   ] = useQueryStates(
     {
       searchQuery: parseAsString.withDefault(""),
       platforms: parseAsString.withDefault("all"),
-      categories: parseAsString.withDefault("all")
+      categories: parseAsString.withDefault("all"),
+      variants: parseAsString.withDefault("all")
     },
     { history: "replace" }
   );
@@ -32,7 +39,8 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
       (item) =>
         matchesSearch(item, searchQuery) &&
         matchesPlatform(item, selectedPlatform) &&
-        matchesCategory(item, selectedCategory)
+        matchesCategory(item, selectedCategory) &&
+        matchesVariant(item, selectedVariant)
     )
     .sort((a, b) => {
       if (a.teamPick && !b.teamPick) {
@@ -65,9 +73,11 @@ export const ContentWrapper = ({ paths }: { paths: Path[] }) => {
           searchQuery={searchQuery}
           selectedPlatform={selectedPlatform}
           selectedCategory={selectedCategory}
+          selectedVariant={selectedVariant}
           onSearchChange={(v) => setQueryStates({ searchQuery: v })}
           onPlatformChange={(v) => setQueryStates({ platforms: v })}
           onCategoryChange={(v) => setQueryStates({ categories: v })}
+          onVariantChange={(v) => setQueryStates({ variants: v })}
         />
         <ProBanner />
       </nav>
