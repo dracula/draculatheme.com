@@ -54,6 +54,7 @@ export const paths: Path[] = [
   { repo: "chatgpt", title: "ChatGPT", icon: "used/pack-12/devil.svg", synonyms: ["ai", "openai", "gpt"], categories: ["service"], legacyViews: 0 },
   { repo: "chatterino", title: "Chatterino", icon: "used/pack-3/mushroom.svg", synonyms: ["twitch", "chat"], categories: ["social"], legacyViews: 0 },
   { repo: "cider", title: "Cider", icon: "used/pack-1/costume.svg", synonyms: ["apple music"], categories: ["other"], legacyViews: 732 },
+  { repo: "claude-code", title: "Claude Code", icon: "used/pack-8/space-robot.svg", synonyms: ["ai", "coding agent", "anthropic", "claude"], categories: ["other"], legacyViews: 0, teamPick: true },
   { repo: "cli-visualizer", title: "Cli-Visualizer", icon: "used/pack-2/puzzle.svg", synonyms: ["audio visualizer"], categories: ["terminal"], legacyViews: 0 },
   { repo: "clone-hero", title: "Clone Hero", icon: "used/pack-2/game-controller-variant-five.svg", synonyms: ["guitar hero"], categories: ["other"], legacyViews: 840 },
   { repo: "cmder", title: "Cmder", icon: "used/pack-1/night.svg", platform: ["windows"], synonyms: ["console emulator"], categories: ["terminal"], legacyViews: 17970 },
