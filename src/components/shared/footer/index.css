@@ -10,6 +10,10 @@ footer {
     font-size: var(--font-size-body);
   }
 
+  p {
+    text-wrap: balance;
+  }
+
   hr {
     max-width: var(--page-max-width);
   }
@@ -27,12 +31,14 @@ footer {
       position: relative;
 
       &:first-child {
+        display: flex;
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: 0;
 
         div {
           width: fit-content;
+          max-width: 16.25rem;
         }
       }
 
@@ -59,6 +65,7 @@ footer {
       &:focus,
       &:hover {
         color: var(--color-display);
+        text-decoration-color: var(--color-display);
       }
     }
 
@@ -179,6 +186,7 @@ footer {
             display: block;
             min-height: 1.875rem;
             color: var(--color-caption);
+            text-wrap: nowrap;
             transition: color var(--duration-standard) var(--ease-fluid);
 
             &:focus,
@@ -204,6 +212,7 @@ footer {
         &:last-child {
           flex: none;
           width: 100%;
+          max-width: 100%;
 
           div {
             width: 100%;
