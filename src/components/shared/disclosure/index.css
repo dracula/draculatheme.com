@@ -60,5 +60,21 @@ details {
     width: 100%;
     padding: 1.125rem 1.5rem;
     line-height: 1.8;
+
+    a {
+      color: var(--color-body);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: var(--color-caption);
+      text-underline-offset: 0.1875rem;
+      transition: color var(--duration-standard) var(--ease-fluid);
+
+      &:focus,
+      &:hover {
+        color: var(--color-display);
+        text-decoration-color: var(--color-display);
+      }
+    }
   }
 }
