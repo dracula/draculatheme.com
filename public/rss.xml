@@ -4,8 +4,15 @@
         <description><![CDATA[“Truly there is no such thing as finality.” - Bram Stoker, Dracula]]></description>
         <link>https://draculatheme.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 30 Jun 2026 13:47:53 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 20 Jul 2026 19:37:17 GMT</lastBuildDate>
         <atom:link href="https://draculatheme.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[14 Best Fonts for Programming in 2026]]></title>
+            <description><![CDATA[Here are 14 modern variable monospace families, with download links and notes on what makes each one stand out.]]></description>
+            <link>https://draculatheme.com/blog/best-fonts-for-programming-2026</link>
+            <guid isPermaLink="true">https://draculatheme.com/blog/best-fonts-for-programming-2026</guid>
+            <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[From self-hosted services to CLI tools]]></title>
             <description><![CDATA[9 new additions to the Dracula clan!]]></description>
