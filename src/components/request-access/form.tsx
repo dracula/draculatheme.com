@@ -15,7 +15,7 @@ export const Form = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<Status>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);

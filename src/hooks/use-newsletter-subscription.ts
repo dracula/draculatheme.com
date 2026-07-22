@@ -13,7 +13,7 @@ type SubscriptionState =
 interface UseNewsletterSubscriptionReturn {
   email: string;
   handleEmailChange: (value: string) => void;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  handleSubmit: (event: React.SubmitEvent<HTMLFormElement>) => Promise<void>;
   isSubmitting: boolean;
   isSubscribed: boolean;
   responseMessage: string | null;
@@ -39,7 +39,7 @@ export const useNewsletterSubscription =
     );
 
     const handleSubmit = useCallback(
-      async (event: React.FormEvent<HTMLFormElement>) => {
+      async (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
         setSubscriptionState({ status: "pending" });
 

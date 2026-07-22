@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     padding-top: 4rem;
     gap: 3.75rem;
     transition: opacity var(--duration-standard) var(--ease-fluid);
@@ -15,7 +15,7 @@
     .content {
       display: flex;
       flex-direction: column;
-      max-width: 42rem;
+      max-width: 66%;
 
       h1 {
         width: 100%;
@@ -95,7 +95,20 @@
       }
 
       .pro-call-to-action {
+        display: none;
         margin-top: 1.875rem;
+      }
+    }
+
+    @media (max-width: 60rem) {
+      padding-top: 2rem;
+
+      .content {
+        max-width: 100%;
+
+        .pro-call-to-action {
+          display: block;
+        }
       }
     }
   }

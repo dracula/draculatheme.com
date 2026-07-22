@@ -2,8 +2,11 @@
   display: flex;
   position: sticky;
   top: 7rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   flex-direction: column;
-  width: 12rem;
+  max-width: 16rem;
   height: fit-content;
   overflow-x: visible;
   gap: 0.375rem;

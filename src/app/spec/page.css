@@ -5,7 +5,7 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     padding-top: 3.75rem;
     gap: 3.75rem;
     transition: opacity var(--duration-standard) var(--ease-fluid);
@@ -15,7 +15,7 @@
     }
 
     .prose {
-      max-width: 42rem;
+      max-width: 66%;
     }
 
     @media (max-width: 60rem) {

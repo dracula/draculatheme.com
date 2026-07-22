@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 
 import type { Heading } from "@/lib/types";
 
+import { ProBanner } from "../../pro-banner";
+
 interface OnThisPageProps {
   headings: Heading[];
 }
@@ -132,6 +134,7 @@ export const OnThisPage = ({ headings }: OnThisPageProps) => {
           </li>
         ))}
       </ul>
+      <ProBanner />
     </nav>
   );
 };

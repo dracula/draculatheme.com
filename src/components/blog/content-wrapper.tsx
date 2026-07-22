@@ -79,43 +79,10 @@ export const ContentWrapper = ({ posts }: { posts: Post[] }) => {
   );
 
   return (
-    <>
-      <section className="container blog">
-        {postsToHighlight.length > 0 && (
-          <ul className="highlighted-posts">
-            {postsToHighlight.map((post) => (
-              <PostCard
-                key={post.slug}
-                post={post}
-                imageWidth={1200}
-                imageHeight={678}
-                href={`/blog/${post.slug}`}
-              />
-            ))}
-          </ul>
-        )}
-        <nav aria-label="Blog filters">
-          <fieldset>
-            <legend className="sr-only">Category</legend>
-            {blogCategoryOptions.map((blogCategory) => (
-              <label key={blogCategory.name} tabIndex={0}>
-                <input
-                  type="radio"
-                  name="category"
-                  value={blogCategory.name}
-                  checked={selectedCategory === blogCategory.name}
-                  onChange={() =>
-                    setQueryStates({ category: blogCategory.name })
-                  }
-                />
-                <TickIcon />
-                <span>{blogCategory.label}</span>
-              </label>
-            ))}
-          </fieldset>
-        </nav>
-        <ul className="regular-posts">
-          {regularPosts.map((post) => (
+    <section className="container blog">
+      {postsToHighlight.length > 0 && (
+        <ul className="highlighted-posts">
+          {postsToHighlight.map((post) => (
             <PostCard
               key={post.slug}
               post={post}
@@ -125,7 +92,36 @@ export const ContentWrapper = ({ posts }: { posts: Post[] }) => {
             />
           ))}
         </ul>
-      </section>
-    </>
+      )}
+      <nav aria-label="Blog filters">
+        <fieldset>
+          <legend className="sr-only">Category</legend>
+          {blogCategoryOptions.map((blogCategory) => (
+            <label key={blogCategory.name}>
+              <input
+                type="radio"
+                name="category"
+                value={blogCategory.name}
+                checked={selectedCategory === blogCategory.name}
+                onChange={() => setQueryStates({ category: blogCategory.name })}
+              />
+              <TickIcon />
+              <span>{blogCategory.label}</span>
+            </label>
+          ))}
+        </fieldset>
+      </nav>
+      <ul className="regular-posts">
+        {regularPosts.map((post) => (
+          <PostCard
+            key={post.slug}
+            post={post}
+            imageWidth={1200}
+            imageHeight={678}
+            href={`/blog/${post.slug}`}
+          />
+        ))}
+      </ul>
+    </section>
   );
 };

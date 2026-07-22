@@ -31,17 +31,18 @@ const parseInlineEmphasis = (text: string): ReactNode => {
   const segments: ReactNode[] = [];
   const emphasisPattern = /<em>([\s\S]*?)<\/em>/gi;
   let lastIndex = 0;
-  let match: RegExpExecArray | null;
   let emphasisIndex = 0;
 
-  while ((match = emphasisPattern.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      segments.push(text.slice(lastIndex, match.index));
+  for (const match of text.matchAll(emphasisPattern)) {
+    const matchIndex = match.index ?? 0;
+
+    if (matchIndex > lastIndex) {
+      segments.push(text.slice(lastIndex, matchIndex));
     }
 
     segments.push(<em key={`emphasis-${emphasisIndex}`}>{match[1]}</em>);
     emphasisIndex += 1;
-    lastIndex = emphasisPattern.lastIndex;
+    lastIndex = matchIndex + match[0].length;
   }
 
   if (lastIndex < text.length) {
