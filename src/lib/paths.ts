@@ -260,7 +260,7 @@ export const paths: Path[] = [
   { repo: "mutt", title: "Mutt", icon: "used/pack-3/tree.svg", synonyms: ["email", "mail client"], categories: ["terminal"], legacyViews: 10013 },
   { repo: "mysql-workbench", title: "MySQL Workbench", icon: "used/pack-9/scarecrow.svg", synonyms: ["mysql", "database", "sql"], categories: ["ide"], legacyViews: 8728 },
   { repo: "ncspot", title: "ncspot", icon: "used/pack-7/tombstone.svg", synonyms: ["spotify", "music player"], categories: ["terminal"], legacyViews: 837 },
-  { repo: "neiki-editor", title: "Neiki Editor", icon: "used/pack-11/scientist.svg", synonyms: ["wysiwyg", "rich text", "html"], categories: ["editor"], legacyViews: 0 },
+  { repo: "neiki-editor", title: "Neiki's Editor", icon: "used/pack-11/scientist.svg", synonyms: ["wysiwyg", "rich text", "html"], categories: ["editor"], legacyViews: 0 },
   { repo: "netbeans", title: "Netbeans", icon: "used/pack-7/scarecrow.svg", synonyms: ["java", "ide"], categories: ["ide"], legacyViews: 126987 },
   { repo: "new-tabs", title: "New Tabs", icon: "used/pack-5/magician-hat.svg", synonyms: ["browser extension"], categories: ["other"], legacyViews: 9 },
   { repo: "newsboat", title: "Newsboat", icon: "used/pack-7/vampire.svg", synonyms: ["rss", "feed reader"], categories: ["terminal"], legacyViews: 0 },
