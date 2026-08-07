@@ -30,7 +30,7 @@ interface PricingCardProps {
 
 const productFeatures = [
   `${Object.keys(apps).length + 1} themes`,
-  "6 variants",
+  "7 variants",
   "4 hand-picked fonts",
   "1 productivity ebook",
   "1 bonus screencast",
@@ -39,6 +39,7 @@ const productFeatures = [
   "Constant updates",
   "Support included",
   "Discord community",
+  "Private GitHub access",
   "License for 3 computers"
 ] as const;
 

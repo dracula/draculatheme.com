@@ -7,7 +7,7 @@ export const Palette = () => (
         geometrically.
       </p>
       <p>
-        In 1704, He observed the relationships between different wavelengths of
+        In 1704, he observed the relationships between different wavelengths of
         light and arranged them as a <em>Hue circle</em>, identifying different
         patterns that emerged from this representation. This would become the
         basis of modern color theory.

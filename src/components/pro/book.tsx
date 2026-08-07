@@ -35,9 +35,9 @@ export const Book = () => (
         href="https://14habits.com"
         target="_blank"
         className="action primary call-to-action"
-        rel="noreferrer"
+        rel="noopener"
       >
-        <span>Get a Free Chapter</span>
+        <span>Get a free chapter</span>
       </a>
     </div>
   </div>

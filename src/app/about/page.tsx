@@ -40,20 +40,20 @@ const AboutPage = () => (
             started to feel very sick. I could barely move, but I had to take a
             plane to speak at another conference in Spain. In the middle of the
             flight, I called the flight attendant and said I needed help. The{" "}
-            <em>airplane landed, and I left there in an ambulance.</em>
+            <em>airplane landed, and I left from there in an ambulance.</em>
           </p>
           <p>
             I went to the hospital, took some blood tests, and started to feel
-            better again. I thought it was just a food poisoning, and I was
-            ready to leave that place.{" "}
+            better again. I thought it was just food poisoning, and I was ready
+            to leave that place.{" "}
             <em>
               They got the results and took me straight to the emergency room.
             </em>{" "}
-            I was having an episode of Pancreatitis.
+            I was having an episode of pancreatitis.
           </p>
           <p>
             Two days later, I was still at the hospital. My blood results were
-            pretty bad, they didn&apos;t allow me to leave, so I asked a
+            pretty bad, so they didn&apos;t allow me to leave. I asked a
             co-worker to bring my laptop. At least with the internet, I could{" "}
             <a
               href="https://twitter.com/zenorocha/status/390120821257039872"
@@ -65,7 +65,7 @@ const AboutPage = () => (
             .
           </p>
           <p>
-            One day I left my room to get some water.{" "}
+            One day, I left my room to get some water.{" "}
             <em>When I got back, my computer was stolen.</em>
           </p>
           <figure>
@@ -105,7 +105,7 @@ const AboutPage = () => (
             <a
               href="https://github.com/dracula/dracula-theme/commit/7e4d17ade6a54b7b7d8037a0d2160a293f17ef5c"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               My first commit
             </a>{" "}
@@ -115,7 +115,7 @@ const AboutPage = () => (
             <a
               href="https://twitter.com/zenorocha/status/395216794249486336"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               I tweeted about it
             </a>{" "}
@@ -128,24 +128,20 @@ const AboutPage = () => (
           <p>
             I stayed in that hospital bed for 3 weeks. I can&apos;t even
             describe the feeling of being sick in a foreign country, alone and
-            away from your family.
+            away from my family.
           </p>
-          <p>Thanks Dracula, for distracting me when I needed the most.</p>
+          <p>Thanks, Dracula, for distracting me when I needed it the most.</p>
         </div>
       </article>
       <article className="prose">
         <time dateTime="2022-04-13">April 13th, 2022</time>
         <div className="content">
           <p>
-            <a
-              href="https://luxonauta.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://luxonauta.com" target="_blank" rel="noopener">
               Lucas de França
             </a>{" "}
             became Dracula&apos;s first dedicated contributor, bringing design,
-            front-end expertise, and illustration to the core team. It’s a
+            front-end expertise, and illustration to the core team. It&apos;s a
             journey we first shared in the{" "}
             <Link href="/blog/interview-with-lucas">welcome interview</Link>.
           </p>

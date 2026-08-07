@@ -110,9 +110,9 @@ For terminal applications, Dracula also defines ANSI colors.
 
 | Context                           | Hex       | RGB        | HSL            |
 | --------------------------------- | --------- | ---------- | -------------- |
-| **Floating interactive elements** | `#343746` | 52, 55, 70 | 225°, 15%, 24% |
+| **Floating interactive elements** | `#343746` | 52, 55, 70 | 230°, 15%, 24% |
 | **Background Lighter**            | `#424450` | 66, 68, 80 | 231°, 10%, 29% |
-| **Background Light**              | `#343746` | 52, 55, 70 | 225°, 15%, 24% |
+| **Background Light**              | `#343746` | 52, 55, 70 | 230°, 15%, 24% |
 | **Background Dark**               | `#21222C` | 33, 34, 44 | 235°, 14%, 15% |
 | **Background Darker**             | `#191A21` | 25, 26, 33 | 232°, 14%, 11% |
 
@@ -142,7 +142,7 @@ UI-specific colors for interactive elements, borders, and indicators. **Do not u
 
 ### Token Classification
 
-Following _TextMate_ scoping conventions for consistent highlighting across editors.
+This specification follows _TextMate_ scoping conventions for consistent highlighting across editors.
 
 #### Primary Tokens
 
@@ -181,7 +181,7 @@ Following _TextMate_ scoping conventions for consistent highlighting across edit
 **Comments** → `Comment`
 
 - Single-Line: `//`, `#`, `--`;
-- Multi-Line: `/* */, <!-- -->`;
+- Multi-Line: `/* */`, `<!-- -->`;
 - Documentation Blocks;
 - Annotations and Decorators.
 
@@ -242,7 +242,7 @@ body {
 
 1. **Braces and Parentheses**: Should match the foreground color of the currently scoped position:
    - `Purple` for headings;
-   - `Foreground` for regular text.
+   - `Foreground` for regular text;
 
 2. **Instance Reserved Words**: Words that interact with the instance (`this`, `self`, `super`) must be highlighted in Purple with Italic styling (see token classification above);
 
@@ -254,7 +254,7 @@ body {
 
 - Maintain **4.5:1 minimum contrast ratio** (WCAG 2.1 Level AA);
 - Ensure color is not the sole means of conveying information;
-- Test with common color vision deficiencies.
+- Test against common color vision deficiencies.
 
 ### Consistency Requirements
 
@@ -297,7 +297,7 @@ const Dracula = new Vampire({
 });
 ```
 
-> Our [official Template](https://github.com/dracula/template) for submissions includes a [sample folder](https://github.com/dracula/template/tree/main/sample) containing numerous code examples in various languages to assist with theme development.
+> Our [official template](https://github.com/dracula/template) for submissions includes a [sample folder](https://github.com/dracula/template/tree/main/sample) containing numerous code examples in various languages to assist with theme development.
 
 ## UI Design Guidelines
 
@@ -373,7 +373,7 @@ That's why the community is essential for this project to keep evolving.
      - [`README.md`](https://github.com/dracula/template/blob/main/README.md): introduction and guide for GitHub users;
      - [`screenshot.png`](https://github.com/dracula/template/blob/main/screenshot.png): displays your Dracula-themed theme on the website;
      - [`INSTALL.md`](https://github.com/dracula/template/blob/main/INSTALL.md): installation instructions to display on the website;
-     - [`sample`](https://github.com/dracula/template/blob/main/sample/): code samples in various languages to aid theme creation. (_Consider removing this folder before submission._);
+     - [`sample`](https://github.com/dracula/template/blob/main/sample/): code samples in various languages to aid theme creation. (_Consider removing this folder before submission._)
    - [Submit an issue](https://github.com/dracula/dracula-theme/issues/new) with repository link.
 
 4. **Organization transfer**
@@ -392,4 +392,4 @@ That's why the community is essential for this project to keep evolving.
 
 _This specification is the authoritative reference for Dracula Theme implementations. For updates and community resources, visit [draculatheme.com](https://draculatheme.com)._
 
-> See something that could be improved in this documentation? Contribute by [editing this page on GitHub.](https://github.com/dracula/draculatheme.com/blob/main/content/spec.mdx)
+> See something that could be improved in this documentation? Contribute by [editing this page on GitHub](https://github.com/dracula/draculatheme.com/blob/main/content/spec.mdx).

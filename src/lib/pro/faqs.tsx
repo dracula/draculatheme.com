@@ -7,9 +7,9 @@ export const frequentlyAskedQuestions: FrequentlyAskedQuestion[] = [
     question: "Do you offer student discounts?",
     answer: (
       <p>
-        We don&apos;t offer specific group discounts, but we provide Purchase
-        Parity Power for 160+ countries with exclusive pricing based on local
-        currency and economic conditions.
+        We don&apos;t offer specific group discounts, but we provide
+        Purchasing Power Parity for 160+ countries with exclusive pricing
+        based on local currency and economic conditions.
       </p>
     )
   },

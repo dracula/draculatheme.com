@@ -82,19 +82,11 @@ export const Footer = () => (
         <p>The most famous theme ever created and available everywhere.</p>
         <p>
           Made with 💜 by{" "}
-          <a
-            href="https://zenorocha.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://zenorocha.com" target="_blank" rel="noopener">
             Zeno
           </a>{" "}
           and{" "}
-          <a
-            href="https://luxonauta.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://luxonauta.com" target="_blank" rel="noopener">
             Luxonauta
           </a>
         </p>

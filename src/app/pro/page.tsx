@@ -39,6 +39,12 @@ const structuredDataScriptId = createStructuredDataScriptId(
   "data"
 );
 
+const getPriceValidUntil = (): string => {
+  const validUntil = new Date();
+  validUntil.setUTCFullYear(validUntil.getUTCFullYear() + 1);
+  return validUntil.toISOString().split("T")[0];
+};
+
 const isReview = (value: unknown): value is Review => {
   if (typeof value !== "object" || value === null) {
     return false;
@@ -95,10 +101,10 @@ const ProPage = async () => {
     offers: {
       "@type": "Offer",
       name: "Dracula Pro License",
-      price: "70",
+      price: "79",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      priceValidUntil: "2025-12-31",
+      priceValidUntil: getPriceValidUntil(),
       seller: {
         "@type": "Organization",
         name: "Dracula Theme",
