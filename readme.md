@@ -45,7 +45,7 @@ Join the Dracula community:
 
 ## Dracula Pro
 
-[![Dracula Pro](./.github/dracula-pro.webp)](https://draculatheme.com/pro)
+[![Dracula Pro](./.github/dracula-pro.png)](https://draculatheme.com/pro)
 
 ## License
 
