@@ -65,34 +65,6 @@ html {
             --sh-identifier: var(--pink);
           }
 
-          > .sh__token--space:first-child
-            + .sh__token--identifier
-            + .sh__token--sign {
-            color: var(--pink) !important;
-          }
-
-          > .sh__token--space:first-child
-            + .sh__token--identifier
-            + .sh__token--sign
-            + .sh__token--identifier
-            + .sh__token--sign {
-            color: var(--pink) !important;
-          }
-
-          .sh__token--keyword + .sh__token--sign {
-            --sh-keyword: var(--pink);
-            --sh-sign: var(--pink);
-          }
-
-          .sh__token--keyword
-            + .sh__token--sign
-            + .sh__token--sign
-            + .sh__token--sign
-            + .sh__token--identifier
-            + .sh__token--sign {
-            --sh-sign: var(--pink);
-          }
-
           &:has(> .sh__token--sign:first-child + .sh__token--identifier) {
             > .sh__token--sign:first-child {
               --sh-sign: var(--green);
@@ -103,36 +75,12 @@ html {
             }
           }
 
-          &:has(> .sh__token--space:first-child) {
-            > .sh__token--identifier:nth-child(2),
-            > .sh__token--identifier:nth-child(2) + .sh__token--sign,
-            > .sh__token--identifier:nth-child(2)
-              + .sh__token--sign
-              + .sh__token--identifier {
-              --sh-identifier: var(--cyan);
-              --sh-sign: var(--cyan);
-            }
-
-            > .sh__token--identifier:nth-child(2)
-              + .sh__token--sign:has(+ .sh__token--space) {
-              --sh-sign: var(--pink);
-            }
+          .sh__token--property + .sh__token--sign {
+            --sh-sign: var(--pink);
           }
 
-          &:has(.sh__token--space + .sh__token--sign + .sh__token--class) {
-            .sh__token--sign {
-              &:not(:nth-last-of-type(2)) {
-                --sh-sign: var(--purple);
-              }
-            }
-          }
-
-          &:not(:has(> .sh__token--space:first-child)):not(
-              :has(> .sh__token--sign:first-child)
-            ) {
-            > .sh__token--identifier:first-child {
-              --sh-identifier: var(--pink);
-            }
+          .sh__token--color {
+            --sh-string: var(--purple);
           }
         }
       }
