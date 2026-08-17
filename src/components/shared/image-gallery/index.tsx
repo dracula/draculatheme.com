@@ -16,6 +16,8 @@ interface ImageGalleryProps {
   priority?: boolean;
 }
 
+const isRemoteImage = (src: string) => src.startsWith("http");
+
 export const ImageGallery = ({
   images,
   sizes = "(max-width: 48rem) 100vw, 36rem",
@@ -40,6 +42,7 @@ export const ImageGallery = ({
           sizes={sizes}
           quality={100}
           priority={priority}
+          unoptimized={isRemoteImage(selectedImage.src)}
         />
       </div>
       {hasMultipleImages && (
@@ -59,6 +62,7 @@ export const ImageGallery = ({
                 alt=""
                 width={144}
                 height={132}
+                unoptimized={isRemoteImage(image.src)}
                 aria-hidden
               />
             </button>

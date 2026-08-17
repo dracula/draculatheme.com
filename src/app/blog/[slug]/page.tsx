@@ -170,6 +170,7 @@ const BlogPostPage = async (props: Props) => {
                       width={40}
                       height={40}
                       alt={`${author?.name}'s Avatar`}
+                      unoptimized
                     />
                   </div>
                   <span>{author?.name}</span>

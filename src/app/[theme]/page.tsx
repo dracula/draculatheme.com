@@ -16,7 +16,7 @@ import { paths } from "@/lib/paths";
 import { apps } from "@/lib/pro/apps";
 import { getThemeScreenshots } from "@/lib/theme/screenshots";
 import type { Props } from "@/lib/types";
-import { filterBots } from "@/utils/contributors";
+import { filterBots, getContributorAvatarUrl } from "@/utils/contributors";
 import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
@@ -271,10 +271,14 @@ const ThemePage = async (props: Props) => {
                       <div>
                         {contributor.avatar_url && (
                           <Image
-                            src={contributor.avatar_url}
+                            src={getContributorAvatarUrl(
+                              contributor.avatar_url,
+                              24
+                            )}
                             width={24}
                             height={24}
                             alt={contributor.login}
+                            unoptimized
                           />
                         )}
                       </div>

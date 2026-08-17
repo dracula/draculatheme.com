@@ -7,7 +7,7 @@ import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
 import { jsonLd } from "@/lib/json-ld/contribute";
-import { filterBots } from "@/utils/contributors";
+import { filterBots, getContributorAvatarUrl } from "@/utils/contributors";
 import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
@@ -108,10 +108,14 @@ const ContributePage = async () => {
                     <div className="avatar">
                       {contributor.avatar_url && (
                         <Image
-                          src={contributor.avatar_url}
-                          width={24}
-                          height={24}
+                          src={getContributorAvatarUrl(
+                            contributor.avatar_url,
+                            30
+                          )}
+                          width={30}
+                          height={30}
                           alt={contributor.login}
+                          unoptimized
                         />
                       )}
                     </div>

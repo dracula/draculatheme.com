@@ -27,3 +27,9 @@ export const filterBots = <T extends Contributor>(contributors: T[]): T[] => {
       !!contributor.login && !isBot(contributor)
   );
 };
+
+export const getContributorAvatarUrl = (avatarUrl: string, size: number) => {
+  const url = new URL(avatarUrl);
+  url.searchParams.set("s", String(size * 2));
+  return url.toString();
+};

@@ -14,26 +14,6 @@ const nextConfig: NextConfig = {
       {
         pathname: "/images/**"
       }
-    ],
-    remotePatterns: [
-      {
-        hostname: "avatars.githubusercontent.com"
-      },
-      {
-        hostname: "github.com"
-      },
-      {
-        hostname: "raw.githubusercontent.com"
-      },
-      {
-        hostname: "user-images.githubusercontent.com"
-      },
-      {
-        hostname: "img.shields.io"
-      },
-      {
-        hostname: "i.imgur.com"
-      }
     ]
   },
   async redirects() {

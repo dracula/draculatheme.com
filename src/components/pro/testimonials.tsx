@@ -82,6 +82,7 @@ const Avatar = ({ github, name }: { github: string; name: string }) => {
       height={140}
       alt={name}
       onError={() => setHasError(true)}
+      unoptimized
     />
   );
 };

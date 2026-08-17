@@ -107,6 +107,7 @@ export const createImageComponent = ({
           alt={alt ?? ""}
           sizes={props.sizes ?? "(max-width: 1200px) 100vw, 1200px"}
           quality={props.quality ?? 80}
+          unoptimized={props.unoptimized ?? isExternalUrl(resolvedSrc)}
         />
         {showCaption && alt && <figcaption>{alt}</figcaption>}
       </figure>
