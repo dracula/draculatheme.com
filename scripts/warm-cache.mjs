@@ -8,7 +8,8 @@ import pLimit from "p-limit";
 const twelveHoursInMilliseconds = 12 * 60 * 60 * 1000;
 const gumroadProProductId = "tPfIDt";
 const plausibleApiBaseUrl = "https://plausible.io/api/v1/stats/aggregate";
-const shouldForceWarm = process.argv.includes("--force");
+const shouldForceWarm =
+  process.argv.includes("--force") || process.env.FORCE_WARM_CACHE === "1";
 
 const loadEnvironmentFile = () => {
   try {
