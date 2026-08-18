@@ -5,7 +5,9 @@ import Link from "next/link";
 
 import { Hero } from "@/components/shared/hero";
 import { ArrowUpRight } from "@/icons/arrow-up-right";
-import { fetcher } from "@/utils/fetcher";
+import { getGithubStars } from "@/lib/data/github-stars";
+import { getSales } from "@/lib/data/sales";
+import { getTotalViews } from "@/lib/data/views";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -21,7 +23,6 @@ interface Metric {
 const constants = {
   subscribers: 11460,
   legacyViews: 10166543,
-  proProductId: "tPfIDt",
   links: {
     github: "https://github.com/dracula/dracula-theme",
     subscribers: "https://draculatheme.com/pro/journey",
@@ -35,16 +36,16 @@ const formatNumber = (value: number): string => {
 
 const fetchMetricData = async () => {
   try {
-    const [githubReq, proSalesReq, plausibleReq] = await Promise.all([
-      fetcher("/api/github-stars"),
-      fetcher(`/api/sales?product=${constants.proProductId}`),
-      fetcher("/api/views")
+    const [githubStars, sales, totalViews] = await Promise.all([
+      getGithubStars(),
+      getSales(),
+      getTotalViews()
     ]);
 
     return {
-      github: githubReq?.total || "--",
-      proSales: proSalesReq?.total || "--",
-      plausible: (plausibleReq?.total || 0) + constants.legacyViews
+      github: githubStars || "--",
+      proSales: sales.total || "--",
+      plausible: totalViews + constants.legacyViews
     };
   } catch (error) {
     console.error("Error fetching metrics:", error);

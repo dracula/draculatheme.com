@@ -5,6 +5,10 @@
 - Keep all code in English.
 - Always maintain consistent code style, structure, and patterns throughout the codebase.
 
+## Data
+
+Every build runs warm-cache.mjs (skipped if data is under 12h old) then reads only from redis. The only runtime routes are /api/add-contact and /api/request-access.
+
 ## Naming Conventions
 
 ### Files and Folders

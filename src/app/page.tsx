@@ -8,10 +8,9 @@ import { Suspense } from "react";
 
 import { ContentWrapper } from "@/components/home/content-wrapper";
 import { Hero } from "@/components/shared/hero";
+import { getAllViews } from "@/lib/data/views";
 import { jsonLd } from "@/lib/json-ld/home";
 import { paths } from "@/lib/paths";
-import { isProd } from "@/utils/environment";
-import { fetcher } from "@/utils/fetcher";
 import { getCategoryImportance } from "@/utils/home/filter";
 import {
   createStructuredDataScriptId,
@@ -36,48 +35,35 @@ const structuredDataScriptId = createStructuredDataScriptId(
 );
 
 const HomePage = async () => {
-  const environment = isProd();
+  const viewsByRepository = await getAllViews();
+  const pathsWithViews = paths.map((item) => ({
+    ...item,
+    views: viewsByRepository[item.repo] ?? 0
+  }));
 
-  if (environment) {
-    const viewsPromises = paths.map(async (item) => {
-      try {
-        const data = await fetcher(`/api/views?id=${item.repo}`);
-        return { item, views: Number.parseInt(data.views, 10) || 0 };
-      } catch {
-        return { item, views: 0 };
-      }
-    });
-
-    const results = await Promise.all(viewsPromises);
-
-    for (const { item, views } of results) {
-      item.views = views;
+  pathsWithViews.sort((a, b) => {
+    if (a.teamPick && !b.teamPick) {
+      return -1;
     }
 
-    paths.sort((a, b) => {
-      if (a.teamPick && !b.teamPick) {
-        return -1;
-      }
+    if (!a.teamPick && b.teamPick) {
+      return 1;
+    }
 
-      if (!a.teamPick && b.teamPick) {
-        return 1;
-      }
+    if (a.teamPick && b.teamPick) {
+      const categoryDiff =
+        getCategoryImportance(a.categories) -
+        getCategoryImportance(b.categories);
 
-      if (a.teamPick && b.teamPick) {
-        const categoryDiff =
-          getCategoryImportance(a.categories) -
-          getCategoryImportance(b.categories);
-
-        if (categoryDiff !== 0) {
-          return categoryDiff;
-        }
-
-        return (b.views ?? 0) - (a.views ?? 0);
+      if (categoryDiff !== 0) {
+        return categoryDiff;
       }
 
       return (b.views ?? 0) - (a.views ?? 0);
-    });
-  }
+    }
+
+    return (b.views ?? 0) - (a.views ?? 0);
+  });
 
   return (
     <>
@@ -85,7 +71,7 @@ const HomePage = async () => {
         <NuqsAdapter>
           <Hero />
           <section className="container home">
-            <ContentWrapper paths={paths} />
+            <ContentWrapper paths={pathsWithViews} />
           </section>
         </NuqsAdapter>
       </Suspense>
@@ -99,7 +85,7 @@ const HomePage = async () => {
             </p>
           </div>
           <ul>
-            {paths.map((item) => (
+            {pathsWithViews.map((item) => (
               <li key={item.repo}>
                 <Link href={`/${item.repo}`}>
                   <div className="icon">

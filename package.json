@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node scripts/warm-cache.mjs && next build",
     "start": "next start",
+    "warm-cache": "node scripts/warm-cache.mjs",
+    "warm-cache:force": "node scripts/warm-cache.mjs --force",
     "rss": "node ./src/utils/rss/blog.mjs && node ./src/utils/rss/changelog.mjs",
     "lint": "eslint --fix . && prettier --write --log-level warn ."
   },

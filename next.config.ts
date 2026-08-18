@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [360, 720, 1080, 1440],
     imageSizes: [24, 48, 96, 144, 192],
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 80],
+    qualities: [75, 80, 100],
     localPatterns: [
       {
         pathname: "/images/**"

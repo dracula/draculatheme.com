@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 
 import { Hero } from "@/components/shared/hero";
 import { ProductList } from "@/components/shop/product-list";
+import { getProducts } from "@/lib/data/products";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
-import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -14,29 +14,8 @@ import {
 import { createMetadata } from "@/utils/metadata";
 import { sanitizeDescription } from "@/utils/shop/sanitize-description";
 
-interface ProductParams {
-  slug: string;
-  gumroadId: string;
-  images: string[];
-  category: string;
-  color: string;
-  size?: string;
-  defaultVariant?: number;
-  variants?: string[];
-}
-
-interface ProductConfig {
-  params: ProductParams;
-}
-
-const fetchProducts = async (
-  productsArray: ProductConfig[]
-): Promise<Product[]> => {
-  const productPromises = productsArray.map((product: ProductConfig) => {
-    return fetcher(`/api/products?id=${product.params.gumroadId}`);
-  });
-
-  const productsList: Product[] = await Promise.all(productPromises);
+const fetchProducts = async (): Promise<Product[]> => {
+  const productsList = await getProducts();
 
   productsList.sort((a, b) => {
     if (a.published === b.published) {
@@ -66,7 +45,7 @@ const structuredDataScriptId = createStructuredDataScriptId(
 );
 
 const ShopPage = async () => {
-  const productsList = await fetchProducts(products);
+  const productsList = await fetchProducts();
 
   const jsonLd = {
     "@context": "https://schema.org",

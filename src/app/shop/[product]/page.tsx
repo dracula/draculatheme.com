@@ -1,15 +1,16 @@
 import "./page.css";
 
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { Disclosure } from "@/components/shared/disclosure";
 import { ProductDetails } from "@/components/shop/product-details";
 import { ProductGallery } from "@/components/shop/product-gallery";
 import { ProductList } from "@/components/shop/product-list";
+import { getProduct, getProducts } from "@/lib/data/products";
 import { frequentlyAskedQuestions } from "@/lib/shop/faqs";
 import { products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
-import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -42,25 +43,24 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const fetchProduct = async (id: string): Promise<Product> => {
-  return fetcher(`/api/products?id=${id}`);
-};
-
-const fetchRelatedProducts = async (
+const fetchRelatedProducts = (
   productsArray: ProductConfig[],
-  query: ProductParams
-): Promise<Product[]> => {
-  const relatedProductsPromise = productsArray
+  query: ProductParams,
+  allProducts: Product[]
+): Product[] => {
+  return productsArray
     .filter(
       (product) =>
         product.params.slug !== query.slug &&
         product.params.category === query.category
     )
-    .map((product) => {
-      return fetcher(`/api/products?id=${product.params.gumroadId}`);
-    });
+    .flatMap((product) => {
+      const relatedProduct = allProducts.find(
+        (item) => item.id === product.params.gumroadId
+      );
 
-  return await Promise.all(relatedProductsPromise);
+      return relatedProduct ? [relatedProduct] : [];
+    });
 };
 
 export const generateMetadata = async ({
@@ -78,7 +78,11 @@ export const generateMetadata = async ({
   }
 
   const query = productConfig.params;
-  const product = await fetchProduct(query.gumroadId);
+  const product = await getProduct(query.gumroadId);
+
+  if (!product) {
+    return undefined;
+  }
 
   const title = product.name;
   const description = sanitizeDescription(product.description);
@@ -102,8 +106,16 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
   }
 
   const query = productConfig.params;
-  const product = await fetchProduct(query.gumroadId);
-  const relatedProducts = await fetchRelatedProducts(products, query);
+  const [product, allProducts] = await Promise.all([
+    getProduct(query.gumroadId),
+    getProducts()
+  ]);
+
+  if (!product) {
+    notFound();
+  }
+
+  const relatedProducts = fetchRelatedProducts(products, query, allProducts);
 
   const options =
     product?.variants?.[0]?.options?.map((option) => ({

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { TickIcon } from "@/icons/tick";
 import { apps } from "@/lib/pro/apps";
+import type { Sales } from "@/lib/types";
 
 interface Promotion {
   name: string;
@@ -18,14 +19,10 @@ interface Promotion {
   country?: string;
 }
 
-interface SalesData {
-  count?: number;
-}
-
 interface PricingCardProps {
   standardPromotion: Promotion;
   pppPromotion: Promotion | null;
-  salesData: SalesData;
+  salesData: Sales;
 }
 
 const productFeatures = [
@@ -47,12 +44,12 @@ const formatPriceDisplay = (price: number): string => {
   return `$${price.toFixed(0)}`;
 };
 
-const formatSalesCount = (count?: number): string => {
+const formatSalesCount = (count?: string): string => {
   if (!count) {
     return "6,000";
   }
 
-  return count >= 1000 ? `${(count / 1000).toFixed(1)}k` : count.toString();
+  return count;
 };
 
 export const PricingCard = ({

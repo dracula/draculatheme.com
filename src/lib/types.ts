@@ -79,6 +79,11 @@ export type Review = {
   date: string;
 };
 
+export type Sales = {
+  count: string;
+  total: string;
+};
+
 export type FrequentlyAskedQuestion = {
   question: string;
   answer: ReactNode;
