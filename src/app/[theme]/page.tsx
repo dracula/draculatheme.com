@@ -12,17 +12,21 @@ import { BugIcon } from "@/icons/bug";
 import { DownloadIcon } from "@/icons/download";
 import { EditIcon } from "@/icons/edit";
 import { GithubIcon } from "@/icons/github";
+import { getBranch } from "@/lib/data/branches";
+import { getContributors } from "@/lib/data/contributors";
+import { getInstall } from "@/lib/data/installs";
 import { paths } from "@/lib/paths";
 import { apps } from "@/lib/pro/apps";
 import { getThemeScreenshots } from "@/lib/theme/screenshots";
 import type { Props } from "@/lib/types";
-import { filterBots, getContributorAvatarUrl } from "@/utils/contributors";
-import { fetcher } from "@/utils/fetcher";
+import { getContributorAvatarUrl } from "@/utils/contributors";
 import {
   createStructuredDataScriptId,
   JsonLdScript
 } from "@/utils/json-ld-script";
 import { createMetadata } from "@/utils/metadata";
+
+export const dynamicParams = false;
 
 export const generateStaticParams = async () => {
   return paths.map((item) => ({
@@ -66,35 +70,12 @@ const ThemePage = async (props: Props) => {
   );
   const isProApp = apps.some((app) => app.value === theme.repo);
 
-  const defaultBranchResponse = await fetcher(`/api/branches?id=${theme.repo}`);
-  const defaultBranchNameFromCache =
-    defaultBranchResponse.status === 200
-      ? defaultBranchResponse.branches
-      : undefined;
-  const repositoryDefaultBranch =
-    typeof defaultBranchNameFromCache === "string" &&
-    defaultBranchNameFromCache.trim().length > 0
-      ? defaultBranchNameFromCache
-      : "main";
-
-  const contributorsResponse = await fetcher(
-    `/api/contributors?id=${theme.repo}`
-  );
-  const contributorsPayload: unknown =
-    typeof contributorsResponse.contributors === "string"
-      ? JSON.parse(contributorsResponse.contributors)
-      : contributorsResponse.contributors;
-
-  const contributors = filterBots(
-    Array.isArray(contributorsPayload) ? contributorsPayload : []
-  );
-
-  const installGuideResponse = await fetcher(`/api/installs?id=${theme.repo}`);
-  const installGuideBase64Payload = installGuideResponse.install;
-  const installGuideMarkdown = Buffer.from(
-    installGuideBase64Payload,
-    "base64"
-  ).toString("utf8");
+  const [repositoryDefaultBranch, contributors, installGuideMarkdown] =
+    await Promise.all([
+      getBranch(theme.repo),
+      getContributors(theme.repo),
+      getInstall(theme.repo)
+    ]);
 
   const themeScreenshots = await getThemeScreenshots(
     theme.repo,

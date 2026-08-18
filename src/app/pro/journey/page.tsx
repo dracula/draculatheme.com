@@ -2,9 +2,9 @@ import "./page.css";
 
 import type { Metadata } from "next";
 
+import { getSales } from "@/lib/data/sales";
 import { jsonLd } from "@/lib/json-ld/pro-journey";
 import { lessons } from "@/lib/pro/lessons";
-import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -28,7 +28,7 @@ const structuredDataScriptId = createStructuredDataScriptId(
 );
 
 const JourneyPage = async () => {
-  const sales = await fetcher("/api/sales?product=tPfIDt");
+  const sales = await getSales();
 
   return (
     <>

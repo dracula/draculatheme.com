@@ -6,9 +6,9 @@ import Image from "next/image";
 import { ColorPalette } from "@/components/contribute/color-palette";
 import { Steps } from "@/components/contribute/steps";
 import { Hero } from "@/components/shared/hero";
+import { getAllContributors } from "@/lib/data/contributors";
 import { jsonLd } from "@/lib/json-ld/contribute";
-import { filterBots, getContributorAvatarUrl } from "@/utils/contributors";
-import { fetcher } from "@/utils/fetcher";
+import { getContributorAvatarUrl } from "@/utils/contributors";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -32,33 +32,13 @@ const structuredDataScriptId = createStructuredDataScriptId(
 );
 
 const ContributePage = async () => {
-  const contributorsData = await fetcher("/api/cache/contributors");
-  const contributorsByRepository =
-    "contributors" in contributorsData &&
-    contributorsData.contributors !== null &&
-    typeof contributorsData.contributors === "object"
-      ? contributorsData.contributors
-      : {};
-
-  const contributors = filterBots(
-    Object.values(contributorsByRepository).flatMap(
-      (repositoryContributors) => {
-        if (typeof repositoryContributors !== "string") {
-          return [];
-        }
-
-        try {
-          const parsedContributors = JSON.parse(repositoryContributors);
-          return Array.isArray(parsedContributors) ? parsedContributors : [];
-        } catch {
-          return [];
-        }
-      }
-    )
-  ).filter(
-    (contributor, index, array) =>
-      array.findIndex((c) => c.login === contributor.login) === index
-  );
+  const contributorsByRepository = await getAllContributors();
+  const contributors = Object.values(contributorsByRepository)
+    .flat()
+    .filter(
+      (contributor, index, array) =>
+        array.findIndex((item) => item.login === contributor.login) === index
+    );
 
   return (
     <>

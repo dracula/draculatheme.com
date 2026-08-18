@@ -13,10 +13,10 @@ import { VariantsShowcase } from "@/components/pro/variants-showcase";
 import { WhyPro } from "@/components/pro/why-pro";
 import { Disclosure } from "@/components/shared/disclosure";
 import { Hero } from "@/components/shared/hero";
+import { getReviews } from "@/lib/data/reviews";
+import { getSales } from "@/lib/data/sales";
 import { frequentlyAskedQuestions } from "@/lib/pro/faqs";
 import { shuffleReviews } from "@/lib/pro/shuffle-reviews";
-import type { Review } from "@/lib/types";
-import { fetcher } from "@/utils/fetcher";
 import {
   createStructuredDataScriptId,
   JsonLdScript
@@ -45,32 +45,10 @@ const getPriceValidUntil = (): string => {
   return validUntil.toISOString().split("T")[0];
 };
 
-const isReview = (value: unknown): value is Review => {
-  if (typeof value !== "object" || value === null) {
-    return false;
-  }
-
-  const review = value as Record<string, unknown>;
-
-  return (
-    typeof review.id === "string" &&
-    typeof review.name === "string" &&
-    typeof review.body === "string" &&
-    typeof review.country === "string" &&
-    typeof review.github === "string" &&
-    typeof review.date === "string"
-  );
-};
-
 const ProPage = async () => {
-  const reviewsResponse = await fetcher("/api/reviews");
-  const normalizedReviews = (
-    Array.isArray(reviewsResponse)
-      ? reviewsResponse
-      : Object.values(reviewsResponse)
-  ).filter(isReview);
+  const [reviews, salesData] = await Promise.all([getReviews(), getSales()]);
 
-  const identifiedReviews = normalizedReviews.filter((review) =>
+  const identifiedReviews = reviews.filter((review) =>
     Boolean(review.name.trim() || review.country.trim())
   );
   const shuffledDisplayReviews = shuffleReviews(identifiedReviews);
@@ -132,11 +110,11 @@ const ProPage = async () => {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: normalizedReviews.length,
+      reviewCount: reviews.length,
       bestRating: "5",
       worstRating: "1"
     },
-    review: normalizedReviews.slice(0, 10).map((review) => ({
+    review: reviews.slice(0, 10).map((review) => ({
       "@type": "Review",
       author: {
         "@type": "Person",
@@ -176,7 +154,7 @@ const ProPage = async () => {
         <Bento />
         <Book />
         <Testimonials reviews={shuffledDisplayReviews} />
-        <Checkout />
+        <Checkout salesData={salesData} />
         <div
           id="frequently-asked-questions"
           className="frequently-asked-questions"

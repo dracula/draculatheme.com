@@ -9,7 +9,6 @@ export const Book = () => (
           alt="E-Book"
           width={224}
           height={466}
-          quality={100}
           unoptimized
           priority
         />

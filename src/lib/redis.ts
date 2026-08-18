@@ -9,25 +9,37 @@ const parseDatabase = (pathname: string) => {
   return Number.isNaN(database) ? undefined : database;
 };
 
+const allowProcessToExit = (client: Redis) => {
+  client.on("ready", () => {
+    client.stream?.unref();
+  });
+
+  return client;
+};
+
 const createRedis = () => {
   const redisUrl = process.env.REDIS_URL;
 
   if (!redisUrl) {
-    return new Redis({
-      lazyConnect: true
-    });
+    return allowProcessToExit(
+      new Redis({
+        lazyConnect: true
+      })
+    );
   }
 
   const parsedUrl = new URL(redisUrl);
 
-  return new Redis({
-    host: parsedUrl.hostname,
-    port: parsedUrl.port ? Number.parseInt(parsedUrl.port, 10) : 6379,
-    username: parsedUrl.username || undefined,
-    password: parsedUrl.password || undefined,
-    db: parseDatabase(parsedUrl.pathname),
-    tls: parsedUrl.protocol === "rediss:" ? {} : undefined
-  });
+  return allowProcessToExit(
+    new Redis({
+      host: parsedUrl.hostname,
+      port: parsedUrl.port ? Number.parseInt(parsedUrl.port, 10) : 6379,
+      username: parsedUrl.username || undefined,
+      password: parsedUrl.password || undefined,
+      db: parseDatabase(parsedUrl.pathname),
+      tls: parsedUrl.protocol === "rediss:" ? {} : undefined
+    })
+  );
 };
 
 export const redis = createRedis();
