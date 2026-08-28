@@ -241,6 +241,28 @@ const fetchTotalPageViews = async () => {
   return payload.results.pageviews.value;
 };
 
+const parseStoredProducts = (rawValue) => {
+  if (!rawValue) {
+    return {};
+  }
+
+  try {
+    const parsedValue = JSON.parse(rawValue);
+
+    if (
+      typeof parsedValue !== "object" ||
+      parsedValue === null ||
+      Array.isArray(parsedValue)
+    ) {
+      return {};
+    }
+
+    return parsedValue;
+  } catch {
+    return {};
+  }
+};
+
 const fetchGumroadProduct = async (id) => {
   const accessToken = process.env.GUMROAD_ACCESS_TOKEN;
 
@@ -248,9 +270,18 @@ const fetchGumroadProduct = async (id) => {
     throw new Error("GUMROAD_ACCESS_TOKEN is missing.");
   }
 
-  const response = await fetch(
-    `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`
-  );
+  const url = `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`;
+  let response = await fetch(url);
+
+  for (
+    let attempt = 1;
+    attempt < 4 && response.status >= 500;
+    attempt += 1
+  ) {
+    const delayInMilliseconds = 2 ** attempt * 1000;
+    await new Promise((resolve) => setTimeout(resolve, delayInMilliseconds));
+    response = await fetch(url);
+  }
 
   if (!response.ok) {
     throw new Error(`Gumroad responded with ${response.status}.`);
@@ -405,7 +436,8 @@ const warmSales = async (redis) => {
 };
 
 const warmProducts = async (redis, gumroadIds) => {
-  const products = {};
+  const previousProducts = parseStoredProducts(await redis.get("products"));
+  const products = { ...previousProducts };
 
   await Promise.all(
     gumroadIds.map(async (id) => {
@@ -413,7 +445,7 @@ const warmProducts = async (redis, gumroadIds) => {
         const product = await fetchGumroadProduct(id);
         products[product.id] = product;
       } catch (error) {
-        console.warn(`Failed to fetch product ${id}:`, getErrorMessage(error));
+        console.error(`Failed to fetch product ${id}:`, getErrorMessage(error));
       }
     })
   );
