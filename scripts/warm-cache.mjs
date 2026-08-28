@@ -7,9 +7,63 @@ import pLimit from "p-limit";
 
 const twelveHoursInMilliseconds = 12 * 60 * 60 * 1000;
 const gumroadProProductId = "tPfIDt";
+const githubOwner = "dracula";
 const plausibleApiBaseUrl = "https://plausible.io/api/v1/stats/aggregate";
 const shouldForceWarm =
   process.argv.includes("--force") || process.env.FORCE_WARM_CACHE === "1";
+
+const log = (message) => {
+  console.log(`[warm-cache] ${message}`);
+};
+
+const logWarning = (message) => {
+  console.warn(`[warm-cache] ${message}`);
+};
+
+const getErrorMessage = (error) => {
+  return error instanceof Error ? error.message : String(error);
+};
+
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
+
+const formatDuration = (milliseconds) => {
+  if (milliseconds < 1000) {
+    return `${Math.max(0, Math.round(milliseconds))}ms`;
+  }
+
+  const seconds = milliseconds / 1000;
+
+  if (seconds < 60) {
+    return `${seconds.toFixed(1)}s`;
+  }
+
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.round(seconds % 60);
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (hours === 0) {
+    return remainingSeconds === 0
+      ? `${minutes}m`
+      : `${minutes}m ${remainingSeconds}s`;
+  }
+
+  return remainingMinutes === 0
+    ? `${hours}h`
+    : `${hours}h ${remainingMinutes}m`;
+};
+
+const requireEnvironment = (name) => {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`${name} is missing.`);
+  }
+
+  return value;
+};
 
 const loadEnvironmentFile = () => {
   try {
@@ -57,13 +111,7 @@ const parseDatabase = (pathname) => {
 };
 
 const createRedis = () => {
-  const redisUrl = process.env.REDIS_URL;
-
-  if (!redisUrl) {
-    throw new Error("REDIS_URL is missing.");
-  }
-
-  const parsedUrl = new URL(redisUrl);
+  const parsedUrl = new URL(requireEnvironment("REDIS_URL"));
 
   return new Redis({
     host: parsedUrl.hostname,
@@ -75,46 +123,51 @@ const createRedis = () => {
   });
 };
 
-const extractPaths = () => {
-  const contents = readFileSync(
-    new URL("../src/lib/paths.ts", import.meta.url),
-    "utf8"
-  );
-  const paths = [];
+const extractFromSource = (relativePath, pattern, mapMatch) => {
+  const contents = readFileSync(new URL(relativePath, import.meta.url), "utf8");
+  const values = [];
 
-  for (const objectMatch of contents.matchAll(/\{[^{}]+\}/g)) {
-    const objectText = objectMatch[0];
-    const repositoryMatch = objectText.match(/repo:\s*"([^"]+)"/);
+  for (const match of contents.matchAll(pattern)) {
+    const value = mapMatch(match);
 
-    if (!repositoryMatch) {
-      continue;
+    if (value !== undefined) {
+      values.push(value);
     }
-
-    const legacyViewsMatch = objectText.match(/legacyViews:\s*(\d+)/);
-
-    paths.push({
-      repo: repositoryMatch[1],
-      legacyViews: legacyViewsMatch
-        ? Number.parseInt(legacyViewsMatch[1], 10)
-        : 0
-    });
   }
 
-  return paths;
+  return values;
+};
+
+const extractPaths = () => {
+  return extractFromSource(
+    "../src/lib/paths.ts",
+    /\{[^{}]+\}/g,
+    (objectMatch) => {
+      const objectText = objectMatch[0];
+      const repositoryMatch = objectText.match(/repo:\s*"([^"]+)"/);
+
+      if (!repositoryMatch) {
+        return undefined;
+      }
+
+      const legacyViewsMatch = objectText.match(/legacyViews:\s*(\d+)/);
+
+      return {
+        repo: repositoryMatch[1],
+        legacyViews: legacyViewsMatch
+          ? Number.parseInt(legacyViewsMatch[1], 10)
+          : 0
+      };
+    }
+  );
 };
 
 const extractGumroadIds = () => {
-  const contents = readFileSync(
-    new URL("../src/lib/shop/products.ts", import.meta.url),
-    "utf8"
+  return extractFromSource(
+    "../src/lib/shop/products.ts",
+    /gumroadId:\s*"([^"]+)"/g,
+    (idMatch) => idMatch[1]
   );
-  const gumroadIds = [];
-
-  for (const idMatch of contents.matchAll(/gumroadId:\s*"([^"]+)"/g)) {
-    gumroadIds.push(idMatch[1]);
-  }
-
-  return gumroadIds;
 };
 
 const isBot = (contributor) => {
@@ -130,25 +183,56 @@ const isBot = (contributor) => {
   );
 };
 
-const getErrorMessage = (error) => {
-  return error instanceof Error ? error.message : String(error);
+const isNotFoundError = (error) => {
+  return Boolean(
+    error &&
+    typeof error === "object" &&
+    "status" in error &&
+    error.status === 404
+  );
 };
 
-const warmDataset = async (name, task) => {
-  try {
-    await task();
-    console.log(`Warmed ${name}.`);
-  } catch (error) {
-    console.warn(
-      `Failed to warm ${name}, keeping the old value:`,
-      getErrorMessage(error)
-    );
+const logSkipped = (skipped) => {
+  if (!skipped?.length) {
+    return;
   }
+
+  for (const item of skipped) {
+    logWarning(`  ${item.name}: ${item.reason}`);
+  }
+};
+
+const failWithSkipped = (message, skipped) => {
+  const error = new Error(message);
+  error.skipped = skipped;
+  throw error;
+};
+
+const fetchJson = async (
+  url,
+  { request, retries, shouldRetry, getDelay, label }
+) => {
+  let response = await fetch(url, request);
+
+  for (
+    let attempt = 1;
+    attempt < retries && shouldRetry(response);
+    attempt += 1
+  ) {
+    await sleep(getDelay(attempt, response));
+    response = await fetch(url, request);
+  }
+
+  if (!response.ok) {
+    throw new Error(`${label} responded with ${response.status}.`);
+  }
+
+  return response.json();
 };
 
 const fetchDefaultBranch = async (octokit, repository) => {
   const response = await octokit.rest.repos.get({
-    owner: "dracula",
+    owner: githubOwner,
     repo: repository
   });
 
@@ -156,88 +240,51 @@ const fetchDefaultBranch = async (octokit, repository) => {
 };
 
 const fetchInstallContent = async (octokit, repository) => {
-  const tryFetchFile = async (path) => {
+  for (const path of ["INSTALL.md", "install.md"]) {
     try {
       const response = await octokit.rest.repos.getContent({
         path,
-        owner: "dracula",
+        owner: githubOwner,
         repo: repository
       });
 
-      if (Array.isArray(response.data) || response.data.type !== "file") {
-        return null;
+      if (!Array.isArray(response.data) && response.data.type === "file") {
+        return response.data.content || null;
       }
-
-      return response.data.content || null;
     } catch (error) {
-      if (
-        error &&
-        typeof error === "object" &&
-        "status" in error &&
-        error.status === 404
-      ) {
-        return null;
+      if (!isNotFoundError(error)) {
+        throw error;
       }
-
-      throw error;
     }
-  };
-
-  const installMarkdown = await tryFetchFile("INSTALL.md");
-
-  if (installMarkdown) {
-    return installMarkdown;
   }
 
-  return tryFetchFile("install.md");
+  return null;
 };
 
-const fetchPlausible = async (url) => {
-  const apiKey = process.env.PLAUSIBLE_API_KEY;
-
-  if (!apiKey) {
-    throw new Error("PLAUSIBLE_API_KEY is missing.");
-  }
-
-  const request = {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${apiKey}`
-    }
-  };
-
-  let response = await fetch(url, request);
-
-  for (let attempt = 1; attempt < 5 && response.status === 429; attempt += 1) {
-    const retryAfter = Number.parseInt(
-      response.headers.get("retry-after") || "",
-      10
-    );
-    const delayInMilliseconds = Number.isFinite(retryAfter)
-      ? retryAfter * 1000
-      : attempt * 1000;
-    await new Promise((resolve) => setTimeout(resolve, delayInMilliseconds));
-    response = await fetch(url, request);
-  }
-
-  if (!response.ok) {
-    throw new Error(`Plausible responded with ${response.status}.`);
-  }
-
-  return response.json();
-};
-
-const fetchPageViews = async (repository) => {
+const fetchPlausiblePageviews = async (filters = "") => {
   const today = format(endOfDay(new Date()), "yyyy-MM-dd");
-  const url = `${plausibleApiBaseUrl}?site_id=draculatheme.com&filters=event:page==/${repository}&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
-  const payload = await fetchPlausible(url);
-  return payload.results.pageviews.value;
-};
+  const filterQuery = filters ? `&filters=${filters}` : "";
+  const url = `${plausibleApiBaseUrl}?site_id=draculatheme.com${filterQuery}&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
+  const payload = await fetchJson(url, {
+    request: {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${requireEnvironment("PLAUSIBLE_API_KEY")}`
+      }
+    },
+    retries: 5,
+    shouldRetry: (response) => response.status === 429,
+    getDelay: (attempt, response) => {
+      const retryAfter = Number.parseInt(
+        response.headers.get("retry-after") || "",
+        10
+      );
 
-const fetchTotalPageViews = async () => {
-  const today = format(endOfDay(new Date()), "yyyy-MM-dd");
-  const url = `${plausibleApiBaseUrl}?site_id=draculatheme.com&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
-  const payload = await fetchPlausible(url);
+      return Number.isFinite(retryAfter) ? retryAfter * 1000 : attempt * 1000;
+    },
+    label: "Plausible"
+  });
+
   return payload.results.pageviews.value;
 };
 
@@ -264,30 +311,14 @@ const parseStoredProducts = (rawValue) => {
 };
 
 const fetchGumroadProduct = async (id) => {
-  const accessToken = process.env.GUMROAD_ACCESS_TOKEN;
-
-  if (!accessToken) {
-    throw new Error("GUMROAD_ACCESS_TOKEN is missing.");
-  }
-
+  const accessToken = requireEnvironment("GUMROAD_ACCESS_TOKEN");
   const url = `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`;
-  let response = await fetch(url);
-
-  for (
-    let attempt = 1;
-    attempt < 4 && response.status >= 500;
-    attempt += 1
-  ) {
-    const delayInMilliseconds = 2 ** attempt * 1000;
-    await new Promise((resolve) => setTimeout(resolve, delayInMilliseconds));
-    response = await fetch(url);
-  }
-
-  if (!response.ok) {
-    throw new Error(`Gumroad responded with ${response.status}.`);
-  }
-
-  const payload = await response.json();
+  const payload = await fetchJson(url, {
+    retries: 4,
+    shouldRetry: (response) => response.status >= 500,
+    getDelay: (attempt) => 2 ** attempt * 1000,
+    label: "Gumroad"
+  });
 
   if (!payload.success || !payload.product) {
     throw new Error(`Gumroad product ${id} was not found.`);
@@ -296,130 +327,124 @@ const fetchGumroadProduct = async (id) => {
   return payload.product;
 };
 
-const warmBranches = async (redis, octokit, paths, limit) => {
-  const branches = {};
+const collectByRepository = async (items, concurrencyLimit, fetchValue) => {
+  const values = {};
+  const skipped = [];
 
   await Promise.all(
-    paths.map((item) =>
-      limit(async () => {
+    items.map((item) =>
+      concurrencyLimit(async () => {
         try {
-          branches[item.repo] = await fetchDefaultBranch(octokit, item.repo);
+          values[item.repo] = await fetchValue(item);
         } catch (error) {
-          console.warn(
-            `Failed to fetch branch for ${item.repo}:`,
-            getErrorMessage(error)
-          );
+          skipped.push({ name: item.repo, reason: getErrorMessage(error) });
         }
       })
     )
   );
 
-  if (Object.keys(branches).length === 0) {
-    throw new Error("No branches were fetched.");
-  }
-
-  await redis.hmset("branches", branches);
+  return { values, skipped };
 };
 
-const warmContributors = async (redis, octokit, paths, limit) => {
-  const contributors = {};
-
-  await Promise.all(
-    paths.map((item) =>
-      limit(async () => {
-        try {
-          const response = await octokit.rest.repos.listContributors({
-            owner: "dracula",
-            repo: item.repo
-          });
-
-          const filteredContributors = response.data
-            .filter((contributor) => !isBot(contributor))
-            .map((contributor) => ({
-              login: contributor.login,
-              avatar_url: contributor.avatar_url
-            }));
-
-          contributors[item.repo] = JSON.stringify(filteredContributors);
-        } catch (error) {
-          console.warn(
-            `Failed to fetch contributors for ${item.repo}:`,
-            getErrorMessage(error)
-          );
-        }
-      })
-    )
+const warmHashMap = async ({
+  redis,
+  key,
+  items,
+  concurrencyLimit,
+  fetchValue
+}) => {
+  const { values, skipped } = await collectByRepository(
+    items,
+    concurrencyLimit,
+    fetchValue
   );
+  const storedCount = Object.keys(values).length;
 
-  if (Object.keys(contributors).length === 0) {
-    throw new Error("No contributors were fetched.");
+  if (storedCount === 0) {
+    failWithSkipped(`No ${key} were fetched.`, skipped);
   }
 
-  await redis.hmset("contributors", contributors);
+  await redis.hmset(key, values);
+
+  return {
+    summary: `${storedCount}/${items.length}`,
+    skipped
+  };
 };
 
-const warmInstalls = async (redis, octokit, paths, limit) => {
-  const installs = {};
-
-  await Promise.all(
-    paths.map((item) =>
-      limit(async () => {
-        try {
-          const content = await fetchInstallContent(octokit, item.repo);
-
-          if (!content) {
-            console.warn(`INSTALL.md not found for ${item.repo}.`);
-            return;
-          }
-
-          installs[item.repo] = content;
-        } catch (error) {
-          console.warn(
-            `Failed to fetch install guide for ${item.repo}:`,
-            getErrorMessage(error)
-          );
-        }
-      })
-    )
-  );
-
-  if (Object.keys(installs).length === 0) {
-    throw new Error("No install guides were fetched.");
-  }
-
-  await redis.hmset("installs", installs);
+const warmBranches = (redis, octokit, paths, concurrencyLimit) => {
+  return warmHashMap({
+    redis,
+    key: "branches",
+    items: paths,
+    concurrencyLimit,
+    fetchValue: (item) => fetchDefaultBranch(octokit, item.repo)
+  });
 };
 
-const warmViews = async (redis, paths, limit) => {
-  const views = {};
+const warmContributors = (redis, octokit, paths, concurrencyLimit) => {
+  return warmHashMap({
+    redis,
+    key: "contributors",
+    items: paths,
+    concurrencyLimit,
+    fetchValue: async (item) => {
+      const response = await octokit.rest.repos.listContributors({
+        owner: githubOwner,
+        repo: item.repo
+      });
 
-  await Promise.all(
-    paths.map((item) =>
-      limit(async () => {
-        try {
-          const pageViews = await fetchPageViews(item.repo);
-          const legacyViews = item.legacyViews || 0;
-          views[item.repo] = String(pageViews + legacyViews);
-        } catch (error) {
-          console.warn(
-            `Failed to fetch views for ${item.repo}:`,
-            getErrorMessage(error)
-          );
-        }
-      })
-    )
-  );
+      const filteredContributors = response.data
+        .filter((contributor) => !isBot(contributor))
+        .map((contributor) => ({
+          login: contributor.login,
+          avatar_url: contributor.avatar_url
+        }));
 
-  if (Object.keys(views).length === 0) {
-    throw new Error("No views were fetched.");
-  }
+      return JSON.stringify(filteredContributors);
+    }
+  });
+};
 
-  await redis.hmset("views", views);
+const warmInstalls = (redis, octokit, paths, concurrencyLimit) => {
+  return warmHashMap({
+    redis,
+    key: "installs",
+    items: paths,
+    concurrencyLimit,
+    fetchValue: async (item) => {
+      const content = await fetchInstallContent(octokit, item.repo);
+
+      if (!content) {
+        throw new Error("INSTALL.md not found");
+      }
+
+      return content;
+    }
+  });
+};
+
+const warmViews = (redis, paths, concurrencyLimit) => {
+  return warmHashMap({
+    redis,
+    key: "views",
+    items: paths,
+    concurrencyLimit,
+    fetchValue: async (item) => {
+      const pageViews = await fetchPlausiblePageviews(
+        `event:page==/${item.repo}`
+      );
+
+      return String(pageViews + (item.legacyViews || 0));
+    }
+  });
 };
 
 const warmTotalViews = async (redis) => {
-  const total = await fetchTotalPageViews();
+  const total = await fetchPlausiblePageviews();
   await redis.set("total-views", JSON.stringify({ total }));
+
+  return { summary: total.toLocaleString("en-US") };
 };
 
 const warmSales = async (redis) => {
@@ -433,11 +458,14 @@ const warmSales = async (redis) => {
   };
 
   await redis.set("sales", JSON.stringify(sales));
+
+  return { summary: `${sales.count} · ${sales.total}` };
 };
 
 const warmProducts = async (redis, gumroadIds) => {
   const previousProducts = parseStoredProducts(await redis.get("products"));
   const products = { ...previousProducts };
+  const skipped = [];
 
   await Promise.all(
     gumroadIds.map(async (id) => {
@@ -445,26 +473,27 @@ const warmProducts = async (redis, gumroadIds) => {
         const product = await fetchGumroadProduct(id);
         products[product.id] = product;
       } catch (error) {
-        console.error(`Failed to fetch product ${id}:`, getErrorMessage(error));
+        skipped.push({ name: id, reason: getErrorMessage(error) });
       }
     })
   );
 
   if (Object.keys(products).length === 0) {
-    throw new Error("No products were fetched.");
+    failWithSkipped("No products were fetched.", skipped);
   }
 
   await redis.set("products", JSON.stringify(products));
+
+  return {
+    summary: `${gumroadIds.length - skipped.length}/${gumroadIds.length}`,
+    skipped
+  };
 };
 
 const warmReviews = async (redis) => {
-  const apiToken = process.env.AIRTABLE_API_TOKEN;
-
-  if (!apiToken) {
-    throw new Error("AIRTABLE_API_TOKEN is missing.");
-  }
-
-  const base = new Airtable({ apiKey: apiToken }).base("appE8qDD7fxpKyDpf");
+  const base = new Airtable({
+    apiKey: requireEnvironment("AIRTABLE_API_TOKEN")
+  }).base("appE8qDD7fxpKyDpf");
   const records = await base("Table 1")
     .select({
       fields: ["ID", "Name", "Country", "GitHub", "Body", "Date"],
@@ -482,30 +511,51 @@ const warmReviews = async (redis) => {
   }));
 
   await redis.set("reviews", JSON.stringify(reviews));
+
+  return { summary: `${reviews.length} reviews` };
 };
 
 const warmGithubStars = async (redis, octokit) => {
-  const response = await octokit.repos.get({
-    owner: "dracula",
+  const response = await octokit.rest.repos.get({
+    owner: githubOwner,
     repo: "dracula-theme"
   });
+  const total = response.data.stargazers_count;
 
-  await redis.set(
-    "github-stars",
-    JSON.stringify({ total: response.data.stargazers_count })
-  );
+  await redis.set("github-stars", JSON.stringify({ total }));
+
+  return { summary: total.toLocaleString("en-US") };
 };
 
-const isCacheFresh = async (redis) => {
+const getCacheAge = async (redis) => {
   const warmedAt = await redis.get("warmed_at");
 
   if (!warmedAt) {
-    return false;
+    return null;
   }
 
   const elapsed = Date.now() - Number.parseInt(warmedAt, 10);
 
-  return Number.isFinite(elapsed) && elapsed < twelveHoursInMilliseconds;
+  return Number.isFinite(elapsed) ? elapsed : null;
+};
+
+const warmDataset = async (name, task) => {
+  const startedAt = Date.now();
+  const elapsed = () => formatDuration(Date.now() - startedAt);
+
+  try {
+    const result = (await task()) ?? {};
+    const summary = result.summary ? `  ${result.summary}` : "";
+    log(`${name.padEnd(12)}  done${summary}  (${elapsed()})`);
+    logSkipped(result.skipped);
+    return "updated";
+  } catch (error) {
+    logWarning(
+      `${name.padEnd(12)}  failed  keeping previous — ${getErrorMessage(error)}  (${elapsed()})`
+    );
+    logSkipped(error && typeof error === "object" ? error.skipped : undefined);
+    return "kept";
+  }
 };
 
 const main = async () => {
@@ -514,48 +564,73 @@ const main = async () => {
   const redis = createRedis();
 
   try {
-    if (!shouldForceWarm && (await isCacheFresh(redis))) {
-      console.log("Cache is under 12 hours old. Skipping.");
+    const cacheAge = await getCacheAge(redis);
+    const isFresh = cacheAge !== null && cacheAge < twelveHoursInMilliseconds;
+
+    if (!shouldForceWarm && isFresh) {
+      log(
+        `Skipping: cache is ${formatDuration(cacheAge)} old (threshold is 12h).`
+      );
       return;
     }
 
     if (shouldForceWarm) {
-      console.log("Forcing cache warm.");
+      log("Force refresh enabled.");
+    } else if (cacheAge === null) {
+      log("No previous cache found; warming from scratch.");
+    } else {
+      log(`Cache is ${formatDuration(cacheAge)} old; refreshing.`);
     }
 
     const octokit = new Octokit({
       auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
     });
-    const limit = pLimit(8);
+    const concurrencyLimit = pLimit(8);
     const paths = extractPaths();
     const gumroadIds = extractGumroadIds();
+    const startedAt = Date.now();
 
-    console.log(`Warming cache for ${paths.length} repositories.`);
+    log(
+      `Warming ${paths.length} repositories and ${gumroadIds.length} products.`
+    );
 
-    await warmDataset("branches", () =>
-      warmBranches(redis, octokit, paths, limit)
-    );
-    await warmDataset("contributors", () =>
-      warmContributors(redis, octokit, paths, limit)
-    );
-    await warmDataset("installs", () =>
-      warmInstalls(redis, octokit, paths, limit)
-    );
-    await warmDataset("views", () => warmViews(redis, paths, limit));
-    await warmDataset("total views", () => warmTotalViews(redis));
-    await warmDataset("sales", () => warmSales(redis));
-    await warmDataset("products", () => warmProducts(redis, gumroadIds));
-    await warmDataset("reviews", () => warmReviews(redis));
-    await warmDataset("github stars", () => warmGithubStars(redis, octokit));
+    const datasets = [
+      ["branches", () => warmBranches(redis, octokit, paths, concurrencyLimit)],
+      [
+        "contributors",
+        () => warmContributors(redis, octokit, paths, concurrencyLimit)
+      ],
+      ["installs", () => warmInstalls(redis, octokit, paths, concurrencyLimit)],
+      ["views", () => warmViews(redis, paths, concurrencyLimit)],
+      ["total-views", () => warmTotalViews(redis)],
+      ["sales", () => warmSales(redis)],
+      ["products", () => warmProducts(redis, gumroadIds)],
+      ["reviews", () => warmReviews(redis)],
+      ["github-stars", () => warmGithubStars(redis, octokit)]
+    ];
+
+    const outcomes = [];
+
+    for (const [name, task] of datasets) {
+      outcomes.push(await warmDataset(name, task));
+    }
 
     await redis.set("warmed_at", String(Date.now()));
-    console.log("Cache warmed successfully.");
+
+    const updatedCount = outcomes.filter(
+      (outcome) => outcome === "updated"
+    ).length;
+    const keptCount = outcomes.filter((outcome) => outcome === "kept").length;
+
+    log(
+      `Finished in ${formatDuration(Date.now() - startedAt)} — ${updatedCount} updated, ${keptCount} kept previous.`
+    );
   } finally {
     await redis.quit();
   }
 };
 
 main().catch((error) => {
-  console.error("Failed to warm cache:", getErrorMessage(error));
+  console.error(`[warm-cache] Failed: ${getErrorMessage(error)}`);
   process.exitCode = 1;
 });
