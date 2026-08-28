@@ -24,8 +24,7 @@ const fetchGithubDirectoryContents = async (
         Accept: "application/vnd.github+json",
         "User-Agent": "draculatheme.com",
         ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {})
-      },
-      next: { revalidate: 3600 }
+      }
     }
   );
 
@@ -73,11 +72,10 @@ const hasRootScreenshot = async (
 
   const response = await fetch(rootScreenshotUrl, {
     method: "HEAD",
-    redirect: "follow",
-    next: { revalidate: 3600 }
+    redirect: "follow"
   }).catch(() => null);
 
-  return response != null && response.ok;
+  return Boolean(response?.ok);
 };
 
 export const getThemeScreenshots = async (
