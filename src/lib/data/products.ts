@@ -1,4 +1,5 @@
 import { redis } from "@/lib/redis";
+import { findProductConfigByCatalogId } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 
 const isProduct = (value: unknown): value is Product => {
@@ -33,6 +34,30 @@ const parseProducts = (rawValue: string): Record<string, Product> => {
   }
 };
 
+export const findStoredProduct = (
+  storedProducts: Product[],
+  catalogId: string
+): Product | null => {
+  const catalogEntry = findProductConfigByCatalogId(catalogId);
+
+  return (
+    storedProducts.find((product) => {
+      if (product.id === catalogId || product.custom_permalink === catalogId) {
+        return true;
+      }
+
+      if (!catalogEntry) {
+        return false;
+      }
+
+      return (
+        product.custom_permalink === catalogEntry.params.slug ||
+        product.id === catalogEntry.params.gumroadId
+      );
+    }) ?? null
+  );
+};
+
 export const getProducts = async (): Promise<Product[]> => {
   const storedValue = await redis.get("products");
 
@@ -50,5 +75,11 @@ export const getProduct = async (id: string): Promise<Product | null> => {
     return null;
   }
 
-  return parseProducts(storedValue)[id] ?? null;
+  const productsById = parseProducts(storedValue);
+
+  if (productsById[id]) {
+    return productsById[id];
+  }
+
+  return findStoredProduct(Object.values(productsById), id);
 };

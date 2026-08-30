@@ -20,6 +20,8 @@ import { getMdxDataFromDirectory, getMdxFromFile } from "@/utils/mdx";
 import { extractHeadings } from "@/utils/mdx/extract-headings";
 import { createMetadata } from "@/utils/metadata";
 
+export const dynamicParams = false;
+
 export const generateStaticParams = async () => {
   const posts = getMdxDataFromDirectory<Post>("content/blog");
   return posts.map((post) => ({ slug: post.slug }));

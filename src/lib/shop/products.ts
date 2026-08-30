@@ -230,3 +230,21 @@ export const products = [
     }
   }
 ];
+
+type StoredProductMatch = {
+  id: string;
+  custom_permalink: string;
+};
+
+export const findProductConfig = (storedProduct: StoredProductMatch) =>
+  products.find(
+    (entry) =>
+      entry.params.gumroadId === storedProduct.id ||
+      entry.params.slug === storedProduct.custom_permalink
+  );
+
+export const findProductConfigByCatalogId = (catalogId: string) =>
+  products.find(
+    (entry) =>
+      entry.params.gumroadId === catalogId || entry.params.slug === catalogId
+  );

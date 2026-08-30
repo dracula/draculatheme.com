@@ -471,7 +471,7 @@ const warmProducts = async (redis, gumroadIds) => {
     gumroadIds.map(async (id) => {
       try {
         const product = await fetchGumroadProduct(id);
-        products[product.id] = product;
+        products[id] = product;
       } catch (error) {
         skipped.push({ name: id, reason: getErrorMessage(error) });
       }
