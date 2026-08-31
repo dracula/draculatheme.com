@@ -1,5 +1,8 @@
 import { redis } from "@/lib/redis";
-import { findProductConfigByCatalogId } from "@/lib/shop/products";
+import {
+  findProductConfigByCatalogId,
+  products as productCatalog
+} from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 
 const isProduct = (value: unknown): value is Product => {
@@ -58,6 +61,16 @@ export const findStoredProduct = (
   );
 };
 
+const findCatalogProduct = (
+  productsById: Record<string, Product>,
+  catalogId: string
+): Product | null => {
+  return (
+    productsById[catalogId] ??
+    findStoredProduct(Object.values(productsById), catalogId)
+  );
+};
+
 export const getProducts = async (): Promise<Product[]> => {
   const storedValue = await redis.get("products");
 
@@ -65,7 +78,13 @@ export const getProducts = async (): Promise<Product[]> => {
     return [];
   }
 
-  return Object.values(parseProducts(storedValue));
+  const productsById = parseProducts(storedValue);
+
+  return productCatalog.flatMap(({ params }) => {
+    const product = findCatalogProduct(productsById, params.gumroadId);
+
+    return product ? [product] : [];
+  });
 };
 
 export const getProduct = async (id: string): Promise<Product | null> => {
@@ -77,9 +96,5 @@ export const getProduct = async (id: string): Promise<Product | null> => {
 
   const productsById = parseProducts(storedValue);
 
-  if (productsById[id]) {
-    return productsById[id];
-  }
-
-  return findStoredProduct(Object.values(productsById), id);
+  return findCatalogProduct(productsById, id);
 };

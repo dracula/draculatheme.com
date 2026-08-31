@@ -162,11 +162,24 @@ const extractPaths = () => {
   );
 };
 
-const extractGumroadIds = () => {
+const extractShopProducts = () => {
   return extractFromSource(
     "../src/lib/shop/products.ts",
-    /gumroadId:\s*"([^"]+)"/g,
-    (idMatch) => idMatch[1]
+    /\{[^{}]+\}/g,
+    (objectMatch) => {
+      const objectText = objectMatch[0];
+      const gumroadIdMatch = objectText.match(/gumroadId:\s*"([^"]+)"/);
+      const slugMatch = objectText.match(/slug:\s*"([^"]+)"/);
+
+      if (!gumroadIdMatch || !slugMatch) {
+        return undefined;
+      }
+
+      return {
+        gumroadId: gumroadIdMatch[1],
+        slug: slugMatch[1]
+      };
+    }
   );
 };
 
@@ -462,18 +475,31 @@ const warmSales = async (redis) => {
   return { summary: `${sales.count} · ${sales.total}` };
 };
 
-const warmProducts = async (redis, gumroadIds) => {
+const warmProducts = async (redis, shopProducts) => {
   const previousProducts = parseStoredProducts(await redis.get("products"));
-  const products = { ...previousProducts };
+  const previousProductValues = Object.values(previousProducts);
+  const products = {};
   const skipped = [];
 
   await Promise.all(
-    gumroadIds.map(async (id) => {
+    shopProducts.map(async ({ gumroadId, slug }) => {
       try {
-        const product = await fetchGumroadProduct(id);
-        products[id] = product;
+        products[gumroadId] = await fetchGumroadProduct(gumroadId);
       } catch (error) {
-        skipped.push({ name: id, reason: getErrorMessage(error) });
+        const fallbackProduct =
+          previousProducts[gumroadId] ??
+          previousProductValues.find(
+            (product) => product?.custom_permalink === slug
+          );
+
+        if (fallbackProduct) {
+          products[gumroadId] = fallbackProduct;
+        }
+
+        skipped.push({
+          name: `${slug} (${gumroadId})`,
+          reason: getErrorMessage(error)
+        });
       }
     })
   );
@@ -485,7 +511,7 @@ const warmProducts = async (redis, gumroadIds) => {
   await redis.set("products", JSON.stringify(products));
 
   return {
-    summary: `${gumroadIds.length - skipped.length}/${gumroadIds.length}`,
+    summary: `${shopProducts.length - skipped.length}/${shopProducts.length}`,
     skipped
   };
 };
@@ -587,11 +613,11 @@ const main = async () => {
     });
     const concurrencyLimit = pLimit(8);
     const paths = extractPaths();
-    const gumroadIds = extractGumroadIds();
+    const shopProducts = extractShopProducts();
     const startedAt = Date.now();
 
     log(
-      `Warming ${paths.length} repositories and ${gumroadIds.length} products.`
+      `Warming ${paths.length} repositories and ${shopProducts.length} products.`
     );
 
     const datasets = [
@@ -604,7 +630,7 @@ const main = async () => {
       ["views", () => warmViews(redis, paths, concurrencyLimit)],
       ["total-views", () => warmTotalViews(redis)],
       ["sales", () => warmSales(redis)],
-      ["products", () => warmProducts(redis, gumroadIds)],
+      ["products", () => warmProducts(redis, shopProducts)],
       ["reviews", () => warmReviews(redis)],
       ["github-stars", () => warmGithubStars(redis, octokit)]
     ];
