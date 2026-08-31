@@ -40,7 +40,7 @@ export const ImageGallery = ({
           width={800}
           height={800}
           sizes={sizes}
-          quality={100}
+          quality={80}
           priority={priority}
           unoptimized={isRemoteImage(selectedImage.src)}
         />

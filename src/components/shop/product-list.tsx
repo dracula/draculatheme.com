@@ -29,7 +29,7 @@ export const ProductList = ({
                 alt={product.name}
                 width={320}
                 height={320}
-                quality={100}
+                quality={80}
               />
             </div>
             <div className="content">

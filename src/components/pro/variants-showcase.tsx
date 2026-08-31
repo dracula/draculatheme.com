@@ -123,7 +123,7 @@ export const VariantsShowcase = () => {
           alt={`${selectedApp?.label} - ${selectedVariant.name} theme preview`}
           width={912}
           height={552}
-          quality={100}
+          quality={80}
           priority
         />
       </div>
@@ -133,7 +133,7 @@ export const VariantsShowcase = () => {
           alt={`${selectedVariant.name} illustration`}
           width={918}
           height={1062}
-          quality={100}
+          quality={80}
           priority
         />
       </div>

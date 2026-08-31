@@ -21,7 +21,7 @@ export const LightVariant = () => (
         alt="VsCode with Alucard"
         width={1680}
         height={1008}
-        quality={100}
+        quality={80}
       />
     </div>
   </div>
