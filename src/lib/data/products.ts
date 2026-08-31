@@ -1,4 +1,8 @@
 import { redis } from "@/lib/redis";
+import {
+  findProductConfigByCatalogId,
+  products as productCatalog
+} from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 
 const isProduct = (value: unknown): value is Product => {
@@ -33,6 +37,40 @@ const parseProducts = (rawValue: string): Record<string, Product> => {
   }
 };
 
+export const findStoredProduct = (
+  storedProducts: Product[],
+  catalogId: string
+): Product | null => {
+  const catalogEntry = findProductConfigByCatalogId(catalogId);
+
+  return (
+    storedProducts.find((product) => {
+      if (product.id === catalogId || product.custom_permalink === catalogId) {
+        return true;
+      }
+
+      if (!catalogEntry) {
+        return false;
+      }
+
+      return (
+        product.custom_permalink === catalogEntry.params.slug ||
+        product.id === catalogEntry.params.gumroadId
+      );
+    }) ?? null
+  );
+};
+
+const findCatalogProduct = (
+  productsById: Record<string, Product>,
+  catalogId: string
+): Product | null => {
+  return (
+    productsById[catalogId] ??
+    findStoredProduct(Object.values(productsById), catalogId)
+  );
+};
+
 export const getProducts = async (): Promise<Product[]> => {
   const storedValue = await redis.get("products");
 
@@ -40,7 +78,13 @@ export const getProducts = async (): Promise<Product[]> => {
     return [];
   }
 
-  return Object.values(parseProducts(storedValue));
+  const productsById = parseProducts(storedValue);
+
+  return productCatalog.flatMap(({ params }) => {
+    const product = findCatalogProduct(productsById, params.gumroadId);
+
+    return product ? [product] : [];
+  });
 };
 
 export const getProduct = async (id: string): Promise<Product | null> => {
@@ -50,5 +94,7 @@ export const getProduct = async (id: string): Promise<Product | null> => {
     return null;
   }
 
-  return parseProducts(storedValue)[id] ?? null;
+  const productsById = parseProducts(storedValue);
+
+  return findCatalogProduct(productsById, id);
 };

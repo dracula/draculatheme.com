@@ -7,9 +7,13 @@ import { Disclosure } from "@/components/shared/disclosure";
 import { ProductDetails } from "@/components/shop/product-details";
 import { ProductGallery } from "@/components/shop/product-gallery";
 import { ProductList } from "@/components/shop/product-list";
-import { getProduct, getProducts } from "@/lib/data/products";
+import {
+  findStoredProduct,
+  getProduct,
+  getProducts
+} from "@/lib/data/products";
 import { frequentlyAskedQuestions } from "@/lib/shop/faqs";
-import { products } from "@/lib/shop/products";
+import { findProductConfig, products } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import {
   createStructuredDataScriptId,
@@ -37,6 +41,8 @@ interface PageParams {
   product: string;
 }
 
+export const dynamicParams = false;
+
 export const generateStaticParams = async () => {
   return products.map((product) => ({
     product: product.params.slug
@@ -55,8 +61,9 @@ const fetchRelatedProducts = (
         product.params.category === query.category
     )
     .flatMap((product) => {
-      const relatedProduct = allProducts.find(
-        (item) => item.id === product.params.gumroadId
+      const relatedProduct = findStoredProduct(
+        allProducts,
+        product.params.gumroadId
       );
 
       return relatedProduct ? [relatedProduct] : [];
@@ -102,7 +109,7 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
   );
 
   if (!productConfig) {
-    return <div>Product not found</div>;
+    notFound();
   }
 
   const query = productConfig.params;
@@ -200,9 +207,7 @@ const ProductPage = async ({ params }: { params: Promise<PageParams> }) => {
       audienceType: ["Developers", "Designers", "Tech Enthusiasts"]
     },
     isRelatedTo: relatedProducts.slice(0, 3).map((relatedProduct) => {
-      const relatedConfig = products.find(
-        (p) => p.params.gumroadId === relatedProduct.id
-      );
+      const relatedConfig = findProductConfig(relatedProduct);
       return {
         "@type": "Product",
         name: relatedProduct.name,

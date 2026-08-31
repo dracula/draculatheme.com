@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/shared/hero";
 import { ProductList } from "@/components/shop/product-list";
 import { getProducts } from "@/lib/data/products";
-import { products } from "@/lib/shop/products";
+import { findProductConfig } from "@/lib/shop/products";
 import type { Product } from "@/lib/types";
 import {
   createStructuredDataScriptId,
@@ -85,10 +85,10 @@ const ShopPage = async () => {
           description:
             sanitizeDescription(product.description) ||
             `Premium ${product.name} from Dracula Shop.`,
-          url: `https://draculatheme.com/shop/${products.find((p) => p.params.gumroadId === product.id)?.params.slug}`,
+          url: `https://draculatheme.com/shop/${findProductConfig(product)?.params.slug}`,
           image:
             product.preview_url ||
-            `https://draculatheme.com/images/shop/${products.find((p) => p.params.gumroadId === product.id)?.params.images[0]}`,
+            `https://draculatheme.com/images/shop/${findProductConfig(product)?.params.images[0]}`,
           price: product.price,
           priceCurrency: "USD",
           availability: product.published
@@ -98,9 +98,7 @@ const ShopPage = async () => {
             "@type": "Organization",
             name: "Dracula Shop"
           },
-          category:
-            products.find((p) => p.params.gumroadId === product.id)?.params
-              .category || "merchandise"
+          category: findProductConfig(product)?.params.category || "merchandise"
         }))
     },
     keywords: [
