@@ -223,7 +223,7 @@ const readRepositoryConfigurations = () => {
 const readShopProductConfigurations = () => {
   return readValuesFromSource(
     "../src/lib/shop/products.ts",
-    /\{[^{}]+\}/g,
+    /^ {2}\{[\s\S]*?^ {2}\}/gm,
     (objectMatch) => {
       const objectText = objectMatch[0];
       const gumroadIdMatch = objectText.match(/gumroadId:\s*"([^"]+)"/);
@@ -615,7 +615,10 @@ const warmShopProducts = async (redisClient, shopProductConfigurations) => {
           );
 
         if (fallbackProduct) {
-          products[gumroadProductId] = fallbackProduct;
+          products[gumroadProductId] = {
+            ...fallbackProduct,
+            id: gumroadProductId
+          };
         }
 
         skippedItems.push({
@@ -626,7 +629,7 @@ const warmShopProducts = async (redisClient, shopProductConfigurations) => {
     })
   );
 
-  if (Object.keys(products).length === 0) {
+  if (skippedItems.length === shopProductConfigurations.length) {
     throwWithSkippedItems("No products were fetched.", skippedItems);
   }
 
