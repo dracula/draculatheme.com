@@ -5,12 +5,53 @@ import { endOfDay, format } from "date-fns";
 import Redis from "ioredis";
 import pLimit from "p-limit";
 
-const twelveHoursInMilliseconds = 12 * 60 * 60 * 1000;
+// Configuration
+
+const cacheFreshnessDurationMilliseconds = 12 * 60 * 60 * 1000;
 const gumroadProProductId = "tPfIDt";
-const githubOwner = "dracula";
+const githubOrganization = "dracula";
 const plausibleApiBaseUrl = "https://plausible.io/api/v1/stats/aggregate";
-const shouldForceWarm =
+const shouldForceCacheRefresh =
   process.argv.includes("--force") || process.env.FORCE_WARM_CACHE === "1";
+
+const cacheKeys = {
+  branches: "branches",
+  contributors: "contributors",
+  githubStars: "github-stars",
+  installs: "installs",
+  products: "products",
+  reviews: "reviews",
+  sales: "sales",
+  totalViews: "total-views",
+  views: "views",
+  warmedAt: "warmed_at"
+};
+
+/**
+ * @typedef {object} RepositoryConfiguration
+ * @property {string} repository
+ * @property {number} legacyViews
+ */
+
+/**
+ * @typedef {object} ShopProductConfiguration
+ * @property {string} gumroadProductId
+ * @property {string} slug
+ */
+
+/**
+ * @typedef {object} SkippedItem
+ * @property {string} name
+ * @property {string} reason
+ */
+
+/**
+ * @typedef {object} DatasetResult
+ * @property {string} [summary]
+ * @property {SkippedItem[]} [skippedItems]
+ */
+
+// Logging and general utilities
 
 const log = (message) => {
   console.log(`[warm-cache] ${message}`);
@@ -55,7 +96,7 @@ const formatDuration = (milliseconds) => {
     : `${hours}h ${remainingMinutes}m`;
 };
 
-const requireEnvironment = (name) => {
+const getRequiredEnvironmentVariable = (name) => {
   const value = process.env[name];
 
   if (!value) {
@@ -101,7 +142,9 @@ const loadEnvironmentFile = () => {
   }
 };
 
-const parseDatabase = (pathname) => {
+// Environment and client setup
+
+const parseRedisDatabaseNumber = (pathname) => {
   if (!pathname || pathname === "/") {
     return undefined;
   }
@@ -110,25 +153,34 @@ const parseDatabase = (pathname) => {
   return Number.isNaN(database) ? undefined : database;
 };
 
-const createRedis = () => {
-  const parsedUrl = new URL(requireEnvironment("REDIS_URL"));
+const createRedisClient = () => {
+  const redisUrl = new URL(getRequiredEnvironmentVariable("REDIS_URL"));
 
   return new Redis({
-    host: parsedUrl.hostname,
-    port: parsedUrl.port ? Number.parseInt(parsedUrl.port, 10) : 6379,
-    username: parsedUrl.username || undefined,
-    password: parsedUrl.password || undefined,
-    db: parseDatabase(parsedUrl.pathname),
-    tls: parsedUrl.protocol === "rediss:" ? {} : undefined
+    host: redisUrl.hostname,
+    port: redisUrl.port ? Number.parseInt(redisUrl.port, 10) : 6379,
+    username: redisUrl.username || undefined,
+    password: redisUrl.password || undefined,
+    db: parseRedisDatabaseNumber(redisUrl.pathname),
+    tls: redisUrl.protocol === "rediss:" ? {} : undefined
   });
 };
 
-const extractFromSource = (relativePath, pattern, mapMatch) => {
-  const contents = readFileSync(new URL(relativePath, import.meta.url), "utf8");
+// Local configuration readers
+
+/**
+ * Reads selected literal values from TypeScript source files so this script
+ * remains directly executable by Node.js without compiling application code.
+ */
+const readValuesFromSource = (relativePath, pattern, createValue) => {
+  const sourceText = readFileSync(
+    new URL(relativePath, import.meta.url),
+    "utf8"
+  );
   const values = [];
 
-  for (const match of contents.matchAll(pattern)) {
-    const value = mapMatch(match);
+  for (const match of sourceText.matchAll(pattern)) {
+    const value = createValue(match);
 
     if (value !== undefined) {
       values.push(value);
@@ -138,8 +190,11 @@ const extractFromSource = (relativePath, pattern, mapMatch) => {
   return values;
 };
 
-const extractPaths = () => {
-  return extractFromSource(
+/**
+ * @returns {RepositoryConfiguration[]}
+ */
+const readRepositoryConfigurations = () => {
+  return readValuesFromSource(
     "../src/lib/paths.ts",
     /\{[^{}]+\}/g,
     (objectMatch) => {
@@ -153,7 +208,7 @@ const extractPaths = () => {
       const legacyViewsMatch = objectText.match(/legacyViews:\s*(\d+)/);
 
       return {
-        repo: repositoryMatch[1],
+        repository: repositoryMatch[1],
         legacyViews: legacyViewsMatch
           ? Number.parseInt(legacyViewsMatch[1], 10)
           : 0
@@ -162,8 +217,11 @@ const extractPaths = () => {
   );
 };
 
-const extractShopProducts = () => {
-  return extractFromSource(
+/**
+ * @returns {ShopProductConfiguration[]}
+ */
+const readShopProductConfigurations = () => {
+  return readValuesFromSource(
     "../src/lib/shop/products.ts",
     /\{[^{}]+\}/g,
     (objectMatch) => {
@@ -176,14 +234,14 @@ const extractShopProducts = () => {
       }
 
       return {
-        gumroadId: gumroadIdMatch[1],
+        gumroadProductId: gumroadIdMatch[1],
         slug: slugMatch[1]
       };
     }
   );
 };
 
-const isBot = (contributor) => {
+const isAutomatedContributor = (contributor) => {
   if (!contributor.login) {
     return true;
   }
@@ -205,59 +263,71 @@ const isNotFoundError = (error) => {
   );
 };
 
-const logSkipped = (skipped) => {
-  if (!skipped?.length) {
+const logSkippedItems = (skippedItems) => {
+  if (!skippedItems?.length) {
     return;
   }
 
-  for (const item of skipped) {
+  for (const item of skippedItems) {
     logWarning(`  ${item.name}: ${item.reason}`);
   }
 };
 
-const failWithSkipped = (message, skipped) => {
+const throwWithSkippedItems = (message, skippedItems) => {
   const error = new Error(message);
-  error.skipped = skipped;
+  error.skippedItems = skippedItems;
   throw error;
 };
 
-const fetchJson = async (
+// External service clients
+
+/**
+ * Fetches JSON and retries only HTTP responses accepted by `shouldRetry`.
+ * Network failures continue to surface immediately.
+ */
+const fetchJsonWithRetry = async (
   url,
-  { request, retries, shouldRetry, getDelay, label }
+  {
+    requestOptions,
+    maximumAttempts,
+    shouldRetry,
+    getRetryDelayMilliseconds,
+    serviceName
+  }
 ) => {
-  let response = await fetch(url, request);
+  let response = await fetch(url, requestOptions);
 
   for (
     let attempt = 1;
-    attempt < retries && shouldRetry(response);
+    attempt < maximumAttempts && shouldRetry(response);
     attempt += 1
   ) {
-    await sleep(getDelay(attempt, response));
-    response = await fetch(url, request);
+    await sleep(getRetryDelayMilliseconds(attempt, response));
+    response = await fetch(url, requestOptions);
   }
 
   if (!response.ok) {
-    throw new Error(`${label} responded with ${response.status}.`);
+    throw new Error(`${serviceName} responded with ${response.status}.`);
   }
 
   return response.json();
 };
 
-const fetchDefaultBranch = async (octokit, repository) => {
-  const response = await octokit.rest.repos.get({
-    owner: githubOwner,
+const fetchDefaultBranchName = async (githubClient, repository) => {
+  const response = await githubClient.rest.repos.get({
+    owner: githubOrganization,
     repo: repository
   });
 
   return response.data.default_branch;
 };
 
-const fetchInstallContent = async (octokit, repository) => {
+const fetchInstallationContent = async (githubClient, repository) => {
   for (const path of ["INSTALL.md", "install.md"]) {
     try {
-      const response = await octokit.rest.repos.getContent({
+      const response = await githubClient.rest.repos.getContent({
         path,
-        owner: githubOwner,
+        owner: githubOrganization,
         repo: repository
       });
 
@@ -274,20 +344,20 @@ const fetchInstallContent = async (octokit, repository) => {
   return null;
 };
 
-const fetchPlausiblePageviews = async (filters = "") => {
+const fetchPlausiblePageViews = async (filterExpression = "") => {
   const today = format(endOfDay(new Date()), "yyyy-MM-dd");
-  const filterQuery = filters ? `&filters=${filters}` : "";
+  const filterQuery = filterExpression ? `&filters=${filterExpression}` : "";
   const url = `${plausibleApiBaseUrl}?site_id=draculatheme.com${filterQuery}&period=custom&date=2023-10-19,${today}&metrics=pageviews`;
-  const payload = await fetchJson(url, {
-    request: {
+  const payload = await fetchJsonWithRetry(url, {
+    requestOptions: {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${requireEnvironment("PLAUSIBLE_API_KEY")}`
+        Authorization: `Bearer ${getRequiredEnvironmentVariable("PLAUSIBLE_API_KEY")}`
       }
     },
-    retries: 5,
+    maximumAttempts: 5,
     shouldRetry: (response) => response.status === 429,
-    getDelay: (attempt, response) => {
+    getRetryDelayMilliseconds: (attempt, response) => {
       const retryAfter = Number.parseInt(
         response.headers.get("retry-after") || "",
         10
@@ -295,13 +365,13 @@ const fetchPlausiblePageviews = async (filters = "") => {
 
       return Number.isFinite(retryAfter) ? retryAfter * 1000 : attempt * 1000;
     },
-    label: "Plausible"
+    serviceName: "Plausible"
   });
 
   return payload.results.pageviews.value;
 };
 
-const parseStoredProducts = (rawValue) => {
+const parseStoredProductMap = (rawValue) => {
   if (!rawValue) {
     return {};
   }
@@ -323,92 +393,125 @@ const parseStoredProducts = (rawValue) => {
   }
 };
 
-const fetchGumroadProduct = async (id) => {
-  const accessToken = requireEnvironment("GUMROAD_ACCESS_TOKEN");
-  const url = `https://api.gumroad.com/v2/products/${id}?access_token=${accessToken}`;
-  const payload = await fetchJson(url, {
-    retries: 4,
+const fetchGumroadProduct = async (gumroadProductId) => {
+  const accessToken = getRequiredEnvironmentVariable("GUMROAD_ACCESS_TOKEN");
+  const url = `https://api.gumroad.com/v2/products/${gumroadProductId}?access_token=${accessToken}`;
+  const payload = await fetchJsonWithRetry(url, {
+    maximumAttempts: 4,
     shouldRetry: (response) => response.status >= 500,
-    getDelay: (attempt) => 2 ** attempt * 1000,
-    label: "Gumroad"
+    getRetryDelayMilliseconds: (attempt) => 2 ** attempt * 1000,
+    serviceName: "Gumroad"
   });
 
   if (!payload.success || !payload.product) {
-    throw new Error(`Gumroad product ${id} was not found.`);
+    throw new Error(`Gumroad product ${gumroadProductId} was not found.`);
   }
 
   return payload.product;
 };
 
-const collectByRepository = async (items, concurrencyLimit, fetchValue) => {
+// Generic cache warmers
+
+/**
+ * Fetches repository values concurrently while isolating individual failures.
+ */
+const fetchRepositoryValues = async ({
+  repositoryConfigurations,
+  concurrencyLimit,
+  fetchValue
+}) => {
   const values = {};
-  const skipped = [];
+  const skippedItems = [];
 
   await Promise.all(
-    items.map((item) =>
+    repositoryConfigurations.map((repositoryConfiguration) =>
       concurrencyLimit(async () => {
         try {
-          values[item.repo] = await fetchValue(item);
+          values[repositoryConfiguration.repository] = await fetchValue(
+            repositoryConfiguration
+          );
         } catch (error) {
-          skipped.push({ name: item.repo, reason: getErrorMessage(error) });
+          skippedItems.push({
+            name: repositoryConfiguration.repository,
+            reason: getErrorMessage(error)
+          });
         }
       })
     )
   );
 
-  return { values, skipped };
+  return { values, skippedItems };
 };
 
-const warmHashMap = async ({
-  redis,
-  key,
-  items,
+/**
+ * Stores every successfully fetched repository value. Failed repositories
+ * retain their previous Redis hash fields.
+ *
+ * @returns {Promise<DatasetResult>}
+ */
+const warmRepositoryHash = async ({
+  redisClient,
+  cacheKey,
+  repositoryConfigurations,
   concurrencyLimit,
   fetchValue
 }) => {
-  const { values, skipped } = await collectByRepository(
-    items,
+  const { values, skippedItems } = await fetchRepositoryValues({
+    repositoryConfigurations,
     concurrencyLimit,
     fetchValue
-  );
-  const storedCount = Object.keys(values).length;
+  });
+  const storedValueCount = Object.keys(values).length;
 
-  if (storedCount === 0) {
-    failWithSkipped(`No ${key} were fetched.`, skipped);
+  if (storedValueCount === 0) {
+    throwWithSkippedItems(`No ${cacheKey} were fetched.`, skippedItems);
   }
 
-  await redis.hmset(key, values);
+  await redisClient.hmset(cacheKey, values);
 
   return {
-    summary: `${storedCount}/${items.length}`,
-    skipped
+    summary: `${storedValueCount}/${repositoryConfigurations.length}`,
+    skippedItems
   };
 };
 
-const warmBranches = (redis, octokit, paths, concurrencyLimit) => {
-  return warmHashMap({
-    redis,
-    key: "branches",
-    items: paths,
+// Dataset-specific warmers
+
+const warmDefaultBranches = ({
+  redisClient,
+  githubClient,
+  repositoryConfigurations,
+  concurrencyLimit
+}) => {
+  return warmRepositoryHash({
+    redisClient,
+    cacheKey: cacheKeys.branches,
+    repositoryConfigurations,
     concurrencyLimit,
-    fetchValue: (item) => fetchDefaultBranch(octokit, item.repo)
+    fetchValue: (repositoryConfiguration) =>
+      fetchDefaultBranchName(githubClient, repositoryConfiguration.repository)
   });
 };
 
-const warmContributors = (redis, octokit, paths, concurrencyLimit) => {
-  return warmHashMap({
-    redis,
-    key: "contributors",
-    items: paths,
+const warmContributors = ({
+  redisClient,
+  githubClient,
+  repositoryConfigurations,
+  concurrencyLimit
+}) => {
+  return warmRepositoryHash({
+    redisClient,
+    cacheKey: cacheKeys.contributors,
+    repositoryConfigurations,
     concurrencyLimit,
-    fetchValue: async (item) => {
-      const response = await octokit.rest.repos.listContributors({
-        owner: githubOwner,
-        repo: item.repo
+    fetchValue: async (repositoryConfiguration) => {
+      const response = await githubClient.rest.repos.listContributors({
+        owner: githubOrganization,
+        repo: repositoryConfiguration.repository
       });
 
       const filteredContributors = response.data
-        .filter((contributor) => !isBot(contributor))
+        .filter((contributor) => !isAutomatedContributor(contributor))
         .map((contributor) => ({
           login: contributor.login,
           avatar_url: contributor.avatar_url
@@ -419,48 +522,60 @@ const warmContributors = (redis, octokit, paths, concurrencyLimit) => {
   });
 };
 
-const warmInstalls = (redis, octokit, paths, concurrencyLimit) => {
-  return warmHashMap({
-    redis,
-    key: "installs",
-    items: paths,
+const warmInstallationInstructions = ({
+  redisClient,
+  githubClient,
+  repositoryConfigurations,
+  concurrencyLimit
+}) => {
+  return warmRepositoryHash({
+    redisClient,
+    cacheKey: cacheKeys.installs,
+    repositoryConfigurations,
     concurrencyLimit,
-    fetchValue: async (item) => {
-      const content = await fetchInstallContent(octokit, item.repo);
+    fetchValue: async (repositoryConfiguration) => {
+      const installationContent = await fetchInstallationContent(
+        githubClient,
+        repositoryConfiguration.repository
+      );
 
-      if (!content) {
+      if (!installationContent) {
         throw new Error("INSTALL.md not found");
       }
 
-      return content;
+      return installationContent;
     }
   });
 };
 
-const warmViews = (redis, paths, concurrencyLimit) => {
-  return warmHashMap({
-    redis,
-    key: "views",
-    items: paths,
+const warmRepositoryViews = ({
+  redisClient,
+  repositoryConfigurations,
+  concurrencyLimit
+}) => {
+  return warmRepositoryHash({
+    redisClient,
+    cacheKey: cacheKeys.views,
+    repositoryConfigurations,
     concurrencyLimit,
-    fetchValue: async (item) => {
-      const pageViews = await fetchPlausiblePageviews(
-        `event:page==/${item.repo}`
+    fetchValue: async (repositoryConfiguration) => {
+      const pageViews = await fetchPlausiblePageViews(
+        `event:page==/${repositoryConfiguration.repository}`
       );
 
-      return String(pageViews + (item.legacyViews || 0));
+      return String(pageViews + (repositoryConfiguration.legacyViews || 0));
     }
   });
 };
 
-const warmTotalViews = async (redis) => {
-  const total = await fetchPlausiblePageviews();
-  await redis.set("total-views", JSON.stringify({ total }));
+const warmTotalViews = async (redisClient) => {
+  const total = await fetchPlausiblePageViews();
+  await redisClient.set(cacheKeys.totalViews, JSON.stringify({ total }));
 
   return { summary: total.toLocaleString("en-US") };
 };
 
-const warmSales = async (redis) => {
+const warmSales = async (redisClient) => {
   const product = await fetchGumroadProduct(gumroadProProductId);
   const sales = {
     count: product.sales_count.toLocaleString(),
@@ -470,34 +585,41 @@ const warmSales = async (redis) => {
     }).format(product.sales_usd_cents / 100)
   };
 
-  await redis.set("sales", JSON.stringify(sales));
+  await redisClient.set(cacheKeys.sales, JSON.stringify(sales));
 
   return { summary: `${sales.count} · ${sales.total}` };
 };
 
-const warmProducts = async (redis, shopProducts) => {
-  const previousProducts = parseStoredProducts(await redis.get("products"));
+/**
+ * Falls back to each previously cached product when Gumroad is unavailable,
+ * allowing successful products to refresh without dropping failed products.
+ */
+const warmShopProducts = async (redisClient, shopProductConfigurations) => {
+  const previousProducts = parseStoredProductMap(
+    await redisClient.get(cacheKeys.products)
+  );
   const previousProductValues = Object.values(previousProducts);
   const products = {};
-  const skipped = [];
+  const skippedItems = [];
 
   await Promise.all(
-    shopProducts.map(async ({ gumroadId, slug }) => {
+    shopProductConfigurations.map(async ({ gumroadProductId, slug }) => {
       try {
-        products[gumroadId] = await fetchGumroadProduct(gumroadId);
+        products[gumroadProductId] =
+          await fetchGumroadProduct(gumroadProductId);
       } catch (error) {
         const fallbackProduct =
-          previousProducts[gumroadId] ??
+          previousProducts[gumroadProductId] ??
           previousProductValues.find(
             (product) => product?.custom_permalink === slug
           );
 
         if (fallbackProduct) {
-          products[gumroadId] = fallbackProduct;
+          products[gumroadProductId] = fallbackProduct;
         }
 
-        skipped.push({
-          name: `${slug} (${gumroadId})`,
+        skippedItems.push({
+          name: `${slug} (${gumroadProductId})`,
           reason: getErrorMessage(error)
         });
       }
@@ -505,20 +627,20 @@ const warmProducts = async (redis, shopProducts) => {
   );
 
   if (Object.keys(products).length === 0) {
-    failWithSkipped("No products were fetched.", skipped);
+    throwWithSkippedItems("No products were fetched.", skippedItems);
   }
 
-  await redis.set("products", JSON.stringify(products));
+  await redisClient.set(cacheKeys.products, JSON.stringify(products));
 
   return {
-    summary: `${shopProducts.length - skipped.length}/${shopProducts.length}`,
-    skipped
+    summary: `${shopProductConfigurations.length - skippedItems.length}/${shopProductConfigurations.length}`,
+    skippedItems
   };
 };
 
-const warmReviews = async (redis) => {
+const warmReviews = async (redisClient) => {
   const base = new Airtable({
-    apiKey: requireEnvironment("AIRTABLE_API_TOKEN")
+    apiKey: getRequiredEnvironmentVariable("AIRTABLE_API_TOKEN")
   }).base("appE8qDD7fxpKyDpf");
   const records = await base("Table 1")
     .select({
@@ -536,25 +658,27 @@ const warmReviews = async (redis) => {
     date: String(review.get("Date") || "")
   }));
 
-  await redis.set("reviews", JSON.stringify(reviews));
+  await redisClient.set(cacheKeys.reviews, JSON.stringify(reviews));
 
   return { summary: `${reviews.length} reviews` };
 };
 
-const warmGithubStars = async (redis, octokit) => {
-  const response = await octokit.rest.repos.get({
-    owner: githubOwner,
+const warmGitHubStars = async (redisClient, githubClient) => {
+  const response = await githubClient.rest.repos.get({
+    owner: githubOrganization,
     repo: "dracula-theme"
   });
   const total = response.data.stargazers_count;
 
-  await redis.set("github-stars", JSON.stringify({ total }));
+  await redisClient.set(cacheKeys.githubStars, JSON.stringify({ total }));
 
   return { summary: total.toLocaleString("en-US") };
 };
 
-const getCacheAge = async (redis) => {
-  const warmedAt = await redis.get("warmed_at");
+// Cache orchestration
+
+const getCacheAgeMilliseconds = async (redisClient) => {
+  const warmedAt = await redisClient.get(cacheKeys.warmedAt);
 
   if (!warmedAt) {
     return null;
@@ -565,21 +689,27 @@ const getCacheAge = async (redis) => {
   return Number.isFinite(elapsed) ? elapsed : null;
 };
 
-const warmDataset = async (name, task) => {
+/**
+ * Isolates dataset failures so remaining datasets can refresh and the failed
+ * dataset can retain its previously cached value.
+ */
+const runDatasetWarmer = async ({ name, run }) => {
   const startedAt = Date.now();
-  const elapsed = () => formatDuration(Date.now() - startedAt);
+  const getElapsedDuration = () => formatDuration(Date.now() - startedAt);
 
   try {
-    const result = (await task()) ?? {};
+    const result = (await run()) ?? {};
     const summary = result.summary ? `  ${result.summary}` : "";
-    log(`${name.padEnd(12)}  done${summary}  (${elapsed()})`);
-    logSkipped(result.skipped);
+    log(`${name.padEnd(12)}  done${summary}  (${getElapsedDuration()})`);
+    logSkippedItems(result.skippedItems);
     return "updated";
   } catch (error) {
     logWarning(
-      `${name.padEnd(12)}  failed  keeping previous — ${getErrorMessage(error)}  (${elapsed()})`
+      `${name.padEnd(12)}  failed  keeping previous — ${getErrorMessage(error)}  (${getElapsedDuration()})`
     );
-    logSkipped(error && typeof error === "object" ? error.skipped : undefined);
+    logSkippedItems(
+      error && typeof error === "object" ? error.skippedItems : undefined
+    );
     return "kept";
   }
 };
@@ -587,72 +717,106 @@ const warmDataset = async (name, task) => {
 const main = async () => {
   loadEnvironmentFile();
 
-  const redis = createRedis();
+  const redisClient = createRedisClient();
 
   try {
-    const cacheAge = await getCacheAge(redis);
-    const isFresh = cacheAge !== null && cacheAge < twelveHoursInMilliseconds;
+    const cacheAgeMilliseconds = await getCacheAgeMilliseconds(redisClient);
+    const isCacheFresh =
+      cacheAgeMilliseconds !== null &&
+      cacheAgeMilliseconds < cacheFreshnessDurationMilliseconds;
 
-    if (!shouldForceWarm && isFresh) {
+    if (!shouldForceCacheRefresh && isCacheFresh) {
       log(
-        `Skipping: cache is ${formatDuration(cacheAge)} old (threshold is 12h).`
+        `Skipping: cache is ${formatDuration(cacheAgeMilliseconds)} old (threshold is 12h).`
       );
       return;
     }
 
-    if (shouldForceWarm) {
+    if (shouldForceCacheRefresh) {
       log("Force refresh enabled.");
-    } else if (cacheAge === null) {
+    } else if (cacheAgeMilliseconds === null) {
       log("No previous cache found; warming from scratch.");
     } else {
-      log(`Cache is ${formatDuration(cacheAge)} old; refreshing.`);
+      log(`Cache is ${formatDuration(cacheAgeMilliseconds)} old; refreshing.`);
     }
 
-    const octokit = new Octokit({
+    const githubClient = new Octokit({
       auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
     });
     const concurrencyLimit = pLimit(8);
-    const paths = extractPaths();
-    const shopProducts = extractShopProducts();
-    const startedAt = Date.now();
+    const repositoryConfigurations = readRepositoryConfigurations();
+    const shopProductConfigurations = readShopProductConfigurations();
+    const warmingStartedAt = Date.now();
+    const repositoryWarmerContext = {
+      redisClient,
+      githubClient,
+      repositoryConfigurations,
+      concurrencyLimit
+    };
 
     log(
-      `Warming ${paths.length} repositories and ${shopProducts.length} products.`
+      `Warming ${repositoryConfigurations.length} repositories and ${shopProductConfigurations.length} products.`
     );
 
-    const datasets = [
-      ["branches", () => warmBranches(redis, octokit, paths, concurrencyLimit)],
-      [
-        "contributors",
-        () => warmContributors(redis, octokit, paths, concurrencyLimit)
-      ],
-      ["installs", () => warmInstalls(redis, octokit, paths, concurrencyLimit)],
-      ["views", () => warmViews(redis, paths, concurrencyLimit)],
-      ["total-views", () => warmTotalViews(redis)],
-      ["sales", () => warmSales(redis)],
-      ["products", () => warmProducts(redis, shopProducts)],
-      ["reviews", () => warmReviews(redis)],
-      ["github-stars", () => warmGithubStars(redis, octokit)]
+    const datasetWarmers = [
+      {
+        name: cacheKeys.branches,
+        run: () => warmDefaultBranches(repositoryWarmerContext)
+      },
+      {
+        name: cacheKeys.contributors,
+        run: () => warmContributors(repositoryWarmerContext)
+      },
+      {
+        name: cacheKeys.installs,
+        run: () => warmInstallationInstructions(repositoryWarmerContext)
+      },
+      {
+        name: cacheKeys.views,
+        run: () => warmRepositoryViews(repositoryWarmerContext)
+      },
+      {
+        name: cacheKeys.totalViews,
+        run: () => warmTotalViews(redisClient)
+      },
+      {
+        name: cacheKeys.sales,
+        run: () => warmSales(redisClient)
+      },
+      {
+        name: cacheKeys.products,
+        run: () => warmShopProducts(redisClient, shopProductConfigurations)
+      },
+      {
+        name: cacheKeys.reviews,
+        run: () => warmReviews(redisClient)
+      },
+      {
+        name: cacheKeys.githubStars,
+        run: () => warmGitHubStars(redisClient, githubClient)
+      }
     ];
 
-    const outcomes = [];
+    const datasetOutcomes = [];
 
-    for (const [name, task] of datasets) {
-      outcomes.push(await warmDataset(name, task));
+    for (const datasetWarmer of datasetWarmers) {
+      datasetOutcomes.push(await runDatasetWarmer(datasetWarmer));
     }
 
-    await redis.set("warmed_at", String(Date.now()));
+    await redisClient.set(cacheKeys.warmedAt, String(Date.now()));
 
-    const updatedCount = outcomes.filter(
+    const updatedCount = datasetOutcomes.filter(
       (outcome) => outcome === "updated"
     ).length;
-    const keptCount = outcomes.filter((outcome) => outcome === "kept").length;
+    const keptCount = datasetOutcomes.filter(
+      (outcome) => outcome === "kept"
+    ).length;
 
     log(
-      `Finished in ${formatDuration(Date.now() - startedAt)} — ${updatedCount} updated, ${keptCount} kept previous.`
+      `Finished in ${formatDuration(Date.now() - warmingStartedAt)} — ${updatedCount} updated, ${keptCount} kept previous.`
     );
   } finally {
-    await redis.quit();
+    await redisClient.quit();
   }
 };
 
