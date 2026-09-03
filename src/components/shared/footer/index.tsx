@@ -21,6 +21,7 @@ const sections: Section[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
+      { label: "Newsletter", href: "/newsletter" },
       { label: "Contribute", href: "/contribute" },
       { label: "Open Dashboard", href: "/open" }
     ]
@@ -49,6 +50,11 @@ const sections: Section[] = [
       {
         label: "X (formerly Twitter)",
         href: "https://x.com/draculatheme",
+        external: true
+      },
+      {
+        label: "Instagram",
+        href: "https://instagram.com/draculatheme",
         external: true
       },
       {
