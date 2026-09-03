@@ -15,7 +15,7 @@ export const ItemList = ({ items }: ItemListProps) => (
 
         return (
           <li key={item.repo}>
-            <Link href={`/${item.repo}`}>
+            <Link href={`/${item.repo}`} prefetch={false}>
               {item.teamPick && (
                 <span className="team-pick-badge">Team Pick</span>
               )}

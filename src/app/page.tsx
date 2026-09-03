@@ -87,7 +87,7 @@ const HomePage = async () => {
           <ul>
             {pathsWithViews.map((item) => (
               <li key={item.repo}>
-                <Link href={`/${item.repo}`}>
+                <Link href={`/${item.repo}`} prefetch={false}>
                   <div className="icon">
                     <Image
                       src={`/icons/${item.icon}`}
