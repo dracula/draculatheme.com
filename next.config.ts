@@ -2,19 +2,20 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  outputFileTracingExcludes: {
-    "/*": ["public/icons/unused/**"]
-  },
   images: {
-    deviceSizes: [360, 720, 1080, 1440],
-    imageSizes: [24, 48, 96, 144, 192],
-    formats: ["image/avif", "image/webp"],
-    qualities: [75, 80],
     localPatterns: [
       {
         pathname: "/images/**"
       }
-    ]
+    ],
+    deviceSizes: [360, 720, 1080, 1440],
+    imageSizes: [24, 48, 96, 144, 192],
+    formats: ["image/avif", "image/webp"],
+    qualities: [75, 80],
+    minimumCacheTTL: 2678400 // 31 days
+  },
+  outputFileTracingExcludes: {
+    "/*": ["public/icons/unused/**"]
   },
   async redirects() {
     return [
