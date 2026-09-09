@@ -22,7 +22,7 @@ export const ProductList = ({
 
       return (
         <li key={product.id}>
-          <Link href={`/shop/${slug}`} className="item">
+          <Link href={`/shop/${slug}`} prefetch={false} className="item">
             <div className="thumb">
               <Image
                 src={`/images/shop/${previewImage}`}

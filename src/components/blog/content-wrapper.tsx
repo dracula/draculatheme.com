@@ -22,7 +22,7 @@ interface PostCardProps {
 
 const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
   <li>
-    <Link href={href}>
+    <Link href={href} prefetch={false}>
       <div className="cover">
         <Image
           src={post.cover}
