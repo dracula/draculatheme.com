@@ -72,6 +72,12 @@ const RootLayout = async ({
   children
 }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning>
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero/castle.svg"
+      fetchPriority="high"
+    />
     <body
       className={`${dmSans.variable} ${dmMono.variable}`}
       suppressHydrationWarning

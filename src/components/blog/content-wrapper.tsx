@@ -17,10 +17,17 @@ interface PostCardProps {
   post: Post;
   imageWidth: number;
   imageHeight: number;
+  sizes: string;
   href: string;
 }
 
-const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
+const PostCard = ({
+  post,
+  imageWidth,
+  imageHeight,
+  sizes,
+  href
+}: PostCardProps) => (
   <li>
     <Link href={href} prefetch={false}>
       <div className="cover">
@@ -29,6 +36,7 @@ const PostCard = ({ post, imageWidth, imageHeight, href }: PostCardProps) => (
           alt={post.title}
           width={imageWidth}
           height={imageHeight}
+          sizes={sizes}
         />
       </div>
       <div className="content">
@@ -88,6 +96,7 @@ export const ContentWrapper = ({ posts }: { posts: Post[] }) => {
               post={post}
               imageWidth={1200}
               imageHeight={678}
+              sizes="(max-width: 60rem) 100vw, 50vw"
               href={`/blog/${post.slug}`}
             />
           ))}
@@ -118,6 +127,7 @@ export const ContentWrapper = ({ posts }: { posts: Post[] }) => {
             post={post}
             imageWidth={1200}
             imageHeight={678}
+            sizes="(max-width: 60rem) 100vw, 33vw"
             href={`/blog/${post.slug}`}
           />
         ))}
