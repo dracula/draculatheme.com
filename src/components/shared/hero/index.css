@@ -168,22 +168,26 @@ html {
     .video {
       display: flex;
       position: relative;
+      flex: 0 1 33.375rem;
       align-items: center;
       justify-content: center;
+      min-width: 0;
 
-      div {
-        display: flex;
+      .frame {
         position: relative;
-        height: 18.75rem;
+        aspect-ratio: 16 / 9;
+        width: 100%;
         overflow: hidden;
         corner-shape: squircle;
         border-radius: var(--radius-lg);
         backdrop-filter: blur(0.125rem);
 
         iframe {
-          aspect-ratio: 16 / 9;
-          min-width: 100%;
+          position: absolute;
+          width: 100%;
+          height: 100%;
           margin: 0;
+          inset: 0;
           padding: 0;
           border: none;
         }
@@ -236,12 +240,8 @@ html {
         }
 
         .video {
+          flex: none;
           width: 100%;
-
-          div {
-            width: 100%;
-            height: auto;
-          }
         }
       }
     }

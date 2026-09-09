@@ -201,7 +201,7 @@ export const Hero = () => {
         </div>
         {pathKey === "/shop" && (
           <div className="video">
-            <div>
+            <div className="frame">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/RiuWwkwmmfI"
                 title="Video showing the manufacture of products from the Dracula collection"
