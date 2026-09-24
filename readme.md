@@ -37,11 +37,11 @@ The website will be available at `http://localhost:3000`
 
 ## Community
 
-Join the Dracula community:
+Join thousands of vampires using Dracula Theme around the world 🦇
 
-- **[Twitter](https://twitter.com/draculatheme)** - Latest updates and announcements.
-- **[GitHub Discussions](https://github.com/dracula/dracula-theme/discussions)** - Questions and technical discussions.
-- **[Discord](https://draculatheme.com/discord-invite)** - Real-time chat with the community.
+- [X (Twitter)](https://x.com/draculatheme) and [Instagram](https://www.instagram.com/draculatheme) - Follow for tips, news, and fun.
+- [Discord](https://draculatheme.com/discord-invite) - Hang out and chat with the rest of the clan.
+- [GitHub Discussions](https://github.com/dracula/dracula-theme/discussions) - Ask questions and discuss issues.
 
 ## Dracula Pro
 
