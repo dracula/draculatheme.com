@@ -171,7 +171,6 @@ export const DraculaRadio = ({
   const [play, { stop, sound }] = useSound(track.songUrl, {
     volume: 0,
     html5: true,
-    preload: false,
     onend: () => {
       shouldAutoplayRef.current = true;
       setCurrentTrack((prev) => getNextIndex(prev));
