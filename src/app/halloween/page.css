@@ -1,0 +1,531 @@
+.halloween {
+  --halloween-background-color: hsl(250, 24%, 6%);
+  --halloween-surface-color: hsl(250, 18%, 12%);
+  --halloween-border-color: hsl(250, 12%, 42%);
+  --halloween-muted-color: hsl(250, 12%, 72%);
+  --halloween-foreground-color: hsl(60, 30%, 96%);
+  --halloween-accent-color: hsl(10, 78%, 48%);
+  --halloween-accent-bright-color: hsl(10, 92%, 66%);
+  --halloween-background-top-glow-color: hsla(115, 48%, 18%, 42%);
+  --halloween-background-bottom-glow-color: hsla(10, 78%, 48%, 24%);
+  --halloween-transparent-color: hsla(0, 0%, 0%, 0%);
+  --halloween-shadow-color: hsla(0, 0%, 0%, 40%);
+  --halloween-soft-shadow-color: hsla(0, 0%, 0%, 35%);
+  --halloween-medium-shadow-color: hsla(0, 0%, 0%, 50%);
+  --halloween-deep-shadow-color: hsla(0, 0%, 0%, 60%);
+  --halloween-light-color: hsl(0, 0%, 100%);
+  --light-squircle-start-color: hsl(15, 45%, 16%);
+  --light-squircle-center-color: hsl(43, 100%, 50%);
+  --light-squircle-end-color: hsl(28, 36%, 28%);
+  --light-squircle-background-color: hsl(27, 84%, 50%);
+  --candle-wax-highlight-color: hsl(31, 78%, 52%);
+  --candle-wax-bright-color: hsl(35, 89%, 48%);
+  --candle-wax-color: hsl(27, 96%, 26%);
+  --candle-wax-dark-color: hsl(19, 92%, 15%);
+  --candle-wax-deep-color: hsl(19, 100%, 5%);
+  --candle-background-color: hsl(34, 85%, 5%);
+  --candle-blinking-glow-color: hsl(23, 100%, 50%);
+  --candle-thread-start-color: hsl(34, 63%, 56%);
+  --candle-thread-ember-color: hsl(346, 36%, 22%);
+  --candle-thread-charcoal-color: hsl(0, 0%, 7%);
+  --candle-thread-burnt-color: hsl(0, 0%, 0%);
+  --candle-thread-end-color: hsl(45, 80%, 55%);
+  --candle-flame-core-color: hsla(209, 100%, 50%, 70%);
+  --candle-flame-core-shadow-color: hsla(209, 100%, 50%, 60%);
+  --candle-flame-glow-color: hsl(36, 90%, 45%);
+  --candle-flame-shadow-color: hsla(23, 100%, 48%, 40%);
+  --candle-flame-highlight-color: hsla(31, 100%, 48%, 70%);
+  --candle-rim-border-color: hsl(33, 99%, 42%);
+  --candle-rim-highlight-color: hsl(38, 83%, 52%);
+  --candle-rim-shadow-color: hsl(31, 99%, 28%);
+  --candle-rim-color: hsl(31, 91%, 38%);
+  --leaf-green-color: hsl(80, 60%, 35%);
+  --leaf-yellow-color: hsl(45, 74%, 53%);
+  --leaf-orange-color: hsl(30, 68%, 51%);
+  --leaf-red-color: hsl(9, 59%, 45%);
+  --leaf-brown-color: hsl(27, 46%, 37%);
+
+  display: grid;
+  position: relative;
+  place-items: center;
+  width: 100%;
+  margin-bottom: calc(-1 * var(--page-sections-spacing));
+  overflow: hidden;
+  background-image:
+    radial-gradient(
+      ellipse at 50% 0%,
+      var(--halloween-background-top-glow-color) 0%,
+      var(--halloween-transparent-color) 60%
+    ),
+    radial-gradient(
+      ellipse at 50% 120%,
+      var(--halloween-background-bottom-glow-color) 0%,
+      var(--halloween-transparent-color) 54%
+    );
+  background-color: var(--halloween-background-color);
+  color: var(--halloween-foreground-color);
+
+  .light-squircle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+
+    .glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 74vw;
+      height: 79%;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+      border-radius: 50dvw;
+      background-image: linear-gradient(
+        90deg,
+        var(--light-squircle-start-color) 0%,
+        var(--light-squircle-center-color) 54%,
+        var(--light-squircle-end-color) 100%
+      );
+      background-color: var(--light-squircle-background-color);
+      filter: blur(1.125rem);
+      opacity: 0.1;
+    }
+  }
+
+  .holder {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    width: 9.375rem;
+    height: 25rem;
+    transform: translateX(-50%);
+
+    .candle {
+      position: absolute;
+      bottom: 0;
+      width: 9.375rem;
+      height: 18.75rem;
+      border-radius: 9.375rem / 2.5rem;
+      background-image: linear-gradient(
+        var(--candle-wax-highlight-color),
+        var(--candle-wax-bright-color),
+        var(--candle-wax-color),
+        var(--candle-wax-dark-color) 50%,
+        var(--candle-wax-deep-color)
+      );
+      background-color: var(--candle-background-color);
+      box-shadow:
+        inset 1.25rem -1.875rem 3.125rem 0 var(--halloween-shadow-color),
+        inset -1.25rem 0 3.125rem 0 var(--halloween-shadow-color);
+
+      .blinking-glow {
+        position: absolute;
+        top: -55%;
+        left: 50%;
+        width: 6.25rem;
+        height: 11.25rem;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background-color: var(--candle-blinking-glow-color);
+        animation-duration: 100ms;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        animation-name: candle-glow-pulse;
+        filter: blur(1.125rem);
+      }
+
+      .thread {
+        z-index: 1;
+        position: absolute;
+        top: -1.0625rem;
+        left: 50%;
+        width: 0.375rem;
+        height: 2.25rem;
+        transform: translateX(-50%);
+        border-radius: 40% 40% 0 0;
+        background-image: linear-gradient(
+          var(--candle-thread-start-color),
+          var(--candle-thread-ember-color),
+          var(--candle-thread-charcoal-color),
+          var(--candle-thread-burnt-color),
+          var(--candle-thread-end-color) 90%
+        );
+        background-color: var(--candle-thread-charcoal-color);
+      }
+
+      .glow {
+        position: absolute;
+        top: -3rem;
+        left: 50%;
+        width: 1.625rem;
+        height: 3.75rem;
+        transform: translateX(-50%);
+        border-radius: 50% 50% 35% 35%;
+        background-color: var(--candle-flame-core-color);
+        box-shadow:
+          0 -2.5rem 1.875rem 0 var(--candle-flame-glow-color),
+          0 2.5rem 3.125rem 0 var(--candle-flame-glow-color),
+          inset 0.1875rem 0 0.125rem 0 var(--candle-flame-core-shadow-color),
+          inset -0.1875rem 0 0.125rem 0 var(--candle-flame-core-shadow-color);
+
+        &::before {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 70%;
+          height: 60%;
+          transform: translateX(-50%);
+          border-radius: 50%;
+          background-color: var(--halloween-soft-shadow-color);
+          content: "";
+        }
+      }
+
+      .flame {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 1.5rem;
+        height: 7.5rem;
+        transform: translateX(-50%);
+        transform-origin: 50% 100%;
+        border-radius: 50% 50% 20% 20%;
+        background-image: linear-gradient(
+          var(--halloween-light-color) 80%,
+          var(--halloween-transparent-color)
+        );
+        animation-duration: 6000ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: candle-flame-flicker;
+
+        &::before {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 50% 50% 20% 20%;
+          box-shadow:
+            0 0 0.9375rem 0 var(--candle-flame-shadow-color),
+            0 -0.375rem 0.25rem 0 var(--candle-flame-highlight-color);
+          content: "";
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2.5rem;
+        border: 0.125rem solid var(--candle-rim-border-color);
+        border-radius: 50%;
+        background-image: radial-gradient(
+          var(--candle-rim-highlight-color),
+          var(--candle-rim-shadow-color) 45%,
+          var(--candle-rim-color) 80%
+        );
+        background-color: var(--candle-rim-color);
+        content: "";
+      }
+
+      &::after {
+        position: absolute;
+        top: 0.875rem;
+        left: 50%;
+        width: 2.125rem;
+        height: 0.625rem;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background-image: radial-gradient(
+          var(--halloween-deep-shadow-color),
+          var(--halloween-transparent-color) 45%
+        );
+        box-shadow: 0 0 1.25rem 0 var(--halloween-medium-shadow-color);
+        content: "";
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 80vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    gap: 3rem;
+    font-family: var(--font-grenze-gotisch), serif;
+    text-align: center;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-name: halloween-reveal;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h1 {
+        color: var(--halloween-foreground-color);
+        font-weight: 400;
+        font-size: 3.75rem;
+        line-height: 1;
+        letter-spacing: 0.06em;
+      }
+
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 100%;
+        max-width: 40rem;
+
+        .unit {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 0;
+          gap: 0.75rem;
+        }
+
+        .value {
+          color: var(--halloween-foreground-color);
+          font-size: 2.625rem;
+          line-height: 1;
+          font-variant-numeric: tabular-nums;
+        }
+
+        .label {
+          color: var(--halloween-muted-color);
+          font-style: italic;
+          font-size: clamp(0.75rem, 2vw, 1.125rem);
+        }
+
+        .arrived {
+          color: var(--halloween-accent-bright-color);
+          font-style: italic;
+          font-size: clamp(3rem, 12vw, 6rem);
+        }
+      }
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 31.5rem;
+      gap: 1.125rem;
+
+      label {
+        color: var(--halloween-muted-color);
+        font-style: italic;
+        font-size: 1.125rem;
+      }
+
+      .field {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 0.75rem;
+
+        input {
+          flex-grow: 1;
+          flex-basis: 15rem;
+          min-width: 0;
+          padding-inline: 1.125rem;
+          padding-block: 0.75rem;
+          border-width: 0.0625rem;
+          border-style: solid;
+          border-radius: 0;
+          border-color: var(--halloween-border-color);
+          background-color: var(--halloween-surface-color);
+          color: var(--halloween-foreground-color);
+          font-size: 1.125rem;
+          font-family: inherit;
+
+          &::placeholder {
+            color: var(--halloween-muted-color);
+            opacity: 0.6;
+          }
+        }
+
+        button {
+          padding-inline: 1.5rem;
+          padding-block: 0.75rem;
+          border-width: 0.0625rem;
+          border-style: solid;
+          border-radius: 0;
+          border-color: var(--halloween-accent-color);
+          background-color: var(--halloween-accent-color);
+          color: var(--halloween-foreground-color);
+          font-size: 1.125rem;
+          font-family: inherit;
+          cursor: pointer;
+
+          &:hover:not(:disabled) {
+            border-color: var(--halloween-accent-bright-color);
+            background-color: var(--halloween-accent-bright-color);
+          }
+        }
+
+        input:focus-visible,
+        button:focus-visible {
+          outline-color: var(--halloween-foreground-color);
+          outline-style: solid;
+          outline-width: 0.125rem;
+          outline-offset: 0.1875rem;
+        }
+
+        button:disabled,
+        input:disabled {
+          cursor: progress;
+          opacity: 0.6;
+        }
+      }
+
+      .message {
+        min-height: 1.5rem;
+        color: var(--halloween-muted-color);
+        font-size: 1rem;
+
+        &[data-status="success"] {
+          color: var(--halloween-foreground-color);
+        }
+
+        &[data-status="error"] {
+          color: var(--halloween-accent-bright-color);
+        }
+      }
+    }
+  }
+
+  .falling-leaves {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    .leaf {
+      position: absolute;
+      top: -3rem;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-name: halloween-leaf-fall;
+      will-change: transform, opacity;
+      user-select: none;
+
+      &[data-tone="green"] {
+        color: var(--leaf-green-color);
+      }
+
+      &[data-tone="yellow"] {
+        color: var(--leaf-yellow-color);
+      }
+
+      &[data-tone="orange"] {
+        color: var(--leaf-orange-color);
+      }
+
+      &[data-tone="red"] {
+        color: var(--leaf-red-color);
+      }
+
+      &[data-tone="brown"] {
+        color: var(--leaf-brown-color);
+      }
+
+      .drift {
+        display: block;
+      }
+
+      .shape {
+        display: block;
+        fill: currentColor;
+      }
+
+      .vein {
+        fill: none;
+        stroke: var(--halloween-light-color);
+        stroke-opacity: 0.4;
+        stroke-width: 1;
+      }
+    }
+  }
+
+  .noise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0.2;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .container,
+    .blinking-glow,
+    .flame {
+      animation-name: none;
+    }
+
+    .falling-leaves {
+      display: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .light-squircle .glow {
+      height: 79vh;
+    }
+  }
+}
+
+@keyframes candle-glow-pulse {
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes candle-flame-flicker {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-2deg) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(2deg) scaleY(1.1667);
+  }
+}
+
+@keyframes halloween-leaf-fall {
+  to {
+    transform: translateY(var(--fall-distance)) rotate(360deg)
+      translateX(1.5rem);
+    opacity: 0;
+  }
+}
+
+@keyframes halloween-reveal {
+  from {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
