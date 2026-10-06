@@ -1,41 +1,51 @@
 .halloween {
-  --halloween-background-color: hsl(250, 24%, 6%);
-  --halloween-surface-color: hsl(250, 18%, 12%);
-  --halloween-border-color: hsl(250, 12%, 42%);
-  --halloween-muted-color: hsl(250, 12%, 72%);
+  --halloween-background-color: hsl(252, 24%, 6%);
+  --halloween-surface-color: hsl(252, 18%, 12%);
+  --halloween-border-color: hsl(252, 12%, 42%);
   --halloween-foreground-color: hsl(60, 30%, 96%);
-  --halloween-accent-color: hsl(10, 78%, 46%);
-  --halloween-accent-bright-color: hsl(10, 92%, 66%);
-  --halloween-background-top-glow-color: hsla(115, 48%, 18%, 42%);
-  --halloween-background-bottom-glow-color: hsla(10, 78%, 48%, 24%);
+  --halloween-muted-color: hsl(252, 12%, 72%);
+  --halloween-accent-color: hsl(12, 78%, 48%);
+  --halloween-accent-bright-color: hsl(12, 90%, 66%);
   --halloween-transparent-color: hsla(0, 0%, 0%, 0%);
-  --halloween-shadow-color: hsla(0, 0%, 0%, 40%);
-  --halloween-medium-shadow-color: hsla(0, 0%, 0%, 50%);
+  --halloween-shadow-color: hsla(0, 0%, 0%, 42%);
+  --halloween-medium-shadow-color: hsla(0, 0%, 0%, 48%);
   --halloween-deep-shadow-color: hsla(0, 0%, 0%, 60%);
-  --light-squircle-start-color: hsl(15, 45%, 16%);
-  --light-squircle-center-color: hsl(43, 100%, 50%);
-  --light-squircle-end-color: hsl(28, 36%, 28%);
-  --light-squircle-background-color: hsl(27, 84%, 50%);
-  --candle-wax-highlight-color: hsl(31, 78%, 52%);
-  --candle-wax-bright-color: hsl(35, 89%, 48%);
-  --candle-wax-color: hsl(27, 96%, 26%);
-  --candle-wax-dark-color: hsl(19, 92%, 15%);
-  --candle-background-color: hsl(34, 85%, 5%);
-  --candle-blinking-glow-color: hsl(23, 100%, 50%);
-  --candle-thread-start-color: hsl(34, 63%, 56%);
-  --candle-thread-ember-color: hsl(346, 36%, 22%);
+  --halloween-text-highlight-color: hsla(36, 96%, 96%, 0.06);
+  --halloween-text-shadow-color: hsla(0, 0%, 96%, 0.18);
+  --halloween-background-top-glow-color: hsla(114, 48%, 18%, 42%);
+  --halloween-background-bottom-glow-color: hsla(12, 78%, 48%, 24%);
+
+  --light-squircle-start-color: hsl(12, 48%, 18%);
+  --light-squircle-center-color: hsl(42, 96%, 48%);
+  --light-squircle-end-color: hsl(30, 36%, 30%);
+  --light-squircle-background-color: hsl(30, 84%, 48%);
+
+  --candle-background-color: hsl(36, 84%, 6%);
+  --candle-wax-highlight-color: hsl(30, 78%, 54%);
+  --candle-wax-bright-color: hsl(36, 90%, 48%);
+  --candle-wax-color: hsl(30, 96%, 24%);
+  --candle-wax-dark-color: hsl(18, 90%, 18%);
+  --candle-rim-border-color: hsl(36, 96%, 42%);
+  --candle-rim-highlight-color: hsl(36, 84%, 54%);
+  --candle-rim-color: hsl(30, 90%, 36%);
+  --candle-blinking-glow-color: hsl(24, 96%, 48%);
+  --candle-thread-start-color: hsl(36, 66%, 54%);
+  --candle-thread-ember-color: hsl(348, 36%, 24%);
   --candle-thread-burnt-color: hsl(0, 0%, 0%);
-  --candle-flame-core-color: hsla(209, 100%, 50%, 70%);
-  --candle-flame-core-shadow-color: hsla(209, 100%, 50%, 60%);
-  --candle-flame-shadow-color: hsla(23, 100%, 48%, 40%);
-  --candle-flame-highlight-color: hsla(31, 100%, 48%, 70%);
-  --candle-rim-border-color: hsl(33, 99%, 42%);
-  --candle-rim-highlight-color: hsl(38, 83%, 52%);
-  --candle-rim-color: hsl(31, 91%, 38%);
-  --leaf-green-color: hsl(80, 60%, 35%);
-  --leaf-yellow-color: hsl(45, 74%, 53%);
-  --leaf-red-color: hsl(9, 59%, 45%);
-  --leaf-brown-color: hsl(27, 46%, 37%);
+  --candle-flame-core-color: hsla(210, 96%, 48%, 72%);
+  --candle-flame-core-shadow-color: hsla(210, 96%, 48%, 60%);
+  --candle-flame-shadow-color: hsla(24, 96%, 48%, 42%);
+  --candle-flame-highlight-color: hsla(30, 96%, 48%, 72%);
+
+  --leaf-green-color: hsl(78, 60%, 36%);
+  --leaf-yellow-color: hsl(48, 72%, 54%);
+  --leaf-red-color: hsl(12, 60%, 48%);
+  --leaf-brown-color: hsl(30, 48%, 36%);
+
+  --halloween-spacing-small: 0.75rem;
+  --halloween-spacing-medium: 1.125rem;
+  --halloween-spacing-large: 1.5rem;
+  --halloween-spacing-extra-large: 3rem;
 
   display: grid;
   position: relative;
@@ -56,6 +66,10 @@
     );
   background-color: var(--halloween-background-color);
   color: var(--halloween-foreground-color);
+  text-shadow:
+    0.0269rem 0 0.0625rem var(--halloween-text-highlight-color),
+    -0.0269rem 0 0.125rem var(--halloween-text-shadow-color),
+    0 0 0.375rem;
 
   .light-squircle,
   .falling-leaves {
@@ -71,11 +85,11 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 74vw;
-      height: 79%;
+      width: 72vw;
+      height: 78%;
       transform: translate(-50%, -50%);
       transform-origin: center;
-      border-radius: 50dvw;
+      border-radius: 48dvw;
       background-image: linear-gradient(
         90deg,
         var(--light-squircle-start-color) 0%,
@@ -84,16 +98,16 @@
       );
       background-color: var(--light-squircle-background-color);
       filter: blur(1.125rem);
-      opacity: 0.1;
+      opacity: 0.12;
     }
   }
 
   .holder {
     position: absolute;
-    bottom: -1.5rem;
+    bottom: calc(-1 * var(--halloween-spacing-large));
     left: 50%;
     width: 9.375rem;
-    height: 25rem;
+    height: 25.125rem;
     transform: translateX(-50%);
 
     .candle {
@@ -101,7 +115,7 @@
       bottom: 0;
       width: 9.375rem;
       height: 18.75rem;
-      border-radius: 9.375rem / 2.5rem;
+      border-radius: 9.375rem / 2.625rem;
       background-image: linear-gradient(
         var(--candle-wax-highlight-color),
         var(--candle-wax-bright-color),
@@ -111,19 +125,19 @@
       );
       background-color: var(--candle-background-color);
       box-shadow:
-        inset 1.25rem -1.875rem 3.125rem 0 var(--halloween-shadow-color),
-        inset -1.25rem 0 3.125rem 0 var(--halloween-shadow-color);
+        inset 1.125rem -1.875rem 3rem 0 var(--halloween-shadow-color),
+        inset -1.125rem 0 3rem 0 var(--halloween-shadow-color);
 
       .blinking-glow {
         position: absolute;
-        top: -55%;
+        top: -54%;
         left: 50%;
-        width: 6.25rem;
+        width: 6.375rem;
         height: 11.25rem;
         transform: translateX(-50%);
         border-radius: 50%;
         background-color: var(--candle-blinking-glow-color);
-        animation-duration: 100ms;
+        animation-duration: 102ms;
         animation-timing-function: ease;
         animation-iteration-count: infinite;
         animation-name: candle-glow-pulse;
@@ -133,12 +147,12 @@
       .thread {
         z-index: 1;
         position: absolute;
-        top: -1.0625rem;
+        top: calc(-1 * var(--halloween-spacing-medium));
         left: 50%;
         width: 0.375rem;
         height: 2.25rem;
         transform: translateX(-50%);
-        border-radius: 40% 40% 0 0;
+        border-radius: 42% 42% 0 0;
         background-image: linear-gradient(
           var(--candle-thread-start-color),
           var(--candle-thread-ember-color),
@@ -151,16 +165,16 @@
 
       .glow {
         position: absolute;
-        top: -3rem;
+        top: calc(-1 * var(--halloween-spacing-extra-large));
         left: 50%;
-        width: 1.625rem;
+        width: var(--halloween-spacing-large);
         height: 3.75rem;
         transform: translateX(-50%);
-        border-radius: 50% 50% 35% 35%;
+        border-radius: 50% 50% 36% 36%;
         background-color: var(--candle-flame-core-color);
         box-shadow:
-          0 -2.5rem 1.875rem 0 var(--candle-wax-bright-color),
-          0 2.5rem 3.125rem 0 var(--candle-wax-bright-color),
+          0 -2.625rem 1.875rem 0 var(--candle-wax-bright-color),
+          0 2.625rem 3rem 0 var(--candle-wax-bright-color),
           inset 0.1875rem 0 0.125rem 0 var(--candle-flame-core-shadow-color),
           inset -0.1875rem 0 0.125rem 0 var(--candle-flame-core-shadow-color);
 
@@ -168,7 +182,7 @@
           position: absolute;
           bottom: 0;
           left: 50%;
-          width: 70%;
+          width: 72%;
           height: 60%;
           transform: translateX(-50%);
           border-radius: 50%;
@@ -185,9 +199,9 @@
         height: 7.5rem;
         transform: translateX(-50%);
         transform-origin: 50% 100%;
-        border-radius: 50% 50% 20% 20%;
+        border-radius: 50% 50% 18% 18%;
         background-image: linear-gradient(
-          var(--halloween-foreground-color) 80%,
+          var(--halloween-foreground-color) 78%,
           var(--halloween-transparent-color)
         );
         animation-duration: 6000ms;
@@ -199,7 +213,7 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          border-radius: 50% 50% 20% 20%;
+          border-radius: 50% 50% 18% 18%;
           box-shadow:
             0 0 0.9375rem 0 var(--candle-flame-shadow-color),
             0 -0.375rem 0.25rem 0 var(--candle-flame-highlight-color);
@@ -212,13 +226,13 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 2.5rem;
+        height: 2.625rem;
         border: 0.125rem solid var(--candle-rim-border-color);
         border-radius: 50%;
         background-image: radial-gradient(
           var(--candle-rim-highlight-color),
-          var(--candle-wax-color) 45%,
-          var(--candle-rim-color) 80%
+          var(--candle-wax-color) 48%,
+          var(--candle-rim-color) 78%
         );
         background-color: var(--candle-rim-color);
         content: "";
@@ -226,17 +240,17 @@
 
       &::after {
         position: absolute;
-        top: 0.875rem;
+        top: var(--halloween-spacing-small);
         left: 50%;
-        width: 2.125rem;
-        height: 0.625rem;
+        width: 2.25rem;
+        height: var(--halloween-spacing-small);
         transform: translateX(-50%);
         border-radius: 50%;
         background-image: radial-gradient(
           var(--halloween-deep-shadow-color),
-          var(--halloween-transparent-color) 45%
+          var(--halloween-transparent-color) 48%
         );
-        box-shadow: 0 0 1.25rem 0 var(--halloween-medium-shadow-color);
+        box-shadow: 0 0 1.125rem 0 var(--halloween-medium-shadow-color);
         content: "";
       }
     }
@@ -250,7 +264,7 @@
     justify-content: space-between;
     min-height: 90vh;
     padding-top: 6vh;
-    gap: 3rem;
+    gap: var(--halloween-spacing-extra-large);
     font-family: var(--font-grenze-gotisch), serif;
     text-align: center;
     animation-duration: 600ms;
@@ -261,11 +275,11 @@
     .header {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: var(--halloween-spacing-medium);
 
       h1 {
         color: var(--halloween-foreground-color);
-        font-weight: 400;
+        font-weight: 402;
         font-size: 3.75rem;
         line-height: 1;
         letter-spacing: 0.06em;
@@ -275,14 +289,14 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         width: 100%;
-        max-width: 40rem;
+        max-width: 39.75rem;
 
         .unit {
           display: flex;
           flex-direction: column;
           align-items: center;
           min-width: 0;
-          gap: 0.75rem;
+          gap: var(--halloween-spacing-small);
         }
 
         .value {
@@ -311,7 +325,7 @@
       align-items: center;
       width: 100%;
       max-width: 31.5rem;
-      gap: 1.125rem;
+      gap: var(--halloween-spacing-medium);
 
       label {
         color: var(--halloween-muted-color);
@@ -323,11 +337,11 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         width: 100%;
-        gap: 0.75rem;
+        gap: var(--halloween-spacing-small);
 
         input,
         button {
-          padding-block: 0.75rem;
+          padding-block: var(--halloween-spacing-small);
           border-width: 0.0625rem;
           border-style: solid;
           border-radius: 0;
@@ -338,21 +352,25 @@
 
         input {
           min-width: 0;
-          padding-inline: 1.125rem;
+          padding-inline: var(--halloween-spacing-medium);
           border-color: var(--halloween-border-color);
           background-color: var(--halloween-surface-color);
 
           &::placeholder {
             color: var(--halloween-muted-color);
-            opacity: 0.7;
+            opacity: 0.72;
           }
         }
 
         button {
-          padding-inline: 1.5rem;
+          padding-inline: var(--halloween-spacing-large);
           border-color: var(--halloween-accent-color);
           background-color: var(--halloween-accent-color);
           cursor: pointer;
+          transition:
+            border-color var(--duration-standard) var(--ease-fluid),
+            background-color var(--duration-standard) var(--ease-fluid),
+            color var(--duration-standard) var(--ease-fluid);
 
           &:hover:not(:disabled) {
             border-color: var(--halloween-accent-bright-color);
@@ -379,7 +397,7 @@
       .message {
         min-height: 1.5rem;
         color: var(--halloween-muted-color);
-        font-size: 1rem;
+        font-size: 1.125rem;
 
         &[data-status="success"] {
           color: var(--halloween-foreground-color);
@@ -395,7 +413,7 @@
   .falling-leaves {
     .leaf {
       position: absolute;
-      top: -3rem;
+      top: calc(-1 * var(--halloween-spacing-extra-large));
       animation-timing-function: linear;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -434,7 +452,7 @@
       .vein {
         fill: none;
         stroke: var(--halloween-foreground-color);
-        stroke-opacity: 0.4;
+        stroke-opacity: 0.42;
         stroke-width: 1;
       }
     }
@@ -445,7 +463,7 @@
     width: 100%;
     height: 100%;
     inset: 0;
-    opacity: 0.2;
+    opacity: 0.18;
     pointer-events: none;
     user-select: none;
   }
@@ -471,7 +489,7 @@
 
 @keyframes candle-glow-pulse {
   50% {
-    opacity: 0.8;
+    opacity: 0.78;
   }
 }
 
@@ -482,21 +500,21 @@
   }
 
   50% {
-    transform: translateX(-50%) rotate(2deg) scaleY(1.1667);
+    transform: translateX(-50%) rotate(2deg) scaleY(1.2);
   }
 }
 
 @keyframes halloween-leaf-fall {
   to {
     transform: translateY(var(--fall-distance)) rotate(360deg)
-      translateX(1.5rem);
+      translateX(var(--halloween-spacing-large));
     opacity: 0;
   }
 }
 
 @keyframes halloween-reveal {
   from {
-    transform: translateY(0.75rem);
+    transform: translateY(var(--halloween-spacing-small));
     opacity: 0;
   }
 
