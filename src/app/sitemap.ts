@@ -23,6 +23,7 @@ const getStaticRoutes = () => {
     "/about",
     "/blog",
     "/contribute",
+    "/halloween",
     "/newsletter",
     "/open",
     "/spec",

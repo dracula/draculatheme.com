@@ -23,12 +23,25 @@ type PromoConfig = {
   endDate: string;
 };
 
+type AnnouncementConfig = {
+  announcementText: string;
+  href: string;
+  startDate: string;
+  endDate: string;
+};
+
 type PromosConfig = {
+  announcements: AnnouncementConfig[];
   promos: PromoConfig[];
   defaultPromo: {
     discountPercentage: number;
     basePrice: "listPrice" | "promoPrice";
   };
+};
+
+export type Announcement = {
+  announcementText: string;
+  href: string;
 };
 
 /** Offer surfaced by pricing components and passed into checkout links. */
@@ -94,11 +107,28 @@ const getActivePromotion = (): Promotion | null => {
 };
 
 /**
- * Returns the promo row matching the current date window, or `null` when none apply.
- * Shapes announcement bar messaging.
+ * Returns a campaign announcement first, then falls back to the active promo.
  */
-export const getActiveAnnouncement = (): PromoConfig | null => {
-  return getActivePromo();
+export const getActiveAnnouncement = (): Announcement | null => {
+  const activeAnnouncement = promosConfig.announcements.find((announcement) =>
+    isPromoActive(announcement.startDate, announcement.endDate)
+  );
+
+  if (activeAnnouncement) {
+    return {
+      announcementText: activeAnnouncement.announcementText,
+      href: activeAnnouncement.href
+    };
+  }
+
+  const activePromo = getActivePromo();
+
+  return activePromo
+    ? {
+        announcementText: activePromo.announcementText,
+        href: "/pro"
+      }
+    : null;
 };
 
 const getDefaultPromoConfig = () => {

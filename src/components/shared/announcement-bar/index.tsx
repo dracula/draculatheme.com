@@ -18,7 +18,11 @@ export const AnnouncementBar = () => {
   }
 
   return (
-    <Link href="/pro" className="announcement-bar" aria-live="polite">
+    <Link
+      className="announcement-bar"
+      href={activeAnnouncement.href}
+      aria-live="polite"
+    >
       <p>{stripHtmlTags(activeAnnouncement.announcementText)}</p>
     </Link>
   );
