@@ -8,17 +8,29 @@ import { FallingLeaves } from "@/components/halloween/falling-leaves";
 import { LightSquircle } from "@/components/halloween/light-squircle";
 import { NewsletterForm } from "@/components/halloween/newsletter-form";
 import { Noise } from "@/components/halloween/noise";
+import { jsonLd } from "@/lib/json-ld/halloween-teaser";
+import {
+  createStructuredDataScriptId,
+  JsonLdScript
+} from "@/utils/json-ld-script";
 import { createMetadata } from "@/utils/metadata";
 
-const title = "Draculaween - A Halloween surprise from Dracula";
+const title = "Draculaween";
 const description =
-  "Something wicked is stirring in the shadows. Count down to Draculaween, a mysterious Halloween surprise from Dracula arriving October 27, 2026.";
+  "Something wicked is stirring in the shadows. Count down to Draculaween, a Halloween surprise from Dracula arriving October 27, 2026.";
 
 export const metadata: Metadata = createMetadata({
   title,
   description,
-  canonicalPath: "/halloween"
+  canonicalPath: "/halloween/teaser"
 });
+
+const structuredDataScriptId = createStructuredDataScriptId(
+  "halloween",
+  "teaser",
+  "structured",
+  "data"
+);
 
 const grenzeGotisch = Grenze_Gotisch({
   weight: "400",
@@ -29,29 +41,32 @@ const grenzeGotisch = Grenze_Gotisch({
 });
 
 const HalloweenTeaserPage = () => (
-  <section
-    className={`${grenzeGotisch.variable} halloween`}
-    aria-labelledby="draculaween-title"
-  >
-    <LightSquircle />
-    <div className="holder">
-      <div className="candle">
-        <div className="blinking-glow" />
-        <div className="thread" />
-        <div className="glow" />
-        <div className="flame" />
+  <>
+    <section
+      className={`${grenzeGotisch.variable} halloween`}
+      aria-labelledby="draculaween-title"
+    >
+      <LightSquircle />
+      <div className="holder">
+        <div className="candle">
+          <div className="blinking-glow" />
+          <div className="thread" />
+          <div className="glow" />
+          <div className="flame" />
+        </div>
       </div>
-    </div>
-    <div className="container">
-      <div className="header">
-        <h1 id="draculaween-title">Draculaween</h1>
-        <Countdown target="2026-10-27T23:59:59Z" />
+      <div className="container">
+        <div className="header">
+          <h1 id="draculaween-title">Draculaween</h1>
+          <Countdown target="2026-10-27T23:59:59Z" />
+        </div>
+        <NewsletterForm />
       </div>
-      <NewsletterForm />
-    </div>
-    <FallingLeaves />
-    <Noise />
-  </section>
+      <FallingLeaves />
+      <Noise />
+    </section>
+    <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />
+  </>
 );
 
 export default HalloweenTeaserPage;
