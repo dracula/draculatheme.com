@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 type CountdownProps = {
   target: string;
+  label?: string;
 };
 
 type TimeLeft = {
@@ -38,7 +39,10 @@ const calculateTimeLeft = (target: number, now: number): TimeLeft => {
 
 const formatUnit = (value: number) => String(value).padStart(2, "0");
 
-export const Countdown = ({ target }: CountdownProps) => {
+export const Countdown = ({
+  target,
+  label = "Time until Draculaween begins"
+}: CountdownProps) => {
   const targetTime = new Date(target).getTime();
   const [now, setNow] = useState<number | null>(null);
 
@@ -60,18 +64,14 @@ export const Countdown = ({ target }: CountdownProps) => {
   const timeLeft = now === null ? null : calculateTimeLeft(targetTime, now);
 
   const units = [
-    { label: "days", value: timeLeft?.days },
-    { label: "hours", value: timeLeft?.hours },
-    { label: "minutes", value: timeLeft?.minutes },
-    { label: "seconds", value: timeLeft?.seconds }
+    { label: "Days", value: timeLeft?.days },
+    { label: "Hours", value: timeLeft?.hours },
+    { label: "Minutes", value: timeLeft?.minutes },
+    { label: "Seconds", value: timeLeft?.seconds }
   ];
 
   return (
-    <div
-      className="countdown"
-      aria-label="Time until Draculaween begins"
-      role="timer"
-    >
+    <div className="countdown" aria-label={label} role="timer">
       {units.map((unit) => (
         <div key={unit.label} className="unit">
           <span className="value">

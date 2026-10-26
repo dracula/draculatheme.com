@@ -1,10 +1,10 @@
 {
   "announcements": [
     {
-      "announcementText": "Something wicked is coming. Draculaween arrives <strong>Oct 28 →</strong>",
+      "announcementText": "Something wicked is coming. Draculaween arrives <strong>Oct 27 →</strong>",
       "href": "/halloween",
       "startDate": "2026-10-01T00:00:00Z",
-      "endDate": "2026-10-27T23:59:59Z"
+      "endDate": "2026-10-26T23:59:59Z"
     }
   ],
   "promos": [
@@ -21,12 +21,12 @@
     {
       "name": "Draculaween 2026",
       "displayName": "Draculaween: 40% off",
-      "announcementText": "Draculaween is here. Dracula Pro is <strong>40% off</strong> until <strong>Oct 31 →</strong>",
+      "announcementText": "Draculaween is here. Dracula Pro is <strong>40% off</strong> until <strong>Nov 21 →</strong>",
       "discountPercentage": 40,
       "couponCode": "DRACULAWEEN2026",
       "basePrice": "promoPrice",
-      "startDate": "2026-10-28T00:00:00Z",
-      "endDate": "2026-10-31T23:59:59Z"
+      "startDate": "2026-10-27T00:00:00Z",
+      "endDate": "2026-11-21T23:59:59Z"
     },
     {
       "name": "Dracula-o-ween 2025",
