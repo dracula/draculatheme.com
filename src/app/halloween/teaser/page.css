@@ -71,16 +71,13 @@
     -0.0269rem 0 0.125rem var(--halloween-text-shadow-color),
     0 0 0.375rem;
 
-  .light-squircle,
-  .falling-leaves {
+  .light-squircle {
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
     user-select: none;
-  }
 
-  .light-squircle {
     .glow {
       position: absolute;
       top: 50%;
@@ -88,7 +85,6 @@
       width: 72vw;
       height: 78%;
       transform: translate(-50%, -50%);
-      transform-origin: center;
       border-radius: 48dvw;
       background-image: linear-gradient(
         90deg,
@@ -128,6 +124,23 @@
         inset 1.125rem -1.875rem 3rem 0 var(--halloween-shadow-color),
         inset -1.125rem 0 3rem 0 var(--halloween-shadow-color);
 
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2.625rem;
+        border: 0.125rem solid var(--candle-rim-border-color);
+        border-radius: 50%;
+        background-image: radial-gradient(
+          var(--candle-rim-highlight-color),
+          var(--candle-wax-color) 48%,
+          var(--candle-rim-color) 78%
+        );
+        background-color: var(--candle-rim-color);
+        content: "";
+      }
+
       .blinking-glow {
         position: absolute;
         top: -54%;
@@ -138,7 +151,6 @@
         border-radius: 50%;
         background-color: var(--candle-blinking-glow-color);
         animation-duration: 102ms;
-        animation-timing-function: ease;
         animation-iteration-count: infinite;
         animation-name: candle-glow-pulse;
         filter: blur(1.125rem);
@@ -221,23 +233,6 @@
         }
       }
 
-      &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2.625rem;
-        border: 0.125rem solid var(--candle-rim-border-color);
-        border-radius: 50%;
-        background-image: radial-gradient(
-          var(--candle-rim-highlight-color),
-          var(--candle-wax-color) 48%,
-          var(--candle-rim-color) 78%
-        );
-        background-color: var(--candle-rim-color);
-        content: "";
-      }
-
       &::after {
         position: absolute;
         top: var(--halloween-spacing-small);
@@ -288,7 +283,6 @@
       .countdown {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        width: 100%;
         max-width: 39.75rem;
 
         .unit {
@@ -297,25 +291,24 @@
           align-items: center;
           min-width: 0;
           gap: var(--halloween-spacing-small);
-        }
 
-        .value {
-          font-size: 2.625rem;
-          line-height: 1;
-          font-variant-numeric: tabular-nums;
-        }
+          .value {
+            font-size: 2.625rem;
+            line-height: 1;
+          }
 
-        .label {
-          color: var(--halloween-muted-color);
-          font-style: italic;
-          font-size: clamp(0.75rem, 2vw, 1.125rem);
+          .label {
+            color: var(--halloween-muted-color);
+            font-style: italic;
+            font-size: clamp(0.75rem, 2vw, 1.125rem);
+          }
         }
+      }
 
-        .arrived {
-          color: var(--halloween-accent-bright-color);
-          font-style: italic;
-          font-size: clamp(3rem, 12vw, 6rem);
-        }
+      .arrived {
+        color: var(--halloween-accent-bright-color);
+        font-style: italic;
+        font-size: clamp(3rem, 12vw, 6rem);
       }
     }
 
@@ -347,7 +340,6 @@
           border-radius: 0;
           color: var(--halloween-foreground-color);
           font-size: 1.125rem;
-          font-family: inherit;
         }
 
         input {
@@ -371,12 +363,6 @@
             border-color var(--duration-standard) var(--ease-fluid),
             background-color var(--duration-standard) var(--ease-fluid),
             color var(--duration-standard) var(--ease-fluid);
-
-          &:hover:not(:disabled) {
-            border-color: var(--halloween-accent-bright-color);
-            background-color: var(--halloween-accent-bright-color);
-            color: var(--halloween-background-color);
-          }
         }
 
         input:focus-visible,
@@ -411,11 +397,16 @@
   }
 
   .falling-leaves {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+
     .leaf {
       position: absolute;
       top: calc(-1 * var(--halloween-spacing-extra-large));
       animation-timing-function: linear;
-      animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-name: halloween-leaf-fall;
       will-change: transform, opacity;
@@ -442,25 +433,23 @@
 
       .drift {
         display: block;
-      }
 
-      .shape {
-        display: block;
-        fill: currentColor;
-      }
+        .shape {
+          fill: currentColor;
 
-      .vein {
-        fill: none;
-        stroke: var(--halloween-foreground-color);
-        stroke-opacity: 0.42;
-        stroke-width: 1;
+          .vein {
+            fill: none;
+            stroke: var(--halloween-foreground-color);
+            stroke-opacity: 0.42;
+            stroke-width: 1;
+          }
+        }
       }
     }
   }
 
   .noise {
     position: absolute;
-    width: 100%;
     height: 100%;
     inset: 0;
     opacity: 0.18;
@@ -468,11 +457,32 @@
     user-select: none;
   }
 
+  @media (hover: hover) and (pointer: fine) {
+    .container {
+      .newsletter-form {
+        .field {
+          button:hover:not(:disabled) {
+            border-color: var(--halloween-accent-bright-color);
+            background-color: var(--halloween-accent-bright-color);
+            color: var(--halloween-background-color);
+          }
+        }
+      }
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .container,
-    .blinking-glow,
-    .flame {
+    .container {
       animation-name: none;
+    }
+
+    .holder {
+      .candle {
+        .blinking-glow,
+        .flame {
+          animation-name: none;
+        }
+      }
     }
 
     .falling-leaves {
@@ -481,8 +491,12 @@
   }
 
   @media (max-width: 60rem) {
-    .container .newsletter-form .field {
-      grid-template-columns: 1fr;
+    .container {
+      .newsletter-form {
+        .field {
+          grid-template-columns: 1fr;
+        }
+      }
     }
   }
 }

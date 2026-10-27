@@ -79,10 +79,10 @@ const HalloweenPage = () => (
             />
           </div>
         </div>
-        <div className="illustration">
+        <div className="illustration" aria-hidden>
           <Image
             src="/images/hero/staircase.png"
-            alt="Nosferatu"
+            alt=""
             fill
             sizes="50vw"
             priority
@@ -95,7 +95,7 @@ const HalloweenPage = () => (
         className="container showcase"
         aria-labelledby="showcase-title"
       >
-        <div className="bg" />
+        <div className="bg" aria-hidden />
         <div className="intro">
           <span className="eyebrow">See it in use</span>
           <h2 id="showcase-title">Candlelight in a stone room.</h2>
@@ -108,6 +108,16 @@ const HalloweenPage = () => (
       </section>
       <Palette />
       <section className="container closing" aria-labelledby="closing-title">
+        <div className="castle" aria-hidden>
+          <Image
+            src="/images/hero/castle.svg"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            unoptimized
+          />
+        </div>
         <span className="eyebrow">Until sunrise</span>
         <h2 id="closing-title">
           One-time payment.

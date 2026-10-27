@@ -21,7 +21,7 @@
     {
       "name": "Draculaween 2026",
       "displayName": "Draculaween: 40% off",
-      "announcementText": "Draculaween is here. Dracula Pro is <strong>40% off</strong> until <strong>Nov 21 →</strong>",
+      "announcementText": "Draculaween is here. Dracula Pro is <strong>40% off →</strong>",
       "discountPercentage": 40,
       "couponCode": "DRACULAWEEN2026",
       "basePrice": "promoPrice",
