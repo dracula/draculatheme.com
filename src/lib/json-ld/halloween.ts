@@ -1,3 +1,7 @@
+import { hasHalloweenSaleEnded } from "@/lib/halloween";
+
+const saleHasEnded = hasHalloweenSaleEnded();
+
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -41,10 +45,10 @@ export const jsonLd = {
       "@type": "Offer",
       name: "Dracula Pro License",
       url: "https://draculatheme.com/pro#pricing",
-      price: "49",
+      price: saleHasEnded ? "99" : "49",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-11-21",
+      ...(saleHasEnded ? {} : { priceValidUntil: "2026-11-21" }),
       seller: {
         "@type": "Organization",
         name: "Dracula Theme",

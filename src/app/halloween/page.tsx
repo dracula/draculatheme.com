@@ -5,9 +5,10 @@ import { Grenze_Gotisch } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
+import { ClosingCopy } from "@/components/halloween/closing-copy";
 import { CodePreview } from "@/components/halloween/code-preview";
-import { Countdown } from "@/components/halloween/countdown";
 import { Palette } from "@/components/halloween/palette";
+import { SaleOffer } from "@/components/halloween/sale-offer";
 import { TombstoneIcon } from "@/icons/tombstone";
 import { jsonLd } from "@/lib/json-ld/halloween";
 import {
@@ -43,7 +44,7 @@ const grenzeGotisch = Grenze_Gotisch({
 const HalloweenPage = () => (
   <>
     <div className={`${grenzeGotisch.variable} halloween`}>
-      <section className="container hero">
+      <section className="container opening">
         <div className="copy">
           <span className="eyebrow">
             <span className="pulse" aria-hidden />
@@ -66,18 +67,7 @@ const HalloweenPage = () => (
               Preview
             </Link>
           </div>
-          <div className="offer">
-            <div className="details">
-              <span>
-                $99 → <em>$49</em> Until Sunrise
-              </span>
-              <span>Saturday, November 21, 2026</span>
-            </div>
-            <Countdown
-              target="2026-11-21T23:59:59Z"
-              label="Time remaining until sunrise"
-            />
-          </div>
+          <SaleOffer />
         </div>
         <div className="illustration" aria-hidden>
           <Image
@@ -118,30 +108,7 @@ const HalloweenPage = () => (
             unoptimized
           />
         </div>
-        <span className="eyebrow">Until sunrise</span>
-        <h2 id="closing-title">
-          One-time payment.
-          <br />
-          Yours forever.
-        </h2>
-        <p>
-          Nosferatu ships with Dracula Pro — every variant, every update,{" "}
-          <em>no subscription</em>.
-        </p>
-        <p className="price">
-          <span className="original">
-            <span className="sr-only">Original price</span>
-            $99
-          </span>
-          <span className="current">
-            <span className="sr-only">Sale price</span>
-            $49
-          </span>
-        </p>
-        <Link className="action primary" href="/pro#pricing">
-          <TombstoneIcon />
-          <span>Get Dracula Pro</span>
-        </Link>
+        <ClosingCopy />
       </section>
     </div>
     <JsonLdScript id={structuredDataScriptId} jsonLd={jsonLd} />

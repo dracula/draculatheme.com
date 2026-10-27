@@ -3,11 +3,10 @@ import "./page.css";
 import type { Metadata } from "next";
 import { Grenze_Gotisch } from "next/font/google";
 
-import { Countdown } from "@/components/halloween/countdown";
 import { FallingLeaves } from "@/components/halloween/falling-leaves";
 import { LightSquircle } from "@/components/halloween/light-squircle";
-import { NewsletterForm } from "@/components/halloween/newsletter-form";
 import { Noise } from "@/components/halloween/noise";
+import { TeaserGate } from "@/components/halloween/teaser-gate";
 import { jsonLd } from "@/lib/json-ld/halloween-teaser";
 import {
   createStructuredDataScriptId,
@@ -56,11 +55,7 @@ const HalloweenTeaserPage = () => (
         </div>
       </div>
       <div className="container">
-        <div className="header">
-          <h1 id="draculaween-title">Draculaween</h1>
-          <Countdown target="2026-10-27T23:59:59Z" />
-        </div>
-        <NewsletterForm />
+        <TeaserGate />
       </div>
       <FallingLeaves />
       <Noise />

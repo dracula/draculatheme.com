@@ -38,6 +38,7 @@ const sections: Section[] = [
   {
     title: "Dracula Pro",
     links: [
+      { label: "Nosferatu", href: "/halloween" },
       { label: "Support", href: "/pro#frequently-asked-questions" },
       { label: "Changelog", href: "/pro/changelog" },
       { label: "Journey", href: "/pro/journey" },

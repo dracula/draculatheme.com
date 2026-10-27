@@ -17,8 +17,10 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-bottom: calc(-1 * var(--page-sections-spacing));
+  overflow: hidden;
   background-color: var(--background);
   color: var(--foreground);
 
@@ -43,7 +45,7 @@
     letter-spacing: 0.02em;
   }
 
-  .hero {
+  .opening {
     display: flex;
     align-items: center;
     padding-top: 0;
@@ -225,6 +227,14 @@
             }
           }
         }
+      }
+
+      .ended {
+        margin-bottom: 0;
+        animation-duration: 300ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+        animation-name: halloween-fade-in;
       }
     }
 
@@ -737,6 +747,10 @@
       opacity: 0;
     }
 
+    .ended {
+      animation-name: none;
+    }
+
     .showcase {
       .code-preview {
         pre {
@@ -753,9 +767,9 @@
   @media (max-width: 60rem) {
     --title-size: 2.25rem;
 
-    .hero {
+    .opening {
       flex-direction: column;
-      padding-top: var(--page-padding-vertical);
+      padding-top: 5.25rem;
       gap: 2.25rem;
 
       .copy {
@@ -800,6 +814,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes halloween-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

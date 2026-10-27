@@ -309,6 +309,41 @@
         color: var(--halloween-accent-bright-color);
         font-style: italic;
         font-size: clamp(3rem, 12vw, 6rem);
+        animation-duration: 300ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+        animation-name: halloween-fade-in;
+      }
+    }
+
+    .enter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--halloween-spacing-small);
+      padding-right: var(--halloween-spacing-large);
+      padding-bottom: var(--halloween-spacing-small);
+      padding-left: var(--halloween-spacing-large);
+      border-width: 0.0625rem;
+      border-style: solid;
+      border-color: var(--halloween-accent-color);
+      background-color: var(--halloween-accent-color);
+      color: var(--halloween-foreground-color);
+      font-size: 1.125rem;
+      text-decoration: none;
+      animation-duration: 300ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: both;
+      animation-name: halloween-fade-in;
+      transition-duration: var(--duration-standard);
+      transition-property: border-color, background-color, color;
+      transition-timing-function: var(--ease-fluid);
+
+      &:focus-visible {
+        outline-color: var(--halloween-foreground-color);
+        outline-style: solid;
+        outline-width: 0.125rem;
+        outline-offset: 0.1875rem;
       }
     }
 
@@ -459,6 +494,12 @@
 
   @media (hover: hover) and (pointer: fine) {
     .container {
+      .enter:hover {
+        border-color: var(--halloween-accent-bright-color);
+        background-color: var(--halloween-accent-bright-color);
+        color: var(--halloween-background-color);
+      }
+
       .newsletter-form {
         .field {
           button:hover:not(:disabled) {
@@ -474,6 +515,11 @@
   @media (prefers-reduced-motion: reduce) {
     .container {
       animation-name: none;
+
+      .arrived,
+      .enter {
+        animation-name: none;
+      }
     }
 
     .holder {
@@ -523,6 +569,16 @@
     transform: translateY(var(--fall-distance)) rotate(360deg)
       translateX(var(--halloween-spacing-large));
     opacity: 0;
+  }
+}
+
+@keyframes halloween-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

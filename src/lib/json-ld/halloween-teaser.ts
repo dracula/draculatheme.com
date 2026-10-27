@@ -1,3 +1,11 @@
+import {
+  hasHalloweenSaleEnded,
+  hasHalloweenTeaserEnded
+} from "@/lib/halloween";
+
+const teaserHasEnded = hasHalloweenTeaserEnded();
+const saleHasEnded = hasHalloweenSaleEnded();
+
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -18,7 +26,9 @@ export const jsonLd = {
     description: "A Halloween surprise from Dracula arriving October 27, 2026.",
     startDate: "2026-10-27",
     endDate: "2026-11-21",
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: saleHasEnded
+      ? "https://schema.org/EventConcluded"
+      : "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
     url: "https://draculatheme.com/halloween",
     location: {
@@ -62,11 +72,19 @@ export const jsonLd = {
       "https://discord.gg/yDcFsrB"
     ]
   },
-  potentialAction: [
-    {
-      "@type": "SubscribeAction",
-      name: "Get notified when Draculaween begins",
-      target: "https://draculatheme.com/halloween/teaser"
-    }
-  ]
+  potentialAction: teaserHasEnded
+    ? [
+        {
+          "@type": "ViewAction",
+          name: "Meet Nosferatu",
+          target: "https://draculatheme.com/halloween"
+        }
+      ]
+    : [
+        {
+          "@type": "SubscribeAction",
+          name: "Get notified when Draculaween begins",
+          target: "https://draculatheme.com/halloween/teaser"
+        }
+      ]
 };

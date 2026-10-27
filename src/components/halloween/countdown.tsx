@@ -1,74 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
+
+import { type TimeLeft, useCountdown } from "@/hooks/use-countdown";
 
 type CountdownProps = {
   target: string;
   label?: string;
+  ended?: ReactNode;
 };
 
-type TimeLeft = {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-};
-
-const millisecondsPerSecond = 1000;
-const secondsPerMinute = 60;
-const minutesPerHour = 60;
-const hoursPerDay = 24;
-
-const calculateTimeLeft = (target: number, now: number): TimeLeft => {
-  const totalSeconds = Math.max(
-    Math.floor((target - now) / millisecondsPerSecond),
-    0
-  );
-
-  return {
-    days: Math.floor(
-      totalSeconds / (secondsPerMinute * minutesPerHour * hoursPerDay)
-    ),
-    hours:
-      Math.floor(totalSeconds / (secondsPerMinute * minutesPerHour)) %
-      hoursPerDay,
-    minutes: Math.floor(totalSeconds / secondsPerMinute) % minutesPerHour,
-    seconds: totalSeconds % secondsPerMinute
-  };
-};
+const defaultEnded = <p className="arrived">The veil is open.</p>;
 
 const formatUnit = (value: number) => String(value).padStart(2, "0");
 
+const unitsFromTimeLeft = (timeLeft: TimeLeft | null) => [
+  { label: "Days", value: timeLeft?.days },
+  { label: "Hours", value: timeLeft?.hours },
+  { label: "Minutes", value: timeLeft?.minutes },
+  { label: "Seconds", value: timeLeft?.seconds }
+];
+
 export const Countdown = ({
   target,
-  label = "Time until Draculaween begins"
+  label = "Time until Draculaween begins",
+  ended = defaultEnded
 }: CountdownProps) => {
-  const targetTime = new Date(target).getTime();
-  const [now, setNow] = useState<number | null>(null);
+  const { hasEnded, timeLeft } = useCountdown(target);
 
-  useEffect(() => {
-    const updateNow = () => setNow(Date.now());
-    const initialTimeout = setTimeout(updateNow, 0);
-    const interval = setInterval(updateNow, millisecondsPerSecond);
-
-    return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
-    };
-  }, []);
-
-  if (now !== null && now >= targetTime) {
-    return <p className="arrived">The veil is open.</p>;
+  if (hasEnded) {
+    return ended;
   }
 
-  const timeLeft = now === null ? null : calculateTimeLeft(targetTime, now);
-
-  const units = [
-    { label: "Days", value: timeLeft?.days },
-    { label: "Hours", value: timeLeft?.hours },
-    { label: "Minutes", value: timeLeft?.minutes },
-    { label: "Seconds", value: timeLeft?.seconds }
-  ];
+  const units = unitsFromTimeLeft(timeLeft);
 
   return (
     <div className="countdown" aria-label={label} role="timer">
