@@ -18,6 +18,10 @@ type PromoConfig = {
    * otherwise the default checkout URL is used.
    */
   purchaseUrl?: string;
+  /**
+   * Destination for the announcement bar. Defaults to `/pro`.
+   */
+  href?: string;
   basePrice: "listPrice" | "promoPrice";
   startDate: string;
   endDate: string;
@@ -126,7 +130,7 @@ export const getActiveAnnouncement = (): Announcement | null => {
   return activePromo
     ? {
         announcementText: activePromo.announcementText,
-        href: "/pro"
+        href: activePromo.href || "/pro"
       }
     : null;
 };

@@ -24,6 +24,7 @@ const getStaticRoutes = () => {
     "/blog",
     "/contribute",
     "/halloween",
+    "/halloween/teaser",
     "/newsletter",
     "/open",
     "/spec",
