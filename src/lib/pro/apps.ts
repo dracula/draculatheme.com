@@ -1,5 +1,6 @@
 export const apps = [
   { value: "alacritty", label: "Alacritty" },
+  { value: "cursor", label: "Cursor" },
   { value: "emacs", label: "Emacs" },
   { value: "firefox", label: "Firefox" },
   { value: "gnome-terminal", label: "Gnome Terminal" },

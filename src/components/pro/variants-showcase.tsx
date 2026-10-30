@@ -6,7 +6,12 @@ import useSound from "use-sound";
 
 import { apps } from "@/lib/pro/apps";
 
-const variants = [
+const variants: {
+  name: string;
+  value: string;
+  sound: string;
+  isNew?: boolean;
+}[] = [
   { name: "Pro", value: "var(--purple)", sound: "/sounds/pro/dracula.mp3" },
   { name: "Blade", value: "var(--green)", sound: "/sounds/pro/blade.mp3" },
   { name: "Buffy", value: "var(--pink)", sound: "/sounds/pro/buffy.mp3" },
@@ -21,6 +26,12 @@ const variants = [
     name: "Alucard",
     value: "var(--color-display)",
     sound: "/sounds/pro/alucard.mp3"
+  },
+  {
+    name: "Nosferatu",
+    value: "var(--orange)",
+    sound: "/sounds/pro/nosferatu.mp3",
+    isNew: true
   }
 ];
 
@@ -43,6 +54,7 @@ export const VariantsShowcase = () => {
   const [playMorbiusSound] = useSound(variants[4].sound, soundConfig);
   const [playVanHelsingSound] = useSound(variants[5].sound, soundConfig);
   const [playAlucardSound] = useSound(variants[6].sound, soundConfig);
+  const [playNosferatuSound] = useSound(variants[7].sound, soundConfig);
 
   const sounds = [
     playProSound,
@@ -51,7 +63,8 @@ export const VariantsShowcase = () => {
     playLincolnSound,
     playMorbiusSound,
     playVanHelsingSound,
-    playAlucardSound
+    playAlucardSound,
+    playNosferatuSound
   ];
 
   const getVariantSlug = (name: string) => {
@@ -112,7 +125,8 @@ export const VariantsShowcase = () => {
                 className="color"
                 style={{ "--color": variant.value } as React.CSSProperties}
               />
-              <span>{variant.name}</span>
+              <span className="name">{variant.name}</span>
+              {variant.isNew && <span className="new">New!</span>}
             </label>
           ))}
         </div>
@@ -123,7 +137,7 @@ export const VariantsShowcase = () => {
           alt={`${selectedApp?.label} - ${selectedVariant.name} theme preview`}
           width={912}
           height={552}
-          quality={80}
+          unoptimized
           priority
         />
       </div>
@@ -133,7 +147,7 @@ export const VariantsShowcase = () => {
           alt={`${selectedVariant.name} illustration`}
           width={918}
           height={1062}
-          quality={80}
+          unoptimized
           priority
         />
       </div>

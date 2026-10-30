@@ -26,8 +26,8 @@ interface PricingCardProps {
 }
 
 const productFeatures = [
-  `${Object.keys(apps).length + 1} themes`,
-  "7 variants",
+  `${Object.keys(apps).length} themes`,
+  "8 variants",
   "4 hand-picked fonts",
   "1 productivity ebook",
   "1 bonus screencast",
