@@ -768,21 +768,40 @@
     --title-size: 2.25rem;
 
     .opening {
-      flex-direction: column;
+      position: relative;
+      align-items: flex-end;
+      min-height: 36rem;
       padding-top: 5.25rem;
-      gap: 2.25rem;
+      padding-bottom: 3rem;
 
       .copy {
+        z-index: 1;
+        position: relative;
         width: 100%;
 
         h1 {
           font-size: 4.5rem;
         }
+
+        p {
+          text-shadow: 0 0 1.125rem var(--background);
+        }
       }
 
       .illustration {
-        width: 100%;
-        min-height: 30rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        min-width: 0;
+        min-height: 0;
+        mask-image: linear-gradient(to right, transparent, black 50%);
+
+        img {
+          object-fit: cover;
+          object-position: center top;
+        }
       }
     }
 
@@ -811,6 +830,38 @@
           padding-top: 1.125rem;
           padding-bottom: 1.125rem;
           gap: 0.75rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 42rem) {
+    .opening {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+      padding-top: 0;
+
+      .illustration {
+        position: relative;
+        flex: none;
+        width: auto;
+        height: 24rem;
+        margin-right: calc(-1 * var(--page-padding-horizontal));
+        margin-left: calc(-1 * var(--page-padding-horizontal));
+        mask-image: linear-gradient(to bottom, black 60%, transparent);
+
+        img {
+          object-position: center 60%;
+        }
+      }
+
+      .copy {
+        order: 1;
+        margin-top: -4.5rem;
+
+        h1 {
+          font-size: 3.75rem;
         }
       }
     }
