@@ -30,7 +30,6 @@ const productFeatures = [
   "8 variants",
   "4 hand-picked fonts",
   "1 productivity ebook",
-  "1 bonus screencast",
   "Design files",
   "Wallpapers",
   "Constant updates",
