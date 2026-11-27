@@ -44,20 +44,8 @@ const RequestAccessPage = () => (
           <p>Before you start</p>
           <ul>
             <li>Use the same email you used to buy Dracula Pro.</li>
-            <li>
-              The email must be linked to your GitHub account and{" "}
-              <a
-                href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/changing-your-primary-email-address"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                set to primary or public
-              </a>
-              .
-            </li>
-            <li>
-              After confirmation, you will receive an invitation from GitHub.
-            </li>
+            <li>GitHub will send the invitation to that email.</li>
+            <li>Accept it with any GitHub account you like.</li>
           </ul>
         </div>
         <h2 className="tip">Beta</h2>
